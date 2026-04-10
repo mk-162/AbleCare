@@ -1,0 +1,49 @@
+{
+  "title": "Webinars",
+  "slug": "webinars",
+  "description": "Live and on-demand webinars from the Able Care clinical and product team. Falls prevention, grip strength, regulatory alignment and operational rollout.",
+  "seo": {
+    "title": "Webinars | Able Care",
+    "description": "Live and on-demand webinars covering falls prevention, grip strength, HHVBP, NICE 2025 and operational rollout. Presented by the Able Care clinical team.",
+    "ogImage": "/images/og-webinars.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "Webinars", "href": "/resources/webinars" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "scheme": "light",
+      "wave": "ribbon",
+      "eyebrow": "Webinars",
+      "headline": "Learn from the clinical team.",
+      "subtitle": "Live and on-demand sessions covering falls prevention evidence, operational rollout, regulatory alignment and product walkthroughs. Practical, evidence-based, no sales pitch.",
+      "primaryCtaText": "Register for the Next Webinar",
+      "primaryCtaLink": "#upcoming",
+      "secondaryCtaText": "Book a Demo",
+      "secondaryCtaLink": "/demo/"
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Upcoming and on-demand webinars",
+      "body": "The Able Care clinical and product team runs regular webinars for operators, clinicians and researchers. Each session is designed to be practical: real evidence, real workflows, real questions.\n\nTopics include falls prevention best practice, grip strength in clinical and research settings, HHVBP and VBP alignment, NICE 2025 compliance, rolling out standardised screening across multi-site operations, and product walkthroughs of Able Assess.\n\nAll sessions are recorded. Register for an upcoming webinar or browse the on-demand library below."
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "heading": "Want a session tailored to your team?",
+      "bodyText": "The clinical team can run a private webinar for your organisation covering the evidence, the workflow and the rollout plan for your setting.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo/",
+      "secondaryCtaText": "Talk to the Clinical Team",
+      "secondaryCtaLink": "/contact/"
+    }
+  ]
+}

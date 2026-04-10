@@ -1,0 +1,94 @@
+{
+  "title": "Able Strength: Grip Strength in Every Patient's Pocket",
+  "slug": "able-strength",
+  "seo": {
+    "title": "Able Strength - Self-Serve Grip Strength App | Able Care",
+    "description": "Clinical-grade grip strength measurement in every patient's pocket. Download, squeeze, compare against normative data and share results with your care team.",
+    "ogImage": "/images/og-able-strength.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Solutions", "href": "/solutions" },
+        { "label": "Able Strength", "href": "/solutions/able-strength" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Able Strength",
+      "headline": "Grip strength in every patient's pocket.",
+      "subtitle": "Self-serve grip strength measurement for patients and residents. Download the app, squeeze the sensor, compare against normative data, share results with your care team.",
+      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
+      "secondaryCta": { "label": "See How It Works", "href": "#how-it-works" }
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "Clinical-grade, patient-simple",
+      "body": "Able Strength puts grip strength measurement directly in the hands of patients and residents. Connected to the GripAble sensor via Bluetooth, the app captures clinical-grade data in seconds. Patients can track their own progress, set milestones and share results with their care team or family.",
+      "imageSide": "right",
+      "imageAlt": "Able Strength app showing grip strength results on a smartphone",
+      "imageSrc": "/images/features/phone-trimmed-min.png"
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "What grip strength tells you",
+      "metrics": [
+        {
+          "name": "Whole-body strength proxy",
+          "description": "Grip strength is a validated proxy for overall muscle strength and physical function in adults over 60."
+        },
+        {
+          "name": "Falls risk indicator",
+          "description": "Low grip strength is strongly associated with increased falls risk, frailty and loss of independence."
+        },
+        {
+          "name": "Mortality predictor",
+          "description": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure (Lancet, 2015)."
+        },
+        {
+          "name": "Recovery tracker",
+          "description": "Longitudinal grip strength trends track recovery from surgery, illness and deconditioning over time."
+        }
+      ]
+    },
+    {
+      "_template": "processSteps",
+      "heading": "How Able Strength works",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Download",
+          "description": "Install the Able Strength app on any smartphone. Pair with a GripAble sensor via Bluetooth."
+        },
+        {
+          "number": 2,
+          "title": "Squeeze",
+          "description": "Follow the on-screen guide to perform a grip strength test. Three squeezes, 30 seconds."
+        },
+        {
+          "number": 3,
+          "title": "Compare",
+          "description": "See results instantly, compared against age and sex-matched normative data."
+        },
+        {
+          "number": 4,
+          "title": "Share",
+          "description": "Send results to your care team, GP or family. Track progress over time with longitudinal trending."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "Put grip strength measurement in your patients' hands.",
+      "body": "See how Able Strength integrates with Able Assess for a complete functional health picture.",
+      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
+      "secondaryCta": { "label": "See Able Assess", "href": "/solutions/able-assess" }
+    }
+  ]
+}

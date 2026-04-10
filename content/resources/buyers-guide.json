@@ -1,0 +1,72 @@
+{
+  "title": "Falls Prevention Buyers Guide",
+  "slug": "buyers-guide",
+  "seo": {
+    "title": "Falls Prevention Buyers Guide | Able Care",
+    "description": "Everything you need to brief procurement on falls prevention technology. Evaluate, pilot, deploy and scale. Download the 24-page guide.",
+    "ogImage": "/images/og-buyers-guide.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "Buyers Guide", "href": "/resources/buyers-guide" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Free Guide",
+      "headline": "The falls prevention buyers guide.",
+      "subtitle": "Everything you need to brief procurement on falls prevention technology. 24 pages covering evidence, features, pricing, integration and rollout.",
+      "primaryCta": { "label": "Download the Guide", "href": "#download" },
+      "secondaryCta": { "label": "Book a Demo", "href": "/contact" }
+    },
+    {
+      "_template": "leadMagnetPromo",
+      "heading": "Brief your team in 24 pages",
+      "body": "The Falls Prevention Buyers Guide covers everything procurement needs to know: the evidence base, feature comparison, integration requirements, pricing models and rollout timelines. Written for operators, approved by clinicians.",
+      "coverImage": "/images/buyers-guide-cover.jpg",
+      "ctaText": "Download the Guide",
+      "ctaHref": "#download"
+    },
+    {
+      "_template": "processSteps",
+      "heading": "From evaluation to scale in four steps",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Evaluate",
+          "description": "Use this guide to compare falls prevention approaches against your setting, staff mix and regulatory requirements."
+        },
+        {
+          "number": 2,
+          "title": "Pilot",
+          "description": "Run a 30-day pilot at a single site. Measure screening time, staff adoption and baseline risk distribution."
+        },
+        {
+          "number": 3,
+          "title": "Deploy",
+          "description": "Roll out the standardised protocol to every branch, community or clinical site. Training takes minutes, not days."
+        },
+        {
+          "number": 4,
+          "title": "Scale",
+          "description": "Use population-level dashboards to track outcomes, protect HHVBP and VBP performance and demonstrate ROI to stakeholders."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "Ready to evaluate Able Assess for your organisation?",
+      "body": "Download the guide or book a 20-minute demo with our clinical team.",
+      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
+      "secondaryCta": { "label": "Download the Guide", "href": "#download" }
+    }
+  ]
+}

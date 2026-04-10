@@ -1,0 +1,28 @@
+{
+  "site": {
+    "name": "Able Care",
+    "tagline": "Falls Prevention Technology",
+    "phone": "+44 20 7946 0958",
+    "email": "hello@able-care.co",
+    "canonicalDomain": "https://www.able-care.co"
+  },
+  "seo": {
+    "titleSuffix": " | Able Care",
+    "defaultDescription": "Digital, objective falls risk screening in under 5 minutes. Trusted by home care, senior living and clinicians across the US and UK.",
+    "ogImage": "/images/og-default.png"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/company/able-care",
+    "twitter": "https://twitter.com/ablecarehealth"
+  },
+  "analytics": {
+    "gtmId": ""
+  },
+  "alertBanner": {
+    "enabled": true,
+    "type": "info",
+    "text": "NICE 2025 falls guidance released.",
+    "ctaText": "Read our response",
+    "ctaLink": "/blog/nice-2025-falls-guidance-response"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "title": "Able Assess vs Jamar Dynamometer",
+  "slug": "vs-jamar",
+  "description": "Side-by-side comparison of Able Assess and the Jamar hand dynamometer. Digital data capture, normative comparison, and workflow integration vs analogue measurement.",
+  "seo": {
+    "title": "Able Assess vs Jamar Dynamometer | Able Care",
+    "description": "Compare Able Assess with the Jamar hand dynamometer. Digital grip strength measurement with automatic data capture, normative scoring and workflow integration.",
+    "ogImage": "/images/og-vs-jamar.png"
+  },
+  "blocks": [
+    {
+      "_template": "hero",
+      "scheme": "light",
+      "waveStyle": "ribbon",
+      "eyebrow": "Comparison",
+      "headline": "Able Assess vs Jamar dynamometer.",
+      "subtitle": "Digital grip strength measurement with automatic data capture, normative comparison and full workflow integration. Everything analogue cannot do.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Comparison PDF",
+      "secondaryCtaLink": "/resources/buyers-guide"
+    },
+    {
+      "_template": "featureComparison",
+      "heading": "Head-to-head comparison",
+      "tldr": "The Jamar dynamometer is the traditional analogue grip strength tool. It captures a single reading with no digital record, no normative comparison, and no route into a care plan. Able Assess captures grip strength digitally alongside three additional functional metrics, scores every result against age- and sex-matched normative data, and feeds risk banding straight into the clinical workflow.",
+      "columns": ["Able Assess", "Jamar Dynamometer"],
+      "rows": [
+        {
+          "feature": "Measurement type",
+          "values": ["Fully digital, sensor-based grip strength via the GripAble device", "Analogue hydraulic gauge, read visually by the operator"]
+        },
+        {
+          "feature": "Data capture",
+          "values": ["Automatic digital capture with timestamped records and longitudinal trending", "Manual reading, recorded by hand on paper or spreadsheet"]
+        },
+        {
+          "feature": "Normative comparison",
+          "values": ["Automatic scoring against age- and sex-matched normative data", "Clinician must look up normative tables manually"]
+        },
+        {
+          "feature": "Additional metrics",
+          "values": ["Four metrics in one workflow: grip strength, sit-to-stand, gait speed, timed up-and-go", "Grip strength only"]
+        },
+        {
+          "feature": "Workflow integration",
+          "values": ["Risk banding routed to care team, EHR and OASIS integration-ready", "No digital workflow, no integration capability"]
+        },
+        {
+          "feature": "Consistency",
+          "values": ["One standardised protocol across every site and every staff member", "Reading accuracy varies by operator technique and gauge calibration"]
+        },
+        {
+          "feature": "Staff requirements",
+          "values": ["Any staff member, no clinical certification required", "Typically requires trained clinical staff for correct positioning and reading"]
+        },
+        {
+          "feature": "Scalability",
+          "values": ["Roll out digitally to every branch with minimal training", "One device per site, no centralised data, no trend reporting"]
+        }
+      ]
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "Why digital grip strength measurement matters",
+      "pulledStat": {
+        "text": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
+        "source": "Lancet, 2015"
+      },
+      "studies": [
+        {
+          "title": "Grip strength is a validated marker for frailty, sarcopenia and functional decline in older adults",
+          "source": "Lancet, 2015",
+          "url": "#"
+        },
+        {
+          "title": "Multifactorial screening outperforms single-test approaches in predicting falls",
+          "source": "BMJ, 2018",
+          "url": "#"
+        },
+        {
+          "title": "NICE 2025 guidelines recommend standardised, objective falls risk screening",
+          "source": "NICE, 2025",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See digital grip strength in action.",
+      "body": "A 20-minute demo comparing analogue and digital grip measurement, side by side.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
+    }
+  ]
+}

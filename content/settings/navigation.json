@@ -1,0 +1,73 @@
+{
+  "header": {
+    "logo": "/images/able-care-logo.svg",
+    "items": [
+      {
+        "label": "Solutions",
+        "children": [
+          { "label": "Falls Prevention", "href": "/solutions/falls-prevention/", "desc": "The objective case for prevention." },
+          { "label": "Able Assess", "href": "/solutions/able-assess/", "desc": "Four metrics. Five minutes. One complete picture." },
+          { "label": "Able Strength", "href": "/solutions/able-strength/", "desc": "Self-serve grip strength for patients at home." },
+          { "label": "Population Health", "href": "/solutions/population-health/", "desc": "Track risk across your entire census." }
+        ]
+      },
+      {
+        "label": "Who We Help",
+        "children": [
+          { "label": "Home Care", "href": "/home-care/", "desc": "Reduce hospitalisations and hit HHVBP targets." },
+          { "label": "Senior Living", "href": "/senior-living/", "desc": "Protect residents and your CCRC reputation." },
+          { "label": "Clinicians", "href": "/clinicians/", "desc": "Objective metrics in the flow of care." },
+          { "label": "Pharma & CROs", "href": "/pharma/", "desc": "Digital endpoints for clinical trials." }
+        ]
+      },
+      {
+        "label": "Resources",
+        "children": [
+          { "label": "Blog", "href": "/blog/", "desc": "Insights on falls prevention and functional assessment." },
+          { "label": "Case Studies", "href": "/resources/case-studies/", "desc": "Real results from real organisations." },
+          { "label": "Clinical Evidence", "href": "/resources/evidence/", "desc": "Peer-reviewed research backing our approach." },
+          { "label": "Buyers Guide", "href": "/resources/buyers-guide/", "desc": "Everything you need to brief procurement." }
+        ]
+      },
+      { "label": "About", "href": "/about/" },
+      { "label": "Contact", "href": "/contact/" }
+    ],
+    "cta": { "label": "Book a demo", "href": "/demo/" }
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Solutions",
+        "links": [
+          { "label": "Home Care", "href": "/home-care/" },
+          { "label": "Senior Living", "href": "/senior-living/" },
+          { "label": "Clinicians", "href": "/clinicians/" },
+          { "label": "Pharma & CROs", "href": "/pharma/" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "label": "Blog", "href": "/blog/" },
+          { "label": "Case Studies", "href": "/resources/case-studies/" },
+          { "label": "Clinical Evidence", "href": "/resources/evidence/" },
+          { "label": "Buyers Guide", "href": "/resources/buyers-guide/" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About Us", "href": "/about/" },
+          { "label": "Meet the Team", "href": "/meet-the-team/" },
+          { "label": "Contact", "href": "/contact/" },
+          { "label": "News", "href": "/news/" }
+        ]
+      }
+    ],
+    "legal": [
+      { "label": "Privacy Policy", "href": "/privacy/" },
+      { "label": "Terms of Service", "href": "/terms/" },
+      { "label": "Security", "href": "/security/" }
+    ]
+  }
+}

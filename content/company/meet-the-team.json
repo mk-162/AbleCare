@@ -1,0 +1,74 @@
+{
+  "title": "Meet the Team | The People Behind Able Care",
+  "slug": "meet-the-team",
+  "description": "Meet the clinicians, engineers, and researchers building the future of falls prevention technology.",
+  "blocks": [
+    {
+      "_template": "hero",
+      "scheme": "light",
+      "wave": "crest",
+      "backgroundImage": "/images/features/holding-hands-solid-bg-min.jpg",
+      "eyebrow": "Our people",
+      "headline": "Built by clinicians. Scaled by engineers.",
+      "subtitle": "Able Care was founded at Imperial College London by researchers who saw the gap between what clinical science knows about falls and what frontline care teams can actually measure."
+    },
+    {
+      "_template": "teamShowcase",
+      "heading": "The people behind Able Care",
+      "subtitle": "A multidisciplinary team spanning clinical science, biomedical engineering, and health technology — united by a shared mission to keep people strong, steady, and independent for life.",
+      "layout": "featured",
+      "team": [
+        {
+          "name": "Dr Paul Rinne",
+          "role": "CEO & Co-Founder",
+          "credentials": "PhD in Neuroscience",
+          "bio": "Healthcare entrepreneur dedicated to creating digital health solutions focused on healthspan and longevity. Founder and CEO of GripAble and Able Care, committed to delivering value-based care through data-driven digital transformation.",
+          "photo": "/images/team/dr-paul-rinne.jpg",
+          "linkedin": "https://www.linkedin.com/in/paul-rinne",
+          "tier": "leadership"
+        },
+        {
+          "name": "Dr Mike Mace",
+          "role": "CTO & Co-Founder",
+          "credentials": "PhD in Bioengineering, Imperial College London",
+          "bio": "Former Research Associate in rehabilitation technology at Imperial College London's Human Robotics Group, where he led rehabilitation technology projects. Co-pioneered the GripAble device through collaboration with therapists, patients, and academic institutions.",
+          "photo": "/images/team/dr-mike-mace.jpg",
+          "linkedin": "https://uk.linkedin.com/in/mike-mace-94707861",
+          "tier": "leadership"
+        },
+        {
+          "name": "Danielle Richards",
+          "role": "Commercial Director",
+          "credentials": "MBA, Cambridge Judge Business School",
+          "bio": "Commercial Director at both GripAble and Able Care, leading business and marketing strategy. Former Risk Analyst at Google. Passionate about the technology-health intersection with a proven track record scaling startups and scale-ups.",
+          "photo": "/images/team/danielle-richards.jpg",
+          "linkedin": "https://www.linkedin.com/in/danielle-raines-richards",
+          "tier": "leadership"
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "light",
+      "heading": "Born at Imperial College London",
+      "description": "Able Care grew out of research at Imperial College London's Department of Bioengineering, where our founders identified that simple, objective functional measurements could predict falls and decline more reliably than subjective clinical assessments. We spun out with a mission to make these measurements accessible to every care worker, in every setting.",
+      "imagePosition": "right",
+      "image": "/images/product/sensor-on-podium-min.jpg",
+      "imageAlt": "GripAble sensor on display podium",
+      "bulletPoints": [
+        { "text": "Imperial College spinout" },
+        { "text": "FDA Listed, CE Marked, ISO 27001 certified" },
+        { "text": "Backed by leading health tech investors" }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "heading": "Want to join us?",
+      "bodyText": "We are always looking for people who care about making healthcare better.",
+      "primaryCtaText": "Get in touch",
+      "primaryCtaLink": "/contact"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "title": "ROI Calculator",
+  "slug": "roi-calculator",
+  "description": "Model the financial impact of standardised falls screening. Segment-aware. Two minutes. Emailable report.",
+  "seo": {
+    "title": "ROI Calculator | Able Care",
+    "description": "Model the financial impact of standardised falls screening for your organisation. Segment-aware calculator with emailable report. Takes two minutes.",
+    "ogImage": "/images/og-roi-calculator.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "ROI Calculator", "href": "/resources/roi-calculator" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "scheme": "blue",
+      "wave": "crest",
+      "eyebrow": "ROI Calculator",
+      "headline": "Model the financial impact of standardised falls screening.",
+      "subtitle": "Segment-aware. Two minutes. Emailable report. See how much you could save by reducing one fall per branch per month.",
+      "primaryCtaText": "Open the Calculator",
+      "primaryCtaLink": "#calculator",
+      "secondaryCtaText": "Book a Demo",
+      "secondaryCtaLink": "/demo/"
+    },
+    {
+      "_template": "roiCalculatorPromo",
+      "scheme": "light",
+      "eyebrow": "Build Your Case",
+      "heading": "Quantify the cost of falls in your organisation.",
+      "body": "Every fall costs money: direct care, liability exposure, staff time, resident turnover, lost referrals. The Able Care ROI calculator models the financial impact of standardised screening against your setting, your branch count and your current falls rate. Share the results with procurement, the board or your PE sponsor.",
+      "ctaText": "Open the Calculator",
+      "ctaLink": "#calculator"
+    },
+    {
+      "_template": "statsBar",
+      "scheme": "aqua",
+      "heading": "The cost of inaction",
+      "stats": [
+        {
+          "value": "25%",
+          "label": "Reduction in falls",
+          "sublabel": "Demonstrated by objective screening programmes"
+        },
+        {
+          "value": "$30,000+",
+          "label": "Average cost per fall",
+          "sublabel": "Direct and indirect costs in senior living"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per screening",
+          "sublabel": "Usable by non-clinical staff"
+        },
+        {
+          "value": "< 1 quarter",
+          "label": "Typical payback period",
+          "sublabel": "Based on one reduced fall per branch per month"
+        }
+      ]
+    },
+    {
+      "_template": "testimonialCarousel",
+      "scheme": "light",
+      "wave": "fold",
+      "heading": "What operators say about the ROI",
+      "testimonials": [
+        {
+          "quote": "It paid for itself in the first quarter. The ROI case was straightforward once we had the numbers.",
+          "role": "Operations Lead",
+          "organization": "UK CCRC"
+        },
+        {
+          "quote": "We showed the board a two-minute model and got budget approval the same week.",
+          "role": "VP Operations",
+          "organization": "US home care operator"
+        },
+        {
+          "quote": "The calculator helped us quantify what we already knew: prevention is cheaper than response.",
+          "role": "Clinical Director",
+          "organization": "Multi-site senior living operator"
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "heading": "Ready to build your business case?",
+      "bodyText": "Open the calculator or book a demo to see Able Assess in your workflow.",
+      "primaryCtaText": "Open the Calculator",
+      "primaryCtaLink": "#calculator",
+      "secondaryCtaText": "Book a Demo",
+      "secondaryCtaLink": "/demo/"
+    }
+  ]
+}

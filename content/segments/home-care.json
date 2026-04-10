@@ -1,0 +1,186 @@
+{
+  "title": "Standardised Falls Screening for Home Care Agencies",
+  "slug": "home-care",
+  "seo": {
+    "title": "Falls Prevention for Home Care Agencies | Able Care",
+    "description": "Standardised falls screening for PE-backed, franchised and independent home care agencies. Protect HHVBP. Reduce hospitalisation. Under five minutes per client.",
+    "ogImage": "/images/og-home-care.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Home Care", "href": "/home-care" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "backgroundImage": "/images/heroes/parallax-image-1-min.jpg",
+      "eyebrow": "Home Care",
+      "headline": "Standardised falls screening for home care agencies.",
+      "subtitle": "Protect HHVBP. Standardise across every branch. Reduce hospitalisation. Free your care managers to focus on care.",
+      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
+      "secondaryCta": { "label": "Download the HHVBP Guide", "href": "/resources/hhvbp-guide" }
+    },
+    {
+      "_template": "segmentRouter",
+      "heading": "Explore other settings",
+      "tiles": [
+        {
+          "label": "Senior Living",
+          "benefit": "Protect residents, occupancy and NOI.",
+          "href": "/senior-living",
+          "ctaText": "Explore"
+        },
+        {
+          "label": "Clinicians",
+          "benefit": "Objective metrics in the flow of care.",
+          "href": "/clinicians",
+          "ctaText": "Explore"
+        },
+        {
+          "label": "Pharma & CROs",
+          "benefit": "Decentralised functional endpoints.",
+          "href": "/for/pharma-and-cros",
+          "ctaText": "Explore"
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "Technology built for the frontline",
+      "body": "Able Assess was designed for the care manager's day, not the IT department's roadmap. Five minutes at the kitchen table. No clinical certification required. Results flow straight into the care plan.",
+      "imageSide": "right",
+      "imageAlt": "Care manager running an Able Assess screening with a client at home",
+      "imageSrc": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg"
+    },
+    {
+      "_template": "processSteps",
+      "heading": "How it works in home care",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Capture",
+          "description": "A care manager runs a five-minute assessment on any tablet during a routine visit."
+        },
+        {
+          "number": 2,
+          "title": "Score",
+          "description": "Able Assess scores grip strength, sit-to-stand, gait speed and timed up-and-go against normative data instantly."
+        },
+        {
+          "number": 3,
+          "title": "Act",
+          "description": "Risk banding triggers care plan updates and referrals, routed to the right clinical team."
+        },
+        {
+          "number": 4,
+          "title": "Track",
+          "description": "Longitudinal trends surface decline early, protecting HHVBP outcomes and reducing hospitalisations."
+        }
+      ]
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Four metrics, one picture of function",
+      "metrics": [
+        {
+          "name": "Grip strength",
+          "description": "Upper-body strength proxy. Predicts all-cause mortality and hospitalisation risk."
+        },
+        {
+          "name": "Sit-to-stand",
+          "description": "Lower-limb power and balance. A key indicator of fall likelihood."
+        },
+        {
+          "name": "Gait speed",
+          "description": "The 'sixth vital sign' for older adults. Linked to rehospitalisation rates."
+        },
+        {
+          "name": "Timed Up and Go",
+          "description": "Falls risk in under a minute. Validated across home and clinical settings."
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "heading": "The numbers that matter to home care",
+      "colorScheme": "light",
+      "stats": [
+        { "value": "25%", "label": "Reduction in falls with objective screening" },
+        { "value": "< 5 min", "label": "Per assessment" },
+        { "value": "4", "label": "Validated metrics per screening" },
+        { "value": "0", "label": "Clinical certifications required to run it" }
+      ]
+    },
+    {
+      "_template": "testimonialCarousel",
+      "colorScheme": "aqua",
+      "testimonials": [
+        {
+          "quote": "We caught decline six weeks earlier than we would have with our old process.",
+          "attribution": "Clinical Director, US home care agency"
+        },
+        {
+          "quote": "It paid for itself in the first quarter.",
+          "attribution": "Operations Lead, multi-branch home care operator"
+        }
+      ]
+    },
+    {
+      "_template": "roiCalculatorPromo",
+      "heading": "How much could you save?",
+      "body": "Model HHVBP upside and hospitalisation savings in 60 seconds.",
+      "ctaText": "Run the numbers",
+      "ctaHref": "/resources/roi-calculator"
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Common questions from home care operators",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "What hardware do we need?",
+          "answer": "A GripAble sensor and any tablet. The sensor connects via Bluetooth. No additional infrastructure required."
+        },
+        {
+          "question": "Can non-clinical staff run the assessment?",
+          "answer": "Yes. Able Assess was built for non-clinical staff. The workflow guides them through every step. No training course required."
+        },
+        {
+          "question": "How does it integrate with our existing systems?",
+          "answer": "Able Assess is integration-ready with EHR and OASIS platforms. The clinical team can walk you through the setup during a demo."
+        },
+        {
+          "question": "Where is the data stored?",
+          "answer": "ISO 27001 certified, HIPAA aligned, GDPR compliant. Data residency options available for US and UK."
+        },
+        {
+          "question": "How does this help with HHVBP?",
+          "answer": "Falls outcomes feed HHVBP measures directly. Reducing hospitalisations from falls protects your HHVBP performance and revenue."
+        },
+        {
+          "question": "What does it cost?",
+          "answer": "Pricing is based on the number of branches and assessment volume. The ROI calculator models payback against one reduced fall per branch per month. Book a demo to discuss your specific scenario."
+        }
+      ]
+    },
+    {
+      "_template": "partnerLogoCarousel",
+      "heading": "Trusted by Leading Organizations",
+      "scheme": "white"
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See Able Assess in your workflow.",
+      "body": "20 minutes with a clinician who has run it in the field.",
+      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
+      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+    }
+  ]
+}

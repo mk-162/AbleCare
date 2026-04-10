@@ -1,0 +1,58 @@
+{
+  "title": "Contact | Able Care",
+  "slug": "contact",
+  "description": "Book a 30-minute demo with the Able Care clinical team. Segment-tailored. See the workflow. Get your questions answered.",
+  "blocks": [
+    {
+      "_template": "contactForm",
+      "heading": "Let's talk about functional health.",
+      "subtitle": "See how Able Assess can help your organisation spot decline, prevent falls, and empower your care teams.",
+      "salesEmail": "hello@able-care.co",
+      "supportEmail": "hello@able-care.co"
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "Objective screening, built for your setting",
+      "body": "Able Assess captures four clinically validated metrics in under five minutes. Grip strength, sit-to-stand, gait speed and Timed Up and Go — usable by non-clinical staff, defensible to payers and regulators.",
+      "imageSide": "right",
+      "imageAlt": "GripAble sensor — the clinical-grade grip strength device used by Able Assess",
+      "imageSrc": "/images/product/gripable-sensor-cutout-min.png"
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Common questions before a demo",
+      "emitSchema": true,
+      "faqs": [
+        {
+          "question": "How long is the demo?",
+          "answer": "30 minutes. We tailor the demo to your setting (home care, senior living, clinical or research) so you see exactly how Able Assess fits your workflow."
+        },
+        {
+          "question": "Who should attend?",
+          "answer": "Ideally the person responsible for clinical quality, operations or innovation. For operator organisations, we recommend including someone from the care management or wellness team so they can see the workflow first-hand."
+        },
+        {
+          "question": "What will the demo cover?",
+          "answer": "A live walkthrough of the Able Assess workflow: capture, scoring, risk banding, care plan integration and longitudinal tracking. We will tailor the content to your segment and answer your specific questions."
+        },
+        {
+          "question": "Is there a cost for the demo?",
+          "answer": "No. The demo is free and there is no obligation."
+        },
+        {
+          "question": "Can I see pricing during the demo?",
+          "answer": "Yes. Pricing is based on the number of sites and assessment volume. We can model the financial case during the demo using the ROI calculator."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "heading": "Prefer email?",
+      "bodyText": "Drop us a line at hello@able-care.co and we will get back to you within one working day.",
+      "primaryCtaText": "Email us",
+      "primaryCtaLink": "mailto:hello@able-care.co"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "title": "Grip Strength as a Clinical Trial Endpoint",
+  "slug": "pharma",
+  "seo": {
+    "title": "Grip Strength for Clinical Trials - Pharma & CROs | Able Care",
+    "description": "Objective, remote-capable functional health measurement for clinical trials and CRO-led studies. Grip strength as a decentralised endpoint for GLP-1 monitoring and oncology.",
+    "ogImage": "/images/og-pharma.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Pharma & CROs", "href": "/for/pharma-and-cros" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Pharma & CROs",
+      "headline": "Decentralised functional endpoints for clinical trials.",
+      "subtitle": "Objective, remote-capable grip strength and functional health measurement for trials and CRO-led studies. Strong signal for GLP-1 muscle loss monitoring and oncology endpoints.",
+      "primaryCta": { "label": "Talk to the Research Team", "href": "/contact" },
+      "secondaryCta": { "label": "Download the Endpoint Brief", "href": "/resources/buyers-guide" }
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Validated functional endpoints",
+      "metrics": [
+        {
+          "name": "Grip strength",
+          "description": "The primary endpoint for muscle function in GLP-1 trials, sarcopenia studies and oncology rehabilitation. Objective, digital, remote-capable."
+        },
+        {
+          "name": "Sit-to-stand",
+          "description": "Lower-limb power and functional capacity. A validated secondary endpoint for frailty and rehabilitation trials."
+        },
+        {
+          "name": "Gait speed",
+          "description": "Functional mobility endpoint linked to disability, hospitalisation and mortality across multiple therapeutic areas."
+        },
+        {
+          "name": "Timed Up and Go",
+          "description": "Composite mobility and balance endpoint. Validated in geriatric, neurological and orthopaedic trial populations."
+        }
+      ]
+    },
+    {
+      "_template": "processSteps",
+      "heading": "How it works in clinical trials",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Protocol design",
+          "description": "Work with the Able Care research team to define endpoint capture protocols. Standardised across all trial sites from day one."
+        },
+        {
+          "number": 2,
+          "title": "Site deployment",
+          "description": "Ship GripAble sensors to trial sites or directly to participants for decentralised capture. Minimal site training required."
+        },
+        {
+          "number": 3,
+          "title": "Remote capture",
+          "description": "Participants complete assessments at home or at site. Data captured digitally, timestamped, and uploaded automatically."
+        },
+        {
+          "number": 4,
+          "title": "Data delivery",
+          "description": "Clean, structured endpoint data delivered in your preferred format. Ready for statistical analysis with full audit trail."
+        }
+      ]
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "The evidence base",
+      "pulledStat": {
+        "text": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
+        "source": "Lancet, 2015"
+      },
+      "studies": [
+        {
+          "title": "Grip strength as a surrogate marker for GLP-1 related muscle loss",
+          "source": "Diabetes, Obesity and Metabolism, 2024",
+          "url": "#"
+        },
+        {
+          "title": "Sarcopenia and grip strength in oncology patients: a systematic review",
+          "source": "Critical Reviews in Oncology/Hematology, 2020",
+          "url": "#"
+        },
+        {
+          "title": "Digital grip dynamometry for remote functional assessment in clinical trials",
+          "source": "Journal of Clinical Medicine, 2023",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "Talk to the research team about your trial.",
+      "body": "We can discuss endpoint design, site deployment and data delivery for your specific protocol.",
+      "primaryCta": { "label": "Talk to the Research Team", "href": "/contact" },
+      "secondaryCta": { "label": "Download the Endpoint Brief", "href": "/resources/buyers-guide" }
+    }
+  ]
+}

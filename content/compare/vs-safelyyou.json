@@ -1,0 +1,100 @@
+{
+  "title": "Able Assess vs SafelyYou",
+  "slug": "vs-safelyyou",
+  "description": "Side-by-side comparison of Able Assess and SafelyYou. Upstream falls prevention screening vs post-fall detection and response.",
+  "seo": {
+    "title": "Able Assess vs SafelyYou | Able Care",
+    "description": "Compare Able Assess with SafelyYou. Objective falls risk screening before the fall vs camera-based fall detection after the fall. Different layers of the problem.",
+    "ogImage": "/images/og-vs-safelyyou.png"
+  },
+  "blocks": [
+    {
+      "_template": "hero",
+      "scheme": "light",
+      "waveStyle": "ribbon",
+      "eyebrow": "Comparison",
+      "headline": "Able Assess vs SafelyYou.",
+      "subtitle": "SafelyYou detects falls after they happen. Able Assess screens residents before they fall. Different layers of the same problem.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Comparison PDF",
+      "secondaryCtaLink": "/resources/buyers-guide"
+    },
+    {
+      "_template": "featureComparison",
+      "heading": "Head-to-head comparison",
+      "tldr": "SafelyYou uses AI-powered cameras to detect falls in real time and alert care staff. It is a response tool: it shortens the time a resident spends on the floor after a fall. Able Assess sits upstream. It screens every resident with four objective, sensor-based metrics, stratifies risk before a fall occurs, and gives the care team a data-backed plan to prevent it. Both tools have a place, but they solve different problems.",
+      "columns": ["Able Assess", "SafelyYou"],
+      "rows": [
+        {
+          "feature": "Category",
+          "values": ["Falls prevention (upstream screening and risk stratification)", "Fall detection (post-fall alerting and video review)"]
+        },
+        {
+          "feature": "When it acts",
+          "values": ["Before the fall, identifying at-risk residents through objective screening", "After the fall, detecting the event and alerting staff"]
+        },
+        {
+          "feature": "Primary output",
+          "values": ["Risk banding with four objective metrics, routed to the care plan", "Real-time fall alert with video footage for incident review"]
+        },
+        {
+          "feature": "Measurement method",
+          "values": ["Sensor-based functional health metrics: grip strength, sit-to-stand, gait speed, timed up-and-go", "AI-powered camera monitoring of resident movement"]
+        },
+        {
+          "feature": "Privacy model",
+          "values": ["No cameras, no continuous monitoring. Screening is an active, scheduled interaction", "Continuous camera monitoring in resident rooms and common areas"]
+        },
+        {
+          "feature": "Staff workflow",
+          "values": ["Any staff member runs a five-minute screening, no clinical certification required", "Staff respond to automated alerts when a fall is detected"]
+        },
+        {
+          "feature": "Infrastructure",
+          "values": ["GripAble sensor and tablet or smartphone, no installation required", "Camera hardware installed in rooms and common areas, network infrastructure"]
+        },
+        {
+          "feature": "Care plan impact",
+          "values": ["Objective data drives proactive care planning and intervention before a fall", "Post-fall video informs root-cause analysis and reactive care adjustments"]
+        }
+      ]
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "Why upstream screening matters",
+      "pulledStat": {
+        "text": "Objective screening has been shown to reduce falls by 25%.",
+        "source": "Able Care 2026 Commercialisation Strategy"
+      },
+      "studies": [
+        {
+          "title": "Multifactorial falls risk screening outperforms single-test paper approaches in predicting falls in older adults",
+          "source": "BMJ, 2018",
+          "url": "#"
+        },
+        {
+          "title": "Proactive screening and intervention reduces fall incidence more effectively than reactive detection alone",
+          "source": "[TODO: source needed]",
+          "url": "#"
+        },
+        {
+          "title": "NICE 2025 guidelines recommend standardised, objective falls risk screening as a primary prevention measure",
+          "source": "NICE, 2025",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "Screen before the fall, not after.",
+      "body": "A 20-minute demo showing how upstream screening fits alongside your existing fall detection workflow.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
+    }
+  ]
+}

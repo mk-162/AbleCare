@@ -1,0 +1,60 @@
+{
+  "title": "Partners | Join the Able Care Ecosystem",
+  "description": "Partner with Able Care to bring objective functional assessment to your clients, patients, or members.",
+  "primaryKeyword": "able care partners",
+  "blocks": [
+    {
+      "_template": "hero",
+      "scheme": "blue",
+      "wave": "crest",
+      "eyebrow": "Partner with us",
+      "headline": "Better outcomes, together.",
+      "subtitle": "We partner with EHR vendors, home health networks, therapy practices, and research institutions to embed objective functional assessment where it matters most.",
+      "primaryCtaText": "Become a partner",
+      "primaryCtaLink": "/contact",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "Partners" }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "light",
+      "headline": "Integration partners",
+      "description": "Able Assess connects to your existing tech stack through HL7 and FHIR-compliant APIs. We integrate with major EHR platforms including PointClickCare, MatrixCare, and Epic, ensuring assessment data flows seamlessly into your clinical workflows.",
+      "imagePosition": "right",
+      "bulletPoints": [
+        { "text": "HL7 and FHIR compliant APIs" },
+        { "text": "PointClickCare, MatrixCare, Epic integrations" },
+        { "text": "Webhook and batch data export options" },
+        { "text": "Dedicated integration engineering support" }
+      ],
+      "ctaText": "View integration docs",
+      "ctaLink": "/contact"
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "light",
+      "headline": "Channel partners",
+      "description": "Distribute Able Assess alongside your existing products and services. Our channel partner programme includes training, co-marketing support, and competitive margins.",
+      "imagePosition": "left",
+      "bulletPoints": [
+        { "text": "White-label options available" },
+        { "text": "Co-marketing and lead sharing" },
+        { "text": "Dedicated partner success manager" },
+        { "text": "Competitive margin structure" }
+      ],
+      "ctaText": "Apply to the partner programme",
+      "ctaLink": "/contact"
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "heading": "Let's explore a partnership.",
+      "bodyText": "Tell us about your organisation and how Able Assess could fit. We'll arrange a call within 48 hours.",
+      "primaryCtaText": "Get in touch",
+      "primaryCtaLink": "/contact"
+    }
+  ]
+}

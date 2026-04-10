@@ -1,0 +1,118 @@
+{
+  "title": "About Able Care",
+  "slug": "about",
+  "seo": {
+    "title": "About Able Care — Science-Led, Impact-Driven | Able Care",
+    "description": "Able Care is the falls prevention platform commercialised out of Imperial College London neuroscience research. FDA listed. CE marked. ISO 27001 certified.",
+    "ogImage": "/images/og-about.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Company", "href": "/company" },
+        { "label": "About", "href": "/company/about" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "light",
+      "waveStyle": "crest",
+      "backgroundImage": "/images/heroes/hero-image-gray-hair-min.jpg",
+      "eyebrow": "About Able Care",
+      "headline": "Science-led. Impact-driven.",
+      "subtitle": "Able Care is the falls prevention platform for operators and clinicians who need objective, standardised falls risk screening across every site. Commercialised out of Imperial College London neuroscience research.",
+      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
+      "secondaryCta": { "label": "Meet the Team", "href": "#team" }
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "From Imperial College to the frontline",
+      "body": "Able Care was born from neuroscience research at Imperial College London. The founding team saw that functional health measurement was stuck in the analogue era: subjective, inconsistent, and disconnected from care workflows. They built a digital platform that captures four clinically validated metrics in under five minutes, usable by non-clinical staff, defensible to payers and regulators, and scalable across multi-site operations.",
+      "imageSide": "right",
+      "imageAlt": "Imperial College London campus where Able Care research originated",
+      "imageSrc": "/images/product/gripable-on-platform-min.jpg"
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "The problem we solve",
+      "body": "Falls are the leading cause of injury-related death in adults over 65. Paper-based assessments are slow, subjective, and rarely standardised across sites. Fall detection technology looks at falls after they happen. Able Care sits upstream, screening every resident or client objectively and handing operators a standardised workflow they can roll out everywhere.",
+      "imageSide": "left",
+      "imageAlt": "Diagram showing Able Care's upstream prevention approach",
+      "imageSrc": "/images/features/Able-Care-Product-Continuum-2-min.png"
+    },
+    {
+      "_template": "teamGrid",
+      "heading": "Leadership",
+      "id": "team",
+      "members": [
+        {
+          "name": "Dr Nabil Belbachir",
+          "role": "Co-Founder & CEO",
+          "credentials": "",
+          "bio": "Leads Able Care's commercial strategy and market expansion across the US and UK. Background in healthcare technology and digital health commercialisation.",
+          "imageSrc": "/images/team/nabil-belbachir.jpg"
+        },
+        {
+          "name": "Dr Catriona Kelly",
+          "role": "Clinical Lead",
+          "credentials": "",
+          "bio": "Leads the clinical strategy and evidence programme. Ensures every product decision is grounded in peer-reviewed research and clinical best practice.",
+          "imageSrc": "/images/team/catriona-kelly.jpg"
+        },
+        {
+          "name": "Dr Paul Rinne",
+          "role": "Co-Founder & CTO",
+          "credentials": "",
+          "bio": "Leads the engineering and product team. Background in neuroscience and biomedical engineering at Imperial College London.",
+          "imageSrc": "/images/team/dr-paul-rinne.jpg"
+        },
+        {
+          "name": "Clinical Advisory Board",
+          "role": "Research & Evidence",
+          "credentials": "",
+          "bio": "A panel of geriatricians, physiotherapists and researchers who review and validate the clinical evidence behind every Able Care product and protocol.",
+          "imageSrc": "/images/team/advisory-board.jpg"
+        }
+      ]
+    },
+    {
+      "_template": "trustCertBlock",
+      "heading": "Certifications and regulatory posture",
+      "badges": [
+        { "label": "FDA listed", "icon": "fda" },
+        { "label": "CE marked", "icon": "ce" },
+        { "label": "ISO 27001", "icon": "iso" },
+        { "label": "HIPAA aligned", "icon": "hipaa" },
+        { "label": "GDPR compliant", "icon": "gdpr" },
+        { "label": "NICE 2025 aligned", "icon": "nice" }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "heading": "By the numbers",
+      "colorScheme": "light",
+      "stats": [
+        { "value": "4", "label": "Validated metrics" },
+        { "value": "< 5 min", "label": "Per assessment" },
+        { "value": "12", "label": "Peer-reviewed studies" },
+        { "value": "1,000+", "label": "Assessments delivered" }
+      ]
+    },
+    {
+      "_template": "partnerLogoCarousel",
+      "heading": "Trusted by Leading Organizations",
+      "scheme": "white"
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See Able Assess in your workflow.",
+      "body": "20 minutes with a clinician who has run it in the field.",
+      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
+      "secondaryCta": { "label": "Browse the Research Library", "href": "/resources/research-library" }
+    }
+  ]
+}

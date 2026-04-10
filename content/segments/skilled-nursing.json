@@ -1,0 +1,130 @@
+{
+  "title": "Falls Prevention for Skilled Nursing Facilities",
+  "slug": "skilled-nursing",
+  "seo": {
+    "title": "Falls Prevention for Skilled Nursing | Able Care",
+    "description": "Protect Five-Star ratings. Defend VBP performance. Reduce rehospitalisation. Objective falls screening for skilled nursing facilities in under five minutes.",
+    "ogImage": "/images/og-skilled-nursing.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Skilled Nursing", "href": "/skilled-nursing" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Skilled Nursing Facilities",
+      "headline": "Falls prevention for skilled nursing.",
+      "subtitle": "Protect Five-Star ratings. Defend VBP performance. Reduce rehospitalisation. Objective, standardised falls screening in under five minutes, usable by any member of staff.",
+      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
+      "secondaryCta": { "label": "Download the SNF Guide", "href": "/resources/buyers-guide" }
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Four metrics that protect your ratings",
+      "metrics": [
+        {
+          "name": "Grip strength",
+          "description": "Upper-body strength proxy. Low grip strength predicts falls, rehospitalisation and functional decline in SNF residents."
+        },
+        {
+          "name": "Sit-to-stand",
+          "description": "Lower-limb power and balance. A key predictor of discharge readiness and safe transfer ability."
+        },
+        {
+          "name": "Gait speed",
+          "description": "The 'sixth vital sign.' Linked to rehospitalisation risk, length of stay and VBP outcomes."
+        },
+        {
+          "name": "Timed Up and Go",
+          "description": "Falls risk assessment in under a minute. Validated in skilled nursing and rehabilitation settings."
+        }
+      ]
+    },
+    {
+      "_template": "processSteps",
+      "heading": "How it works in skilled nursing",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Admit screening",
+          "description": "Run a five-minute Able Assess screening on admission. Establish baseline functional status objectively."
+        },
+        {
+          "number": 2,
+          "title": "Risk stratification",
+          "description": "Automatic risk banding against normative data. High-risk residents are flagged for intervention immediately."
+        },
+        {
+          "number": 3,
+          "title": "Ongoing monitoring",
+          "description": "Re-screen at defined intervals. Longitudinal trends surface decline before it becomes a fall or a rehospitalisation."
+        },
+        {
+          "number": 4,
+          "title": "Outcome reporting",
+          "description": "Objective data feeds Five-Star, VBP and regulatory reporting. Defensible to surveyors, payers and families."
+        }
+      ]
+    },
+    {
+      "_template": "testimonialCarousel",
+      "colorScheme": "aqua",
+      "testimonials": [
+        {
+          "quote": "We caught decline six weeks earlier than we would have with our old process.",
+          "attribution": "Clinical Director, US skilled nursing facility"
+        },
+        {
+          "quote": "The objective data gave us something defensible to show surveyors. That alone was worth the investment.",
+          "attribution": "Director of Nursing, multi-site SNF operator"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Common questions from skilled nursing operators",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "How does Able Assess help protect Five-Star ratings?",
+          "answer": "Falls outcomes feed quality measures that directly impact Five-Star ratings. Objective screening identifies at-risk residents earlier, enabling timely intervention before falls occur and protecting your quality scores."
+        },
+        {
+          "question": "Can CNAs run the screening?",
+          "answer": "Yes. Able Assess was built for non-clinical staff. The workflow guides them through every step. No certification or training course required."
+        },
+        {
+          "question": "How does it integrate with our existing EHR?",
+          "answer": "Able Assess is integration-ready with major EHR platforms. The clinical team can walk you through the setup during a demo."
+        },
+        {
+          "question": "What about residents who cannot stand?",
+          "answer": "Grip strength can be assessed seated or supine. The workflow adapts to the resident's ability level while still providing objective, comparable data."
+        },
+        {
+          "question": "How quickly can we deploy across multiple facilities?",
+          "answer": "Most multi-site operators deploy in under 30 days. One standardised protocol means minimal training overhead at each site."
+        },
+        {
+          "question": "What does it cost?",
+          "answer": "Pricing is based on facility count and assessment volume. The ROI calculator models payback against one reduced fall per facility per month. Book a demo to discuss your specific scenario."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See Able Assess in your skilled nursing workflow.",
+      "body": "20 minutes with a clinician who has deployed it in SNF settings.",
+      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
+      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+    }
+  ]
+}

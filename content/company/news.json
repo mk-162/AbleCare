@@ -1,0 +1,32 @@
+{
+  "title": "News | Able Care in the Press",
+  "description": "Latest news, press releases, and media coverage about Able Care and our falls prevention technology.",
+  "primaryKeyword": "able care news",
+  "blocks": [
+    {
+      "_template": "hero",
+      "scheme": "light",
+      "wave": "crest",
+      "eyebrow": "Newsroom",
+      "headline": "What's happening at Able Care.",
+      "subtitle": "Press releases, product updates, and industry commentary from the Able Care team.",
+      "breadcrumb": [
+        { "label": "Home", "href": "/" },
+        { "label": "News" }
+      ]
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Recent News</h2><p>Check back soon for the latest updates from Able Care. For press enquiries, contact <a href='mailto:press@able-care.co'>press@able-care.co</a>.</p>"
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "heading": "Stay in the loop.",
+      "bodyText": "Subscribe to our newsletter for product updates, clinical insights, and industry news.",
+      "primaryCtaText": "Subscribe",
+      "primaryCtaLink": "/contact"
+    }
+  ]
+}

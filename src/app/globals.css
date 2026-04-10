@@ -1,26 +1,159 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ─── Able Care Brand Tokens ──────────────────────────────────────────────── */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ac-blue: #1432FF;
+  --color-ac-aqua: #00FFD2;
+  --color-ac-grey: #DCDCDC;
+  --color-ac-black: #191919;
+  --color-ac-white: #FFFFFF;
+
+  --color-background: var(--color-ac-grey);
+  --color-foreground: var(--color-ac-black);
+  --color-primary: var(--color-ac-blue);
+  --color-secondary: var(--color-ac-aqua);
+
+  --font-sans: "DM Sans", "Arial", sans-serif;
+
+  --radius: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #DCDCDC;
+  --foreground: #191919;
 }
+
+/* ─── Base Reset ──────────────────────────────────────────────────────────── */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ─── Able Care Utility Classes ───────────────────────────────────────────── */
+
+.bg-ac-blue { background-color: var(--color-ac-blue); }
+.bg-ac-aqua { background-color: var(--color-ac-aqua); }
+.bg-ac-grey { background-color: var(--color-ac-grey); }
+.bg-ac-black { background-color: var(--color-ac-black); }
+.bg-ac-white { background-color: var(--color-ac-white); }
+
+.text-ac-blue { color: var(--color-ac-blue); }
+.text-ac-aqua { color: var(--color-ac-aqua); }
+.text-ac-black { color: var(--color-ac-black); }
+.text-ac-white { color: var(--color-ac-white); }
+
+/* ─── Elevation System ────────────────────────────────────────────────────── */
+
+.hover-elevate {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.hover-elevate:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ─── Body Copy Max Width ─────────────────────────────────────────────────── */
+
+.prose-body {
+  max-width: 70ch;
+}
+
+/* ─── Article Typography ─────────────────────────────────────────────────── */
+
+.article-prose h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  color: var(--color-ac-black);
+}
+
+.article-prose h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  color: var(--color-ac-black);
+}
+
+.article-prose p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  color: rgba(25, 25, 25, 0.8);
+}
+
+.article-prose ul,
+.article-prose ol {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.article-prose ul {
+  list-style-type: disc;
+}
+
+.article-prose ol {
+  list-style-type: decimal;
+}
+
+.article-prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+  color: rgba(25, 25, 25, 0.8);
+}
+
+.article-prose blockquote {
+  border-left: 3px solid var(--color-ac-blue);
+  padding-left: 1.25rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: rgba(25, 25, 25, 0.7);
+}
+
+.article-prose a {
+  color: #191919 !important;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(25, 25, 25, 0.3) !important;
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.article-prose a:hover {
+  color: #1432FF !important;
+  text-decoration-color: #1432FF !important;
+}
+
+.article-prose > *:first-child {
+  margin-top: 0;
+}
+
+/* ─── Partner Logo Carousel ─────────────────────────────────────────────── */
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 40s linear infinite;
+}
+
+.animate-scroll-left:hover {
+  animation-play-state: paused;
 }

@@ -1,0 +1,201 @@
+{
+  "title": "Research Library",
+  "slug": "research-library",
+  "description": "Peer-reviewed research linking grip strength, functional health and multifactorial screening to falls, frailty, mortality and clinical outcomes. The evidence base behind Able Assess.",
+  "seo": {
+    "title": "Research Library | Able Care",
+    "description": "Peer-reviewed research linking grip strength and functional health to falls, frailty, mortality and clinical outcomes. Browse the evidence base behind Able Assess.",
+    "ogImage": "/images/og-research-library.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "Research Library", "href": "/resources/research-library" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "scheme": "light",
+      "wave": "ribbon",
+      "eyebrow": "Research Library",
+      "headline": "Every claim backed by the evidence.",
+      "subtitle": "Browse the peer-reviewed research behind Able Assess. Grip strength, functional health, falls prevention, frailty, sarcopenia and clinical outcomes, all in one place.",
+      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaLink": "/contact/",
+      "secondaryCtaText": "Download the Research Summary",
+      "secondaryCtaLink": "/resources/buyers-guide/"
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Why the research matters",
+      "body": "Able Assess is built on four clinically validated metrics: grip strength, sit-to-stand, gait speed and Timed Up and Go. Each metric is supported by decades of peer-reviewed research linking it to falls risk, frailty, hospitalisation and mortality.\n\nMultifactorial screening, combining strength, balance and gait measures, outperforms single-test approaches. Objective, standardised capture removes inter-rater variability and gives operators, clinicians and payers a defensible data trail.\n\nThe studies below are grouped by outcome domain. Every claim on the Able Care website traces back to this library."
+    },
+    {
+      "_template": "evidenceBlock",
+      "scheme": "light",
+      "heading": "GripAble device validation",
+      "pulledStat": "GripAble has excellent inter-instrument reliability with Jamar, the incumbent gold standard.",
+      "pulledStatSource": "BMC Musculoskeletal Disorders, 2022",
+      "citations": [
+        {
+          "title": "Remote, Reliable, Repeatable: Real-World Test, Retest Validation of Hand Grip Strength Assessments",
+          "journal": "Research Square (Preprint)",
+          "year": "2025",
+          "finding": "Remote grip strength assessment with GripAble shows high reliability in real-world settings.",
+          "link": "https://www.researchsquare.com/article/rs-6801648/v1"
+        },
+        {
+          "title": "GripAble has excellent test-retest reliability with Jamar",
+          "journal": "Hand Therapy",
+          "year": "2025",
+          "finding": "GripAble demonstrates excellent test-retest reliability compared to the Jamar dynamometer.",
+          "link": "https://journals.sagepub.com/doi/10.1177/17589983251322537"
+        },
+        {
+          "title": "Test-Retest Reliability and Precision of GripAble, A Multi-Purpose Exergaming Device",
+          "journal": "Games for Health Journal",
+          "year": "2025",
+          "finding": "GripAble's reliability to assess maximal hand grip strength is confirmed in controlled contexts.",
+          "link": "https://www.liebertpub.com/doi/10.1089/g4h.2024.0216"
+        },
+        {
+          "title": "Interrater Reliability and Precision of a Novel Hand Strength Assessment and Treatment Device: The GripAble",
+          "journal": "The American Journal of Occupational Therapy",
+          "year": "2024",
+          "finding": "GripAble offers accuracy and reliability suitable for occupational therapy practitioners.",
+          "link": "https://doi.org/10.5014/ajot.2024.050689"
+        },
+        {
+          "title": "GripAble: Interrater Reliability and Normative Grip Strength of UK Population",
+          "journal": "Journal of Hand Therapy",
+          "year": "2024",
+          "finding": "Normative reference values established for UK adults using GripAble, enabling population-level comparison.",
+          "link": "https://www.jhandtherapy.org/article/S0894-1130(23)00201-6/fulltext"
+        },
+        {
+          "title": "Modernising grip dynamometry: Inter-instrument reliability between GripAble and Jamar",
+          "journal": "BMC Musculoskeletal Disorders",
+          "year": "2022",
+          "finding": "GripAble has good-to-excellent inter-instrument reliability compared to Jamar Plus+.",
+          "link": "https://bmcmusculoskeletdisord.biomedcentral.com/articles/10.1186/s12891-022-05026-0"
+        },
+        {
+          "title": "GripAble: An Accurate, Sensitive and Robust Digital Device for Measuring Grip Strength",
+          "journal": "Journal of Rehabilitation and Assistive Technologies Engineering",
+          "year": "2022",
+          "finding": "GripAble is a highly robust, accurate, reliable grip strength dynamometer for clinical and research use.",
+          "link": "https://journals.sagepub.com/doi/10.1177/20556683221078455"
+        }
+      ]
+    },
+    {
+      "_template": "evidenceBlock",
+      "scheme": "light",
+      "heading": "Why is functional health assessment important?",
+      "pulledStat": "Functionally impaired patients face up to 42% higher readmission risk and 77% higher post-discharge costs.",
+      "pulledStatSource": "JAMA Internal Medicine, 2015",
+      "citations": [
+        {
+          "title": "Functional Status and Readmissions",
+          "journal": "JAMA Internal Medicine",
+          "year": "2015",
+          "finding": "Functionally impaired patients face up to 42% higher readmission risk.",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/25642907/"
+        },
+        {
+          "title": "Functional Impairment and Post-Discharge Costs",
+          "journal": "Journal of the American Geriatrics Society",
+          "year": "2017",
+          "finding": "Functionally impaired patients pay 77% higher post-discharge costs.",
+          "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5603365/"
+        },
+        {
+          "title": "Functional Decline in Medicare Patients",
+          "journal": "European Heart Journal",
+          "year": "2021",
+          "finding": "Functional decline impacts over half of Medicare patients, significantly increasing healthcare utilisation.",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/34324648/"
+        },
+        {
+          "title": "Functional Independence Limitations and Healthcare Costs",
+          "journal": "BMC Geriatrics",
+          "year": "2022",
+          "finding": "Functional independence limitations cost US healthcare $24,000 per patient annually.",
+          "link": "https://bmcgeriatr.biomedcentral.com/articles/10.1186/s12877-022-03466-w"
+        },
+        {
+          "title": "Cost-effectiveness of a physical activity programme on functional mobility decline in older adults",
+          "journal": "The Lancet Public Health",
+          "year": "2022",
+          "finding": "Prevention programmes give a 0.04 QALY health benefit, demonstrating cost-effectiveness of functional health interventions.",
+          "link": "https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(22)00030-5/fulltext"
+        }
+      ]
+    },
+    {
+      "_template": "evidenceBlock",
+      "scheme": "light",
+      "heading": "Why does grip strength matter?",
+      "pulledStat": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
+      "pulledStatSource": "Lancet, 2015",
+      "citations": [
+        {
+          "title": "Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study",
+          "journal": "The Lancet",
+          "year": "2015",
+          "finding": "Grip strength was a stronger predictor of all-cause and cardiovascular mortality than systolic blood pressure across 17 countries.",
+          "link": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(14)62000-6/fulltext"
+        },
+        {
+          "title": "Grip Strength: An Indispensable Biomarker For Older Adults",
+          "journal": "Clinical Interventions in Aging",
+          "year": "2019",
+          "finding": "Grip strength is an indispensable biomarker for predicting outcomes in older adults across multiple health domains.",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/31631989/"
+        },
+        {
+          "title": "Grip strength and mortality: a biomarker of ageing?",
+          "journal": "The Lancet",
+          "year": "2015",
+          "finding": "Grip strength serves as a biomarker of biological ageing, predicting mortality across all age groups.",
+          "link": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(14)62349-7/abstract"
+        },
+        {
+          "title": "Hand grip strength as a proposed new vital sign of health: a narrative review",
+          "journal": "Journal of Health and Population Nutrition",
+          "year": "2024",
+          "finding": "Grip strength proposed as a new vital sign of health, with evidence supporting its role across the lifespan.",
+          "link": "https://jhpn.biomedcentral.com/articles/10.1186/s41043-024-00500-y"
+        },
+        {
+          "title": "Handgrip strength and health outcomes: Umbrella review of systematic reviews with meta-analyses",
+          "journal": "Journal of Sport and Health Science",
+          "year": "2021",
+          "finding": "Comprehensive meta-analysis confirming grip strength predicts cardiovascular disease, cancer, respiratory disease and all-cause mortality.",
+          "link": "https://www.sciencedirect.com/science/article/pii/S2095254620300752"
+        },
+        {
+          "title": "Multifactorial falls risk screening outperforms single-test approaches",
+          "journal": "BMJ",
+          "year": "2022",
+          "finding": "Multifactorial assessment combining strength, balance and gait measures identified significantly more at-risk older adults than any single screening tool."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "heading": "Talk to the clinical team about the evidence.",
+      "bodyText": "Our clinical team can walk you through the research and how it applies to your setting.",
+      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaLink": "/contact/",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide/"
+    }
+  ]
+}

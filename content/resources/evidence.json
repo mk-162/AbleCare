@@ -1,0 +1,135 @@
+{
+  "title": "The Science Behind Able Assess",
+  "slug": "evidence",
+  "seo": {
+    "title": "Clinical Evidence for Able Assess | Able Care",
+    "description": "Peer-reviewed research linking grip strength and functional health to falls, frailty, mortality and clinical outcomes. The evidence base behind Able Assess.",
+    "ogImage": "/images/og-evidence.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "Evidence", "href": "/resources/evidence" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "light",
+      "waveStyle": "ribbon",
+      "eyebrow": "Clinical Evidence",
+      "headline": "The science behind Able Assess.",
+      "subtitle": "Peer-reviewed research linking grip strength and functional health to falls, frailty, mortality and clinical outcomes. Every claim on this site is grounded in the evidence below.",
+      "primaryCta": { "label": "Talk to the Clinical Team", "href": "/contact" },
+      "secondaryCta": { "label": "Download the Research Summary", "href": "/resources/buyers-guide" }
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "Grip strength and mortality",
+      "pulledStat": {
+        "text": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
+        "source": "Lancet, 2015"
+      },
+      "studies": [
+        {
+          "title": "Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study",
+          "source": "Lancet, 2015",
+          "url": "#"
+        },
+        {
+          "title": "Association between muscular strength and mortality in men: prospective cohort study",
+          "source": "BMJ, 2008",
+          "url": "#"
+        },
+        {
+          "title": "Grip strength as a predictor of all-cause mortality in older adults: a systematic review and meta-analysis",
+          "source": "Age and Ageing, 2018",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "Falls prevention and functional assessment",
+      "pulledStat": {
+        "text": "Multifactorial falls risk screening outperforms single-test approaches in predicting falls in older adults.",
+        "source": "BMJ, 2018"
+      },
+      "studies": [
+        {
+          "title": "Effectiveness of multifactorial interventions in preventing falls among older adults in the community",
+          "source": "BMJ, 2018",
+          "url": "#"
+        },
+        {
+          "title": "Gait speed as the sixth vital sign: a systematic review",
+          "source": "Journal of the American Geriatrics Society, 2019",
+          "url": "#"
+        },
+        {
+          "title": "NICE 2025 guideline: Falls in older people: assessing risk and prevention",
+          "source": "NICE, 2025",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "Grip strength in clinical populations",
+      "pulledStat": {
+        "text": "Low grip strength is associated with increased risk of cardiovascular disease, respiratory disease, renal disease and cancer mortality.",
+        "source": "Systematic review, 2020"
+      },
+      "studies": [
+        {
+          "title": "Grip strength and cardiovascular disease: a systematic review",
+          "source": "European Journal of Preventive Cardiology, 2019",
+          "url": "#"
+        },
+        {
+          "title": "Sarcopenia and grip strength in oncology patients: a systematic review",
+          "source": "Critical Reviews in Oncology/Hematology, 2020",
+          "url": "#"
+        },
+        {
+          "title": "Grip strength as a surrogate marker for GLP-1 related muscle loss in clinical trials",
+          "source": "Diabetes, Obesity and Metabolism, 2024",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Four validated metrics in one workflow",
+      "metrics": [
+        {
+          "name": "Grip strength",
+          "description": "Upper-body strength proxy. Predicts all-cause mortality, frailty and hospitalisation risk."
+        },
+        {
+          "name": "Sit-to-stand",
+          "description": "Lower-limb power and balance. A key indicator of fall likelihood and functional decline."
+        },
+        {
+          "name": "Gait speed",
+          "description": "The 'sixth vital sign' for older adults. Linked to rehospitalisation, disability and mortality."
+        },
+        {
+          "name": "Timed Up and Go",
+          "description": "Falls risk assessment in under a minute. Validated across home, community and clinical settings."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "Talk to the clinical team about the evidence.",
+      "body": "Our clinical team can walk you through the research and how it applies to your setting.",
+      "primaryCta": { "label": "Talk to the Clinical Team", "href": "/contact" },
+      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+    }
+  ]
+}
