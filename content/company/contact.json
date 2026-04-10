@@ -49,6 +49,7 @@
       "_template": "ctaBanner",
       "scheme": "blue",
       "wave": "ribbon",
+      "waveFill": "#FFFFFF",
       "heading": "Prefer email?",
       "bodyText": "Drop us a line at hello@able-care.co and we will get back to you within one working day.",
       "primaryCtaText": "Email us",

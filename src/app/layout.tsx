@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { BackToTop } from "@/components/ui/BackToTop";
+import { PasswordGate } from "@/components/ui/PasswordGate";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -29,10 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans bg-ac-grey text-ac-black">
-        <SiteHeader />
-        <main className="flex-grow">{children}</main>
-        <SiteFooter />
-        <BackToTop />
+        <PasswordGate>
+          <SiteHeader />
+          <main className="flex-grow">{children}</main>
+          <SiteFooter />
+          <BackToTop />
+        </PasswordGate>
       </body>
     </html>
   );

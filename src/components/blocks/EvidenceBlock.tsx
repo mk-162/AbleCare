@@ -34,7 +34,7 @@ export function EvidenceBlock({ scheme = "light", heading, pulledStat, pulledSta
             {pulledStat && (
               <div className="p-8 bg-ac-blue text-white rounded-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-ac-aqua/20 rounded-full blur-3xl -mr-10 -mt-10" />
-                <div className="text-5xl font-bold text-ac-aqua mb-4">{pulledStat}</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-ac-aqua mb-4 leading-snug">{pulledStat}</div>
                 {pulledStatSource && <p className="text-sm font-medium opacity-80">— {pulledStatSource}</p>}
               </div>
             )}

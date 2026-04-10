@@ -7,7 +7,8 @@
       "_template": "hero",
       "scheme": "light",
       "wave": "crest",
-      "backgroundImage": "/images/features/holding-hands-solid-bg-min.jpg",
+      "backgroundImage": "/images/photos/clinical/patient-therapist-laughing.jpg",
+      "backgroundImageAlt": "Patient and therapist sharing a laugh during assessment",
       "eyebrow": "Our people",
       "headline": "Built by clinicians. Scaled by engineers.",
       "subtitle": "Able Care was founded at Imperial College London by researchers who saw the gap between what clinical science knows about falls and what frontline care teams can actually measure."

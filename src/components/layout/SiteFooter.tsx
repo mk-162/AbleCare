@@ -158,11 +158,11 @@ export function SiteFooter() {
           <div className="flex items-center gap-4">
             <Link href="/" className="shrink-0">
               <Image
-                src="/images/able-care-logo.png"
+                src="/images/able-care-icon-white.svg"
                 alt="Able Care Logo"
-                width={100}
+                width={32}
                 height={32}
-                className="h-8 w-auto brightness-0 invert"
+                className="h-8 w-auto"
               />
             </Link>
             <p className="text-ac-grey/50 text-sm font-light">

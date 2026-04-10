@@ -79,7 +79,7 @@ export function Hero({
               {eyebrow}
             </div>
           )}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight mb-6">
             {headline}
           </h1>
           {subtitle && (

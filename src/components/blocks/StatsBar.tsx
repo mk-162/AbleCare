@@ -8,6 +8,18 @@ interface StatsBarProps {
   stats?: Array<{ value: string; label: string; sublabel?: string }>;
 }
 
+function StatValue({ value }: { value: string }) {
+  const match = value.match(/^([<>≤≥]?\s*\d[\d,.]*)(\s*)(\D+)$/);
+  if (!match) return <>{value}</>;
+  const [, num, , unit] = match;
+  return (
+    <>
+      {num}
+      <span className="text-[0.45em] ml-1 align-baseline font-bold">{unit}</span>
+    </>
+  );
+}
+
 export function StatsBar({ scheme = "light", heading, stats }: StatsBarProps) {
   const isBlue = scheme === "blue";
   const bgClass = isBlue ? "bg-ac-blue" : scheme === "aqua" ? "bg-ac-aqua" : scheme === "grey" ? "bg-ac-grey" : "bg-white";
@@ -47,7 +59,7 @@ export function StatsBar({ scheme = "light", heading, stats }: StatsBarProps) {
               className="text-center flex flex-col items-center"
             >
               <span className={`text-5xl md:text-6xl lg:text-7xl font-bold leading-none mb-2 ${valueClass}`}>
-                {stat.value}
+                <StatValue value={stat.value} />
               </span>
               <span className={`text-base font-bold mb-1 ${metaClass}`}>{stat.label}</span>
               {stat.sublabel && <span className={`text-xs font-light ${subClass}`}>{stat.sublabel}</span>}

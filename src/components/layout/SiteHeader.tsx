@@ -21,31 +21,26 @@ const solutionsMenu = {
 
 const segmentsMenu = {
   homeCare: [
-    { label: "Home Care Agencies", href: "/home-care" },
-    { label: "Senior Living", href: "/senior-living" },
+    { label: "Home Care Agencies", href: "/home-care", desc: "Reduce hospitalisations and hit HHVBP targets." },
+    { label: "Senior Living", href: "/senior-living", desc: "Protect residents, occupancy and NOI." },
   ],
   clinical: [
-    { label: "Skilled Nursing", href: "/skilled-nursing" },
-    { label: "Clinicians & Researchers", href: "/clinicians" },
-    { label: "Pharma & CROs", href: "/pharma" },
+    { label: "Skilled Nursing", href: "/skilled-nursing", desc: "Standardised screening across every facility." },
+    { label: "Clinicians & Researchers", href: "/clinicians", desc: "Objective metrics in the flow of care." },
+    { label: "Pharma & CROs", href: "/pharma", desc: "Digital endpoints for clinical trials." },
   ],
 };
 
-const compareItems = [
-  { label: "Able Assess vs Paper", href: "/compare/vs-manual-assessments" },
-  { label: "Best Falls Prevention 2026", href: "/compare/best-2026" },
-];
-
 const resourcesMenu = {
   learn: [
-    { label: "Blog", href: "/blog" },
-    { label: "Grip Strength Guide", href: "/blog/grip-strength" },
-    { label: "Falls Risk Assessment", href: "/blog/falls-risk-assessment" },
+    { label: "Blog", href: "/blog", desc: "Insights on falls prevention and functional assessment." },
+    { label: "Research Library", href: "/resources/evidence", desc: "Peer-reviewed evidence behind Able Assess." },
+    { label: "Case Studies", href: "/resources/case-studies", desc: "Real results from real organisations." },
   ],
-  evidence: [
-    { label: "Research Library", href: "/resources/evidence" },
-    { label: "Case Studies", href: "/resources/case-studies" },
-    { label: "Buyers Guide", href: "/resources/buyers-guide" },
+  tools: [
+    { label: "Buyers Guide", href: "/resources/buyers-guide", desc: "Everything you need to brief procurement." },
+    { label: "Able Assess vs Paper", href: "/compare/vs-manual-assessments", desc: "See how objective screening compares." },
+    { label: "Best Falls Prevention 2026", href: "/compare/best-2026", desc: "How the leading platforms stack up." },
   ],
 };
 
@@ -58,7 +53,7 @@ const companyItems = [
   { label: "Contact", href: "/contact" },
 ];
 
-type MenuKey = "solutions" | "segments" | "compare" | "resources" | "company";
+type MenuKey = "solutions" | "segments" | "resources" | "company";
 
 export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -96,9 +91,9 @@ export function SiteHeader() {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/images/able-care-logo.png"
+              src="/images/able-care-logo-horizontal.svg"
               alt="Able Care Logo"
-              width={140}
+              width={160}
               height={36}
               className="h-8 md:h-9 w-auto"
               priority
@@ -121,7 +116,7 @@ export function SiteHeader() {
                         className="flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity"
                         onClick={() => setOpenMenu(null)}
                       >
-                        <Image src="/images/able-care-logo.png" alt="Able Care" width={100} height={24} className="h-6 w-auto mb-2 brightness-0 invert" />
+                        <Image src="/images/able-care-logo-horizontal-white.svg" alt="Able Care" width={100} height={24} className="h-6 w-auto mb-2" />
                         <div className="mb-2 mt-4 text-lg font-bold text-white">Able Assess</div>
                         <p className="text-sm leading-tight text-white/90 font-light">Four validated metrics in under five minutes.</p>
                       </Link>
@@ -137,55 +132,29 @@ export function SiteHeader() {
               )}
             </div>
 
-            {/* Segments dropdown */}
+            {/* Who We Help mega-menu */}
             <div className="relative" onMouseEnter={() => handleMouseEnter("segments")} onMouseLeave={handleMouseLeave}>
               <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors">
-                For <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "segments" ? "rotate-180" : ""}`} />
+                Who We Help <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "segments" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "segments" && (
                 <div className="absolute top-full left-0 w-[520px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="row-span-3">
+                    <div className="row-span-4">
                       <Link
                         href="/home-care"
                         className="flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity"
                         onClick={() => setOpenMenu(null)}
                       >
-                        <div className="mb-2 mt-4 text-lg font-bold text-white">Who We Serve</div>
+                        <Image src="/images/able-care-logo-horizontal-white.svg" alt="Able Care" width={100} height={24} className="h-6 w-auto mb-2" />
+                        <div className="mb-2 mt-4 text-lg font-bold text-white">Who We Help</div>
                         <p className="text-sm leading-tight text-white/90 font-light">Functional health solutions for every care setting.</p>
                       </Link>
                     </div>
                     {[...segmentsMenu.homeCare, ...segmentsMenu.clinical].map((item) => (
                       <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
                         <div className="text-sm font-bold text-ac-black">{item.label}</div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Compare dropdown */}
-            <div className="relative" onMouseEnter={() => handleMouseEnter("compare")} onMouseLeave={handleMouseLeave}>
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors">
-                Compare <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "compare" ? "rotate-180" : ""}`} />
-              </button>
-              {openMenu === "compare" && (
-                <div className="absolute top-full left-0 w-[420px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="row-span-2">
-                      <Link
-                        href="/compare/vs-manual-assessments"
-                        className="flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-black to-ac-blue p-6 hover:opacity-95 transition-opacity"
-                        onClick={() => setOpenMenu(null)}
-                      >
-                        <div className="mb-2 mt-4 text-lg font-bold text-white">Compare</div>
-                        <p className="text-sm leading-tight text-white/90 font-light">See how Able Care stacks up.</p>
-                      </Link>
-                    </div>
-                    {compareItems.map((item) => (
-                      <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
-                        <div className="text-sm font-bold text-ac-black">{item.label}</div>
+                        <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
                       </Link>
                     ))}
                   </div>
@@ -199,24 +168,25 @@ export function SiteHeader() {
                 Resources <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "resources" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "resources" && (
-                <div className="absolute top-full left-0 w-[420px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-ac-black/40 mb-3">Learn</p>
-                      {resourcesMenu.learn.map((item) => (
-                        <Link key={item.href} href={item.href} className="block py-2 text-sm text-ac-black hover:text-ac-blue transition-colors" onClick={() => setOpenMenu(null)}>
-                          {item.label}
-                        </Link>
-                      ))}
+                <div className="absolute top-full left-0 w-[520px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="row-span-4">
+                      <Link
+                        href="/blog"
+                        className="flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity"
+                        onClick={() => setOpenMenu(null)}
+                      >
+                        <Image src="/images/able-care-logo-horizontal-white.svg" alt="Able Care" width={100} height={24} className="h-6 w-auto mb-2" />
+                        <div className="mb-2 mt-4 text-lg font-bold text-white">Resources</div>
+                        <p className="text-sm leading-tight text-white/90 font-light">Research, guides and insights on falls prevention.</p>
+                      </Link>
                     </div>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-ac-black/40 mb-3">Evidence & Tools</p>
-                      {resourcesMenu.evidence.map((item) => (
-                        <Link key={item.href} href={item.href} className="block py-2 text-sm text-ac-black hover:text-ac-blue transition-colors" onClick={() => setOpenMenu(null)}>
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
+                    {[...resourcesMenu.learn, ...resourcesMenu.tools].map((item) => (
+                      <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
+                        <div className="text-sm font-bold text-ac-black">{item.label}</div>
+                        <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
+                      </Link>
+                    ))}
                   </div>
                 </div>
               )}
@@ -228,24 +198,12 @@ export function SiteHeader() {
                 Company <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "company" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "company" && (
-                <div className="absolute top-full right-0 w-[420px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="row-span-3">
-                      <Link
-                        href="/about"
-                        className="flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-aqua to-ac-blue p-6 hover:opacity-95 transition-opacity"
-                        onClick={() => setOpenMenu(null)}
-                      >
-                        <div className="mb-2 mt-4 text-lg font-bold text-white">About Able Care</div>
-                        <p className="text-sm leading-tight text-white/90 font-light">Meet the team behind functional health innovation.</p>
-                      </Link>
-                    </div>
-                    {companyItems.map((item) => (
-                      <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
-                        <div className="text-sm font-bold text-ac-black">{item.label}</div>
-                      </Link>
-                    ))}
-                  </div>
+                <div className="absolute top-full right-0 w-[180px] bg-white shadow-xl rounded-xl border border-black/5 py-2 mt-1">
+                  {companyItems.map((item) => (
+                    <Link key={item.href} href={item.href} className="block px-4 py-2.5 text-sm text-ac-black hover:bg-ac-grey/40 hover:text-ac-blue transition-colors" onClick={() => setOpenMenu(null)}>
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               )}
             </div>
@@ -280,24 +238,17 @@ export function SiteHeader() {
                 ))}
               </MobileAccordion>
 
-              {/* Segments */}
-              <MobileAccordion label="For" expanded={expandedMobileItem} onToggle={setExpandedMobileItem}>
+              {/* Who We Help */}
+              <MobileAccordion label="Who We Help" expanded={expandedMobileItem} onToggle={setExpandedMobileItem}>
                 {[...segmentsMenu.homeCare, ...segmentsMenu.clinical].map((item) => (
-                  <MobileSubLink key={item.href} href={item.href} label={item.label} onClose={closeMobile} />
-                ))}
-              </MobileAccordion>
-
-              {/* Compare */}
-              <MobileAccordion label="Compare" expanded={expandedMobileItem} onToggle={setExpandedMobileItem}>
-                {compareItems.map((item) => (
-                  <MobileSubLink key={item.href} href={item.href} label={item.label} onClose={closeMobile} />
+                  <MobileSubLink key={item.href} href={item.href} label={item.label} desc={item.desc} onClose={closeMobile} />
                 ))}
               </MobileAccordion>
 
               {/* Resources */}
               <MobileAccordion label="Resources" expanded={expandedMobileItem} onToggle={setExpandedMobileItem}>
-                {[...resourcesMenu.learn, ...resourcesMenu.evidence].map((item) => (
-                  <MobileSubLink key={item.href} href={item.href} label={item.label} onClose={closeMobile} />
+                {[...resourcesMenu.learn, ...resourcesMenu.tools].map((item) => (
+                  <MobileSubLink key={item.href} href={item.href} label={item.label} desc={item.desc} onClose={closeMobile} />
                 ))}
               </MobileAccordion>
 

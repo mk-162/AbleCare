@@ -15,7 +15,8 @@
       "_template": "hero",
       "scheme": "blue",
       "wave": "crest",
-      "backgroundImage": "/images/heroes/homepage-hero-image-trimmed-min-new-min-1.png",
+      "backgroundImage": "/images/photos/clinical/therapist-high-five.jpg",
+      "backgroundImageAlt": "Therapist and patient celebrating with a high five during GripAble assessment",
       "eyebrow": "Falls prevention, reimagined",
       "headline": "Keep people strong, steady and independent for life.",
       "subtitle": "The falls prevention platform for home care, senior living and clinical teams. Four objective metrics in under five minutes. Evidence-based. Standardised. Built for scale.",
@@ -118,6 +119,11 @@
           "whyItMatters": "The most widely used clinical falls risk screen. Captures mobility, balance and transfer ability in a single measure."
         }
       ]
+    },
+    {
+      "_template": "partnerLogoCarousel",
+      "heading": "Trusted by Leading Organizations",
+      "scheme": "white"
     },
     {
       "_template": "processSteps",
@@ -297,11 +303,6 @@
           "answer": "Paper assessments are subjective, slow and difficult to standardise across staff. Able Assess captures four objective, peer-reviewed metrics in under five minutes, scores automatically against normative data, and routes results to the care team. No subjective scoring. No inter-rater variability."
         }
       ]
-    },
-    {
-      "_template": "partnerLogoCarousel",
-      "heading": "Trusted by Leading Organizations",
-      "scheme": "white"
     },
     {
       "_template": "ctaBanner",
