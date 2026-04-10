@@ -37,6 +37,7 @@
     },
     {
       "_template": "imageFeature",
+      "scheme": "grey",
       "heading": "The problem we solve",
       "body": "Falls are the leading cause of injury-related death in adults over 65. Paper-based assessments are slow, subjective, and rarely standardised across sites. Fall detection technology looks at falls after they happen. Able Care sits upstream, screening every resident or client objectively and handing operators a standardised workflow they can roll out everywhere.",
       "imageSide": "left",
@@ -93,7 +94,7 @@
     {
       "_template": "statsBar",
       "heading": "By the numbers",
-      "colorScheme": "light",
+      "colorScheme": "aqua",
       "stats": [
         { "value": "4", "label": "Validated metrics" },
         { "value": "< 5 min", "label": "Per assessment" },

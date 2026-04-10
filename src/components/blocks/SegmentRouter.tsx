@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { getSchemeClasses, type ColorScheme } from "@/lib/color-schemes";
 
 interface SegmentRouterProps {
   scheme?: string;
@@ -14,7 +15,7 @@ interface SegmentRouterProps {
   }>;
 }
 
-export function SegmentRouter({ scheme = "grey", heading, segments }: SegmentRouterProps) {
+export function SegmentRouter({ scheme = "light", heading, segments }: SegmentRouterProps) {
   const defaultSegments: Array<{ title: string; description?: string; ctaText?: string; link: string }> = [
     { title: "Home Care", description: "Empower care workers to spot decline before a fall occurs.", link: "/home-care" },
     { title: "Senior Living", description: "Manage population risk proactively across your facilities.", link: "/senior-living" },
@@ -24,7 +25,7 @@ export function SegmentRouter({ scheme = "grey", heading, segments }: SegmentRou
   const items = segments && segments.length > 0 ? segments : defaultSegments;
 
   return (
-    <section className="py-20 md:py-32 bg-ac-grey relative overflow-hidden">
+    <section className={`py-20 md:py-32 relative overflow-hidden ${getSchemeClasses(scheme as ColorScheme)}`}>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-ac-black mb-4">{heading || "Where do you work?"}</h2>

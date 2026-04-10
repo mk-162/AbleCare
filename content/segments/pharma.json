@@ -18,6 +18,8 @@
       "_template": "hero",
       "colorScheme": "blue",
       "waveStyle": "crest",
+      "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
+      "backgroundImageAlt": "Clinician reviewing assessment data on tablet",
       "eyebrow": "Pharma & CROs",
       "headline": "Decentralised functional endpoints for clinical trials.",
       "subtitle": "Objective, remote-capable grip strength and functional health measurement for trials and CRO-led studies. Strong signal for GLP-1 muscle loss monitoring and oncology endpoints.",
@@ -48,6 +50,7 @@
     },
     {
       "_template": "processSteps",
+      "scheme": "grey",
       "heading": "How it works in clinical trials",
       "steps": [
         {
@@ -74,6 +77,7 @@
     },
     {
       "_template": "evidenceBlock",
+      "scheme": "aqua",
       "heading": "The evidence base",
       "pulledStat": {
         "text": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",

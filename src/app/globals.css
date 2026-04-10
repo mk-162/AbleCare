@@ -9,7 +9,7 @@
   --color-ac-black: #191919;
   --color-ac-white: #FFFFFF;
 
-  --color-background: var(--color-ac-grey);
+  --color-background: var(--color-ac-white);
   --color-foreground: var(--color-ac-black);
   --color-primary: var(--color-ac-blue);
   --color-secondary: var(--color-ac-aqua);
@@ -20,7 +20,7 @@
 }
 
 :root {
-  --background: #DCDCDC;
+  --background: #FFFFFF;
   --foreground: #191919;
 }
 

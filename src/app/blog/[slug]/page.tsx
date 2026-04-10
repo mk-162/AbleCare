@@ -33,6 +33,13 @@ export async function generateMetadata({
   return {
     title: data.title,
     description: data.description || data.excerpt,
+    openGraph: {
+      title: data.title,
+      description: data.description || data.excerpt,
+      type: "article",
+      ...(data.featuredImage && { images: [{ url: data.featuredImage }] }),
+      ...(data.publishedDate && { publishedTime: data.publishedDate }),
+    },
   };
 }
 
@@ -55,8 +62,27 @@ export default async function BlogArticlePage({
   const breadcrumbTitle =
     data.title.length > 40 ? data.title.slice(0, 40) + "…" : data.title;
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: data.title,
+    ...(data.description && { description: data.description }),
+    ...(featuredImage && { image: `https://www.able-care.co${featuredImage}` }),
+    ...(data.author && { author: { "@type": "Person", name: data.author } }),
+    ...(data.publishedDate && { datePublished: data.publishedDate }),
+    publisher: {
+      "@type": "Organization",
+      name: "Able Care",
+      logo: { "@type": "ImageObject", url: "https://www.able-care.co/images/able-care-logo.svg" },
+    },
+  };
+
   return (
     <article className="pt-32 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Breadcrumb */}

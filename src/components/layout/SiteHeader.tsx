@@ -49,7 +49,6 @@ const companyItems = [
   { label: "Meet the Team", href: "/meet-the-team" },
   { label: "Customers", href: "/customers" },
   { label: "Partners", href: "/partners" },
-  { label: "News", href: "/news" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -113,12 +112,14 @@ export function SiteHeader() {
                     <div className="row-span-4">
                       <Link
                         href="/solutions/able-assess"
-                        className="flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity"
+                        className="relative flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity overflow-hidden"
                         onClick={() => setOpenMenu(null)}
                       >
-                        <Image src="/images/able-care-logo-horizontal-white.svg" alt="Able Care" width={100} height={24} className="h-6 w-auto mb-2" />
-                        <div className="mb-2 mt-4 text-lg font-bold text-white">Able Assess</div>
+                        <img src="/images/nav-gradient-1.svg" alt="" className="absolute top-0 left-0 w-full h-full object-cover opacity-30 pointer-events-none" />
+                        <div className="relative z-10">
+                        <div className="mb-2 text-lg font-bold text-white">Able Assess</div>
                         <p className="text-sm leading-tight text-white/90 font-light">Four validated metrics in under five minutes.</p>
+                        </div>
                       </Link>
                     </div>
                     {[...solutionsMenu.platform, ...solutionsMenu.capabilities].map((item) => (
@@ -143,12 +144,14 @@ export function SiteHeader() {
                     <div className="row-span-4">
                       <Link
                         href="/home-care"
-                        className="flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity"
+                        className="relative flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity overflow-hidden"
                         onClick={() => setOpenMenu(null)}
                       >
-                        <Image src="/images/able-care-logo-horizontal-white.svg" alt="Able Care" width={100} height={24} className="h-6 w-auto mb-2" />
-                        <div className="mb-2 mt-4 text-lg font-bold text-white">Who We Help</div>
+                        <img src="/images/nav-gradient-2.svg" alt="" className="absolute top-0 left-0 w-full h-full object-cover opacity-30 pointer-events-none" />
+                        <div className="relative z-10">
+                        <div className="mb-2 text-lg font-bold text-white">Who We Help</div>
                         <p className="text-sm leading-tight text-white/90 font-light">Functional health solutions for every care setting.</p>
+                        </div>
                       </Link>
                     </div>
                     {[...segmentsMenu.homeCare, ...segmentsMenu.clinical].map((item) => (
@@ -168,17 +171,19 @@ export function SiteHeader() {
                 Resources <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "resources" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "resources" && (
-                <div className="absolute top-full left-0 w-[520px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
+                <div className="absolute top-full right-0 w-[520px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
                   <div className="grid grid-cols-2 gap-3">
                     <div className="row-span-4">
                       <Link
                         href="/blog"
-                        className="flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity"
+                        className="relative flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity overflow-hidden"
                         onClick={() => setOpenMenu(null)}
                       >
-                        <Image src="/images/able-care-logo-horizontal-white.svg" alt="Able Care" width={100} height={24} className="h-6 w-auto mb-2" />
-                        <div className="mb-2 mt-4 text-lg font-bold text-white">Resources</div>
+                        <img src="/images/nav-gradient-3.svg" alt="" className="absolute top-0 left-0 w-full h-full object-cover opacity-30 pointer-events-none" />
+                        <div className="relative z-10">
+                        <div className="mb-2 text-lg font-bold text-white">Resources</div>
                         <p className="text-sm leading-tight text-white/90 font-light">Research, guides and insights on falls prevention.</p>
+                        </div>
                       </Link>
                     </div>
                     {[...resourcesMenu.learn, ...resourcesMenu.tools].map((item) => (

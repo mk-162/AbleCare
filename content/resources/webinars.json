@@ -20,6 +20,8 @@
       "_template": "hero",
       "scheme": "light",
       "wave": "ribbon",
+      "backgroundImage": "/images/photos/clinical/therapist-gentleman-desk.jpg",
+      "backgroundImageAlt": "Therapist demonstrating assessment at desk",
       "eyebrow": "Webinars",
       "headline": "Learn from the clinical team.",
       "subtitle": "Live and on-demand sessions covering falls prevention evidence, operational rollout, regulatory alignment and product walkthroughs. Practical, evidence-based, no sales pitch.",
@@ -30,7 +32,7 @@
     },
     {
       "_template": "richText",
-      "scheme": "light",
+      "scheme": "aqua",
       "heading": "Upcoming and on-demand webinars",
       "body": "The Able Care clinical and product team runs regular webinars for operators, clinicians and researchers. Each session is designed to be practical: real evidence, real workflows, real questions.\n\nTopics include falls prevention best practice, grip strength in clinical and research settings, HHVBP and VBP alignment, NICE 2025 compliance, rolling out standardised screening across multi-site operations, and product walkthroughs of Able Assess.\n\nAll sessions are recorded. Register for an upcoming webinar or browse the on-demand library below."
     },

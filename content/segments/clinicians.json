@@ -60,6 +60,7 @@
     },
     {
       "_template": "processSteps",
+      "scheme": "grey",
       "heading": "How it works in your clinical workflow",
       "steps": [
         {
@@ -137,7 +138,7 @@
     {
       "_template": "statsBar",
       "heading": "Built on the evidence",
-      "colorScheme": "light",
+      "colorScheme": "aqua",
       "stats": [
         { "value": "4", "label": "Validated metrics" },
         { "value": "< 5 min", "label": "Per assessment" },

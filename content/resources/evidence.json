@@ -19,6 +19,8 @@
       "_template": "hero",
       "colorScheme": "light",
       "waveStyle": "ribbon",
+      "backgroundImage": "/images/photos/clinical/therapist-younger-woman.jpg",
+      "backgroundImageAlt": "Therapist conducting clinical assessment with patient",
       "eyebrow": "Clinical Evidence",
       "headline": "The science behind Able Assess.",
       "subtitle": "Peer-reviewed research linking grip strength and functional health to falls, frailty, mortality and clinical outcomes. Every claim on this site is grounded in the evidence below.",
@@ -27,6 +29,7 @@
     },
     {
       "_template": "evidenceBlock",
+      "scheme": "aqua",
       "heading": "Grip strength and mortality",
       "pulledStat": {
         "text": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
@@ -52,6 +55,7 @@
     },
     {
       "_template": "evidenceBlock",
+      "scheme": "grey",
       "heading": "Falls prevention and functional assessment",
       "pulledStat": {
         "text": "Multifactorial falls risk screening outperforms single-test approaches in predicting falls in older adults.",
@@ -102,6 +106,7 @@
     },
     {
       "_template": "metricsBlock",
+      "scheme": "grey",
       "heading": "Four validated metrics in one workflow",
       "metrics": [
         {

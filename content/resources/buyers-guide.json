@@ -19,6 +19,8 @@
       "_template": "hero",
       "colorScheme": "blue",
       "waveStyle": "crest",
+      "backgroundImage": "/images/photos/studio/woman-reading-brochure.jpg",
+      "backgroundImageAlt": "Woman reading Able Care product brochure",
       "eyebrow": "Free Guide",
       "headline": "The falls prevention buyers guide.",
       "subtitle": "Everything you need to brief procurement on falls prevention technology. 24 pages covering evidence, features, pricing, integration and rollout.",
@@ -35,6 +37,7 @@
     },
     {
       "_template": "processSteps",
+      "scheme": "aqua",
       "heading": "From evaluation to scale in four steps",
       "steps": [
         {

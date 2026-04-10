@@ -11,6 +11,8 @@
       "_template": "hero",
       "colorScheme": "light",
       "waveStyle": "ribbon",
+      "backgroundImage": "/images/photos/studio/gentleman-sensor-studio.jpg",
+      "backgroundImageAlt": "Patient using GripAble grip strength sensor",
       "eyebrow": "2026 Buyers Guide",
       "headline": "Best Falls Prevention Technology 2026",
       "subtitle": "Features, evidence, pricing and fit by segment. An honest comparison.",
@@ -19,6 +21,7 @@
     },
     {
       "_template": "featureComparison",
+      "scheme": "grey",
       "heading": "Able Assess vs traditional falls prevention methods",
       "tldr": "Fall detection tools like SafelyYou respond after a fall happens. Balance training apps like Nymbl push exercises but do not screen risk. Paper assessments take 20+ minutes, are scored subjectively and rarely feed into a care plan. Able Assess screens every resident objectively in under five minutes, stratifies risk automatically and hands the operator a standardised workflow they can roll out to every site.",
       "columns": ["Able Assess", "Paper Assessments", "Fall Detection", "Balance Training"],
@@ -59,6 +62,7 @@
     },
     {
       "_template": "evidenceBlock",
+      "scheme": "aqua",
       "heading": "Backed by the research",
       "pulledStat": {
         "text": "Objective, multifactorial falls risk screening has been shown to reduce falls by 25%.",

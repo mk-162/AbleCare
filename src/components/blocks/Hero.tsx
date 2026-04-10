@@ -7,6 +7,11 @@ import { motion } from "framer-motion";
 import { BrandmarkWatermark } from "@/components/ui/BrandmarkWatermark";
 import { ChevronRight } from "lucide-react";
 
+interface HeroPortrait {
+  src: string;
+  alt: string;
+}
+
 interface HeroProps {
   scheme?: string;
   wave?: string;
@@ -19,6 +24,7 @@ interface HeroProps {
   secondaryCtaLink?: string;
   backgroundImage?: string;
   backgroundImageAlt?: string;
+  heroPortraits?: HeroPortrait[];
   breadcrumb?: Array<{ label: string; href?: string }>;
   waveFill?: string;
 }
@@ -35,8 +41,9 @@ export function Hero({
   secondaryCtaLink,
   backgroundImage,
   backgroundImageAlt = "Functional health assessment in action",
+  heroPortraits,
   breadcrumb,
-  waveFill = "#DCDCDC",
+  waveFill = "#ffffff",
 }: HeroProps) {
   const isBlue = scheme === "blue";
   const isLight = scheme === "light";
@@ -44,13 +51,14 @@ export function Hero({
   const textClass = isBlue ? "text-white" : "text-ac-black";
 
   return (
-    <section className={`relative min-h-[88vh] flex items-stretch overflow-hidden ${bgClass} ${textClass}`}>
+    <section className={`relative overflow-hidden ${bgClass} ${textClass}`}>
       <BrandmarkWatermark
         color="white"
         opacity={0.07}
         className="absolute bottom-[-60px] left-[-40px] w-[520px] z-[1]"
       />
 
+      <div className="relative max-w-[1440px] mx-auto w-full min-h-[88vh] flex items-stretch">
       <div className="relative z-20 flex items-center w-full lg:w-[52%] pt-36 pb-24 px-6 md:px-12 lg:pl-16 lg:pr-0">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -129,14 +137,34 @@ export function Hero({
           </svg>
         </div>
         <div className="absolute inset-0 overflow-hidden">
-          {backgroundImage ? (
+          {heroPortraits && heroPortraits.length > 0 ? (
+            <div className="relative w-full h-full flex items-end justify-center gap-0" style={{ background: "linear-gradient(145deg, #0b1fd4 0%, #1432FF 35%, #00a896 75%, #00FFD2 100%)" }}>
+              <div className="absolute inset-0 opacity-10" style={{ background: "radial-gradient(circle at 70% 30%, white, transparent 60%)" }} />
+              {heroPortraits.map((portrait, i) => (
+                <div
+                  key={i}
+                  className="relative flex-1 h-[85%] max-w-[240px]"
+                  style={{ zIndex: i === 1 ? 3 : 1 }}
+                >
+                  <Image
+                    src={portrait.src}
+                    alt={portrait.alt}
+                    fill
+                    className={`object-cover object-top ${i === 1 ? "scale-105" : ""}`}
+                    priority
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0b1fd4]/40 to-transparent" />
+                </div>
+              ))}
+            </div>
+          ) : backgroundImage ? (
             <>
               <div className={`absolute inset-0 z-[1] ${isBlue ? "bg-gradient-to-r from-ac-blue/55 via-black/20 to-black/5" : "bg-black/10"}`} />
               <Image
                 src={backgroundImage}
                 alt={backgroundImageAlt}
                 fill
-                className="object-cover"
+                className="object-cover object-[center_25%]"
                 priority
               />
             </>
@@ -149,12 +177,16 @@ export function Hero({
         </div>
       </div>
 
-      {backgroundImage && (
+      {(backgroundImage || heroPortraits) && (
         <div className="lg:hidden absolute inset-0 z-0">
           <div className={`absolute inset-0 z-10 ${isBlue ? "bg-ac-blue/88" : "bg-white/88"}`} />
-          <Image src={backgroundImage} alt={backgroundImageAlt} fill className="object-cover" />
+          {backgroundImage && <Image src={backgroundImage} alt={backgroundImageAlt} fill className="object-cover" />}
+          {!backgroundImage && heroPortraits && (
+            <div className="absolute inset-0" style={{ background: "linear-gradient(145deg, #0b1fd4 0%, #1432FF 50%, #00a896 100%)" }} />
+          )}
         </div>
       )}
+      </div>
 
       <div className="absolute left-0 w-full z-30 leading-none" style={{ bottom: "-2px" }} aria-hidden="true">
         <svg viewBox="0 0 1440 82" preserveAspectRatio="none" className="block w-full" style={{ height: "82px" }}>

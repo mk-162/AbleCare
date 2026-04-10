@@ -26,7 +26,7 @@ export function CtaBanner({
   primaryCtaLink = "/contact",
   secondaryCtaText,
   secondaryCtaLink,
-  waveFill = "#DCDCDC",
+  waveFill = "#ffffff",
 }: CtaBannerProps) {
   const isBlue = scheme === "blue";
   const bgColor = isBlue ? "#1432FF" : "#ffffff";
@@ -43,7 +43,7 @@ export function CtaBanner({
         </svg>
       </div>
 
-      <div className="relative" style={{ backgroundColor: bgColor }}>
+      <div className="relative -mt-px" style={{ backgroundColor: bgColor }}>
         {isBlue && (
           <>
             <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-20 pointer-events-none" style={{ background: "radial-gradient(circle at top right, #00FFD2, transparent 70%)" }} />

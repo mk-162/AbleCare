@@ -7,6 +7,8 @@
       "_template": "hero",
       "scheme": "blue",
       "wave": "crest",
+      "backgroundImage": "/images/photos/clinical/hands-fitting-sensor.jpg",
+      "backgroundImageAlt": "Hands fitting GripAble sensor on patient",
       "eyebrow": "Partner with us",
       "headline": "Better outcomes, together.",
       "subtitle": "We partner with EHR vendors, home health networks, therapy practices, and research institutions to embed objective functional assessment where it matters most.",
@@ -19,7 +21,7 @@
     },
     {
       "_template": "imageFeature",
-      "scheme": "light",
+      "scheme": "aqua",
       "headline": "Integration partners",
       "description": "Able Assess connects to your existing tech stack through HL7 and FHIR-compliant APIs. We integrate with major EHR platforms including PointClickCare, MatrixCare, and Epic, ensuring assessment data flows seamlessly into your clinical workflows.",
       "imagePosition": "right",

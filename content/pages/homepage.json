@@ -64,7 +64,7 @@
     },
     {
       "_template": "segmentRouter",
-      "scheme": "grey",
+      "scheme": "light",
       "heading": "Where do you work?",
       "segments": [
         {

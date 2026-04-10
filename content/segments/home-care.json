@@ -60,6 +60,7 @@
     },
     {
       "_template": "processSteps",
+      "scheme": "grey",
       "heading": "How it works in home care",
       "steps": [
         {
@@ -109,7 +110,7 @@
     {
       "_template": "statsBar",
       "heading": "The numbers that matter to home care",
-      "colorScheme": "light",
+      "colorScheme": "aqua",
       "stats": [
         { "value": "25%", "label": "Reduction in falls with objective screening" },
         { "value": "< 5 min", "label": "Per assessment" },
@@ -140,6 +141,7 @@
     },
     {
       "_template": "faqAccordion",
+      "scheme": "grey",
       "heading": "Common questions from home care operators",
       "emitSchema": true,
       "items": [

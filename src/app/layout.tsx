@@ -29,7 +29,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans bg-ac-grey text-ac-black">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Able Care",
+              url: "https://www.able-care.co",
+              logo: "https://www.able-care.co/images/able-care-logo.svg",
+              description:
+                "Digital, objective falls risk screening in under 5 minutes. Trusted by home care, senior living and clinicians across the US and UK.",
+              email: "hello@able-care.co",
+              telephone: "+44 20 7946 0958",
+              sameAs: [
+                "https://linkedin.com/company/able-care",
+                "https://twitter.com/ablecarehealth",
+              ],
+            }),
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col font-sans bg-white text-ac-black">
         <PasswordGate>
           <SiteHeader />
           <main className="flex-grow">{children}</main>

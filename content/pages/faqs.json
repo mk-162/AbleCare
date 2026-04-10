@@ -8,6 +8,8 @@
       "_template": "hero",
       "scheme": "light",
       "wave": "crest",
+      "backgroundImage": "/images/photos/home/gentleman-child-couch.jpg",
+      "backgroundImageAlt": "Elderly gentleman relaxing at home with family",
       "eyebrow": "Support",
       "headline": "Frequently asked questions.",
       "subtitle": "Everything you need to know about Able Assess, from hardware to HIPAA.",
@@ -46,7 +48,7 @@
     },
     {
       "_template": "faqAccordion",
-      "scheme": "grey",
+      "scheme": "aqua",
       "heading": "Integration & Deployment",
       "faqs": [
         {

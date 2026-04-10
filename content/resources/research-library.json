@@ -20,6 +20,8 @@
       "_template": "hero",
       "scheme": "light",
       "wave": "ribbon",
+      "backgroundImage": "/images/photos/clinical/therapist-younger-woman.jpg",
+      "backgroundImageAlt": "Therapist conducting evidence-based assessment",
       "eyebrow": "Research Library",
       "headline": "Every claim backed by the evidence.",
       "subtitle": "Browse the peer-reviewed research behind Able Assess. Grip strength, functional health, falls prevention, frailty, sarcopenia and clinical outcomes, all in one place.",
@@ -36,7 +38,7 @@
     },
     {
       "_template": "evidenceBlock",
-      "scheme": "light",
+      "scheme": "aqua",
       "heading": "GripAble device validation",
       "pulledStat": "GripAble has excellent inter-instrument reliability with Jamar, the incumbent gold standard.",
       "pulledStatSource": "BMC Musculoskeletal Disorders, 2022",
@@ -94,7 +96,7 @@
     },
     {
       "_template": "evidenceBlock",
-      "scheme": "light",
+      "scheme": "grey",
       "heading": "Why is functional health assessment important?",
       "pulledStat": "Functionally impaired patients face up to 42% higher readmission risk and 77% higher post-discharge costs.",
       "pulledStatSource": "JAMA Internal Medicine, 2015",

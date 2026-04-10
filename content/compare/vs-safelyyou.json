@@ -12,6 +12,8 @@
       "_template": "hero",
       "scheme": "light",
       "waveStyle": "ribbon",
+      "backgroundImage": "/images/photos/clinical/patient-using-alone.jpg",
+      "backgroundImageAlt": "Patient using Able Assess independently",
       "eyebrow": "Comparison",
       "headline": "Able Assess vs SafelyYou.",
       "subtitle": "SafelyYou detects falls after they happen. Able Assess screens residents before they fall. Different layers of the same problem.",
@@ -22,6 +24,7 @@
     },
     {
       "_template": "featureComparison",
+      "scheme": "grey",
       "heading": "Head-to-head comparison",
       "tldr": "SafelyYou uses AI-powered cameras to detect falls in real time and alert care staff. It is a response tool: it shortens the time a resident spends on the floor after a fall. Able Assess sits upstream. It screens every resident with four objective, sensor-based metrics, stratifies risk before a fall occurs, and gives the care team a data-backed plan to prevent it. Both tools have a place, but they solve different problems.",
       "columns": ["Able Assess", "SafelyYou"],
@@ -62,6 +65,7 @@
     },
     {
       "_template": "evidenceBlock",
+      "scheme": "aqua",
       "heading": "Why upstream screening matters",
       "pulledStat": {
         "text": "Objective screening has been shown to reduce falls by 25%.",

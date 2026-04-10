@@ -7,6 +7,8 @@
       "_template": "hero",
       "scheme": "light",
       "wave": "crest",
+      "backgroundImage": "/images/photos/clinical/nurse-handing-kit.jpg",
+      "backgroundImageAlt": "Nurse preparing Able Assess kit for assessment",
       "eyebrow": "Newsroom",
       "headline": "What's happening at Able Care.",
       "subtitle": "Press releases, product updates, and industry commentary from the Able Care team.",
@@ -17,6 +19,7 @@
     },
     {
       "_template": "richText",
+      "scheme": "aqua",
       "body": "<h2>Recent News</h2><p>Check back soon for the latest updates from Able Care. For press enquiries, contact <a href='mailto:press@able-care.co'>press@able-care.co</a>.</p>"
     },
     {

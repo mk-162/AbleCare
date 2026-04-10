@@ -19,6 +19,9 @@
       "_template": "hero",
       "colorScheme": "blue",
       "waveStyle": "crest",
+      "waveFill": "#DCDCDC",
+      "backgroundImage": "/images/photos/clinical/standing-exercise.jpg",
+      "backgroundImageAlt": "Patient performing standing exercise during assessment",
       "eyebrow": "Solutions",
       "headline": "The objective case for prevention.",
       "subtitle": "Objective screening, risk stratification, and clinical proof in one workflow. Roll it out across every branch, community or clinical site.",
@@ -27,6 +30,7 @@
     },
     {
       "_template": "metricsBlock",
+      "scheme": "grey",
       "heading": "Four metrics, one picture of function",
       "metrics": [
         {
@@ -103,6 +107,7 @@
     },
     {
       "_template": "imageFeature",
+      "scheme": "grey",
       "heading": "We sit upstream of detection and response",
       "body": "Fall detection looks at falls after they happen. Balance training apps push exercises to residents. Paper assessments ask clinicians to score by observation. Able Care screens every resident or client objectively, stratifies risk, and hands the operator a standardised workflow they can roll out to every site.",
       "imageSide": "left",
@@ -148,7 +153,7 @@
     {
       "_template": "statsBar",
       "heading": "Built on the evidence",
-      "colorScheme": "light",
+      "colorScheme": "aqua",
       "stats": [
         { "value": "25%", "label": "Reduction in falls with objective screening" },
         { "value": "< 5 min", "label": "Per assessment" },
@@ -169,6 +174,7 @@
     },
     {
       "_template": "faqAccordion",
+      "scheme": "grey",
       "heading": "Common questions",
       "emitSchema": true,
       "items": [
@@ -198,6 +204,7 @@
       "_template": "ctaBanner",
       "colorScheme": "blue",
       "waveStyle": "ribbon",
+      "waveFill": "#DCDCDC",
       "heading": "See Able Assess in your workflow.",
       "body": "20 minutes with a clinician who has run it in the field.",
       "primaryCta": { "label": "Book a Demo", "href": "/contact" },

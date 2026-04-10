@@ -32,6 +32,7 @@
     },
     {
       "_template": "trustBar",
+      "scheme": "aqua",
       "badges": [
         { "label": "FDA listed", "icon": "fda" },
         { "label": "CE marked", "icon": "ce" },

@@ -18,6 +18,8 @@
       "_template": "hero",
       "colorScheme": "blue",
       "waveStyle": "crest",
+      "backgroundImage": "/images/photos/clinical/therapist-gentleman-bed.jpg",
+      "backgroundImageAlt": "Therapist conducting bedside assessment with patient",
       "eyebrow": "Skilled Nursing Facilities",
       "headline": "Falls prevention for skilled nursing.",
       "subtitle": "Protect Five-Star ratings. Defend VBP performance. Reduce rehospitalisation. Objective, standardised falls screening in under five minutes, usable by any member of staff.",
@@ -48,6 +50,7 @@
     },
     {
       "_template": "processSteps",
+      "scheme": "grey",
       "heading": "How it works in skilled nursing",
       "steps": [
         {

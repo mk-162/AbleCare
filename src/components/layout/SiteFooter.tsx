@@ -70,7 +70,6 @@ export function SiteFooter() {
               <li><Link href="/meet-the-team" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Meet the Team</Link></li>
               <li><Link href="/customers" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Customers</Link></li>
               <li><Link href="/partners" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Partners</Link></li>
-              <li><Link href="/news" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">News</Link></li>
               <li><Link href="/contact" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Contact</Link></li>
             </ul>
           </div>

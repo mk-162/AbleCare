@@ -23,6 +23,8 @@ import { LeadMagnetPromo } from "./LeadMagnetPromo";
 import { ContactForm } from "./ContactForm";
 import { TeamShowcase } from "./TeamShowcase";
 import { PartnerLogoCarousel } from "./PartnerLogoCarousel";
+import { SegmentCards } from "./SegmentCards";
+import { ValueProps } from "./ValueProps";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -248,6 +250,10 @@ export function BlockRenderer({ blocks }: BlockRendererProps) {
             return <TeamShowcase key={i} {...block} />;
           case "partnerLogoCarousel":
             return <PartnerLogoCarousel key={i} {...block} />;
+          case "segmentCards":
+            return <SegmentCards key={i} {...block} />;
+          case "valueProps":
+            return <ValueProps key={i} {...block} />;
           case "breadcrumb":
             // breadcrumb blocks are handled by the hero component or skipped
             return null;

@@ -19,6 +19,8 @@
       "_template": "hero",
       "colorScheme": "blue",
       "waveStyle": "crest",
+      "backgroundImage": "/images/photos/clinical/therapist-gentleman-desk.jpg",
+      "backgroundImageAlt": "Therapist reviewing population health data at desk",
       "eyebrow": "Population Health",
       "headline": "See the whole picture. Act on the risk that matters.",
       "subtitle": "Population-level falls risk tracking for multi-site operators, health systems and commissioners. Stratify risk across every branch, community or clinical site from a single dashboard.",
@@ -28,7 +30,7 @@
     {
       "_template": "statsBar",
       "heading": "Population health at a glance",
-      "colorScheme": "light",
+      "colorScheme": "aqua",
       "stats": [
         { "value": "25%", "label": "Reduction in falls with objective screening" },
         { "value": "4", "label": "Validated metrics per screening" },

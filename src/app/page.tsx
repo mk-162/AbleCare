@@ -6,6 +6,11 @@ export const revalidate = 60;
 export const metadata: Metadata = {
   title: "Able Care | Falls Prevention Technology",
   description: "Digital, objective falls risk screening in under 5 minutes. Trusted by home care, senior living and clinicians across the US and UK.",
+  openGraph: {
+    title: "Able Care | Falls Prevention Technology",
+    description: "Digital, objective falls risk screening in under 5 minutes. Trusted by home care, senior living and clinicians across the US and UK.",
+    type: "website",
+  },
 };
 
 async function getPageData() {

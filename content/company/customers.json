@@ -19,6 +19,8 @@
       "_template": "hero",
       "scheme": "light",
       "wave": "crest",
+      "backgroundImage": "/images/photos/clinical/arms-raised-celebration.jpg",
+      "backgroundImageAlt": "Patient celebrating progress during assessment session",
       "eyebrow": "Our customers",
       "headline": "Trusted by care teams who refuse to guess.",
       "subtitle": "From single-site home care agencies to multi-site senior living portfolios, organisations choose Able Assess because it delivers objective data their teams can act on.",
@@ -52,7 +54,7 @@
     },
     {
       "_template": "valueProps",
-      "scheme": "light",
+      "scheme": "grey",
       "heading": "Why they chose Able Assess",
       "items": [
         {
@@ -75,6 +77,7 @@
     },
     {
       "_template": "trustBar",
+      "scheme": "aqua",
       "badges": [
         { "label": "FDA listed", "icon": "fda" },
         { "label": "CE marked", "icon": "ce" },

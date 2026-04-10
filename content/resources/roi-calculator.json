@@ -20,6 +20,8 @@
       "_template": "hero",
       "scheme": "blue",
       "wave": "crest",
+      "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
+      "backgroundImageAlt": "Clinician reviewing assessment results on tablet",
       "eyebrow": "ROI Calculator",
       "headline": "Model the financial impact of standardised falls screening.",
       "subtitle": "Segment-aware. Two minutes. Emailable report. See how much you could save by reducing one fall per branch per month.",

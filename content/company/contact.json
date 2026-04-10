@@ -12,6 +12,7 @@
     },
     {
       "_template": "imageFeature",
+      "scheme": "aqua",
       "heading": "Objective screening, built for your setting",
       "body": "Able Assess captures four clinically validated metrics in under five minutes. Grip strength, sit-to-stand, gait speed and Timed Up and Go — usable by non-clinical staff, defensible to payers and regulators.",
       "imageSide": "right",
@@ -20,6 +21,7 @@
     },
     {
       "_template": "faqAccordion",
+      "scheme": "grey",
       "heading": "Common questions before a demo",
       "emitSchema": true,
       "faqs": [
@@ -49,7 +51,7 @@
       "_template": "ctaBanner",
       "scheme": "blue",
       "wave": "ribbon",
-      "waveFill": "#FFFFFF",
+      "waveFill": "#DCDCDC",
       "heading": "Prefer email?",
       "bodyText": "Drop us a line at hello@able-care.co and we will get back to you within one working day.",
       "primaryCtaText": "Email us",

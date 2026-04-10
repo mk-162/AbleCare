@@ -12,6 +12,8 @@
       "_template": "hero",
       "scheme": "light",
       "waveStyle": "ribbon",
+      "backgroundImage": "/images/photos/clinical/standing-exercise.jpg",
+      "backgroundImageAlt": "Patient performing functional assessment exercise",
       "eyebrow": "Comparison",
       "headline": "Able Assess vs Nymbl.",
       "subtitle": "Nymbl delivers balance exercises. Able Assess delivers objective clinical screening. One is a wellness programme, the other is a clinical tool.",
@@ -22,6 +24,7 @@
     },
     {
       "_template": "featureComparison",
+      "scheme": "grey",
       "heading": "Head-to-head comparison",
       "tldr": "Nymbl is a consumer-facing balance training app. It guides users through short daily exercises designed to improve balance over time. Able Assess is a clinical screening tool. It captures four objective, sensor-based functional health metrics, scores them against normative data, stratifies risk, and routes the result to the care team. Nymbl is an intervention. Able Assess is the screening that tells you who needs an intervention and whether that intervention is working.",
       "columns": ["Able Assess", "Nymbl"],
@@ -62,6 +65,7 @@
     },
     {
       "_template": "evidenceBlock",
+      "scheme": "aqua",
       "heading": "Why screening comes before exercise",
       "pulledStat": {
         "text": "Multifactorial falls risk screening outperforms single-test approaches in predicting falls in older adults.",

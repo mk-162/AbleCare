@@ -7,14 +7,15 @@
       "_template": "hero",
       "scheme": "light",
       "wave": "crest",
-      "backgroundImage": "/images/photos/clinical/patient-therapist-laughing.jpg",
-      "backgroundImageAlt": "Patient and therapist sharing a laugh during assessment",
+      "backgroundImage": "/images/photos/team-founders.png",
+      "backgroundImageAlt": "Able Care founding team — Dr Paul Rinne, Dr Mike Mace, and Danielle Richards",
       "eyebrow": "Our people",
       "headline": "Built by clinicians. Scaled by engineers.",
       "subtitle": "Able Care was founded at Imperial College London by researchers who saw the gap between what clinical science knows about falls and what frontline care teams can actually measure."
     },
     {
       "_template": "teamShowcase",
+      "scheme": "aqua",
       "heading": "The people behind Able Care",
       "subtitle": "A multidisciplinary team spanning clinical science, biomedical engineering, and health technology — united by a shared mission to keep people strong, steady, and independent for life.",
       "layout": "featured",
@@ -50,7 +51,7 @@
     },
     {
       "_template": "imageFeature",
-      "scheme": "light",
+      "scheme": "grey",
       "heading": "Born at Imperial College London",
       "description": "Able Care grew out of research at Imperial College London's Department of Bioengineering, where our founders identified that simple, objective functional measurements could predict falls and decline more reliably than subjective clinical assessments. We spun out with a mission to make these measurements accessible to every care worker, in every setting.",
       "imagePosition": "right",

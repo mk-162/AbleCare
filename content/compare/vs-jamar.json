@@ -12,6 +12,8 @@
       "_template": "hero",
       "scheme": "light",
       "waveStyle": "ribbon",
+      "backgroundImage": "/images/photos/clinical/sensor-closeup-hand.jpg",
+      "backgroundImageAlt": "Close-up of GripAble digital grip strength measurement",
       "eyebrow": "Comparison",
       "headline": "Able Assess vs Jamar dynamometer.",
       "subtitle": "Digital grip strength measurement with automatic data capture, normative comparison and full workflow integration. Everything analogue cannot do.",
@@ -22,6 +24,7 @@
     },
     {
       "_template": "featureComparison",
+      "scheme": "grey",
       "heading": "Head-to-head comparison",
       "tldr": "The Jamar dynamometer is the traditional analogue grip strength tool. It captures a single reading with no digital record, no normative comparison, and no route into a care plan. Able Assess captures grip strength digitally alongside three additional functional metrics, scores every result against age- and sex-matched normative data, and feeds risk banding straight into the clinical workflow.",
       "columns": ["Able Assess", "Jamar Dynamometer"],
@@ -62,6 +65,7 @@
     },
     {
       "_template": "evidenceBlock",
+      "scheme": "aqua",
       "heading": "Why digital grip strength measurement matters",
       "pulledStat": {
         "text": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",

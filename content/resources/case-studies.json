@@ -19,6 +19,8 @@
       "_template": "hero",
       "colorScheme": "light",
       "waveStyle": "ribbon",
+      "backgroundImage": "/images/photos/clinical/patient-using-alone.jpg",
+      "backgroundImageAlt": "Patient independently using Able Assess",
       "eyebrow": "Case Studies",
       "headline": "Real results. Real organisations.",
       "subtitle": "See how operators, communities and clinical teams use Able Assess to reduce falls, protect outcomes and standardise care across every site.",

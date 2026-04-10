@@ -52,9 +52,15 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const data = await getPageData(slug);
+  const title = data?.title || slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase());
   return {
-    title: data?.title || slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase()),
+    title,
     description: data?.description,
+    openGraph: {
+      title,
+      description: data?.description,
+      ...(data?.seo?.ogImage && { images: [{ url: data.seo.ogImage }] }),
+    },
   };
 }
 
