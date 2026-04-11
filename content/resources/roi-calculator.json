@@ -1,19 +1,28 @@
 {
   "title": "ROI Calculator",
   "slug": "roi-calculator",
-  "description": "Model the financial impact of standardised falls screening. Segment-aware. Two minutes. Emailable report.",
+  "description": "Model the financial impact of standardized falls screening. Segment-aware. Two minutes. Emailable report.",
   "seo": {
     "title": "ROI Calculator | Able Care",
-    "description": "Model the financial impact of standardised falls screening for your organisation. Segment-aware calculator with emailable report. Takes two minutes.",
+    "description": "Model the financial impact of standardized falls screening for your organization. Segment-aware calculator with emailable report. Takes two minutes.",
     "ogImage": "/images/og-roi-calculator.png"
   },
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "ROI Calculator", "href": "/resources/roi-calculator" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "ROI Calculator",
+          "href": "/resources/roi-calculator"
+        }
       ]
     },
     {
@@ -23,7 +32,7 @@
       "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
       "backgroundImageAlt": "Clinician reviewing assessment results on tablet",
       "eyebrow": "ROI Calculator",
-      "headline": "Model the financial impact of standardised falls screening.",
+      "headline": "Model the financial impact of standardized falls screening.",
       "subtitle": "Segment-aware. Two minutes. Emailable report. See how much you could save by reducing one fall per branch per month.",
       "primaryCtaText": "Open the Calculator",
       "primaryCtaLink": "#calculator",
@@ -34,8 +43,8 @@
       "_template": "roiCalculatorPromo",
       "scheme": "light",
       "eyebrow": "Build Your Case",
-      "heading": "Quantify the cost of falls in your organisation.",
-      "body": "Every fall costs money: direct care, liability exposure, staff time, resident turnover, lost referrals. The Able Care ROI calculator models the financial impact of standardised screening against your setting, your branch count and your current falls rate. Share the results with procurement, the board or your PE sponsor.",
+      "heading": "Quantify the cost of falls in your organization.",
+      "promoBody": "Every fall costs money: direct care, liability exposure, staff time, resident turnover, lost referrals. The Able Care ROI calculator models the financial impact of standardized screening against your setting, your branch count and your current falls rate. Share the results with procurement, the board or your PE sponsor.",
       "ctaText": "Open the Calculator",
       "ctaLink": "#calculator"
     },
@@ -47,7 +56,7 @@
         {
           "value": "25%",
           "label": "Reduction in falls",
-          "sublabel": "Demonstrated by objective screening programmes"
+          "sublabel": "Demonstrated by objective screening programs"
         },
         {
           "value": "$30,000+",
@@ -100,5 +109,11 @@
       "secondaryCtaText": "Book a Demo",
       "secondaryCtaLink": "/demo/"
     }
+  ],
+  "tags": [
+    "able-assess",
+    "roi",
+    "home-care",
+    "senior-living"
   ]
 }

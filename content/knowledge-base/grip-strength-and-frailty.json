@@ -1,0 +1,124 @@
+{
+  "title": "Grip Strength and Frailty: What the Research Shows",
+  "description": "How grip strength assessment identifies frailty risk in older adults. Clinical criteria, screening thresholds, and Able Assess integration.",
+  "category": "Grip Strength",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "Why Does Grip Strength Matter for Frailty Screening?",
+      "directAnswer": "Grip strength is one of five diagnostic criteria in the Fried frailty phenotype and a primary screening measure in the EWGSOP2 sarcopenia algorithm. Men with grip strength below 27 kg and women below 16 kg meet the threshold for probable sarcopenia. Frail older adults face two to three times higher fall risk. Able Assess measures grip strength as part of a comprehensive functional screen.",
+      "tldrBullets": [
+        {
+          "text": "Grip strength is part of the Fried frailty phenotype, the gold standard for frailty diagnosis"
+        },
+        {
+          "text": "EWGSOP2 sarcopenia criteria: men <27 kg, women <16 kg indicate probable sarcopenia"
+        },
+        {
+          "text": "Frail older adults have 2-3 times higher fall risk than robust peers"
+        }
+      ],
+      "expandedAnswer": "<p>Frailty is a geriatric syndrome characterized by reduced physiological reserve and heightened vulnerability to stressors. It differs from disability and comorbidity. The Fried frailty phenotype, developed from large longitudinal studies, defines frailty using five criteria: unintentional weight loss, exhaustion, reduced physical activity, slow walking speed, and low grip strength.</p><p>Grip strength serves as an objective, quantifiable marker of muscle strength and overall physical reserve. Low grip strength correlates with poor recovery from illness, increased hospitalization duration, and independent living loss. We use grip strength measurement as a screening tool because it is quick, standardized, and clinically meaningful.</p><p>The European Working Group on Sarcopenia in Older People (EWGSOP2) updated sarcopenia diagnostic criteria in 2019. Probable sarcopenia thresholds are men <27 kg and women <16 kg. This operationalizes grip strength within a broader muscle disease framework. Early identification through Able Assess enables targeted intervention.</p>",
+      "sources": [
+        {
+          "title": "Frailty in Older Adults: Evidence and Implications for Public Health Practice",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4084863/",
+          "year": "2013"
+        },
+        {
+          "title": "EWGSOP2: The European Working Group on Sarcopenia in Older People",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31588901/",
+          "year": "2019"
+        },
+        {
+          "title": "Grip Strength as a Predictor of Clinical Outcomes in Community-Dwelling Older Adults",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16899041/",
+          "year": "2006"
+        }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Grip Strength and Frailty Diagnosis: The Fried Phenotype</h2><p>The Fried frailty phenotype identifies frailty through measurable criteria. Meeting 3 or more criteria indicates frailty; 1 to 2 criteria indicate pre-frailty. Grip strength thresholds vary by age, sex, and body mass index.</p><p>In Fried's original cohort of 5,317 older adults, low grip strength was present in 73% of frail women and 73% of frail men. The predictive validity is strong: frail older adults have increased risk of falls, fractures, hospitalization, institutionalization, and mortality within 3 years.</p><p>We measure grip strength alongside other Fried criteria (walking speed, physical activity, weight loss, exhaustion) to establish a comprehensive frailty profile. This holistic approach informs care planning and identifies which older adults require enhanced monitoring.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Sarcopenia Screening: EWGSOP2 Thresholds</h2><p>Sarcopenia (age-related muscle loss with functional decline) differs clinically from frailty but shares overlapping pathophysiology. EWGSOP2 distinguishes probable sarcopenia (low muscle strength) from confirmed sarcopenia (low strength plus low muscle mass).</p><p>Grip strength thresholds for probable sarcopenia are: men <27 kg and women <16 kg. These thresholds have high sensitivity for detecting functional limitation and adverse health outcomes. Patients meeting these criteria should progress to further assessment (e.g. dual-energy x-ray absorptiometry for muscle mass, if clinically indicated).</p><p>Early sarcopenia detection allows nutritional support, resistance training, and medication review (deprescribing) before muscle loss becomes severe. Able Assess provides longitudinal tracking to monitor progression or stabilization.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Fall Risk and Frailty: The Grip Strength Connection</h2><p>Frail older adults have 2-3 times higher fall risk than non-frail peers. Multiple mechanisms link low grip strength to falls: reduced proprioception, slower reaction time, diminished postural control, and lower leg strength.</p><p>Falls are the leading cause of injury-related death in adults aged 65 and older. Non-fatal falls often precipitate functional decline, loss of independence, and admission to long-term care. Identifying frailty through grip strength measurement enables preventive interventions: home safety assessment, balance training, medication review, and vision correction.</p><p>We recommend baseline grip strength assessment in all older adults presenting to primary care or geriatric services. Serial measurements track response to intervention and inform discharge planning.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        {
+          "stat": "73% of frail older adults meet low grip strength criterion in Fried phenotype studies",
+          "source": "Fried LP et al. (2001) Cardiovascular Health Study",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11253156/"
+        },
+        {
+          "stat": "2-3 fold increase in fall risk for frail vs non-frail older adults",
+          "source": "Makary MA et al. (2010) Archives of Surgery",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20231625/"
+        },
+        {
+          "stat": "Men <27 kg and women <16 kg grip strength indicate probable sarcopenia (EWGSOP2)",
+          "source": "Cruz-Jentoft AJ et al. (2019) Age and Ageing",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31588901/"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "What is the difference between frailty and sarcopenia?",
+          "answer": "Frailty is a geriatric syndrome with physiological markers (weakness, exhaustion, slow gait, weight loss, low activity). Sarcopenia is age-related muscle loss with functional decline. They overlap but are distinct. Some frail individuals have normal muscle mass. Some sarcopenic patients are not frail."
+        },
+        {
+          "question": "How often should grip strength be measured in frail older adults?",
+          "answer": "Baseline assessment is essential in all adults aged 65 and older. Follow-up frequency depends on frailty status and intervention. We recommend reassessment every 3-6 months if pre-frail or frail. Robust older adults may be screened annually or every 2 years."
+        },
+        {
+          "question": "Can grip strength improve with intervention?",
+          "answer": "Yes. Resistance training (twice weekly, 8-12 weeks) improves grip strength by 10-30%. Protein supplementation (1.2-1.5 g/kg body weight daily) supports muscle synthesis. Able Assess tracks grip strength changes to monitor intervention response."
+        },
+        {
+          "question": "Is low grip strength reversible?",
+          "answer": "Grip strength can improve with exercise and adequate nutrition. However, if frailty is advanced, improvements are modest. Early intervention (pre-frailty stage) yields better outcomes. This is why screening matters."
+        }
+      ]
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Monitoring Frailty With Able Assess</h2><p>Able Assess streamlines grip strength measurement within a standardized clinical workflow. Our platform records grip strength, calculates frailty phenotype scores, and generates longitudinal reports.</p><p>Clinicians can benchmark individual results against age- and sex-matched normative data. Alerts flag significant decline between visits, prompting review of medication, nutrition, and activity levels. This structured approach supports early intervention before functional loss becomes irreversible.</p><p>For older adults in primary care, community health, or geriatric services, Able Assess integrates grip strength into routine assessment. Organizations reduce assessment time while maintaining clinical rigour and evidence compliance.</p>"
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Ready to assess frailty systematically?",
+      "bodyText": "Able Assess provides standardized grip strength measurement and frailty screening. Embed evidence-led assessment into your clinical workflow. Identify at-risk older adults before functional loss occurs.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Learn about Able Assess",
+        "url": "/solutions/able-assess"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "grip-strength",
+    "frailty",
+    "able-assess",
+    "evidence",
+    "guide"
+  ]
+}

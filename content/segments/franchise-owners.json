@@ -1,0 +1,93 @@
+{
+  "title": "Falls Screening for Franchise Care Owners",
+  "slug": "franchise-owners",
+  "seo": {
+    "title": "Falls Screening for Franchise Care Owners | Able Care",
+    "description": "Real-time branch P&L, rapid staff training, and objective outcome measurement for franchise care owners.",
+    "ogImage": "/images/og-franchise-owners.png"
+  },
+  "tags": ["persona", "franchise-owners", "branch", "referrals"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Franchise Owners" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Franchise Owners",
+      "headline": "Run your branch like a business.",
+      "subtitle": "Real-time insight into your branch performance. Train staff in 15 minutes. Differentiate through clinical excellence and patient outcomes.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The franchise owner challenge",
+      "body": "<h3>Local P&amp;L Visibility</h3><p>Franchise owners need to understand how clinical operations affect their bottom line. Falls-related hospitalizations, client churn, and liability exposure all erode margin. Without objective data linking care quality to financial outcomes, you are managing blind. Able Assess connects screening data to branch-level performance so you can see the impact in real terms.</p><h3>Staff Training Burden</h3><p>High turnover means constant retraining. Every new hire represents a gap in care consistency. Able Assess reduces training time to 15 minutes per staff member. The sensor guides each screening step. No clinical background is required. New hires can screen clients on their first shift.</p><h3>Referral Differentiation</h3><p>Franchise owners compete for local referrals against other branches and independent agencies. Objective screening data gives you something measurable to share with hospital discharge planners and MCO case managers. Clinical credibility wins referrals that reputation alone cannot secure.</p>"
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "light",
+      "heading": "What Able Assess delivers for franchise owners",
+      "items": [
+        {
+          "title": "Local P&L Dashboard",
+          "body": "See how screening volumes, fall prevention outcomes, and client retention connect to your branch financials. Data you can act on, updated in real time."
+        },
+        {
+          "title": "15-Minute Staff Training",
+          "body": "Any staff member is proficient in 15 minutes. The guided workflow eliminates the need for clinical certification. Turnover stops being a training crisis."
+        },
+        {
+          "title": "Patient Outcome Measurement",
+          "body": "Track every client longitudinally with objective data. Surface decline early. Demonstrate proactive care to families, payers, and referral sources."
+        },
+        {
+          "title": "Branch Reporting",
+          "body": "Screening volumes, risk distributions, and outcome trends for your branch. Formatted for corporate reporting requirements and local business planning."
+        }
+      ]
+    },
+    {
+      "_template": "testimonialCarousel",
+      "heading": "What franchise owners say",
+      "testimonials": [
+        {
+          "quote": "Franchise owner testimonial coming soon.",
+          "attribution": "Franchise Owner, Home Care Network"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Questions from franchise owners",
+      "scheme": "light",
+      "items": [
+        {
+          "question": "How does this affect my branch P&L?",
+          "answer": "One prevented hospitalization per quarter typically covers the program cost. Beyond direct savings, objective screening data strengthens referral relationships and supports client retention, both of which improve revenue."
+        },
+        {
+          "question": "How do I train new staff when turnover is high?",
+          "answer": "Staff are proficient in 15 minutes. The sensor and app guide every step. No clinical background is needed. When a new hire starts, they can run their first screening the same day."
+        },
+        {
+          "question": "Can I use outcome data to win local referrals?",
+          "answer": "Yes. The platform produces summary reports you can share with hospital discharge planners and MCO case managers. Objective outcome data differentiates your branch from competitors who rely on subjective assessments."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Own your branch's success. With real data and clear tools.",
+      "body": "30 minutes with the team. Tailored to franchise branch operations.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
+      "scheme": "blue"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { getSchemeClasses } from "@/lib/color-schemes";
+import { ChevronRight } from "lucide-react";
 
 interface EvidenceBlockProps {
   scheme?: string;
@@ -28,9 +29,9 @@ export function EvidenceBlock({ scheme = "light", heading, pulledStat, pulledSta
   return (
     <section className={`py-20 md:py-32 ${getSchemeClasses((scheme as any) || "light")} border-y border-black/5`}>
       <div className="container mx-auto px-4 md:px-6">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10">{heading || "Backed by the research"}</h2>
         <div className="flex flex-col lg:flex-row gap-16 items-start">
           <div className="w-full lg:w-1/3">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">{heading || "Backed by the research"}</h2>
             {pulledStat && (
               <div className="p-8 bg-ac-blue text-white rounded-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-ac-aqua/20 rounded-full blur-3xl -mr-10 -mt-10" />
@@ -40,12 +41,14 @@ export function EvidenceBlock({ scheme = "light", heading, pulledStat, pulledSta
             )}
           </div>
           <div className="w-full lg:w-2/3 flex flex-col justify-center">
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-ac-black/40 mb-4">Published Studies</h3>
             <div className="space-y-4">
               {items.map((citation, i) => {
+                const hasLink = !!citation.link;
                 const inner = (
-                  <div className="flex gap-4 p-5 rounded-xl bg-white border border-black/8 shadow-sm hover:shadow-md hover:border-ac-blue/20 transition-all">
+                  <div className={`flex gap-4 p-5 rounded-xl bg-white border border-black/8 shadow-sm transition-all ${hasLink ? "hover:shadow-md hover:border-ac-blue/20 group" : ""}`}>
                     {citation.year && <div className="text-ac-blue font-bold text-sm min-w-14 pt-0.5">{citation.year}</div>}
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
                       <h4 className="font-bold mb-1 text-ac-black text-sm leading-snug">{citation.title}</h4>
                       <p className="text-ac-black/55 text-xs font-light">
                         {citation.authors && <span className="font-medium">{citation.authors}</span>}
@@ -53,6 +56,11 @@ export function EvidenceBlock({ scheme = "light", heading, pulledStat, pulledSta
                       </p>
                       {citation.finding && <p className="text-ac-black/70 text-xs mt-2 leading-relaxed">{citation.finding}</p>}
                     </div>
+                    {hasLink && (
+                      <div className="flex items-center shrink-0">
+                        <ChevronRight className="w-5 h-5 text-ac-black/20 group-hover:text-ac-blue transition-colors" />
+                      </div>
+                    )}
                   </div>
                 );
                 return citation.link ? (

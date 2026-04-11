@@ -3,8 +3,6 @@ title: Cookie Policy
 description: How Able Care uses cookies on our website.
 ---
 
-# Cookie Policy
-
 **Last updated: April 2026**
 
 This Cookie Policy explains how Able Care Ltd uses cookies and similar tracking technologies on our website.

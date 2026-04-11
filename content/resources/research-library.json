@@ -11,9 +11,18 @@
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "Research Library", "href": "/resources/research-library" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Research Library",
+          "href": "/resources/research-library"
+        }
       ]
     },
     {
@@ -34,7 +43,7 @@
       "_template": "richText",
       "scheme": "light",
       "heading": "Why the research matters",
-      "body": "Able Assess is built on four clinically validated metrics: grip strength, sit-to-stand, gait speed and Timed Up and Go. Each metric is supported by decades of peer-reviewed research linking it to falls risk, frailty, hospitalisation and mortality.\n\nMultifactorial screening, combining strength, balance and gait measures, outperforms single-test approaches. Objective, standardised capture removes inter-rater variability and gives operators, clinicians and payers a defensible data trail.\n\nThe studies below are grouped by outcome domain. Every claim on the Able Care website traces back to this library."
+      "body": "Able Assess is built on four clinically validated metrics: grip strength, sit-to-stand, gait speed and Timed Up and Go. Each metric is supported by decades of peer-reviewed research linking it to falls risk, frailty, hospitalization and mortality.\n\nMultifactorial screening, combining strength, balance and gait measures, outperforms single-test approaches. Objective, standardized capture removes inter-rater variability and gives operators, clinicians and payers a defensible data trail.\n\nThe studies below are grouped by outcome domain. Every claim on the Able Care website traces back to this library."
     },
     {
       "_template": "evidenceBlock",
@@ -119,7 +128,7 @@
           "title": "Functional Decline in Medicare Patients",
           "journal": "European Heart Journal",
           "year": "2021",
-          "finding": "Functional decline impacts over half of Medicare patients, significantly increasing healthcare utilisation.",
+          "finding": "Functional decline impacts over half of Medicare patients, significantly increasing healthcare utilization.",
           "link": "https://pubmed.ncbi.nlm.nih.gov/34324648/"
         },
         {
@@ -130,10 +139,10 @@
           "link": "https://bmcgeriatr.biomedcentral.com/articles/10.1186/s12877-022-03466-w"
         },
         {
-          "title": "Cost-effectiveness of a physical activity programme on functional mobility decline in older adults",
+          "title": "Cost-effectiveness of a physical activity program on functional mobility decline in older adults",
           "journal": "The Lancet Public Health",
           "year": "2022",
-          "finding": "Prevention programmes give a 0.04 QALY health benefit, demonstrating cost-effectiveness of functional health interventions.",
+          "finding": "Prevention programs give a 0.04 QALY health benefit, demonstrating cost-effectiveness of functional health interventions.",
           "link": "https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(22)00030-5/fulltext"
         }
       ]
@@ -163,7 +172,7 @@
           "title": "Grip strength and mortality: a biomarker of ageing?",
           "journal": "The Lancet",
           "year": "2015",
-          "finding": "Grip strength serves as a biomarker of biological ageing, predicting mortality across all age groups.",
+          "finding": "Grip strength serves as a biomarker of biological aging, predicting mortality across all age groups.",
           "link": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(14)62349-7/abstract"
         },
         {
@@ -174,7 +183,7 @@
           "link": "https://jhpn.biomedcentral.com/articles/10.1186/s41043-024-00500-y"
         },
         {
-          "title": "Handgrip strength and health outcomes: Umbrella review of systematic reviews with meta-analyses",
+          "title": "Handgrip strength and health outcomes: Umbrella review of systematic reviews with meta-analyzes",
           "journal": "Journal of Sport and Health Science",
           "year": "2021",
           "finding": "Comprehensive meta-analysis confirming grip strength predicts cardiovascular disease, cancer, respiratory disease and all-cause mortality.",
@@ -199,5 +208,11 @@
       "secondaryCtaText": "Download the Buyers Guide",
       "secondaryCtaLink": "/resources/buyers-guide/"
     }
+  ],
+  "tags": [
+    "grip-strength",
+    "falls-risk-assessment",
+    "evidence",
+    "clinicians"
   ]
 }

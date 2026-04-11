@@ -1,0 +1,46 @@
+{
+  "title": "HHVBP Compliance Guide",
+  "slug": "hhvbp-guide",
+  "seo": {
+    "title": "HHVBP Compliance Guide | Falls Screening for Home Care | Able Care",
+    "description": "Protect your HHVBP score with standardized falls screening. Download our compliance guide for home care agencies.",
+    "ogImage": "/images/og-hhvbp-guide.png"
+  },
+  "tags": ["resources", "hhvbp", "home-care", "compliance", "guide"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "HHVBP Guide" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "headline": "Protect your HHVBP score with standardized falls screening.",
+      "subtitle": "HHVBP includes falls prevention in its quality metrics. This guide explains the requirements and shows how Able Assess supports compliance across your home care agency.",
+      "primaryCta": { "label": "Download the Guide", "href": "/resources/hhvbp-guide-download" }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "What is inside the guide",
+      "body": "<ul><li>HHVBP falls prevention measures and scoring methodology</li><li>Documentation requirements for compliant screening</li><li>Staff training protocols for clinical and non-clinical teams</li><li>OASIS-E reporting integration</li><li>Real-world case studies from home care agencies</li></ul>"
+    },
+    {
+      "_template": "richText",
+      "scheme": "grey",
+      "heading": "Why this guide matters",
+      "body": "<p>HHVBP reimburses home health agencies based on quality outcomes. Falls are among the most costly adverse events in home care. Agencies with high falls rates lose revenue through lower quality scores and reduced reimbursement.</p><p>This guide provides a step-by-step approach to implementing standardized falls screening that protects your HHVBP performance. It covers the specific measures CMS tracks, the documentation you need, and how to train your staff to deliver consistent, evidence-based screening.</p>"
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "heading": "Download the HHVBP Compliance Guide",
+      "body": "Get the full guide with compliance checklists, training templates, and implementation timelines.",
+      "primaryCta": { "label": "Download the Guide", "href": "/resources/hhvbp-guide-download" }
+    }
+  ]
+}

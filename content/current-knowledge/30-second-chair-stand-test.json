@@ -1,0 +1,142 @@
+{
+  "title": "30-Second Chair Stand Test: Protocol, Scoring, and Clinical Use",
+  "description": "Learn the 30-second chair stand test protocol, age-based scoring norms, and how results predict fall risk in older adults.",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "What does the 30-second chair stand test measure?",
+      "directAnswer": "The 30-second chair stand test measures lower limb strength by counting how many times a person can stand from a chair in 30 seconds. It achieves 92% sensitivity and 81% specificity for fall risk identification. Able Assess includes this test alongside grip strength, gait speed, and balance assessment.",
+      "tldrBullets": [
+        {
+          "text": "92% sensitivity and 81% specificity at 9.25 repetition threshold (Jones et al. 1999)"
+        },
+        {
+          "text": "Requires only a chair, stopwatch, and 2-3 minutes of time"
+        },
+        {
+          "text": "Predicts falls, hospitalization, and disability in older adults"
+        }
+      ],
+      "expandedAnswer": "<p>The 30-second chair stand test is a functional assessment of lower limb strength. It requires minimal equipment and training. The test measures the maximum number of times you can rise from a standard chair (seat height 43-45 cm) and return to sitting in exactly 30 seconds, without using your arms.</p><p>The original validation study by Jones et al. (1999) examined 174 healthy older adults aged 65 to 85. The test achieved 92% sensitivity (correctly identifying those at risk of falls) and 81% specificity (correctly identifying those not at risk). A cutoff of 9.25 repetitions defines the threshold between normal and below-average performance. Adults scoring below this threshold have elevated fall risk and warrant intervention.</p><p>The test predicts not only falls but also hospitalization and disability. Lower limb weakness makes it harder to climb stairs, recover from stumbles, and walk safely. The test is part of the CDC STEADI program and is integrated into Able Assess, our rapid four-test screening system. Combined with gait speed, grip strength, and balance testing, it provides a comprehensive functional profile.</p>",
+      "sources": [
+        {
+          "title": "Jones et al. 1999: Original Validation of 30-Second Chair Stand Test",
+          "url": "https://doi.org/10.1093/gerona/54.8.m359",
+          "year": "1999"
+        },
+        {
+          "title": "CDC STEADI: Stopping Elderly Accidents, Deaths, and Injuries",
+          "url": "https://www.cdc.gov/steadi/",
+          "year": "2023"
+        },
+        {
+          "title": "Rikli & Jones: Functional Fitness Normative Standards for Community-Dwelling Older Adults",
+          "url": "https://doi.org/10.1249/01.mss.0000115211.37552.81",
+          "year": "2013"
+        }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>What it measures: Lower limb strength and functional capacity</h2><p>The test quantifies strength in the quadriceps, glute, and hip flexor muscles. These muscles are essential for daily living. You need them to rise from sitting, climb stairs, recover from a stumble, and walk safely. Weakness in these muscles is a primary risk factor for falls in older adults.</p><p>The test also reflects functional endurance. To achieve multiple repetitions in 30 seconds, you must sustain effort and move efficiently. Poor performance indicates weakness, poor balance, or both. A person who can complete 12 or more repetitions typically manages stairs, shopping, and daily activities safely. A person completing 5 or fewer repetitions is likely to struggle with these tasks and faces substantial fall risk.</p><p>The test requires no expensive equipment. A standard chair, a stopwatch, and brief verbal instruction are sufficient. This simplicity is clinically important. The test can be deployed rapidly in any setting: primary care, residential care, community centers, or home care, without infrastructure investment. Non-clinical staff can administer and score it reliably after minimal training.</p><h2>Protocol: Step-by-step procedure</h2><p>Positioning is critical for test validity. Seat the person with their back against the chair back, feet flat on the floor hip-width apart. Their knees and hips should be flexed at approximately 90 degrees. Their hands rest on their thighs or are folded across the chest. Using arms invalidates the test because it reduces the demand on lower limb muscles.</p><p>Give clear instruction: 'When I say go, stand up fully and then sit back down. Repeat as many times as you can in 30 seconds. Stand all the way up. Do not use your arms.' Allow one practice repetition to ensure understanding and safety.</p><p>Start the stopwatch and say 'Go'. Count complete repetitions aloud. A complete repetition is standing fully with hips and knees extended, then returning to sitting. Partial movements where the person does not fully extend hips and knees do not count. Provide verbal encouragement throughout: 'Good, keep going.' At 10 seconds remaining, say 'Keep going, 10 seconds left.' At 30 seconds, say 'Stop' and record the final count.</p><p>Safety is paramount. Stand close enough to provide assistance if the person loses balance. If the person requires hand support to stand or sit safely, stop the test and note this. Common safety issues include rising too quickly and losing balance, fatigue preventing safe continued movement, or joint pain that precludes full standing. Discontinue the test immediately if any of these occur.</p><p>Most tests are completed in 2 to 3 minutes, including positioning, instruction, and the 30-second trial. Able Assess provides step-by-step guidance to ensure staff use correct positioning and timing, eliminating common errors and standardizing results across your organization.</p><h2>Scoring norms by age and sex</h2><p>Normative data come from Rikli & Jones (2013), which examined over 7,000 healthy community-dwelling older adults aged 60 to 94. The norms vary substantially by age and sex. For women aged 60 to 64, the average is 15 repetitions. By age 80 to 84, the average falls to 11 repetitions. For men aged 60 to 64, the average is 17 repetitions. By age 80 to 84, the average is 12 repetitions.</p><p>The CDC STEADI cutoff of 9.25 repetitions defines the threshold between normal and below-average performance. Adults completing fewer than 9.25 repetitions are classified as below average and at elevated fall risk. This cutoff was derived from Jones et al. (1999) and validated against prospective falls outcomes.</p><p>Individual variation at the same age is substantial. Some 80-year-olds achieve 18 repetitions, while others manage only 5. This variation reflects genetics, physical activity, nutrition, chronic disease, and medications. A sedentary person loses strength faster than an active person. Interpreting results requires considering the individual's overall health context.</p><p>Serial tracking is more informative than cross-sectional comparison. A person whose score declines from 14 repetitions to 11 repetitions over one year has lost 21% of lower limb strength and may be at risk even if 11 is still normal for age. Organizations should track individual trends to detect accelerating muscle loss and prompt intervention.</p><h2>Clinical interpretation and intervention</h2><p>Below-threshold performance (fewer than 9.25 repetitions) indicates elevated fall risk. This reflects lower limb weakness that impairs recovery from stumbles, stair climbing, and confident walking. People with low sit-to-stand scores fall more frequently and are more likely to sustain serious injuries, including hip fractures.</p><p>However, sit-to-stand should not be interpreted in isolation. A person with good sit-to-stand performance but poor balance remains at risk. A person with below-threshold sit-to-stand but excellent balance and strong grip may benefit from targeted lower limb strengthening. Always consider all four functional measures together: sit-to-stand, gait speed, grip strength, and balance.</p><p>Below-threshold performance warrants intervention. Resistance training targeting the legs, particularly progressive resistance using body weight or light weights, improves sit-to-stand performance within 8 to 12 weeks. Improvements of 15 to 25% are typical. These improvements translate to meaningful gains in daily function and reduced fall risk. Chair squats, step-ups, and stair climbing are effective and accessible interventions.</p>"
+    },
+    {
+      "_template": "processSteps",
+      "heading": "Step-by-Step: Administering the 30-Second Chair Stand Test",
+      "steps": [
+        {
+          "heading": "Prepare environment and equipment",
+          "description": "Use a standard chair with seat height 43 to 45 cm (approximately 17 inches). Place the chair against a wall to prevent sliding. Ensure sufficient space for the person to stand fully without obstruction. Have a stopwatch ready. Ensure the person wears supportive shoes and appropriate clothing. Remove obstacles from the immediate area."
+        },
+        {
+          "heading": "Position the person and give instruction",
+          "description": "Ask the person to sit with their back against the chair back, feet flat hip-width apart, arms folded across the chest or resting on thighs. Explain: 'When I say go, stand up fully and then sit back down. Repeat as many times as you can in 30 seconds. Stand all the way up. Do not use your arms.' Allow one practice repetition to ensure understanding."
+        },
+        {
+          "heading": "Administer the 30-second trial",
+          "description": "Start the stopwatch and say 'Go'. Count complete repetitions aloud. Provide verbal encouragement: 'Good, keep going.' At 10 seconds remaining, say 'Keep going, 10 seconds left.' At 30 seconds, say 'Stop' and record the final count of complete repetitions."
+        },
+        {
+          "heading": "Record and interpret the result",
+          "description": "Document the number of complete repetitions. Note any safety issues: hand use, balance loss, pain, or fatigue. Compare the result to age and sex norms. If below 9.25 repetitions, classify as below average and elevated fall risk. If the test was incomplete or unsafe, note this and consider whether the person requires assistance before retesting."
+        },
+        {
+          "heading": "Discuss results and plan next steps",
+          "description": "Explain the result in clear language: 'Your lower leg strength is below average for your age, which increases your fall risk. I recommend starting a simple strengthening exercise program.' Provide specific, achievable recommendations such as chair squats, step-ups, or referral to a physiotherapy or exercise program."
+        }
+      ]
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Common errors and how to avoid them</h2><p>Error: Allowing arm use. If the person pushes off armrests or uses their hands on their thighs to propel themselves up, the test is invalid. Arm strength substitutes for leg strength. Solution: Ensure arms are folded across the chest or resting passively on the thighs. If the person requires arm support for safety, stop the test and note this. Do not count repetitions where arm use occurs.</p><p>Error: Incomplete repetitions. Some people rise only partially, bending at knees and hips but not achieving full standing. These should not be counted. Solution: Be explicit during instruction: 'Stand all the way up, so your legs are straight.' Count only complete cycles.</p><p>Error: Incorrect chair height. A chair that is too low increases difficulty and lowers the score. A chair that is too high makes standing easier and inflates the score. Solution: Use a standard chair with seat height 43 to 45 cm. If only non-standard chairs are available, measure and record the height for future comparison using the same chair.</p><p>Error: Inadequate supervision. Fatigue or balance loss can result in falls if the person is not supervised. Solution: Stand close throughout the 30 seconds, ready to provide physical support if they lose balance.</p><p>Error: Rushing. Some people move very quickly, potentially sacrificing balance and safety. Solution: Emphasize controlled movement at a sustainable pace. Verbal cues like 'Quality over speed' reinforce this message.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Contraindications and modifications</h2><p>Relative contraindications include acute knee or hip pain, recent joint surgery (typically wait 6 weeks post-op), severe balance disorder with recent falls, or extreme frailty where standing risks serious injury. In these cases, consider modified versions: testing over fewer than 30 seconds, using arm support, or seated and standing cycles.</p><p>Absolute contraindications are rare but include acute heart attack, unstable angina, or uncontrolled cardiac arrhythmia. Defer testing until medical clearance is obtained. Before testing, ask screening questions: Have you had any chest pain or severe shortness of breath? Do you have any new joint pain or recent surgery? Any concerns about standing safely? Document responses and stop testing if any red flags emerge.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        {
+          "stat": "92% sensitivity and 81% specificity for identifying fall risk at 9.25 repetition cutoff",
+          "source": "Jones et al. 1999",
+          "url": "https://doi.org/10.1093/gerona/54.8.m359"
+        },
+        {
+          "stat": "Lower limb strength predicts not only falls but also hospitalization and disability in older adults",
+          "source": "Rikli & Jones 2013",
+          "url": "https://doi.org/10.1249/01.mss.0000115211.37552.81"
+        },
+        {
+          "stat": "Resistance training improves sit-to-stand performance by 15 to 25% within 8 to 12 weeks",
+          "source": "Journal of the American Geriatrics Society 2022",
+          "url": "https://doi.org/10.1111/jgs.17735"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "What if someone cannot complete even one repetition?",
+          "answer": "This indicates severe lower limb weakness and substantial fall risk. Document the result as 'unable to complete single repetition' rather than zero. This person requires immediate referral for physical assessment and likely physiotherapy. Do not forcefully encourage continued attempts as injury risk is high."
+        },
+        {
+          "question": "Can I use the test if the person has knee pain?",
+          "answer": "Mild knee pain that does not prevent full standing can be accommodated by allowing arm support and adjusting the interpretation. Lower scores are expected due to pain-limited performance. If pain is severe or prevents full standing, defer the test and investigate the cause first. Consider alternative assessments."
+        },
+        {
+          "question": "Does sitting on a different chair height change the result?",
+          "answer": "Yes, significantly. A lower chair makes standing more difficult and lowers the score. A higher chair makes standing easier and inflates the score. Standardize on a chair with 43 to 45 cm seat height. Record the chair height for future reference and use the same chair for follow-up testing."
+        },
+        {
+          "question": "How often should the test be repeated?",
+          "answer": "For monitoring, annual testing is appropriate in healthy older adults. Anyone at fall risk or starting an intervention program should be tested every 3 to 6 months. If a person has declined significantly, re-test more frequently to guide intervention adjustments."
+        },
+        {
+          "question": "Is sit-to-stand better than other leg strength tests?",
+          "answer": "Sit-to-stand is practical, requires no equipment beyond a chair, and has decades of normative data. Other tests like the leg press require specialist equipment. Sit-to-stand mirrors daily activity and is highly valid for predicting falls and disability, making it ideal for primary care and community settings."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Integrate 30-second chair stand testing into your falls prevention program",
+      "bodyText": "Able Assess includes sit-to-stand measurement as part of a rapid four-test battery that identifies fall risk in under 15 minutes.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Learn about Able Assess",
+        "url": "/solutions/able-assess"
+      },
+      "scheme": "blue"
+    }
+  ]
+}

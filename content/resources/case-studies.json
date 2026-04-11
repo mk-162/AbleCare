@@ -1,18 +1,27 @@
 {
-  "title": "Real Results. Real Organisations.",
+  "title": "Real Results. Real Organizations.",
   "slug": "case-studies",
   "seo": {
     "title": "Case Studies | Able Care",
-    "description": "See how home care operators, senior living communities and clinical teams use Able Assess to reduce falls, protect outcomes and standardise care.",
+    "description": "See how home care operators, senior living communities and clinical teams use Able Assess to reduce falls, protect outcomes and standardize care.",
     "ogImage": "/images/og-case-studies.png"
   },
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "Case Studies", "href": "/resources/case-studies" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Case Studies",
+          "href": "/resources/case-studies"
+        }
       ]
     },
     {
@@ -22,10 +31,16 @@
       "backgroundImage": "/images/photos/clinical/patient-using-alone.jpg",
       "backgroundImageAlt": "Patient independently using Able Assess",
       "eyebrow": "Case Studies",
-      "headline": "Real results. Real organisations.",
-      "subtitle": "See how operators, communities and clinical teams use Able Assess to reduce falls, protect outcomes and standardise care across every site.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+      "headline": "Real results. Real organizations.",
+      "subtitle": "See how operators, communities and clinical teams use Able Assess to reduce falls, protect outcomes and standardize care across every site.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      }
     },
     {
       "_template": "caseStudyCards",
@@ -34,7 +49,7 @@
         {
           "title": "Multi-branch Home Care: Catching Decline Six Weeks Earlier",
           "segment": "Home Care",
-          "outcome": "A 12-branch US home care operator deployed Able Assess across every branch in under 30 days. Care managers caught functional decline six weeks earlier than their previous paper-based process. Hospitalisations from falls dropped measurably within the first quarter, protecting HHVBP performance.",
+          "outcome": "A 12-branch US home care operator deployed Able Assess across every branch in under 30 days. Care managers caught functional decline six weeks earlier than their previous paper-based process. Hospitalizations from falls dropped measurably within the first quarter, protecting HHVBP performance.",
           "href": "/resources/case-studies"
         },
         {
@@ -44,9 +59,9 @@
           "href": "/resources/case-studies"
         },
         {
-          "title": "Clinical Research: Standardised Endpoints Across Three Trial Sites",
+          "title": "Clinical Research: Standardized Endpoints Across Three Trial Sites",
           "segment": "Pharma & CROs",
-          "outcome": "A clinical research team used Able Assess to capture grip strength as a functional endpoint across three decentralised trial sites. The standardised protocol eliminated inter-site variability and improved signal for GLP-1 muscle loss monitoring.",
+          "outcome": "A clinical research team used Able Assess to capture grip strength as a functional endpoint across three decentralized trial sites. The standardized protocol eliminated inter-site variability and improved signal for GLP-1 muscle loss monitoring.",
           "href": "/resources/case-studies"
         }
       ]
@@ -64,7 +79,7 @@
           "attribution": "Operations Lead, UK CCRC"
         },
         {
-          "quote": "The standardised protocol eliminated the variability we were seeing across our trial sites.",
+          "quote": "The standardized protocol eliminated the variability we were seeing across our trial sites.",
           "attribution": "Principal Investigator, clinical research team"
         }
       ]
@@ -75,8 +90,20 @@
       "waveStyle": "ribbon",
       "heading": "See Able Assess in your workflow.",
       "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      }
     }
+  ],
+  "tags": [
+    "able-assess",
+    "home-care",
+    "senior-living",
+    "case-study"
   ]
 }

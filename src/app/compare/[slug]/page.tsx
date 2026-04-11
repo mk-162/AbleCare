@@ -1,19 +1,8 @@
 import { Metadata } from "next";
-import { BlockRenderer } from "@/components/blocks/BlockRenderer";
+import { fetchPage, extractPageData } from "@/lib/tina-client";
+import { EditorialPageClient } from "@/components/blocks/EditorialPageClient";
 
 export const revalidate = 60;
-
-async function getPageData(slug: string) {
-  try {
-    const fs = await import("fs");
-    const path = await import("path");
-    const filePath = path.join(process.cwd(), `content/compare/${slug}.json`);
-    const raw = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(raw);
-  } catch {
-    return null;
-  }
-}
 
 export async function generateMetadata({
   params,
@@ -21,17 +10,22 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const data = await getPageData(slug);
-  const title = data?.title || slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase());
-  return {
-    title,
-    description: data?.description,
-    openGraph: {
+  try {
+    const { data } = await fetchPage("compare", slug);
+    const page = extractPageData(data);
+    const title = page?.title || slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase());
+    return {
       title,
-      description: data?.description,
-      ...(data?.seo?.ogImage && { images: [{ url: data.seo.ogImage }] }),
-    },
-  };
+      description: page?.description,
+      openGraph: {
+        title,
+        description: page?.description,
+        ...(page?.seo?.ogImage && { images: [{ url: page.seo.ogImage }] }),
+      },
+    };
+  } catch {
+    return { title: slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase()) };
+  }
 }
 
 export default async function ComparePage({
@@ -40,27 +34,9 @@ export default async function ComparePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const data = await getPageData(slug);
+  const { query, variables, data } = await fetchPage("compare", slug);
 
-  if (!data?.blocks) {
-    return (
-      <div className="min-h-screen flex items-center justify-center pt-24">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-ac-black mb-4">
-            {data?.title || slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase())}
-          </h1>
-          <p className="text-ac-black/60">Comparison page content coming soon.</p>
-        </div>
-      </div>
-    );
-  }
-
-  const blocks = data.blocks.map((block: any) => ({
-    ...block,
-    __typename: `CompareBlocks${block._template.charAt(0).toUpperCase() + block._template.slice(1)}`,
-  }));
-
-  return <BlockRenderer blocks={blocks} />;
+  return <EditorialPageClient query={query} variables={variables} data={data} />;
 }
 
 export async function generateStaticParams() {

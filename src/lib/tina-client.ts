@@ -3,20 +3,24 @@
 /**
  * Tina CMS client helpers.
  *
- * The generated client (tina/__generated__/client) is created after running
- * `tinacms build`. Until then, these helpers are stubs — pages read JSON
- * directly from the filesystem instead.
+ * Wraps the generated client to provide a clean API for page components.
+ * The generated client is created after running `tinacms dev` or `tinacms build`.
  */
 
-let client: any;
-try {
-  // Dynamic require so the build doesn't fail before `tinacms build` runs.
-  client = require("../../tina/__generated__/client").client;
-} catch {
-  client = null;
-}
+import { client } from "../../tina/__generated__/client";
 
 export { client };
+
+/**
+ * Extract the page document from a Tina GraphQL response.
+ * Tina nests data under the collection key, e.g. { pages: { title, blocks, ... } }
+ */
+export function extractPageData(data: any): any {
+  const collectionKey = Object.keys(data).find(
+    (k) => k !== "__typename" && data[k]
+  );
+  return collectionKey ? data[collectionKey] : null;
+}
 
 /**
  * Fetch a page from a Tina collection by filename.
@@ -26,7 +30,6 @@ export async function fetchPage(
   collection: string,
   filename: string
 ): Promise<{ query: string; variables: any; data: any }> {
-  if (!client) throw new Error("Tina client not generated yet. Run `tinacms build` first.");
   const result = await (client.queries as any)[collection]({
     relativePath: `${filename}.json`,
   });
@@ -44,7 +47,6 @@ export async function fetchMarkdownPage(
   collection: string,
   filename: string
 ): Promise<{ query: string; variables: any; data: any }> {
-  if (!client) throw new Error("Tina client not generated yet. Run `tinacms build` first.");
   const result = await (client.queries as any)[collection]({
     relativePath: `${filename}.md`,
   });
@@ -61,7 +63,6 @@ export async function fetchMarkdownPage(
 export async function fetchCollection(
   collection: string
 ): Promise<{ query: string; variables: any; data: any }> {
-  if (!client) throw new Error("Tina client not generated yet. Run `tinacms build` first.");
   const listQuery = `${collection}Connection`;
   const result = await (client.queries as any)[listQuery]();
   return {

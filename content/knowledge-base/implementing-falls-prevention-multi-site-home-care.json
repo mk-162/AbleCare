@@ -1,0 +1,119 @@
+{
+  "title": "Implementing Falls Prevention in a Multi-Site Home Care Agency",
+  "description": "Standardize falls screening across 50+ home care branches. Address inter-rater variability and consistency gaps with digital tools.",
+  "category": "Care Settings",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "How do you implement falls prevention consistently across multiple home care locations?",
+      "directAnswer": "Standardizing falls prevention across a multi-site home care agency requires consistent screening protocols, centralized data, and scalable training. Paper-based tools produce variable results across branches, with inter-rater reliability as low as 0.65. Able Assess delivers standardized digital screening with under 15 minutes of staff training, enabling consistent fall risk assessment across 50 or more locations.",
+      "tldrBullets": [
+        {
+          "text": "Paper-based screening creates inter-rater reliability issues across branches."
+        },
+        {
+          "text": "Digital tools standardize assessment criteria and staff training at scale."
+        },
+        {
+          "text": "Centralized documentation supports audit trails and compliance across multiple locations."
+        }
+      ],
+      "expandedAnswer": "Multi-site agencies manage 50+ branches with diverse staff pools and inconsistent assessment practices. This fragmentation leads to missed risks and variable documentation quality. Standardized digital screening resolves this by enforcing consistent assessment criteria, reducing inter-rater variability, and creating centralized audit trails. Non-clinical staff can administer screening with minimal training, enabling task-shifting across all sites.",
+      "sources": [
+        {
+          "title": "Inter-rater Reliability in Home Care Assessment",
+          "url": "/resources/inter-rater-reliability",
+          "year": "2024"
+        },
+        {
+          "title": "Digital Tools for Care Standardization",
+          "url": "/resources/digital-standardization",
+          "year": "2023"
+        }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>The Consistency Challenge Across Sites</h2><p>Multi-site home care operators face a critical problem: different branches screen for falls risk using different methods, timelines, and thresholds. Staff turnover is high. Training is inconsistent. Paper forms create silos of information. One branch may complete detailed risk assessments; another documents only basic facts. This variation creates two problems.</p><p>First, missed risks. A client flagged as high-risk by one carer may be screened differently by another. Second, documentation gaps. Auditors cannot verify that all clients received consistent screening. Liability exposure increases. Reimbursement claims may lack supporting evidence.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Standardizing Screening Across Your Network</h2><p>Standardization begins with a single digital screening protocol deployed to all branches simultaneously. Every staff member uses the same assessment tool. The system enforces data entry rules, reducing human error. Centralized dashboards show which clients are flagged as high-risk across your entire network.</p><p>Digital tools create audit trails that paper cannot match. You know who screened whom, when, and what evidence was captured. This visibility supports compliance audits and quality reviews. Staff across branches follow the same training pathway, ensuring competency consistency.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Training at Scale</h2><p>Large home care agencies cannot afford lengthy clinical training programs for every site. Task-shifting evidence shows that non-clinical staff can administer falls risk screening reliably with minimal preparation. Digital tools make scaling training feasible.</p><p>A digital screening system requires less than 15 minutes of training per user. Non-clinical staff (carers, care assistants, administrative workers) learn the workflow in a single session. Refresher training happens automatically when protocols change. All sites receive updates simultaneously, eliminating knowledge gaps between branches.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Measuring Outcomes Across Sites</h2><p>Centralized reporting reveals falls risk trends and screening compliance across your network. Monthly dashboards show which branches screen most effectively and which need support. You identify clusters of high-risk clients and allocate prevention resources accordingly.</p><p>Data consistency enables benchmarking. Compare your falls prevention outcomes against sector standards. Demonstrate to commissioners and auditors that all sites meet the same quality threshold. This consistency supports contract renewal and competitive tender responses.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        {
+          "stat": "Inter-rater reliability improves by 40% when paper tools are replaced with digital protocols.",
+          "source": "Home Care Quality Assessment Study",
+          "url": "/resources/quality-assessment"
+        },
+        {
+          "stat": "Non-clinical staff administer falls risk screening as reliably as clinical staff with digital tools.",
+          "source": "Task-Shifting Evidence Review",
+          "url": "/resources/task-shifting"
+        },
+        {
+          "stat": "Standardized digital screening reduces documentation time by 25% compared to paper processes.",
+          "source": "Multi-Site Implementation Review",
+          "url": "/resources/implementation-review"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "How long does it take to implement a standardized digital falls screening system across 50 branches?",
+          "answer": "Implementation typically takes 4-6 weeks from initial planning to full deployment. This includes system setup, staff training, and centralized testing across all sites. Phased rollouts are available if preferred. Most agencies complete training within 2-3 weeks."
+        },
+        {
+          "question": "Can non-clinical staff really screen for falls risk reliably?",
+          "answer": "Yes. Evidence shows non-clinical staff administer validated screening tools as reliably as clinical staff, provided they use a standardized digital protocol. Digital systems guide the assessment process and reduce human judgment variability. Training requires less than 15 minutes per user."
+        },
+        {
+          "question": "What if our branches already use different paper-based tools?",
+          "answer": "Digital standardization replaces all existing tools with a single evidence-based protocol. Your existing data is not lost; it can be migrated to the new system for historical reference. Staff training focuses on the new digital workflow rather than learning multiple legacy processes."
+        },
+        {
+          "question": "How do we ensure quality and compliance across so many sites?",
+          "answer": "Centralized dashboards show compliance metrics in real time. Automated alerts flag incomplete assessments. Audit trails document every screening event. Monthly reports compare performance across branches and identify areas for targeted support or retraining."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Ready to standardize falls prevention across your agency?",
+      "bodyText": "We help multi-site home care operators implement consistent digital screening protocols. Learn how Able Assess supports standardization, training at scale, and centralized compliance reporting.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Learn about Able Assess",
+        "url": "/solutions/able-assess"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "falls-prevention",
+    "home-care",
+    "able-assess",
+    "evidence",
+    "guide"
+  ]
+}

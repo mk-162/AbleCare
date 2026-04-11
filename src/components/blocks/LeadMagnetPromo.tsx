@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 interface LeadMagnetPromoProps {
   heading?: string;
-  body?: string;
+  promoBody?: string;
   ctaText?: string;
   ctaLink?: string;
   coverImage?: string;
@@ -13,7 +13,7 @@ interface LeadMagnetPromoProps {
 
 export function LeadMagnetPromo({
   heading = "The Home Health Buyer's Guide to Functional Assessment",
-  body = "A 24-page comprehensive resource for evaluating, procuring, and implementing objective functional measurement in community care.",
+  promoBody: body = "A 24-page comprehensive resource for evaluating, procuring, and implementing objective functional measurement in community care.",
   ctaText = "Download the guide",
   ctaLink = "/resources/buyers-guide",
 }: LeadMagnetPromoProps) {

@@ -8,7 +8,7 @@ interface RoiCalculatorPromoProps {
   scheme?: string;
   eyebrow?: string;
   heading?: string;
-  body?: string;
+  promoBody?: string;
   ctaText?: string;
   ctaLink?: string;
 }
@@ -17,12 +17,12 @@ export function RoiCalculatorPromo({
   scheme = "aqua",
   eyebrow = "ROI Calculator",
   heading = "What would fewer falls mean for your bottom line?",
-  body = "See how reducing hospitalisations and streamlining assessments translates to significant savings across your organisation.",
+  promoBody: body = "See how reducing hospitalisations and streamlining assessments translates to significant savings across your organisation.",
   ctaText = "Open the calculator",
   ctaLink = "/roi-calculator",
 }: RoiCalculatorPromoProps) {
   const isBlue = scheme === "blue";
-  const bgClass = isBlue ? "bg-ac-blue" : scheme === "aqua" ? "bg-ac-aqua" : "bg-white";
+  const bgClass = isBlue ? "bg-ac-blue" : scheme === "aqua" ? "bg-ac-aqua" : scheme === "grey" ? "bg-ac-grey" : "bg-white";
 
   return (
     <section className={`py-20 md:py-28 ${bgClass}`}>

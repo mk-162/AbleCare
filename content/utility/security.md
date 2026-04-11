@@ -3,9 +3,7 @@ title: Security
 description: How Able Care protects your data with enterprise-grade security measures.
 ---
 
-# Security at Able Care
-
-Protecting patient data is at the core of everything we build. Able Care implements comprehensive security measures that meet and exceed the requirements of healthcare organisations worldwide.
+Protecting patient data is at the core of everything we build. Able Care implements comprehensive security measures that meet and exceed the requirements of healthcare organizations worldwide.
 
 ## Certifications & Compliance
 
@@ -40,7 +38,7 @@ Protecting patient data is at the core of everything we build. Able Care impleme
 
 - Regular penetration testing by independent security firms
 - Automated vulnerability scanning
-- Responsible disclosure programme
+- Responsible disclosure program
 
 ## Reporting Security Issues
 

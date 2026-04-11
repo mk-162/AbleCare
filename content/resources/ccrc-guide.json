@@ -1,0 +1,46 @@
+{
+  "title": "CCRC Falls Prevention Guide",
+  "slug": "ccrc-guide",
+  "seo": {
+    "title": "CCRC Falls Prevention Guide | Life Plan Communities | Able Care",
+    "description": "Implement falls prevention in CCRCs and life plan communities. Download our guide with best practices and compliance checklists.",
+    "ogImage": "/images/og-ccrc-guide.png"
+  },
+  "tags": ["resources", "ccrc", "senior-living", "falls-prevention", "guide"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "CCRC Guide" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "headline": "Falls prevention for CCRCs and life plan communities.",
+      "subtitle": "CCRCs face unique challenges across independent living, assisted living, and skilled nursing settings. This guide provides a framework for coordinated falls prevention across all care levels.",
+      "primaryCta": { "label": "Download the Guide", "href": "/resources/ccrc-guide-download" }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "What is inside the guide",
+      "body": "<ul><li>Setting-specific assessment protocols for IL, AL, and SNF</li><li>Technology solutions for tracking residents through care transitions</li><li>Staff training frameworks for each care level</li><li>Environmental modification checklists</li><li>Regulatory compliance requirements by setting type</li><li>Measuring program effectiveness across the community</li></ul>"
+    },
+    {
+      "_template": "richText",
+      "scheme": "grey",
+      "heading": "Why this guide matters",
+      "body": "<p>Falls are the leading cause of injury in senior living communities. CCRC residents expect safe, consistent care as they transition between care levels. A fall in one setting often triggers a cascade of decline that affects the entire community.</p><p>This guide equips leadership teams with evidence-based practices for coordinated falls prevention. It covers how to standardize screening, share data across settings, and demonstrate outcomes to residents, families, and regulators.</p>"
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "heading": "Download the CCRC Falls Prevention Guide",
+      "body": "Get the full guide with setting-specific protocols, compliance checklists, and implementation plans.",
+      "primaryCta": { "label": "Download the Guide", "href": "/resources/ccrc-guide-download" }
+    }
+  ]
+}

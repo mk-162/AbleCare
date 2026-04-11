@@ -10,9 +10,18 @@
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "Buyers Guide", "href": "/resources/buyers-guide" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Buyers Guide",
+          "href": "/resources/buyers-guide"
+        }
       ]
     },
     {
@@ -24,13 +33,19 @@
       "eyebrow": "Free Guide",
       "headline": "The falls prevention buyers guide.",
       "subtitle": "Everything you need to brief procurement on falls prevention technology. 24 pages covering evidence, features, pricing, integration and rollout.",
-      "primaryCta": { "label": "Download the Guide", "href": "#download" },
-      "secondaryCta": { "label": "Book a Demo", "href": "/contact" }
+      "primaryCta": {
+        "label": "Download the Guide",
+        "href": "#download"
+      },
+      "secondaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      }
     },
     {
       "_template": "leadMagnetPromo",
       "heading": "Brief your team in 24 pages",
-      "body": "The Falls Prevention Buyers Guide covers everything procurement needs to know: the evidence base, feature comparison, integration requirements, pricing models and rollout timelines. Written for operators, approved by clinicians.",
+      "promoBody": "The Falls Prevention Buyers Guide covers everything procurement needs to know: the evidence base, feature comparison, integration requirements, pricing models and rollout timelines. Written for operators, approved by clinicians.",
       "coverImage": "/images/buyers-guide-cover.jpg",
       "ctaText": "Download the Guide",
       "ctaHref": "#download"
@@ -53,7 +68,7 @@
         {
           "number": 3,
           "title": "Deploy",
-          "description": "Roll out the standardised protocol to every branch, community or clinical site. Training takes minutes, not days."
+          "description": "Roll out the standardized protocol to every branch, community or clinical site. Training takes minutes, not days."
         },
         {
           "number": 4,
@@ -66,10 +81,21 @@
       "_template": "ctaBanner",
       "colorScheme": "blue",
       "waveStyle": "ribbon",
-      "heading": "Ready to evaluate Able Assess for your organisation?",
+      "heading": "Ready to evaluate Able Assess for your organization?",
       "body": "Download the guide or book a 20-minute demo with our clinical team.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Guide", "href": "#download" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Guide",
+        "href": "#download"
+      }
     }
+  ],
+  "tags": [
+    "able-assess",
+    "falls-prevention",
+    "buyer-guide"
   ]
 }

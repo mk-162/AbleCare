@@ -3,7 +3,7 @@
   "slug": "customers",
   "seo": {
     "title": "Customers — Home Care, Senior Living and Clinical Teams | Able Care",
-    "description": "See how home care agencies, senior living communities and clinical teams use Able Assess for objective, standardised falls risk screening.",
+    "description": "See how home care agencies, senior living communities and clinical teams use Able Assess for objective, standardized falls risk screening.",
     "ogImage": "/images/og-customers.png"
   },
   "blocks": [
@@ -23,7 +23,7 @@
       "backgroundImageAlt": "Patient celebrating progress during assessment session",
       "eyebrow": "Our customers",
       "headline": "Trusted by care teams who refuse to guess.",
-      "subtitle": "From single-site home care agencies to multi-site senior living portfolios, organisations choose Able Assess because it delivers objective data their teams can act on.",
+      "subtitle": "From single-site home care agencies to multi-site senior living portfolios, organizations choose Able Assess because it delivers objective data their teams can act on.",
       "primaryCtaText": "Join them",
       "primaryCtaLink": "/company/demo"
     },
@@ -34,7 +34,7 @@
       "cards": [
         {
           "title": "Home care agencies",
-          "body": "PE-backed, franchised and independent home care operators use Able Assess to standardise falls risk screening across every branch. Non-clinical staff run the workflow in under five minutes, feeding objective data into HHVBP reporting and care plans.",
+          "body": "PE-backed, franchised and independent home care operators use Able Assess to standardize falls risk screening across every branch. Non-clinical staff run the workflow in under five minutes, feeding objective data into HHVBP reporting and care plans.",
           "icon": "homeCare",
           "link": "/home-care"
         },
@@ -46,7 +46,7 @@
         },
         {
           "title": "Clinicians and researchers",
-          "body": "Physiotherapists, geriatricians, occupational therapists and clinical trial teams use Able Assess for multifactorial, peer-reviewed falls risk screening. Remote-capable for decentralised trials, with strong signal for GLP-1 monitoring and oncology endpoints.",
+          "body": "Physiotherapists, geriatricians, occupational therapists and clinical trial teams use Able Assess for multifactorial, peer-reviewed falls risk screening. Remote-capable for decentralized trials, with strong signal for GLP-1 monitoring and oncology endpoints.",
           "icon": "clinicians",
           "link": "/clinicians"
         }
@@ -62,7 +62,7 @@
           "body": "Four peer-reviewed measurements captured by the GripAble sensor and the Able Assess workflow. Replaces subjective paper scoring."
         },
         {
-          "title": "Standardised",
+          "title": "Standardized",
           "body": "One protocol across every branch, community or clinical site. Defensible to payers, regulators, franchisees and corporate."
         },
         {
@@ -78,13 +78,13 @@
     {
       "_template": "trustBar",
       "scheme": "aqua",
-      "badges": [
-        { "label": "FDA listed", "icon": "fda" },
-        { "label": "CE marked", "icon": "ce" },
-        { "label": "ISO 27001", "icon": "iso" },
-        { "label": "HIPAA aligned", "icon": "hipaa" },
-        { "label": "GDPR compliant", "icon": "gdpr" },
-        { "label": "NICE 2025 aligned", "icon": "nice" }
+      "items": [
+        { "text": "FDA listed" },
+        { "text": "CE marked" },
+        { "text": "ISO 27001" },
+        { "text": "HIPAA aligned" },
+        { "text": "GDPR compliant" },
+        { "text": "NICE 2025 aligned" }
       ]
     },
     {

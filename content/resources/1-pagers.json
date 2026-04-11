@@ -1,0 +1,40 @@
+{
+  "title": "Segment 1-Pagers",
+  "slug": "1-pagers",
+  "seo": {
+    "title": "Able Assess for Your Care Setting | Segment 1-Pagers | Able Care",
+    "description": "Download 1-page segment overviews: home care, CCRCs, independent living, skilled nursing, and more.",
+    "ogImage": "/images/og-1-pagers.png"
+  },
+  "tags": ["resources", "1-pagers", "downloads", "segments"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "1-Pagers" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "headline": "Able Assess for your care setting.",
+      "subtitle": "Every care setting has unique falls prevention challenges. Each 1-pager shows how Able Assess fits your specific workflow, regulatory requirements, and operational priorities.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Segment overviews",
+      "body": "<h3><a href=\"/resources/1-pagers/pe-backed-home-care\">PE-Backed Home Care</a></h3><p>Scalable falls screening across your portfolio. Standardized protocols for every branch, corporate-level reporting, and HHVBP protection.</p><h3><a href=\"/resources/1-pagers/independent-home-care\">Independent Home Care</a></h3><p>Quality differentiation for independent agencies. Demonstrate measurable outcomes, improve HHVBP performance, and stand out from competitors.</p><h3><a href=\"/resources/1-pagers/ccrc\">CCRCs and Life Plan Communities</a></h3><p>Coordinated screening across all care levels. Track residents through transitions from independent living to assisted living to skilled nursing.</p><h3><a href=\"/resources/1-pagers/independent-living\">Independent Living</a></h3><p>Early risk identification and proactive wellness programming. Objective screening that supports residents in maintaining their independence.</p><h3><a href=\"/resources/1-pagers/assisted-living\">Assisted Living</a></h3><p>Standardized risk assessment that supports state licensing compliance. Consistent documentation for regulatory inspections and family reporting.</p><h3><a href=\"/resources/1-pagers/rental-retirement\">Rental Retirement</a></h3><p>Streamlined assessment with minimal operational burden. Quick screening that fits into existing wellness programs without additional staffing.</p><h3><a href=\"/resources/1-pagers/skilled-nursing\">Skilled Nursing Facilities</a></h3><p>Evidence-backed screening for CQC and HHVBP compliance. Objective data that supports clinical decision-making and regulatory documentation.</p>"
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "heading": "Need a custom overview for your setting?",
+      "body": "Our team can create a tailored overview for your specific care setting and operational requirements.",
+      "primaryCta": { "label": "Contact Us", "href": "/demo" }
+    }
+  ]
+}

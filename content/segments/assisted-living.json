@@ -1,0 +1,210 @@
+{
+  "title": "Falls Management for Assisted Living",
+  "slug": "assisted-living",
+  "seo": {
+    "title": "Falls Management for Assisted Living | Able Care",
+    "description": "Reduce the fall burden on staff. Protect length of stay. Defend against liability. Objective screening in under five minutes per resident.",
+    "ogImage": "/images/og-assisted-living.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Senior Living",
+          "href": "/senior-living"
+        },
+        {
+          "label": "Assisted Living",
+          "href": "/senior-living/assisted-living"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "backgroundImage": "/images/photos/clinical/nurse-handing-kit.jpg",
+      "backgroundImageAlt": "Nurse handing an assessment kit to a care team member",
+      "eyebrow": "Assisted Living",
+      "headline": "Falls management for assisted living.",
+      "subtitle": "Reduce the fall burden on staff. Protect length of stay. Defend against liability. Objective screening in under five minutes.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download the AL Guide",
+        "href": "/resources/buyers-guide"
+      }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The fall burden in assisted living",
+      "body": "<p>Assisted living staff are stretched. Acuity is rising. Falls generate incident reports, family complaints, regulatory scrutiny and, increasingly, litigation.</p><p>Paper-based screening tools add documentation time without improving outcomes. They are subjective, inconsistent across staff and difficult to defend in a liability context.</p><p>Able Assess replaces paper tools with four objective, validated metrics captured in under five minutes. CNAs and med techs can run the workflow. The data is standardized, timestamped and defensible.</p>"
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "How it works in assisted living",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Screen at intake",
+          "description": "Capture a baseline within 48 hours of move-in. Four validated metrics in a single five-minute session."
+        },
+        {
+          "number": 2,
+          "title": "Stratify risk",
+          "description": "Residents are banded by fall risk using normative data. High-risk residents are flagged for the DON and care team immediately."
+        },
+        {
+          "number": 3,
+          "title": "Monitor quarterly",
+          "description": "Repeat screenings track functional change over time. Declining scores trigger care plan updates before a fall occurs."
+        },
+        {
+          "number": 4,
+          "title": "Report and defend",
+          "description": "Standardized, timestamped records create a defensible audit trail for regulatory reviews and liability enquiries."
+        }
+      ]
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Four metrics that protect your community",
+      "metrics": [
+        {
+          "name": "Grip strength",
+          "whatItMeasures": "Upper-body strength and frailty risk.",
+          "whyItMatters": "A validated predictor of hospitalization. Declining grip strength in AL residents signals functional change that requires intervention."
+        },
+        {
+          "name": "Sit-to-stand",
+          "whatItMeasures": "Lower-limb power and transfer ability.",
+          "whyItMatters": "Transfer-related falls are among the most common in assisted living. This metric identifies residents at highest risk."
+        },
+        {
+          "name": "Gait speed",
+          "whatItMeasures": "Walking speed over a short distance.",
+          "whyItMatters": "Declining gait speed is a reliable early warning. It gives care teams time to intervene before a fall triggers a move or a claim."
+        },
+        {
+          "name": "Timed Up and Go",
+          "whatItMeasures": "Functional mobility and dynamic balance.",
+          "whyItMatters": "Gives the DON objective, population-level data on fall risk across the entire community. Defensible and repeatable."
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "Delegate screening, not responsibility",
+      "body": "Able Assess enables CNAs and med techs to run standardized screenings. The DON retains oversight through a dashboard that surfaces declining residents and population-level trends without adding to their workload.",
+      "imageSide": "right",
+      "imageAlt": "Clinician and patient using Able Assess on a tablet during a screening session",
+      "imageSrc": "/images/photos/clinical/therapist-patient-tablet.jpg"
+    },
+    {
+      "_template": "roiCalculatorPromo",
+      "heading": "Model the impact of fewer falls",
+      "promoBody": "Falls in assisted living drive hospitalization, liability claims and early move-outs. See what a 25% reduction could mean for your community.",
+      "ctaText": "Run the numbers",
+      "ctaHref": "/resources/roi-calculator"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "colorScheme": "aqua",
+      "testimonials": [
+        {
+          "quote": "The data is timestamped and objective. When a family or attorney asks what we did to prevent a fall, we can show them exactly what we documented and when.",
+          "attribution": "Director of Nursing, AL community"
+        },
+        {
+          "quote": "The time from incident to intervention dropped significantly. We are catching decline earlier and acting on it faster.",
+          "attribution": "Executive Director, AL community"
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "heading": "The numbers that matter to assisted living",
+      "colorScheme": "aqua",
+      "stats": [
+        {
+          "value": "4",
+          "label": "Validated metrics per screening"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per resident screening"
+        },
+        {
+          "value": "15 min",
+          "label": "Staff training time"
+        },
+        {
+          "value": "25%",
+          "label": "Average fall reduction"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "light",
+      "heading": "Common questions from AL operators",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "Can CNAs and med techs run the screening?",
+          "answer": "Yes. Able Assess was designed for frontline staff. CNAs, med techs and care aides can all run the five-minute workflow after a short onboarding session. No clinical certifications are required."
+        },
+        {
+          "question": "Our residents have higher acuity than IL. Does the screening still work?",
+          "answer": "Yes. The four metrics are validated across a wide range of functional ability, including residents with mobility aids and cognitive impairment. The protocol adapts to the resident's capacity."
+        },
+        {
+          "question": "How does it help with liability?",
+          "answer": "A standardized, timestamped screening record demonstrates proactive falls risk management. This is significantly more defensible than subjective clinical notes or paper-based tools."
+        },
+        {
+          "question": "Does it integrate with our EHR?",
+          "answer": "Able Assess supports data export and integration with major EHR platforms. Assessment results can be pushed into the resident record to support care planning and compliance documentation."
+        },
+        {
+          "question": "Can it be used in memory care settings?",
+          "answer": "Yes. The assessment protocol has been used successfully with residents who have mild to moderate cognitive impairment. Staff guide the resident through each metric using simple, consistent prompts."
+        },
+        {
+          "question": "How does pricing work for points-based or bundled billing models?",
+          "answer": "Pricing is based on community size and assessment volume, not billing model. The ROI calculator can model payback against your specific revenue and cost structure. Book a demo to discuss your scenario."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See Able Assess in an assisted living workflow.",
+      "body": "20 minutes with a clinician who has deployed it in assisted living communities.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "senior-living",
+    "assisted-living",
+    "falls-prevention"
+  ]
+}

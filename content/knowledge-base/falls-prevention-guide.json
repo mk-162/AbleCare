@@ -1,0 +1,35 @@
+{
+  "title": "Falls Prevention Guide",
+  "description": "Comprehensive guide to falls prevention strategies, assessments and technology for home care, senior living and clinical settings.",
+  "category": "Falls Prevention",
+  "blocks": [
+    {
+      "_template": "hero",
+      "headline": "Falls Prevention Guide",
+      "subtitle": "Evidence-based strategies, screening protocols and clinical tools to identify and reduce fall risk. Learn how Able Care helps organizations implement falls prevention at scale.",
+      "scheme": "blue",
+      "wave": "crest"
+    },
+    {
+      "_template": "richText",
+      "body": "<p>Falls prevention is a systematic approach to identifying individuals at risk of falling and implementing interventions to reduce that risk. Falls are the leading cause of both unintentional injuries and injury-related deaths in older adults, with significant implications for independence, quality of life and healthcare costs. Able Care provides digital screening tools and assessment protocols that help care organizations identify high-risk individuals quickly, document findings in compliance with regulatory standards, and track outcomes across multiple sites. Whether you're implementing STEADI screening, meeting CMS HHVBP requirements or establishing falls prevention programs in residential settings, this guide covers the evidence, tools and practical strategies you need.</p><h2>Articles in this guide</h2><ul><li><a href=\"/current-knowledge/what-is-a-falls-risk-assessment/\">What Is a Falls Risk Assessment? The Complete Guide</a> - foundational framework for identifying individual fall risk</li><li><a href=\"/current-knowledge/how-to-reduce-falls-in-home-care/\">How to Reduce Falls in Home Care</a> - practical interventions and implementation strategies</li><li><a href=\"/current-knowledge/falls-prevention-in-senior-living/\">Falls Prevention in Senior Living</a> - approaches for residential and continuing care settings</li><li><a href=\"/current-knowledge/what-is-steadi-falls-screening/\">What Is the STEADI Falls Screening Protocol?</a> - CDC-backed standardized screening method</li><li><a href=\"/current-knowledge/safe-act-falls-screening/\">Understanding the SAFE Act</a> - regulatory context and compliance requirements</li><li><a href=\"/current-knowledge/digital-falls-screening-vs-paper/\">Digital Falls Screening vs Paper Assessments</a> - efficiency and data quality comparison</li><li><a href=\"/current-knowledge/multifactorial-falls-risk-assessment/\">Multifactorial Falls Risk Assessment</a> - comprehensive evaluation of multiple risk factors</li><li><a href=\"/current-knowledge/falls-risk-assessment-next-steps/\">What Happens After a Falls Risk Assessment?</a> - intervention planning and follow-up workflows</li><li><a href=\"/current-knowledge/nice-2025-falls-guidelines/\">NICE 2025 Falls Guidelines</a> - latest international evidence and recommendations</li><li><a href=\"/current-knowledge/falls-prevention-technology-buyers-guide/\">Falls Prevention Technology Buyer's Guide</a> - evaluation framework for screening tools</li><li><a href=\"/current-knowledge/falls-prevention-roi/\">How to Measure Falls Prevention ROI</a> - tracking clinical and financial outcomes</li><li><a href=\"/current-knowledge/hhvbp-falls-measure/\">Falls Risk in Home Health: HHVBP Falls Measure</a> - Medicare quality reporting requirements</li></ul>"
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Implement falls prevention screening today",
+      "bodyText": "Able Care's digital assessment platform automates screening, tracks high-risk individuals and integrates with your existing workflows.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "falls-prevention",
+    "home-care",
+    "senior-living",
+    "able-assess",
+    "buyer-guide"
+  ]
+}

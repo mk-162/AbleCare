@@ -1,0 +1,94 @@
+{
+  "title": "EHR Integrations & Data Export",
+  "seo": {
+    "title": "EHR Integrations & Data Export | Able Assess | FHIR, OASIS, HL7",
+    "description": "Able Assess integrates with major EHR systems. FHIR API, OASIS export, data formats, implementation timelines.",
+    "ogImage": "/images/og-integrations.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Product",
+          "href": "/product"
+        },
+        {
+          "label": "Integrations",
+          "href": "/product/integrations"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Product",
+      "headline": "Seamless Integration with Your Existing Systems.",
+      "subtitle": "FHIR-compliant APIs, OASIS data export, and direct EHR integration.",
+      "primaryCta": {
+        "label": "Book a Technical Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download API Documentation",
+        "href": "/resources/api-docs"
+      }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Integration overview",
+      "body": "<h3>Supported EHR Systems</h3><p>Able Assess integrates with major electronic health record platforms used across home care, senior living and clinical settings. Current integrations include PointClickCare, MatrixCare and Epic, with additional connectors in development. If your EHR is not listed, our integration team can scope a custom connection.</p><h3>Data Export Formats</h3><p>Assessment data can be exported in multiple formats to suit your technical environment and reporting requirements.</p><ul><li><strong>FHIR R4</strong> - Full FHIR-compliant API for real-time, bidirectional data exchange.</li><li><strong>OASIS-E</strong> - Pre-formatted OASIS export for US home health agencies, mapped directly to relevant OASIS items.</li><li><strong>HL7v2</strong> - Standard HL7 version 2 messaging for legacy EHR systems.</li><li><strong>CSV/Excel</strong> - Bulk data export for offline analysis, quality reporting and research.</li><li><strong>REST API</strong> - Full programmatic access to assessment data for custom integrations and dashboards.</li></ul><h3>Implementation Timeline</h3><p>Timelines vary by integration complexity. Typical benchmarks are as follows.</p><ul><li><strong>Standard deployment</strong> (built-in EHR connector): 4 weeks from contract to first assessment.</li><li><strong>FHIR integration</strong>: 5 weeks, including endpoint configuration and testing.</li><li><strong>Custom integration</strong>: 9 weeks, including requirements scoping, development and validation.</li></ul><h3>Technical Specifications</h3><ul><li>TLS 1.2 encryption for all data in transit.</li><li>AES-256 encryption for all data at rest.</li><li>IP whitelisting available for API access.</li><li>Full audit logging on all data transactions.</li><li>99.5% platform uptime SLA.</li></ul>"
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "grey",
+      "heading": "Integration questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "Does Able Assess integrate with my specific EHR?",
+          "answer": "We currently support PointClickCare, MatrixCare and Epic with built-in connectors. FHIR and HL7v2 APIs allow integration with most modern EHR platforms. If your system is not listed, contact our integration team to discuss a custom connection."
+        },
+        {
+          "question": "What is the difference between FHIR and HL7v2 integration?",
+          "answer": "FHIR R4 is the modern standard for healthcare data exchange, supporting RESTful APIs and structured data resources. HL7v2 is an older messaging standard still used by many legacy systems. We support both to ensure compatibility regardless of your current infrastructure."
+        },
+        {
+          "question": "How long does a typical integration take?",
+          "answer": "Standard deployments using a built-in EHR connector take approximately 4 weeks. FHIR integrations take around 5 weeks. Custom integrations requiring bespoke development typically take 9 weeks from scoping to validation."
+        },
+        {
+          "question": "Can we access the API directly for custom reporting?",
+          "answer": "Yes. Our REST API provides full programmatic access to assessment data. API documentation, authentication credentials and sandbox environments are provided during onboarding. Rate limits and IP whitelisting are configurable."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See the integration in action.",
+      "body": "Our technical team can walk you through the API, data formats and EHR connector setup.",
+      "primaryCta": {
+        "label": "Book a Technical Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download the API Documentation",
+        "href": "/resources/api-docs"
+      }
+    }
+  ],
+  "tags": [
+    "product",
+    "integrations",
+    "ehr",
+    "fhir"
+  ]
+}

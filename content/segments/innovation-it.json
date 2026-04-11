@@ -1,0 +1,93 @@
+{
+  "title": "Healthcare IT Integration Platform",
+  "slug": "innovation-it",
+  "seo": {
+    "title": "Healthcare IT Integration Platform | Able Care",
+    "description": "API-first architecture, enterprise security, and seamless EHR integration for healthcare IT leaders.",
+    "ogImage": "/images/og-innovation-it.png"
+  },
+  "tags": ["persona", "innovation-it", "ehr", "security", "api"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Innovation & IT" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Innovation & IT",
+      "headline": "Cloud-native architecture. Enterprise-grade security. Seamless EHR integration.",
+      "subtitle": "Built for healthcare IT. ISO 27001 certified, HIPAA and GDPR compliant, API-first design.",
+      "primaryCta": { "label": "Book a Technical Demo", "href": "/demo" }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The healthcare IT challenge",
+      "body": "<h3>EHR Integration Complexity</h3><p>New clinical tools often create data silos. If screening results live outside the EHR, clinical teams work across multiple systems and data integrity suffers. Able Assess is built API-first, with standardized integration pathways for major EHR platforms. Screening data flows into existing clinical records without manual re-entry.</p><h3>Security and Compliance Requirements</h3><p>Healthcare IT teams must evaluate every new tool against strict security and regulatory standards. Able Assess holds ISO 27001 certification, aligns with HIPAA requirements, and is GDPR compliant. Penetration testing, encryption at rest and in transit, and role-based access control are built into the platform architecture.</p><h3>Innovation Velocity vs Governance</h3><p>IT leaders face pressure to adopt new clinical technologies while maintaining governance standards. Long procurement cycles delay innovation. Able Assess is designed for rapid deployment within enterprise governance frameworks. Pre-built compliance documentation, standard API contracts, and a cloud-native architecture reduce evaluation time without compromising security posture.</p>"
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "light",
+      "heading": "What Able Assess delivers for IT leaders",
+      "items": [
+        {
+          "title": "API-First Architecture",
+          "body": "RESTful APIs with standard authentication. Pre-built connectors for major EHR platforms. Webhook support for event-driven workflows."
+        },
+        {
+          "title": "Enterprise Security",
+          "body": "ISO 27001 certified. HIPAA aligned. GDPR compliant. Encryption at rest and in transit. Role-based access control. Regular penetration testing."
+        },
+        {
+          "title": "Scalable Cloud Infrastructure",
+          "body": "Cloud-native platform built for multi-site deployment. Auto-scaling, high availability, and disaster recovery as standard. No on-premise infrastructure required."
+        },
+        {
+          "title": "Developer-Friendly Platform",
+          "body": "Comprehensive API documentation, sandbox environments, and technical onboarding support. Reduce integration timelines from months to weeks."
+        }
+      ]
+    },
+    {
+      "_template": "testimonialCarousel",
+      "heading": "What IT leaders say",
+      "testimonials": [
+        {
+          "quote": "IT integration testimonial coming soon.",
+          "attribution": "CTO, Healthcare Services Provider"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Questions from IT leaders",
+      "scheme": "light",
+      "items": [
+        {
+          "question": "Which EHR platforms does Able Assess integrate with?",
+          "answer": "Able Assess supports integration with major EHR platforms including Epic, Cerner, and PointClickCare. The API-first architecture allows custom integrations with any system that supports RESTful APIs or HL7 FHIR."
+        },
+        {
+          "question": "How do you handle HIPAA and GDPR compliance?",
+          "answer": "The platform is ISO 27001 certified with HIPAA-aligned controls and full GDPR compliance. Data is encrypted at rest and in transit. Access is controlled through role-based permissions. We provide a compliance pack with BAA, DPA, and security questionnaire responses."
+        },
+        {
+          "question": "Can we build custom integrations against your API?",
+          "answer": "Yes. The platform provides RESTful APIs with comprehensive documentation and a sandbox environment for development and testing. Webhook support enables event-driven workflows. The technical team can walk through the API during a demo."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Innovation and compliance do not have to conflict.",
+      "body": "30 minutes with the technical team. Architecture, security, and integration pathways.",
+      "primaryCta": { "label": "Book a Technical Demo", "href": "/demo" },
+      "scheme": "blue"
+    }
+  ]
+}

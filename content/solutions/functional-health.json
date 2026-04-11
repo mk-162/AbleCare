@@ -1,0 +1,100 @@
+{
+  "title": "Functional Health Assessment",
+  "slug": "functional-health",
+  "seo": {
+    "title": "Functional Health Assessment Platform | Able Assess | Grip Strength, Gait, Performance",
+    "description": "Comprehensive functional health assessment for frailty screening, oncology pre-habilitation, GLP-1 monitoring, and longevity research. Objective measurement of decline and intervention response.",
+    "ogImage": "/images/og-functional-health.png"
+  },
+  "tags": ["solutions", "functional-health", "frailty", "oncology", "glp-1", "longevity"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Solutions", "href": "/solutions" },
+        { "label": "Functional Health" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Solutions",
+      "headline": "Functional health measurement that goes beyond balance and gait.",
+      "subtitle": "Grip strength, physical performance, muscle quality and metabolic reserve. Four dimensions of function measured objectively, tracked over time and linked to clinical outcomes.",
+      "primaryCta": { "label": "Talk to the Research Team", "href": "/demo" },
+      "secondaryCta": { "label": "Download Framework", "href": "/resources/functional-health-framework" }
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Four dimensions of functional health",
+      "metrics": [
+        {
+          "name": "Grip Strength (kg)",
+          "description": "Predicts mortality, cardiovascular risk, cancer outcomes and frailty. The single strongest functional predictor of adverse health events in older adults."
+        },
+        {
+          "name": "Gait Speed (m/s)",
+          "description": "Indicator of balance, fall risk, mobility decline and overall health status. Often described as the sixth vital sign."
+        },
+        {
+          "name": "Physical Performance (SPPB or TUG)",
+          "description": "Composite measure of lower limb strength and functional mobility. Captures transfer ability, standing balance and walking capacity in a single score."
+        },
+        {
+          "name": "Body Composition",
+          "description": "Muscle mass, fat mass and body composition for monitoring treatment side effects and detecting sarcopenic obesity."
+        }
+      ]
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Use cases across care settings",
+      "body": "<h3>GLP-1 Monitoring</h3><p>Patients on semaglutide or tirzepatide need monitoring for muscle-sparing weight loss. Up to 40% of weight lost on GLP-1 agonists can be lean mass. Grip strength detects adverse muscle loss early, before it affects function or independence.</p><h3>Oncology Pre-habilitation</h3><p>Baseline measurement before chemotherapy or surgery establishes a functional reference point. Repeat assessment every four to six weeks tracks treatment impact. A grip strength loss greater than 2 kg signals the need for intervention.</p><h3>Longevity and Preventative Health</h3><p>Functional measures predict biological aging rate better than chronological age. Annual testing of grip strength, gait speed and physical performance tracks functional aging and identifies individuals who would benefit from early intervention.</p><h3>Frailty Screening</h3><p>Primary care and community health teams screen patients aged 65 and over. Grip strength below 27 kg for men or 16 kg for women triggers a comprehensive geriatric assessment. Early identification enables targeted prevention.</p>"
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "Measure what matters for prevention",
+      "body": "Objective measurement enables early detection. Functional decline is often invisible until a crisis event. Regular assessment with validated instruments catches the trajectory before it reaches a clinical threshold, giving care teams time to intervene.",
+      "imageSrc": "/images/product/gripable-in-hand-trimmed-min.png",
+      "imageAlt": "Clinician holding the GripAble digital dynamometer sensor",
+      "imageSide": "left"
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "light",
+      "heading": "Questions about functional health assessment",
+      "items": [
+        {
+          "question": "Is grip strength alone sufficient?",
+          "answer": "Grip strength is the strongest single predictor, but adding gait speed or SPPB improves diagnostic discrimination. Able Assess captures all measures in a single workflow so you are not relying on one metric alone."
+        },
+        {
+          "question": "How often should functional health be assessed?",
+          "answer": "It depends on the clinical context. Annual assessment is appropriate for stable community-dwelling adults. Quarterly for those identified as pre-frail or frail. Every four to six weeks for patients undergoing cancer treatment or on GLP-1 therapy."
+        },
+        {
+          "question": "What interventions follow declining grip strength?",
+          "answer": "Declining grip strength should prompt nutritional assessment, resistance training prescription, investigation of underlying disease and functional rehabilitation. The specific pathway depends on the clinical context and the rate of decline."
+        },
+        {
+          "question": "Can functional health assessment reduce hospital admissions?",
+          "answer": "Yes. Frailty screening and early intervention demonstrably reduce hospitalizations. Identifying at-risk individuals before a crisis event enables preventive action that keeps people out of hospital."
+        },
+        {
+          "question": "How does it fit into remote monitoring?",
+          "answer": "Grip strength and gait speed can be assessed remotely using the GripAble sensor in a home setting. Results sync automatically to the care team portal. See our remote monitoring page for the full workflow."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "heading": "Functional health assessment for your setting",
+      "body": "Whether you are running a frailty clinic, an oncology pre-habilitation program or a longevity service, we can show you how Able Assess fits.",
+      "primaryCta": { "label": "Talk to the Research Team", "href": "/demo" }
+    }
+  ]
+}

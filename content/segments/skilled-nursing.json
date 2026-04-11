@@ -3,15 +3,21 @@
   "slug": "skilled-nursing",
   "seo": {
     "title": "Falls Prevention for Skilled Nursing | Able Care",
-    "description": "Protect Five-Star ratings. Defend VBP performance. Reduce rehospitalisation. Objective falls screening for skilled nursing facilities in under five minutes.",
+    "description": "Protect Five-Star ratings. Defend VBP performance. Reduce rehospitalization. Objective falls screening for skilled nursing facilities in under five minutes.",
     "ogImage": "/images/og-skilled-nursing.png"
   },
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Skilled Nursing", "href": "/skilled-nursing" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Skilled Nursing",
+          "href": "/skilled-nursing"
+        }
       ]
     },
     {
@@ -22,9 +28,15 @@
       "backgroundImageAlt": "Therapist conducting bedside assessment with patient",
       "eyebrow": "Skilled Nursing Facilities",
       "headline": "Falls prevention for skilled nursing.",
-      "subtitle": "Protect Five-Star ratings. Defend VBP performance. Reduce rehospitalisation. Objective, standardised falls screening in under five minutes, usable by any member of staff.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the SNF Guide", "href": "/resources/buyers-guide" }
+      "subtitle": "Protect Five-Star ratings. Defend VBP performance. Reduce rehospitalization. Objective, standardized falls screening in under five minutes, usable by any member of staff.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the SNF Guide",
+        "href": "/resources/buyers-guide"
+      }
     },
     {
       "_template": "metricsBlock",
@@ -32,7 +44,7 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Upper-body strength proxy. Low grip strength predicts falls, rehospitalisation and functional decline in SNF residents."
+          "description": "Upper-body strength proxy. Low grip strength predicts falls, rehospitalization and functional decline in SNF residents."
         },
         {
           "name": "Sit-to-stand",
@@ -40,7 +52,7 @@
         },
         {
           "name": "Gait speed",
-          "description": "The 'sixth vital sign.' Linked to rehospitalisation risk, length of stay and VBP outcomes."
+          "description": "The 'sixth vital sign.' Linked to rehospitalization risk, length of stay and VBP outcomes."
         },
         {
           "name": "Timed Up and Go",
@@ -66,7 +78,7 @@
         {
           "number": 3,
           "title": "Ongoing monitoring",
-          "description": "Re-screen at defined intervals. Longitudinal trends surface decline before it becomes a fall or a rehospitalisation."
+          "description": "Re-screen at defined intervals. Longitudinal trends surface decline before it becomes a fall or a rehospitalization."
         },
         {
           "number": 4,
@@ -112,7 +124,7 @@
         },
         {
           "question": "How quickly can we deploy across multiple facilities?",
-          "answer": "Most multi-site operators deploy in under 30 days. One standardised protocol means minimal training overhead at each site."
+          "answer": "Most multi-site operators deploy in under 30 days. One standardized protocol means minimal training overhead at each site."
         },
         {
           "question": "What does it cost?",
@@ -126,8 +138,20 @@
       "waveStyle": "ribbon",
       "heading": "See Able Assess in your skilled nursing workflow.",
       "body": "20 minutes with a clinician who has deployed it in SNF settings.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      }
     }
+  ],
+  "tags": [
+    "skilled-nursing",
+    "falls-prevention",
+    "five-star",
+    "able-assess"
   ]
 }

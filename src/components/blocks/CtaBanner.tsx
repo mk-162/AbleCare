@@ -5,6 +5,11 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { BrandmarkWatermark } from "@/components/ui/BrandmarkWatermark";
 
+const schemeToHex = (s: string): string => {
+  const map: Record<string, string> = { blue: "#1432FF", light: "#ffffff", white: "#ffffff", aqua: "#00FFD2", grey: "#DCDCDC" };
+  return map[s] || "#ffffff";
+};
+
 interface CtaBannerProps {
   scheme?: string;
   wave?: string;
@@ -26,20 +31,21 @@ export function CtaBanner({
   primaryCtaLink = "/contact",
   secondaryCtaText,
   secondaryCtaLink,
-  waveFill = "#ffffff",
+  waveFill,
 }: CtaBannerProps) {
   const isBlue = scheme === "blue";
-  const bgColor = isBlue ? "#1432FF" : "#ffffff";
+  const bgColor = isBlue ? "#1432FF" : scheme === "grey" ? "#DCDCDC" : scheme === "aqua" ? "#00FFD2" : "#ffffff";
+  const waveTop = waveFill ? schemeToHex(waveFill) : "#ffffff";
 
   return (
     <section className="relative overflow-hidden">
-      <div className="w-full leading-none" aria-hidden="true" style={{ backgroundColor: waveFill }}>
+      <div className="relative w-full leading-none" aria-hidden="true">
         <svg viewBox="0 0 1440 102" preserveAspectRatio="none" className="block w-full" style={{ height: "102px" }}>
-          <rect width="1440" height="102" fill={bgColor} />
-          {wave === "ribbon" && <path fill={waveFill} d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,40 1440,60 L1440,0 L0,0 Z" />}
-          {wave === "fold" && <path fill={waveFill} d="M0,0 L1440,102 L0,102 Z" />}
-          {wave === "arc" && <path fill={waveFill} d="M0,102 C480,0 960,0 1440,102 L1440,0 L0,0 Z" />}
-          {(wave === "crest" || wave === "pulse" || wave === "none") && <path fill={waveFill} d="M0,50 C240,100 480,0 720,50 C960,100 1200,0 1440,50 L1440,0 L0,0 Z" />}
+          <rect width="1440" height="102" fill={waveTop} />
+          {wave === "ribbon" && <path fill={bgColor} d="M0,60 C360,100 720,20 1080,60 C1260,80 1380,40 1440,60 L1440,102 L0,102 Z" />}
+          {wave === "fold" && <path fill={bgColor} d="M1440,0 L1440,102 L0,102 Z" />}
+          {wave === "arc" && <path fill={bgColor} d="M0,102 C480,0 960,0 1440,102 Z" />}
+          {(wave === "crest" || wave === "pulse" || wave === "none") && <path fill={bgColor} d="M0,50 C240,100 480,0 720,50 C960,100 1200,0 1440,50 L1440,102 L0,102 Z" />}
         </svg>
       </div>
 

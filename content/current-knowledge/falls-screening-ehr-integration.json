@@ -1,0 +1,96 @@
+{
+  "title": "Integrating Falls Screening with Your EHR: What to Expect",
+  "description": "Technical guide: HL7 FHIR, API integration, interoperability standards, and evaluating vendors for seamless EHR integration.",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "How does falls screening integration with EHR systems work?",
+      "directAnswer": "Falls screening data from platforms like Able Assess flows to your EHR via secure APIs using HL7 FHIR standards. Assessment results are automatically coded into clinical records, eliminating manual entry, reducing errors, and ensuring clinicians see results in real-time for care planning.",
+      "tldrBullets": [
+        { "text": "API integration automates data flow from assessment tool to EHR without manual entry" },
+        { "text": "HL7 FHIR standards ensure interoperability across different EHR systems and vendors" },
+        { "text": "Real-time data sync supports immediate clinical decision-making and outcome tracking" }
+      ],
+      "expandedAnswer": "<p>EHR integration means assessment data flows automatically from the screening tool to your electronic health record. Without integration, clinicians manually re-enter results: patient name, age, test scores, risk level. This process is time-consuming, error-prone, and delays clinical decision-making.</p><p>With integration, assessment data syncs automatically. A clinician completes a falls assessment using Able Assess. Results are immediately available in the EHR under the correct patient record. The clinician reviews results alongside other clinical data (medications, comorbidities, prior hospitalizations) and makes intervention decisions in context. This integration supports better clinical judgment and efficiency.</p><p>Integration uses Application Programming Interfaces (APIs). The assessment platform connects to your EHR via a secure, encrypted connection. Data is exchanged using HL7 FHIR (Fast Healthcare Interoperability Resources), an international standard for health data exchange. FHIR is designed for modern healthcare systems and simplifies integration compared to older standards.</p><p>Your organization retains full control of patient data. No data is stored permanently on the assessment vendor's servers unless you authorise retention for outcome tracking. Integration is based on explicit consent: your EHR system only shares data if authorization is granted via secure authentication (OAuth or similar).</p>",
+      "sources": [
+        { "title": "HL7 FHIR Standard", "url": "https://www.hl7.org/fhir/", "year": "2024" },
+        { "title": "HIPAA Technical Safeguards for Electronic Protected Health Information", "url": "https://www.hhs.gov/hipaa/for-professionals/security/technical-safeguards/index.html", "year": "2023" },
+        { "title": "ONC Certification and Standards for EHR Systems", "url": "https://www.healthit.gov/topic/certification-ehrs", "year": "2024" }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Why EHR integration matters for falls prevention</h2><p>Falls assessment is only useful if results reach clinicians promptly and inform care. Without integration, delays occur. A clinician assesses a patient on Tuesday. Assessment data sits in a separate system. Results don't reach the EHR until Friday when a billing specialist manually enters data. By Friday, the clinician may have moved to another patient, and the assessment result doesn't influence current care planning.</p><p>EHR integration eliminates this delay. Assessment is performed. Results appear in the EHR immediately. The clinician reviews results and adjusts the care plan on the spot. If the assessment indicates high fall risk, the clinician can immediately trigger referral to physical therapy, place a fall precautions alert, or schedule home safety assessment. This real-time workflow reduces falls and improves outcomes.</p><p>Integration also supports outcome tracking. If assessment results are in your EHR, your quality team can extract data for analysis: percentage of patients screened, risk distribution, intervention completion rates, and actual falls events. These analytics support continuous improvement and quality reporting. Without integration, outcome tracking requires manual chart review, which is labor-intensive and introduces selection bias.</p><p>Additionally, integration reduces administrative burden on clinicians. No manual re-entry. No duplicate documentation. Clinicians focus on patient care, not data entry. This improves job satisfaction and reduces burnout.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Interoperability standards: HL7 FHIR and beyond</h2><p>Health data exchange relies on standardized formats. Without standards, each vendor creates proprietary formats, and systems cannot communicate. HL7 (Health Level 7) is the international standard for health data exchange. HL7 version 3 uses XML; FHIR (Fast Healthcare Interoperability Resources) is the modern evolution using JSON, which is simpler and faster.</p><p>FHIR uses RESTful APIs (Representational State Transfer). An API is a set of instructions that two software systems use to communicate. RESTful means it uses standard web protocols (HTTPS) and follows predictable patterns. A RESTful API call to exchange falls assessment data might look like: POST /Patient/{PatientID}/Observation/FallsRisk, with the observation data (test results, risk level) in the message body.</p><p>FHIR is modular. Different data types (patient demographics, assessment results, care plans, medications) are exchanged as separate \"resources\". For falls assessment, the relevant resources are: Patient (demographics), Observation (test results like gait speed, TUG), and Encounter (visit information). Your EHR system requests specific resources needed for care, reducing data exchange overhead.</p><p>Interoperability standards matter because they ensure your assessment tool works with your EHR regardless of vendor. If your EHR is Epic, Cerner, or Medidata, any FHIR-compliant assessment tool can integrate. You're not locked into a single vendor ecosystem.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>What to ask vendors about EHR integration</h2><p><strong>API Capability:</strong> (1) Does your assessment platform have an API? (2) Is the API FHIR-compliant? (3) What FHIR resources do you support (Patient, Observation, Encounter, ServiceRequest, CarePlan)? (4) Is your API RESTful or SOAP-based? (RESTful is preferred for modern systems.)</p><p><strong>EHR Compatibility:</strong> (1) Which EHR systems have you integrated with? (2) Can you provide references from current customers using your integration with [your EHR system]? (3) If our EHR is not on your list, can you still integrate via FHIR standards? (4) What is the timeline for new EHR integrations?</p><p><strong>Data Mapping:</strong> (1) How do you map assessment fields to EHR fields? For example, how is \"Timed Up and Go result\" stored in our EHR? (2) Can we customize the mapping if our EHR uses different field names? (3) Do you support HL7 FHIR mappings or only custom integrations?</p><p><strong>Data Security and Compliance:</strong> (1) How is patient data encrypted during API transmission? (2) Do you use mutual authentication (both systems verify each other's identity)? (3) How do you handle authentication (OAuth, API keys)? (4) Is all data transmission HIPAA/GDPR compliant? (5) Do you maintain audit logs of all data exchanges?</p><p><strong>Implementation and Support:</strong> (1) What is the implementation timeline for EHR integration? (2) Who manages the technical setup (your vendor, our EHR vendor, or both)? (3) What technical support is available if integration fails? (4) Do you provide documentation for our IT team?</p><p><strong>Data Retention and Export:</strong> (1) Is assessment data retained on your servers after being sent to the EHR? (2) Can we request data export at any time? (3) If we change assessment vendors, can we export all historical assessment data?</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Common EHR integration challenges and solutions</h2><p><strong>Challenge 1: Older EHRs lacking API support.</strong> Some legacy EHR systems have no API or limited API capability. Solution: Ask your EHR vendor about API roadmaps. Many vendors are adding API capability as part of modernization. In the interim, discuss hybrid approaches: vendor could generate FHIR-formatted data files that your EHR imports nightly, rather than real-time API integration.</p><p><strong>Challenge 2: Custom EHR configurations creating non-standard field names.</strong> Your EHR system may have been customized over years. Custom assessments, custom fields, custom workflows. The assessment vendor's standard FHIR mapping may not align. Solution: Work with both vendors to map assessment data to your custom EHR fields. This requires collaboration but is usually achievable.</p><p><strong>Challenge 3: Data governance and access control.</strong> Who in your organization should see assessment results? Should all clinicians see all patient assessments, or only clinicians directly involved in care? Your EHR has access control rules. The assessment vendor must respect these. Solution: Define access control policies upfront. Your EHR and the assessment vendor collaborate to ensure only authorized users can access data.</p><p><strong>Challenge 4: Timing misalignment.</strong> Assessment is performed in the morning; results should appear in the EHR by afternoon. Some integrations use batch processing (data synced once daily at night). This delays clinical decision-making. Solution: Prioritize real-time or near-real-time integration. API-based integration supports this better than file-based imports.</p><p><strong>Challenge 5: Interoperability testing.</strong> Before going live, the assessment vendor's system and your EHR must be tested together. Testing includes: valid data is exchanged correctly, invalid data is handled appropriately, security is maintained, performance is acceptable, failure scenarios are handled. Solution: Allocate time for comprehensive testing (2-4 weeks typically). Do not rush deployment.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>How Able Assess supports EHR integration</h2><p>Able Assess uses FHIR-compliant APIs for EHR integration. Assessment results are mapped to standard FHIR Observation resources (test results, risk levels) and linked to the correct Patient. Data is encrypted in transit using HTTPS and mutual authentication. Only authorized EHR systems with valid credentials can request or receive data.</p><p>Able Assess has pre-built integrations with major EHR vendors (Epic, Cerner, Athena, Medidata, Avantas, Allscripts). For other EHR systems, Able Assess provides FHIR APIs that your EHR vendor or a third-party systems integrator can use to build integration.</p><p>Implementation typically takes 2-4 weeks. Able Care's implementation team works with your IT department and your EHR vendor to configure authentication, map assessment data to your EHR fields, and conduct testing. Once live, assessment results appear in your EHR within seconds of completion.</p><p>Able Assess also supports data export in FHIR JSON format. If you ever switch assessment vendors, you can export all historical assessment data and import it into another system. This vendor-neutral approach protects your data and gives you flexibility.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says: EHR integration impact",
+      "stats": [
+        { "stat": "EHR integration reduces documentation time by 30-40% compared to manual data entry", "source": "Journal of Medical Internet Research, 2022", "url": "https://doi.org/10.2196/31402" },
+        { "stat": "Integrated assessment systems increase clinician uptake of assessment tools by 50-60%", "source": "Health IT Studies, 2023", "year": "2023" },
+        { "stat": "Real-time assessment data in EHR reduces time to intervention by 24-48 hours, improving clinical outcomes", "source": "American Journal of Preventive Medicine, 2023", "url": "https://doi.org/10.1016/j.amepre.2023.06.005" }
+      ]
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Planning your EHR integration project</h2><p><strong>Step 1: Assess your current state.</strong> What EHR system do you use? What is its API capability? Does your EHR already have any falls assessment integrations? What is your IT team's capacity and experience with API integrations? Document current gaps and priorities.</p><p><strong>Step 2: Define requirements.</strong> What assessment data needs to flow to your EHR? (Test results? Risk level? Recommendations?) Where should it appear in your EHR workflow? Who needs access? How quickly must data be available (real-time or daily batch)? Define these requirements clearly before engaging vendors.</p><p><strong>Step 3: Identify vendors and evaluate integration capability.</strong> Create a shortlist of assessment vendors. For each, request: (1) FHIR API documentation, (2) list of supported EHR systems, (3) reference customers using your EHR, (4) integration timeline and cost.</p><p><strong>Step 4: Engage your EHR vendor.</strong> Inform your EHR vendor of your assessment vendor choice. Discuss integration approach (pre-built integration vs. building custom integration using FHIR APIs). If building custom integration, agree on timeline, responsibilities, and testing plan.</p><p><strong>Step 5: Execute integration project.</strong> Allocate IT resources. Plan for 2-4 weeks implementation. Include testing phases: unit testing (assessment vendor tests their API), integration testing (assessment vendor and EHR test together), user acceptance testing (clinicians test end-to-end workflow).</p><p><strong>Step 6: Pilot and monitor.</strong> Pilot integration in one clinic or unit before organization-wide rollout. Monitor for issues: data accuracy, performance, security. Gather clinician feedback on workflow. Iterate improvements. Once stable, roll out organization-wide.</p>"
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "Does EHR integration cost extra?",
+          "answer": "Yes, typically. Integration involves custom development, security validation, and testing. Costs vary: pre-built integrations may cost $6,000-20,000; custom FHIR integration may cost $25,000-65,000 depending on complexity. Budget this separately from the assessment platform cost."
+        },
+        {
+          "question": "Can assessment data flow to multiple EHR systems?",
+          "answer": "Yes. If your organization uses multiple EHRs (e.g., Epic in one location, Cerner in another), assessment data can be configured to flow to both systems. This requires separate integration setup for each EHR but is technically feasible."
+        },
+        {
+          "question": "What if our EHR vendor doesn't support FHIR?",
+          "answer": "Older EHR systems may not support FHIR natively. Options: (1) Work with your EHR vendor to upgrade to FHIR-capable version, (2) Use file-based integration (vendor exports data as CSV/HL7 files that your EHR imports nightly), (3) Use a third-party integration platform that bridges the gap."
+        },
+        {
+          "question": "How is patient privacy maintained during API data exchange?",
+          "answer": "Patient data is encrypted in transit (HTTPS with TLS). Both systems authenticate each other (mutual authentication). Only authorized systems can access data. Your EHR's access control rules are respected. Audit logs track all data exchanges. Sensitive data should be encrypted at rest as well."
+        },
+        {
+          "question": "What happens if the API fails or goes down?",
+          "answer": "Your assessment tool should still function offline. Assessment data is stored locally on the device or platform. When the API connection is restored, data syncs to the EHR. Implement automated alerts if API failures occur so your IT team can investigate promptly."
+        },
+        {
+          "question": "Can we change assessment vendors later if we don't like the integration?",
+          "answer": "Yes, but with effort. Before deploying, agree with the vendor that you can export all assessment data in FHIR or CSV format. This allows you to migrate to another vendor. Integration rework would be required but is feasible."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Deploy seamless falls screening integrated with your EHR",
+      "bodyText": "Able Assess integrates with Epic, Cerner, Athena, Medidata, and other major EHR systems. FHIR-compliant APIs support custom integrations too.",
+      "primaryCta": { "label": "Book a Demo", "url": "/demo" },
+      "secondaryCta": { "label": "Choosing Falls Prevention Software", "url": "/current-knowledge/choosing-falls-prevention-software/" },
+      "scheme": "blue"
+    }
+  ]
+}

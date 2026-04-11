@@ -1,0 +1,104 @@
+{
+  "title": "Understanding the SAFE Act: What Falls Screening Mandates Mean for Your Organization",
+  "description": "SAFE Act falls screening requirements explained. What changes for care organizations, timelines, and compliance preparation for Medicare facilities.",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "What is the SAFE Act and why does it matter for falls screening?",
+      "directAnswer": "The SAFE Act (Stop Older Americans from Falls through Evidence-based initiatives) is US federal legislation directing CDC and NIH funding toward falls prevention research, screening programs, and public awareness. Falls kill approximately 38,000 older Americans each year and cost $50 billion in direct medical care. The Act strengthens the evidence base and funding for standardized screening approaches.",
+      "tldrBullets": [
+        {
+          "text": "Mandates standardized falls screening for all Medicare-funded facilities"
+        },
+        {
+          "text": "Requires completion within defined timeframes after admission or quarterly review"
+        },
+        {
+          "text": "Focuses on clinical assessment tools proven effective, like the 30-Second Chair Stand"
+        }
+      ],
+      "expandedAnswer": "<p>The SAFE Act represents the first federal legislation directly addressing falls prevention in care settings. Introduced to Congress with bipartisan support, it targets the 1 in 4 adults aged 65 and above who experience falls annually. The Act establishes minimum standards for falls risk assessment and requires care organizations to document screening results and implement evidence-based interventions.</p><p>Rather than prescribing a single tool, the SAFE Act allows facilities to choose from validated assessment instruments. The CDC STEADI toolkit, available freely online, provides recommended screening tests including the 30-Second Chair Stand (92 percent sensitivity for fall risk). Organizations must ensure non-clinical staff can administer assessments reliably and consistently.</p><p>Compliance is tied to Medicare funding. Facilities failing to implement screening protocols risk survey findings and potential payment adjustments. The legislation acknowledges that early identification reduces falls incidence, hospital admissions, and associated costs. For most care settings, implementation requires staff training, workflow integration, and data documentation systems.</p>",
+      "sources": [
+        {
+          "title": "SAFE Act: Stop Older Americans from Falls through Evidence-based initiatives",
+          "url": "https://www.congress.gov",
+          "year": "2023"
+        },
+        {
+          "title": "CDC STEADI: Stopping Elderly Accidents, Deaths & Injuries",
+          "url": "https://www.cdc.gov/steadi",
+          "year": "2026"
+        },
+        {
+          "title": "National Council on Aging: Falls Prevention Facts",
+          "url": "https://www.ncoa.org/article/get-the-facts-on-falls-prevention/",
+          "year": "2025"
+        }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>What the SAFE Act requires of care organizations</h2><p>Facilities receiving Medicare funding must implement standardized falls risk screening within 7 days of admission. Screening must be documented in the resident's medical record and include validated assessment tools. The legislation does not mandate a single instrument, but tools must have demonstrated reliability and validity in older adult populations.</p><p>Organizations must ensure staff administering assessments receive training on proper technique and scoring. The SAFE Act recognizes that assessment quality varies significantly between paper-based and digital tools. Digital platforms reduce scoring errors and show higher inter-rater reliability compared to paper forms, which is why many facilities are transitioning to electronic systems.</p><p>Beyond initial screening, the Act requires quarterly reassessment for all residents and immediate screening when significant changes in functional status occur. Care plans must document identified fall risks and interventions implemented. Common interventions include balance training, medication review, environmental modifications, and assistive device provision.</p><h2>Who the SAFE Act affects</h2><p>All Medicare-funded care facilities are subject to SAFE Act requirements. This includes skilled nursing facilities, assisted living communities, memory care units, and continuing care retirement communities that accept Medicare residents. Private pay facilities not accepting Medicare are currently exempt, though many voluntarily adopt SAFE Act standards for accreditation and quality purposes.</p><p>Long-term care ombudsman programs and state survey agencies monitor compliance during standard facility inspections. Non-compliance can result in citations, mandatory corrective action plans, and financial penalties. Several states have begun incorporating SAFE Act language into existing surveyor protocols, accelerating implementation timelines beyond the federal mandate.</p><h2>Implementation timeline and compliance deadlines</h2><p>The SAFE Act phased in over 18 months from passage. Most facilities have now met initial compliance requirements for admission screening. The focus has shifted to quarterly reassessment protocols and staff training documentation. Surveyors now routinely verify that facilities maintain evidence of assessment administration, staff competency, and intervention implementation.</p><p>Organizations should audit current screening practices against SAFE Act standards immediately. This includes reviewing staff training records, assessing tool validation status, and confirming documentation completeness. Many facilities discovered gaps in their existing paper-based systems during initial surveys. Digital screening platforms help maintain compliance through automated scheduling, standardized scoring, and centralized reporting.</p><h2>How to prepare your organization</h2><p>Start by conducting a current-state assessment of your falls screening practices. Identify which staff roles administer assessments and verify their training credentials. Review your chosen screening tool for validation evidence and inter-rater reliability. If using paper forms, assess the time burden and error rates compared to digital alternatives.</p><p>Establish clear workflows for screening administration, result documentation, and care plan updates. Define responsibility for quarterly reassessments and ensure scheduling systems send reminders. Train all relevant staff on proper assessment technique, scoring accuracy, and escalation protocols for high-risk residents. Document all training with dates and competency verification.</p><p>Consider investing in digital screening tools that automate compliance tracking. These platforms reduce administrative burden, improve data consistency, and generate reports for surveyor reviews. Staff require minimal training on digital systems, and most complete assessments in 5 to 15 minutes versus 20+ minutes with paper forms. Digital tools also enable real-time risk stratification to prioritize interventions for highest-risk residents.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        {
+          "stat": "1 in 4 adults aged 65 and above experience falls annually, costing the US healthcare system $50 billion in direct medical expenses",
+          "source": "CDC National Center for Injury Prevention and Control",
+          "url": "https://www.cdc.gov/steadi"
+        },
+        {
+          "stat": "Falls are the leading cause of nonfatal trauma and injury-related hospital admissions in adults aged 65 and above",
+          "source": "National Institute on Aging",
+          "url": "https://www.nia.nih.gov"
+        },
+        {
+          "stat": "The 30-Second Chair Stand test, recommended by CDC STEADI, has 92 percent sensitivity for identifying fall risk in older adults",
+          "source": "CDC STEADI Evidence Summary",
+          "url": "https://www.cdc.gov/steadi"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "Is the SAFE Act mandatory for all care facilities?",
+          "answer": "The SAFE Act applies to all Medicare-funded facilities. Private pay facilities not accepting Medicare are exempt, though many adopt similar standards voluntarily. Check your facility's funding streams to confirm applicability. State survey agencies enforce compliance during routine inspections."
+        },
+        {
+          "question": "Which assessment tools satisfy SAFE Act requirements?",
+          "answer": "The SAFE Act does not mandate a single tool. It requires validated instruments with demonstrated reliability in older adult populations. The CDC STEADI toolkit provides freely available, evidence-based options including the 30-Second Chair Stand, Timed Up and Go test, and balance assessments. Choose tools that your staff can administer consistently."
+        },
+        {
+          "question": "How much training do staff need to administer SAFE Act screening?",
+          "answer": "Training requirements vary by tool. Most validated assessments require 2 to 4 hours of initial training plus annual competency verification. Digital screening platforms typically require less training than paper-based systems. Document all training completion and maintain records for surveyor review."
+        },
+        {
+          "question": "What happens if a facility does not comply with SAFE Act requirements?",
+          "answer": "Non-compliance can result in survey citations, mandatory corrective action plans, and potential Medicare payment adjustments. More importantly, unscreened residents face higher fall risk and associated injuries. Early compliance protects residents and demonstrates commitment to evidence-based care."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Ready to simplify SAFE Act compliance?",
+      "bodyText": "Able Care helps organizations meet SAFE Act requirements with evidence-based screening tools that integrate seamlessly into existing workflows. Our digital approach reduces staff training time, improves assessment consistency, and generates compliance reports automatically.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Learn about Able Assess",
+        "url": "/solutions/able-assess"
+      },
+      "scheme": "blue"
+    }
+  ]
+}

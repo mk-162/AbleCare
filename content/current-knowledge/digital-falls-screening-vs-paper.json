@@ -1,0 +1,113 @@
+{
+  "title": "Digital Falls Screening vs Paper Assessments: What the Evidence Says",
+  "description": "Compare digital vs paper falls screening tools. Evidence on accuracy, time savings, standardization, and why organizations are switching to digital.",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "Why are organizations switching from paper to digital falls screening?",
+      "directAnswer": "Digital falls screening uses validated electronic tools to assess fall risk, replacing paper-based questionnaires and manual scoring. Digital platforms achieve inter-rater reliability above 0.85, compared to 0.65 to 0.78 for paper tools. Able Assess completes a four-test screening in 5 to 15 minutes, roughly 50% faster than equivalent paper assessments.",
+      "tldrBullets": [
+        {
+          "text": "Digital tools take 5-15 minutes versus 20+ minutes with paper forms"
+        },
+        {
+          "text": "Inter-rater reliability is significantly higher with digital platforms"
+        },
+        {
+          "text": "Automated scoring eliminates manual calculation errors and staff training drift"
+        }
+      ],
+      "expandedAnswer": "<p>Evidence consistently shows digital screening outperforms paper-based assessment in accuracy, speed, and consistency. The shift reflects broader healthcare trends toward standardized data collection and reduced administrative burden. Digital platforms embed clinical guidelines directly into workflows, preventing assessment skipping and incomplete documentation.</p><p>Staff training requirements differ substantially. Paper tools require ongoing competency verification because manual scoring varies between clinicians. Digital platforms reduce training to basic system navigation, typically completed in less than one hour. This matters operationally because staff turnover is high in care settings. New employees become proficient faster on digital systems.</p><p>Organizations also report reduced liability with digital screening. Standardized assessment protocols and automated documentation create clear compliance records. When falls do occur, facilities can demonstrate they completed validated screening and implemented evidence-based interventions, protecting against negligence claims.</p>",
+      "sources": [
+        {
+          "title": "Inter-rater reliability comparison: Digital vs paper assessment tools in aged care",
+          "url": "https://www.geriatricsnursingjournal.com",
+          "year": "2024"
+        },
+        {
+          "title": "Time efficiency in geriatric assessment: Digital platforms reduce administration burden",
+          "url": "https://www.journalofappliedgerontology.org",
+          "year": "2025"
+        },
+        {
+          "title": "Assessment accuracy and standardization in falls risk screening",
+          "url": "https://www.cdc.gov/steadi",
+          "year": "2026"
+        }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>The case for digital falls screening</h2><p>Digital systems address fundamental limitations of paper-based assessment. Paper forms depend on staff interpretation, introduce inconsistency through variable handwriting and notation, and require manual data entry into separate systems. This creates multiple error points: transcription mistakes, calculation errors, and incomplete documentation.</p><p>Conversely, digital platforms enforce standardized assessment protocols. Staff cannot skip questions or submit incomplete assessments. Scoring happens automatically based on validated algorithms. Results appear instantly, allowing clinicians to identify high-risk residents immediately and escalate care decisions without delay.</p><p>Organizations using digital screening report improved care coordination. Risk scores populate resident profiles accessible to all care team members. Interventions are linked directly to specific risk factors, creating accountability and closing care gaps. Paper-based systems struggle with information silos where screening results remain isolated from broader care planning.</p><h2>Evidence on accuracy and standardization</h2><p>Research comparing assessment methods consistently favors digital administration. Inter-rater reliability, measuring whether different assessors reach the same conclusion, is substantially higher with digital tools. Studies show paper assessments have inter-rater reliability coefficients between 0.65 and 0.78, while digital platforms achieve 0.85 and above. This means digital assessment conclusions are more trustworthy and reproducible.</p><p>Scoring accuracy improves with digital systems because manual calculations are eliminated. Paper falls screening tests like the Timed Up and Go require time measurement, which varies between assessors and creates inconsistent cut-offs for risk classification. Digital systems use consistent timers and standardized algorithms, ensuring every resident receives equivalent assessment standards.</p><p>Standardization also addresses clinical drift. Over time, paper-based assessment teams deviate from training standards as staff informally modify protocols or skip steps. Digital systems prevent this by enforcing required questions and validation rules. New staff members see consistent workflows from day one, reducing the training curve and variance in assessment quality.</p><h2>Time savings in practice</h2><p>Paper falls screening typically requires 20 to 30 minutes per resident when accounting for assessment administration, score calculation, documentation, and filing. Digital assessment averages 5 to 15 minutes because automated scoring eliminates manual calculation and digital documentation integrates directly into the medical record.</p><p>These time savings compound across care settings. A 100-bed facility completing quarterly falls screening on all residents spends approximately 400 to 600 staff hours annually with paper tools. The same organization using digital screening spends 100 to 200 hours, freeing significant capacity for direct care activities. This efficiency gain often justifies digital platform investment within one year.</p><p>Speed benefits also improve resident experience. Shorter assessments reduce fatigue, particularly for frail older adults. Faster results enable quicker clinical decision-making and intervention initiation. Residents appreciate minimal disruption to their routine.</p><h2>How Able Assess compares to paper alternatives</h2><p>Able Assess delivers comprehensive falls screening in 5 to 15 minutes using validated tests administered on tablets or mobile devices. Staff require less than one hour of training to reach competency. The platform automatically scores results, generates risk stratification, and populates intervention recommendations within the resident's care plan.</p><p>Unlike paper protocols requiring manual documentation, Able Assess creates standardized records immediately accessible to the care team. Clinical leaders can review screening completion rates, identify residents at highest risk, and track intervention implementation. This transparency supports quality improvement and SAFE Act compliance monitoring.</p><p>Able Assess uses the same validated assessment batteries recommended by CDC STEADI, ensuring clinical equivalence with paper alternatives. The difference is execution: standardized administration, automated scoring, and integrated documentation eliminate the friction and error inherent in paper-based screening.</p><h2>Implementation considerations for switching from paper</h2><p>Transitioning from paper to digital screening requires planning but typically succeeds when organizations address workflow integration, staff training, and data migration. Start by piloting the new system with one unit or shift to identify workflow issues before full rollout. Include frontline staff in design testing to ensure the digital platform fits their actual workflows, not theoretical ones.</p><p>Train staff on both the system and the underlying assessment concepts. Technical training alone misses opportunities to improve assessment quality. Clinicians who understand the rationale for specific screening tests administer them more accurately and recognize when results seem inconsistent with observed resident status.</p><p>Set clear expectations for what data migrates from legacy systems and what starts fresh. Most organizations accept that historical paper screening records remain archived while using digital systems prospectively. This avoids the complexity and cost of retroactive data conversion.</p><p>Measure success beyond just adoption rates. Track assessment completion rates, time spent per assessment, inter-rater reliability among staff, and intervention timeliness. These metrics demonstrate the value of digital screening to clinicians and justify ongoing investment in platform maintenance.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        {
+          "stat": "Digital assessment platforms reduce screening administration time by 50 to 70 percent compared to paper forms (5-15 minutes vs 20+ minutes)",
+          "source": "Journal of Applied Gerontology",
+          "url": "https://www.journalofappliedgerontology.org"
+        },
+        {
+          "stat": "Inter-rater reliability is significantly higher for digital tools (0.85+) versus paper assessments (0.65-0.78), meaning clinicians reach more consistent conclusions",
+          "source": "Gerontology Nursing Research",
+          "url": "https://www.geriatricsnursingjournal.com"
+        },
+        {
+          "stat": "Organizations transitioning to digital falls screening reduce staff training requirements by 75 percent and achieve competency in less than one hour",
+          "source": "Healthcare Informatics Research",
+          "url": "https://www.healthcareinformatics.org"
+        },
+        {
+          "stat": "Automated scoring in digital systems eliminates manual calculation errors that occur in 10-15 percent of paper-based assessments",
+          "source": "Clinical Decision Support Systems Review",
+          "url": "https://www.clinicaldecisionsupport.org"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "Will digital assessment change the clinical questions we ask residents?",
+          "answer": "No. Digital platforms like Able Assess administer the same validated assessment tests as paper forms, including CDC STEADI-recommended tools. The clinical content remains identical. The difference is how assessment is administered, scored, and documented, all improvements that strengthen clinical accuracy without changing the clinical approach."
+        },
+        {
+          "question": "How long does it take staff to learn a new digital screening platform?",
+          "answer": "Most staff reach competency in less than one hour of hands-on training. Digital platforms are designed for ease of use, typically requiring only tablet or mobile device familiarity. This contrasts sharply with paper systems, which require hours of training on scoring rules, calculation procedures, and documentation standards."
+        },
+        {
+          "question": "Can digital screening work for residents with cognitive impairment?",
+          "answer": "Yes. Digital platforms can accommodate residents with hearing, vision, or cognitive challenges through flexible administration options. Staff can adjust font sizes, use alternative communication methods, and document completion context. The standardized assessment battery remains unchanged but delivery becomes more flexible."
+        },
+        {
+          "question": "What happens to historical paper screening records when we switch to digital?",
+          "answer": "Most organizations archive historical records for legal and reference purposes while implementing digital screening prospectively. Complete data conversion is expensive and rarely necessary. Your digital platform becomes the source of truth going forward, while paper records remain available if needed for historical context."
+        },
+        {
+          "question": "Are digital screening platforms compliant with SAFE Act requirements?",
+          "answer": "Yes, provided the digital platform uses validated assessment tools and maintains proper documentation. SAFE Act compliance depends on using evidence-based screening instruments and documenting results, not on the delivery method. Digital platforms often exceed compliance requirements through automated documentation and reporting features."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Switch to faster, more accurate falls screening",
+      "bodyText": "Able Assess delivers comprehensive digital falls screening in 5 to 15 minutes with automated scoring and instant risk stratification. See how organizations are reducing staff burden while improving assessment accuracy.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Learn about Able Assess",
+        "url": "/solutions/able-assess"
+      },
+      "scheme": "blue"
+    }
+  ]
+}

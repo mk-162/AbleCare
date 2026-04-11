@@ -1,0 +1,27 @@
+{
+  "title": "Regulations Guide",
+  "description": "Regulatory frameworks, quality reporting standards and clinical guidelines governing falls prevention in healthcare and home care.",
+  "blocks": [
+    {
+      "_template": "hero",
+      "headline": "Regulations Guide",
+      "subtitle": "Falls prevention is mandated and measured by CMS, CDC, FDA and international bodies. Understand the regulatory landscape and ensure compliance.",
+      "scheme": "blue",
+      "wave": "crest"
+    },
+    {
+      "_template": "richText",
+      "body": "<p>Falls prevention is embedded in healthcare regulations at multiple levels: federal quality standards (CMS reimbursement and Five-Star ratings), evidence-based screening protocols (CDC STEADI), documentation requirements (OASIS-E for home health) and device certification (FDA and CE marking for assessment technology). These regulatory frameworks reflect the clinical priority placed on preventing falls, the leading cause of both unintentional injury and injury-related mortality in older adults. Ability Care helps organizations navigate this complex landscape by providing assessment platforms that meet documentation standards, integrate with required reporting systems and align with current clinical guidelines. The regulatory environment continues to evolve: the SAFE Act strengthens fall screening requirements, NICE updates clinical guidance annually, and CMS expands falls metrics into value-based payment models. Understanding these requirements is essential for compliance, but equally important is recognizing that regulations represent minimum standards, evidence-based practice often exceeds regulatory thresholds.</p><h2>Articles in this guide</h2><ul><li><a href=\"/current-knowledge/cdc-steadi-protocol-implementation-guide/\">CDC STEADI Protocol Implementation</a> - standardized screening and intervention framework</li><li><a href=\"/current-knowledge/hhvbp-falls-reimbursement/\">CMS HHVBP Explained</a> - Home Health Value-Based Purchasing falls metrics</li><li><a href=\"/current-knowledge/oasis-falls-documentation/\">OASIS-E and Falls Documentation</a> - required assessment data for home health agencies</li><li><a href=\"/current-knowledge/falls-prevention-device-fda/\">FDA, CE, and ISO Certifications</a> - device regulatory requirements and standards</li><li><a href=\"/current-knowledge/world-guidelines-falls-prevention-2022/\">World Guidelines on Falls Prevention 2022</a> - international consensus recommendations</li></ul>"
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Ensure regulatory compliance with falls prevention",
+      "bodyText": "Able Care's platform automates documentation for OASIS-E, CMS reporting and STEADI protocol requirements.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "scheme": "blue"
+    }
+  ]
+}

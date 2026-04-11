@@ -16,47 +16,98 @@
       "eyebrow": "2026 Buyers Guide",
       "headline": "Best Falls Prevention Technology 2026",
       "subtitle": "Features, evidence, pricing and fit by segment. An honest comparison.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      }
     },
     {
       "_template": "featureComparison",
       "scheme": "grey",
       "heading": "Able Assess vs traditional falls prevention methods",
-      "tldr": "Fall detection tools like SafelyYou respond after a fall happens. Balance training apps like Nymbl push exercises but do not screen risk. Paper assessments take 20+ minutes, are scored subjectively and rarely feed into a care plan. Able Assess screens every resident objectively in under five minutes, stratifies risk automatically and hands the operator a standardised workflow they can roll out to every site.",
-      "columns": ["Able Assess", "Paper Assessments", "Fall Detection", "Balance Training"],
+      "tldr": "Fall detection tools like SafelyYou respond after a fall happens. Balance training apps like Nymbl push exercises but do not screen risk. Paper assessments take 20+ minutes, are scored subjectively and rarely feed into a care plan. Able Assess screens every resident objectively in under five minutes, stratifies risk automatically and hands the operator a standardized workflow they can roll out to every site.",
+      "columns": [
+        "Able Assess",
+        "Paper Assessments",
+        "Fall Detection",
+        "Balance Training"
+      ],
       "rows": [
         {
           "feature": "Category",
-          "values": ["Falls prevention (upstream screening)", "Falls prevention (manual)", "Falls response (post-event)", "Wellness (exercise)"]
+          "values": [
+            "Falls prevention (upstream screening)",
+            "Falls prevention (manual)",
+            "Falls response (post-event)",
+            "Wellness (exercise)"
+          ]
         },
         {
           "feature": "Time per assessment",
-          "values": ["Under 5 minutes", "20+ minutes", "N/A (passive)", "N/A (ongoing)"]
+          "values": [
+            "Under 5 minutes",
+            "20+ minutes",
+            "N/A (passive)",
+            "N/A (ongoing)"
+          ]
         },
         {
           "feature": "Objective scoring",
-          "values": ["Yes, four validated metrics", "No, subjective observation", "Video review only", "No clinical scoring"]
+          "values": [
+            "Yes, four validated metrics",
+            "No, subjective observation",
+            "Video review only",
+            "No clinical scoring"
+          ]
         },
         {
-          "feature": "Standardised across sites",
-          "values": ["Yes, one protocol everywhere", "No, varies by clinician", "Camera placement varies", "Self-directed"]
+          "feature": "Standardized across sites",
+          "values": [
+            "Yes, one protocol everywhere",
+            "No, varies by clinician",
+            "Camera placement varies",
+            "Self-directed"
+          ]
         },
         {
           "feature": "Usable by non-clinical staff",
-          "values": ["Yes, minimal training", "Requires clinical training", "IT setup required", "Consumer self-serve"]
+          "values": [
+            "Yes, minimal training",
+            "Requires clinical training",
+            "IT setup required",
+            "Consumer self-serve"
+          ]
         },
         {
           "feature": "Care plan integration",
-          "values": ["Automated risk banding and routing", "Manual transcription", "Alert-based", "None"]
+          "values": [
+            "Automated risk banding and routing",
+            "Manual transcription",
+            "Alert-based",
+            "None"
+          ]
         },
         {
           "feature": "Regulatory alignment",
-          "values": ["FDA listed, CE marked, ISO 27001, NICE 2025", "No formal listing", "FDA cleared (video AI)", "No clinical listing"]
+          "values": [
+            "FDA listed, CE marked, ISO 27001, NICE 2025",
+            "No formal listing",
+            "FDA cleared (video AI)",
+            "No clinical listing"
+          ]
         },
         {
           "feature": "Longitudinal tracking",
-          "values": ["Yes, trend dashboards", "Paper-based, inconsistent", "Incident logs", "Exercise adherence only"]
+          "values": [
+            "Yes, trend dashboards",
+            "Paper-based, inconsistent",
+            "Incident logs",
+            "Exercise adherence only"
+          ]
         }
       ]
     },
@@ -64,25 +115,23 @@
       "_template": "evidenceBlock",
       "scheme": "aqua",
       "heading": "Backed by the research",
-      "pulledStat": {
-        "text": "Objective, multifactorial falls risk screening has been shown to reduce falls by 25%.",
-        "source": "Able Care 2026 Falls Prevention Commercialisation Strategy"
-      },
-      "studies": [
+      "pulledStat": "Objective, multifactorial falls risk screening has been shown to reduce falls by 25%.",
+      "pulledStatSource": "Able Care 2026 Falls Prevention Commercialization Strategy",
+      "citations": [
         {
           "title": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure",
-          "source": "Lancet, 2015",
-          "url": "#"
+          "journal": "Lancet, 2015",
+          "link": "#"
         },
         {
           "title": "Multifactorial falls risk screening outperforms single-test paper approaches",
-          "source": "BMJ, 2018",
-          "url": "#"
+          "journal": "BMJ, 2018",
+          "link": "#"
         },
         {
-          "title": "NICE 2025 falls prevention guidelines recommend objective, standardised screening",
-          "source": "NICE, 2025",
-          "url": "#"
+          "title": "NICE 2025 falls prevention guidelines recommend objective, standardized screening",
+          "journal": "NICE, 2025",
+          "link": "#"
         }
       ]
     },
@@ -93,7 +142,7 @@
         {
           "title": "Multi-branch Home Care Operator",
           "segment": "Home Care",
-          "outcome": "Caught decline six weeks earlier than their previous process. Reduced hospitalisations across 12 branches.",
+          "outcome": "Caught decline six weeks earlier than their previous process. Reduced hospitalizations across 12 branches.",
           "href": "/resources/case-studies"
         },
         {
@@ -105,7 +154,7 @@
         {
           "title": "UK Clinical Research Team",
           "segment": "Clinicians",
-          "outcome": "Standardised grip strength capture across three trial sites. Improved endpoint signal for GLP-1 muscle loss monitoring.",
+          "outcome": "Standardized grip strength capture across three trial sites. Improved endpoint signal for GLP-1 muscle loss monitoring.",
           "href": "/resources/case-studies"
         }
       ]
@@ -116,8 +165,21 @@
       "waveStyle": "ribbon",
       "heading": "See how Able Assess compares in your setting.",
       "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      }
     }
+  ],
+  "tags": [
+    "falls-prevention",
+    "able-assess",
+    "digital-screening",
+    "comparison",
+    "buyer-guide"
   ]
 }

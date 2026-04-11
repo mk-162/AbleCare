@@ -3,15 +3,21 @@
   "slug": "clinicians",
   "seo": {
     "title": "Falls Risk Screening for Clinicians | Able Care",
-    "description": "Multifactorial, peer-reviewed falls risk screening. Standardised capture for PTs, OTs, geriatricians and research teams. Built for clinical workflows.",
+    "description": "Multifactorial, peer-reviewed falls risk screening. Standardized capture for PTs, OTs, geriatricians and research teams. Built for clinical workflows.",
     "ogImage": "/images/og-clinicians.png"
   },
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Clinicians", "href": "/clinicians" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Clinicians",
+          "href": "/clinicians"
+        }
       ]
     },
     {
@@ -22,9 +28,15 @@
       "backgroundImageAlt": "Clinician guiding patient through GripAble assessment",
       "eyebrow": "Clinicians",
       "headline": "Multifactorial, evidence-based falls risk screening.",
-      "subtitle": "Peer-reviewed protocols. Standardised capture. Built for clinical and research teams.",
-      "primaryCta": { "label": "Talk to the Clinical Team", "href": "/contact" },
-      "secondaryCta": { "label": "Browse the Research", "href": "/resources/research-library" }
+      "subtitle": "Peer-reviewed protocols. Standardized capture. Built for clinical and research teams.",
+      "primaryCta": {
+        "label": "Talk to the Clinical Team",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Browse the Research",
+        "href": "/resources/research-library"
+      }
     },
     {
       "_template": "segmentRouter",
@@ -32,7 +44,7 @@
       "tiles": [
         {
           "label": "Home Care",
-          "benefit": "Standardise screening across every branch.",
+          "benefit": "Standardize screening across every branch.",
           "href": "/home-care",
           "ctaText": "Explore"
         },
@@ -44,8 +56,8 @@
         },
         {
           "label": "Pharma & CROs",
-          "benefit": "Decentralised functional endpoints.",
-          "href": "/for/pharma-and-cros",
+          "benefit": "Decentralized functional endpoints.",
+          "href": "/pharma",
           "ctaText": "Explore"
         }
       ]
@@ -53,10 +65,10 @@
     {
       "_template": "imageFeature",
       "heading": "Clinical-grade data, captured digitally",
-      "body": "Able Assess replaces subjective paper scoring with four peer-reviewed measurements captured by the GripAble sensor. Grip strength, sit-to-stand, gait speed and timed up-and-go in one standardised workflow. Results flow directly into the clinical record.",
+      "body": "Able Assess replaces subjective paper scoring with four peer-reviewed measurements captured by the GripAble sensor. Grip strength, sit-to-stand, gait speed and timed up-and-go in one standardized workflow. Results flow directly into the clinical record.",
       "imageSide": "right",
-      "imageAlt": "Clinician reviewing Able Assess results on a tablet in a clinical setting",
-      "imageSrc": "/images/features/health-data-platform-min.png"
+      "imageAlt": "Clinician reviewing Able Assess results on a tablet with a patient",
+      "imageSrc": "/images/photos/clinical/therapist-patient-tablet.jpg"
     },
     {
       "_template": "processSteps",
@@ -99,7 +111,7 @@
         },
         {
           "name": "Gait speed",
-          "description": "The 'sixth vital sign' for older adults. Linked to mortality, hospitalisation and functional decline."
+          "description": "The 'sixth vital sign' for older adults. Linked to mortality, hospitalization and functional decline."
         },
         {
           "name": "Timed Up and Go",
@@ -110,28 +122,26 @@
     {
       "_template": "evidenceBlock",
       "heading": "Backed by the research",
-      "pulledStat": {
-        "text": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
-        "source": "Lancet, 2015"
-      },
-      "studies": [
+      "pulledStat": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
+      "pulledStatSource": "Lancet, 2015",
+      "citations": [
         {
           "title": "Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study",
           "year": "2015",
-          "source": "Lancet",
-          "href": "/resources/research-library#grip-strength-mortality"
+          "journal": "Lancet",
+          "link": "/resources/research-library#grip-strength-mortality"
         },
         {
           "title": "Multifactorial falls risk assessment outperforms single-test approaches in community-dwelling older adults",
           "year": "2022",
-          "source": "BMJ Open",
-          "href": "/resources/research-library#multifactorial-assessment"
+          "journal": "BMJ Open",
+          "link": "/resources/research-library#multifactorial-assessment"
         },
         {
           "title": "Digital grip dynamometry: reliability and validity in clinical and research settings",
           "year": "2023",
-          "source": "Journal of Rehabilitation Medicine",
-          "href": "/resources/research-library#digital-dynamometry"
+          "journal": "Journal of Rehabilitation Medicine",
+          "link": "/resources/research-library#digital-dynamometry"
         }
       ]
     },
@@ -140,21 +150,45 @@
       "heading": "Built on the evidence",
       "colorScheme": "aqua",
       "stats": [
-        { "value": "4", "label": "Validated metrics" },
-        { "value": "< 5 min", "label": "Per assessment" },
-        { "value": "12", "label": "Peer-reviewed studies" },
-        { "value": "1,000+", "label": "Assessments delivered" }
+        {
+          "value": "4",
+          "label": "Validated metrics"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per assessment"
+        },
+        {
+          "value": "12",
+          "label": "Peer-reviewed studies"
+        },
+        {
+          "value": "1,000+",
+          "label": "Assessments delivered"
+        }
       ]
     },
     {
       "_template": "trustBar",
       "items": [
-        "FDA listed",
-        "CE marked",
-        "ISO 27001",
-        "HIPAA aligned",
-        "Imperial College origin",
-        "NICE 2025 aligned"
+        {
+          "text": "FDA listed"
+        },
+        {
+          "text": "CE marked"
+        },
+        {
+          "text": "ISO 27001"
+        },
+        {
+          "text": "HIPAA aligned"
+        },
+        {
+          "text": "Imperial College origin"
+        },
+        {
+          "text": "NICE 2025 aligned"
+        }
       ]
     },
     {
@@ -194,7 +228,7 @@
         },
         {
           "question": "Is the GripAble sensor clinically validated?",
-          "answer": "Yes. The sensor is FDA listed, CE marked, and commercialised out of Imperial College London neuroscience research."
+          "answer": "Yes. The sensor is FDA listed, CE marked, and commercialized out of Imperial College London neuroscience research."
         }
       ]
     },
@@ -204,8 +238,22 @@
       "waveStyle": "ribbon",
       "heading": "See Able Assess in your clinical workflow.",
       "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": { "label": "Talk to the Clinical Team", "href": "/contact" },
-      "secondaryCta": { "label": "Browse the Research Library", "href": "/resources/research-library" }
+      "primaryCta": {
+        "label": "Talk to the Clinical Team",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Browse the Research Library",
+        "href": "/resources/research-library"
+      }
     }
+  ],
+  "tags": [
+    "clinicians",
+    "falls-risk-assessment",
+    "functional-assessments",
+    "grip-strength",
+    "able-assess",
+    "evidence"
   ]
 }

@@ -15,7 +15,7 @@ export default function ResourcesPage() {
           <div className="text-xs font-bold uppercase tracking-[0.25em] text-ac-blue mb-4">Resources</div>
           <h1 className="text-4xl md:text-5xl font-bold text-ac-black mb-4">Guides, Evidence & Tools</h1>
           <p className="text-lg text-ac-black/70 font-light max-w-2xl">
-            Everything you need to evaluate, procure, and implement objective functional assessment in your organisation.
+            Everything you need to evaluate, procure, and implement objective functional assessment in your organization.
           </p>
         </div>
         <p className="text-ac-black/60">Resource pages are being built. Check back soon.</p>

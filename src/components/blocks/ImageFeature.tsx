@@ -29,7 +29,7 @@ export function ImageFeature({
 }: ImageFeatureProps) {
   const isRight = imagePosition === "right";
   const isBlue = scheme === "blue";
-  const bgClass = isBlue ? "bg-ac-blue" : scheme === "aqua" ? "bg-ac-aqua" : "bg-white";
+  const bgClass = isBlue ? "bg-ac-blue" : scheme === "aqua" ? "bg-ac-aqua" : scheme === "grey" ? "bg-ac-grey" : "bg-white";
   const textClass = isBlue ? "text-white" : "text-ac-black";
   const descClass = isBlue ? "text-white/80" : "text-ac-black/70";
   const bulletBg = isBlue ? "bg-white/20" : "bg-ac-blue/15";

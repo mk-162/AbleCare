@@ -3,15 +3,13 @@ title: Terms of Service
 description: Terms and conditions governing the use of the Able Care website and services.
 ---
 
-# Terms of Service
-
 **Last updated: April 2026**
 
 These Terms of Service ("Terms") govern your access to and use of the Able Care website and services. By accessing our website, you agree to be bound by these Terms.
 
 ## Use of Services
 
-Able Care provides digital functional health assessment technology for healthcare organisations. Our services, including Able Assess, are intended for use by qualified healthcare professionals and trained care workers within authorised healthcare settings.
+Able Care provides digital functional health assessment technology for healthcare organizations. Our services, including Able Assess, are intended for use by qualified healthcare professionals and trained care workers within authorized healthcare settings.
 
 ## Intellectual Property
 

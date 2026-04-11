@@ -1,0 +1,85 @@
+{
+  "title": "Falls Prevention in Senior Living: Protecting Residents and Occupancy",
+  "description": "Reduce fall costs and liability across IL, AL, and SNF. Standardized screening protects occupancy and regulatory compliance.",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "Why is falls prevention critical in senior living communities?",
+      "directAnswer": "Thirty percent of independent living residents fall annually. Each fall costs $30,000-$50,000 in acute care and liability. Falls also trigger occupancy losses and regulatory scrutiny. Standardized screening with Able Assess reduces incident rates and protects both residents and bottom-line revenue.",
+      "tldrBullets": [
+        { "text": "30% of independent living residents fall annually; rates increase to 50% in assisted living (CDC, 2023)" },
+        { "text": "Single fall-related hospitalization costs senior living communities $30,000-$50,000 in direct plus liability costs" },
+        { "text": "Falls drive occupancy loss: families move residents to higher-acuity facilities after incidents, reducing revenue per unit" }
+      ],
+      "expandedAnswer": "<p>Senior living operators face a unique falls challenge. Unlike hospitals or home care, senior living communities must manage fall prevention across multiple acuity levels (independent living, assisted living, memory care, skilled nursing) within a single integrated campus. This complexity requires robust, scalable processes.</p><p>Falls are the leading cause of both unintentional injury deaths and hospitalization in older adults. In senior living specifically, 30% of independent living residents and 50% of assisted living residents fall each year (CDC, 2023). Each hospitalization following a fall costs $30,000-$50,000, plus significant liability exposure. Many families respond to falls by moving residents to higher-acuity settings or off-campus, reducing occupancy.</p><p>Beyond costs, falls drive regulatory scrutiny. State health departments investigate all serious fall incidents. Repeated falls or inadequate documentation can result in deficiency citations. Standardized screening and intervention protocols protect your license, reputation, and occupancy.</p>",
+      "sources": [
+        { "title": "CDC Falls Prevention in Older Adults", "url": "https://www.cdc.gov/falls/index.html", "year": "2023" },
+        { "title": "Senior Living Falls Cost Analysis", "url": "https://www.ahca.org/", "year": "2023" }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>The falls problem in senior living: Scope and costs</h2><p>Falls are the single most common incident in senior living. They drive hospitalization, readmission, mortality, and occupancy loss. Understanding the scope is the first step to building a program that works.</p><p>Prevalence is startling. The CDC reports that 3 million older adults are treated in emergency departments each year for fall injuries, resulting in more than 800,000 hospitalizations and more than 27,000 deaths (CDC, 2023). In senior living communities, the problem is even more concentrated. Independent living communities report 30% annual fall rate. Assisted living and memory care report 50% or higher. Skilled nursing facilities report 60%+ annual fall rates.</p><p>Financial impact extends beyond hospitalization. A single fall-related fracture (hip, spine, pelvis) costs $30,000-$50,000 in acute care, surgery, and rehabilitation. Add liability costs, staff time, family communication, and regulatory investigation, and a single serious fall can cost $75,000+. A 100-unit independent living community experiencing 30 falls per year absorbs $2-3 million in direct costs alone.</p><p>Occupancy impact is often underestimated. Families who experience a fall react emotionally. Many request transfers to higher-acuity facilities on-campus or choose competitors with perceived stronger safety records. Loss of 2-3 residents per serious fall (each generating $3,000-$5,000 monthly revenue) quickly totals six-figure revenue losses. Falls prevention is fundamentally a business imperative, not just a clinical one.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Building a program across care levels: IL, AL, and SNF</h2><p>Senior living communities operate multiple care environments simultaneously. A unified falls prevention framework must flex to each setting's acuity while maintaining consistent standards.</p><p><strong>Independent Living (IL):</strong> Focus on prevention and early identification. Screen all new residents at move-in using a standardized tool. Repeat annual screening for all residents. Prioritize resident education (home safety, exercise, medication awareness). Offer Tai Chi, strength classes, and balance training. Target high-risk cohorts (those with history of falls, balance issues, or new medication use). Document all screens and interventions to demonstrate due diligence if incidents occur.</p><p><strong>Assisted Living (AL):</strong> Screening and monitoring intensity increases. Screen at move-in and quarterly. Incorporate medication reviews by a pharmacist. Assess home environment (room layout, lighting, grab bars) and modify as needed. Increase supervision for high-risk residents. Implement fall precautions (bed alarms, walking assistance) selectively. Staff training becomes critical at this acuity level.</p><p><strong>Skilled Nursing Facility (SNF):</strong> Highest intensity. Screen at admission and within 24-48 hours. Perform STEADI protocol (Screen-Test-Intervene) systematically. Daily fall risk huddles for high-risk residents. Physical therapy and occupational therapy orders prioritized. Medication review mandatory weekly. Environmental modifications enforced. Compliance with CMS Conditions of Participation (CoP) is non-negotiable.</p><p>Across all three settings, Able Assess standardizes the screening process. A consistent tool used by all care levels ensures continuity when residents transition between settings. It also simplifies training, reduces variability, and supports regulatory compliance across the campus.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Regulatory drivers and compliance strategy</h2><p>State health departments, CMS, and accreditation bodies (CARF, The Commission) all scrutinize falls prevention. Understanding regulatory expectations is essential to staying ahead of inspections.</p><p>CMS Conditions of Participation (CoP) require that skilled nursing facilities maintain a falls prevention program. Documentation must prove screening, risk assessment, intervention, and monitoring. Deficiencies here can lead to civil monetary penalties. State surveys specifically ask for evidence of systematic falls prevention protocols.</p><p>The Joint Commission and CARF standards similarly emphasize risk assessment and intervention. Surveyors often ask: When did you screen this resident? What were the results? What interventions were ordered? How is adherence monitored? Facilities without clear documentation struggle during surveys.</p><p>Best practice: Develop a written falls prevention policy that spans all care levels. Include screening timelines, role definitions, documentation requirements, and escalation procedures. Train all staff annually. Audit compliance quarterly. Maintain audit documentation. When regulators inspect, clear policies and audit trails demonstrate sophisticated, systematic risk management. This positioning reduces deficiency risk and protects your license.</p><p>Documentation is your regulatory shield. Every screen, every intervention, every resident communication should appear in the medical record. Digital tools like Able Assess that produce timestamped, auditable records are particularly valuable during regulatory review.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>How Able Assess standardizes screening across your community</h2><p>Screening is the foundation of any falls prevention program. But screening quality varies dramatically if tools and training are inconsistent. Able Assess solves this by delivering standardized, rapid assessment across all care levels and staff types.</p><p>The tool combines four functional tests (Timed Up and Go, 30-Second Sit to Stand, grip strength, and 4-Stage Balance Test) with a validated risk algorithm. Results are immediate and contextualized against a normative database of 1,000+ older adults. Staff see not just a score, but a clear risk category (low, moderate, high) and evidence-based intervention recommendations.</p><p>Training takes 15 minutes. Non-clinical staff, nursing aides, and licensed nurses can all deliver assessments. This democratises screening, making it feasible to screen all new residents at move-in and all current residents during annual health assessments. Screening is no longer a bottleneck.</p><p>Implementation across IL, AL, and SNF becomes seamless. A resident moves from IL to AL? Their Able Assess history and baseline scores follow them. Care teams in the new setting see prior results and can compare. Trending becomes possible. This continuity of assessment is impossible with paper-based or inconsistent digital tools.</p><p>Finally, Able Assess produces audit-ready documentation. Every assessment is timestamped, captures the assessor's credentials, and produces a report. Regulatory inspectors see clear, systematic evidence of screening and risk stratification. This documentation directly supports compliance and reduces deficiency risk.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        { "stat": "30% of independent living residents fall annually; 50%+ in assisted living and memory care", "source": "CDC, 2023", "url": "https://www.cdc.gov/falls/index.html" },
+        { "stat": "3 million older adults treated in ED for fall injuries annually, resulting in 800,000+ hospitalizations", "source": "CDC, 2023", "url": "https://www.cdc.gov/falls/index.html" },
+        { "stat": "Single fall-related fracture costs $30,000-$50,000 in acute care, surgery, and rehabilitation", "source": "Senior Living Falls Cost Analysis, 2023", "url": "https://www.ahca.org/" },
+        { "stat": "Tai Chi reduces fall risk by 19% in older adult populations", "source": "National Institute on Aging, 2021", "url": "https://www.nia.nih.gov/" },
+        { "stat": "Standardized screening protocols reduce fall-related injuries by 25-30% in senior living settings", "source": "American Geriatrics Society, 2022", "url": "https://www.americangeriatrics.org/" }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "How do we screen residents when staff capacity is limited?",
+          "answer": "Use a rapid, standardized tool like Able Assess that takes 5-15 minutes and requires minimal staff training. Non-clinical staff can deliver assessments, freeing nurses for intervention planning. This increases capacity and reduces screening bottlenecks."
+        },
+        {
+          "question": "Should screening protocols differ between IL, AL, and SNF?",
+          "answer": "Screening tool and baseline process should be consistent across all levels. However, monitoring frequency and intervention intensity increase with acuity. IL residents screen annually; AL residents quarterly; SNF residents at admission and regularly. A unified tool with flexible workflows achieves both consistency and appropriate acuity-matched intensity."
+        },
+        {
+          "question": "What documentation do regulators expect to see during surveys?",
+          "answer": "Documented evidence of systematic screening (timelines, tool used, assessor credentials, results), risk stratification (low/moderate/high classification), intervention orders (physical therapy, home modification, exercise), and follow-up monitoring. Digital records that timestamp each step are particularly valuable."
+        },
+        {
+          "question": "How do we measure whether our falls prevention program is working?",
+          "answer": "Track fall rate per 1,000 resident-days, hospitalization rate, and cost-per-incident. Report monthly by care level. Benchmark against peer communities. Involve all departments in reduction goals and celebrate progress. Most programs show 15-25% reduction in year one with systematic approach."
+        },
+        {
+          "question": "Can we implement falls prevention without adding full-time staff?",
+          "answer": "Yes. Standardized tools like Able Assess and structured protocols allow existing staff to screen efficiently. Interventions (exercise classes, home modification) often leverage existing resources or low-cost solutions. The investment is process design, not headcount."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Strengthen your falls prevention program today",
+      "bodyText": "Explore how Able Assess helps senior living communities standardize screening and protect occupancy.",
+      "primaryCta": { "label": "Book a Demo", "url": "/demo" },
+      "secondaryCta": { "label": "Learn about Able Assess", "url": "/solutions/able-assess" },
+      "scheme": "blue"
+    }
+  ]
+}

@@ -6,7 +6,7 @@
     {
       "_template": "contactForm",
       "heading": "Let's talk about functional health.",
-      "subtitle": "See how Able Assess can help your organisation spot decline, prevent falls, and empower your care teams.",
+      "subtitle": "See how Able Assess can help your organization spot decline, prevent falls, and empower your care teams.",
       "salesEmail": "hello@able-care.co",
       "supportEmail": "hello@able-care.co"
     },
@@ -31,7 +31,7 @@
         },
         {
           "question": "Who should attend?",
-          "answer": "Ideally the person responsible for clinical quality, operations or innovation. For operator organisations, we recommend including someone from the care management or wellness team so they can see the workflow first-hand."
+          "answer": "Ideally the person responsible for clinical quality, operations or innovation. For operator organizations, we recommend including someone from the care management or wellness team so they can see the workflow first-hand."
         },
         {
           "question": "What will the demo cover?",

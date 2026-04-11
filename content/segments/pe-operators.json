@@ -1,0 +1,93 @@
+{
+  "title": "Falls Screening for PE-Backed Care Portfolios",
+  "slug": "pe-operators",
+  "seo": {
+    "title": "Falls Screening for PE-Backed Care Portfolios | Able Care",
+    "description": "Portfolio-level visibility across clinical outcomes and financial performance. Standardize 8+ locations. EBITDA uplift through process harmonization.",
+    "ogImage": "/images/og-pe-operators.png"
+  },
+  "tags": ["persona", "pe-operators", "portfolio", "ebitda"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "PE Operators" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "PE Operators",
+      "headline": "Standardize your care portfolio. Unlock EBITDA growth across 8+ locations.",
+      "subtitle": "Portfolio-level visibility across clinical outcomes, financial performance, and operational metrics. Due diligence in days, not weeks.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The portfolio challenge",
+      "body": "<h3>Portfolio Fragmentation</h3><p>Every acquired site runs its own clinical processes. Screening protocols vary by location. Data formats differ. Aggregating outcomes across the portfolio requires manual effort that delays reporting and obscures performance gaps. Without standardization, you cannot benchmark one site against another.</p><h3>EBITDA Realization Gap</h3><p>Operational inconsistency erodes margin. When each location defines quality differently, cost structures diverge and best practices stay local. Falls-related hospitalizations, liability exposure, and staff turnover compound the gap between projected and realized EBITDA. Standardized screening protocols close that gap by reducing adverse events and creating a consistent cost baseline.</p><h3>Due Diligence Friction</h3><p>Prospective acquisitions require weeks of manual data collection to assess clinical quality. Without a unified data layer, due diligence teams cannot compare targets against existing portfolio benchmarks. Able Assess creates a standardized clinical dataset across every site, reducing diligence timelines and giving your investment committee objective quality metrics from day one.</p>"
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "light",
+      "heading": "What Able Assess delivers for PE operators",
+      "items": [
+        {
+          "title": "Unified Portfolio Visibility",
+          "body": "One dashboard across every site. Compare clinical outcomes, screening volumes, and risk profiles at portfolio level. No manual aggregation."
+        },
+        {
+          "title": "Accelerated Integration Timeline",
+          "body": "New acquisitions adopt the same screening protocol on day one. Staff are proficient in 15 minutes. No site-level customization required."
+        },
+        {
+          "title": "EBITDA Uplift Through Standardization",
+          "body": "Reduce falls-related hospitalizations and liability exposure. Consistent protocols lower cost variance across sites and protect margin."
+        },
+        {
+          "title": "Investor-Ready Metrics",
+          "body": "Clinical outcome data formatted for board reporting and investor updates. Objective evidence of operational quality that supports valuation."
+        }
+      ]
+    },
+    {
+      "_template": "testimonialCarousel",
+      "heading": "What operators say",
+      "testimonials": [
+        {
+          "quote": "Portfolio standardization quote coming soon.",
+          "attribution": "PE Operating Partner"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Questions from PE operators",
+      "scheme": "light",
+      "items": [
+        {
+          "question": "How long does implementation take across a portfolio of 8+ sites?",
+          "answer": "Most operators deploy across their full portfolio in 30 days. Sensors ship direct to each site. Staff training takes under 15 minutes per person. No site visits are required for initial rollout."
+        },
+        {
+          "question": "What KPIs does the platform surface for investor reporting?",
+          "answer": "The portfolio dashboard tracks screening volumes, fall risk distribution, adverse event rates, and longitudinal outcome trends across every site. Data exports are formatted for board-level reporting."
+        },
+        {
+          "question": "Does it integrate with existing financial and operational software?",
+          "answer": "Able Assess integrates with major EHR platforms and supports data export to operational and financial reporting tools. The clinical team can walk through integration options during a demo."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Ready to standardize and unlock portfolio EBITDA?",
+      "body": "30 minutes with the team. Tailored to multi-site PE-backed operations.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
+      "scheme": "blue"
+    }
+  ]
+}

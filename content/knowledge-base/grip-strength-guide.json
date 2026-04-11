@@ -1,0 +1,33 @@
+{
+  "title": "Grip Strength Guide",
+  "description": "Complete guide to grip strength testing, clinical applications, and interpretation across age groups, diseases and populations.",
+  "category": "Grip Strength",
+  "blocks": [
+    {
+      "_template": "hero",
+      "headline": "Grip Strength Guide",
+      "subtitle": "Hand grip strength is a validated marker of overall physical function, frailty and disease risk. Learn how to measure, interpret and apply grip strength screening in clinical and home care settings.",
+      "scheme": "blue",
+      "wave": "crest"
+    },
+    {
+      "_template": "richText",
+      "body": "<p>Grip strength is the maximum force exerted by the hand, measured in kilograms using a dynamometer. It serves as a reliable, objective marker of general health status, muscle function and longevity across populations. Research shows that grip strength predicts cardiovascular outcomes, functional decline, frailty, disease severity in chronic conditions and mortality risk independently of age and sex. Able Care's integration of digital grip testing into routine assessments enables organizations to identify vulnerable individuals, track muscle loss longitudinally and benchmark performance against age and sex-matched norms. Whether you're screening for frailty in home care, measuring therapeutic response in oncology, identifying at-risk patients ahead of drug therapy or conducting clinical research, grip strength offers a simple, low-cost, non-invasive measure that delivers actionable clinical insight.</p><h2>Articles in this guide</h2><ul><li><a href=\"/current-knowledge/what-is-grip-strength-testing/\">What Is Grip Strength Testing?</a> - standardized measurement protocols and equipment</li><li><a href=\"/current-knowledge/normal-grip-strength-by-age/\">Normal Grip Strength by Age and Gender</a> - age- and sex-stratified reference ranges</li><li><a href=\"/current-knowledge/grip-strength-and-frailty/\">Grip Strength and Frailty</a> - predictive value for frailty syndrome</li><li><a href=\"/current-knowledge/grip-strength-cardiovascular/\">Grip Strength and Heart Disease</a> - independent predictor of cardiovascular outcomes</li><li><a href=\"/current-knowledge/grip-strength-clinical-trial-endpoint/\">Grip Strength as a Clinical Trial Endpoint</a> - regulatory considerations and effect sizes</li><li><a href=\"/current-knowledge/glp1-muscle-loss-grip-strength/\">GLP-1 and Muscle Loss</a> - monitoring muscle preservation on weight loss therapy</li><li><a href=\"/current-knowledge/digital-hand-dynamometer-vs-jamar/\">Digital Hand Dynamometers vs Jamar</a> - equipment comparison and accuracy</li><li><a href=\"/current-knowledge/grip-strength-and-longevity/\">Grip Strength and Longevity</a> - predictive value across the lifespan</li><li><a href=\"/current-knowledge/grip-strength-in-oncology/\">Grip Strength in Oncology</a> - cancer-related weakness and treatment monitoring</li><li><a href=\"/current-knowledge/grip-strength-respiratory-disease/\">Grip Strength and Respiratory Disease</a> - association with COPD and other lung conditions</li></ul>"
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Start measuring grip strength in your practice",
+      "bodyText": "Able Care's digital dynamometers integrate with your workflows and provide age-matched benchmarking automatically.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "grip-strength",
+    "able-assess",
+    "buyer-guide"
+  ]
+}

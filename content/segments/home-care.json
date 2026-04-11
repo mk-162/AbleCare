@@ -1,17 +1,23 @@
 {
-  "title": "Standardised Falls Screening for Home Care Agencies",
+  "title": "Standardized Falls Screening for Home Care Agencies",
   "slug": "home-care",
   "seo": {
     "title": "Falls Prevention for Home Care Agencies | Able Care",
-    "description": "Standardised falls screening for PE-backed, franchised and independent home care agencies. Protect HHVBP. Reduce hospitalisation. Under five minutes per client.",
+    "description": "Standardized falls screening for PE-backed, franchised and independent home care agencies. Protect HHVBP. Reduce hospitalization. Under five minutes per client.",
     "ogImage": "/images/og-home-care.png"
   },
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Home Care", "href": "/home-care" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Home Care",
+          "href": "/home-care"
+        }
       ]
     },
     {
@@ -21,10 +27,16 @@
       "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
       "backgroundImageAlt": "Older woman using GripAble sensor at home",
       "eyebrow": "Home Care",
-      "headline": "Standardised falls screening for home care agencies.",
-      "subtitle": "Protect HHVBP. Standardise across every branch. Reduce hospitalisation. Free your care managers to focus on care.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the HHVBP Guide", "href": "/resources/hhvbp-guide" }
+      "headline": "Standardized falls screening for home care agencies.",
+      "subtitle": "Protect HHVBP. Standardize across every branch. Reduce hospitalization. Free your care managers to focus on care.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the HHVBP Guide",
+        "href": "/resources/hhvbp-guide"
+      }
     },
     {
       "_template": "segmentRouter",
@@ -44,8 +56,8 @@
         },
         {
           "label": "Pharma & CROs",
-          "benefit": "Decentralised functional endpoints.",
-          "href": "/for/pharma-and-cros",
+          "benefit": "Decentralized functional endpoints.",
+          "href": "/pharma",
           "ctaText": "Explore"
         }
       ]
@@ -81,7 +93,7 @@
         {
           "number": 4,
           "title": "Track",
-          "description": "Longitudinal trends surface decline early, protecting HHVBP outcomes and reducing hospitalisations."
+          "description": "Longitudinal trends surface decline early, protecting HHVBP outcomes and reducing hospitalizations."
         }
       ]
     },
@@ -91,7 +103,7 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Upper-body strength proxy. Predicts all-cause mortality and hospitalisation risk."
+          "description": "Upper-body strength proxy. Predicts all-cause mortality and hospitalization risk."
         },
         {
           "name": "Sit-to-stand",
@@ -99,7 +111,7 @@
         },
         {
           "name": "Gait speed",
-          "description": "The 'sixth vital sign' for older adults. Linked to rehospitalisation rates."
+          "description": "The 'sixth vital sign' for older adults. Linked to rehospitalization rates."
         },
         {
           "name": "Timed Up and Go",
@@ -112,10 +124,22 @@
       "heading": "The numbers that matter to home care",
       "colorScheme": "aqua",
       "stats": [
-        { "value": "25%", "label": "Reduction in falls with objective screening" },
-        { "value": "< 5 min", "label": "Per assessment" },
-        { "value": "4", "label": "Validated metrics per screening" },
-        { "value": "0", "label": "Clinical certifications required to run it" }
+        {
+          "value": "25%",
+          "label": "Reduction in falls with objective screening"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per assessment"
+        },
+        {
+          "value": "4",
+          "label": "Validated metrics per screening"
+        },
+        {
+          "value": "0",
+          "label": "Clinical certifications required to run it"
+        }
       ]
     },
     {
@@ -135,7 +159,7 @@
     {
       "_template": "roiCalculatorPromo",
       "heading": "How much could you save?",
-      "body": "Model HHVBP upside and hospitalisation savings in 60 seconds.",
+      "promoBody": "Model HHVBP upside and hospitalization savings in 60 seconds.",
       "ctaText": "Run the numbers",
       "ctaHref": "/resources/roi-calculator"
     },
@@ -163,7 +187,7 @@
         },
         {
           "question": "How does this help with HHVBP?",
-          "answer": "Falls outcomes feed HHVBP measures directly. Reducing hospitalisations from falls protects your HHVBP performance and revenue."
+          "answer": "Falls outcomes feed HHVBP measures directly. Reducing hospitalizations from falls protects your HHVBP performance and revenue."
         },
         {
           "question": "What does it cost?",
@@ -182,8 +206,20 @@
       "waveStyle": "ribbon",
       "heading": "See Able Assess in your workflow.",
       "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      }
     }
+  ],
+  "tags": [
+    "home-care",
+    "falls-prevention",
+    "hhvbp",
+    "able-assess"
   ]
 }

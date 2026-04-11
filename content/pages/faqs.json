@@ -61,7 +61,7 @@
         },
         {
           "question": "Can we run a pilot first?",
-          "answer": "Absolutely. We offer a 30-day pilot programme with full hardware, training, and support. Most organisations convert to a full subscription after seeing the data from their pilot."
+          "answer": "Absolutely. We offer a 30-day pilot program with full hardware, training, and support. Most organizations convert to a full subscription after seeing the data from their pilot."
         }
       ]
     },
@@ -80,7 +80,7 @@
         },
         {
           "question": "What is the minimum contract length?",
-          "answer": "Our standard agreement is 12 months. We also offer multi-year discounts for organisations ready to commit."
+          "answer": "Our standard agreement is 12 months. We also offer multi-year discounts for organizations ready to commit."
         }
       ]
     },
@@ -91,7 +91,7 @@
       "faqs": [
         {
           "question": "Is my data secure?",
-          "answer": "Yes. All data is encrypted end-to-end (TLS 1.3 in transit, AES-256 at rest) and stored in ISO 27001-certified, HIPAA and GDPR compliant data centres. We undergo annual SOC 2 Type II audits."
+          "answer": "Yes. All data is encrypted end-to-end (TLS 1.3 in transit, AES-256 at rest) and stored in ISO 27001-certified, HIPAA and GDPR compliant data centers. We undergo annual SOC 2 Type II audits."
         },
         {
           "question": "Where is patient data stored?",

@@ -8,9 +8,10 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
+  variant?: "dark" | "light";
 }
 
-export function Breadcrumb({ items }: BreadcrumbProps) {
+export function Breadcrumb({ items, variant = "dark" }: BreadcrumbProps) {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -32,17 +33,17 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
         {items.map((item, i) => (
           <li key={i} className="flex items-center">
             {i > 0 && (
-              <ChevronRight className="w-3 h-3 mx-1.5 text-ac-black/30" aria-hidden="true" />
+              <ChevronRight className={`w-3 h-3 mx-1.5 ${variant === "light" ? "text-white/30" : "text-ac-black/30"}`} aria-hidden="true" />
             )}
             {item.href ? (
               <Link
                 href={item.href}
-                className="text-ac-black/50 hover:text-ac-blue transition-colors"
+                className={variant === "light" ? "text-white/50 hover:text-white transition-colors" : "text-ac-black/50 hover:text-ac-blue transition-colors"}
               >
                 {item.label}
               </Link>
             ) : (
-              <span className="text-ac-black/70">{item.label}</span>
+              <span className={variant === "light" ? "text-white/70" : "text-ac-black/70"}>{item.label}</span>
             )}
           </li>
         ))}

@@ -1,10 +1,10 @@
 {
   "title": "Able Assess vs Nymbl",
   "slug": "vs-nymbl",
-  "description": "Side-by-side comparison of Able Assess and Nymbl. Objective clinical screening and risk stratification vs consumer balance exercise programme.",
+  "description": "Side-by-side comparison of Able Assess and Nymbl. Objective clinical screening and risk stratification vs consumer balance exercise program.",
   "seo": {
     "title": "Able Assess vs Nymbl | Able Care",
-    "description": "Compare Able Assess with Nymbl. Clinical-grade falls risk screening with objective data vs balance training exercises. Screening vs wellness programme.",
+    "description": "Compare Able Assess with Nymbl. Clinical-grade falls risk screening with objective data vs balance training exercises. Screening vs wellness program.",
     "ogImage": "/images/og-vs-nymbl.png"
   },
   "blocks": [
@@ -16,7 +16,7 @@
       "backgroundImageAlt": "Patient performing functional assessment exercise",
       "eyebrow": "Comparison",
       "headline": "Able Assess vs Nymbl.",
-      "subtitle": "Nymbl delivers balance exercises. Able Assess delivers objective clinical screening. One is a wellness programme, the other is a clinical tool.",
+      "subtitle": "Nymbl delivers balance exercises. Able Assess delivers objective clinical screening. One is a wellness program, the other is a clinical tool.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Comparison PDF",
@@ -27,39 +27,66 @@
       "scheme": "grey",
       "heading": "Head-to-head comparison",
       "tldr": "Nymbl is a consumer-facing balance training app. It guides users through short daily exercises designed to improve balance over time. Able Assess is a clinical screening tool. It captures four objective, sensor-based functional health metrics, scores them against normative data, stratifies risk, and routes the result to the care team. Nymbl is an intervention. Able Assess is the screening that tells you who needs an intervention and whether that intervention is working.",
-      "columns": ["Able Assess", "Nymbl"],
+      "columns": [
+        "Able Assess",
+        "Nymbl"
+      ],
       "rows": [
         {
           "feature": "Category",
-          "values": ["Clinical falls risk screening (objective measurement and risk stratification)", "Balance training programme (consumer wellness exercises)"]
+          "values": [
+            "Clinical falls risk screening (objective measurement and risk stratification)",
+            "Balance training program (consumer wellness exercises)"
+          ]
         },
         {
           "feature": "Primary purpose",
-          "values": ["Screen, stratify and track falls risk with objective data", "Improve balance through daily exercise routines"]
+          "values": [
+            "Screen, stratify and track falls risk with objective data",
+            "Improve balance through daily exercise routines"
+          ]
         },
         {
           "feature": "Data output",
-          "values": ["Four objective metrics scored against age- and sex-matched normative data, with longitudinal trending", "Exercise adherence and self-reported balance confidence"]
+          "values": [
+            "Four objective metrics scored against age- and sex-matched normative data, with longitudinal trending",
+            "Exercise adherence and self-reported balance confidence"
+          ]
         },
         {
           "feature": "Clinical defensibility",
-          "values": ["Peer-reviewed metrics, FDA listed, CE marked, aligned to NICE 2025 guidelines", "Consumer wellness positioning, not a clinical screening tool"]
+          "values": [
+            "Peer-reviewed metrics, FDA listed, CE marked, aligned to NICE 2025 guidelines",
+            "Consumer wellness positioning, not a clinical screening tool"
+          ]
         },
         {
           "feature": "Staff involvement",
-          "values": ["Any staff member runs a five-minute screening, no clinical certification required", "Self-directed by the resident or client, minimal staff involvement"]
+          "values": [
+            "Any staff member runs a five-minute screening, no clinical certification required",
+            "Self-directed by the resident or client, minimal staff involvement"
+          ]
         },
         {
           "feature": "Operator visibility",
-          "values": ["Risk banding dashboard with population-level reporting for operators and payers", "Individual exercise adherence reporting"]
+          "values": [
+            "Risk banding dashboard with population-level reporting for operators and payers",
+            "Individual exercise adherence reporting"
+          ]
         },
         {
           "feature": "Care plan integration",
-          "values": ["Automated risk banding routed to the care team, EHR and OASIS integration-ready", "No direct care plan integration, sits alongside the care workflow"]
+          "values": [
+            "Automated risk banding routed to the care team, EHR and OASIS integration-ready",
+            "No direct care plan integration, sits alongside the care workflow"
+          ]
         },
         {
           "feature": "Payer defensibility",
-          "values": ["Objective data trail for HHVBP, VBP and regulatory reporting", "Wellness programme, not typically accepted as clinical evidence by payers"]
+          "values": [
+            "Objective data trail for HHVBP, VBP and regulatory reporting",
+            "Wellness program, not typically accepted as clinical evidence by payers"
+          ]
         }
       ]
     },
@@ -67,25 +94,23 @@
       "_template": "evidenceBlock",
       "scheme": "aqua",
       "heading": "Why screening comes before exercise",
-      "pulledStat": {
-        "text": "Multifactorial falls risk screening outperforms single-test approaches in predicting falls in older adults.",
-        "source": "BMJ, 2018"
-      },
-      "studies": [
+      "pulledStat": "Multifactorial falls risk screening outperforms single-test approaches in predicting falls in older adults.",
+      "pulledStatSource": "BMJ, 2018",
+      "citations": [
         {
           "title": "Objective screening identifies high-risk individuals who benefit most from targeted intervention",
-          "source": "[TODO: source needed]",
-          "url": "#"
+          "journal": "[TODO: source needed]",
+          "link": "#"
         },
         {
           "title": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure",
-          "source": "Lancet, 2015",
-          "url": "#"
+          "journal": "Lancet, 2015",
+          "link": "#"
         },
         {
-          "title": "NICE 2025 guidelines recommend standardised, objective falls risk screening before prescribing intervention programmes",
-          "source": "NICE, 2025",
-          "url": "#"
+          "title": "NICE 2025 guidelines recommend standardized, objective falls risk screening before prescribing intervention programs",
+          "journal": "NICE, 2025",
+          "link": "#"
         }
       ]
     },
@@ -100,5 +125,11 @@
       "secondaryCtaText": "Download the Buyers Guide",
       "secondaryCtaLink": "/resources/buyers-guide"
     }
+  ],
+  "tags": [
+    "falls-prevention",
+    "able-assess",
+    "senior-living",
+    "comparison"
   ]
 }

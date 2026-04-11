@@ -1,0 +1,211 @@
+{
+  "title": "Falls Prevention for CCRCs & Life Plan Communities",
+  "slug": "ccrc-life-plan",
+  "seo": {
+    "title": "Falls Screening for CCRCs & Life Plan Communities | Able Care",
+    "description": "Objective falls screening that protects your IL feeder, level-of-care transitions and entrance-fee model. Under five minutes per resident.",
+    "ogImage": "/images/og-ccrc-life-plan.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Senior Living",
+          "href": "/senior-living"
+        },
+        {
+          "label": "CCRCs & Life Plan Communities",
+          "href": "/senior-living/ccrc-life-plan"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "backgroundImage": "/images/photos/clinical/patient-therapist-smiling.jpg",
+      "backgroundImageAlt": "Patient and therapist smiling during a wellness screening session",
+      "eyebrow": "CCRCs & Life Plan Communities",
+      "headline": "Keep residents independent for longer.",
+      "subtitle": "For CCRCs and life plan communities. Falls screening that protects your IL feeder, your level-of-care transitions and your entrance-fee model. Under five minutes per resident.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download the CCRC Guide",
+        "href": "/resources/ccrc-guide"
+      }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The IL-to-AL transition problem",
+      "body": "<p>Falls accelerate the move from independent living to assisted living. Each transition costs the life-care fund, reduces entrance-fee revenue and puts pressure on the entire campus model.</p><p>Most CCRCs still rely on subjective, paper-based screening tools. These tools miss early decline and leave clinical teams reacting to falls rather than preventing them.</p><p>Able Assess replaces subjective observation with four objective, validated metrics. Capture grip strength, sit-to-stand, gait speed and timed up-and-go in a single five-minute session. Risk-stratify every resident on campus, from IL through to skilled nursing.</p>"
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "How it works across your campus",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Wellness screen",
+          "description": "Run a five-minute assessment during a routine wellness visit. Non-clinical staff can operate it with minimal training."
+        },
+        {
+          "number": 2,
+          "title": "Risk stratify",
+          "description": "Residents are banded by fall risk using normative data. High-risk residents are flagged for clinical review immediately."
+        },
+        {
+          "number": 3,
+          "title": "Intervene early",
+          "description": "Targeted exercise programs and care plan updates begin before a fall triggers a level-of-care transition."
+        },
+        {
+          "number": 4,
+          "title": "Track campus-wide",
+          "description": "Longitudinal data across IL, AL and SNF gives leadership a single view of fall risk and functional trends."
+        }
+      ]
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Four metrics, one picture of function",
+      "metrics": [
+        {
+          "name": "Grip strength",
+          "whatItMeasures": "Upper-body strength and frailty risk.",
+          "whyItMatters": "Declining grip in IL is one of the earliest signs of functional change. Catch it before it becomes an AL transition."
+        },
+        {
+          "name": "Sit-to-stand",
+          "whatItMeasures": "Lower-limb power and balance.",
+          "whyItMatters": "Predicts ability to transfer independently. A key gatekeeper for remaining in independent living."
+        },
+        {
+          "name": "Gait speed",
+          "whatItMeasures": "Walking speed over a short distance.",
+          "whyItMatters": "The strongest single predictor of fall risk in older adults. Measurable decline triggers early intervention."
+        },
+        {
+          "name": "Timed Up and Go",
+          "whatItMeasures": "Functional mobility and dynamic balance.",
+          "whyItMatters": "Validated falls risk screen in under a minute. Gives clinical teams a defensible, repeatable baseline."
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "Residents see their own progress",
+      "body": "Able Assess turns a clinical test into a wellness conversation. Residents view their scores on screen, track improvements over time and engage with programming tied to measurable outcomes.",
+      "imageSide": "right",
+      "imageAlt": "Elderly resident holding a GripAble sensor and viewing progress on a tablet screen",
+      "imageSrc": "/images/product/elderly-man-holding-gripable-resized.jpg"
+    },
+    {
+      "_template": "roiCalculatorPromo",
+      "heading": "Model the impact across your campus",
+      "promoBody": "One prevented IL-to-AL transition can offset the annual cost of screening an entire independent living building. See what Able Assess could save your community.",
+      "ctaText": "Run the numbers",
+      "ctaHref": "/resources/roi-calculator"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "colorScheme": "aqua",
+      "testimonials": [
+        {
+          "quote": "It paid for itself in the first quarter. The real win was seeing residents engage with their own wellness data.",
+          "attribution": "Operations Lead, CCRC"
+        },
+        {
+          "quote": "Residents can see their own progress on the screen. It turned a clinical test into a conversation about staying strong.",
+          "attribution": "Wellness Director, US community"
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "heading": "The numbers that matter to CCRCs",
+      "colorScheme": "aqua",
+      "stats": [
+        {
+          "value": "4",
+          "label": "Validated metrics per screening"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per resident screening"
+        },
+        {
+          "value": "300–800",
+          "label": "Residents per campus"
+        },
+        {
+          "value": "25%",
+          "label": "Average fall reduction"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "light",
+      "heading": "Common questions from CCRC operators",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "Can wellness staff run the assessment without clinical oversight?",
+          "answer": "Yes. Able Assess was designed for non-clinical staff. Wellness directors, fitness coordinators and care aides can all run the five-minute workflow after a short onboarding session."
+        },
+        {
+          "question": "Does it work across IL, AL and SNF on the same campus?",
+          "answer": "Yes. The same platform and metrics are used across all levels of care. This gives leadership a single, consistent view of fall risk and functional trends campus-wide."
+        },
+        {
+          "question": "How does it protect the life-care fund?",
+          "answer": "Falls are the leading trigger for level-of-care transitions. By identifying decline early and intervening before a fall, you reduce unplanned transitions that draw on the life-care fund."
+        },
+        {
+          "question": "How do we present the data to a non-profit board?",
+          "answer": "The dashboard provides population-level reporting that maps directly to quality indicators and financial outcomes. Board-ready summaries can be exported for governance meetings."
+        },
+        {
+          "question": "How long does deployment take?",
+          "answer": "Most communities are live within two weeks. The hardware is a single Bluetooth sensor paired with any tablet. Staff training takes around 15 minutes."
+        },
+        {
+          "question": "What does it cost?",
+          "answer": "Pricing is based on community size and assessment volume. The ROI calculator models payback against reduced falls-related turnover and transition costs. Book a demo to discuss your scenario."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See Able Assess in a CCRC wellness workflow.",
+      "body": "20 minutes with a clinician who has deployed it across life plan communities.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download the CCRC Guide",
+        "href": "/resources/ccrc-guide"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "senior-living",
+    "ccrc",
+    "life-plan",
+    "falls-prevention"
+  ]
+}

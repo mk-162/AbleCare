@@ -12,17 +12,26 @@ const solutionsMenu = {
   platform: [
     { label: "Able Assess", href: "/solutions/able-assess", desc: "Four metrics. Five minutes. One complete picture." },
     { label: "Falls Prevention", href: "/solutions/falls-prevention", desc: "Upstream screening that prevents falls before they happen." },
+    { label: "How It Works", href: "/product/how-it-works", desc: "Unbox, train, screen, review, share. Five-minute workflow." },
   ],
   capabilities: [
-    { label: "Population Health", href: "/solutions/population-health", desc: "Population-level functional health data." },
-    { label: "Able Strength", href: "/solutions/able-strength", desc: "Patient-facing grip strength app." },
+    { label: "Grip Strength", href: "/solutions/grip-strength", desc: "Clinical-grade digital grip strength measurement." },
+    { label: "Functional Health", href: "/solutions/functional-health", desc: "Beyond falls: frailty, oncology, GLP-1, longevity." },
+    { label: "Remote Monitoring", href: "/solutions/remote-monitoring", desc: "Home-based grip strength and falls screening." },
   ],
 };
 
 const segmentsMenu = {
   homeCare: [
-    { label: "Home Care Agencies", href: "/home-care", desc: "Reduce hospitalisations and hit HHVBP targets." },
+    { label: "Home Care", href: "/home-care", desc: "Reduce hospitalisations and hit HHVBP targets." },
+    { label: "PE-Backed Home Care", href: "/home-care/pe-backed", desc: "One screening workflow, every branch." },
+    { label: "Independent Home Care", href: "/home-care/independent", desc: "Quality differentiation and HHVBP protection." },
+  ],
+  seniorLiving: [
     { label: "Senior Living", href: "/senior-living", desc: "Protect residents, occupancy and NOI." },
+    { label: "CCRCs & Life Plan", href: "/senior-living/ccrc-life-plan", desc: "Coordinated screening across care levels." },
+    { label: "Independent Living", href: "/senior-living/independent-living", desc: "Proactive wellness and early risk identification." },
+    { label: "Assisted Living", href: "/senior-living/assisted-living", desc: "Standardised assessment for elevated-risk residents." },
   ],
   clinical: [
     { label: "Skilled Nursing", href: "/skilled-nursing", desc: "Standardised screening across every facility." },
@@ -34,22 +43,23 @@ const segmentsMenu = {
 const resourcesMenu = {
   learn: [
     { label: "Blog", href: "/blog", desc: "Insights on falls prevention and functional assessment." },
+    { label: "Knowledge Base", href: "/knowledge-base", desc: "Evidence-based guides on assessments and care settings." },
     { label: "Research Library", href: "/resources/evidence", desc: "Peer-reviewed evidence behind Able Assess." },
-    { label: "Case Studies", href: "/resources/case-studies", desc: "Real results from real organisations." },
+    { label: "Guides & Downloads", href: "/resources/guides", desc: "HHVBP, CCRC, NICE and compliance guides." },
   ],
   tools: [
+    { label: "Product Walkthrough", href: "/resources/walkthrough", desc: "See Able Assess in action, step by step." },
+    { label: "Case Studies", href: "/resources/case-studies", desc: "Real results from real organisations." },
     { label: "Buyers Guide", href: "/resources/buyers-guide", desc: "Everything you need to brief procurement." },
-    { label: "Able Assess vs Paper", href: "/compare/vs-manual-assessments", desc: "See how objective screening compares." },
-    { label: "Best Falls Prevention 2026", href: "/compare/best-2026", desc: "How the leading platforms stack up." },
   ],
 };
 
 const companyItems = [
-  { label: "About", href: "/about" },
-  { label: "Meet the Team", href: "/meet-the-team" },
-  { label: "Customers", href: "/customers" },
-  { label: "Partners", href: "/partners" },
-  { label: "Contact", href: "/contact" },
+  { label: "Meet the Team", href: "/meet-the-team", desc: "The people behind Able Care." },
+  { label: "Customers", href: "/customers", desc: "Organisations we work with." },
+  { label: "Partners", href: "/partners", desc: "Our integration & channel partners." },
+  { label: "Careers", href: "/careers", desc: "Join the Able Care team." },
+  { label: "Contact", href: "/contact", desc: "Get in touch with us." },
 ];
 
 type MenuKey = "solutions" | "segments" | "resources" | "company";
@@ -139,27 +149,35 @@ export function SiteHeader() {
                 Who We Help <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "segments" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "segments" && (
-                <div className="absolute top-full left-0 w-[520px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="row-span-4">
-                      <Link
-                        href="/home-care"
-                        className="relative flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity overflow-hidden"
-                        onClick={() => setOpenMenu(null)}
-                      >
-                        <img src="/images/nav-gradient-2.svg" alt="" className="absolute top-0 left-0 w-full h-full object-cover opacity-30 pointer-events-none" />
-                        <div className="relative z-10">
-                        <div className="mb-2 text-lg font-bold text-white">Who We Help</div>
-                        <p className="text-sm leading-tight text-white/90 font-light">Functional health solutions for every care setting.</p>
-                        </div>
-                      </Link>
+                <div className="absolute top-full right-0 w-[640px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
+                  <div className="grid grid-cols-3 gap-4">
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-widest text-ac-black/40 px-3 mb-2">Home Care</div>
+                      {segmentsMenu.homeCare.map((item) => (
+                        <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
+                          <div className="text-sm font-bold text-ac-black">{item.label}</div>
+                          <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
+                        </Link>
+                      ))}
                     </div>
-                    {[...segmentsMenu.homeCare, ...segmentsMenu.clinical].map((item) => (
-                      <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
-                        <div className="text-sm font-bold text-ac-black">{item.label}</div>
-                        <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
-                      </Link>
-                    ))}
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-widest text-ac-black/40 px-3 mb-2">Senior Living</div>
+                      {segmentsMenu.seniorLiving.map((item) => (
+                        <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
+                          <div className="text-sm font-bold text-ac-black">{item.label}</div>
+                          <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
+                        </Link>
+                      ))}
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-widest text-ac-black/40 px-3 mb-2">Clinical</div>
+                      {segmentsMenu.clinical.map((item) => (
+                        <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
+                          <div className="text-sm font-bold text-ac-black">{item.label}</div>
+                          <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
@@ -197,18 +215,34 @@ export function SiteHeader() {
               )}
             </div>
 
-            {/* Company dropdown */}
+            {/* Company mega-menu */}
             <div className="relative" onMouseEnter={() => handleMouseEnter("company")} onMouseLeave={handleMouseLeave}>
               <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors">
                 Company <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "company" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "company" && (
-                <div className="absolute top-full right-0 w-[180px] bg-white shadow-xl rounded-xl border border-black/5 py-2 mt-1">
-                  {companyItems.map((item) => (
-                    <Link key={item.href} href={item.href} className="block px-4 py-2.5 text-sm text-ac-black hover:bg-ac-grey/40 hover:text-ac-blue transition-colors" onClick={() => setOpenMenu(null)}>
-                      {item.label}
-                    </Link>
-                  ))}
+                <div className="absolute top-full right-0 w-[520px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="row-span-5">
+                      <Link
+                        href="/about"
+                        className="relative flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity overflow-hidden"
+                        onClick={() => setOpenMenu(null)}
+                      >
+                        <img src="/images/nav-gradient-2.svg" alt="" className="absolute top-0 left-0 w-full h-full object-cover opacity-30 pointer-events-none" />
+                        <div className="relative z-10">
+                        <div className="mb-2 text-lg font-bold text-white">About Able Care</div>
+                        <p className="text-sm leading-tight text-white/90 font-light">Our mission, story and the team making care safer.</p>
+                        </div>
+                      </Link>
+                    </div>
+                    {companyItems.map((item) => (
+                      <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
+                        <div className="text-sm font-bold text-ac-black">{item.label}</div>
+                        <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -245,7 +279,7 @@ export function SiteHeader() {
 
               {/* Who We Help */}
               <MobileAccordion label="Who We Help" expanded={expandedMobileItem} onToggle={setExpandedMobileItem}>
-                {[...segmentsMenu.homeCare, ...segmentsMenu.clinical].map((item) => (
+                {[...segmentsMenu.homeCare, ...segmentsMenu.seniorLiving, ...segmentsMenu.clinical].map((item) => (
                   <MobileSubLink key={item.href} href={item.href} label={item.label} desc={item.desc} onClose={closeMobile} />
                 ))}
               </MobileAccordion>

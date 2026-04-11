@@ -38,7 +38,7 @@
       "_template": "imageFeature",
       "scheme": "light",
       "headline": "Channel partners",
-      "description": "Distribute Able Assess alongside your existing products and services. Our channel partner programme includes training, co-marketing support, and competitive margins.",
+      "description": "Distribute Able Assess alongside your existing products and services. Our channel partner program includes training, co-marketing support, and competitive margins.",
       "imagePosition": "left",
       "bulletPoints": [
         { "text": "White-label options available" },
@@ -46,7 +46,7 @@
         { "text": "Dedicated partner success manager" },
         { "text": "Competitive margin structure" }
       ],
-      "ctaText": "Apply to the partner programme",
+      "ctaText": "Apply to the partner program",
       "ctaLink": "/contact"
     },
     {
@@ -54,7 +54,7 @@
       "scheme": "blue",
       "wave": "ribbon",
       "heading": "Let's explore a partnership.",
-      "bodyText": "Tell us about your organisation and how Able Assess could fit. We'll arrange a call within 48 hours.",
+      "bodyText": "Tell us about your organization and how Able Assess could fit. We'll arrange a call within 48 hours.",
       "primaryCtaText": "Get in touch",
       "primaryCtaLink": "/contact"
     }

@@ -4,7 +4,9 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { BackToTop } from "@/components/ui/BackToTop";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { PasswordGate } from "@/components/ui/PasswordGate";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -53,10 +55,12 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col font-sans bg-white text-ac-black">
         <PasswordGate>
+          <ScrollToTop />
           <SiteHeader />
           <main className="flex-grow">{children}</main>
           <SiteFooter />
           <BackToTop />
+          <CookieBanner />
         </PasswordGate>
       </body>
     </html>

@@ -41,6 +41,12 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+button,
+[role="button"],
+a {
+  cursor: pointer;
+}
+
 /* ─── Able Care Utility Classes ───────────────────────────────────────────── */
 
 .bg-ac-blue { background-color: var(--color-ac-blue); }
@@ -156,4 +162,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-scroll-left:hover {
   animation-play-state: paused;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
 }

@@ -1,0 +1,126 @@
+{
+  "title": "Remote Monitoring",
+  "slug": "remote-monitoring",
+  "seo": {
+    "title": "Remote Grip Strength Monitoring | Home Care Assessment | Able Assess",
+    "description": "Bring clinical-grade grip strength assessment into home care and community settings. Remote monitoring enables early detection of decline, better tele-rehab outcomes, and OASIS integration.",
+    "ogImage": "/images/og-remote-monitoring.png"
+  },
+  "tags": ["solutions", "remote-monitoring", "home-care", "tele-rehab", "oasis"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Solutions", "href": "/solutions" },
+        { "label": "Remote Monitoring" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Solutions",
+      "headline": "Grip strength and falls risk screening without the clinic visit.",
+      "subtitle": "Bring clinical-grade functional assessment into home care and community settings. Regular objective measurement without the cost and complexity of in-person visits.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
+      "secondaryCta": { "label": "Download Implementation Guide", "href": "/resources/remote-monitoring-guide" }
+    },
+    {
+      "_template": "valueProps",
+      "heading": "Remote assessment solves real workflow problems",
+      "items": [
+        {
+          "title": "Early Detection of Decline",
+          "description": "Regular home assessment detects functional decline weeks before hospitalization. Grip strength is a leading indicator of deterioration, often dropping before other signs become visible."
+        },
+        {
+          "title": "Efficiency and Capacity",
+          "description": "Eliminates transport coordination and reduces no-shows. One clinician can assess six to eight patients per day remotely, compared with three to four in clinic."
+        },
+        {
+          "title": "Continuity and Confidence",
+          "description": "Patients assessed in familiar surroundings produce more consistent results. Objective improvement data motivates continued participation in rehabilitation programs."
+        }
+      ]
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "How home-based monitoring works",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Orientation",
+          "description": "The therapist shows the patient and carer how to use the device. They complete a practice measurement together and agree on an assessment schedule."
+        },
+        {
+          "number": 2,
+          "title": "Self-Assessment",
+          "description": "The patient measures grip strength at the agreed time. The guided workflow takes three to five minutes. Results upload automatically via Bluetooth."
+        },
+        {
+          "number": 3,
+          "title": "Data Sync",
+          "description": "The device syncs to the care team portal via WiFi. No manual data entry is required. Results appear on the dashboard within 10 minutes."
+        },
+        {
+          "number": 4,
+          "title": "Care Team Review",
+          "description": "The care coordinator checks the dashboard. Automated alerts flag concerning changes in grip strength or assessment patterns. The clinician is notified if intervention is needed."
+        },
+        {
+          "number": 5,
+          "title": "Plan Adjustment",
+          "description": "If decline is detected, the care plan is adjusted. New targets are set and communicated to the patient. The monitoring cycle continues."
+        }
+      ]
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Tele-rehab integration",
+      "body": "<p>Physiotherapists delivering remote rehabilitation need objective evidence that exercises are working. Grip strength provides exactly that. A patient who sees their score improving builds confidence, stays motivated and sticks with their program.</p><p>This creates a feedback loop. The therapist prescribes, the patient measures, the data confirms progress or flags concern. Treatment decisions are based on objective trends rather than subjective self-report.</p>"
+    },
+    {
+      "_template": "richText",
+      "scheme": "grey",
+      "heading": "OASIS data capture integration",
+      "body": "<p>Able Assess integrates with OASIS-E coding, linking grip strength measurements directly to functional status codes. Relevant fields are auto-populated from assessment data, reducing manual coding burden for home health agencies.</p><p>This ensures that the functional data captured during remote monitoring flows into regulatory reporting without additional administrative effort.</p>"
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "light",
+      "heading": "Questions about remote monitoring",
+      "items": [
+        {
+          "question": "Can older adults use remote assessment?",
+          "answer": "Yes. The device and app are designed for simplicity. Large buttons, audio feedback and a guided workflow make it accessible for older adults. The system has been tested with people aged 75 to 95."
+        },
+        {
+          "question": "What if a patient misses an assessment?",
+          "answer": "The system logs missed assessments and alerts the care team. Patterns of missed assessments may themselves signal declining health, reduced motivation or a change in circumstances that warrants follow-up."
+        },
+        {
+          "question": "How frequently should monitoring happen?",
+          "answer": "Monthly for stable community-dwelling adults. Weekly for patients in active rehabilitation. Twice weekly for high-risk individuals or those recently discharged from hospital."
+        },
+        {
+          "question": "What if WiFi connectivity is unreliable?",
+          "answer": "The device stores assessment data locally and syncs automatically when a connection becomes available. No data is lost if connectivity drops during or after an assessment."
+        },
+        {
+          "question": "Can remote monitoring replace in-person visits?",
+          "answer": "No. Remote monitoring complements in-person care. It increases the frequency of objective assessment between visits, giving clinicians better data and earlier warning of decline. It does not replace the clinical judgment that comes from face-to-face contact."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "heading": "Start remote monitoring today",
+      "body": "See how Able Assess brings clinical-grade functional assessment into home care and community settings.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+    }
+  ]
+}

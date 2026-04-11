@@ -25,6 +25,9 @@ import { TeamShowcase } from "./TeamShowcase";
 import { PartnerLogoCarousel } from "./PartnerLogoCarousel";
 import { SegmentCards } from "./SegmentCards";
 import { ValueProps } from "./ValueProps";
+import { RelatedKnowledgeBase } from "./RelatedKnowledgeBase";
+import { RelatedPages } from "./RelatedPages";
+import { KnowledgeBaseCard } from "./KnowledgeBaseCard";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -182,9 +185,13 @@ function normalizeBlock(block: any): any {
 
 interface BlockRendererProps {
   blocks: any[];
+  /** Page-level tags, injected into relatedKnowledgeBase/relatedPages blocks. */
+  pageTags?: string[];
+  /** Page slug, injected into relatedPages blocks to exclude self. */
+  pageSlug?: string;
 }
 
-export function BlockRenderer({ blocks }: BlockRendererProps) {
+export function BlockRenderer({ blocks, pageTags, pageSlug }: BlockRendererProps) {
   if (!blocks || blocks.length === 0) return null;
 
   return (
@@ -195,10 +202,11 @@ export function BlockRenderer({ blocks }: BlockRendererProps) {
 
         // Extract collection prefix: "PagesBlocksHero" → "hero"
         // TinaCMS __typename pattern: {Collection}Blocks{BlockName}
+        // Also support _template field (used by JSON content files)
         const blockType = typename
           ? typename.replace(/^.*Blocks/, "").charAt(0).toLowerCase() +
             typename.replace(/^.*Blocks/, "").slice(1)
-          : null;
+          : block._template || null;
 
         switch (blockType) {
           case "hero":
@@ -254,6 +262,12 @@ export function BlockRenderer({ blocks }: BlockRendererProps) {
             return <SegmentCards key={i} {...block} />;
           case "valueProps":
             return <ValueProps key={i} {...block} />;
+          case "currentKnowledgeCard":
+            return <KnowledgeBaseCard key={i} {...block} />;
+          case "relatedKnowledgeBase":
+            return <RelatedKnowledgeBase key={i} items={block._resolvedItems} heading={block.heading} scheme={block.scheme} />;
+          case "relatedPages":
+            return <RelatedPages key={i} items={block._resolvedItems} pageTags={pageTags} heading={block.heading} scheme={block.scheme} />;
           case "breadcrumb":
             // breadcrumb blocks are handled by the hero component or skipped
             return null;

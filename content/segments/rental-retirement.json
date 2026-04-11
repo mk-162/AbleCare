@@ -1,0 +1,211 @@
+{
+  "title": "Falls Screening for Rental Retirement Communities",
+  "slug": "rental-retirement",
+  "seo": {
+    "title": "Falls Screening for Rental Retirement Communities | Able Care",
+    "description": "Objective falls screening for rental IL and AL portfolios. Under five minutes per resident. Non-clinical staff. Low-training rollout across every campus.",
+    "ogImage": "/images/og-rental-retirement.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Senior Living",
+          "href": "/senior-living"
+        },
+        {
+          "label": "Rental Retirement Communities",
+          "href": "/senior-living/rental-retirement"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "backgroundImage": "/images/heroes/hero-image-gray-hair-min.jpg",
+      "backgroundImageAlt": "Older adult smiling confidently in a retirement community setting",
+      "eyebrow": "Rental Retirement Communities",
+      "headline": "Protect occupancy. Protect NOI.",
+      "subtitle": "Objective falls screening for rental IL and AL portfolios. Under five minutes per resident. Non-clinical staff. Low-training rollout across every campus.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download the Portfolio Guide",
+        "href": "/resources/buyers-guide"
+      }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The NOI equation: falls equal turnover equal lost revenue",
+      "body": "<p>In a rental model, every fall-related move-out is lost monthly revenue. The unit sits empty during turnover. Liability claims add legal costs. The maths is simple: fewer falls means higher occupancy and stronger NOI.</p><p>Most rental portfolios have no standardized falls screening. Each campus handles risk differently, if at all. Corporate has no consistent data to benchmark performance across communities.</p><p>Able Assess deploys portfolio-wide with minimal training. Non-clinical staff run a five-minute screening per resident. Corporate gets standardized, comparable data from every campus.</p>"
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "How it works across your portfolio",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Deploy portfolio-wide",
+          "description": "Roll out across every campus in 30 days. A Bluetooth sensor and any tablet per community. 15 minutes of staff training."
+        },
+        {
+          "number": 2,
+          "title": "Screen every resident",
+          "description": "Non-clinical staff run a five-minute assessment during routine wellness checks. Four validated metrics per session."
+        },
+        {
+          "number": 3,
+          "title": "Intervene before the fall",
+          "description": "Risk banding identifies declining residents early. Targeted interventions begin before a fall triggers a move-out or a claim."
+        },
+        {
+          "number": 4,
+          "title": "Report to corporate",
+          "description": "Standardized data across every campus gives regional and corporate leadership a single view of fall risk and program performance."
+        }
+      ]
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Four metrics that protect NOI",
+      "metrics": [
+        {
+          "name": "Grip strength",
+          "whatItMeasures": "Upper-body strength and frailty risk.",
+          "whyItMatters": "A validated predictor of hospitalization. Every hospitalization is a potential permanent move-out and lost rental income."
+        },
+        {
+          "name": "Sit-to-stand",
+          "whatItMeasures": "Lower-limb power and transfer ability.",
+          "whyItMatters": "Transfer-related falls are among the most common and most costly. This metric identifies residents at highest risk before a fall occurs."
+        },
+        {
+          "name": "Gait speed",
+          "whatItMeasures": "Walking speed over a short distance.",
+          "whyItMatters": "Measurable decline in gait speed predicts falls months before they happen. Early data means early intervention."
+        },
+        {
+          "name": "Timed Up and Go",
+          "whatItMeasures": "Functional mobility and dynamic balance.",
+          "whyItMatters": "Gives DONs and wellness directors objective, defensible data on every resident. Standardized across the portfolio for corporate benchmarking."
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "Standardized across your portfolio",
+      "body": "Every campus uses the same hardware, the same metrics and the same workflow. Corporate can compare fall risk data across communities, identify underperforming campuses and measure the impact of interventions at scale.",
+      "imageSide": "right",
+      "imageAlt": "GripAble sensor alongside tablets used for standardized falls screening",
+      "imageSrc": "/images/product/gripable-sensor-with-tablets-1054x722-min.png"
+    },
+    {
+      "_template": "roiCalculatorPromo",
+      "heading": "What is one empty unit costing you per month?",
+      "promoBody": "Falls-related turnover is one of the largest controllable costs in a rental portfolio. Model the impact of a 25% reduction in falls across your communities.",
+      "ctaText": "Run the numbers",
+      "ctaHref": "/resources/roi-calculator"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "colorScheme": "aqua",
+      "testimonials": [
+        {
+          "quote": "We saw fewer falls and shorter vacancy periods within the first two quarters. The financial case was straightforward.",
+          "attribution": "Operations Lead, rental retirement portfolio"
+        },
+        {
+          "quote": "For the first time, we can compare fall risk data across every community in the region. That changed how we allocate resources.",
+          "attribution": "VP Operations, multi-campus operator"
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "heading": "The numbers that matter to rental operators",
+      "colorScheme": "aqua",
+      "stats": [
+        {
+          "value": "4",
+          "label": "Validated metrics per screening"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per resident screening"
+        },
+        {
+          "value": "30 days",
+          "label": "Portfolio deployment"
+        },
+        {
+          "value": "25%",
+          "label": "Average fall reduction"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "light",
+      "heading": "Common questions from rental operators",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "We have 10 or more campuses. Can you deploy across all of them?",
+          "answer": "Yes. The hardware is a single Bluetooth sensor and any tablet per community. Most portfolios are fully deployed within 30 days. We provide a dedicated onboarding contact for multi-campus rollouts."
+        },
+        {
+          "question": "Our staff are not clinicians. Can they still run the screening?",
+          "answer": "Yes. Able Assess was designed for non-clinical staff. Wellness directors, care aides and activities coordinators can all run the five-minute workflow after a 15-minute onboarding session."
+        },
+        {
+          "question": "How do we justify the investment to PE ownership or a board?",
+          "answer": "The ROI calculator models payback against reduced falls-related turnover, shorter vacancy periods and lower liability costs. Most portfolios see payback within the first quarter of deployment."
+        },
+        {
+          "question": "Does it work in both IL and AL settings?",
+          "answer": "Yes. The same platform and metrics are used across independent and assisted living. This gives corporate a single, consistent dataset to benchmark across care levels and campuses."
+        },
+        {
+          "question": "Can we use the data in marketing to prospective residents?",
+          "answer": "Several operators use their Able Assess program as a differentiator during tours. Families respond well to objective, technology-driven wellness programming with measurable outcomes."
+        },
+        {
+          "question": "How does corporate track performance across the portfolio?",
+          "answer": "The dashboard provides portfolio-level reporting with drill-down to individual campuses and residents. Regional and corporate leadership can compare fall risk trends, screening compliance and intervention outcomes across every community."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See Able Assess in a multi-campus rental workflow.",
+      "body": "20 minutes with a clinician who has deployed it across rental portfolios.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "senior-living",
+    "rental-retirement",
+    "noi",
+    "falls-prevention"
+  ]
+}

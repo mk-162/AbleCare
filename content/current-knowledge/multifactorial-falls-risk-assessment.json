@@ -1,0 +1,116 @@
+{
+  "title": "Multifactorial Falls Risk Assessment: Why One Test Isn't Enough",
+  "description": "Why one test is not enough for falls risk. Learn what multifactorial assessment means and why NICE and WHO require it.",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "What is a multifactorial falls risk assessment?",
+      "directAnswer": "A multifactorial falls risk assessment evaluates multiple risk factors rather than relying on a single test. NICE NG249 (2025) explicitly advises against standalone predictive tools and mandates multifactorial assessment for high-risk adults. Combining grip strength, gait speed, chair stand, and balance testing improves prediction accuracy. Able Assess captures all four metrics in a single 5 to 15 minute screening.",
+      "tldrBullets": [
+        {
+          "text": "Single tests like Timed Up and Go miss significant risk factors"
+        },
+        {
+          "text": "NICE 2025 now explicitly advises against standalone predictive tools"
+        },
+        {
+          "text": "Multifactorial assessment combines minimum 4 domains: function, medication, medical history, environment"
+        }
+      ],
+      "expandedAnswer": "Falls in older adults result from complex interactions between intrinsic factors (strength, balance, cognition) and extrinsic factors (home hazards, footwear). No single tool captures this complexity. The WHO 2022 World Falls Guidelines recommend a three-tier risk assessment model, with multifactorial assessment as the foundation for moderate to high-risk individuals.\n\nNICE Clinical Guideline 161 (2013) introduced the concept. Updated guidance NG249 (2025) strengthens this requirement, removing recommendation for standalone tools like Timed Up and Go alone. Instead, guidance now specifies that formal multifactorial assessment must happen for anyone with one or more falls in past year, unexplained falls, or frailty indicators.\n\nAbel Care Assess integrates four core assessment domains: functional capacity (balance, gait, strength), medication review, medical history, and environmental scan. This structured approach ensures clinicians don't rely on intuition or isolated test results.",
+      "sources": [
+        {
+          "title": "NICE Guideline NG249: Falls prevention in older people",
+          "url": "https://www.nice.org.uk/guidance/ng249",
+          "year": "2025"
+        },
+        {
+          "title": "World Health Organization: Global Report on Falls Prevention in Older Age",
+          "url": "https://www.who.int/publications/i/item/9789240026704",
+          "year": "2022"
+        },
+        {
+          "title": "American Geriatrics Society and British Geriatrics Society: Summary of the AGS/BGS Clinical Practice Guideline",
+          "url": "https://www.americangeriatrics.org/health-care-professionals/clinical-practice/clinical-guidelines-recommendations/prevention-falls-older-persons",
+          "year": "2019"
+        }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Why single tests fail your residents</h2><p>Screening tools like Timed Up and Go measure one aspect of function: how quickly someone can walk. But falls result from dozens of factors working together. A person might pass TUG with excellent scores yet fall repeatedly due to medication interactions, vision loss, or clutter at home.</p><p>Research shows standalone tools correctly identify only 40-60% of at-risk individuals in community settings. In care homes, specificity improves but sensitivity drops further. The American Geriatrics Society acknowledges that single tests are insufficient decision-making tools for fall prevention strategies.</p><p>This is why NICE 2025 explicitly advises against relying on any standalone predictive tool. The guidance states: \"Do not use a single tool in isolation to predict who will have a fall. Use a personalized, multifactorial approach.\"</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>What multifactorial assessment includes</h2><p>A proper multifactorial assessment evaluates at least four domains. First, functional capacity: gait, balance, strength, flexibility, and foot condition. Second, medical factors: previous falls, postural hypotension, neurological conditions, and sensory impairment. Third, medication review: psychoactive drugs, sedating antihistamines, and polypharmacy effects. Fourth, environmental hazards: lighting, flooring, bathroom safety, and furniture placement.</p><p>The WHO framework adds a fifth element: patient-reported fear of falling. Older adults who become fearful often reduce activity, deconditioning themselves further. This creates a cycle: more falls lead to more fear, which leads to inactivity and muscle loss.</p><p>Age alone is not a risk factor. Frailty indicators matter more: weakness, slow walking, low activity, unintentional weight loss, and poor concentration. NICE 2025 now specifies that frailty assessment should accompany multifactorial evaluation.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>NICE 2025 requirements and what changed</h2><p>The 2025 update to NG249 strengthens multifactorial assessment mandates. It defines three new high-risk criteria requiring formal assessment: a history of two or more falls in the past 12 months, unexplained falls or syncope, or evidence of frailty (measured via FRAIL scale or Clinical Frailty Scale).</p><p>NICE removed previous endorsement of standalone tools for initial screening. Instead, it recommends using brief questions: \"Have you had a fall in the past year?\" and \"Do you feel unsteady?\" Positive answers trigger comprehensive multifactorial assessment, not isolated test results.</p><p>Care settings must document: functional assessment findings, medication review outcomes, falls history interpretation, and environmental recommendations. This documentation supports both safety and regulatory compliance.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>How Able Assess implements multifactorial assessment</h2><p>Able Assess guides clinicians through a structured four-domain evaluation. The digital platform first captures functional data through validated questions and optional video gait analysis. Next, it reviews medications against a database of fall-risk compounds. Third, it integrates falls history and medical conditions. Finally, it prompts environmental assessment with specific room-by-room guidance.</p><p>This systematic approach ensures nothing is missed. Rather than relying on clinical memory or habit, every resident receives the same comprehensive evaluation. The platform generates a clear risk profile: low, moderate, or high risk, with domain-specific findings explained in plain language.</p><p>Able Assess outputs integrate into care planning. Rather than stopping at \"high risk\", the assessment identifies which specific domains require intervention. This targeted approach improves outcomes and reduces unnecessary referrals.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        {
+          "stat": "Single screening tools correctly identify only 40-60% of at-risk older adults in community settings",
+          "source": "NICE Guideline NG249 evidence review",
+          "url": "https://www.nice.org.uk/guidance/ng249"
+        },
+        {
+          "stat": "Multifactorial interventions based on comprehensive assessment reduce fall incidence by up to 32%",
+          "source": "Otago Exercise Program evidence, cited in WHO 2022 guidelines",
+          "url": "https://www.who.int/publications/i/item/9789240026704"
+        },
+        {
+          "stat": "Frailty is now recognized as a high-risk criterion requiring formal multifactorial assessment",
+          "source": "NICE NG249 2025 update",
+          "url": "https://www.nice.org.uk/guidance/ng249"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "Do I need multifactorial assessment for every resident?",
+          "answer": "Not every resident requires full comprehensive assessment. NICE 2025 recommends starting with two brief questions about falls and unsteadiness. Positive answers, plus frailty indicators, trigger multifactorial assessment. This risk-stratified approach is efficient and evidence-based."
+        },
+        {
+          "question": "What happens if my current assessment tool isn't multifactorial?",
+          "answer": "NICE 2025 acknowledges existing tools like TUG or Berg Balance Scale have clinical value. However, they should not be your only assessment. You must supplement them with medication review, medical history, and environmental evaluation to meet current guidelines."
+        },
+        {
+          "question": "How long does a multifactorial assessment take?",
+          "answer": "Comprehensive assessment typically takes 20-30 minutes for a skilled clinician using a structured tool. Digital platforms like Able Assess streamline documentation, reducing administrative time and improving consistency."
+        },
+        {
+          "question": "Can non-clinical staff perform multifactorial assessment?",
+          "answer": "Assessment requires clinical judgment, particularly for medication review and interpretation. While care assistants can gather functional data, a registered nurse or therapist should synthesize findings and recommend interventions."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Align with NICE 2025 guidance",
+      "bodyText": "Able Assess guides your team through multifactorial evaluation, ensuring you meet current NICE standards and capture all relevant risk factors in one structured process.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Learn about Able Assess",
+        "url": "/solutions/able-assess"
+      },
+      "scheme": "blue"
+    }
+  ]
+}

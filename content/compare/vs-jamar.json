@@ -27,39 +27,66 @@
       "scheme": "grey",
       "heading": "Head-to-head comparison",
       "tldr": "The Jamar dynamometer is the traditional analogue grip strength tool. It captures a single reading with no digital record, no normative comparison, and no route into a care plan. Able Assess captures grip strength digitally alongside three additional functional metrics, scores every result against age- and sex-matched normative data, and feeds risk banding straight into the clinical workflow.",
-      "columns": ["Able Assess", "Jamar Dynamometer"],
+      "columns": [
+        "Able Assess",
+        "Jamar Dynamometer"
+      ],
       "rows": [
         {
           "feature": "Measurement type",
-          "values": ["Fully digital, sensor-based grip strength via the GripAble device", "Analogue hydraulic gauge, read visually by the operator"]
+          "values": [
+            "Fully digital, sensor-based grip strength via the GripAble device",
+            "Analogue hydraulic gauge, read visually by the operator"
+          ]
         },
         {
           "feature": "Data capture",
-          "values": ["Automatic digital capture with timestamped records and longitudinal trending", "Manual reading, recorded by hand on paper or spreadsheet"]
+          "values": [
+            "Automatic digital capture with timestamped records and longitudinal trending",
+            "Manual reading, recorded by hand on paper or spreadsheet"
+          ]
         },
         {
           "feature": "Normative comparison",
-          "values": ["Automatic scoring against age- and sex-matched normative data", "Clinician must look up normative tables manually"]
+          "values": [
+            "Automatic scoring against age- and sex-matched normative data",
+            "Clinician must look up normative tables manually"
+          ]
         },
         {
           "feature": "Additional metrics",
-          "values": ["Four metrics in one workflow: grip strength, sit-to-stand, gait speed, timed up-and-go", "Grip strength only"]
+          "values": [
+            "Four metrics in one workflow: grip strength, sit-to-stand, gait speed, timed up-and-go",
+            "Grip strength only"
+          ]
         },
         {
           "feature": "Workflow integration",
-          "values": ["Risk banding routed to care team, EHR and OASIS integration-ready", "No digital workflow, no integration capability"]
+          "values": [
+            "Risk banding routed to care team, EHR and OASIS integration-ready",
+            "No digital workflow, no integration capability"
+          ]
         },
         {
           "feature": "Consistency",
-          "values": ["One standardised protocol across every site and every staff member", "Reading accuracy varies by operator technique and gauge calibration"]
+          "values": [
+            "One standardized protocol across every site and every staff member",
+            "Reading accuracy varies by operator technique and gauge calibration"
+          ]
         },
         {
           "feature": "Staff requirements",
-          "values": ["Any staff member, no clinical certification required", "Typically requires trained clinical staff for correct positioning and reading"]
+          "values": [
+            "Any staff member, no clinical certification required",
+            "Typically requires trained clinical staff for correct positioning and reading"
+          ]
         },
         {
           "feature": "Scalability",
-          "values": ["Roll out digitally to every branch with minimal training", "One device per site, no centralised data, no trend reporting"]
+          "values": [
+            "Roll out digitally to every branch with minimal training",
+            "One device per site, no centralized data, no trend reporting"
+          ]
         }
       ]
     },
@@ -67,25 +94,23 @@
       "_template": "evidenceBlock",
       "scheme": "aqua",
       "heading": "Why digital grip strength measurement matters",
-      "pulledStat": {
-        "text": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
-        "source": "Lancet, 2015"
-      },
-      "studies": [
+      "pulledStat": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
+      "pulledStatSource": "Lancet, 2015",
+      "citations": [
         {
           "title": "Grip strength is a validated marker for frailty, sarcopenia and functional decline in older adults",
-          "source": "Lancet, 2015",
-          "url": "#"
+          "journal": "Lancet, 2015",
+          "link": "#"
         },
         {
           "title": "Multifactorial screening outperforms single-test approaches in predicting falls",
-          "source": "BMJ, 2018",
-          "url": "#"
+          "journal": "BMJ, 2018",
+          "link": "#"
         },
         {
-          "title": "NICE 2025 guidelines recommend standardised, objective falls risk screening",
-          "source": "NICE, 2025",
-          "url": "#"
+          "title": "NICE 2025 guidelines recommend standardized, objective falls risk screening",
+          "journal": "NICE, 2025",
+          "link": "#"
         }
       ]
     },
@@ -100,5 +125,12 @@
       "secondaryCtaText": "Download the Buyers Guide",
       "secondaryCtaLink": "/resources/buyers-guide"
     }
+  ],
+  "tags": [
+    "grip-strength",
+    "hand-dynamometers",
+    "able-assess",
+    "gripable",
+    "comparison"
   ]
 }

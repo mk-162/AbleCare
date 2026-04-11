@@ -7,6 +7,11 @@ import { motion } from "framer-motion";
 import { BrandmarkWatermark } from "@/components/ui/BrandmarkWatermark";
 import { ChevronRight } from "lucide-react";
 
+const schemeToHex = (s: string): string => {
+  const map: Record<string, string> = { blue: "#1432FF", light: "#ffffff", white: "#ffffff", aqua: "#00FFD2", grey: "#DCDCDC" };
+  return map[s] || "#ffffff";
+};
+
 interface HeroPortrait {
   src: string;
   alt: string;
@@ -43,14 +48,17 @@ export function Hero({
   backgroundImageAlt = "Functional health assessment in action",
   heroPortraits,
   breadcrumb,
-  waveFill = "#ffffff",
+  waveFill,
 }: HeroProps) {
   const isBlue = scheme === "blue";
-  const isLight = scheme === "light";
-  const bgClass = isBlue ? "bg-ac-blue" : isLight ? "bg-white" : "bg-ac-aqua/10";
+  const isLight = scheme === "light" || scheme === "grey";
+  const bgClass = isBlue ? "bg-ac-blue" : scheme === "grey" ? "bg-ac-grey" : scheme === "aqua" ? "bg-ac-aqua/10" : "bg-white";
   const textClass = isBlue ? "text-white" : "text-ac-black";
+  const heroBg = isBlue ? "#1432FF" : scheme === "grey" ? "#DCDCDC" : scheme === "aqua" ? "#00FFD2" : "#ffffff";
+  const waveBottom = waveFill ? schemeToHex(waveFill) : "#ffffff";
 
   return (
+    <div className="relative" style={{ marginBottom: "-82px" }}>
     <section className={`relative overflow-hidden ${bgClass} ${textClass}`}>
       <BrandmarkWatermark
         color="white"
@@ -188,15 +196,18 @@ export function Hero({
       )}
       </div>
 
-      <div className="absolute left-0 w-full z-30 leading-none" style={{ bottom: "-2px" }} aria-hidden="true">
+    </section>
+
+      <div className="absolute left-0 bottom-0 w-full z-30 leading-none" aria-hidden="true">
         <svg viewBox="0 0 1440 82" preserveAspectRatio="none" className="block w-full" style={{ height: "82px" }}>
-          {wave === "crest" && <path fill={waveFill} d="M0,40 C240,80 480,0 720,30 C960,60 1200,20 1440,40 L1440,82 L0,82 Z" />}
-          {wave === "ribbon" && <path fill={waveFill} d="M0,60 C360,0 720,80 1080,40 C1260,20 1380,50 1440,60 L1440,82 L0,82 Z" />}
-          {wave === "fold" && <path fill={waveFill} d="M0,82 L1440,0 L1440,82 Z" />}
-          {wave === "arc" && <path fill={waveFill} d="M0,82 C480,0 960,0 1440,82 Z" />}
-          {(wave === "pulse" || wave === "none") && <path fill={waveFill} d="M0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 C1320,60 1400,50 1440,40 L1440,82 L0,82 Z" />}
+          <rect width="1440" height="82" fill={waveBottom} />
+          {wave === "crest" && <path fill={heroBg} d="M0,0 L0,40 C240,80 480,0 720,30 C960,60 1200,20 1440,40 L1440,0 Z" />}
+          {wave === "ribbon" && <path fill={heroBg} d="M0,0 L0,60 C360,0 720,80 1080,40 C1260,20 1380,50 1440,60 L1440,0 Z" />}
+          {wave === "fold" && <path fill={heroBg} d="M0,0 L1440,0 L0,82 Z" />}
+          {wave === "arc" && <path fill={heroBg} d="M0,0 L0,82 C480,0 960,0 1440,82 L1440,0 Z" />}
+          {(wave === "pulse" || wave === "none") && <path fill={heroBg} d="M0,0 L0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 C1320,60 1400,50 1440,40 L1440,0 Z" />}
         </svg>
       </div>
-    </section>
+    </div>
   );
 }

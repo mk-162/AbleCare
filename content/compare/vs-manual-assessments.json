@@ -3,7 +3,7 @@
   "slug": "vs-manual-assessments",
   "seo": {
     "title": "Able Assess vs Manual Assessments | Able Care",
-    "description": "Side-by-side comparison of Able Assess and paper-based falls assessments. Objective, standardised, five minutes. Everything paper cannot do.",
+    "description": "Side-by-side comparison of Able Assess and paper-based falls assessments. Objective, standardized, five minutes. Everything paper cannot do.",
     "ogImage": "/images/og-vs-manual.png"
   },
   "blocks": [
@@ -15,48 +15,81 @@
       "backgroundImageAlt": "Hands fitting digital sensor versus manual assessment",
       "eyebrow": "Comparison",
       "headline": "Able Assess vs paper-based falls assessments.",
-      "subtitle": "Objective, standardised, five minutes. Everything paper cannot do.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Comparison PDF", "href": "/resources/buyers-guide" }
+      "subtitle": "Objective, standardized, five minutes. Everything paper cannot do.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Comparison PDF",
+        "href": "/resources/buyers-guide"
+      }
     },
     {
       "_template": "featureComparison",
       "scheme": "grey",
       "heading": "Head-to-head comparison",
       "tldr": "Paper assessments like Morse and Tinetti take 20+ minutes, are scored subjectively by observation, vary from clinician to clinician and rarely make it into the care plan. Able Assess runs in under five minutes, scores automatically against normative data, delivers the same result regardless of who runs it and routes risk banding straight to the care team.",
-      "columns": ["Able Assess", "Paper Assessments (Morse, Tinetti)"],
+      "columns": [
+        "Able Assess",
+        "Paper Assessments (Morse, Tinetti)"
+      ],
       "rows": [
         {
           "feature": "Speed",
-          "values": ["Under 5 minutes per screening", "20-30 minutes per screening"]
+          "values": [
+            "Under 5 minutes per screening",
+            "20-30 minutes per screening"
+          ]
         },
         {
           "feature": "Accuracy",
-          "values": ["Four objective, sensor-based metrics scored against normative data", "Subjective observation scored by individual clinician judgement"]
+          "values": [
+            "Four objective, sensor-based metrics scored against normative data",
+            "Subjective observation scored by individual clinician judgment"
+          ]
         },
         {
           "feature": "Consistency",
-          "values": ["One standardised protocol across every site and every staff member", "Varies by clinician, branch and time of day"]
+          "values": [
+            "One standardized protocol across every site and every staff member",
+            "Varies by clinician, branch and time of day"
+          ]
         },
         {
           "feature": "Staff requirements",
-          "values": ["Any staff member, no clinical certification required", "Requires trained clinical staff"]
+          "values": [
+            "Any staff member, no clinical certification required",
+            "Requires trained clinical staff"
+          ]
         },
         {
           "feature": "Data capture",
-          "values": ["Automatic digital capture with longitudinal trending", "Paper forms, manual transcription, no trend data"]
+          "values": [
+            "Automatic digital capture with longitudinal trending",
+            "Paper forms, manual transcription, no trend data"
+          ]
         },
         {
           "feature": "Care plan integration",
-          "values": ["Automated risk banding routed to the care team", "Manual handoff, often lost in transit"]
+          "values": [
+            "Automated risk banding routed to the care team",
+            "Manual handoff, often lost in transit"
+          ]
         },
         {
           "feature": "Payer defensibility",
-          "values": ["Objective data trail for HHVBP, VBP and regulatory reporting", "No standardised data trail"]
+          "values": [
+            "Objective data trail for HHVBP, VBP and regulatory reporting",
+            "No standardized data trail"
+          ]
         },
         {
           "feature": "Scalability",
-          "values": ["Roll out to every branch with minimal training", "Requires clinical training at every site"]
+          "values": [
+            "Roll out to every branch with minimal training",
+            "Requires clinical training at every site"
+          ]
         }
       ]
     },
@@ -64,25 +97,23 @@
       "_template": "evidenceBlock",
       "scheme": "aqua",
       "heading": "Why objectivity matters",
-      "pulledStat": {
-        "text": "Multifactorial falls risk screening outperforms single-test paper approaches in predicting falls in older adults.",
-        "source": "BMJ, 2018"
-      },
-      "studies": [
+      "pulledStat": "Multifactorial falls risk screening outperforms single-test paper approaches in predicting falls in older adults.",
+      "pulledStatSource": "BMJ, 2018",
+      "citations": [
         {
           "title": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure",
-          "source": "Lancet, 2015",
-          "url": "#"
+          "journal": "Lancet, 2015",
+          "link": "#"
         },
         {
           "title": "Objective screening has been shown to reduce falls by 25%",
-          "source": "Able Care 2026 Commercialisation Strategy",
-          "url": "#"
+          "journal": "Able Care 2026 Commercialization Strategy",
+          "link": "#"
         },
         {
-          "title": "NICE 2025 guidelines recommend standardised, objective falls risk screening",
-          "source": "NICE, 2025",
-          "url": "#"
+          "title": "NICE 2025 guidelines recommend standardized, objective falls risk screening",
+          "journal": "NICE, 2025",
+          "link": "#"
         }
       ]
     },
@@ -92,8 +123,20 @@
       "waveStyle": "ribbon",
       "heading": "See the difference in your workflow.",
       "body": "A 20-minute demo with a clinician who has run both approaches.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      }
     }
+  ],
+  "tags": [
+    "falls-risk-assessment",
+    "able-assess",
+    "digital-screening",
+    "comparison"
   ]
 }

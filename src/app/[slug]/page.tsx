@@ -1,10 +1,11 @@
 import { Metadata } from "next";
-import { BlockRenderer } from "@/components/blocks/BlockRenderer";
+import { fetchPage, fetchMarkdownPage, extractPageData } from "@/lib/tina-client";
+import { EditorialPageClient } from "@/components/blocks/EditorialPageClient";
 import { notFound } from "next/navigation";
 
 export const revalidate = 60;
 
-// Map of slug -> collection + filename
+// Map of slug -> Tina collection + filename
 const SLUG_MAP: Record<string, { collection: string; filename: string }> = {
   "home-care": { collection: "segments", filename: "home-care" },
   "senior-living": { collection: "segments", filename: "senior-living" },
@@ -24,26 +25,8 @@ const SLUG_MAP: Record<string, { collection: string; filename: string }> = {
   "security": { collection: "utility", filename: "security" },
   "thank-you": { collection: "utility", filename: "thank-you" },
   "faqs": { collection: "pages", filename: "faqs" },
+  "careers": { collection: "company", filename: "careers" },
 };
-
-async function getPageData(slug: string) {
-  const mapping = SLUG_MAP[slug];
-  if (!mapping) return null;
-
-  try {
-    const fs = await import("fs");
-    const path = await import("path");
-    const ext = mapping.collection === "utility" ? "md" : "json";
-    const filePath = path.join(
-      process.cwd(),
-      `content/${mapping.collection === "segments" ? "segments" : mapping.collection === "company" ? "company" : mapping.collection === "utility" ? "utility" : "pages"}/${mapping.filename}.${ext}`
-    );
-    const raw = fs.readFileSync(filePath, "utf-8");
-    return ext === "json" ? JSON.parse(raw) : { title: slug, body: raw };
-  } catch {
-    return null;
-  }
-}
 
 export async function generateMetadata({
   params,
@@ -51,17 +34,26 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const data = await getPageData(slug);
-  const title = data?.title || slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase());
-  return {
-    title,
-    description: data?.description,
-    openGraph: {
+  const mapping = SLUG_MAP[slug];
+  if (!mapping) return { title: "Page Not Found" };
+
+  try {
+    const fetcher = mapping.collection === "utility" ? fetchMarkdownPage : fetchPage;
+    const { data } = await fetcher(mapping.collection, mapping.filename);
+    const page = extractPageData(data);
+    const title = page?.title || slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase());
+    return {
       title,
-      description: data?.description,
-      ...(data?.seo?.ogImage && { images: [{ url: data.seo.ogImage }] }),
-    },
-  };
+      description: page?.description,
+      openGraph: {
+        title,
+        description: page?.description,
+        ...(page?.seo?.ogImage && { images: [{ url: page.seo.ogImage }] }),
+      },
+    };
+  } catch {
+    return { title: slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase()) };
+  }
 }
 
 export default async function SlugPage({
@@ -70,32 +62,16 @@ export default async function SlugPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const mapping = SLUG_MAP[slug];
 
-  if (!SLUG_MAP[slug]) {
+  if (!mapping) {
     notFound();
   }
 
-  const data = await getPageData(slug);
+  const fetcher = mapping.collection === "utility" ? fetchMarkdownPage : fetchPage;
+  const { query, variables, data } = await fetcher(mapping.collection, mapping.filename);
 
-  if (!data?.blocks) {
-    return (
-      <div className="min-h-screen flex items-center justify-center pt-24">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-ac-black mb-4">
-            {data?.title || slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase())}
-          </h1>
-          <p className="text-ac-black/60">This page is being built. Content coming soon.</p>
-        </div>
-      </div>
-    );
-  }
-
-  const blocks = data.blocks.map((block: any) => ({
-    ...block,
-    __typename: `PagesBlocks${block._template.charAt(0).toUpperCase() + block._template.slice(1)}`,
-  }));
-
-  return <BlockRenderer blocks={blocks} />;
+  return <EditorialPageClient query={query} variables={variables} data={data} />;
 }
 
 export async function generateStaticParams() {

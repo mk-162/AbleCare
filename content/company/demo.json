@@ -3,7 +3,7 @@
   "slug": "demo",
   "seo": {
     "title": "Book a 30-Minute Demo with the Able Care Clinical Team | Able Care",
-    "description": "Segment-tailored. See the workflow. Get your questions answered. Book a personalised demo with the Able Care clinical team.",
+    "description": "Segment-tailored. See the workflow. Get your questions answered. Book a personalized demo with the Able Care clinical team.",
     "ogImage": "/images/og-demo.png"
   },
   "blocks": [
@@ -26,20 +26,20 @@
     },
     {
       "_template": "contactForm",
-      "heading": "Book your personalised demo.",
+      "heading": "Book your personalized demo.",
       "subtitle": "See how Able Assess fits your setting. 30 minutes with the clinical team, tailored to your workflow. No slides. No fluff.",
       "salesEmail": "hello@able-care.co"
     },
     {
       "_template": "trustBar",
       "scheme": "aqua",
-      "badges": [
-        { "label": "FDA listed", "icon": "fda" },
-        { "label": "CE marked", "icon": "ce" },
-        { "label": "ISO 27001", "icon": "iso" },
-        { "label": "HIPAA aligned", "icon": "hipaa" },
-        { "label": "GDPR compliant", "icon": "gdpr" },
-        { "label": "NICE 2025 aligned", "icon": "nice" }
+      "items": [
+        { "text": "FDA listed" },
+        { "text": "CE marked" },
+        { "text": "ISO 27001" },
+        { "text": "HIPAA aligned" },
+        { "text": "GDPR compliant" },
+        { "text": "NICE 2025 aligned" }
       ]
     },
     {
@@ -54,7 +54,7 @@
         },
         {
           "question": "Who should attend?",
-          "answer": "Ideally the person responsible for clinical quality, operations or innovation. For operator organisations, we recommend including someone from the care management or wellness team so they can see the workflow first-hand."
+          "answer": "Ideally the person responsible for clinical quality, operations or innovation. For operator organizations, we recommend including someone from the care management or wellness team so they can see the workflow first-hand."
         },
         {
           "question": "What will the demo cover?",
@@ -74,7 +74,7 @@
         },
         {
           "question": "Is there a free trial after the demo?",
-          "answer": "Yes. We offer a pilot programme with full hardware, training and support. This is discussed during the demo if appropriate."
+          "answer": "Yes. We offer a pilot program with full hardware, training and support. This is discussed during the demo if appropriate."
         }
       ]
     },

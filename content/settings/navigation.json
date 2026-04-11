@@ -14,7 +14,7 @@
       {
         "label": "Who We Help",
         "children": [
-          { "label": "Home Care", "href": "/home-care/", "desc": "Reduce hospitalisations and hit HHVBP targets." },
+          { "label": "Home Care", "href": "/home-care/", "desc": "Reduce hospitalizations and hit HHVBP targets." },
           { "label": "Senior Living", "href": "/senior-living/", "desc": "Protect residents and your CCRC reputation." },
           { "label": "Clinicians", "href": "/clinicians/", "desc": "Objective metrics in the flow of care." },
           { "label": "Pharma & CROs", "href": "/pharma/", "desc": "Digital endpoints for clinical trials." }
@@ -24,9 +24,10 @@
         "label": "Resources",
         "children": [
           { "label": "Blog", "href": "/blog/", "desc": "Insights on falls prevention and functional assessment." },
-          { "label": "Case Studies", "href": "/resources/case-studies/", "desc": "Real results from real organisations." },
+          { "label": "Case Studies", "href": "/resources/case-studies/", "desc": "Real results from real organizations." },
           { "label": "Clinical Evidence", "href": "/resources/evidence/", "desc": "Peer-reviewed research backing our approach." },
-          { "label": "Buyers Guide", "href": "/resources/buyers-guide/", "desc": "Everything you need to brief procurement." }
+          { "label": "Buyers Guide", "href": "/resources/buyers-guide/", "desc": "Everything you need to brief procurement." },
+          { "label": "Knowledge Base", "href": "/knowledge-base/", "desc": "Evidence-based guides on falls prevention and assessment." }
         ]
       },
       { "label": "About", "href": "/about/" },
@@ -51,7 +52,8 @@
           { "label": "Blog", "href": "/blog/" },
           { "label": "Case Studies", "href": "/resources/case-studies/" },
           { "label": "Clinical Evidence", "href": "/resources/evidence/" },
-          { "label": "Buyers Guide", "href": "/resources/buyers-guide/" }
+          { "label": "Buyers Guide", "href": "/resources/buyers-guide/" },
+          { "label": "Knowledge Base", "href": "/knowledge-base/" }
         ]
       },
       {

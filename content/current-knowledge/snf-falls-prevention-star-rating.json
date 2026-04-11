@@ -1,0 +1,116 @@
+{
+  "title": "Falls Prevention in Skilled Nursing: Protecting Your Star Rating",
+  "description": "CMS Five-Star Quality Rating depends on falls prevention outcomes. Learn how to build a program that protects reimbursement and quality scores.",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "How do falls prevention outcomes affect your CMS Five-Star Quality Rating?",
+      "directAnswer": "Falls are a primary CMS quality measure for skilled nursing facilities. Higher fall rates directly lower your Five-Star Quality Rating, affecting reimbursement and reputation. Value-Based Purchasing (VBP) penalties reduce Medicare payments further. Standardized prevention programs document clinical outcomes and improve Star ratings.",
+      "tldrBullets": [
+        {
+          "text": "CMS Five-Star ratings include falls as a core quality measure."
+        },
+        {
+          "text": "High fall rates trigger VBP payment adjustments and reimbursement penalties."
+        },
+        {
+          "text": "Documented prevention programs improve outcomes and protect Star ratings."
+        }
+      ],
+      "expandedAnswer": "Skilled nursing facilities are assessed on multiple quality dimensions. Falls prevention is one of the most visible and heavily weighted. A facility with high fall incident rates will see its Five-Star Quality Rating decline, making it less attractive to potential residents and their families. VBP penalties compound this: poor falls performance reduces your Medicare payment by up to 2%. Conversely, documented prevention programs that reduce fall rates improve your Star rating and attract more admissions.",
+      "sources": [
+        {
+          "title": "CMS Five-Star Quality Rating Methodology",
+          "url": "/resources/cms-five-star",
+          "year": "2024"
+        },
+        {
+          "title": "Medicare Value-Based Purchasing for SNFs",
+          "url": "/resources/snf-vbp",
+          "year": "2023"
+        },
+        {
+          "title": "Falls Prevention and Quality Outcomes in Nursing",
+          "url": "/resources/falls-quality-outcomes",
+          "year": "2024"
+        }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>How Falls Affect Your Star Rating</h2><p>CMS Five-Star ratings combine data on quality, safety, staffing, and inspection results. Falls and fall-related injuries are tracked for every skilled nursing facility. The measure includes both the number of falls and the severity of injuries sustained. Facilities are benchmarked against national averages. A facility performing below benchmark will see its Five-Star rating decline.</p><p>Star ratings are published publicly on Medicare.gov and CMS Care Compare. Families use these ratings to choose facilities. A drop from 4 stars to 3 stars can reduce your census and admissions significantly. Marketing efforts cannot compensate for a low Star rating. Prevention is more cost-effective than damage control.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Value-Based Purchasing Penalties and Reimbursement</h2><p>Skilled nursing facilities participate in the CMS Value-Based Purchasing (VBP) program. Performance on quality measures, including falls, determines payment adjustments. Facilities performing in the top quartile on falls prevention receive a 2% payment bonus. Those in the bottom quartile face payment reductions.</p><p>For a 100-bed facility, a 1% payment reduction equates to approximately $30,000-$45,000 annually in lost Medicare revenue. VBP penalties stack on top of your already constrained reimbursement rates. A documented falls prevention program that reduces your facility's fall rate by even 15% can eliminate these penalties and return several hundred thousand dollars in lost revenue.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Building a Prevention Program That Works</h2><p>Effective falls prevention requires three elements: systematic risk identification, targeted interventions, and measurement. Begin by screening all new admissions for falls risk using a validated tool. Document environmental hazards, medication interactions, and mobility limitations. Staff must understand their role in prevention: bed alarms, call buttons, assistive devices, and timely supervision.</p><p>Digital tools standardize this process. Every resident receives consistent screening. Risk assessments are documented in a centralized system. Staff follow evidence-based protocols. Environmental audits are completed systematically. Prevention becomes systematic rather than episodic. Documentation audit trails prove to surveyors that your facility meets compliance standards.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Using Digital Tools for Documentation and Compliance</h2><p>Surveyors review medical records during inspections. Poor falls documentation creates deficiencies and jeopardizes your Star rating. Digital systems create audit trails proving your facility screened for falls risk, documented interventions, and monitored outcomes. Every care plan reflects the resident's falls risk level. Incident reports are completed contemporaneously. Follow-up care is documented.</p><p>Real-time dashboards allow facility leadership to monitor falls trends. When a spike occurs, your team can investigate root causes immediately. Were new admissions at higher risk? Did staffing changes affect supervision? Digital reporting reveals patterns and enables rapid corrective action. This proactive approach demonstrates quality governance to surveyors and improves your Star rating.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        {
+          "stat": "Falls are the leading cause of injury-related mortality in nursing facilities.",
+          "source": "CDC Falls in Older Persons",
+          "url": "/resources/cdc-falls"
+        },
+        {
+          "stat": "Facilities with documented falls prevention programs reduce fall rates by 30-50%.",
+          "source": "Evidence Review: SNF Falls Prevention",
+          "url": "/resources/snf-prevention-evidence"
+        },
+        {
+          "stat": "A single serious fall-related injury costs SNFs $10,000-$15,000 in acute care and liability.",
+          "source": "SNF Economics and Falls Prevention",
+          "url": "/resources/snf-economics"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "How much can falls prevention improve my Five-Star rating?",
+          "answer": "Reducing fall rates by 15-20% typically improves your Star rating by half a star to one full star within 12 months. The impact depends on your current baseline and how you compare to national benchmarks. Sustained improvements protect your rating long-term."
+        },
+        {
+          "question": "What documentation do CMS surveyors look for in falls prevention?",
+          "answer": "Surveyors review care plans for falls risk identification, physician orders for prevention interventions, incident reports, follow-up assessments after falls, and environmental audit logs. Digital documentation proves systematic compliance with CMS requirements."
+        },
+        {
+          "question": "Can we implement falls prevention without hiring additional staff?",
+          "answer": "Yes. Falls prevention relies on systematic screening and workflow changes rather than headcount increases. Digital tools enable existing staff to screen efficiently and follow evidence-based protocols. Non-clinical staff can administer screening with minimal training."
+        },
+        {
+          "question": "How long before we see falls rates drop?",
+          "answer": "Most facilities see measurable improvements within 60-90 days of implementing systematic screening and prevention protocols. Full benefits (20-30% fall rate reduction) typically appear within 6-12 months as staff competency increases and environmental hazards are resolved."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Protect your Five-Star rating with systematic falls prevention",
+      "bodyText": "Digital screening and documentation systems help skilled nursing facilities reduce falls, improve Star ratings, and avoid VBP penalties. Learn how we support SNFs across falls risk assessment, staff training, and outcomes reporting.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Learn about Able Assess",
+        "url": "/solutions/able-assess"
+      },
+      "scheme": "blue"
+    }
+  ]
+}

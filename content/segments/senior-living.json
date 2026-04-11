@@ -10,8 +10,14 @@
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Senior Living", "href": "/senior-living" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Senior Living",
+          "href": "/senior-living"
+        }
       ]
     },
     {
@@ -23,8 +29,14 @@
       "eyebrow": "Senior Living",
       "headline": "Protect residents. Protect occupancy. Protect NOI.",
       "subtitle": "Objective falls screening for CCRCs, rental retirement, independent and assisted living. Reduce resident turnover from falls by up to 25%.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the CCRC Guide", "href": "/resources/ccrc-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the CCRC Guide",
+        "href": "/resources/ccrc-guide"
+      }
     },
     {
       "_template": "segmentRouter",
@@ -32,7 +44,7 @@
       "tiles": [
         {
           "label": "Home Care",
-          "benefit": "Standardise screening across every branch.",
+          "benefit": "Standardize screening across every branch.",
           "href": "/home-care",
           "ctaText": "Explore"
         },
@@ -44,8 +56,8 @@
         },
         {
           "label": "Pharma & CROs",
-          "benefit": "Decentralised functional endpoints.",
-          "href": "/for/pharma-and-cros",
+          "benefit": "Decentralized functional endpoints.",
+          "href": "/pharma",
           "ctaText": "Explore"
         }
       ]
@@ -53,7 +65,7 @@
     {
       "_template": "imageFeature",
       "heading": "Technology built for the frontline",
-      "body": "Able Assess fits into the resident's daily routine. Five minutes in the wellness centre, the dining room, or the resident's apartment. Non-clinical staff can run it. Results are available immediately.",
+      "body": "Able Assess fits into the resident's daily routine. Five minutes in the wellness center, the dining room, or the resident's apartment. Non-clinical staff can run it. Results are available immediately.",
       "imageSide": "right",
       "imageAlt": "Wellness director running an Able Assess screening with a resident in a senior living community",
       "imageSrc": "/images/product/elderly-man-holding-gripable-resized.jpg"
@@ -112,10 +124,22 @@
       "heading": "The numbers that matter to senior living",
       "colorScheme": "aqua",
       "stats": [
-        { "value": "25%", "label": "Reduction in falls with objective screening" },
-        { "value": "< 5 min", "label": "Per resident assessment" },
-        { "value": "4", "label": "Validated metrics per screening" },
-        { "value": "0", "label": "Clinical certifications required to run it" }
+        {
+          "value": "25%",
+          "label": "Reduction in falls with objective screening"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per resident assessment"
+        },
+        {
+          "value": "4",
+          "label": "Validated metrics per screening"
+        },
+        {
+          "value": "0",
+          "label": "Clinical certifications required to run it"
+        }
       ]
     },
     {
@@ -135,7 +159,7 @@
     {
       "_template": "roiCalculatorPromo",
       "heading": "How much could you save?",
-      "body": "Model the financial impact of reducing falls-related turnover and liability across your communities.",
+      "promoBody": "Model the financial impact of reducing falls-related turnover and liability across your communities.",
       "ctaText": "Run the numbers",
       "ctaHref": "/resources/roi-calculator"
     },
@@ -159,11 +183,11 @@
         },
         {
           "question": "Can residents see their own data?",
-          "answer": "Yes. Residents get objective milestones they can track over time, which motivates participation in wellness programmes and builds trust in the care plan."
+          "answer": "Yes. Residents get objective milestones they can track over time, which motivates participation in wellness programs and builds trust in the care plan."
         },
         {
           "question": "How does it reduce liability?",
-          "answer": "A standardised, documented screening protocol creates a defensible record of proactive falls risk management for every resident."
+          "answer": "A standardized, documented screening protocol creates a defensible record of proactive falls risk management for every resident."
         },
         {
           "question": "What does it cost?",
@@ -182,8 +206,19 @@
       "waveStyle": "ribbon",
       "heading": "See Able Assess in your community.",
       "body": "20 minutes with a clinician who has run it in senior living.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      }
     }
+  ],
+  "tags": [
+    "senior-living",
+    "falls-prevention",
+    "able-assess"
   ]
 }

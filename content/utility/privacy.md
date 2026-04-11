@@ -3,8 +3,6 @@ title: Privacy Policy
 description: How Able Care collects, uses, and protects your personal information.
 ---
 
-# Privacy Policy
-
 **Last updated: April 2026**
 
 Able Care Ltd ("Able Care", "we", "us", or "our") is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website [www.able-care.co](https://www.able-care.co) and use our services.
@@ -13,8 +11,8 @@ Able Care Ltd ("Able Care", "we", "us", or "our") is committed to protecting and
 
 ### Information you provide to us
 
-- **Contact information**: name, email address, phone number, job title, and organisation when you fill in forms, request a demo, or subscribe to communications.
-- **Assessment data**: when using Able Assess, functional health data is collected as part of clinical assessments. This data is processed on behalf of your healthcare organisation, which is the data controller.
+- **Contact information**: name, email address, phone number, job title, and organization when you fill in forms, request a demo, or subscribe to communications.
+- **Assessment data**: when using Able Assess, functional health data is collected as part of clinical assessments. This data is processed on behalf of your healthcare organization, which is the data controller.
 
 ### Information collected automatically
 
@@ -30,7 +28,7 @@ Able Care Ltd ("Able Care", "we", "us", or "our") is committed to protecting and
 
 ## Data Security
 
-All data is encrypted in transit (TLS 1.3) and at rest (AES-256). Our infrastructure is hosted in ISO 27001-certified data centres with SOC 2 Type II compliance. We maintain HIPAA and GDPR compliance across all operations.
+All data is encrypted in transit (TLS 1.3) and at rest (AES-256). Our infrastructure is hosted in ISO 27001-certified data centers with SOC 2 Type II compliance. We maintain HIPAA and GDPR compliance across all operations.
 
 ## Data Retention
 

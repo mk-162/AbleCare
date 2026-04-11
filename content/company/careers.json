@@ -1,0 +1,88 @@
+{
+  "title": "Careers at Able Care",
+  "slug": "careers",
+  "seo": {
+    "title": "Careers at Able Care | Join Our Team | Able Care",
+    "description": "Join the Able Care team. We are hiring talented people in clinical, commercial, and technical roles.",
+    "ogImage": "/images/og-careers.png"
+  },
+  "tags": ["company", "careers"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Company", "href": "/company" },
+        { "label": "Careers" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Careers",
+      "headline": "Build the future of falls prevention.",
+      "subtitle": "Our mission is to eliminate preventable falls. We work with clinical teams, care operators and technologists to build screening tools that protect older adults. Join us.",
+      "primaryCta": { "label": "Get in Touch", "href": "/contact" }
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "light",
+      "heading": "Our culture",
+      "items": [
+        {
+          "title": "Evidence-Led",
+          "description": "Decisions based on data, research, and clinical evidence. We respect expertise and challenge assumptions."
+        },
+        {
+          "title": "User-Focused",
+          "description": "Design for the people using Able Assess. Listen to care staff, patients, and families."
+        },
+        {
+          "title": "Mission-Driven",
+          "description": "Falls are preventable. Technology can help. We work with urgency to reduce suffering."
+        },
+        {
+          "title": "Collaborative",
+          "description": "Small team where everyone has a voice. Diverse perspectives and collaborative problem-solving."
+        },
+        {
+          "title": "Supportive",
+          "description": "Mentoring, learning opportunities, and flexibility to balance work and life."
+        }
+      ]
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "We are always hiring",
+      "body": "<p>We are looking for talented people in clinical, commercial, and technical roles. If you care about falls prevention and want to work on meaningful problems, we want to hear from you.</p><p>Send your CV to <a href=\"mailto:hello@able-care.co\">hello@able-care.co</a>. Tell us why you care about falls prevention and what you want to work on. We review every application and respond within five working days.</p>"
+    },
+    {
+      "_template": "richText",
+      "scheme": "grey",
+      "heading": "Our values",
+      "body": "<h3>Excellence</h3><p>We hold ourselves to the highest standards in clinical validity, software quality, and customer experience. Good enough is not good enough when people's safety is at stake.</p><h3>Integrity</h3><p>We are honest with customers, partners, and each other. We present evidence accurately and acknowledge what we do not yet know.</p><h3>Inclusivity</h3><p>We build products for diverse populations and teams that reflect that diversity. Accessible design is a requirement, not an afterthought.</p><h3>Continuous Learning</h3><p>The evidence base for falls prevention evolves constantly. We stay current, share knowledge, and invest in professional development.</p><h3>Impact</h3><p>We measure success by outcomes. Fewer falls, fewer injuries, fewer hospitalizations. Everything we do connects to that goal.</p>"
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Benefits",
+      "body": "<ul><li>Competitive salary and equity</li><li>Health insurance</li><li>Flexible working</li><li>Professional development budget</li><li>Pension scheme</li><li>Generous holiday</li><li>Parental leave</li><li>Wellness programs</li></ul>"
+    },
+    {
+      "_template": "richText",
+      "scheme": "grey",
+      "heading": "Diversity and inclusion",
+      "body": "<p>Able Care is an equal opportunities employer. We encourage applications from all backgrounds regardless of age, disability, gender, race, religion, or sexual orientation. We are committed to building a diverse team because diverse teams build better products and make better decisions.</p>"
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "heading": "Ready to join us?",
+      "body": "Explore open roles or send us your CV to start the conversation.",
+      "primaryCta": { "label": "Get in Touch", "href": "/contact" },
+      "secondaryCta": { "label": "Send Us Your CV", "href": "mailto:hello@able-care.co" }
+    }
+  ]
+}

@@ -3,7 +3,7 @@
   "slug": "about",
   "seo": {
     "title": "About Able Care — Science-Led, Impact-Driven | Able Care",
-    "description": "Able Care is the falls prevention platform commercialised out of Imperial College London neuroscience research. FDA listed. CE marked. ISO 27001 certified.",
+    "description": "Able Care is the falls prevention platform commercialized out of Imperial College London neuroscience research. FDA listed. CE marked. ISO 27001 certified.",
     "ogImage": "/images/og-about.png"
   },
   "blocks": [
@@ -23,7 +23,7 @@
       "backgroundImageAlt": "Patient giving thumbs up during functional health assessment",
       "eyebrow": "About Able Care",
       "headline": "Science-led. Impact-driven.",
-      "subtitle": "Able Care is the falls prevention platform for operators and clinicians who need objective, standardised falls risk screening across every site. Commercialised out of Imperial College London neuroscience research.",
+      "subtitle": "Able Care is the falls prevention platform for operators and clinicians who need objective, standardized falls risk screening across every site. Commercialized out of Imperial College London neuroscience research.",
       "primaryCta": { "label": "Book a Demo", "href": "/contact" },
       "secondaryCta": { "label": "Meet the Team", "href": "#team" }
     },
@@ -39,7 +39,7 @@
       "_template": "imageFeature",
       "scheme": "grey",
       "heading": "The problem we solve",
-      "body": "Falls are the leading cause of injury-related death in adults over 65. Paper-based assessments are slow, subjective, and rarely standardised across sites. Fall detection technology looks at falls after they happen. Able Care sits upstream, screening every resident or client objectively and handing operators a standardised workflow they can roll out everywhere.",
+      "body": "Falls are the leading cause of injury-related death in adults over 65. Paper-based assessments are slow, subjective, and rarely standardized across sites. Fall detection technology looks at falls after they happen. Able Care sits upstream, screening every resident or client objectively and handing operators a standardized workflow they can roll out everywhere.",
       "imageSide": "left",
       "imageAlt": "Diagram showing Able Care's upstream prevention approach",
       "imageSrc": "/images/features/Able-Care-Product-Continuum-2-min.png"
@@ -53,14 +53,14 @@
           "name": "Dr Nabil Belbachir",
           "role": "Co-Founder & CEO",
           "credentials": "",
-          "bio": "Leads Able Care's commercial strategy and market expansion across the US and UK. Background in healthcare technology and digital health commercialisation.",
+          "bio": "Leads Able Care's commercial strategy and market expansion across the US and UK. Background in healthcare technology and digital health commercialization.",
           "imageSrc": "/images/team/nabil-belbachir.jpg"
         },
         {
           "name": "Dr Catriona Kelly",
           "role": "Clinical Lead",
           "credentials": "",
-          "bio": "Leads the clinical strategy and evidence programme. Ensures every product decision is grounded in peer-reviewed research and clinical best practice.",
+          "bio": "Leads the clinical strategy and evidence program. Ensures every product decision is grounded in peer-reviewed research and clinical best practice.",
           "imageSrc": "/images/team/catriona-kelly.jpg"
         },
         {

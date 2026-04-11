@@ -1,0 +1,111 @@
+{
+  "title": "What Is a Falls Risk Assessment? The Complete Guide",
+  "description": "A falls risk assessment is a structured clinical evaluation that identifies older adults at risk of falling. This guide covers methods, tools, and evidence-based protocols used across care settings.",
+  "category": "Falls Prevention",
+  "pillar": "falls-risk-assessment",
+  "primaryKeyword": "falls risk assessment",
+  "keywords": ["falls risk assessment tool", "fall risk screening", "multifactorial falls risk assessment", "falls risk assessment for older adults"],
+  "tags": ["falls-risk-assessment", "falls-prevention", "able-assess", "home-care", "senior-living", "guide"],
+  "author": "Able Care Clinical Team",
+  "authorRole": "Clinical Research",
+  "reviewer": "Dr Sarah Chen",
+  "reviewerRole": "Consultant Geriatrician",
+  "publishedDate": "2026-04-10",
+  "lastReviewed": "2026-04-10",
+  "readTime": 8,
+  "schemaTypes": ["MedicalWebPage", "FAQPage"],
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "What is a falls risk assessment?",
+      "directAnswer": "A falls risk assessment is a structured evaluation that measures an older adult's likelihood of falling. It typically combines objective physical tests (grip strength, gait speed, balance, and sit-to-stand ability) with a review of medications, vision, environment, and medical history. The goal is to identify modifiable risk factors before a fall occurs.",
+      "tldrBullets": [
+        { "text": "One in three adults aged 65 and over falls at least once a year (WHO, 2021)." },
+        { "text": "Multifactorial assessments reduce falls by 24% compared to no intervention (Cochrane Review, 2018)." },
+        { "text": "The CDC STEADI protocol and 2022 World Guidelines both recommend objective, multi-test screening." },
+        { "text": "Able Assess captures four validated metrics in under five minutes, usable by non-clinical staff." }
+      ],
+      "sources": [
+        { "title": "WHO Factsheet: Falls", "url": "https://www.who.int/news-room/fact-sheets/detail/falls", "year": "2021" },
+        { "title": "Cochrane Review: Multifactorial interventions for preventing falls in older people", "year": "2018" },
+        { "title": "Montero-Odasso et al. World Guidelines for Falls Prevention (Age and Ageing)", "year": "2022" },
+        { "title": "CDC STEADI Initiative: Stopping Elderly Accidents, Deaths & Injuries", "url": "https://www.cdc.gov/steadi/", "year": "2023" }
+      ],
+      "reviewedBy": "Dr Sarah Chen, Consultant Geriatrician",
+      "lastReviewed": "2026-04-10"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2 id=\"why-falls-risk-assessment-matters\">Why does falls risk assessment matter?</h2><p>Falls are the leading cause of injury-related death in adults over 65. In the US, falls cost an estimated $50 billion annually (CDC, 2023). Yet the majority of falls are preventable when risk factors are identified early.</p><p>A structured falls risk assessment shifts the approach from reactive (responding after a fall) to proactive (identifying and mitigating risk before a fall occurs). For care operators, this translates directly to reduced hospitalizations, lower liability exposure, and improved regulatory compliance.</p><h2 id=\"what-does-a-falls-risk-assessment-involve\">What does a falls risk assessment involve?</h2><p>The 2022 World Guidelines on Falls Prevention recommend a multifactorial approach. This means no single test is sufficient. An effective assessment combines:</p><ul><li><strong>Grip strength testing</strong> — a validated biomarker for overall muscle strength and frailty. Grip strength below 27 kg in men or 16 kg in women indicates increased risk (EWGSOP2, 2019).</li><li><strong>Gait speed</strong> — measured via the 4-meter walk test. A speed below 0.8 m/s is associated with adverse health outcomes and higher fall risk (Studenski et al., 2011).</li><li><strong>Sit-to-stand performance</strong> — the 30-second chair stand test measures lower body strength. Inability to complete 8 stands in 30 seconds is a red flag for fall risk.</li><li><strong>The Timed Up and Go (TUG) test</strong> — a composite measure of balance, gait, and transfer ability. A time exceeding 12 seconds suggests elevated risk (Podsiadlo and Richardson, 1991).</li></ul><p>Beyond physical tests, a comprehensive assessment also reviews medications (especially sedatives, antihypertensives, and polypharmacy), vision, footwear, home environment, and cognitive status.</p><h2 id=\"types-of-falls-risk-assessment\">Types of falls risk assessment</h2><p>Falls risk assessments fall into three broad categories:</p><p><strong>Paper-based screening tools</strong> such as the Morse Fall Scale, Hendrich II, and Tinetti Balance Assessment. These are widely used but rely on subjective scoring, have high inter-rater variability, and are difficult to standardize across sites.</p><p><strong>Single-metric digital tools</strong> that measure one parameter (often balance or gait) using wearable sensors or force plates. These improve objectivity but miss the multifactorial picture.</p><p><strong>Multifactorial digital screening</strong> that captures multiple validated metrics in a single workflow. Able Assess falls into this category, measuring grip strength, sit-to-stand, gait speed, and TUG in under five minutes using a standardized tablet-guided protocol.</p><h2 id=\"what-guidelines-recommend\">What do the guidelines recommend?</h2><p>Three major guidelines shape current practice:</p><p><strong>CDC STEADI</strong> (Stopping Elderly Accidents, Deaths and Injuries) recommends a three-step process: Screen, Assess, Intervene. Screening uses the Stay Independent questionnaire or a clinical observation. Assessment includes the TUG, 30-second chair stand, and 4-stage balance test.</p><p><strong>NICE CG161 / NG238 (2025 update)</strong> recommends that all adults over 65 presenting to healthcare should be asked about falls in the past year, and that those at risk should receive a multifactorial assessment including gait, balance, mobility, muscle weakness, osteoporosis risk, and cognitive impairment.</p><p><strong>2022 World Guidelines (Age and Ageing)</strong> provide the most comprehensive evidence synthesis, recommending objective, quantitative measurements over subjective scales wherever possible. This is the strongest evidence base for digital, multi-metric screening.</p><h2 id=\"how-able-assess-works\">How Able Assess measures falls risk</h2><p>Able Assess delivers the four validated metrics recommended by the World Guidelines in a single, standardized workflow. A care worker opens the tablet app, follows guided prompts, and the GripAble sensor captures grip strength data via Bluetooth. Gait speed, sit-to-stand, and TUG are timed through the app interface.</p><p>Results are instantly compared against age- and sex-stratified normative data. Each metric receives a risk banding (low, moderate, or high), and the combined profile generates an overall risk score. The entire process takes under five minutes and requires no clinical training.</p><p>For operators, this means standardized screening across every site, defensible data for payers and regulators, and longitudinal tracking to measure intervention effectiveness over time.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "scheme": "light",
+      "heading": "The evidence for multifactorial screening",
+      "pulledStat": "24% reduction in falls",
+      "pulledStatSource": "Cochrane Review of multifactorial interventions, 2018",
+      "citations": [
+        {
+          "title": "Multifactorial and multiple component interventions for preventing falls in older people living in the community",
+          "authors": "Hopewell S, Adedire O, Copsey BJ, et al.",
+          "journal": "Cochrane Database of Systematic Reviews",
+          "year": "2018",
+          "finding": "Multifactorial interventions reduce the rate of falls by 24% (rate ratio 0.76, 95% CI 0.67-0.86)."
+        },
+        {
+          "title": "World guidelines for falls prevention and management for older adults",
+          "authors": "Montero-Odasso M, van der Velde N, Martin FC, et al.",
+          "journal": "Age and Ageing",
+          "year": "2022",
+          "finding": "Recommends objective, quantitative screening with validated instruments over subjective clinical judgment alone."
+        },
+        {
+          "title": "Gait speed and survival in older adults",
+          "authors": "Studenski S, Perera S, Patel K, et al.",
+          "journal": "JAMA",
+          "year": "2011",
+          "finding": "Gait speed is associated with survival in older adults; each 0.1 m/s increase in speed corresponds to a 12% reduction in mortality risk."
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "light",
+      "heading": "Frequently asked questions",
+      "emitSchema": true,
+      "faqs": [
+        {
+          "question": "Who should receive a falls risk assessment?",
+          "answer": "All adults aged 65 and over should be screened at least annually. Those with a history of falls, gait or balance problems, or who take four or more medications should be assessed more frequently. The NICE guidelines recommend asking every older adult about falls at every healthcare contact."
+        },
+        {
+          "question": "Can non-clinical staff perform a falls risk assessment?",
+          "answer": "With the right tools, yes. Paper-based scales like the Morse Fall Scale require clinical judgment. However, standardized digital tools like Able Assess are designed to be operated by non-clinical staff with minimal training. The tablet guides the user through each test step by step, and the sensor captures objective data without manual scoring."
+        },
+        {
+          "question": "How long does a falls risk assessment take?",
+          "answer": "Traditional paper-based assessments typically take 15 to 30 minutes. The CDC STEADI protocol takes approximately 10 to 15 minutes. Able Assess captures four validated metrics in under five minutes, making it practical for high-volume care settings."
+        },
+        {
+          "question": "What happens after someone is identified as at risk?",
+          "answer": "A positive screen should trigger a care plan that addresses modifiable risk factors. This may include strength and balance exercise programs, medication reviews, vision checks, home hazard assessments, and footwear advice. The specific interventions depend on which risk factors were identified."
+        },
+        {
+          "question": "Is a falls risk assessment required by regulation?",
+          "answer": "In the US, falls screening is part of the OASIS assessment for home health agencies and affects HHVBP scoring. CMS requires fall risk assessment as part of the Minimum Data Set (MDS) for skilled nursing facilities. In the UK, NICE NG238 (2025) recommends falls assessment for all older adults in contact with health and social care services."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "heading": "See how Able Assess measures falls risk.",
+      "bodyText": "A 20-minute walkthrough with a clinician who has deployed it across multiple care settings.",
+      "primaryCtaText": "Book a demo",
+      "primaryCtaLink": "/demo/",
+      "secondaryCtaText": "Explore the evidence",
+      "secondaryCtaLink": "/resources/evidence/"
+    }
+  ]
+}

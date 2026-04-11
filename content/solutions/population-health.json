@@ -10,9 +10,18 @@
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Solutions", "href": "/solutions" },
-        { "label": "Population Health", "href": "/solutions/population-health" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Solutions",
+          "href": "/solutions"
+        },
+        {
+          "label": "Population Health",
+          "href": "/solutions/population-health"
+        }
       ]
     },
     {
@@ -24,18 +33,36 @@
       "eyebrow": "Population Health",
       "headline": "See the whole picture. Act on the risk that matters.",
       "subtitle": "Population-level falls risk tracking for multi-site operators, health systems and commissioners. Stratify risk across every branch, community or clinical site from a single dashboard.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      }
     },
     {
       "_template": "statsBar",
       "heading": "Population health at a glance",
       "colorScheme": "aqua",
       "stats": [
-        { "value": "25%", "label": "Reduction in falls with objective screening" },
-        { "value": "4", "label": "Validated metrics per screening" },
-        { "value": "< 5 min", "label": "Per assessment, any staff member" },
-        { "value": "1", "label": "Standardised protocol, every site" }
+        {
+          "value": "25%",
+          "label": "Reduction in falls with objective screening"
+        },
+        {
+          "value": "4",
+          "label": "Validated metrics per screening"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per assessment, any staff member"
+        },
+        {
+          "value": "1",
+          "label": "Standardized protocol, every site"
+        }
       ]
     },
     {
@@ -43,8 +70,8 @@
       "heading": "From individual screening to population insight",
       "body": "Every Able Assess screening feeds a population-level dashboard. Operators can see risk distribution across branches, track trends over time and identify cohorts that need intervention before outcomes deteriorate. The same data that protects individual residents protects HHVBP, Five-Star and VBP performance at scale.",
       "imageSide": "left",
-      "imageAlt": "Able Care population health dashboard showing risk stratification across multiple sites",
-      "imageSrc": "/images/features/health-data-platform-min.png"
+      "imageAlt": "Therapist and patient reviewing Able Assess screening results together",
+      "imageSrc": "/images/photos/clinical/therapist-patient-tablet.jpg"
     },
     {
       "_template": "caseStudyCards",
@@ -53,7 +80,7 @@
         {
           "title": "12-branch Home Care Operator",
           "segment": "Home Care",
-          "outcome": "Deployed Able Assess across all branches in 30 days. Identified three high-risk cohorts in the first month. Reduced hospitalisations by protecting HHVBP outcomes.",
+          "outcome": "Deployed Able Assess across all branches in 30 days. Identified three high-risk cohorts in the first month. Reduced hospitalizations by protecting HHVBP outcomes.",
           "href": "/resources/case-studies"
         },
         {
@@ -76,8 +103,21 @@
       "waveStyle": "ribbon",
       "heading": "See your population's risk in one dashboard.",
       "body": "A 20-minute demo with a clinician who has deployed population-level screening.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Buyers Guide", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      }
     }
+  ],
+  "tags": [
+    "population-health",
+    "able-assess",
+    "home-care",
+    "senior-living",
+    "remote-monitoring"
   ]
 }

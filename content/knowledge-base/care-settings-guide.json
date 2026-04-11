@@ -1,0 +1,36 @@
+{
+  "title": "Care Settings Guide",
+  "description": "Falls prevention guides for home care, senior living, CCRCs, and skilled nursing. Setting-specific strategies from Able Care.",
+  "category": "Care Settings",
+  "blocks": [
+    {
+      "_template": "hero",
+      "headline": "Care Settings Guide",
+      "subtitle": "Falls prevention approaches vary across home care, assisted living, skilled nursing and retirement communities. Learn how to adapt screening and interventions to your setting.",
+      "scheme": "blue",
+      "wave": "crest"
+    },
+    {
+      "_template": "richText",
+      "body": "<p>Care settings differ in staffing levels, resident acuity, regulatory requirements and operational constraints, each requiring tailored falls prevention strategies. Home care organizations manage dispersed, community-based clients with variable living environments and informal support networks. Assisted living and skilled nursing facilities operate institutional models with 24-hour supervision but must balance autonomy with safety. Continuing care retirement communities (CCRCs) serve populations across the spectrum from independent living to skilled nursing. Able Care's flexible assessment platform adapts to each setting's workflow, staff training requirements and documentation standards while maintaining consistency in measurement and outcome tracking across multiple sites. Whether you're training non-clinical home care aides, optimizing fall reporting in nursing facilities, implementing remote monitoring for families or building business cases for technology investment, this guide covers the regulatory context, operational challenges and evidence-based solutions specific to each care environment.</p><h2>Articles in this guide</h2><ul><li><a href=\"/current-knowledge/ccrc-falls-prevention/\">Falls Prevention in CCRCs</a> - strategies for continuing care communities</li><li><a href=\"/current-knowledge/independent-living-falls-screening/\">Falls Screening for Independent Living</a> - risk assessment in autonomy-focused settings</li><li><a href=\"/current-knowledge/assisted-living-falls-management/\">Assisted Living Falls Management</a> - resident safety protocols and regulatory compliance</li><li><a href=\"/current-knowledge/implementing-falls-prevention-multi-site-home-care/\">Falls Prevention in Multi-Site Home Care</a> - system-wide implementation across locations</li><li><a href=\"/current-knowledge/snf-falls-prevention-star-rating/\">Falls Prevention in Skilled Nursing</a> - CMS Five-Star rating requirements and outcomes</li><li><a href=\"/current-knowledge/pe-backed-home-care-falls-prevention-ebitda/\">PE-Backed Home Care EBITDA</a> - financial impact of falls prevention investments</li><li><a href=\"/current-knowledge/remote-falls-risk-assessment/\">Remote Falls Risk Monitoring</a> - digital assessment and family engagement</li><li><a href=\"/current-knowledge/non-clinical-falls-screening-training/\">Training Non-Clinical Staff</a> - competency-based education for care workers</li><li><a href=\"/current-knowledge/falls-prevention-for-families/\">Falls Prevention for Families</a> - engaging family members in risk reduction</li><li><a href=\"/current-knowledge/business-case-falls-prevention-technology/\">Business Case for Falls Prevention Technology</a> - ROI models and funding justification</li></ul>"
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Tailor falls prevention to your setting",
+      "bodyText": "Able Care's platform adapts to home care, assisted living, skilled nursing and CCRC environments with configurable workflows and reporting.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "falls-prevention",
+    "home-care",
+    "senior-living",
+    "skilled-nursing",
+    "able-assess",
+    "buyer-guide"
+  ]
+}

@@ -3,15 +3,21 @@
   "slug": "pharma",
   "seo": {
     "title": "Grip Strength for Clinical Trials - Pharma & CROs | Able Care",
-    "description": "Objective, remote-capable functional health measurement for clinical trials and CRO-led studies. Grip strength as a decentralised endpoint for GLP-1 monitoring and oncology.",
+    "description": "Objective, remote-capable functional health measurement for clinical trials and CRO-led studies. Grip strength as a decentralized endpoint for GLP-1 monitoring and oncology.",
     "ogImage": "/images/og-pharma.png"
   },
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Pharma & CROs", "href": "/for/pharma-and-cros" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Pharma & CROs",
+          "href": "/pharma"
+        }
       ]
     },
     {
@@ -21,10 +27,16 @@
       "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
       "backgroundImageAlt": "Clinician reviewing assessment data on tablet",
       "eyebrow": "Pharma & CROs",
-      "headline": "Decentralised functional endpoints for clinical trials.",
+      "headline": "Decentralized functional endpoints for clinical trials.",
       "subtitle": "Objective, remote-capable grip strength and functional health measurement for trials and CRO-led studies. Strong signal for GLP-1 muscle loss monitoring and oncology endpoints.",
-      "primaryCta": { "label": "Talk to the Research Team", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Endpoint Brief", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Talk to the Research Team",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Endpoint Brief",
+        "href": "/resources/buyers-guide"
+      }
     },
     {
       "_template": "metricsBlock",
@@ -40,11 +52,11 @@
         },
         {
           "name": "Gait speed",
-          "description": "Functional mobility endpoint linked to disability, hospitalisation and mortality across multiple therapeutic areas."
+          "description": "Functional mobility endpoint linked to disability, hospitalization and mortality across multiple therapeutic areas."
         },
         {
           "name": "Timed Up and Go",
-          "description": "Composite mobility and balance endpoint. Validated in geriatric, neurological and orthopaedic trial populations."
+          "description": "Composite mobility and balance endpoint. Validated in geriatric, neurological and orthopedic trial populations."
         }
       ]
     },
@@ -56,12 +68,12 @@
         {
           "number": 1,
           "title": "Protocol design",
-          "description": "Work with the Able Care research team to define endpoint capture protocols. Standardised across all trial sites from day one."
+          "description": "Work with the Able Care research team to define endpoint capture protocols. Standardized across all trial sites from day one."
         },
         {
           "number": 2,
           "title": "Site deployment",
-          "description": "Ship GripAble sensors to trial sites or directly to participants for decentralised capture. Minimal site training required."
+          "description": "Ship GripAble sensors to trial sites or directly to participants for decentralized capture. Minimal site training required."
         },
         {
           "number": 3,
@@ -79,25 +91,23 @@
       "_template": "evidenceBlock",
       "scheme": "aqua",
       "heading": "The evidence base",
-      "pulledStat": {
-        "text": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
-        "source": "Lancet, 2015"
-      },
-      "studies": [
+      "pulledStat": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
+      "pulledStatSource": "Lancet, 2015",
+      "citations": [
         {
           "title": "Grip strength as a surrogate marker for GLP-1 related muscle loss",
-          "source": "Diabetes, Obesity and Metabolism, 2024",
-          "url": "#"
+          "journal": "Diabetes, Obesity and Metabolism, 2024",
+          "link": "#"
         },
         {
           "title": "Sarcopenia and grip strength in oncology patients: a systematic review",
-          "source": "Critical Reviews in Oncology/Hematology, 2020",
-          "url": "#"
+          "journal": "Critical Reviews in Oncology/Hematology, 2020",
+          "link": "#"
         },
         {
           "title": "Digital grip dynamometry for remote functional assessment in clinical trials",
-          "source": "Journal of Clinical Medicine, 2023",
-          "url": "#"
+          "journal": "Journal of Clinical Medicine, 2023",
+          "link": "#"
         }
       ]
     },
@@ -107,8 +117,20 @@
       "waveStyle": "ribbon",
       "heading": "Talk to the research team about your trial.",
       "body": "We can discuss endpoint design, site deployment and data delivery for your specific protocol.",
-      "primaryCta": { "label": "Talk to the Research Team", "href": "/contact" },
-      "secondaryCta": { "label": "Download the Endpoint Brief", "href": "/resources/buyers-guide" }
+      "primaryCta": {
+        "label": "Talk to the Research Team",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Endpoint Brief",
+        "href": "/resources/buyers-guide"
+      }
     }
+  ],
+  "tags": [
+    "pharma",
+    "grip-strength",
+    "glp-1",
+    "able-assess"
   ]
 }

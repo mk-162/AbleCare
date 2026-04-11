@@ -19,7 +19,7 @@ function slugifyCategory(name: string): string {
 export function BlogSidebar({ categories, activeCategory }: BlogSidebarProps) {
   return (
     <aside className="w-full lg:w-80 shrink-0 space-y-6">
-      <div className="lg:sticky lg:top-28 space-y-6">
+      <div className="space-y-6">
         {/* Categories */}
         <div className="bg-white rounded-2xl border border-black/5 p-5">
           <h3 className="text-xs font-bold uppercase tracking-widest text-ac-black/40 mb-4">

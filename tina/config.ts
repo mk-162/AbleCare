@@ -28,8 +28,9 @@ const heroBlock = {
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "blue" } },
     { type: "string" as const, name: "wave", label: "Wave Style", options: ["ribbon", "crest", "fold", "pulse", "arc", "none"], ui: { defaultValue: "crest" } },
+    { type: "string" as const, name: "waveFill", label: "Wave Fill (colour of section below)", options: ["light", "grey", "blue", "aqua"], description: "Set this to the colour scheme of the next section to avoid a white gap." },
     { type: "string" as const, name: "eyebrow", label: "Eyebrow (small caps label above headline)" },
-    { type: "string" as const, name: "headline", label: "Headline", required: true },
+    { type: "string" as const, name: "headline", label: "Headline" },
     { type: "string" as const, name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
     { type: "string" as const, name: "primaryCtaText", label: "Primary CTA Text" },
     { type: "string" as const, name: "primaryCtaLink", label: "Primary CTA Link" },
@@ -282,6 +283,7 @@ const testimonialCarouselBlock = {
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "aqua" } },
     { type: "string" as const, name: "wave", label: "Wave Style", options: ["ribbon", "crest", "fold", "pulse", "arc", "none"], ui: { defaultValue: "fold" } },
+    { type: "string" as const, name: "waveFill", label: "Wave Fill (colour of section above)", options: ["light", "grey", "blue", "aqua"], description: "Set this to the colour scheme of the previous section to avoid a white gap." },
     { type: "string" as const, name: "heading", label: "Section Heading" },
     {
       type: "object" as const,
@@ -380,6 +382,7 @@ const ctaBannerBlock = {
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "blue" } },
     { type: "string" as const, name: "wave", label: "Wave Style", options: ["ribbon", "crest", "fold", "pulse", "arc", "none"], ui: { defaultValue: "ribbon" } },
+    { type: "string" as const, name: "waveFill", label: "Wave Fill (colour of section above)", options: ["light", "grey", "blue", "aqua"], description: "Set this to the colour scheme of the previous section to avoid a white gap." },
     { type: "string" as const, name: "heading", label: "Heading" },
     { type: "string" as const, name: "bodyText", label: "Body Text", ui: { component: "textarea" } },
     { type: "string" as const, name: "primaryCtaText", label: "Primary CTA Text" },
@@ -567,13 +570,68 @@ const richTextBlock = {
   name: "richText",
   label: "Rich Text",
   ui: {
-    itemProps: (item: { body?: any }) => {
-      const firstText = item?.body?.children?.[0]?.children?.[0]?.text;
-      return { label: firstText ? `Rich Text: ${firstText.slice(0, 40)}` : "Rich Text" };
+    itemProps: (item: { heading?: string; body?: string }) => {
+      return { label: item?.heading ? `Rich Text: ${item.heading}` : item?.body ? `Rich Text: ${item.body.slice(0, 40)}` : "Rich Text" };
     },
   },
   fields: [
-    { type: "rich-text" as const, name: "body", label: "Body" },
+    { type: "string" as const, name: "scheme", label: "Color Scheme", options: ["light", "grey", "blue", "aqua"] },
+    { type: "string" as const, name: "heading", label: "Heading" },
+    { type: "string" as const, name: "body", label: "Body (HTML)", ui: { component: "textarea" } },
+  ],
+};
+
+const relatedKnowledgeBaseBlock = {
+  name: "relatedKnowledgeBase",
+  label: "Related Knowledge Base Articles",
+  ui: {
+    itemProps: (item: { heading?: string }) => ({
+      label: item?.heading ? `Related KB: ${item.heading}` : "Related Knowledge Base Articles",
+    }),
+    defaultItem: {
+      scheme: "grey",
+      heading: "Related articles",
+      limit: 4,
+    },
+  },
+  fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "grey" } },
+    { type: "string" as const, name: "heading", label: "Section Heading" },
+    { type: "number" as const, name: "limit", label: "Max Articles", description: "Maximum number of articles to show (default 4)." },
+    {
+      type: "string" as const,
+      name: "filterTags",
+      label: "Filter Tags (override)",
+      list: true,
+      description: "Manually specify tags to filter by. Leave empty to use the page's own tags.",
+    },
+  ],
+};
+
+const relatedPagesBlock = {
+  name: "relatedPages",
+  label: "Related Pages",
+  ui: {
+    itemProps: (item: { heading?: string }) => ({
+      label: item?.heading ? `Related Pages: ${item.heading}` : "Related Pages",
+    }),
+    defaultItem: {
+      scheme: "light",
+      heading: "Explore further",
+      limit: 6,
+    },
+  },
+  fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
+    { type: "string" as const, name: "heading", label: "Section Heading" },
+    { type: "number" as const, name: "limit", label: "Max Pages", description: "Maximum number of pages to show (default 6)." },
+    {
+      type: "string" as const,
+      name: "filterTags",
+      label: "Filter Tags (override)",
+      list: true,
+      description: "Manually specify tags to filter by. Leave empty to use the page's own tags.",
+    },
   ],
 };
 
@@ -624,7 +682,7 @@ const roiCalculatorPromoBlock = {
     defaultItem: {
       scheme: "aqua",
       heading: "How much could you save?",
-      body: "Model HHVBP upside in 60 seconds.",
+      promoBody: "Model HHVBP upside in 60 seconds.",
       ctaText: "Open the ROI calculator",
       ctaLink: "/resources/roi-calculator/",
     },
@@ -633,7 +691,7 @@ const roiCalculatorPromoBlock = {
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "aqua" } },
     { type: "string" as const, name: "eyebrow", label: "Eyebrow" },
     { type: "string" as const, name: "heading", label: "Heading" },
-    { type: "string" as const, name: "body", label: "Body", ui: { component: "textarea" } },
+    { type: "string" as const, name: "promoBody", label: "Body", ui: { component: "textarea" } },
     { type: "string" as const, name: "ctaText", label: "CTA Text" },
     { type: "string" as const, name: "ctaLink", label: "CTA Link" },
   ],
@@ -648,17 +706,111 @@ const leadMagnetPromoBlock = {
     }),
     defaultItem: {
       heading: "The Home Health Buyers Guide",
-      body: "Everything you need to brief procurement, in 24 pages.",
+      promoBody: "Everything you need to brief procurement, in 24 pages.",
       ctaText: "Download free",
       ctaLink: "/resources/guides/",
     },
   },
   fields: [
     { type: "string" as const, name: "heading", label: "Heading" },
-    { type: "string" as const, name: "body", label: "Body", ui: { component: "textarea" } },
+    { type: "string" as const, name: "promoBody", label: "Body", ui: { component: "textarea" } },
     { type: "string" as const, name: "ctaText", label: "CTA Text" },
     { type: "string" as const, name: "ctaLink", label: "CTA Link" },
     { type: "image" as const, name: "coverImage", label: "Cover Image" },
+  ],
+};
+
+const partnerLogoCarouselBlock = {
+  name: "partnerLogoCarousel",
+  label: "Partner Logo Carousel",
+  ui: {
+    itemProps: (item: { heading?: string }) => ({
+      label: item?.heading ? `Logos: ${item.heading}` : "Partner Logo Carousel",
+    }),
+  },
+  fields: [
+    { type: "string" as const, name: "heading", label: "Heading" },
+    { type: "string" as const, name: "subheading", label: "Subheading" },
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["white", "grey", "blue"], ui: { defaultValue: "white" } },
+    {
+      type: "object" as const,
+      name: "logos",
+      label: "Logos",
+      list: true,
+      ui: { itemProps: (item: { alt?: string }) => ({ label: item.alt || "Logo" }) },
+      fields: [
+        { type: "image" as const, name: "src", label: "Logo Image", required: true },
+        { type: "string" as const, name: "alt", label: "Alt Text", required: true },
+      ],
+    },
+  ],
+};
+
+const contactFormBlock = {
+  name: "contactForm",
+  label: "Contact Form",
+  ui: {
+    itemProps: (item: { heading?: string }) => ({
+      label: item?.heading ? `Contact: ${item.heading}` : "Contact Form",
+    }),
+  },
+  fields: [
+    { type: "string" as const, name: "heading", label: "Heading" },
+    { type: "string" as const, name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
+    { type: "string" as const, name: "salesEmail", label: "Sales Email" },
+    { type: "string" as const, name: "supportEmail", label: "Support Email" },
+  ],
+};
+
+const segmentCardsBlock = {
+  name: "segmentCards",
+  label: "Segment Cards",
+  ui: {
+    itemProps: (item: { heading?: string }) => ({
+      label: item?.heading ? `Segments: ${item.heading}` : "Segment Cards",
+    }),
+  },
+  fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
+    { type: "string" as const, name: "heading", label: "Section Heading" },
+    {
+      type: "object" as const,
+      name: "cards",
+      label: "Cards",
+      list: true,
+      ui: { itemProps: (item: { title?: string }) => ({ label: item.title || "Card" }) },
+      fields: [
+        { type: "string" as const, name: "title", label: "Title", required: true },
+        { type: "string" as const, name: "body", label: "Body", ui: { component: "textarea" } },
+        { type: "string" as const, name: "icon", label: "Icon Hint" },
+        { type: "string" as const, name: "link", label: "Link URL" },
+      ],
+    },
+  ],
+};
+
+const valuePropsBlock = {
+  name: "valueProps",
+  label: "Value Props",
+  ui: {
+    itemProps: (item: { heading?: string }) => ({
+      label: item?.heading ? `Value Props: ${item.heading}` : "Value Props",
+    }),
+  },
+  fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
+    { type: "string" as const, name: "heading", label: "Section Heading" },
+    {
+      type: "object" as const,
+      name: "items",
+      label: "Items",
+      list: true,
+      ui: { itemProps: (item: { title?: string }) => ({ label: item.title || "Item" }) },
+      fields: [
+        { type: "string" as const, name: "title", label: "Title", required: true },
+        { type: "string" as const, name: "body", label: "Body", ui: { component: "textarea" } },
+      ],
+    },
   ],
 };
 
@@ -691,6 +843,13 @@ const seoFields = [
   { type: "string" as const, name: "keywords", label: "SEO Keywords", list: true },
   { type: "string" as const, name: "primaryKeyword", label: "Primary Keyword" },
   { type: "string" as const, name: "h1", label: "H1 Override", description: "Override the hero headline as H1 if needed." },
+  {
+    type: "string" as const,
+    name: "tags",
+    label: "Content Tags",
+    list: true,
+    description: "Tags for cross-referencing content across the site. Use slugs from the tag taxonomy: topic (falls-prevention, grip-strength, etc.), segment (home-care, senior-living, etc.), solution (able-assess, etc.), type (guide, evidence, etc.).",
+  },
 ];
 
 // ─── Block and Page Field Groups ──────────────────────────────────────────────
@@ -718,9 +877,15 @@ const allBlocks = [
   alertBannerBlock,
   richTextBlock,
   currentKnowledgeCardBlock,
+  relatedKnowledgeBaseBlock,
+  relatedPagesBlock,
   roiCalculatorPromoBlock,
   leadMagnetPromoBlock,
   breadcrumbBlock,
+  partnerLogoCarouselBlock,
+  contactFormBlock,
+  segmentCardsBlock,
+  valuePropsBlock,
 ];
 
 const blockPageFields: any[] = [
@@ -891,16 +1056,54 @@ export default defineConfig({
         fields: blockPageFields,
       },
 
-      // ── Current Knowledge ───────────────────────────────────────────────
+      // ── Knowledge Base ────────────────────────────────────────────────
       {
-        name: "currentKnowledge",
-        label: "Current Knowledge",
-        path: "content/current-knowledge",
+        name: "knowledgeBase",
+        label: "Knowledge Base",
+        path: "content/knowledge-base",
         format: "json",
         ui: {
-          router: ({ document }) => `/current-knowledge/${document._sys.filename}/`,
+          router: ({ document }) => `/knowledge-base/${document._sys.filename}/`,
         },
-        fields: blockPageFields,
+        fields: [
+          { type: "string" as const, name: "title", label: "Title (H1)", isTitle: true, required: true },
+          { type: "string" as const, name: "description", label: "Meta Description", ui: { component: "textarea" as const } },
+          { type: "string" as const, name: "category", label: "Category", options: ["Falls Prevention", "Grip Strength", "Assessments", "Care Settings", "Regulations", "Technology"], required: true },
+          { type: "string" as const, name: "pillar", label: "Pillar Hub Slug", description: "Parent hub article slug (e.g. falls-risk-assessment)" },
+          { type: "string" as const, name: "primaryKeyword", label: "Primary Keyword" },
+          { type: "string" as const, name: "keywords", label: "SEO Keywords", list: true },
+          {
+            type: "string" as const,
+            name: "tags",
+            label: "Content Tags",
+            list: true,
+            description: "Tags for cross-referencing: topic, segment, solution, type slugs.",
+          },
+          { type: "string" as const, name: "author", label: "Author Name" },
+          { type: "string" as const, name: "authorRole", label: "Author Role" },
+          { type: "string" as const, name: "reviewer", label: "Clinical Reviewer" },
+          { type: "string" as const, name: "reviewerRole", label: "Reviewer Role" },
+          { type: "string" as const, name: "publishedDate", label: "Published Date (YYYY-MM-DD)" },
+          { type: "string" as const, name: "lastReviewed", label: "Last Reviewed Date (YYYY-MM-DD)" },
+          { type: "number" as const, name: "readTime", label: "Read Time (minutes)" },
+          { type: "image" as const, name: "image", label: "Featured Image" },
+          { type: "string" as const, name: "imageAlt", label: "Featured Image Alt Text" },
+          {
+            type: "string" as const,
+            name: "schemaTypes",
+            label: "Schema Types",
+            list: true,
+            options: ["Article", "MedicalWebPage", "FAQPage", "HowTo"],
+            description: "JSON-LD schema types to emit.",
+          },
+          {
+            type: "object" as const,
+            name: "blocks",
+            label: "Article Blocks",
+            list: true,
+            templates: allBlocks,
+          },
+        ] as any,
       },
 
       // ── Utility (privacy, terms, cookies, thank-you) ────────────────────

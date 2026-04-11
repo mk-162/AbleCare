@@ -6,6 +6,7 @@ import { BlogSidebar } from "@/components/blocks/BlogSidebar";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { getCategories, slugifyCategory } from "@/lib/blog";
 import { ArticleFooterCta } from "@/components/blocks/ArticleFooterCta";
+import { resolveBlocks } from "@/lib/resolve-blocks";
 import { notFound } from "next/navigation";
 
 export const revalidate = 60;
@@ -191,10 +192,9 @@ export default async function BlogArticlePage({
 
       {hasBlocks && (
         <BlockRenderer
-          blocks={data.blocks.map((block: any) => ({
-            ...block,
-            __typename: `LearnBlocks${block._template.charAt(0).toUpperCase() + block._template.slice(1)}`,
-          }))}
+          blocks={resolveBlocks(data.blocks, data.tags, slug, "Learn")}
+          pageTags={data.tags}
+          pageSlug={slug}
         />
       )}
     </article>

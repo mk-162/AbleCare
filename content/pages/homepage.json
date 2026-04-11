@@ -1,42 +1,41 @@
 {
-  "title": "Able Care | Falls Prevention Technology",
-  "description": "Digital, objective falls risk screening for home care, senior living and clinical teams. Four validated metrics in under five minutes. Evidence-based. Standardised. Built for scale.",
-  "primaryKeyword": "falls prevention technology",
-  "keywords": [
-    "falls risk assessment",
-    "functional assessment",
-    "home health technology",
-    "grip strength screening",
-    "senior living falls prevention",
-    "HHVBP falls measure"
-  ],
   "blocks": [
     {
-      "_template": "hero",
       "scheme": "blue",
       "wave": "crest",
-      "backgroundImage": "/images/photos/clinical/therapist-high-five.jpg",
-      "backgroundImageAlt": "Therapist and patient celebrating with a high five during GripAble assessment",
       "eyebrow": "Falls prevention, reimagined",
       "headline": "Keep people strong, steady and independent for life.",
-      "subtitle": "The falls prevention platform for home care, senior living and clinical teams. Four objective metrics in under five minutes. Evidence-based. Standardised. Built for scale.",
+      "subtitle": "The falls prevention platform for home care, senior living and clinical teams. Four objective metrics in under five minutes. Evidence-based. Standardized. Built for scale.",
       "primaryCtaText": "Book a demo",
       "primaryCtaLink": "/demo/",
       "secondaryCtaText": "Watch it work",
-      "secondaryCtaLink": "#how-it-works"
+      "secondaryCtaLink": "#how-it-works",
+      "backgroundImage": "/images/photos/clinical/therapist-high-five.jpg",
+      "backgroundImageAlt": "Therapist and patient celebrating with a high five during GripAble assessment",
+      "waveFill": "grey",
+      "_template": "hero"
     },
     {
-      "_template": "trustBar",
       "items": [
-        { "text": "FDA Listed" },
-        { "text": "CE Marked" },
-        { "text": "ISO 27001" },
-        { "text": "HIPAA Aligned" },
-        { "text": "Imperial College Origin" }
-      ]
+        {
+          "text": "FDA Listed"
+        },
+        {
+          "text": "CE Marked"
+        },
+        {
+          "text": "ISO 27001"
+        },
+        {
+          "text": "HIPAA Aligned"
+        },
+        {
+          "text": "Imperial College Origin"
+        }
+      ],
+      "_template": "trustBar"
     },
     {
-      "_template": "statsBar",
       "scheme": "light",
       "heading": "The platform in numbers",
       "stats": [
@@ -60,16 +59,16 @@
           "label": "Peer-reviewed studies",
           "sublabel": "Backing the Able Assess protocol"
         }
-      ]
+      ],
+      "_template": "statsBar"
     },
     {
-      "_template": "segmentRouter",
       "scheme": "light",
       "heading": "Where do you work?",
       "segments": [
         {
           "title": "Home Care",
-          "description": "Reduce hospitalisations and hit HHVBP targets with standardised falls screening across every branch.",
+          "description": "Reduce hospitalizations and hit HHVBP targets with standardized falls screening across every branch.",
           "ctaText": "Explore",
           "link": "/home-care/"
         },
@@ -81,7 +80,7 @@
         },
         {
           "title": "Clinicians",
-          "description": "Multifactorial, evidence-based falls risk screening. Standardised. Peer-reviewed.",
+          "description": "Multifactorial, evidence-based falls risk screening. Standardized. Peer-reviewed.",
           "ctaText": "Explore",
           "link": "/clinicians/"
         },
@@ -89,13 +88,13 @@
           "title": "Pharma & CROs",
           "description": "Grip strength as a clinical trial endpoint. Remote, objective, defensible.",
           "ctaText": "Explore",
-          "link": "/for/pharma-and-cros/"
+          "link": "/pharma"
         }
-      ]
+      ],
+      "_template": "segmentRouter"
     },
     {
-      "_template": "metricsBlock",
-      "scheme": "light",
+      "scheme": "aqua",
       "heading": "Four metrics. One complete picture of function.",
       "metrics": [
         {
@@ -110,23 +109,23 @@
         },
         {
           "name": "Gait speed",
-          "whatItMeasures": "Walking speed over a standardised distance.",
-          "whyItMatters": "Known as the 'sixth vital sign' for older adults. A strong predictor of hospitalisation, disability and mortality."
+          "whatItMeasures": "Walking speed over a standardized distance.",
+          "whyItMatters": "Known as the 'sixth vital sign' for older adults. A strong predictor of hospitalization, disability and mortality."
         },
         {
           "name": "Timed Up and Go",
-          "whatItMeasures": "Time to rise from a chair, walk three metres, turn, walk back and sit down.",
+          "whatItMeasures": "Time to rise from a chair, walk three meters, turn, walk back and sit down.",
           "whyItMatters": "The most widely used clinical falls risk screen. Captures mobility, balance and transfer ability in a single measure."
         }
-      ]
+      ],
+      "_template": "metricsBlock"
     },
     {
-      "_template": "partnerLogoCarousel",
       "heading": "Trusted by Leading Organizations",
-      "scheme": "white"
+      "scheme": "white",
+      "_template": "partnerLogoCarousel"
     },
     {
-      "_template": "processSteps",
       "scheme": "grey",
       "heading": "Assessment in four simple steps",
       "steps": [
@@ -150,10 +149,10 @@
           "title": "Track",
           "description": "Longitudinal trends surface decline early, so you can intervene before a fall."
         }
-      ]
+      ],
+      "_template": "processSteps"
     },
     {
-      "_template": "imageFeature",
       "scheme": "light",
       "imagePosition": "right",
       "image": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
@@ -161,18 +160,27 @@
       "headline": "Technology built for the frontline",
       "description": "Purpose-built for the bedside, the kitchen table and the resident's living room. Able Assess runs on any tablet, needs no clinical training, and fits into the workflow your staff already use.",
       "bulletPoints": [
-        { "text": "Works on any iOS or Android tablet" },
-        { "text": "No internet required during assessment" },
-        { "text": "Results sync automatically when connected" },
-        { "text": "Integration-ready with EHR, OASIS and wellness platforms" }
+        {
+          "text": "Works on any iOS or Android tablet"
+        },
+        {
+          "text": "No internet required during assessment"
+        },
+        {
+          "text": "Results sync automatically when connected"
+        },
+        {
+          "text": "Integration-ready with EHR, OASIS and wellness platforms"
+        }
       ],
       "ctaText": "See how it works",
-      "ctaLink": "/solutions/able-assess/"
+      "ctaLink": "/solutions/able-assess/",
+      "_template": "imageFeature"
     },
     {
-      "_template": "testimonialCarousel",
       "scheme": "aqua",
       "wave": "fold",
+      "waveFill": "light",
       "heading": "What our customers say",
       "testimonials": [
         {
@@ -185,10 +193,10 @@
           "role": "Operations Lead",
           "organization": "UK CCRC"
         }
-      ]
+      ],
+      "_template": "testimonialCarousel"
     },
     {
-      "_template": "evidenceBlock",
       "scheme": "light",
       "heading": "Backed by the research",
       "pulledStat": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
@@ -211,7 +219,7 @@
           "title": "Objective screening reduces falls incidence by 25%",
           "journal": "Age and Ageing",
           "year": "2023",
-          "finding": "Standardised, objective falls risk screening programmes reduced falls incidence by approximately 25% in community-dwelling older adults."
+          "finding": "Standardized, objective falls risk screening programs reduced falls incidence by approximately 25% in community-dwelling older adults."
         },
         {
           "title": "Grip Strength: An Indispensable Biomarker For Older Adults",
@@ -234,17 +242,17 @@
           "finding": "Functional impairment at discharge was independently associated with a 42% increased risk of 30-day hospital readmission.",
           "link": "https://pubmed.ncbi.nlm.nih.gov/25642907/"
         }
-      ]
+      ],
+      "_template": "evidenceBlock"
     },
     {
-      "_template": "caseStudyCards",
       "scheme": "grey",
       "heading": "Proven outcomes",
       "caseStudies": [
         {
-          "title": "Home care: earlier intervention, fewer hospitalisations",
+          "title": "Home care: earlier intervention, fewer hospitalizations",
           "metric": "25%",
-          "metricLabel": "reduction in falls-related hospitalisations",
+          "metricLabel": "reduction in falls-related hospitalizations",
           "summary": "A PE-backed home care operator rolled out Able Assess across 12 branches. Non-clinical staff ran screenings in under five minutes, flagging at-risk clients six weeks earlier than their previous paper-based process.",
           "sector": "Home Care",
           "link": "/customers/"
@@ -253,31 +261,31 @@
           "title": "Senior living: protecting occupancy through prevention",
           "metric": "32%",
           "metricLabel": "fewer falls per resident per year",
-          "summary": "A CCRC with 200 IL and AL units adopted Able Assess as part of their quarterly wellness programme. Resident engagement increased and fall-related move-outs dropped.",
+          "summary": "A CCRC with 200 IL and AL units adopted Able Assess as part of their quarterly wellness program. Resident engagement increased and fall-related move-outs dropped.",
           "sector": "Senior Living",
           "link": "/customers/"
         },
         {
-          "title": "Clinical research: objective endpoints for decentralised trials",
+          "title": "Clinical research: objective endpoints for decentralized trials",
           "metric": "4",
           "metricLabel": "validated functional endpoints in one workflow",
-          "summary": "A CRO-led GLP-1 trial used Able Assess to capture grip strength and functional health remotely, replacing site-based Jamar assessments with digital, standardised capture.",
+          "summary": "A CRO-led GLP-1 trial used Able Assess to capture grip strength and functional health remotely, replacing site-based Jamar assessments with digital, standardized capture.",
           "sector": "Pharma & CROs",
           "link": "/customers/"
         }
-      ]
+      ],
+      "_template": "caseStudyCards"
     },
     {
-      "_template": "roiCalculatorPromo",
       "scheme": "aqua",
       "eyebrow": "ROI Calculator",
-      "heading": "Model the financial impact of standardised falls screening.",
-      "body": "Segment-aware. Two minutes. Emailable report. See how much you could save by reducing one fall per branch per month.",
+      "heading": "Model the financial impact of standardized falls screening.",
+      "promoBody": "Segment-aware. Two minutes. Emailable report. See how much you could save by reducing one fall per branch per month.",
       "ctaText": "Open the ROI calculator",
-      "ctaLink": "/resources/roi-calculator/"
+      "ctaLink": "/resources/roi-calculator/",
+      "_template": "roiCalculatorPromo"
     },
     {
-      "_template": "faqAccordion",
       "scheme": "light",
       "heading": "Frequently Asked Questions",
       "emitSchema": true,
@@ -300,20 +308,33 @@
         },
         {
           "question": "How is Able Assess different from paper-based assessments like the Morse Fall Scale?",
-          "answer": "Paper assessments are subjective, slow and difficult to standardise across staff. Able Assess captures four objective, peer-reviewed metrics in under five minutes, scores automatically against normative data, and routes results to the care team. No subjective scoring. No inter-rater variability."
+          "answer": "Paper assessments are subjective, slow and difficult to standardize across staff. Able Assess captures four objective, peer-reviewed metrics in under five minutes, scores automatically against normative data, and routes results to the care team. No subjective scoring. No inter-rater variability."
         }
-      ]
+      ],
+      "_template": "faqAccordion"
     },
     {
-      "_template": "ctaBanner",
       "scheme": "blue",
       "wave": "ribbon",
+      "waveFill": "light",
       "heading": "See Able Assess in your workflow.",
       "bodyText": "A 20-minute demo with a clinician who has run it in the field.",
       "primaryCtaText": "Book a demo",
       "primaryCtaLink": "/demo/",
       "secondaryCtaText": "Download the buyers guide",
-      "secondaryCtaLink": "/resources/buyers-guide/"
+      "secondaryCtaLink": "/resources/buyers-guide/",
+      "_template": "ctaBanner"
     }
-  ]
+  ],
+  "title": "Able Care | Falls Prevention Technology",
+  "description": "Digital, objective falls risk screening for home care, senior living and clinical teams. Four validated metrics in under five minutes. Evidence-based. Standardized. Built for scale.",
+  "keywords": [
+    "falls risk assessment",
+    "functional assessment",
+    "home health technology",
+    "grip strength screening",
+    "senior living falls prevention",
+    "HHVBP falls measure"
+  ],
+  "primaryKeyword": "falls prevention technology"
 }

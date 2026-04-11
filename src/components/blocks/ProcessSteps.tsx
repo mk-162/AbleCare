@@ -16,7 +16,7 @@ interface ProcessStepsProps {
 
 export function ProcessSteps({ scheme = "light", heading, steps, ctaText, ctaLink }: ProcessStepsProps) {
   const isBlue = scheme === "blue";
-  const bgClass = isBlue ? "bg-ac-blue" : scheme === "aqua" ? "bg-ac-aqua" : "bg-white";
+  const bgClass = isBlue ? "bg-ac-blue" : scheme === "aqua" ? "bg-ac-aqua" : scheme === "grey" ? "bg-ac-grey" : "bg-white";
   const textClass = isBlue ? "text-white" : "text-ac-black";
   const descClass = isBlue ? "text-white/70" : "text-ac-black/60";
   const lineClass = isBlue ? "bg-white/20" : "bg-ac-black/10";

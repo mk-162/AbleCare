@@ -1,0 +1,93 @@
+{
+  "title": "Falls Prevention for Corporate Care Leaders",
+  "slug": "corporate-leaders",
+  "seo": {
+    "title": "Falls Prevention for Corporate Care Leaders | Able Care",
+    "description": "Board-ready metrics, standardized protocols, and compliance automation for corporate care leaders.",
+    "ogImage": "/images/og-corporate-leaders.png"
+  },
+  "tags": ["persona", "corporate-leaders", "compliance", "operations"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Corporate Leaders" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Corporate Leaders",
+      "headline": "Turn operational data into board-ready insight.",
+      "subtitle": "Standardized protocols, real-time compliance reporting, and outcome metrics that prove operational excellence.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The corporate leadership challenge",
+      "body": "<h3>Operational Visibility Gap</h3><p>Corporate leaders need a clear view of performance across every site. When each location captures data differently, aggregation is manual and slow. You cannot identify underperforming sites or replicate what works without a standardized data layer. Able Assess creates that layer with one protocol across every location.</p><h3>Compliance and Governance Burden</h3><p>Regulatory requirements grow each year. CMS, state surveys, and accreditation bodies expect documented evidence of proactive care. Manual audit trails are fragile and time-consuming. Standardized digital screening creates an automatic compliance record that is always audit-ready.</p><h3>P&amp;L Impact Without Clear Drivers</h3><p>Falls drive hospitalizations, liability claims, and staff overtime. The financial impact is real but often buried across cost centers. Objective screening data links clinical outcomes to financial performance, giving you the evidence to justify investment in prevention programs to your board.</p>"
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "light",
+      "heading": "What Able Assess delivers for corporate leaders",
+      "items": [
+        {
+          "title": "Board-Ready Metrics",
+          "body": "Clinical outcome data formatted for board presentations and investor reporting. Objective evidence of quality improvement across the organization."
+        },
+        {
+          "title": "Operational Standardization",
+          "body": "One screening protocol across every site. Consistent data format eliminates manual aggregation and enables site-to-site benchmarking."
+        },
+        {
+          "title": "Audit and Compliance Automation",
+          "body": "Every screening is timestamped, attributed, and stored. Digital records replace paper trails and reduce audit preparation time."
+        },
+        {
+          "title": "Staff Development and Delegation Clarity",
+          "body": "Non-clinical staff run the screening. Clinical leads focus on interpretation and care planning. Clear role boundaries reduce training costs and improve retention."
+        }
+      ]
+    },
+    {
+      "_template": "testimonialCarousel",
+      "heading": "What corporate leaders say",
+      "testimonials": [
+        {
+          "quote": "Corporate leadership testimonial coming soon.",
+          "attribution": "VP Operations, Multi-Site Care Provider"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Questions from corporate leaders",
+      "scheme": "light",
+      "items": [
+        {
+          "question": "How does this reduce our compliance burden?",
+          "answer": "Every screening generates a timestamped, attributed digital record. These records are stored centrally and formatted for regulatory review. Audit preparation shifts from manual file assembly to a single export."
+        },
+        {
+          "question": "Can we track performance across all sites from one dashboard?",
+          "answer": "Yes. The corporate dashboard aggregates screening volumes, risk distributions, and outcome trends across every location. You can filter by site, region, or time period."
+        },
+        {
+          "question": "What is the typical ROI timeline for a corporate rollout?",
+          "answer": "Most organizations see measurable impact within the first quarter. One prevented hospitalization per site per quarter typically covers the program cost. The clinical team can model the numbers for your organization size."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Prove operational excellence to your board.",
+      "body": "30 minutes with the team. Tailored to corporate care leadership.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
+      "scheme": "blue"
+    }
+  ]
+}

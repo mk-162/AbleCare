@@ -1,0 +1,60 @@
+{
+  "title": "Clinical Validation",
+  "seo": {
+    "title": "Clinical Validation | Able Assess | Peer-Reviewed Evidence",
+    "description": "Peer-reviewed studies and clinical trial data validating Able Assess.",
+    "ogImage": "/images/og-clinical-validation.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Evidence",
+          "href": "/evidence"
+        },
+        {
+          "label": "Clinical Validation",
+          "href": "/evidence/clinical-validation"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Evidence",
+      "headline": "Clinical Evidence for Able Assess.",
+      "subtitle": "Peer-reviewed validation data. Coming soon.",
+      "primaryCta": {
+        "label": "Contact the Clinical Team",
+        "href": "/contact"
+      }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Validation data in preparation",
+      "body": "<p>We are compiling peer-reviewed clinical validation data for Able Assess, including test-retest reliability, concurrent validity against gold-standard instruments, and clinical trial outcomes.</p><p>This page will be updated with full study summaries, statistical reporting and links to published papers. If you require validation data ahead of publication, our clinical team can provide it directly.</p>"
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "Need validation data now?",
+      "body": "Our clinical team can share study data, regulatory documentation and technical specifications directly.",
+      "primaryCta": {
+        "label": "Contact the Clinical Team",
+        "href": "/contact"
+      }
+    }
+  ],
+  "tags": [
+    "evidence",
+    "clinical-validation"
+  ]
+}

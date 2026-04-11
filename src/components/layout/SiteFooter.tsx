@@ -27,9 +27,10 @@ export function SiteFooter() {
             </h4>
             <ul className="space-y-4">
               <li><Link href="/solutions/able-assess" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Able Assess</Link></li>
-              <li><Link href="/solutions/falls-prevention" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Falls Prevention</Link></li>
-              <li><Link href="/solutions/population-health" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Population Health</Link></li>
-              <li><Link href="/solutions/able-strength" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Able Strength</Link></li>
+              <li><Link href="/solutions/grip-strength" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Grip Strength</Link></li>
+              <li><Link href="/solutions/functional-health" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Functional Health</Link></li>
+              <li><Link href="/solutions/remote-monitoring" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Remote Monitoring</Link></li>
+              <li><Link href="/product/how-it-works" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">How It Works</Link></li>
             </ul>
           </div>
 
@@ -44,6 +45,7 @@ export function SiteFooter() {
               <li><Link href="/skilled-nursing" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Skilled Nursing</Link></li>
               <li><Link href="/clinicians" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Clinicians & Researchers</Link></li>
               <li><Link href="/pharma" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Pharma & CROs</Link></li>
+              <li><Link href="/evidence/compliance" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Compliance</Link></li>
             </ul>
           </div>
 
@@ -54,9 +56,10 @@ export function SiteFooter() {
             </h4>
             <ul className="space-y-4">
               <li><Link href="/blog" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Blog</Link></li>
+              <li><Link href="/resources/guides" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Guides & Downloads</Link></li>
               <li><Link href="/resources/evidence" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Research Library</Link></li>
               <li><Link href="/resources/case-studies" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Case Studies</Link></li>
-              <li><Link href="/resources/buyers-guide" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Buyers Guide</Link></li>
+              <li><Link href="/resources/walkthrough" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Product Walkthrough</Link></li>
             </ul>
           </div>
 
@@ -70,6 +73,7 @@ export function SiteFooter() {
               <li><Link href="/meet-the-team" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Meet the Team</Link></li>
               <li><Link href="/customers" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Customers</Link></li>
               <li><Link href="/partners" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Partners</Link></li>
+              <li><Link href="/careers" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Careers</Link></li>
               <li><Link href="/contact" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Contact</Link></li>
             </ul>
           </div>

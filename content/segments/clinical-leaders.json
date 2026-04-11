@@ -1,0 +1,93 @@
+{
+  "title": "Falls Prevention for Clinical Leaders",
+  "slug": "clinical-leaders",
+  "seo": {
+    "title": "Falls Prevention for Clinical Leaders | Able Care",
+    "description": "Evidence-based protocols, safe delegation, and continuous outcome measurement for clinical leaders.",
+    "ogImage": "/images/og-clinical-leaders.png"
+  },
+  "tags": ["persona", "clinical-leaders", "protocols", "evidence"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Clinical Leaders" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Clinical Leaders",
+      "headline": "Evidence-based protocols. Peer-reviewed outcomes. Safe delegation.",
+      "subtitle": "Standardized clinical frameworks built on research, not habit. Equip your team to deliver consistent outcomes.",
+      "primaryCta": { "label": "Talk to the Clinical Team", "href": "/contact" }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The clinical leadership challenge",
+      "body": "<h3>Protocol Inconsistency</h3><p>Different staff apply different screening methods. Some use paper-based tools. Others rely on clinical judgment alone. The result is inconsistent data that cannot be compared across patients, teams, or time periods. Able Assess replaces this with one standardized, sensor-based protocol that every staff member follows identically.</p><h3>Delegation Safety</h3><p>Clinical leaders carry responsibility for outcomes delivered by non-clinical staff. Delegating screening without a validated, guided workflow creates risk. Able Assess was designed so non-clinical carers can deliver clinical-grade assessments safely. The sensor guides each step. Scoring is automatic. Clinical leads review flagged results, not raw data.</p><h3>Outcome Measurement Burden</h3><p>Demonstrating clinical effectiveness requires longitudinal data. Collecting that data manually is slow and error-prone. Able Assess captures outcomes automatically at every screening, building a continuous measurement record that supports care planning, audit, and research without additional clinical time.</p>"
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "light",
+      "heading": "What Able Assess delivers for clinical leaders",
+      "items": [
+        {
+          "title": "Evidence-Based Protocols",
+          "body": "Four peer-reviewed metrics captured in one standardized workflow. Built on research from Imperial College London and validated in clinical and community settings."
+        },
+        {
+          "title": "Competency-Led Delegation",
+          "body": "Non-clinical staff run the screening with guided, sensor-based workflows. Clinical leads set protocols and review flagged results. Clear boundaries protect both patients and professionals."
+        },
+        {
+          "title": "Continuous Outcome Measurement",
+          "body": "Every screening builds a longitudinal record of patient function. Track trends over time without manual data collection. Evidence for care planning, audit, and quality improvement."
+        },
+        {
+          "title": "Adverse Event Prevention",
+          "body": "Objective risk stratification identifies patients at risk before a fall occurs. Early intervention reduces hospitalizations, liability exposure, and the human cost of preventable harm."
+        }
+      ]
+    },
+    {
+      "_template": "testimonialCarousel",
+      "heading": "What clinical leaders say",
+      "testimonials": [
+        {
+          "quote": "Clinical leadership testimonial coming soon.",
+          "attribution": "Director of Nursing, Multi-Site Care Provider"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Questions from clinical leaders",
+      "scheme": "light",
+      "items": [
+        {
+          "question": "What evidence supports the four screening metrics?",
+          "answer": "Each metric is backed by peer-reviewed research. Grip strength is supported by the PURE study (Lancet, 2015). Sit-to-stand, gait speed, and timed up-and-go are validated markers of functional capacity and fall risk across multiple clinical populations."
+        },
+        {
+          "question": "How do we ensure safe delegation to non-clinical staff?",
+          "answer": "The sensor and app guide every step of the screening. Staff do not interpret results. The system scores automatically against normative data and flags patients who need clinical review. This keeps the clinical decision with the clinician."
+        },
+        {
+          "question": "Does the platform support clinical audit and research?",
+          "answer": "Yes. Every screening generates a timestamped, attributed record with standardized data. The platform supports longitudinal tracking, cohort comparison, and data export for audit or research purposes."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Lead clinical excellence through evidence and data.",
+      "body": "30 minutes with a clinician who has run it in the field.",
+      "primaryCta": { "label": "Talk to the Clinical Team", "href": "/contact" },
+      "scheme": "blue"
+    }
+  ]
+}

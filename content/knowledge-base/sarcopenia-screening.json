@@ -1,0 +1,132 @@
+{
+  "title": "Sarcopenia Screening: Tests, Criteria, and When to Refer",
+  "description": "EWGSOP2 sarcopenia screening criteria explained. Tests, thresholds, and when to refer for further assessment.",
+  "category": "Assessments",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "What is the EWGSOP2 screening pathway for sarcopenia?",
+      "directAnswer": "European Working Group on Sarcopenia in Older People 2019 (EWGSOP2) defines sarcopenia as low grip strength (men &lt;27 kg, women &lt;16 kg) plus slow gait speed (&lt;0.8 m/s) or low muscle mass (DXA or bioimpedance). A 3-test battery (grip, gait, chair stand) screens effectively. Prevalence 10-27% in community 60+.",
+      "tldrBullets": [
+        {
+          "text": "Probable sarcopenia: grip &lt;27 kg men, &lt;16 kg women"
+        },
+        {
+          "text": "Confirm with gait speed (&lt;0.8 m/s) or 30-second chair stand (&lt;8 reps)"
+        },
+        {
+          "text": "Affects 10-27% community 60+ adults; higher in hospitalized/frail"
+        }
+      ],
+      "expandedAnswer": "<p>Sarcopenia is progressive skeletal muscle loss with functional decline. EWGSOP2 staging: probable sarcopenia (low strength), confirmed sarcopenia (strength + low function), and severe sarcopenia (strength + function + low mass). This algorithm enables rapid screening in primary care and outpatient settings without imaging.</p><p>Grip strength is first-line screening: &lt;27 kg (men) or &lt;16 kg (women) at age 65+ flags probable sarcopenia. Confirm with gait speed 4-meter walk test (&lt;0.8 m/s indicates slow gait) or 30-second chair stand (&lt;8 repetitions). If grip is borderline (27-30 kg men, 16-20 kg women), require positive gait/function test for diagnosis.</p><p>Prevalence rises with age and comorbidity. Community-dwelling 60-70 year olds: 10%. Hospitalized older adults: 20-40%. Post-acute care: 40-60%. Sarcopenia predicts falls, fractures, hospitalization, and mortality independent of comorbidities. Early detection enables intervention (resistance training, nutrition) to reverse or slow decline.</p>",
+      "sources": [
+        {
+          "title": "EWGSOP2 Consensus Definition and Diagnosis of Sarcopenia",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6943325/",
+          "year": "2019"
+        },
+        {
+          "title": "Sarcopenia prevalence and outcomes in community-dwelling older adults",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6363621/",
+          "year": "2019"
+        },
+        {
+          "title": "Screening algorithms for sarcopenia in primary care and outpatient settings",
+          "url": "https://www.ncbi.nlm.nih.gov/pubmed/29546505",
+          "year": "2018"
+        }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>What is Sarcopenia and Why Early Detection Matters</h2><p>Sarcopenia is age-related loss of skeletal muscle mass and strength, resulting in functional limitation and increased disability risk. It differs from simple being underweight.</p><ul><li><strong>Primary sarcopenia:</strong> Age-related, no underlying disease</li><li><strong>Secondary sarcopenia:</strong> Due to malignancy, COPD, heart failure, malabsorption, or sedentary lifestyle</li></ul><p>Risk factors: physical inactivity, low protein intake (&lt;1.0 g/kg), inadequate vitamin D (&lt;20 ng/ml), hormonal decline (testosterone, estrogen, GH, IGF-1), chronic inflammation, and polypharmacy.</p><p>Consequences of sarcopenia: increased fall and fracture risk, reduced independence in activities of daily living (ADL), higher hospitalization and infection rates, prolonged post-acute recovery, and 2-3 year mortality risk 1.5-2x higher than controls. Early screening (age 60+) enables preventive interventions.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>EWGSOP2 Screening Pathway: A Practical Algorithm</h2><p><strong>Step 1: Assess grip strength (first-line test)</strong></p><ul><li>Men &lt;27 kg or women &lt;16 kg at age 65+ = low strength (probable sarcopenia)</li><li>Borderline: men 27-30 kg or women 16-20 kg require functional assessment</li><li>Use calibrated hand dynamometer, 3 trials per hand, record best trial</li><li>Requires &lt;3 minutes; standardized, cost-free (if dynamometer available)</li></ul><p><strong>Step 2: Confirm with function test if grip is low or borderline</strong></p><ul><li>Gait speed 4-meter walk test: &lt;0.8 m/s = slow gait (confirms sarcopenia)</li><li>OR 30-second chair stand: &lt;8 repetitions = weak legs (alternative to gait)</li><li>Both tests take &lt;5 minutes and require no equipment</li></ul><p><strong>Step 3: Measure body composition if confirmed sarcopenia (optional, improves staging)</strong></p><ul><li>DXA (dual-energy X-ray absorptiometry) is gold standard; requires referral</li><li>Bioimpedance analysis (BIA) is portable alternative, though less accurate</li><li>Needed only if considering pharmacotherapy or clinical trial enrollment</li></ul>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Test Battery: Grip, Gait Speed, and Chair Stand</h2><p><strong>Grip Strength (Jamar hand dynamometer)</strong> Standard test. Three trials each hand, best value recorded. Normal: men &gt;30 kg, women &gt;20 kg at age 65. Time: &lt;2 minutes.</p><p><strong>4-Meter Gait Speed</strong> Patient walks 4 meters at normal pace (no instruction to hurry). Record time. Slow (&lt;0.8 m/s) indicates functional limitation. Time: &lt;5 minutes including setup.</p><p><strong>30-Second Chair Stand Test</strong> Patient sits in armless chair, stands and sits repeatedly for 30 seconds. Count complete cycles. &lt;8 repetitions indicates weak legs. Time: &lt;2 minutes. Accessible in office or home settings.</p><p>Perform all three tests at baseline screening. If &gt;1 test is abnormal, sarcopenia is confirmed. If only grip is low (gait and chair stand normal), classify as probable sarcopenia; repeat in 6 months to assess trajectory.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        {
+          "stat": "Men &lt;27 kg grip, women &lt;16 kg = probable sarcopenia (EWGSOP2)",
+          "source": "European Working Group on Sarcopenia in Older People",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6943325/"
+        },
+        {
+          "stat": "Sarcopenia prevalence 10-27% in community 60+ (varies by definition)",
+          "source": "Meta-analysis of prevalence studies",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6363621/"
+        },
+        {
+          "stat": "Confirmed sarcopenia predicts 1.5-2x higher 2-3 year mortality",
+          "source": "Longitudinal cohort studies",
+          "url": "https://www.ncbi.nlm.nih.gov/pubmed/29546505"
+        }
+      ]
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>When to Refer and Next Steps</h2><p><strong>Refer to specialist (geriatrician, physiotherapist, dietitian) if:</strong></p><ul><li>Confirmed sarcopenia (low grip plus abnormal gait or chair stand test)</li><li>Grip strength declining more than 5 kg over 12 months (trajectory suggests accelerating loss)</li><li>Sarcopenia with recurrent falls, fractures, or hospitalization despite conservative management</li><li>Secondary sarcopenia (underlying malignancy, COPD, heart failure, malabsorption, organ failure)</li><li>Patient declining functionally despite baseline low grip (suggests active medical trigger)</li><li>Sarcopenia in advanced age (80+) or with multiple comorbidities (complex frailty)</li></ul><p><strong>Frontline management strategy:</strong> Resistance training (supervised, 2-3 times weekly) combined with high-protein nutrition (1.6 g/kg daily) are evidence-based first-line interventions. Typical program: 8-12 repetitions, 3 sets per exercise, 70% estimated one-repetition maximum. Two weekly sessions over 12 weeks increase grip 3-5 kg and chair stand repetitions by 2-4 cycles.</p><p>Vitamin D repletion if serum 25-hydroxyvitamin D less than 30 ng/ml; target 40-60 ng/ml for optimal bone and muscle health. Testosterone replacement in men with confirmed hypogonadism (symptoms plus total testosterone &lt;300 ng/dl) showing poor response to exercise. Ensure adequate sleep (7-9 hours nightly) and manage mood disorders (depression reduces exercise adherence).</p><p><strong>Monitoring trajectory:</strong> Repeat screening (grip plus gait or chair stand) every 6 months in confirmed sarcopenia. Expect measurable improvement (2-3 kg grip gain, 1-2 more chair stands) within 12 weeks of structured intervention. If strength declining despite reported adherence, investigate underlying cause: active malignancy, new COPD exacerbation, uncontrolled diabetes, depression, polypharmacy, or medication side effect (statin myopathy, ACE inhibitor cough reducing activity).</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Sarcopenia Interventions: Evidence and Effectiveness</h2><p><strong>Resistance training as primary therapy</strong> is supported by 50+ randomized trials. Typical effective protocol: progressive resistance 2-3 sessions weekly, 8-12 repetitions per set, 3 sets per exercise, rest 1-2 minutes between sets, duration 8-12 weeks. Expected gains in community-dwelling older adults with sarcopenia: 2-4 kg grip, 1-3 repetitions on 30-second chair stand, 0.05-0.1 m/s gait speed improvement.</p><p><strong>Protein supplementation</strong> enhances adaptation to resistance training. Target 1.6 g/kg daily (higher than recommended dietary allowance of 0.8 g/kg). Distribution across meals (25-30 g per meal) optimizes muscle protein synthesis. Leucine-enriched amino acid formulations (amino acid pattern found in meat, dairy, eggs) show superior gains versus whey protein alone.</p><p><strong>Vitamin D repletion</strong> (target 40-60 ng/ml serum 25-hydroxyvitamin D) improves resistance training response in deficient older adults. Dose 1,000-2,000 IU daily maintenance; higher doses if severely deficient.</p><p><strong>Pharmacotherapy:</strong> Limited evidence exists. Vitamin D and calcium supplementation together reduce fracture risk. Testosterone replacement in hypogonadal men (symptoms plus low testosterone) accelerates strength gains. ACE inhibitors may attenuate age-related muscle loss. None replace exercise.</p>"
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "Do I need DXA imaging to diagnose sarcopenia in primary care?",
+          "answer": "No. EWGSOP2 allows probable diagnosis using grip alone, confirmed with functional testing (gait or chair stand). DXA is reserved for staging severe sarcopenia or clinical trials. In busy practices, functional testing is faster and sufficient for management initiation."
+        },
+        {
+          "question": "What is the difference between probable and confirmed sarcopenia?",
+          "answer": "Probable sarcopenia = low grip only. Confirmed sarcopenia = low grip plus abnormal gait or poor chair stand performance. Confirmed sarcopenia carries higher mortality and disability risk. Probable sarcopenia warrants close monitoring (6 months) and may progress to confirmed."
+        },
+        {
+          "question": "Can sarcopenia be reversed with exercise and diet alone?",
+          "answer": "Yes, in early-stage sarcopenia. Resistance training 2-3 times weekly plus 1.6 g/kg protein increases grip 3-5 kg within 12 weeks. Vitamin D repletion (if deficient) improves adaptation. Advanced sarcopenia may require medical intervention (testosterone, hormonal therapy) in addition to exercise."
+        },
+        {
+          "question": "At what age should sarcopenia screening begin?",
+          "answer": "Screening at age 60 identifies at-risk older adults before significant disability. Formal EWGSOP2 criteria apply to age 65+, but measurable grip decline begins earlier. Single grip measurement at age 55-60 establishes baseline for serial comparison. Accelerated screening (annual) at age 75+."
+        },
+        {
+          "question": "Is grip strength alone enough to screen for sarcopenia in community settings?",
+          "answer": "For probable sarcopenia diagnosis, yes. But functional assessment (gait or chair stand) is strongly recommended to confirm and guide management intensity. A simple algorithm: measure grip, if low, measure gait or chair stand. Both tests take &lt;10 minutes total and cost nothing."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Screen for sarcopenia in your older adult population",
+      "bodyText": "A simple 3-test battery (grip, gait, chair stand) detects sarcopenia in minutes. Early detection enables intervention that preserves function and independence.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Learn about Able Assess",
+        "url": "/solutions/able-assess"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "functional-assessments",
+    "sarcopenia",
+    "able-assess",
+    "evidence",
+    "guide"
+  ]
+}

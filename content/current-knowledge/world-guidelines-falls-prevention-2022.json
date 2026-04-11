@@ -1,0 +1,96 @@
+{
+  "title": "World Guidelines on Falls Prevention 2022: Key Recommendations",
+  "description": "Montero-Odasso et al. 2022 global guidelines: 3-tier risk stratification, Grade 1A/1B assessment recommendations, and how Able Assess maps to evidence.",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "What do the 2022 World Guidelines on Falls Prevention recommend?",
+      "directAnswer": "The Montero-Odasso et al. 2022 guideline (published in Age and Ageing) recommends a 3-tier risk stratification model: low, intermediate, and high risk. Grade 1A evidence supports gait speed assessment; Grade 1B supports Timed Up and Go. Risk-stratified interventions reduce falls by 25-35% in older adults.",
+      "tldrBullets": [
+        { "text": "3-tier risk model: low-risk patients need general counselling; intermediate-risk need targeted interventions" },
+        { "text": "Grade 1A evidence: gait speed (4-meter walk) is a powerful predictor of falls and functional decline" },
+        { "text": "Grade 1B evidence: Timed Up and Go test (≥14 seconds) identifies intermediate/high-risk patients accurately" }
+      ],
+      "expandedAnswer": "<p>In 2022, Montero-Odasso and colleagues published comprehensive international guidelines on falls prevention in older adults, synthesizing evidence from hundreds of studies. The guidelines recommend a structured approach to falls risk assessment and stratification, moving away from subjective clinical judgment toward objective, evidence-based testing.</p><p>The 3-tier model stratifies patients into three risk categories. Low-risk patients (normal gait, balance, strength) receive general counselling on exercise, medication review, and home safety. No intensive intervention is needed. Intermediate-risk patients (slowed gait or mild balance impairment) receive targeted interventions: strength and balance training, vision and hearing screening, medication optimization. High-risk patients (severe gait impairment, prior falls, or multiple risk factors) receive intensive multidisciplinary evaluation: physical therapy, occupational therapy, medical review, and home modifications.</p><p>The guidelines emphasize two specific tests backed by highest-level evidence. Gait speed (4-meter walk test) is Grade 1A: slow gait (≤0.8 m/s) predicts falls, disability, and mortality. Timed Up and Go is Grade 1B: times ≥14 seconds indicate increased fall risk. These tests should be part of routine assessment in primary care and community settings.</p>",
+      "sources": [
+        { "title": "Montero-Odasso M, et al. World Guidelines on Falls Prevention and Management in Older Adults (2022)", "url": "https://doi.org/10.1093/ageing/afac181", "year": "2022" },
+        { "title": "Age and Ageing Journal", "url": "https://academic.oup.com/ageing", "year": "2022" },
+        { "title": "CDC STEADI Alignment with World Guidelines", "url": "https://www.cdc.gov/steadi", "year": "2023" }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Understanding the 3-tier risk stratification model</h2><p>The Montero-Odasso 2022 guidelines propose stratifying older adults into three risk tiers based on assessment results. This approach is simpler and more actionable than continuous risk scoring. Tier 1 (Low Risk): normal gait speed (>0.8 m/s), normal balance, no prior falls, no concerning medications. These patients have low near-term fall risk. Interventions are general: regular physical activity, medication review, home safety assessment.</p><p>Tier 2 (Intermediate Risk): moderately slowed gait (0.5-0.8 m/s), mild balance impairment, or one falls risk factor (prior fall, polypharmacy, vision problem). These patients need more active intervention. Provide strength and balance training, optimize medications, address sensory deficits, and implement home modifications.</p><p>Tier 3 (High Risk): severely slowed gait (<0.5 m/s), significant balance impairment or inability to perform Timed Up and Go, prior falls, or multiple risk factors. These patients require intensive multidisciplinary assessment and intervention. Refer to physical therapy, occupational therapy, and medical specialists. Consider home safety modifications, assistive devices, and regular monitoring.</p><p>This tiered approach aligns resources efficiently. Low-risk patients need minimal intervention. Intermediate and high-risk patients receive proportionate, intensive support. The model is more actionable than traditional continuous risk scoring (e.g., 0-100 scale) because it directly specifies intervention types for each tier.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Recommended assessments: Grade 1A and 1B evidence</h2><p>The guidelines classify evidence into grades: Grade 1A (highest quality, strong recommendation), Grade 1B (high quality, strong recommendation), Grade 2 (moderate quality, weak recommendation). This hierarchy helps clinicians prioritize which assessments matter most.</p><p><strong>Gait Speed Assessment (4-Meter Walk Test), Grade 1A Evidence:</strong> The guidelines give highest rating to gait speed testing. Slow gait speed independently predicts falls, hospitalization, disability, and mortality across numerous studies. The 4-meter walk test is simple: patient walks 4 meters at usual pace. Time is recorded. Slow speed (≤0.8 m/s, or approximately >5 seconds for 4 meters) indicates increased fall risk. This should be offered to all adults aged 65+.</p><p><strong>Timed Up and Go Test, Grade 1B Evidence:</strong> The TUG is among the most studied falls prediction tests globally. Patient rises from chair, walks 3 meters, returns, and sits. Time is recorded. Times ≥14 seconds indicate intermediate-to-high fall risk. Slower times predict falls, disability, and hospitalization. TUG also assesses functional mobility, balance, and gait in one test.</p><p><strong>Grip Strength Assessment, Grade 1B Evidence:</strong> Hand grip strength independently predicts falls, disability, and mortality. Weakness (<20 kg in women, <30 kg in men) indicates higher risk. Grip strength is easy to measure objectively using a dynamometer.</p><p><strong>Balance Testing, Grade 1B Evidence:</strong> Static balance assessment (e.g., Romberg stance, tandem stance, single-leg stance) directly measures fall risk. Inability to maintain tandem stance for 10 seconds predicts falls. Balance testing is more specific than gait speed for fall prediction.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Risk assessment workflow based on 2022 guidelines</h2><p><strong>Step 1: Screening (all patients aged 65+).</strong> Ask two screening questions: \"Have you had a fall in the past year?\" and \"Do you feel unsteady when standing or walking?\" These two questions have sensitivity of 70-80% for falls. Positive response triggers formal assessment.</p><p><strong>Step 2: Formal assessment (screen-positive patients).</strong> Conduct gait speed test (4-meter walk). This is Grade 1A and should be performed on all intermediate and high-risk patients. If gait speed is normal (>0.8 m/s), patient may be low-risk unless other factors present.</p><p><strong>Step 3: Secondary assessment.</strong> Perform Timed Up and Go test. TUG ≥14 seconds indicates increased risk. Also assess grip strength and balance. Combine results to determine overall risk tier.</p><p><strong>Step 4: Risk classification and intervention planning.</strong> Classify patient into Tier 1 (low), Tier 2 (intermediate), or Tier 3 (high) based on testing pattern. Tier 1: annual reassessment, general counselling. Tier 2: scheduled strength and balance training, medication review, sensory assessment. Tier 3: urgent PT/OT referral, comprehensive medical evaluation, home assessment.</p><p><strong>Step 5: Intervention and outcome tracking.</strong> Document interventions provided. Reassess at intervals (6-12 months for Tier 1, 3-6 months for Tier 2, ongoing for Tier 3). Track falls outcomes and intervention fidelity.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>How Able Assess maps to the 2022 guidelines</h2><p>Able Assess implements the Montero-Odasso 2022 recommendation directly. The platform administers screening questions (falls history and unsteadiness), gait speed testing (4-meter walk), and balance assessment (4-stage standing balance). It also measures grip strength and the 30-second chair stand test, providing comprehensive assessment aligned with global guidelines.</p><p>The platform automatically stratifies patients into the 3-tier model based on results. Gait speed >0.8 m/s, normal balance, and adequate strength indicate Low Risk (Tier 1). Mildly slowed gait (0.5-0.8 m/s) or mild balance impairment indicates Intermediate Risk (Tier 2). Severely slowed gait or significant balance impairment indicates High Risk (Tier 3).</p><p>Results generate clinician-facing reports explaining assessment findings, risk tier classification, and recommended interventions matched to the guideline-recommended approach. This ensures your organization implements evidence-based assessment and intervention protocols.</p><p>By using Able Assess, you operationalize the Montero-Odasso 2022 guidelines. You conduct Grade 1A and 1B assessments, apply 3-tier risk stratification, and deliver risk-matched interventions. This positions you as aligned with best-practice international guidelines.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says: Effectiveness of guideline-based assessment",
+      "stats": [
+        { "stat": "Gait speed <0.8 m/s predicts 12-month fall incidence with 72% sensitivity across 30+ studies", "source": "Montero-Odasso et al. 2022 Guidelines", "url": "https://doi.org/10.1093/ageing/afac181" },
+        { "stat": "Timed Up and Go time ≥14 seconds predicts falls with 81% sensitivity (meta-analysis of 21 studies)", "source": "American Journal of Preventive Medicine, 2021", "url": "https://doi.org/10.1016/j.amepre.2021.10.001" },
+        { "stat": "Risk-stratified falls interventions reduce fall incidence by 25-35% in older adults", "source": "Cochrane Review: Falls Prevention in Older Adults, 2023", "url": "https://doi.org/10.1002/14651858.CD007146.pub4" }
+      ]
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Alignment with other global guidelines: NICE, CDC STEADI, and others</h2><p>The Montero-Odasso 2022 guidelines align closely with other major international frameworks. The UK National Institute for Health and Care Excellence (NICE) 2023 Falls Guideline recommends assessment with gait speed and balance tests, and risk-stratified intervention, matching the Montero-Odasso approach. The CDC STEADI program (US) uses similar screening and assessment protocols, though phrased slightly differently.</p><p>Global consensus has emerged: older adults benefit from objective falls risk assessment using validated tests (gait speed, Timed Up and Go, balance), followed by risk-matched interventions. The specific tool names vary (\"TUG\" vs \"Timed Up and Go\", \"gait velocity\" vs \"gait speed\"), but the core approach is universal.</p><p>Able Assess aligns with all major guidelines simultaneously. By administering gait speed, TUG, balance, grip strength, and chair stand tests, you satisfy requirements of the Montero-Odasso 2022 guidelines, NICE 2023 guidelines, CDC STEADI, and similar frameworks. This multi-guideline alignment supports best-practice delivery across different regulatory contexts.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Implementing guideline-based assessment in your organization</h2><p><strong>Phase 1: Select your assessment tool.</strong> Choose a tool that operationalizes the 2022 guidelines. Options include: (a) paper-based assessment using published protocols, (b) digital platforms like Able Assess, (c) in-person physiotherapist assessment. Digital platforms are preferred for consistency and scalability.</p><p><strong>Phase 2: Train staff.</strong> Ensure clinicians and non-clinical staff understand the guideline rationale, the assessment protocol, and the 3-tier risk model. Training should include demonstration of each test (gait speed, TUG, balance), appropriate equipment use, and interpretation of results.</p><p><strong>Phase 3: Integrate into workflows.</strong> Embed falls assessment into routine care pathways. Primary care: assess all patients aged 65+ during wellness visits. Hospitals: assess on admission. Care facilities: assess on admission and periodically. Home care: assess at start-of-care. Make assessment standard of care, not optional.</p><p><strong>Phase 4: Develop risk-matched interventions.</strong> Establish intervention pathways for each risk tier. Tier 1: exercise brochures, safety checklists. Tier 2: referral to community strength and balance classes. Tier 3: PT/OT referral, home assessment, specialist consultation. Document interventions and track completion.</p><p><strong>Phase 5: Monitor outcomes.</strong> Track percentage of patients assessed, risk distribution, intervention completion, and falls incidence. Generate quarterly reports. Compare your falls rate to benchmarks (typically 5-12% depending on population). If falls rate is higher than benchmark, review intervention fidelity and consider more intensive approaches.</p>"
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "How does the 2022 World Guideline differ from earlier falls prevention guidelines?",
+          "answer": "The 2022 guideline provides more explicit 3-tier stratification, emphasizes gait speed as Grade 1A evidence, and gives priority to objective testing over subjective clinical judgment. It reflects updated evidence from 15+ years of falls research and provides more actionable recommendations than prior guidelines."
+        },
+        {
+          "question": "Should we assess all older adults or only those with fall risk factors?",
+          "answer": "The 2022 guideline recommends universal screening for all adults aged 65+. Two screening questions (past falls, unsteadiness) take <2 minutes. Screen-positive patients proceed to formal assessment. This identifies asymptomatic high-risk patients who would be missed by selective assessment."
+        },
+        {
+          "question": "What equipment do we need for gait speed testing?",
+          "answer": "Minimal equipment: a 4-meter measured distance (tape line on floor works) and a stopwatch. Mark start and end points clearly. Patient walks at usual pace; time is recorded. Cost is negligible. Digital platforms like Able Assess use smartphone timers, further reducing equipment need."
+        },
+        {
+          "question": "Can we assess Timed Up and Go in patients with mobility aids (walkers, canes)?",
+          "answer": "Yes. Guidelines recommend standardized TUG performance (rising from standard chair, walking 3 meters, returning). However, if a patient requires mobility aids, they should use them during testing. Document which aids are used (e.g., \"TUG with walker: 18 seconds\"). Interpretation may differ from standard norms."
+        },
+        {
+          "question": "How often should we reassess patients using these guidelines?",
+          "answer": "The 2022 guideline recommends: Low-risk patients, annual reassessment. Intermediate-risk, 6-12 month reassessment. High-risk, ongoing reassessment (3-6 months or more frequent if fall occurs). Reassessment is triggered by falls, changes in function, new medications, or hospitalization."
+        },
+        {
+          "question": "Are the 2022 World Guidelines aligned with UK NICE and US CDC guidelines?",
+          "answer": "Yes, there is substantial alignment. All three recommend screening, objective assessment (gait, balance, strength), and risk-stratified intervention. Specific tools and language vary slightly, but the core approach is consistent globally. Using Able Assess aligns you with all major guidelines."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Implement evidence-based falls assessment aligned with 2022 World Guidelines",
+      "bodyText": "Able Assess operationalizes the Montero-Odasso 2022 recommendations: gait speed, TUG, balance, and 3-tier risk stratification.",
+      "primaryCta": { "label": "Book a Demo", "url": "/demo" },
+      "secondaryCta": { "label": "NICE 2023 Falls Guidelines", "url": "/current-knowledge/nice-2025-falls-guidelines/" },
+      "scheme": "blue"
+    }
+  ]
+}

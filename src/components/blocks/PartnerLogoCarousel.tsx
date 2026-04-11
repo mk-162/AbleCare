@@ -11,7 +11,7 @@ interface PartnerLogoCarouselProps {
   heading?: string;
   subheading?: string;
   logos?: PartnerLogo[];
-  scheme?: "white" | "grey" | "blue";
+  scheme?: string;
 }
 
 const defaultLogos: PartnerLogo[] = [
@@ -31,32 +31,38 @@ const defaultLogos: PartnerLogo[] = [
   { src: "/images/logos/us-physical-therapy.png", alt: "US Physical Therapy" },
 ];
 
-const schemeStyles = {
+const schemeStyles: Record<string, string> = {
   white: "bg-white",
+  light: "bg-white",
   grey: "bg-ac-grey/30",
   blue: "bg-ac-blue",
+  aqua: "bg-ac-aqua",
 };
 
-const textStyles = {
+const textStyles: Record<string, string> = {
   white: "text-ac-black",
+  light: "text-ac-black",
   grey: "text-ac-black",
   blue: "text-white",
+  aqua: "text-ac-black",
 };
 
 export function PartnerLogoCarousel({
   heading = "Trusted by Leading Organizations",
   subheading,
   logos = defaultLogos,
-  scheme = "white",
+  scheme = "light",
 }: PartnerLogoCarouselProps) {
   // Double the logos array for seamless infinite scroll
-  const scrollLogos = [...logos, ...logos];
+  const actualLogos = logos && logos.length > 0 ? logos : defaultLogos;
+  const scrollLogos = [...actualLogos, ...actualLogos];
+  const s = scheme || "light";
 
   return (
-    <section className={`py-16 md:py-20 overflow-hidden ${schemeStyles[scheme]}`}>
+    <section className={`py-16 md:py-20 overflow-hidden ${schemeStyles[s] || schemeStyles.light}`}>
       <div className="container mx-auto px-4 md:px-6 mb-10">
         {heading && (
-          <h2 className={`text-2xl md:text-3xl font-bold text-center ${textStyles[scheme]}`}>
+          <h2 className={`text-2xl md:text-3xl font-bold text-center ${textStyles[s] || textStyles.light}`}>
             {heading}
           </h2>
         )}

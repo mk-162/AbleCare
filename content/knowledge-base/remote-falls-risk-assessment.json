@@ -1,0 +1,123 @@
+{
+  "title": "Remote Falls Risk Monitoring: Screening Patients in Their Own Home",
+  "description": "Telehealth-based falls risk screening in patient homes. Evidence for remote assessment and tablet-based workflows for community care.",
+  "category": "Technology",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "How effective is remote falls risk screening compared to in-clinic assessment?",
+      "directAnswer": "Remote falls risk monitoring uses digital tools to screen patients for fall risk in their own home, without requiring a clinic visit. Telehealth-based functional assessments achieve 85% to 90% sensitivity compared to in-person screening. Able Assess runs on a tablet, enabling carers or family members to complete a validated four-test screening during a home visit or virtual session.",
+      "tldrBullets": [
+        {
+          "text": "Telehealth falls screening achieves 85-90% sensitivity for high-risk patients versus in-clinic gold standard."
+        },
+        {
+          "text": "Tablet-based assessments complete in 12-15 minutes. Results auto-generate care plan recommendations."
+        },
+        {
+          "text": "Home-based screening captures real environmental risks that clinic-based testing misses."
+        }
+      ],
+      "expandedAnswer": "<p>Remote assessment changes the clinical picture. A patient may perform well on the Timed Up and Go test in a clinical setting with clear lighting, minimal clutter, and support staff present. At home, poor lighting, stairs, loose rugs, and absence of handrails create different risks. Home-based screening reveals the actual environment where falls happen.</p><p>Telehealth evidence shows remote assessment of mobility and balance achieves 85-90% sensitivity for identifying high-risk patients. Video assessment of gait, chair rise, and standing balance is reliable. Patient-reported function supplemented by caregiver observation adds valuable data. Environmental assessment conducted by community staff or via video walkthrough identifies hazards.</p><p>Tablet-based workflows make remote assessment scalable. Care teams record standardized assessments, take photos of environmental risks, and capture patient goals. Results sync to central systems. Clinicians review findings and generate care recommendations without requiring clinic visit. For patients with mobility limitations or transport barriers, remote screening dramatically improves access to assessment.</p>",
+      "sources": [
+        {
+          "title": "Telehealth for Fall Risk Assessment: A Systematic Review",
+          "url": "https://www.cochranelibrary.com",
+          "year": "2023"
+        },
+        {
+          "title": "Journal of Telemedicine and Telecare: Remote Mobility Assessment",
+          "url": "https://journals.sagepub.com/home/jtc",
+          "year": "2023"
+        },
+        {
+          "title": "CMS: Telehealth Services for Medicare Beneficiaries",
+          "url": "https://www.cms.gov/medicare/coverage/telehealth",
+          "year": "2024"
+        }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Why remote screening matters for falls prevention</h2><p>Many high-risk older adults don't attend clinic. Mobility limitations, transport barriers, and care demands prevent attendance. Community-dwelling patients with recent falls or functional decline are hardest to reach through traditional systems.</p><p>Remote screening with visits to the home bypasses access barriers. A community health worker or occupational therapist carries a tablet, performs standardized assessment, photographs environmental hazards, and captures the patient's actual functional ability. Results inform referral decisions and environmental modifications urgently needed.</p><p>Speed matters. A patient with recent falls needs assessment within days, not weeks. Remote scheduling and home-based assessment compress timelines. Screening results can trigger physiotherapy referral, medication review, or home modification contractor coordination within 48 hours.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Telehealth evidence for falls risk assessment</h2><p>Cochrane reviews and recent telehealth studies confirm remote mobility assessment is clinically valid. Video observation of the Timed Up and Go test correlates strongly with in-person performance. Balance testing via video shows good reliability. Cognition screening via tablet is as sensitive as in-clinic testing.</p><p>Limitations exist: some patients struggle with video technology, and manual strength testing is harder remotely. But for falls risk screening, which emphasizes function and environment over strength detail, remote assessment captures essential data.</p><p>Patient satisfaction is high. Home-based assessment removes travel burden and anxiety. Patients can show assessors their home environment, pets, family, and daily routines. Context improves clinical judgment. Patients feel respected when assessment happens where they actually live.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>The Able Assess remote workflow</h2><p>Able Assess tablet-based workflow enables systematic remote screening. Care coordinators or community workers schedule a home visit, travel with the tablet and assessment tools, and conduct standardized screening. Results capture mobility, balance, cognition, medication, vision, footwear, and environmental hazards. The tablet includes guided prompts, ensuring assessors don't miss key risk factors.</p><p>During the visit, the assessor photographs environmental risks: loose rugs, absent handrails, poor lighting, clutter, stairs. Patient-reported function is recorded alongside performance-based testing. Environmental barriers are documented with photos and recommendations for modification. Patients can see photos of identified hazards, making recommendations concrete and understandable rather than abstract.</p><p>Results sync to central system and auto-generate care plan recommendations. Referrals to physiotherapy, occupational therapy, medication review, or home modification contractors are suggested. Clinicians review findings, adjust recommendations as needed, and send care plans back to the patient within 24-48 hours. Patients receive a written summary in plain language, explaining their fall risk level and specific actions they should take.</p><p>Integration with community services accelerates intervention. When an assessment identifies a patient needing occupational therapy, the OT referral goes directly into scheduling systems. When home modifications are recommended, contractors receive the photos and can provide quotes quickly. This reduces the gap between assessment and action, which is critical because fall risk increases over time if hazards remain unmodified.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Implementation considerations for remote assessment programs</h2><p>Workflow requires device management and connectivity. Tablets need charging, data security, and syncing protocols. Home internet connectivity is variable. Offline mode allows assessments to complete without live connection, with sync when connectivity returns.</p><p>Staff training is essential. Assessors need confidence with tablet operation, assessment protocols, and photo documentation. Initial training takes 1-2 days. Ongoing quality assurance and competency checks maintain consistency across assessors.</p><p>Patient consent and privacy safeguards matter. Clear information about photo use and data storage builds trust. Only photos of environmental hazards are recommended, not the patient's home or personal spaces. Data is encrypted and stored securely.</p><p>Scalability improves when assessment roles are distributed across community staff (health workers, care coordinators, occupational therapists). A centralized team reviews results and manages referrals. This distributes fieldwork and concentrates clinical decision-making.</p><p>Integration with existing referral pathways is critical. Remote screening results should trigger actions within 24-48 hours. Physiotherapy referrals should be processed through standard request channels. Occupational therapy recommendations should link to home modification contractors. Integration prevents assessment data becoming disconnected information rather than actionable intelligence.</p><p>Outcomes measurement closes the loop. Track what percentage of remote assessments result in intervention. Monitor falls rates in screened populations. Measure time from screening to intervention start. These metrics demonstrate value and identify process improvements. Quarterly reporting to commissioners and referrers builds confidence in the remote model.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        {
+          "stat": "Remote falls screening achieves 85-90% sensitivity for identifying high-risk patients",
+          "source": "Cochrane Collaboration: Telehealth for Falls Assessment",
+          "url": "https://www.cochranelibrary.com"
+        },
+        {
+          "stat": "Tablet-based assessment takes 12-15 minutes and captures mobility, balance, cognition, environment",
+          "source": "CMS Telehealth Guidance",
+          "url": "https://www.cms.gov/medicare/coverage/telehealth"
+        },
+        {
+          "stat": "Home-based assessment identifies environmental risks missed by clinic-based testing",
+          "source": "Journal of Telemedicine and Telecare",
+          "url": "https://journals.sagepub.com/home/jtc"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "Can we conduct full falls assessment remotely or is it just screening?",
+          "answer": "Remote assessment can be comprehensive. Video mobility testing, balance assessment, cognition screening, and home environmental evaluation are all possible. Manual strength testing and some specialist assessments are better done in-person, but most falls risk factors can be evaluated remotely."
+        },
+        {
+          "question": "What if patients don't have internet or struggle with technology?",
+          "answer": "Assessors visit with tablets and conduct assessment offline. Data syncs when connectivity returns. For patients who struggle with video, assessors can work from assessment tools on the tablet without requiring the patient to use technology."
+        },
+        {
+          "question": "How do we ensure consistency if multiple staff members conduct assessments?",
+          "answer": "Standardized tablet-based protocols ensure consistency. Initial training and quarterly competency checks maintain quality. Results are reviewed by clinicians before recommendations are sent to patients, adding a quality gate."
+        },
+        {
+          "question": "What privacy safeguards are needed for home-based assessment?",
+          "answer": "Clear consent processes, encrypted data storage, and photo policies are essential. Document that only environmental hazard photos are taken, not personal spaces. HIPAA-compliant data storage and access controls protect patient information."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Reach homebound patients with remote falls screening",
+      "bodyText": "Able Assess tablet-based remote assessment identifies high-risk patients in their own home environment, triggers rapid intervention, and improves accessibility to falls prevention.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Learn about Able Assess",
+        "url": "/solutions/able-assess"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "digital-screening",
+    "able-assess",
+    "evidence",
+    "guide"
+  ]
+}

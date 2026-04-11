@@ -1,0 +1,207 @@
+{
+  "title": "Falls Screening for Independent Living",
+  "slug": "independent-living",
+  "seo": {
+    "title": "Wellness-Led Falls Screening for Independent Living | Able Care",
+    "description": "Objective milestones residents can see. Programming tied to measurable changes in grip strength, balance and gait speed. Non-clinical staff can run it in under five minutes.",
+    "ogImage": "/images/og-independent-living.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Senior Living",
+          "href": "/senior-living"
+        },
+        {
+          "label": "Independent Living",
+          "href": "/senior-living/independent-living"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "backgroundImage": "/images/photos/clinical/arms-raised-celebration.jpg",
+      "backgroundImageAlt": "Resident celebrating progress during a wellness session",
+      "eyebrow": "Independent Living",
+      "headline": "Wellness-led falls screening for IL.",
+      "subtitle": "Objective milestones residents can see. Programming tied to measurable changes in grip strength, balance and gait speed. Non-clinical staff can run it in under five minutes.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download the IL Guide",
+        "href": "/resources/buyers-guide"
+      }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The retention problem in independent living",
+      "body": "<p>A fall in independent living rarely stays a clinical event. It becomes a move-out, an empty unit and a difficult conversation with family members who question whether the community is the right fit.</p><p>Most IL communities do not screen for fall risk at all. Without objective data, staff have no way to identify declining residents until a fall has already happened.</p><p>Able Assess gives wellness teams a five-minute screening workflow that captures four validated metrics. Residents see their own scores, engage with programming and stay longer.</p>"
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "How it works in independent living",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Wellness check",
+          "description": "Run a five-minute assessment during a routine wellness day or fitness class. No clinical credentials required."
+        },
+        {
+          "number": 2,
+          "title": "Engage",
+          "description": "Share results with residents on screen. Objective scores give them tangible milestones to work toward."
+        },
+        {
+          "number": 3,
+          "title": "Flag early",
+          "description": "Declining scores trigger a conversation with clinical or family contacts before a fall occurs."
+        },
+        {
+          "number": 4,
+          "title": "Report",
+          "description": "Population-level trends help leadership measure the impact of wellness programming on fall risk and retention."
+        }
+      ]
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Four metrics residents can track themselves",
+      "metrics": [
+        {
+          "name": "Grip strength",
+          "whatItMeasures": "Upper-body strength and frailty risk.",
+          "whyItMatters": "Residents ask, 'Am I getting stronger?' Grip strength gives them a tangible, motivating answer."
+        },
+        {
+          "name": "Sit-to-stand",
+          "whatItMeasures": "Lower-limb power and balance.",
+          "whyItMatters": "Directly linked to the ability to rise from a chair independently. A score residents understand intuitively."
+        },
+        {
+          "name": "Gait speed",
+          "whatItMeasures": "Walking speed over a short distance.",
+          "whyItMatters": "The strongest single predictor of fall risk. Measurable improvement motivates continued participation in wellness activities."
+        },
+        {
+          "name": "Timed Up and Go",
+          "whatItMeasures": "Functional mobility and dynamic balance.",
+          "whyItMatters": "A validated, repeatable screen that takes under a minute. Gives staff a defensible baseline for every resident."
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "Technology that residents want to use",
+      "body": "Able Assess was designed for engagement, not compliance. Residents view their own progress, set goals and take ownership of their wellness journey. Staff report higher participation in fitness programming after deployment.",
+      "imageSide": "right",
+      "imageAlt": "Resident and therapist laughing during a wellness screening session",
+      "imageSrc": "/images/photos/clinical/patient-therapist-laughing.jpg"
+    },
+    {
+      "_template": "roiCalculatorPromo",
+      "heading": "One prevented move-out covers the cost",
+      "promoBody": "A single avoided vacancy can offset a full year of screening for an entire IL building. Model the numbers for your community.",
+      "ctaText": "Run the numbers",
+      "ctaHref": "/resources/roi-calculator"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "colorScheme": "aqua",
+      "testimonials": [
+        {
+          "quote": "Residents can see their own progress on the screen. It turned a clinical test into a conversation about staying strong.",
+          "attribution": "Wellness Director, US community"
+        },
+        {
+          "quote": "We run a quarterly wellness day now. Residents look forward to it. Families love the data. It has become a differentiator for our community.",
+          "attribution": "Executive Director, IL community"
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "heading": "The numbers that matter to IL operators",
+      "colorScheme": "aqua",
+      "stats": [
+        {
+          "value": "4",
+          "label": "Validated metrics per screening"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per resident screening"
+        },
+        {
+          "value": "15 min",
+          "label": "Staff training time"
+        },
+        {
+          "value": "25%",
+          "label": "Average fall reduction"
+        }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "light",
+      "heading": "Common questions from IL operators",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "Our residents are active and independent. Do they really need falls screening?",
+          "answer": "Active residents are exactly the right population for screening. Able Assess identifies early, subclinical decline before it leads to a fall. Catching changes in grip strength or gait speed early is what keeps residents independent for longer."
+        },
+        {
+          "question": "Can wellness staff run it without clinical oversight?",
+          "answer": "Yes. The workflow was designed for non-clinical staff. Wellness directors, fitness coordinators and activities staff can all run a screening after a 15-minute onboarding session."
+        },
+        {
+          "question": "How do residents respond to the screening?",
+          "answer": "Residents engage well because they see their own scores on screen. The data is motivating rather than alarming. Many communities report higher participation in fitness programming after deployment."
+        },
+        {
+          "question": "Can we tie the data to our wellness programming?",
+          "answer": "Yes. Longitudinal trends show whether your exercise classes, balance groups and fitness offerings are producing measurable improvements. This helps justify programming spend to leadership."
+        },
+        {
+          "question": "Is it useful as a marketing differentiator?",
+          "answer": "Several communities use Able Assess as a talking point during tours. Prospective residents and families respond well to objective, technology-driven wellness programming."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See Able Assess in an IL wellness workflow.",
+      "body": "20 minutes with a clinician who has deployed it in independent living communities.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide"
+      },
+      "scheme": "blue"
+    }
+  ],
+  "tags": [
+    "senior-living",
+    "independent-living",
+    "wellness",
+    "falls-prevention"
+  ]
+}

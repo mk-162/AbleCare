@@ -2,9 +2,15 @@
 
 import { motion } from "framer-motion";
 
+const schemeToHex = (s: string): string => {
+  const map: Record<string, string> = { blue: "#1432FF", light: "#ffffff", white: "#ffffff", aqua: "#00FFD2", grey: "#DCDCDC" };
+  return map[s] || "#ffffff";
+};
+
 interface TestimonialCarouselProps {
   scheme?: string;
   wave?: string;
+  waveFill?: string;
   heading?: string;
   testimonials?: Array<{
     quote: string;
@@ -15,7 +21,7 @@ interface TestimonialCarouselProps {
   }>;
 }
 
-export function TestimonialCarousel({ scheme = "aqua", wave = "fold", heading, testimonials }: TestimonialCarouselProps) {
+export function TestimonialCarousel({ scheme = "aqua", wave = "fold", waveFill, heading, testimonials }: TestimonialCarouselProps) {
   const defaultTestimonials: Array<{ quote: string; name?: string; role?: string; organization?: string; photo?: string }> = [
     {
       quote: "We caught decline six weeks earlier than we would have with our old process. The data gave us the confidence to act — and the resident avoided a hospitalisation.",
@@ -29,12 +35,13 @@ export function TestimonialCarousel({ scheme = "aqua", wave = "fold", heading, t
     },
   ];
   const items = testimonials && testimonials.length > 0 ? testimonials : defaultTestimonials;
-  const bg = scheme === "aqua" ? "#00FFD2" : scheme === "blue" ? "#1432FF" : "#ffffff";
+  const bg = scheme === "aqua" ? "#00FFD2" : scheme === "blue" ? "#1432FF" : scheme === "grey" ? "#DCDCDC" : "#ffffff";
 
   return (
     <section className="relative py-24 md:py-32 overflow-visible" style={{ backgroundColor: bg }}>
       <div className="absolute left-0 right-0 leading-none z-20 pointer-events-none" style={{ top: "-69px" }} aria-hidden="true">
         <svg viewBox="0 0 1440 70" preserveAspectRatio="none" className="block w-full" style={{ height: "70px" }}>
+          <rect width="1440" height="70" fill={waveFill ? schemeToHex(waveFill) : "#ffffff"} />
           {wave === "fold" && <path fill={bg} d="M0,60 C180,52 360,62 720,44 C1080,30 1440,40 1440,40 L1440,70 L0,70 Z" />}
           {wave !== "fold" && <path fill={bg} d="M0,55 C480,32 960,68 1440,35 L1440,70 L0,70 Z" />}
         </svg>

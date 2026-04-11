@@ -1,0 +1,79 @@
+{
+  "title": "Security & Data Protection",
+  "seo": {
+    "title": "Security & Data Protection | Able Care | ISO 27001, Encryption, Penetration Testing",
+    "description": "ISO 27001, encryption, penetration testing, data residency, audit logging, incident response.",
+    "ogImage": "/images/og-security.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Product",
+          "href": "/product"
+        },
+        {
+          "label": "Security",
+          "href": "/product/security"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Product",
+      "headline": "Enterprise-Grade Security by Design.",
+      "subtitle": "ISO 27001 certified. Encryption at rest and in transit. Annual penetration testing.",
+      "primaryCta": {
+        "label": "Download the Security Whitepaper",
+        "href": "/resources/security-whitepaper"
+      },
+      "secondaryCta": {
+        "label": "Request a Security Assessment",
+        "href": "/contact"
+      }
+    },
+    {
+      "_template": "trustBar",
+      "items": [
+        { "text": "FDA Listed", "logo": "/images/badges/fda-trimmed.svg" },
+        { "text": "CE Marked", "logo": "/images/badges/ce-4.svg" },
+        { "text": "ISO 27001", "logo": "/images/badges/iso-31.svg" },
+        { "text": "HIPAA Aligned", "logo": "/images/badges/hipaa-trimmed.svg" },
+        { "text": "GDPR Compliant", "logo": "/images/badges/gdpr-trimmed-min.png" }
+      ]
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Security architecture",
+      "body": "<h3>ISO 27001 Certification</h3><p>Able Care maintains ISO 27001 certification for its information security management system. The certification scope covers the design, development, hosting and support of the Able Assess platform. Annual surveillance audits are conducted by an accredited certification body. The ISMS includes documented risk assessments, security policies, access controls and incident management procedures.</p><h3>Encryption</h3><p>All data in transit is protected with TLS 1.2 or higher. All data at rest is encrypted with AES-256. Encryption keys are managed through a dedicated key management service with automatic key rotation. Mobile application data is encrypted on-device using platform-native encryption libraries. No unencrypted patient data is stored on any endpoint device.</p><h3>Penetration Testing</h3><p>We commission annual penetration tests from an independent, CREST-accredited security firm. Testing covers the web application, APIs, mobile applications and cloud infrastructure. All findings are triaged, remediated and re-tested within documented timelines. Executive summaries are available to customers on request.</p><h3>Data Residency</h3><p>By default, all data is hosted in UK-based data centers. EU and US data residency options are available for customers with jurisdictional requirements. Data never leaves the designated region without explicit written consent. All hosting providers are ISO 27001 certified and undergo annual SOC 2 Type II audits.</p><h3>Access Controls</h3><p>The platform enforces role-based access control (RBAC) with granular permissions for clinical staff, administrators and reporting users. Multi-factor authentication (MFA) is required for all accounts. Single sign-on (SSO) integration is available via SAML 2.0 and OpenID Connect. All access events are logged in a tamper-evident audit trail. IP whitelisting is available for API and administrative access.</p><h3>Incident Response</h3><p>Able Care operates a documented incident response plan covering detection, containment, eradication and recovery. Automated monitoring detects anomalous access patterns and potential breaches in real time. Confirmed incidents are escalated within 15 minutes of detection. Affected customers are notified within 72 hours in accordance with GDPR requirements, or within 60 days for HIPAA-covered incidents. Post-incident reviews are conducted within 5 working days, with root cause analysis and corrective actions documented and shared with affected parties.</p>"
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "Need more detail?",
+      "body": "Our security team can provide the full whitepaper, penetration test summaries and data processing agreements.",
+      "primaryCta": {
+        "label": "Download the Security Whitepaper",
+        "href": "/resources/security-whitepaper"
+      },
+      "secondaryCta": {
+        "label": "Request a Security Assessment",
+        "href": "/contact"
+      }
+    }
+  ],
+  "tags": [
+    "product",
+    "security",
+    "compliance"
+  ]
+}

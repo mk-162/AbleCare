@@ -1,0 +1,2728 @@
+fragment PagesParts on Pages {
+  __typename
+  blocks {
+    __typename
+    ... on PagesBlocksHero {
+      scheme
+      wave
+      waveFill
+      eyebrow
+      headline
+      subtitle
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+      backgroundImage
+      backgroundImageAlt
+      breadcrumb {
+        __typename
+        label
+        href
+      }
+    }
+    ... on PagesBlocksTrustBar {
+      items {
+        __typename
+        text
+        logo
+      }
+    }
+    ... on PagesBlocksStatsBar {
+      scheme
+      heading
+      stats {
+        __typename
+        value
+        label
+        sublabel
+      }
+    }
+    ... on PagesBlocksSegmentRouter {
+      scheme
+      heading
+      segments {
+        __typename
+        title
+        description
+        ctaText
+        link
+      }
+    }
+    ... on PagesBlocksSolutionCards {
+      scheme
+      heading
+      subheading
+      cards {
+        __typename
+        title
+        description
+        link
+        iconHint
+        image
+      }
+    }
+    ... on PagesBlocksProcessSteps {
+      scheme
+      heading
+      steps {
+        __typename
+        number
+        title
+        description
+      }
+      ctaText
+      ctaLink
+    }
+    ... on PagesBlocksMetricsBlock {
+      scheme
+      heading
+      metrics {
+        __typename
+        name
+        whatItMeasures
+        whyItMatters
+      }
+    }
+    ... on PagesBlocksFeatureComparison {
+      scheme
+      heading
+      tldr
+      col1Header
+      col2Header
+      rows {
+        __typename
+        feature
+        col1
+        col2
+      }
+    }
+    ... on PagesBlocksEvidenceBlock {
+      scheme
+      heading
+      pulledStat
+      pulledStatSource
+      citations {
+        __typename
+        title
+        authors
+        journal
+        year
+        finding
+        link
+      }
+    }
+    ... on PagesBlocksTestimonialCarousel {
+      scheme
+      wave
+      waveFill
+      heading
+      testimonials {
+        __typename
+        quote
+        name
+        role
+        organization
+        photo
+      }
+    }
+    ... on PagesBlocksCaseStudyCards {
+      scheme
+      heading
+      caseStudies {
+        __typename
+        title
+        metric
+        metricLabel
+        summary
+        sector
+        link
+        thumbnail
+      }
+    }
+    ... on PagesBlocksFaqAccordion {
+      scheme
+      heading
+      emitSchema
+      faqs {
+        __typename
+        question
+        answer
+      }
+    }
+    ... on PagesBlocksCtaBanner {
+      scheme
+      wave
+      waveFill
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on PagesBlocksCtaInline {
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on PagesBlocksImageFeature {
+      scheme
+      imagePosition
+      image
+      imageAlt
+      headline
+      description
+      bulletPoints {
+        __typename
+        text
+      }
+      ctaText
+      ctaLink
+    }
+    ... on PagesBlocksVideoSection {
+      heading
+      videoUrl
+      caption
+      thumbnail
+    }
+    ... on PagesBlocksTeamGrid {
+      heading
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+      }
+    }
+    ... on PagesBlocksTeamShowcase {
+      heading
+      subtitle
+      layout
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+        linkedin
+        tier
+      }
+    }
+    ... on PagesBlocksTrustCertBlock {
+      badges {
+        __typename
+        label
+        icon
+      }
+    }
+    ... on PagesBlocksAlertBanner {
+      type
+      text
+      ctaText
+      ctaLink
+    }
+    ... on PagesBlocksRichText {
+      scheme
+      heading
+      body
+    }
+    ... on PagesBlocksCurrentKnowledgeCard {
+      question
+      directAnswer
+      tldrBullets {
+        __typename
+        text
+      }
+      expandedAnswer
+      sources {
+        __typename
+        title
+        url
+        year
+      }
+      reviewedBy
+      lastReviewed
+    }
+    ... on PagesBlocksRelatedKnowledgeBase {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on PagesBlocksRelatedPages {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on PagesBlocksRoiCalculatorPromo {
+      scheme
+      eyebrow
+      heading
+      promoBody
+      ctaText
+      ctaLink
+    }
+    ... on PagesBlocksLeadMagnetPromo {
+      heading
+      promoBody
+      ctaText
+      ctaLink
+      coverImage
+    }
+    ... on PagesBlocksBreadcrumb {
+      items {
+        __typename
+        label
+        href
+      }
+    }
+    ... on PagesBlocksPartnerLogoCarousel {
+      heading
+      subheading
+      scheme
+      logos {
+        __typename
+        src
+        alt
+      }
+    }
+    ... on PagesBlocksContactForm {
+      heading
+      subtitle
+      salesEmail
+      supportEmail
+    }
+    ... on PagesBlocksSegmentCards {
+      scheme
+      heading
+      cards {
+        __typename
+        title
+        body
+        icon
+        link
+      }
+    }
+    ... on PagesBlocksValueProps {
+      scheme
+      heading
+      items {
+        __typename
+        title
+        body
+      }
+    }
+  }
+  title
+  description
+  url
+  keywords
+  primaryKeyword
+  h1
+  tags
+}
+
+fragment SolutionsParts on Solutions {
+  __typename
+  blocks {
+    __typename
+    ... on SolutionsBlocksHero {
+      scheme
+      wave
+      waveFill
+      eyebrow
+      headline
+      subtitle
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+      backgroundImage
+      backgroundImageAlt
+      breadcrumb {
+        __typename
+        label
+        href
+      }
+    }
+    ... on SolutionsBlocksTrustBar {
+      items {
+        __typename
+        text
+        logo
+      }
+    }
+    ... on SolutionsBlocksStatsBar {
+      scheme
+      heading
+      stats {
+        __typename
+        value
+        label
+        sublabel
+      }
+    }
+    ... on SolutionsBlocksSegmentRouter {
+      scheme
+      heading
+      segments {
+        __typename
+        title
+        description
+        ctaText
+        link
+      }
+    }
+    ... on SolutionsBlocksSolutionCards {
+      scheme
+      heading
+      subheading
+      cards {
+        __typename
+        title
+        description
+        link
+        iconHint
+        image
+      }
+    }
+    ... on SolutionsBlocksProcessSteps {
+      scheme
+      heading
+      steps {
+        __typename
+        number
+        title
+        description
+      }
+      ctaText
+      ctaLink
+    }
+    ... on SolutionsBlocksMetricsBlock {
+      scheme
+      heading
+      metrics {
+        __typename
+        name
+        whatItMeasures
+        whyItMatters
+      }
+    }
+    ... on SolutionsBlocksFeatureComparison {
+      scheme
+      heading
+      tldr
+      col1Header
+      col2Header
+      rows {
+        __typename
+        feature
+        col1
+        col2
+      }
+    }
+    ... on SolutionsBlocksEvidenceBlock {
+      scheme
+      heading
+      pulledStat
+      pulledStatSource
+      citations {
+        __typename
+        title
+        authors
+        journal
+        year
+        finding
+        link
+      }
+    }
+    ... on SolutionsBlocksTestimonialCarousel {
+      scheme
+      wave
+      waveFill
+      heading
+      testimonials {
+        __typename
+        quote
+        name
+        role
+        organization
+        photo
+      }
+    }
+    ... on SolutionsBlocksCaseStudyCards {
+      scheme
+      heading
+      caseStudies {
+        __typename
+        title
+        metric
+        metricLabel
+        summary
+        sector
+        link
+        thumbnail
+      }
+    }
+    ... on SolutionsBlocksFaqAccordion {
+      scheme
+      heading
+      emitSchema
+      faqs {
+        __typename
+        question
+        answer
+      }
+    }
+    ... on SolutionsBlocksCtaBanner {
+      scheme
+      wave
+      waveFill
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on SolutionsBlocksCtaInline {
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on SolutionsBlocksImageFeature {
+      scheme
+      imagePosition
+      image
+      imageAlt
+      headline
+      description
+      bulletPoints {
+        __typename
+        text
+      }
+      ctaText
+      ctaLink
+    }
+    ... on SolutionsBlocksVideoSection {
+      heading
+      videoUrl
+      caption
+      thumbnail
+    }
+    ... on SolutionsBlocksTeamGrid {
+      heading
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+      }
+    }
+    ... on SolutionsBlocksTeamShowcase {
+      heading
+      subtitle
+      layout
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+        linkedin
+        tier
+      }
+    }
+    ... on SolutionsBlocksTrustCertBlock {
+      badges {
+        __typename
+        label
+        icon
+      }
+    }
+    ... on SolutionsBlocksAlertBanner {
+      type
+      text
+      ctaText
+      ctaLink
+    }
+    ... on SolutionsBlocksRichText {
+      scheme
+      heading
+      body
+    }
+    ... on SolutionsBlocksCurrentKnowledgeCard {
+      question
+      directAnswer
+      tldrBullets {
+        __typename
+        text
+      }
+      expandedAnswer
+      sources {
+        __typename
+        title
+        url
+        year
+      }
+      reviewedBy
+      lastReviewed
+    }
+    ... on SolutionsBlocksRelatedKnowledgeBase {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on SolutionsBlocksRelatedPages {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on SolutionsBlocksRoiCalculatorPromo {
+      scheme
+      eyebrow
+      heading
+      promoBody
+      ctaText
+      ctaLink
+    }
+    ... on SolutionsBlocksLeadMagnetPromo {
+      heading
+      promoBody
+      ctaText
+      ctaLink
+      coverImage
+    }
+    ... on SolutionsBlocksBreadcrumb {
+      items {
+        __typename
+        label
+        href
+      }
+    }
+    ... on SolutionsBlocksPartnerLogoCarousel {
+      heading
+      subheading
+      scheme
+      logos {
+        __typename
+        src
+        alt
+      }
+    }
+    ... on SolutionsBlocksContactForm {
+      heading
+      subtitle
+      salesEmail
+      supportEmail
+    }
+    ... on SolutionsBlocksSegmentCards {
+      scheme
+      heading
+      cards {
+        __typename
+        title
+        body
+        icon
+        link
+      }
+    }
+    ... on SolutionsBlocksValueProps {
+      scheme
+      heading
+      items {
+        __typename
+        title
+        body
+      }
+    }
+  }
+  title
+  description
+  url
+  keywords
+  primaryKeyword
+  h1
+  tags
+}
+
+fragment SegmentsParts on Segments {
+  __typename
+  blocks {
+    __typename
+    ... on SegmentsBlocksHero {
+      scheme
+      wave
+      waveFill
+      eyebrow
+      headline
+      subtitle
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+      backgroundImage
+      backgroundImageAlt
+      breadcrumb {
+        __typename
+        label
+        href
+      }
+    }
+    ... on SegmentsBlocksTrustBar {
+      items {
+        __typename
+        text
+        logo
+      }
+    }
+    ... on SegmentsBlocksStatsBar {
+      scheme
+      heading
+      stats {
+        __typename
+        value
+        label
+        sublabel
+      }
+    }
+    ... on SegmentsBlocksSegmentRouter {
+      scheme
+      heading
+      segments {
+        __typename
+        title
+        description
+        ctaText
+        link
+      }
+    }
+    ... on SegmentsBlocksSolutionCards {
+      scheme
+      heading
+      subheading
+      cards {
+        __typename
+        title
+        description
+        link
+        iconHint
+        image
+      }
+    }
+    ... on SegmentsBlocksProcessSteps {
+      scheme
+      heading
+      steps {
+        __typename
+        number
+        title
+        description
+      }
+      ctaText
+      ctaLink
+    }
+    ... on SegmentsBlocksMetricsBlock {
+      scheme
+      heading
+      metrics {
+        __typename
+        name
+        whatItMeasures
+        whyItMatters
+      }
+    }
+    ... on SegmentsBlocksFeatureComparison {
+      scheme
+      heading
+      tldr
+      col1Header
+      col2Header
+      rows {
+        __typename
+        feature
+        col1
+        col2
+      }
+    }
+    ... on SegmentsBlocksEvidenceBlock {
+      scheme
+      heading
+      pulledStat
+      pulledStatSource
+      citations {
+        __typename
+        title
+        authors
+        journal
+        year
+        finding
+        link
+      }
+    }
+    ... on SegmentsBlocksTestimonialCarousel {
+      scheme
+      wave
+      waveFill
+      heading
+      testimonials {
+        __typename
+        quote
+        name
+        role
+        organization
+        photo
+      }
+    }
+    ... on SegmentsBlocksCaseStudyCards {
+      scheme
+      heading
+      caseStudies {
+        __typename
+        title
+        metric
+        metricLabel
+        summary
+        sector
+        link
+        thumbnail
+      }
+    }
+    ... on SegmentsBlocksFaqAccordion {
+      scheme
+      heading
+      emitSchema
+      faqs {
+        __typename
+        question
+        answer
+      }
+    }
+    ... on SegmentsBlocksCtaBanner {
+      scheme
+      wave
+      waveFill
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on SegmentsBlocksCtaInline {
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on SegmentsBlocksImageFeature {
+      scheme
+      imagePosition
+      image
+      imageAlt
+      headline
+      description
+      bulletPoints {
+        __typename
+        text
+      }
+      ctaText
+      ctaLink
+    }
+    ... on SegmentsBlocksVideoSection {
+      heading
+      videoUrl
+      caption
+      thumbnail
+    }
+    ... on SegmentsBlocksTeamGrid {
+      heading
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+      }
+    }
+    ... on SegmentsBlocksTeamShowcase {
+      heading
+      subtitle
+      layout
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+        linkedin
+        tier
+      }
+    }
+    ... on SegmentsBlocksTrustCertBlock {
+      badges {
+        __typename
+        label
+        icon
+      }
+    }
+    ... on SegmentsBlocksAlertBanner {
+      type
+      text
+      ctaText
+      ctaLink
+    }
+    ... on SegmentsBlocksRichText {
+      scheme
+      heading
+      body
+    }
+    ... on SegmentsBlocksCurrentKnowledgeCard {
+      question
+      directAnswer
+      tldrBullets {
+        __typename
+        text
+      }
+      expandedAnswer
+      sources {
+        __typename
+        title
+        url
+        year
+      }
+      reviewedBy
+      lastReviewed
+    }
+    ... on SegmentsBlocksRelatedKnowledgeBase {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on SegmentsBlocksRelatedPages {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on SegmentsBlocksRoiCalculatorPromo {
+      scheme
+      eyebrow
+      heading
+      promoBody
+      ctaText
+      ctaLink
+    }
+    ... on SegmentsBlocksLeadMagnetPromo {
+      heading
+      promoBody
+      ctaText
+      ctaLink
+      coverImage
+    }
+    ... on SegmentsBlocksBreadcrumb {
+      items {
+        __typename
+        label
+        href
+      }
+    }
+    ... on SegmentsBlocksPartnerLogoCarousel {
+      heading
+      subheading
+      scheme
+      logos {
+        __typename
+        src
+        alt
+      }
+    }
+    ... on SegmentsBlocksContactForm {
+      heading
+      subtitle
+      salesEmail
+      supportEmail
+    }
+    ... on SegmentsBlocksSegmentCards {
+      scheme
+      heading
+      cards {
+        __typename
+        title
+        body
+        icon
+        link
+      }
+    }
+    ... on SegmentsBlocksValueProps {
+      scheme
+      heading
+      items {
+        __typename
+        title
+        body
+      }
+    }
+  }
+  title
+  description
+  url
+  keywords
+  primaryKeyword
+  h1
+  tags
+}
+
+fragment CompareParts on Compare {
+  __typename
+  blocks {
+    __typename
+    ... on CompareBlocksHero {
+      scheme
+      wave
+      waveFill
+      eyebrow
+      headline
+      subtitle
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+      backgroundImage
+      backgroundImageAlt
+      breadcrumb {
+        __typename
+        label
+        href
+      }
+    }
+    ... on CompareBlocksTrustBar {
+      items {
+        __typename
+        text
+        logo
+      }
+    }
+    ... on CompareBlocksStatsBar {
+      scheme
+      heading
+      stats {
+        __typename
+        value
+        label
+        sublabel
+      }
+    }
+    ... on CompareBlocksSegmentRouter {
+      scheme
+      heading
+      segments {
+        __typename
+        title
+        description
+        ctaText
+        link
+      }
+    }
+    ... on CompareBlocksSolutionCards {
+      scheme
+      heading
+      subheading
+      cards {
+        __typename
+        title
+        description
+        link
+        iconHint
+        image
+      }
+    }
+    ... on CompareBlocksProcessSteps {
+      scheme
+      heading
+      steps {
+        __typename
+        number
+        title
+        description
+      }
+      ctaText
+      ctaLink
+    }
+    ... on CompareBlocksMetricsBlock {
+      scheme
+      heading
+      metrics {
+        __typename
+        name
+        whatItMeasures
+        whyItMatters
+      }
+    }
+    ... on CompareBlocksFeatureComparison {
+      scheme
+      heading
+      tldr
+      col1Header
+      col2Header
+      rows {
+        __typename
+        feature
+        col1
+        col2
+      }
+    }
+    ... on CompareBlocksEvidenceBlock {
+      scheme
+      heading
+      pulledStat
+      pulledStatSource
+      citations {
+        __typename
+        title
+        authors
+        journal
+        year
+        finding
+        link
+      }
+    }
+    ... on CompareBlocksTestimonialCarousel {
+      scheme
+      wave
+      waveFill
+      heading
+      testimonials {
+        __typename
+        quote
+        name
+        role
+        organization
+        photo
+      }
+    }
+    ... on CompareBlocksCaseStudyCards {
+      scheme
+      heading
+      caseStudies {
+        __typename
+        title
+        metric
+        metricLabel
+        summary
+        sector
+        link
+        thumbnail
+      }
+    }
+    ... on CompareBlocksFaqAccordion {
+      scheme
+      heading
+      emitSchema
+      faqs {
+        __typename
+        question
+        answer
+      }
+    }
+    ... on CompareBlocksCtaBanner {
+      scheme
+      wave
+      waveFill
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on CompareBlocksCtaInline {
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on CompareBlocksImageFeature {
+      scheme
+      imagePosition
+      image
+      imageAlt
+      headline
+      description
+      bulletPoints {
+        __typename
+        text
+      }
+      ctaText
+      ctaLink
+    }
+    ... on CompareBlocksVideoSection {
+      heading
+      videoUrl
+      caption
+      thumbnail
+    }
+    ... on CompareBlocksTeamGrid {
+      heading
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+      }
+    }
+    ... on CompareBlocksTeamShowcase {
+      heading
+      subtitle
+      layout
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+        linkedin
+        tier
+      }
+    }
+    ... on CompareBlocksTrustCertBlock {
+      badges {
+        __typename
+        label
+        icon
+      }
+    }
+    ... on CompareBlocksAlertBanner {
+      type
+      text
+      ctaText
+      ctaLink
+    }
+    ... on CompareBlocksRichText {
+      scheme
+      heading
+      body
+    }
+    ... on CompareBlocksCurrentKnowledgeCard {
+      question
+      directAnswer
+      tldrBullets {
+        __typename
+        text
+      }
+      expandedAnswer
+      sources {
+        __typename
+        title
+        url
+        year
+      }
+      reviewedBy
+      lastReviewed
+    }
+    ... on CompareBlocksRelatedKnowledgeBase {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on CompareBlocksRelatedPages {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on CompareBlocksRoiCalculatorPromo {
+      scheme
+      eyebrow
+      heading
+      promoBody
+      ctaText
+      ctaLink
+    }
+    ... on CompareBlocksLeadMagnetPromo {
+      heading
+      promoBody
+      ctaText
+      ctaLink
+      coverImage
+    }
+    ... on CompareBlocksBreadcrumb {
+      items {
+        __typename
+        label
+        href
+      }
+    }
+    ... on CompareBlocksPartnerLogoCarousel {
+      heading
+      subheading
+      scheme
+      logos {
+        __typename
+        src
+        alt
+      }
+    }
+    ... on CompareBlocksContactForm {
+      heading
+      subtitle
+      salesEmail
+      supportEmail
+    }
+    ... on CompareBlocksSegmentCards {
+      scheme
+      heading
+      cards {
+        __typename
+        title
+        body
+        icon
+        link
+      }
+    }
+    ... on CompareBlocksValueProps {
+      scheme
+      heading
+      items {
+        __typename
+        title
+        body
+      }
+    }
+  }
+  title
+  description
+  url
+  keywords
+  primaryKeyword
+  h1
+  tags
+}
+
+fragment LearnParts on Learn {
+  __typename
+  title
+  excerpt
+  content
+  category
+  tags
+  author
+  authorRole
+  reviewer
+  publishedDate
+  readTime
+  image
+  featured
+  description
+  primaryKeyword
+  keywords
+  blocks {
+    __typename
+    ... on LearnBlocksHero {
+      scheme
+      wave
+      waveFill
+      eyebrow
+      headline
+      subtitle
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+      backgroundImage
+      backgroundImageAlt
+      breadcrumb {
+        __typename
+        label
+        href
+      }
+    }
+    ... on LearnBlocksTrustBar {
+      items {
+        __typename
+        text
+        logo
+      }
+    }
+    ... on LearnBlocksStatsBar {
+      scheme
+      heading
+      stats {
+        __typename
+        value
+        label
+        sublabel
+      }
+    }
+    ... on LearnBlocksSegmentRouter {
+      scheme
+      heading
+      segments {
+        __typename
+        title
+        description
+        ctaText
+        link
+      }
+    }
+    ... on LearnBlocksSolutionCards {
+      scheme
+      heading
+      subheading
+      cards {
+        __typename
+        title
+        description
+        link
+        iconHint
+        image
+      }
+    }
+    ... on LearnBlocksProcessSteps {
+      scheme
+      heading
+      steps {
+        __typename
+        number
+        title
+        description
+      }
+      ctaText
+      ctaLink
+    }
+    ... on LearnBlocksMetricsBlock {
+      scheme
+      heading
+      metrics {
+        __typename
+        name
+        whatItMeasures
+        whyItMatters
+      }
+    }
+    ... on LearnBlocksFeatureComparison {
+      scheme
+      heading
+      tldr
+      col1Header
+      col2Header
+      rows {
+        __typename
+        feature
+        col1
+        col2
+      }
+    }
+    ... on LearnBlocksEvidenceBlock {
+      scheme
+      heading
+      pulledStat
+      pulledStatSource
+      citations {
+        __typename
+        title
+        authors
+        journal
+        year
+        finding
+        link
+      }
+    }
+    ... on LearnBlocksTestimonialCarousel {
+      scheme
+      wave
+      waveFill
+      heading
+      testimonials {
+        __typename
+        quote
+        name
+        role
+        organization
+        photo
+      }
+    }
+    ... on LearnBlocksCaseStudyCards {
+      scheme
+      heading
+      caseStudies {
+        __typename
+        title
+        metric
+        metricLabel
+        summary
+        sector
+        link
+        thumbnail
+      }
+    }
+    ... on LearnBlocksFaqAccordion {
+      scheme
+      heading
+      emitSchema
+      faqs {
+        __typename
+        question
+        answer
+      }
+    }
+    ... on LearnBlocksCtaBanner {
+      scheme
+      wave
+      waveFill
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on LearnBlocksCtaInline {
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on LearnBlocksImageFeature {
+      scheme
+      imagePosition
+      image
+      imageAlt
+      headline
+      description
+      bulletPoints {
+        __typename
+        text
+      }
+      ctaText
+      ctaLink
+    }
+    ... on LearnBlocksVideoSection {
+      heading
+      videoUrl
+      caption
+      thumbnail
+    }
+    ... on LearnBlocksTeamGrid {
+      heading
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+      }
+    }
+    ... on LearnBlocksTeamShowcase {
+      heading
+      subtitle
+      layout
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+        linkedin
+        tier
+      }
+    }
+    ... on LearnBlocksTrustCertBlock {
+      badges {
+        __typename
+        label
+        icon
+      }
+    }
+    ... on LearnBlocksAlertBanner {
+      type
+      text
+      ctaText
+      ctaLink
+    }
+    ... on LearnBlocksRichText {
+      scheme
+      heading
+      body
+    }
+    ... on LearnBlocksCurrentKnowledgeCard {
+      question
+      directAnswer
+      tldrBullets {
+        __typename
+        text
+      }
+      expandedAnswer
+      sources {
+        __typename
+        title
+        url
+        year
+      }
+      reviewedBy
+      lastReviewed
+    }
+    ... on LearnBlocksRelatedKnowledgeBase {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on LearnBlocksRelatedPages {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on LearnBlocksRoiCalculatorPromo {
+      scheme
+      eyebrow
+      heading
+      promoBody
+      ctaText
+      ctaLink
+    }
+    ... on LearnBlocksLeadMagnetPromo {
+      heading
+      promoBody
+      ctaText
+      ctaLink
+      coverImage
+    }
+    ... on LearnBlocksBreadcrumb {
+      items {
+        __typename
+        label
+        href
+      }
+    }
+    ... on LearnBlocksPartnerLogoCarousel {
+      heading
+      subheading
+      scheme
+      logos {
+        __typename
+        src
+        alt
+      }
+    }
+    ... on LearnBlocksContactForm {
+      heading
+      subtitle
+      salesEmail
+      supportEmail
+    }
+    ... on LearnBlocksSegmentCards {
+      scheme
+      heading
+      cards {
+        __typename
+        title
+        body
+        icon
+        link
+      }
+    }
+    ... on LearnBlocksValueProps {
+      scheme
+      heading
+      items {
+        __typename
+        title
+        body
+      }
+    }
+  }
+}
+
+fragment ResourcesParts on Resources {
+  __typename
+  blocks {
+    __typename
+    ... on ResourcesBlocksHero {
+      scheme
+      wave
+      waveFill
+      eyebrow
+      headline
+      subtitle
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+      backgroundImage
+      backgroundImageAlt
+      breadcrumb {
+        __typename
+        label
+        href
+      }
+    }
+    ... on ResourcesBlocksTrustBar {
+      items {
+        __typename
+        text
+        logo
+      }
+    }
+    ... on ResourcesBlocksStatsBar {
+      scheme
+      heading
+      stats {
+        __typename
+        value
+        label
+        sublabel
+      }
+    }
+    ... on ResourcesBlocksSegmentRouter {
+      scheme
+      heading
+      segments {
+        __typename
+        title
+        description
+        ctaText
+        link
+      }
+    }
+    ... on ResourcesBlocksSolutionCards {
+      scheme
+      heading
+      subheading
+      cards {
+        __typename
+        title
+        description
+        link
+        iconHint
+        image
+      }
+    }
+    ... on ResourcesBlocksProcessSteps {
+      scheme
+      heading
+      steps {
+        __typename
+        number
+        title
+        description
+      }
+      ctaText
+      ctaLink
+    }
+    ... on ResourcesBlocksMetricsBlock {
+      scheme
+      heading
+      metrics {
+        __typename
+        name
+        whatItMeasures
+        whyItMatters
+      }
+    }
+    ... on ResourcesBlocksFeatureComparison {
+      scheme
+      heading
+      tldr
+      col1Header
+      col2Header
+      rows {
+        __typename
+        feature
+        col1
+        col2
+      }
+    }
+    ... on ResourcesBlocksEvidenceBlock {
+      scheme
+      heading
+      pulledStat
+      pulledStatSource
+      citations {
+        __typename
+        title
+        authors
+        journal
+        year
+        finding
+        link
+      }
+    }
+    ... on ResourcesBlocksTestimonialCarousel {
+      scheme
+      wave
+      waveFill
+      heading
+      testimonials {
+        __typename
+        quote
+        name
+        role
+        organization
+        photo
+      }
+    }
+    ... on ResourcesBlocksCaseStudyCards {
+      scheme
+      heading
+      caseStudies {
+        __typename
+        title
+        metric
+        metricLabel
+        summary
+        sector
+        link
+        thumbnail
+      }
+    }
+    ... on ResourcesBlocksFaqAccordion {
+      scheme
+      heading
+      emitSchema
+      faqs {
+        __typename
+        question
+        answer
+      }
+    }
+    ... on ResourcesBlocksCtaBanner {
+      scheme
+      wave
+      waveFill
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on ResourcesBlocksCtaInline {
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on ResourcesBlocksImageFeature {
+      scheme
+      imagePosition
+      image
+      imageAlt
+      headline
+      description
+      bulletPoints {
+        __typename
+        text
+      }
+      ctaText
+      ctaLink
+    }
+    ... on ResourcesBlocksVideoSection {
+      heading
+      videoUrl
+      caption
+      thumbnail
+    }
+    ... on ResourcesBlocksTeamGrid {
+      heading
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+      }
+    }
+    ... on ResourcesBlocksTeamShowcase {
+      heading
+      subtitle
+      layout
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+        linkedin
+        tier
+      }
+    }
+    ... on ResourcesBlocksTrustCertBlock {
+      badges {
+        __typename
+        label
+        icon
+      }
+    }
+    ... on ResourcesBlocksAlertBanner {
+      type
+      text
+      ctaText
+      ctaLink
+    }
+    ... on ResourcesBlocksRichText {
+      scheme
+      heading
+      body
+    }
+    ... on ResourcesBlocksCurrentKnowledgeCard {
+      question
+      directAnswer
+      tldrBullets {
+        __typename
+        text
+      }
+      expandedAnswer
+      sources {
+        __typename
+        title
+        url
+        year
+      }
+      reviewedBy
+      lastReviewed
+    }
+    ... on ResourcesBlocksRelatedKnowledgeBase {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on ResourcesBlocksRelatedPages {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on ResourcesBlocksRoiCalculatorPromo {
+      scheme
+      eyebrow
+      heading
+      promoBody
+      ctaText
+      ctaLink
+    }
+    ... on ResourcesBlocksLeadMagnetPromo {
+      heading
+      promoBody
+      ctaText
+      ctaLink
+      coverImage
+    }
+    ... on ResourcesBlocksBreadcrumb {
+      items {
+        __typename
+        label
+        href
+      }
+    }
+    ... on ResourcesBlocksPartnerLogoCarousel {
+      heading
+      subheading
+      scheme
+      logos {
+        __typename
+        src
+        alt
+      }
+    }
+    ... on ResourcesBlocksContactForm {
+      heading
+      subtitle
+      salesEmail
+      supportEmail
+    }
+    ... on ResourcesBlocksSegmentCards {
+      scheme
+      heading
+      cards {
+        __typename
+        title
+        body
+        icon
+        link
+      }
+    }
+    ... on ResourcesBlocksValueProps {
+      scheme
+      heading
+      items {
+        __typename
+        title
+        body
+      }
+    }
+  }
+  title
+  description
+  url
+  keywords
+  primaryKeyword
+  h1
+  tags
+}
+
+fragment CompanyParts on Company {
+  __typename
+  blocks {
+    __typename
+    ... on CompanyBlocksHero {
+      scheme
+      wave
+      waveFill
+      eyebrow
+      headline
+      subtitle
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+      backgroundImage
+      backgroundImageAlt
+      breadcrumb {
+        __typename
+        label
+        href
+      }
+    }
+    ... on CompanyBlocksTrustBar {
+      items {
+        __typename
+        text
+        logo
+      }
+    }
+    ... on CompanyBlocksStatsBar {
+      scheme
+      heading
+      stats {
+        __typename
+        value
+        label
+        sublabel
+      }
+    }
+    ... on CompanyBlocksSegmentRouter {
+      scheme
+      heading
+      segments {
+        __typename
+        title
+        description
+        ctaText
+        link
+      }
+    }
+    ... on CompanyBlocksSolutionCards {
+      scheme
+      heading
+      subheading
+      cards {
+        __typename
+        title
+        description
+        link
+        iconHint
+        image
+      }
+    }
+    ... on CompanyBlocksProcessSteps {
+      scheme
+      heading
+      steps {
+        __typename
+        number
+        title
+        description
+      }
+      ctaText
+      ctaLink
+    }
+    ... on CompanyBlocksMetricsBlock {
+      scheme
+      heading
+      metrics {
+        __typename
+        name
+        whatItMeasures
+        whyItMatters
+      }
+    }
+    ... on CompanyBlocksFeatureComparison {
+      scheme
+      heading
+      tldr
+      col1Header
+      col2Header
+      rows {
+        __typename
+        feature
+        col1
+        col2
+      }
+    }
+    ... on CompanyBlocksEvidenceBlock {
+      scheme
+      heading
+      pulledStat
+      pulledStatSource
+      citations {
+        __typename
+        title
+        authors
+        journal
+        year
+        finding
+        link
+      }
+    }
+    ... on CompanyBlocksTestimonialCarousel {
+      scheme
+      wave
+      waveFill
+      heading
+      testimonials {
+        __typename
+        quote
+        name
+        role
+        organization
+        photo
+      }
+    }
+    ... on CompanyBlocksCaseStudyCards {
+      scheme
+      heading
+      caseStudies {
+        __typename
+        title
+        metric
+        metricLabel
+        summary
+        sector
+        link
+        thumbnail
+      }
+    }
+    ... on CompanyBlocksFaqAccordion {
+      scheme
+      heading
+      emitSchema
+      faqs {
+        __typename
+        question
+        answer
+      }
+    }
+    ... on CompanyBlocksCtaBanner {
+      scheme
+      wave
+      waveFill
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on CompanyBlocksCtaInline {
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on CompanyBlocksImageFeature {
+      scheme
+      imagePosition
+      image
+      imageAlt
+      headline
+      description
+      bulletPoints {
+        __typename
+        text
+      }
+      ctaText
+      ctaLink
+    }
+    ... on CompanyBlocksVideoSection {
+      heading
+      videoUrl
+      caption
+      thumbnail
+    }
+    ... on CompanyBlocksTeamGrid {
+      heading
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+      }
+    }
+    ... on CompanyBlocksTeamShowcase {
+      heading
+      subtitle
+      layout
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+        linkedin
+        tier
+      }
+    }
+    ... on CompanyBlocksTrustCertBlock {
+      badges {
+        __typename
+        label
+        icon
+      }
+    }
+    ... on CompanyBlocksAlertBanner {
+      type
+      text
+      ctaText
+      ctaLink
+    }
+    ... on CompanyBlocksRichText {
+      scheme
+      heading
+      body
+    }
+    ... on CompanyBlocksCurrentKnowledgeCard {
+      question
+      directAnswer
+      tldrBullets {
+        __typename
+        text
+      }
+      expandedAnswer
+      sources {
+        __typename
+        title
+        url
+        year
+      }
+      reviewedBy
+      lastReviewed
+    }
+    ... on CompanyBlocksRelatedKnowledgeBase {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on CompanyBlocksRelatedPages {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on CompanyBlocksRoiCalculatorPromo {
+      scheme
+      eyebrow
+      heading
+      promoBody
+      ctaText
+      ctaLink
+    }
+    ... on CompanyBlocksLeadMagnetPromo {
+      heading
+      promoBody
+      ctaText
+      ctaLink
+      coverImage
+    }
+    ... on CompanyBlocksBreadcrumb {
+      items {
+        __typename
+        label
+        href
+      }
+    }
+    ... on CompanyBlocksPartnerLogoCarousel {
+      heading
+      subheading
+      scheme
+      logos {
+        __typename
+        src
+        alt
+      }
+    }
+    ... on CompanyBlocksContactForm {
+      heading
+      subtitle
+      salesEmail
+      supportEmail
+    }
+    ... on CompanyBlocksSegmentCards {
+      scheme
+      heading
+      cards {
+        __typename
+        title
+        body
+        icon
+        link
+      }
+    }
+    ... on CompanyBlocksValueProps {
+      scheme
+      heading
+      items {
+        __typename
+        title
+        body
+      }
+    }
+  }
+  title
+  description
+  url
+  keywords
+  primaryKeyword
+  h1
+  tags
+}
+
+fragment KnowledgeBaseParts on KnowledgeBase {
+  __typename
+  title
+  description
+  category
+  pillar
+  primaryKeyword
+  keywords
+  tags
+  author
+  authorRole
+  reviewer
+  reviewerRole
+  publishedDate
+  lastReviewed
+  readTime
+  image
+  imageAlt
+  schemaTypes
+  blocks {
+    __typename
+    ... on KnowledgeBaseBlocksHero {
+      scheme
+      wave
+      waveFill
+      eyebrow
+      headline
+      subtitle
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+      backgroundImage
+      backgroundImageAlt
+      breadcrumb {
+        __typename
+        label
+        href
+      }
+    }
+    ... on KnowledgeBaseBlocksTrustBar {
+      items {
+        __typename
+        text
+        logo
+      }
+    }
+    ... on KnowledgeBaseBlocksStatsBar {
+      scheme
+      heading
+      stats {
+        __typename
+        value
+        label
+        sublabel
+      }
+    }
+    ... on KnowledgeBaseBlocksSegmentRouter {
+      scheme
+      heading
+      segments {
+        __typename
+        title
+        description
+        ctaText
+        link
+      }
+    }
+    ... on KnowledgeBaseBlocksSolutionCards {
+      scheme
+      heading
+      subheading
+      cards {
+        __typename
+        title
+        description
+        link
+        iconHint
+        image
+      }
+    }
+    ... on KnowledgeBaseBlocksProcessSteps {
+      scheme
+      heading
+      steps {
+        __typename
+        number
+        title
+        description
+      }
+      ctaText
+      ctaLink
+    }
+    ... on KnowledgeBaseBlocksMetricsBlock {
+      scheme
+      heading
+      metrics {
+        __typename
+        name
+        whatItMeasures
+        whyItMatters
+      }
+    }
+    ... on KnowledgeBaseBlocksFeatureComparison {
+      scheme
+      heading
+      tldr
+      col1Header
+      col2Header
+      rows {
+        __typename
+        feature
+        col1
+        col2
+      }
+    }
+    ... on KnowledgeBaseBlocksEvidenceBlock {
+      scheme
+      heading
+      pulledStat
+      pulledStatSource
+      citations {
+        __typename
+        title
+        authors
+        journal
+        year
+        finding
+        link
+      }
+    }
+    ... on KnowledgeBaseBlocksTestimonialCarousel {
+      scheme
+      wave
+      waveFill
+      heading
+      testimonials {
+        __typename
+        quote
+        name
+        role
+        organization
+        photo
+      }
+    }
+    ... on KnowledgeBaseBlocksCaseStudyCards {
+      scheme
+      heading
+      caseStudies {
+        __typename
+        title
+        metric
+        metricLabel
+        summary
+        sector
+        link
+        thumbnail
+      }
+    }
+    ... on KnowledgeBaseBlocksFaqAccordion {
+      scheme
+      heading
+      emitSchema
+      faqs {
+        __typename
+        question
+        answer
+      }
+    }
+    ... on KnowledgeBaseBlocksCtaBanner {
+      scheme
+      wave
+      waveFill
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on KnowledgeBaseBlocksCtaInline {
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on KnowledgeBaseBlocksImageFeature {
+      scheme
+      imagePosition
+      image
+      imageAlt
+      headline
+      description
+      bulletPoints {
+        __typename
+        text
+      }
+      ctaText
+      ctaLink
+    }
+    ... on KnowledgeBaseBlocksVideoSection {
+      heading
+      videoUrl
+      caption
+      thumbnail
+    }
+    ... on KnowledgeBaseBlocksTeamGrid {
+      heading
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+      }
+    }
+    ... on KnowledgeBaseBlocksTeamShowcase {
+      heading
+      subtitle
+      layout
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+        linkedin
+        tier
+      }
+    }
+    ... on KnowledgeBaseBlocksTrustCertBlock {
+      badges {
+        __typename
+        label
+        icon
+      }
+    }
+    ... on KnowledgeBaseBlocksAlertBanner {
+      type
+      text
+      ctaText
+      ctaLink
+    }
+    ... on KnowledgeBaseBlocksRichText {
+      scheme
+      heading
+      body
+    }
+    ... on KnowledgeBaseBlocksCurrentKnowledgeCard {
+      question
+      directAnswer
+      tldrBullets {
+        __typename
+        text
+      }
+      expandedAnswer
+      sources {
+        __typename
+        title
+        url
+        year
+      }
+      reviewedBy
+      lastReviewed
+    }
+    ... on KnowledgeBaseBlocksRelatedKnowledgeBase {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on KnowledgeBaseBlocksRelatedPages {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on KnowledgeBaseBlocksRoiCalculatorPromo {
+      scheme
+      eyebrow
+      heading
+      promoBody
+      ctaText
+      ctaLink
+    }
+    ... on KnowledgeBaseBlocksLeadMagnetPromo {
+      heading
+      promoBody
+      ctaText
+      ctaLink
+      coverImage
+    }
+    ... on KnowledgeBaseBlocksBreadcrumb {
+      items {
+        __typename
+        label
+        href
+      }
+    }
+    ... on KnowledgeBaseBlocksPartnerLogoCarousel {
+      heading
+      subheading
+      scheme
+      logos {
+        __typename
+        src
+        alt
+      }
+    }
+    ... on KnowledgeBaseBlocksContactForm {
+      heading
+      subtitle
+      salesEmail
+      supportEmail
+    }
+    ... on KnowledgeBaseBlocksSegmentCards {
+      scheme
+      heading
+      cards {
+        __typename
+        title
+        body
+        icon
+        link
+      }
+    }
+    ... on KnowledgeBaseBlocksValueProps {
+      scheme
+      heading
+      items {
+        __typename
+        title
+        body
+      }
+    }
+  }
+}
+
+fragment UtilityParts on Utility {
+  __typename
+  title
+  description
+  body
+  keywords
+}
+
+fragment GlobalParts on Global {
+  __typename
+  site {
+    __typename
+    name
+    tagline
+    logo
+    phone
+    email
+    canonicalDomain
+  }
+  social {
+    __typename
+    linkedin
+    twitter
+    instagram
+  }
+}
+
+fragment NavigationParts on Navigation {
+  __typename
+  mainNav {
+    __typename
+    label
+    url
+    columns {
+      __typename
+      title
+      links {
+        __typename
+        label
+        url
+        description
+      }
+    }
+  }
+  footerNav {
+    __typename
+    title
+    links {
+      __typename
+      label
+      url
+    }
+  }
+}

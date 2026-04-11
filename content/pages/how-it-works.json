@@ -1,0 +1,116 @@
+{
+  "title": "How Able Assess Works",
+  "slug": "how-it-works",
+  "seo": {
+    "title": "How Able Assess Works | Step-by-Step | Able Care",
+    "description": "Step-by-step walkthrough. Unbox, train, screen, review, share. 5-minute screening process.",
+    "ogImage": "/images/og-how-it-works.png"
+  },
+  "tags": ["product", "how-it-works", "workflow"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Product", "href": "/product" },
+        { "label": "How It Works" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Product",
+      "headline": "Able Assess in five minutes.",
+      "subtitle": "From unboxing to sharing results, every step is designed for simplicity. No specialist training, no complex setup, no clinical background required.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "From unbox to results in five steps",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Unbox and Charge",
+          "description": "The sensor arrives ready to use. Download the Able Assess app, pair via Bluetooth and you are up and running in five minutes."
+        },
+        {
+          "number": 2,
+          "title": "Staff Training",
+          "description": "A 15-minute video or live session covers sensor positioning, the guided workflow and how to interpret results. No clinical certification needed."
+        },
+        {
+          "number": 3,
+          "title": "Run Your First Screening",
+          "description": "Select the person, hand them the sensor and follow the on-screen prompts. Grip strength and balance assessment completed in under five minutes."
+        },
+        {
+          "number": 4,
+          "title": "Review Results",
+          "description": "A real-time risk score categorises each person as low, moderate or high risk. Clinical recommendations are generated automatically. All results are auto-saved."
+        },
+        {
+          "number": 5,
+          "title": "Share with Families and Payers",
+          "description": "Send a secure link, export via FHIR, generate a PDF report or push to OASIS. All sharing is GDPR and HIPAA compliant. Recipients do not need an account."
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "Built for any care setting",
+      "body": "The sensor is portable, drop-proof and connects to any tablet. Whether you are screening in a clinic, a care home or a person's living room, the workflow stays the same. No bulky equipment, no calibration, no specialist environment.",
+      "imageSrc": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg",
+      "imageAlt": "Care worker and client using the GripAble sensor and tablet app together",
+      "imageSide": "right"
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Integration with falls prevention",
+      "body": "<p>Screening is the starting point, not the end. Able Assess results feed directly into multifactorial falls prevention programs. A high-risk score triggers referral pathways, care plan adjustments and targeted interventions.</p><p>Every screening creates a documented evidence trail. This supports regulatory compliance, satisfies payer requirements and gives families confidence that risk is being managed proactively.</p>"
+    },
+    {
+      "_template": "statsBar",
+      "colorScheme": "blue",
+      "stats": [
+        { "value": "5 min", "label": "per screening" },
+        { "value": "15 min", "label": "staff training" },
+        { "value": "1 min", "label": "to share results" },
+        { "value": "0", "label": "specialist training required" }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "light",
+      "heading": "Common questions about the workflow",
+      "items": [
+        {
+          "question": "What equipment do I need?",
+          "answer": "One GripAble sensor, one tablet and the Able Assess app. No specialized equipment or clinical infrastructure is required."
+        },
+        {
+          "question": "Can non-clinical staff run screenings?",
+          "answer": "Yes. Able Assess is designed for any staff member. The guided workflow handles positioning, timing and scoring automatically. Staff do not need to interpret results."
+        },
+        {
+          "question": "How are results shared with families?",
+          "answer": "Results can be shared via a secure link, FHIR export, PDF report or OASIS export. Recipients do not need to create an account to view the results."
+        },
+        {
+          "question": "Does it integrate with our EHR?",
+          "answer": "Able Assess supports FHIR R4, OASIS-E and HL7v2 integration standards. Visit the integrations page for full technical details."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "heading": "See Able Assess in your workflow",
+      "body": "30 minutes with the clinical team. We will walk through the full five-step process using your care setting as the example.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
+      "secondaryCta": { "label": "Watch the Walkthrough Video", "href": "/resources/walkthrough" }
+    }
+  ]
+}

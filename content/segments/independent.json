@@ -1,0 +1,179 @@
+{
+  "title": "Falls Screening for Independent Multi-Site Home Care",
+  "slug": "independent",
+  "seo": {
+    "title": "Falls Screening for Independent Multi-Site Home Care | Able Care",
+    "description": "Win more referrals with objective falls screening. Clinical credibility for independent multi-site home care agencies. Under five minutes, non-clinical staff.",
+    "ogImage": "/images/og-independent.png"
+  },
+  "tags": ["home-care", "independent", "referrals", "falls-prevention"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Home Care", "href": "/home-care" },
+        { "label": "Independent Multi-Site" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
+      "backgroundImageAlt": "Older woman using GripAble sensor at home during care visit",
+      "eyebrow": "Independent Multi-Site Home Care",
+      "headline": "Win more referrals with objective falls screening.",
+      "subtitle": "The differentiator for independent multi-site home care. Clinical credibility that shows up in every referral conversation. Non-clinical staff can run it in under five minutes.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+    },
+    {
+      "_template": "trustBar",
+      "items": [
+        { "text": "FDA Listed", "logo": "/images/badges/fda-trimmed.svg" },
+        { "text": "CE Marked", "logo": "/images/badges/ce-4.svg" },
+        { "text": "ISO 27001", "logo": "/images/badges/iso-31.svg" },
+        { "text": "HIPAA Aligned", "logo": "/images/badges/hipaa-trimmed.svg" },
+        { "text": "GDPR Compliant", "logo": "/images/badges/gdpr-trimmed-min.png" }
+      ]
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The referral problem for independent agencies",
+      "body": "<p>Referral sources choose providers they trust. When a hospital discharge planner or MCO case manager picks a home care agency, they look for evidence of clinical quality. Independent agencies often lack the brand recognition of national franchises, so every referral conversation demands proof.</p><p>Without objective screening data, your teams rely on relationships and reputation alone. That works until a competitor arrives with measurable outcomes. Able Assess gives your staff a five-minute, sensor-based screening that produces the same clinical-grade data used in peer-reviewed research. The result is a referral conversation built on evidence, not promises.</p>"
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "How it works for independent agencies",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Screen",
+          "description": "Run a standardized falls screening at intake. Four objective metrics captured in under five minutes by any staff member."
+        },
+        {
+          "number": 2,
+          "title": "Differentiate",
+          "description": "Share objective screening results with referral sources. Clinical-grade data sets you apart from agencies relying on subjective assessments."
+        },
+        {
+          "number": 3,
+          "title": "Retain",
+          "description": "Track each client longitudinally. Surface functional decline early and demonstrate proactive care to families and payers."
+        },
+        {
+          "number": 4,
+          "title": "Grow",
+          "description": "Use aggregated outcomes data to win new MCO contracts and hospital partnerships. Evidence of quality scales your referral pipeline."
+        }
+      ],
+      "primaryCta": { "label": "See the full Able Assess workflow", "href": "/solutions/able-assess" }
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Why it matters for referrals",
+      "metrics": [
+        {
+          "name": "Grip Strength",
+          "whatItMeasures": "Whole-body strength and physiological reserve",
+          "whyItMatters": "Predicts hospitalization risk. Gives discharge planners confidence in your clinical process."
+        },
+        {
+          "name": "Sit-to-Stand",
+          "whatItMeasures": "Lower limb strength and transfer ability",
+          "whyItMatters": "Identifies clients at risk of falls during daily activities. Demonstrates proactive screening to MCOs."
+        },
+        {
+          "name": "Gait Speed",
+          "whatItMeasures": "Mobility and walking ability",
+          "whyItMatters": "Flags mobility decline before a fall event. Objective trend data strengthens payer conversations."
+        },
+        {
+          "name": "Timed Up and Go",
+          "whatItMeasures": "Dynamic balance and functional mobility",
+          "whyItMatters": "Widely recognized fall risk indicator. Adds clinical weight to every referral report you share."
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "Clinical credibility without clinical overhead",
+      "body": "Your carers do not need clinical qualifications to run Able Assess. The sensor guides each step. Results are scored automatically against normative data. You get clinical-grade screening without hiring additional clinicians or increasing training budgets.",
+      "imageSrc": "/images/features/holding-hands-solid-bg-min.jpg",
+      "imageAlt": "Carer supporting client during a screening session",
+      "imageSide": "right",
+      "primaryCta": { "label": "See how it works", "href": "/solutions/able-assess" }
+    },
+    {
+      "_template": "roiCalculatorPromo",
+      "heading": "One new referral per quarter covers the cost",
+      "promoBody": "A single additional referral from a hospital or MCO typically covers the program cost. Model the numbers for your agency size.",
+      "ctaText": "Open the ROI Calculator",
+      "ctaHref": "/resources/roi-calculator"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "heading": "What independent operators say",
+      "testimonials": [
+        {
+          "quote": "We caught decline six weeks earlier than we would have with our old paper process. The data gave us something to show the family and the payer.",
+          "attribution": "Clinical Director, US home care agency"
+        },
+        {
+          "quote": "The screening data changed how referral sources see us. We went from being one option to being the preferred option.",
+          "attribution": "Owner, independent multi-site home care agency"
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "colorScheme": "blue",
+      "stats": [
+        { "value": "4", "label": "validated metrics" },
+        { "value": "<5 min", "label": "per screening" },
+        { "value": "15 min", "label": "staff training" },
+        { "value": "25%", "label": "average fall reduction" }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Questions from independent agencies",
+      "scheme": "light",
+      "items": [
+        {
+          "question": "We only have three to five locations. Is this built for agencies our size?",
+          "answer": "Yes. Able Assess scales from a single branch upward. Most independent agencies see value immediately because the referral differentiation applies regardless of network size."
+        },
+        {
+          "question": "How does this help us win MCO contracts?",
+          "answer": "MCOs prioritize providers who can demonstrate measurable outcomes. Able Assess gives you objective, longitudinal data on client function that you can present in contract discussions and quality reviews."
+        },
+        {
+          "question": "Our staff turnover is high. How do new hires get up to speed?",
+          "answer": "Staff are proficient in under 15 minutes. The sensor and app guide every step. No clinical background is required, which means new hires can screen clients on their first day."
+        },
+        {
+          "question": "Does a nurse need to oversee every screening?",
+          "answer": "No. The screening is designed for non-clinical staff. A nurse or clinical lead can review flagged results and set care planning protocols, but the screening itself requires no clinical oversight."
+        },
+        {
+          "question": "Can we share screening results with referral sources?",
+          "answer": "Yes. The portal produces summary reports suitable for sharing with hospitals, MCOs and families. The data format is consistent across all your locations."
+        },
+        {
+          "question": "What does it cost for a small agency?",
+          "answer": "Pricing scales with the number of locations and client volume. One prevented hospitalization or one new referral per quarter typically covers the program cost. The clinical team can walk you through the numbers during a demo."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "See Able Assess in an independent home care workflow",
+      "body": "30 minutes with the clinical team. Tailored to multi-site independent agencies. Focused on referral differentiation.",
+      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
+      "scheme": "blue"
+    }
+  ]
+}

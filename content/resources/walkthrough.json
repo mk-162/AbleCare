@@ -1,0 +1,95 @@
+{
+  "title": "Product Walkthrough",
+  "slug": "walkthrough",
+  "seo": {
+    "title": "Product Walkthrough | See Able Assess in Action | Able Care",
+    "description": "See Able Assess in action. Video walkthrough and step-by-step guide to the screening workflow.",
+    "ogImage": "/images/og-walkthrough.png"
+  },
+  "tags": ["resources", "walkthrough", "product", "video"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "Walkthrough" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "headline": "See Able Assess in action.",
+      "subtitle": "Watch the full screening workflow from sensor setup to results review. Under four minutes from unboxing to first screening.",
+      "primaryCta": { "label": "Book a Live Demo", "href": "/demo" }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Video walkthrough",
+      "body": "<p>Video embed will be added here. The full walkthrough covers the complete Able Assess experience in under four minutes.</p><ul><li>Sensor unboxing and charging (30 seconds)</li><li>Staff training overview (30 seconds)</li><li>Live screening demonstration (90 seconds)</li><li>Results review and interpretation (30 seconds)</li><li>Sharing results with care teams (30 seconds)</li></ul>"
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "Step-by-step walkthrough",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Unbox and Download App (5 minutes)",
+          "description": "The sensor and charger arrive in a single box. Charge the sensor, download the Able Assess app, and create your account."
+        },
+        {
+          "number": 2,
+          "title": "Watch Training Video (15 minutes)",
+          "description": "The training video covers sensor use, correct positioning for each assessment, and how to interpret results."
+        },
+        {
+          "number": 3,
+          "title": "Select Person and Run Screening (5 minutes)",
+          "description": "Open the app, select the person being screened, confirm consent, and guide them through the balance and strength movements."
+        },
+        {
+          "number": 4,
+          "title": "Results Appear Instantly (1 minute)",
+          "description": "The risk score, concerning measures, and personalized recommendations are available immediately after the screening is complete."
+        },
+        {
+          "number": 5,
+          "title": "Review and Share (2 minutes)",
+          "description": "Review results on the dashboard. Share via encrypted link, EHR integration, or printed report. All data is stored securely for longitudinal tracking."
+        }
+      ]
+    },
+    {
+      "_template": "valueProps",
+      "heading": "Key features",
+      "items": [
+        {
+          "title": "Real-Time Results",
+          "description": "Falls risk is assessed in the moment during screening. No waiting for lab results or external analysis."
+        },
+        {
+          "title": "Simple Interface",
+          "description": "Select a person, hand them the sensor, review results. No complex setup or specialist training required."
+        },
+        {
+          "title": "Portable and Reliable",
+          "description": "A small, lightweight sensor that works in any care setting. No specialized equipment or dedicated space needed."
+        },
+        {
+          "title": "Regulatory Ready",
+          "description": "Results are documented automatically and available for EHR export. Suitable for CQC, NICE, and HHVBP reporting."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "heading": "Ready to see it live?",
+      "body": "Book a live demonstration with our clinical team. We will walk you through the full workflow using your care setting as the context.",
+      "primaryCta": { "label": "Book a Live Demo", "href": "/demo" },
+      "secondaryCta": { "label": "Download Transcript", "href": "/resources/walkthrough-transcript" }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "title": "What Happens After a Falls Risk Assessment? Next Steps for Care Teams",
+  "description": "What happens after a falls risk assessment? Evidence-based next steps for care teams, from care plans to interventions.",
+  "blocks": [
+    {
+      "_template": "currentKnowledgeCard",
+      "question": "What do you do immediately after completing a falls risk assessment?",
+      "directAnswer": "Interpret risk level, categorise findings by domain (function, medication, medical, environment), and share results with the care team within 24 hours. This triggers specific interventions matching the resident's risk profile. Able Care recommends documenting next steps in the care plan within 48 hours.",
+      "tldrBullets": [
+        {
+          "text": "Risk level determines urgency. High-risk residents need immediate interventions."
+        },
+        {
+          "text": "Domain-specific findings guide targeted interventions, not generic 'fall prevention'."
+        },
+        {
+          "text": "Care plan should specify which team member owns each intervention."
+        }
+      ],
+      "expandedAnswer": "Assessment completion is the beginning, not the end. The results mean nothing unless they translate into action. Start by sharing findings with the multidisciplinary team: nursing, therapy, medicine, care staff, and family. Each discipline will have specific responsibilities.\n\nRisk stratification drives urgency. A low-risk resident might need annual reassessment and general safety promotion. A moderate-risk resident requires targeted interventions (exercise program, medication review, home modifications). A high-risk resident needs intensive, urgent action: possible hospitalization prevention, specialist referral, or care setting adjustment.\n\nAbel Assess generates a structured output listing domain-specific findings with evidence-based intervention options. This prevents generic 'fall prevention' and ensures individualized care planning. The care plan then becomes the reference document for all staff, ensuring consistency and accountability.",
+      "sources": [
+        {
+          "title": "NICE Guideline NG249: Falls prevention in older people",
+          "url": "https://www.nice.org.uk/guidance/ng249",
+          "year": "2025"
+        },
+        {
+          "title": "CDC STEADI Program: Stopping Elderly Accidents, Deaths and Injuries",
+          "url": "https://www.cdc.gov/steadi",
+          "year": "2024"
+        },
+        {
+          "title": "Otago Exercise Program: Evidence and Implementation",
+          "url": "https://www.acc.co.nz/about-us/what-we-do/injury-prevention/otago-exercise-program/",
+          "year": "2023"
+        }
+      ],
+      "reviewedBy": "Clinical review pending",
+      "lastReviewed": "2026-04-11"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Step 1: Interpret the assessment results</h2><p>Assessment results should be presented in plain language, not clinical jargon. Rather than \"impaired proprioception and vestibular dysfunction\", say: \"Balance confidence is reduced, particularly when changing position quickly.\" This language resonates with residents and families.</p><p>Risk stratification typically uses three levels. Low-risk residents have no falls history, maintain strength and balance, and have safe environments. They need general health promotion: regular movement, safe footwear, annual vision checks. Moderate-risk residents have one fall, mild balance issues, or some medication concerns. They require targeted interventions. High-risk residents have multiple falls, frailty indicators, or complex medical issues. They need immediate, intensive action.</p><p>Document the rationale for risk level. A high-risk score must be explained: \"High risk due to falls in past 6 months, on 7 psychoactive medications, and limited mobility.\" This clarity helps staff understand priorities.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Step 2: Build a domain-specific care plan</h2><p>The multidisciplinary team meets (or confers asynchronously) to assign responsibilities. Functional deficits require therapy: a physiotherapist designs strengthening and balance work. Medication concerns require a GP review: potentially inappropriate medications are identified and adjusted. Medical conditions might need specialist referral: cognitive impairment warrants neurology or memory service input. Environmental hazards require occupational therapy assessment and modifications.</p><p>Each intervention must have an owner. \"Someone will improve balance\" is vague. \"Sarah, physiotherapist, will deliver Otago exercises twice weekly, Monday and Thursday at 10am\" is clear. This specificity prevents work falling through cracks.</p><p>Set timescales. Urgent interventions (like unsafe medications) should begin within days. Others (like home modifications) might take weeks. Document expected completion dates and review points.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Step 3: Implement evidence-based interventions</h2><p>Exercise interventions are most effective. The Otago Exercise Program, designed for older adults, reduces fall incidence by 32% and fracture incidence by 33%, according to randomized controlled trials. Otago involves 30 minutes, 3 times weekly, combining leg strengthening and balance work. It's adaptable for different mobility levels.</p><p>Medication review can eliminate unnecessary fall risk. Psychoactive drugs (benzodiazepines, antidepressants, antipsychotics, opioids) increase fall risk two to five-fold. A GP audit might deprescribe or switch medications. Polypharmacy (5+ medications) itself is a risk factor; simplification improves safety and sometimes improves outcomes.</p><p>Home modifications address environmental hazards. Typical recommendations include improved lighting, handrails in bathrooms, removing tripping hazards (loose rugs, clutter), and ensuring safe footwear. Occupational therapists can assess home-specific risks.</p><p>Referrals might include vision care (cataracts increase fall risk), audiology (hearing loss affects balance proprioception), or specialist geriatric services for complex cases.</p>"
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Step 4: Monitor outcomes over time</h2><p>Effective care plans include monitoring points. Reassess at 8-12 weeks if interventions have been implemented. Have falls frequency decreased? Has mobility improved? Are residents more confident?</p><p>Falls should be recorded systematically. Document date, time, circumstances, injuries, and any change in function. Patterns emerge: most falls happen during specific activities (toileting, transfers), times (early morning, late evening), or locations (bathroom). These patterns inform targeted prevention.</p><p>Residents who don't improve might need intensified interventions or care setting change. Someone with ongoing high-risk falls despite maximum home interventions might need residential care. Document this progression transparently with the resident and family.</p><p>Annual reassessment is minimum. Earlier reassessment is needed after any incident: a fall, hospitalization, new medication, or change in function. Ability Care Assess tracks assessment history, flagging when reassessment is due and highlighting changes since the previous assessment.</p>"
+    },
+    {
+      "_template": "evidenceBlock",
+      "heading": "What the evidence says",
+      "stats": [
+        {
+          "stat": "Otago Exercise Program reduces fall incidence by 32% and fracture incidence by 33% in randomized trials",
+          "source": "Otago Program evidence synthesis, cited in CDC STEADI",
+          "url": "https://www.cdc.gov/steadi"
+        },
+        {
+          "stat": "Psychoactive medications increase fall risk by 2-5 times",
+          "source": "NICE NG249 medication safety evidence",
+          "url": "https://www.nice.org.uk/guidance/ng249"
+        },
+        {
+          "stat": "Multifactorial interventions (exercise, medication review, home modifications combined) reduce falls by up to 40% in community settings",
+          "source": "WHO World Falls Guidelines 2022",
+          "url": "https://www.who.int/publications/i/item/9789240026704"
+        }
+      ]
+    },
+    {
+      "_template": "richText",
+      "body": "<h2>Sample care plan template</h2><p><strong>Resident: Joan Smith | Risk Level: Moderate | Date: 11 April 2026</strong></p><p><strong>Functional intervention:</strong> Physiotherapy referral for Otago program. Sarah (PT) to deliver sessions Tuesday and Friday, 10:00am, 30 minutes. Review balance at 12 weeks. Owner: Sarah Kennedy, physiotherapist.</p><p><strong>Medication review:</strong> Current use of zopiclone (sleep aid) and sertraline (antidepressant) flagged for deprescribing discussion. GP to discuss with resident 20 April. Owner: Dr Patel.</p><p><strong>Environmental:</strong> Occupational therapist to assess bathroom safety. Install grab rails if needed. Review footwear suitability. Owner: Mike Thomas, OT.</p><p><strong>Monitoring:</strong> Falls log kept by care staff daily. Reassessment 22 June 2026 (12 weeks). Family informed and invited to participate in exercise sessions. This simple structure ensures everyone knows their role.</p>"
+    },
+    {
+      "_template": "faqAccordion",
+      "heading": "Frequently Asked Questions",
+      "emitSchema": true,
+      "items": [
+        {
+          "question": "How long should exercise interventions last?",
+          "answer": "The Otago Program runs 30 minutes, 3 times weekly indefinitely. Benefits decline if exercise stops. For residents unable to commit to ongoing exercise, shorter programs (2 times weekly) show some benefit but are less effective. Consistency matters more than intensity."
+        },
+        {
+          "question": "What if my care home doesn't have a physiotherapist?",
+          "answer": "Many homes contract physiotherapy from community health services or private providers. Alternatively, trained care staff can deliver Otago exercises under physiotherapist supervision. Community exercise classes (tai chi, balance classes) can supplement home-based programs."
+        },
+        {
+          "question": "Should all high-risk residents be referred to hospital?",
+          "answer": "No. Hospital admission itself increases fall risk through delirium, deconditioning, and environmental unfamiliarity. Manage high-risk residents in their current setting using intensive interventions. Refer only if home interventions are exhausted or if the resident has recurrent serious injuries."
+        },
+        {
+          "question": "How do we document falls accurately?",
+          "answer": "Record date, time, location, activity (what were they doing when they fell?), circumstances (tripped, slipped, collapsed?), injuries, and whether they sought medical attention. This detail reveals patterns. Analyze monthly: do falls cluster at night? During specific care tasks? Use this pattern data to refine interventions."
+        },
+        {
+          "question": "What if a resident refuses interventions?",
+          "answer": "Document refusal and the rationale. Respect autonomy. Continue offering interventions; some residents change their minds. Involve family and discuss risks transparently. For high-risk residents with capacity, a written risk acknowledgment may be appropriate."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Structure your care planning process",
+      "bodyText": "Able Assess generates domain-specific intervention recommendations and tracks implementation. Your team can collaborate on care plans, monitor outcomes, and reassess systematically.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "url": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Learn about Able Assess",
+        "url": "/solutions/able-assess"
+      },
+      "scheme": "blue"
+    }
+  ]
+}
