@@ -54,6 +54,7 @@ var trustBarBlock = {
     }
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     {
       type: "object",
       name: "items",
@@ -387,6 +388,7 @@ var ctaInlineBlock = {
     }
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string", name: "heading", label: "Heading" },
     { type: "string", name: "bodyText", label: "Body Text", ui: { component: "textarea" } },
     { type: "string", name: "primaryCtaText", label: "Primary CTA Text" },
@@ -432,6 +434,7 @@ var videoSectionBlock = {
     })
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string", name: "heading", label: "Heading" },
     { type: "string", name: "videoUrl", label: "Video URL (YouTube or embed)" },
     { type: "string", name: "caption", label: "Caption" },
@@ -447,6 +450,7 @@ var teamGridBlock = {
     })
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string", name: "heading", label: "Section Heading" },
     {
       type: "object",
@@ -473,6 +477,7 @@ var teamShowcaseBlock = {
     })
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string", name: "heading", label: "Section Heading" },
     { type: "string", name: "subtitle", label: "Subtitle" },
     {
@@ -511,6 +516,7 @@ var trustCertBlock = {
     itemProps: () => ({ label: "Trust & Certification Badges" })
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     {
       type: "object",
       name: "badges",
@@ -533,6 +539,7 @@ var alertBannerBlock = {
     })
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string", name: "type", label: "Type", options: ["info", "warning", "success"], ui: { defaultValue: "info" } },
     { type: "string", name: "text", label: "Text", required: true },
     { type: "string", name: "ctaText", label: "CTA Text" },
@@ -614,6 +621,7 @@ var currentKnowledgeCardBlock = {
     })
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string", name: "question", label: "Question (H1)", required: true },
     { type: "string", name: "directAnswer", label: "Direct Answer (40-60 words)", required: true, ui: { component: "textarea" } },
     {
@@ -680,6 +688,7 @@ var leadMagnetPromoBlock = {
     }
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string", name: "heading", label: "Heading" },
     { type: "string", name: "promoBody", label: "Body", ui: { component: "textarea" } },
     { type: "string", name: "ctaText", label: "CTA Text" },
@@ -698,7 +707,7 @@ var partnerLogoCarouselBlock = {
   fields: [
     { type: "string", name: "heading", label: "Heading" },
     { type: "string", name: "subheading", label: "Subheading" },
-    { type: "string", name: "scheme", label: "Colour Scheme", options: ["white", "grey", "blue"], ui: { defaultValue: "white" } },
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"], ui: { defaultValue: "light" } },
     {
       type: "object",
       name: "logos",
@@ -721,6 +730,7 @@ var contactFormBlock = {
     })
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string", name: "heading", label: "Heading" },
     { type: "string", name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
     { type: "string", name: "salesEmail", label: "Sales Email" },
@@ -784,6 +794,7 @@ var breadcrumbBlock = {
     itemProps: () => ({ label: "Breadcrumb" })
   },
   fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     {
       type: "object",
       name: "items",

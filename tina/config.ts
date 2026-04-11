@@ -62,6 +62,7 @@ const trustBarBlock = {
     },
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     {
       type: "object" as const,
       name: "items",
@@ -407,6 +408,7 @@ const ctaInlineBlock = {
     },
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string" as const, name: "heading", label: "Heading" },
     { type: "string" as const, name: "bodyText", label: "Body Text", ui: { component: "textarea" } },
     { type: "string" as const, name: "primaryCtaText", label: "Primary CTA Text" },
@@ -454,6 +456,7 @@ const videoSectionBlock = {
     }),
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string" as const, name: "heading", label: "Heading" },
     { type: "string" as const, name: "videoUrl", label: "Video URL (YouTube or embed)" },
     { type: "string" as const, name: "caption", label: "Caption" },
@@ -470,6 +473,7 @@ const teamGridBlock = {
     }),
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string" as const, name: "heading", label: "Section Heading" },
     {
       type: "object" as const,
@@ -497,6 +501,7 @@ const teamShowcaseBlock = {
     }),
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string" as const, name: "heading", label: "Section Heading" },
     { type: "string" as const, name: "subtitle", label: "Subtitle" },
     {
@@ -536,6 +541,7 @@ const trustCertBlock = {
     itemProps: () => ({ label: "Trust & Certification Badges" }),
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     {
       type: "object" as const,
       name: "badges",
@@ -559,6 +565,7 @@ const alertBannerBlock = {
     }),
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string" as const, name: "type", label: "Type", options: ["info", "warning", "success"], ui: { defaultValue: "info" } },
     { type: "string" as const, name: "text", label: "Text", required: true },
     { type: "string" as const, name: "ctaText", label: "CTA Text" },
@@ -644,6 +651,7 @@ const currentKnowledgeCardBlock = {
     }),
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string" as const, name: "question", label: "Question (H1)", required: true },
     { type: "string" as const, name: "directAnswer", label: "Direct Answer (40-60 words)", required: true, ui: { component: "textarea" } },
     {
@@ -712,6 +720,7 @@ const leadMagnetPromoBlock = {
     },
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string" as const, name: "heading", label: "Heading" },
     { type: "string" as const, name: "promoBody", label: "Body", ui: { component: "textarea" } },
     { type: "string" as const, name: "ctaText", label: "CTA Text" },
@@ -731,7 +740,7 @@ const partnerLogoCarouselBlock = {
   fields: [
     { type: "string" as const, name: "heading", label: "Heading" },
     { type: "string" as const, name: "subheading", label: "Subheading" },
-    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["white", "grey", "blue"], ui: { defaultValue: "white" } },
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"], ui: { defaultValue: "light" } },
     {
       type: "object" as const,
       name: "logos",
@@ -755,6 +764,7 @@ const contactFormBlock = {
     }),
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     { type: "string" as const, name: "heading", label: "Heading" },
     { type: "string" as const, name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
     { type: "string" as const, name: "salesEmail", label: "Sales Email" },
@@ -821,6 +831,7 @@ const breadcrumbBlock = {
     itemProps: () => ({ label: "Breadcrumb" }),
   },
   fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
     {
       type: "object" as const,
       name: "items",

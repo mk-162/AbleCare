@@ -22,6 +22,7 @@ fragment PagesParts on Pages {
       }
     }
     ... on PagesBlocksTrustBar {
+      scheme
       items {
         __typename
         text
@@ -162,6 +163,7 @@ fragment PagesParts on Pages {
       secondaryCtaLink
     }
     ... on PagesBlocksCtaInline {
+      scheme
       heading
       bodyText
       primaryCtaText
@@ -184,12 +186,14 @@ fragment PagesParts on Pages {
       ctaLink
     }
     ... on PagesBlocksVideoSection {
+      scheme
       heading
       videoUrl
       caption
       thumbnail
     }
     ... on PagesBlocksTeamGrid {
+      scheme
       heading
       team {
         __typename
@@ -201,6 +205,7 @@ fragment PagesParts on Pages {
       }
     }
     ... on PagesBlocksTeamShowcase {
+      scheme
       heading
       subtitle
       layout
@@ -216,6 +221,7 @@ fragment PagesParts on Pages {
       }
     }
     ... on PagesBlocksTrustCertBlock {
+      scheme
       badges {
         __typename
         label
@@ -223,6 +229,7 @@ fragment PagesParts on Pages {
       }
     }
     ... on PagesBlocksAlertBanner {
+      scheme
       type
       text
       ctaText
@@ -234,6 +241,7 @@ fragment PagesParts on Pages {
       body
     }
     ... on PagesBlocksCurrentKnowledgeCard {
+      scheme
       question
       directAnswer
       tldrBullets {
@@ -271,6 +279,7 @@ fragment PagesParts on Pages {
       ctaLink
     }
     ... on PagesBlocksLeadMagnetPromo {
+      scheme
       heading
       promoBody
       ctaText
@@ -278,6 +287,7 @@ fragment PagesParts on Pages {
       coverImage
     }
     ... on PagesBlocksBreadcrumb {
+      scheme
       items {
         __typename
         label
@@ -295,6 +305,7 @@ fragment PagesParts on Pages {
       }
     }
     ... on PagesBlocksContactForm {
+      scheme
       heading
       subtitle
       salesEmail
@@ -354,6 +365,7 @@ fragment SolutionsParts on Solutions {
       }
     }
     ... on SolutionsBlocksTrustBar {
+      scheme
       items {
         __typename
         text
@@ -494,6 +506,7 @@ fragment SolutionsParts on Solutions {
       secondaryCtaLink
     }
     ... on SolutionsBlocksCtaInline {
+      scheme
       heading
       bodyText
       primaryCtaText
@@ -516,12 +529,14 @@ fragment SolutionsParts on Solutions {
       ctaLink
     }
     ... on SolutionsBlocksVideoSection {
+      scheme
       heading
       videoUrl
       caption
       thumbnail
     }
     ... on SolutionsBlocksTeamGrid {
+      scheme
       heading
       team {
         __typename
@@ -533,6 +548,7 @@ fragment SolutionsParts on Solutions {
       }
     }
     ... on SolutionsBlocksTeamShowcase {
+      scheme
       heading
       subtitle
       layout
@@ -548,6 +564,7 @@ fragment SolutionsParts on Solutions {
       }
     }
     ... on SolutionsBlocksTrustCertBlock {
+      scheme
       badges {
         __typename
         label
@@ -555,6 +572,7 @@ fragment SolutionsParts on Solutions {
       }
     }
     ... on SolutionsBlocksAlertBanner {
+      scheme
       type
       text
       ctaText
@@ -566,6 +584,7 @@ fragment SolutionsParts on Solutions {
       body
     }
     ... on SolutionsBlocksCurrentKnowledgeCard {
+      scheme
       question
       directAnswer
       tldrBullets {
@@ -603,6 +622,7 @@ fragment SolutionsParts on Solutions {
       ctaLink
     }
     ... on SolutionsBlocksLeadMagnetPromo {
+      scheme
       heading
       promoBody
       ctaText
@@ -610,6 +630,7 @@ fragment SolutionsParts on Solutions {
       coverImage
     }
     ... on SolutionsBlocksBreadcrumb {
+      scheme
       items {
         __typename
         label
@@ -627,6 +648,7 @@ fragment SolutionsParts on Solutions {
       }
     }
     ... on SolutionsBlocksContactForm {
+      scheme
       heading
       subtitle
       salesEmail
@@ -686,6 +708,7 @@ fragment SegmentsParts on Segments {
       }
     }
     ... on SegmentsBlocksTrustBar {
+      scheme
       items {
         __typename
         text
@@ -826,6 +849,7 @@ fragment SegmentsParts on Segments {
       secondaryCtaLink
     }
     ... on SegmentsBlocksCtaInline {
+      scheme
       heading
       bodyText
       primaryCtaText
@@ -848,12 +872,14 @@ fragment SegmentsParts on Segments {
       ctaLink
     }
     ... on SegmentsBlocksVideoSection {
+      scheme
       heading
       videoUrl
       caption
       thumbnail
     }
     ... on SegmentsBlocksTeamGrid {
+      scheme
       heading
       team {
         __typename
@@ -865,6 +891,7 @@ fragment SegmentsParts on Segments {
       }
     }
     ... on SegmentsBlocksTeamShowcase {
+      scheme
       heading
       subtitle
       layout
@@ -880,6 +907,7 @@ fragment SegmentsParts on Segments {
       }
     }
     ... on SegmentsBlocksTrustCertBlock {
+      scheme
       badges {
         __typename
         label
@@ -887,6 +915,7 @@ fragment SegmentsParts on Segments {
       }
     }
     ... on SegmentsBlocksAlertBanner {
+      scheme
       type
       text
       ctaText
@@ -898,6 +927,7 @@ fragment SegmentsParts on Segments {
       body
     }
     ... on SegmentsBlocksCurrentKnowledgeCard {
+      scheme
       question
       directAnswer
       tldrBullets {
@@ -935,6 +965,7 @@ fragment SegmentsParts on Segments {
       ctaLink
     }
     ... on SegmentsBlocksLeadMagnetPromo {
+      scheme
       heading
       promoBody
       ctaText
@@ -942,6 +973,7 @@ fragment SegmentsParts on Segments {
       coverImage
     }
     ... on SegmentsBlocksBreadcrumb {
+      scheme
       items {
         __typename
         label
@@ -959,6 +991,7 @@ fragment SegmentsParts on Segments {
       }
     }
     ... on SegmentsBlocksContactForm {
+      scheme
       heading
       subtitle
       salesEmail
@@ -1018,6 +1051,7 @@ fragment CompareParts on Compare {
       }
     }
     ... on CompareBlocksTrustBar {
+      scheme
       items {
         __typename
         text
@@ -1158,6 +1192,7 @@ fragment CompareParts on Compare {
       secondaryCtaLink
     }
     ... on CompareBlocksCtaInline {
+      scheme
       heading
       bodyText
       primaryCtaText
@@ -1180,12 +1215,14 @@ fragment CompareParts on Compare {
       ctaLink
     }
     ... on CompareBlocksVideoSection {
+      scheme
       heading
       videoUrl
       caption
       thumbnail
     }
     ... on CompareBlocksTeamGrid {
+      scheme
       heading
       team {
         __typename
@@ -1197,6 +1234,7 @@ fragment CompareParts on Compare {
       }
     }
     ... on CompareBlocksTeamShowcase {
+      scheme
       heading
       subtitle
       layout
@@ -1212,6 +1250,7 @@ fragment CompareParts on Compare {
       }
     }
     ... on CompareBlocksTrustCertBlock {
+      scheme
       badges {
         __typename
         label
@@ -1219,6 +1258,7 @@ fragment CompareParts on Compare {
       }
     }
     ... on CompareBlocksAlertBanner {
+      scheme
       type
       text
       ctaText
@@ -1230,6 +1270,7 @@ fragment CompareParts on Compare {
       body
     }
     ... on CompareBlocksCurrentKnowledgeCard {
+      scheme
       question
       directAnswer
       tldrBullets {
@@ -1267,6 +1308,7 @@ fragment CompareParts on Compare {
       ctaLink
     }
     ... on CompareBlocksLeadMagnetPromo {
+      scheme
       heading
       promoBody
       ctaText
@@ -1274,6 +1316,7 @@ fragment CompareParts on Compare {
       coverImage
     }
     ... on CompareBlocksBreadcrumb {
+      scheme
       items {
         __typename
         label
@@ -1291,6 +1334,7 @@ fragment CompareParts on Compare {
       }
     }
     ... on CompareBlocksContactForm {
+      scheme
       heading
       subtitle
       salesEmail
@@ -1365,6 +1409,7 @@ fragment LearnParts on Learn {
       }
     }
     ... on LearnBlocksTrustBar {
+      scheme
       items {
         __typename
         text
@@ -1505,6 +1550,7 @@ fragment LearnParts on Learn {
       secondaryCtaLink
     }
     ... on LearnBlocksCtaInline {
+      scheme
       heading
       bodyText
       primaryCtaText
@@ -1527,12 +1573,14 @@ fragment LearnParts on Learn {
       ctaLink
     }
     ... on LearnBlocksVideoSection {
+      scheme
       heading
       videoUrl
       caption
       thumbnail
     }
     ... on LearnBlocksTeamGrid {
+      scheme
       heading
       team {
         __typename
@@ -1544,6 +1592,7 @@ fragment LearnParts on Learn {
       }
     }
     ... on LearnBlocksTeamShowcase {
+      scheme
       heading
       subtitle
       layout
@@ -1559,6 +1608,7 @@ fragment LearnParts on Learn {
       }
     }
     ... on LearnBlocksTrustCertBlock {
+      scheme
       badges {
         __typename
         label
@@ -1566,6 +1616,7 @@ fragment LearnParts on Learn {
       }
     }
     ... on LearnBlocksAlertBanner {
+      scheme
       type
       text
       ctaText
@@ -1577,6 +1628,7 @@ fragment LearnParts on Learn {
       body
     }
     ... on LearnBlocksCurrentKnowledgeCard {
+      scheme
       question
       directAnswer
       tldrBullets {
@@ -1614,6 +1666,7 @@ fragment LearnParts on Learn {
       ctaLink
     }
     ... on LearnBlocksLeadMagnetPromo {
+      scheme
       heading
       promoBody
       ctaText
@@ -1621,6 +1674,7 @@ fragment LearnParts on Learn {
       coverImage
     }
     ... on LearnBlocksBreadcrumb {
+      scheme
       items {
         __typename
         label
@@ -1638,6 +1692,7 @@ fragment LearnParts on Learn {
       }
     }
     ... on LearnBlocksContactForm {
+      scheme
       heading
       subtitle
       salesEmail
@@ -1690,6 +1745,7 @@ fragment ResourcesParts on Resources {
       }
     }
     ... on ResourcesBlocksTrustBar {
+      scheme
       items {
         __typename
         text
@@ -1830,6 +1886,7 @@ fragment ResourcesParts on Resources {
       secondaryCtaLink
     }
     ... on ResourcesBlocksCtaInline {
+      scheme
       heading
       bodyText
       primaryCtaText
@@ -1852,12 +1909,14 @@ fragment ResourcesParts on Resources {
       ctaLink
     }
     ... on ResourcesBlocksVideoSection {
+      scheme
       heading
       videoUrl
       caption
       thumbnail
     }
     ... on ResourcesBlocksTeamGrid {
+      scheme
       heading
       team {
         __typename
@@ -1869,6 +1928,7 @@ fragment ResourcesParts on Resources {
       }
     }
     ... on ResourcesBlocksTeamShowcase {
+      scheme
       heading
       subtitle
       layout
@@ -1884,6 +1944,7 @@ fragment ResourcesParts on Resources {
       }
     }
     ... on ResourcesBlocksTrustCertBlock {
+      scheme
       badges {
         __typename
         label
@@ -1891,6 +1952,7 @@ fragment ResourcesParts on Resources {
       }
     }
     ... on ResourcesBlocksAlertBanner {
+      scheme
       type
       text
       ctaText
@@ -1902,6 +1964,7 @@ fragment ResourcesParts on Resources {
       body
     }
     ... on ResourcesBlocksCurrentKnowledgeCard {
+      scheme
       question
       directAnswer
       tldrBullets {
@@ -1939,6 +2002,7 @@ fragment ResourcesParts on Resources {
       ctaLink
     }
     ... on ResourcesBlocksLeadMagnetPromo {
+      scheme
       heading
       promoBody
       ctaText
@@ -1946,6 +2010,7 @@ fragment ResourcesParts on Resources {
       coverImage
     }
     ... on ResourcesBlocksBreadcrumb {
+      scheme
       items {
         __typename
         label
@@ -1963,6 +2028,7 @@ fragment ResourcesParts on Resources {
       }
     }
     ... on ResourcesBlocksContactForm {
+      scheme
       heading
       subtitle
       salesEmail
@@ -2022,6 +2088,7 @@ fragment CompanyParts on Company {
       }
     }
     ... on CompanyBlocksTrustBar {
+      scheme
       items {
         __typename
         text
@@ -2162,6 +2229,7 @@ fragment CompanyParts on Company {
       secondaryCtaLink
     }
     ... on CompanyBlocksCtaInline {
+      scheme
       heading
       bodyText
       primaryCtaText
@@ -2184,12 +2252,14 @@ fragment CompanyParts on Company {
       ctaLink
     }
     ... on CompanyBlocksVideoSection {
+      scheme
       heading
       videoUrl
       caption
       thumbnail
     }
     ... on CompanyBlocksTeamGrid {
+      scheme
       heading
       team {
         __typename
@@ -2201,6 +2271,7 @@ fragment CompanyParts on Company {
       }
     }
     ... on CompanyBlocksTeamShowcase {
+      scheme
       heading
       subtitle
       layout
@@ -2216,6 +2287,7 @@ fragment CompanyParts on Company {
       }
     }
     ... on CompanyBlocksTrustCertBlock {
+      scheme
       badges {
         __typename
         label
@@ -2223,6 +2295,7 @@ fragment CompanyParts on Company {
       }
     }
     ... on CompanyBlocksAlertBanner {
+      scheme
       type
       text
       ctaText
@@ -2234,6 +2307,7 @@ fragment CompanyParts on Company {
       body
     }
     ... on CompanyBlocksCurrentKnowledgeCard {
+      scheme
       question
       directAnswer
       tldrBullets {
@@ -2271,6 +2345,7 @@ fragment CompanyParts on Company {
       ctaLink
     }
     ... on CompanyBlocksLeadMagnetPromo {
+      scheme
       heading
       promoBody
       ctaText
@@ -2278,6 +2353,7 @@ fragment CompanyParts on Company {
       coverImage
     }
     ... on CompanyBlocksBreadcrumb {
+      scheme
       items {
         __typename
         label
@@ -2295,6 +2371,7 @@ fragment CompanyParts on Company {
       }
     }
     ... on CompanyBlocksContactForm {
+      scheme
       heading
       subtitle
       salesEmail
@@ -2371,6 +2448,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       }
     }
     ... on KnowledgeBaseBlocksTrustBar {
+      scheme
       items {
         __typename
         text
@@ -2511,6 +2589,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       secondaryCtaLink
     }
     ... on KnowledgeBaseBlocksCtaInline {
+      scheme
       heading
       bodyText
       primaryCtaText
@@ -2533,12 +2612,14 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       ctaLink
     }
     ... on KnowledgeBaseBlocksVideoSection {
+      scheme
       heading
       videoUrl
       caption
       thumbnail
     }
     ... on KnowledgeBaseBlocksTeamGrid {
+      scheme
       heading
       team {
         __typename
@@ -2550,6 +2631,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       }
     }
     ... on KnowledgeBaseBlocksTeamShowcase {
+      scheme
       heading
       subtitle
       layout
@@ -2565,6 +2647,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       }
     }
     ... on KnowledgeBaseBlocksTrustCertBlock {
+      scheme
       badges {
         __typename
         label
@@ -2572,6 +2655,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       }
     }
     ... on KnowledgeBaseBlocksAlertBanner {
+      scheme
       type
       text
       ctaText
@@ -2583,6 +2667,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       body
     }
     ... on KnowledgeBaseBlocksCurrentKnowledgeCard {
+      scheme
       question
       directAnswer
       tldrBullets {
@@ -2620,6 +2705,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       ctaLink
     }
     ... on KnowledgeBaseBlocksLeadMagnetPromo {
+      scheme
       heading
       promoBody
       ctaText
@@ -2627,6 +2713,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       coverImage
     }
     ... on KnowledgeBaseBlocksBreadcrumb {
+      scheme
       items {
         __typename
         label
@@ -2644,6 +2731,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       }
     }
     ... on KnowledgeBaseBlocksContactForm {
+      scheme
       heading
       subtitle
       salesEmail

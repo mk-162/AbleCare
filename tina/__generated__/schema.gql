@@ -144,6 +144,7 @@ type PagesBlocksTrustBarItems {
 }
 
 type PagesBlocksTrustBar {
+  scheme: String
   items: [PagesBlocksTrustBarItems]
 }
 
@@ -302,6 +303,7 @@ type PagesBlocksCtaBanner {
 }
 
 type PagesBlocksCtaInline {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -327,6 +329,7 @@ type PagesBlocksImageFeature {
 }
 
 type PagesBlocksVideoSection {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -342,6 +345,7 @@ type PagesBlocksTeamGridTeam {
 }
 
 type PagesBlocksTeamGrid {
+  scheme: String
   heading: String
   team: [PagesBlocksTeamGridTeam]
 }
@@ -357,6 +361,7 @@ type PagesBlocksTeamShowcaseTeam {
 }
 
 type PagesBlocksTeamShowcase {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -369,10 +374,12 @@ type PagesBlocksTrustCertBlockBadges {
 }
 
 type PagesBlocksTrustCertBlock {
+  scheme: String
   badges: [PagesBlocksTrustCertBlockBadges]
 }
 
 type PagesBlocksAlertBanner {
+  scheme: String
   type: String
   text: String!
   ctaText: String
@@ -396,6 +403,7 @@ type PagesBlocksCurrentKnowledgeCardSources {
 }
 
 type PagesBlocksCurrentKnowledgeCard {
+  scheme: String
   question: String!
   directAnswer: String!
   tldrBullets: [PagesBlocksCurrentKnowledgeCardTldrBullets]
@@ -429,6 +437,7 @@ type PagesBlocksRoiCalculatorPromo {
 }
 
 type PagesBlocksLeadMagnetPromo {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -442,6 +451,7 @@ type PagesBlocksBreadcrumbItems {
 }
 
 type PagesBlocksBreadcrumb {
+  scheme: String
   items: [PagesBlocksBreadcrumbItems]
 }
 
@@ -458,6 +468,7 @@ type PagesBlocksPartnerLogoCarousel {
 }
 
 type PagesBlocksContactForm {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -545,6 +556,7 @@ input PagesBlocksTrustBarItemsFilter {
 }
 
 input PagesBlocksTrustBarFilter {
+  scheme: StringFilter
   items: PagesBlocksTrustBarItemsFilter
 }
 
@@ -718,6 +730,7 @@ input PagesBlocksCtaBannerFilter {
 }
 
 input PagesBlocksCtaInlineFilter {
+  scheme: StringFilter
   heading: StringFilter
   bodyText: StringFilter
   primaryCtaText: StringFilter
@@ -743,6 +756,7 @@ input PagesBlocksImageFeatureFilter {
 }
 
 input PagesBlocksVideoSectionFilter {
+  scheme: StringFilter
   heading: StringFilter
   videoUrl: StringFilter
   caption: StringFilter
@@ -758,6 +772,7 @@ input PagesBlocksTeamGridTeamFilter {
 }
 
 input PagesBlocksTeamGridFilter {
+  scheme: StringFilter
   heading: StringFilter
   team: PagesBlocksTeamGridTeamFilter
 }
@@ -773,6 +788,7 @@ input PagesBlocksTeamShowcaseTeamFilter {
 }
 
 input PagesBlocksTeamShowcaseFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   layout: StringFilter
@@ -785,10 +801,12 @@ input PagesBlocksTrustCertBlockBadgesFilter {
 }
 
 input PagesBlocksTrustCertBlockFilter {
+  scheme: StringFilter
   badges: PagesBlocksTrustCertBlockBadgesFilter
 }
 
 input PagesBlocksAlertBannerFilter {
+  scheme: StringFilter
   type: StringFilter
   text: StringFilter
   ctaText: StringFilter
@@ -812,6 +830,7 @@ input PagesBlocksCurrentKnowledgeCardSourcesFilter {
 }
 
 input PagesBlocksCurrentKnowledgeCardFilter {
+  scheme: StringFilter
   question: StringFilter
   directAnswer: StringFilter
   tldrBullets: PagesBlocksCurrentKnowledgeCardTldrBulletsFilter
@@ -845,6 +864,7 @@ input PagesBlocksRoiCalculatorPromoFilter {
 }
 
 input PagesBlocksLeadMagnetPromoFilter {
+  scheme: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -858,6 +878,7 @@ input PagesBlocksBreadcrumbItemsFilter {
 }
 
 input PagesBlocksBreadcrumbFilter {
+  scheme: StringFilter
   items: PagesBlocksBreadcrumbItemsFilter
 }
 
@@ -874,6 +895,7 @@ input PagesBlocksPartnerLogoCarouselFilter {
 }
 
 input PagesBlocksContactFormFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   salesEmail: StringFilter
@@ -987,6 +1009,7 @@ type SolutionsBlocksTrustBarItems {
 }
 
 type SolutionsBlocksTrustBar {
+  scheme: String
   items: [SolutionsBlocksTrustBarItems]
 }
 
@@ -1145,6 +1168,7 @@ type SolutionsBlocksCtaBanner {
 }
 
 type SolutionsBlocksCtaInline {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -1170,6 +1194,7 @@ type SolutionsBlocksImageFeature {
 }
 
 type SolutionsBlocksVideoSection {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -1185,6 +1210,7 @@ type SolutionsBlocksTeamGridTeam {
 }
 
 type SolutionsBlocksTeamGrid {
+  scheme: String
   heading: String
   team: [SolutionsBlocksTeamGridTeam]
 }
@@ -1200,6 +1226,7 @@ type SolutionsBlocksTeamShowcaseTeam {
 }
 
 type SolutionsBlocksTeamShowcase {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -1212,10 +1239,12 @@ type SolutionsBlocksTrustCertBlockBadges {
 }
 
 type SolutionsBlocksTrustCertBlock {
+  scheme: String
   badges: [SolutionsBlocksTrustCertBlockBadges]
 }
 
 type SolutionsBlocksAlertBanner {
+  scheme: String
   type: String
   text: String!
   ctaText: String
@@ -1239,6 +1268,7 @@ type SolutionsBlocksCurrentKnowledgeCardSources {
 }
 
 type SolutionsBlocksCurrentKnowledgeCard {
+  scheme: String
   question: String!
   directAnswer: String!
   tldrBullets: [SolutionsBlocksCurrentKnowledgeCardTldrBullets]
@@ -1272,6 +1302,7 @@ type SolutionsBlocksRoiCalculatorPromo {
 }
 
 type SolutionsBlocksLeadMagnetPromo {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -1285,6 +1316,7 @@ type SolutionsBlocksBreadcrumbItems {
 }
 
 type SolutionsBlocksBreadcrumb {
+  scheme: String
   items: [SolutionsBlocksBreadcrumbItems]
 }
 
@@ -1301,6 +1333,7 @@ type SolutionsBlocksPartnerLogoCarousel {
 }
 
 type SolutionsBlocksContactForm {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -1374,6 +1407,7 @@ input SolutionsBlocksTrustBarItemsFilter {
 }
 
 input SolutionsBlocksTrustBarFilter {
+  scheme: StringFilter
   items: SolutionsBlocksTrustBarItemsFilter
 }
 
@@ -1532,6 +1566,7 @@ input SolutionsBlocksCtaBannerFilter {
 }
 
 input SolutionsBlocksCtaInlineFilter {
+  scheme: StringFilter
   heading: StringFilter
   bodyText: StringFilter
   primaryCtaText: StringFilter
@@ -1557,6 +1592,7 @@ input SolutionsBlocksImageFeatureFilter {
 }
 
 input SolutionsBlocksVideoSectionFilter {
+  scheme: StringFilter
   heading: StringFilter
   videoUrl: StringFilter
   caption: StringFilter
@@ -1572,6 +1608,7 @@ input SolutionsBlocksTeamGridTeamFilter {
 }
 
 input SolutionsBlocksTeamGridFilter {
+  scheme: StringFilter
   heading: StringFilter
   team: SolutionsBlocksTeamGridTeamFilter
 }
@@ -1587,6 +1624,7 @@ input SolutionsBlocksTeamShowcaseTeamFilter {
 }
 
 input SolutionsBlocksTeamShowcaseFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   layout: StringFilter
@@ -1599,10 +1637,12 @@ input SolutionsBlocksTrustCertBlockBadgesFilter {
 }
 
 input SolutionsBlocksTrustCertBlockFilter {
+  scheme: StringFilter
   badges: SolutionsBlocksTrustCertBlockBadgesFilter
 }
 
 input SolutionsBlocksAlertBannerFilter {
+  scheme: StringFilter
   type: StringFilter
   text: StringFilter
   ctaText: StringFilter
@@ -1626,6 +1666,7 @@ input SolutionsBlocksCurrentKnowledgeCardSourcesFilter {
 }
 
 input SolutionsBlocksCurrentKnowledgeCardFilter {
+  scheme: StringFilter
   question: StringFilter
   directAnswer: StringFilter
   tldrBullets: SolutionsBlocksCurrentKnowledgeCardTldrBulletsFilter
@@ -1659,6 +1700,7 @@ input SolutionsBlocksRoiCalculatorPromoFilter {
 }
 
 input SolutionsBlocksLeadMagnetPromoFilter {
+  scheme: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -1672,6 +1714,7 @@ input SolutionsBlocksBreadcrumbItemsFilter {
 }
 
 input SolutionsBlocksBreadcrumbFilter {
+  scheme: StringFilter
   items: SolutionsBlocksBreadcrumbItemsFilter
 }
 
@@ -1688,6 +1731,7 @@ input SolutionsBlocksPartnerLogoCarouselFilter {
 }
 
 input SolutionsBlocksContactFormFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   salesEmail: StringFilter
@@ -1801,6 +1845,7 @@ type SegmentsBlocksTrustBarItems {
 }
 
 type SegmentsBlocksTrustBar {
+  scheme: String
   items: [SegmentsBlocksTrustBarItems]
 }
 
@@ -1959,6 +2004,7 @@ type SegmentsBlocksCtaBanner {
 }
 
 type SegmentsBlocksCtaInline {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -1984,6 +2030,7 @@ type SegmentsBlocksImageFeature {
 }
 
 type SegmentsBlocksVideoSection {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -1999,6 +2046,7 @@ type SegmentsBlocksTeamGridTeam {
 }
 
 type SegmentsBlocksTeamGrid {
+  scheme: String
   heading: String
   team: [SegmentsBlocksTeamGridTeam]
 }
@@ -2014,6 +2062,7 @@ type SegmentsBlocksTeamShowcaseTeam {
 }
 
 type SegmentsBlocksTeamShowcase {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -2026,10 +2075,12 @@ type SegmentsBlocksTrustCertBlockBadges {
 }
 
 type SegmentsBlocksTrustCertBlock {
+  scheme: String
   badges: [SegmentsBlocksTrustCertBlockBadges]
 }
 
 type SegmentsBlocksAlertBanner {
+  scheme: String
   type: String
   text: String!
   ctaText: String
@@ -2053,6 +2104,7 @@ type SegmentsBlocksCurrentKnowledgeCardSources {
 }
 
 type SegmentsBlocksCurrentKnowledgeCard {
+  scheme: String
   question: String!
   directAnswer: String!
   tldrBullets: [SegmentsBlocksCurrentKnowledgeCardTldrBullets]
@@ -2086,6 +2138,7 @@ type SegmentsBlocksRoiCalculatorPromo {
 }
 
 type SegmentsBlocksLeadMagnetPromo {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -2099,6 +2152,7 @@ type SegmentsBlocksBreadcrumbItems {
 }
 
 type SegmentsBlocksBreadcrumb {
+  scheme: String
   items: [SegmentsBlocksBreadcrumbItems]
 }
 
@@ -2115,6 +2169,7 @@ type SegmentsBlocksPartnerLogoCarousel {
 }
 
 type SegmentsBlocksContactForm {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -2188,6 +2243,7 @@ input SegmentsBlocksTrustBarItemsFilter {
 }
 
 input SegmentsBlocksTrustBarFilter {
+  scheme: StringFilter
   items: SegmentsBlocksTrustBarItemsFilter
 }
 
@@ -2346,6 +2402,7 @@ input SegmentsBlocksCtaBannerFilter {
 }
 
 input SegmentsBlocksCtaInlineFilter {
+  scheme: StringFilter
   heading: StringFilter
   bodyText: StringFilter
   primaryCtaText: StringFilter
@@ -2371,6 +2428,7 @@ input SegmentsBlocksImageFeatureFilter {
 }
 
 input SegmentsBlocksVideoSectionFilter {
+  scheme: StringFilter
   heading: StringFilter
   videoUrl: StringFilter
   caption: StringFilter
@@ -2386,6 +2444,7 @@ input SegmentsBlocksTeamGridTeamFilter {
 }
 
 input SegmentsBlocksTeamGridFilter {
+  scheme: StringFilter
   heading: StringFilter
   team: SegmentsBlocksTeamGridTeamFilter
 }
@@ -2401,6 +2460,7 @@ input SegmentsBlocksTeamShowcaseTeamFilter {
 }
 
 input SegmentsBlocksTeamShowcaseFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   layout: StringFilter
@@ -2413,10 +2473,12 @@ input SegmentsBlocksTrustCertBlockBadgesFilter {
 }
 
 input SegmentsBlocksTrustCertBlockFilter {
+  scheme: StringFilter
   badges: SegmentsBlocksTrustCertBlockBadgesFilter
 }
 
 input SegmentsBlocksAlertBannerFilter {
+  scheme: StringFilter
   type: StringFilter
   text: StringFilter
   ctaText: StringFilter
@@ -2440,6 +2502,7 @@ input SegmentsBlocksCurrentKnowledgeCardSourcesFilter {
 }
 
 input SegmentsBlocksCurrentKnowledgeCardFilter {
+  scheme: StringFilter
   question: StringFilter
   directAnswer: StringFilter
   tldrBullets: SegmentsBlocksCurrentKnowledgeCardTldrBulletsFilter
@@ -2473,6 +2536,7 @@ input SegmentsBlocksRoiCalculatorPromoFilter {
 }
 
 input SegmentsBlocksLeadMagnetPromoFilter {
+  scheme: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -2486,6 +2550,7 @@ input SegmentsBlocksBreadcrumbItemsFilter {
 }
 
 input SegmentsBlocksBreadcrumbFilter {
+  scheme: StringFilter
   items: SegmentsBlocksBreadcrumbItemsFilter
 }
 
@@ -2502,6 +2567,7 @@ input SegmentsBlocksPartnerLogoCarouselFilter {
 }
 
 input SegmentsBlocksContactFormFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   salesEmail: StringFilter
@@ -2615,6 +2681,7 @@ type CompareBlocksTrustBarItems {
 }
 
 type CompareBlocksTrustBar {
+  scheme: String
   items: [CompareBlocksTrustBarItems]
 }
 
@@ -2773,6 +2840,7 @@ type CompareBlocksCtaBanner {
 }
 
 type CompareBlocksCtaInline {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -2798,6 +2866,7 @@ type CompareBlocksImageFeature {
 }
 
 type CompareBlocksVideoSection {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -2813,6 +2882,7 @@ type CompareBlocksTeamGridTeam {
 }
 
 type CompareBlocksTeamGrid {
+  scheme: String
   heading: String
   team: [CompareBlocksTeamGridTeam]
 }
@@ -2828,6 +2898,7 @@ type CompareBlocksTeamShowcaseTeam {
 }
 
 type CompareBlocksTeamShowcase {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -2840,10 +2911,12 @@ type CompareBlocksTrustCertBlockBadges {
 }
 
 type CompareBlocksTrustCertBlock {
+  scheme: String
   badges: [CompareBlocksTrustCertBlockBadges]
 }
 
 type CompareBlocksAlertBanner {
+  scheme: String
   type: String
   text: String!
   ctaText: String
@@ -2867,6 +2940,7 @@ type CompareBlocksCurrentKnowledgeCardSources {
 }
 
 type CompareBlocksCurrentKnowledgeCard {
+  scheme: String
   question: String!
   directAnswer: String!
   tldrBullets: [CompareBlocksCurrentKnowledgeCardTldrBullets]
@@ -2900,6 +2974,7 @@ type CompareBlocksRoiCalculatorPromo {
 }
 
 type CompareBlocksLeadMagnetPromo {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -2913,6 +2988,7 @@ type CompareBlocksBreadcrumbItems {
 }
 
 type CompareBlocksBreadcrumb {
+  scheme: String
   items: [CompareBlocksBreadcrumbItems]
 }
 
@@ -2929,6 +3005,7 @@ type CompareBlocksPartnerLogoCarousel {
 }
 
 type CompareBlocksContactForm {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -3002,6 +3079,7 @@ input CompareBlocksTrustBarItemsFilter {
 }
 
 input CompareBlocksTrustBarFilter {
+  scheme: StringFilter
   items: CompareBlocksTrustBarItemsFilter
 }
 
@@ -3160,6 +3238,7 @@ input CompareBlocksCtaBannerFilter {
 }
 
 input CompareBlocksCtaInlineFilter {
+  scheme: StringFilter
   heading: StringFilter
   bodyText: StringFilter
   primaryCtaText: StringFilter
@@ -3185,6 +3264,7 @@ input CompareBlocksImageFeatureFilter {
 }
 
 input CompareBlocksVideoSectionFilter {
+  scheme: StringFilter
   heading: StringFilter
   videoUrl: StringFilter
   caption: StringFilter
@@ -3200,6 +3280,7 @@ input CompareBlocksTeamGridTeamFilter {
 }
 
 input CompareBlocksTeamGridFilter {
+  scheme: StringFilter
   heading: StringFilter
   team: CompareBlocksTeamGridTeamFilter
 }
@@ -3215,6 +3296,7 @@ input CompareBlocksTeamShowcaseTeamFilter {
 }
 
 input CompareBlocksTeamShowcaseFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   layout: StringFilter
@@ -3227,10 +3309,12 @@ input CompareBlocksTrustCertBlockBadgesFilter {
 }
 
 input CompareBlocksTrustCertBlockFilter {
+  scheme: StringFilter
   badges: CompareBlocksTrustCertBlockBadgesFilter
 }
 
 input CompareBlocksAlertBannerFilter {
+  scheme: StringFilter
   type: StringFilter
   text: StringFilter
   ctaText: StringFilter
@@ -3254,6 +3338,7 @@ input CompareBlocksCurrentKnowledgeCardSourcesFilter {
 }
 
 input CompareBlocksCurrentKnowledgeCardFilter {
+  scheme: StringFilter
   question: StringFilter
   directAnswer: StringFilter
   tldrBullets: CompareBlocksCurrentKnowledgeCardTldrBulletsFilter
@@ -3287,6 +3372,7 @@ input CompareBlocksRoiCalculatorPromoFilter {
 }
 
 input CompareBlocksLeadMagnetPromoFilter {
+  scheme: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -3300,6 +3386,7 @@ input CompareBlocksBreadcrumbItemsFilter {
 }
 
 input CompareBlocksBreadcrumbFilter {
+  scheme: StringFilter
   items: CompareBlocksBreadcrumbItemsFilter
 }
 
@@ -3316,6 +3403,7 @@ input CompareBlocksPartnerLogoCarouselFilter {
 }
 
 input CompareBlocksContactFormFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   salesEmail: StringFilter
@@ -3429,6 +3517,7 @@ type LearnBlocksTrustBarItems {
 }
 
 type LearnBlocksTrustBar {
+  scheme: String
   items: [LearnBlocksTrustBarItems]
 }
 
@@ -3587,6 +3676,7 @@ type LearnBlocksCtaBanner {
 }
 
 type LearnBlocksCtaInline {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -3612,6 +3702,7 @@ type LearnBlocksImageFeature {
 }
 
 type LearnBlocksVideoSection {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -3627,6 +3718,7 @@ type LearnBlocksTeamGridTeam {
 }
 
 type LearnBlocksTeamGrid {
+  scheme: String
   heading: String
   team: [LearnBlocksTeamGridTeam]
 }
@@ -3642,6 +3734,7 @@ type LearnBlocksTeamShowcaseTeam {
 }
 
 type LearnBlocksTeamShowcase {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -3654,10 +3747,12 @@ type LearnBlocksTrustCertBlockBadges {
 }
 
 type LearnBlocksTrustCertBlock {
+  scheme: String
   badges: [LearnBlocksTrustCertBlockBadges]
 }
 
 type LearnBlocksAlertBanner {
+  scheme: String
   type: String
   text: String!
   ctaText: String
@@ -3681,6 +3776,7 @@ type LearnBlocksCurrentKnowledgeCardSources {
 }
 
 type LearnBlocksCurrentKnowledgeCard {
+  scheme: String
   question: String!
   directAnswer: String!
   tldrBullets: [LearnBlocksCurrentKnowledgeCardTldrBullets]
@@ -3714,6 +3810,7 @@ type LearnBlocksRoiCalculatorPromo {
 }
 
 type LearnBlocksLeadMagnetPromo {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -3727,6 +3824,7 @@ type LearnBlocksBreadcrumbItems {
 }
 
 type LearnBlocksBreadcrumb {
+  scheme: String
   items: [LearnBlocksBreadcrumbItems]
 }
 
@@ -3743,6 +3841,7 @@ type LearnBlocksPartnerLogoCarousel {
 }
 
 type LearnBlocksContactForm {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -3824,6 +3923,7 @@ input LearnBlocksTrustBarItemsFilter {
 }
 
 input LearnBlocksTrustBarFilter {
+  scheme: StringFilter
   items: LearnBlocksTrustBarItemsFilter
 }
 
@@ -3982,6 +4082,7 @@ input LearnBlocksCtaBannerFilter {
 }
 
 input LearnBlocksCtaInlineFilter {
+  scheme: StringFilter
   heading: StringFilter
   bodyText: StringFilter
   primaryCtaText: StringFilter
@@ -4007,6 +4108,7 @@ input LearnBlocksImageFeatureFilter {
 }
 
 input LearnBlocksVideoSectionFilter {
+  scheme: StringFilter
   heading: StringFilter
   videoUrl: StringFilter
   caption: StringFilter
@@ -4022,6 +4124,7 @@ input LearnBlocksTeamGridTeamFilter {
 }
 
 input LearnBlocksTeamGridFilter {
+  scheme: StringFilter
   heading: StringFilter
   team: LearnBlocksTeamGridTeamFilter
 }
@@ -4037,6 +4140,7 @@ input LearnBlocksTeamShowcaseTeamFilter {
 }
 
 input LearnBlocksTeamShowcaseFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   layout: StringFilter
@@ -4049,10 +4153,12 @@ input LearnBlocksTrustCertBlockBadgesFilter {
 }
 
 input LearnBlocksTrustCertBlockFilter {
+  scheme: StringFilter
   badges: LearnBlocksTrustCertBlockBadgesFilter
 }
 
 input LearnBlocksAlertBannerFilter {
+  scheme: StringFilter
   type: StringFilter
   text: StringFilter
   ctaText: StringFilter
@@ -4076,6 +4182,7 @@ input LearnBlocksCurrentKnowledgeCardSourcesFilter {
 }
 
 input LearnBlocksCurrentKnowledgeCardFilter {
+  scheme: StringFilter
   question: StringFilter
   directAnswer: StringFilter
   tldrBullets: LearnBlocksCurrentKnowledgeCardTldrBulletsFilter
@@ -4109,6 +4216,7 @@ input LearnBlocksRoiCalculatorPromoFilter {
 }
 
 input LearnBlocksLeadMagnetPromoFilter {
+  scheme: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -4122,6 +4230,7 @@ input LearnBlocksBreadcrumbItemsFilter {
 }
 
 input LearnBlocksBreadcrumbFilter {
+  scheme: StringFilter
   items: LearnBlocksBreadcrumbItemsFilter
 }
 
@@ -4138,6 +4247,7 @@ input LearnBlocksPartnerLogoCarouselFilter {
 }
 
 input LearnBlocksContactFormFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   salesEmail: StringFilter
@@ -4259,6 +4369,7 @@ type ResourcesBlocksTrustBarItems {
 }
 
 type ResourcesBlocksTrustBar {
+  scheme: String
   items: [ResourcesBlocksTrustBarItems]
 }
 
@@ -4417,6 +4528,7 @@ type ResourcesBlocksCtaBanner {
 }
 
 type ResourcesBlocksCtaInline {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -4442,6 +4554,7 @@ type ResourcesBlocksImageFeature {
 }
 
 type ResourcesBlocksVideoSection {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -4457,6 +4570,7 @@ type ResourcesBlocksTeamGridTeam {
 }
 
 type ResourcesBlocksTeamGrid {
+  scheme: String
   heading: String
   team: [ResourcesBlocksTeamGridTeam]
 }
@@ -4472,6 +4586,7 @@ type ResourcesBlocksTeamShowcaseTeam {
 }
 
 type ResourcesBlocksTeamShowcase {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -4484,10 +4599,12 @@ type ResourcesBlocksTrustCertBlockBadges {
 }
 
 type ResourcesBlocksTrustCertBlock {
+  scheme: String
   badges: [ResourcesBlocksTrustCertBlockBadges]
 }
 
 type ResourcesBlocksAlertBanner {
+  scheme: String
   type: String
   text: String!
   ctaText: String
@@ -4511,6 +4628,7 @@ type ResourcesBlocksCurrentKnowledgeCardSources {
 }
 
 type ResourcesBlocksCurrentKnowledgeCard {
+  scheme: String
   question: String!
   directAnswer: String!
   tldrBullets: [ResourcesBlocksCurrentKnowledgeCardTldrBullets]
@@ -4544,6 +4662,7 @@ type ResourcesBlocksRoiCalculatorPromo {
 }
 
 type ResourcesBlocksLeadMagnetPromo {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -4557,6 +4676,7 @@ type ResourcesBlocksBreadcrumbItems {
 }
 
 type ResourcesBlocksBreadcrumb {
+  scheme: String
   items: [ResourcesBlocksBreadcrumbItems]
 }
 
@@ -4573,6 +4693,7 @@ type ResourcesBlocksPartnerLogoCarousel {
 }
 
 type ResourcesBlocksContactForm {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -4646,6 +4767,7 @@ input ResourcesBlocksTrustBarItemsFilter {
 }
 
 input ResourcesBlocksTrustBarFilter {
+  scheme: StringFilter
   items: ResourcesBlocksTrustBarItemsFilter
 }
 
@@ -4804,6 +4926,7 @@ input ResourcesBlocksCtaBannerFilter {
 }
 
 input ResourcesBlocksCtaInlineFilter {
+  scheme: StringFilter
   heading: StringFilter
   bodyText: StringFilter
   primaryCtaText: StringFilter
@@ -4829,6 +4952,7 @@ input ResourcesBlocksImageFeatureFilter {
 }
 
 input ResourcesBlocksVideoSectionFilter {
+  scheme: StringFilter
   heading: StringFilter
   videoUrl: StringFilter
   caption: StringFilter
@@ -4844,6 +4968,7 @@ input ResourcesBlocksTeamGridTeamFilter {
 }
 
 input ResourcesBlocksTeamGridFilter {
+  scheme: StringFilter
   heading: StringFilter
   team: ResourcesBlocksTeamGridTeamFilter
 }
@@ -4859,6 +4984,7 @@ input ResourcesBlocksTeamShowcaseTeamFilter {
 }
 
 input ResourcesBlocksTeamShowcaseFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   layout: StringFilter
@@ -4871,10 +4997,12 @@ input ResourcesBlocksTrustCertBlockBadgesFilter {
 }
 
 input ResourcesBlocksTrustCertBlockFilter {
+  scheme: StringFilter
   badges: ResourcesBlocksTrustCertBlockBadgesFilter
 }
 
 input ResourcesBlocksAlertBannerFilter {
+  scheme: StringFilter
   type: StringFilter
   text: StringFilter
   ctaText: StringFilter
@@ -4898,6 +5026,7 @@ input ResourcesBlocksCurrentKnowledgeCardSourcesFilter {
 }
 
 input ResourcesBlocksCurrentKnowledgeCardFilter {
+  scheme: StringFilter
   question: StringFilter
   directAnswer: StringFilter
   tldrBullets: ResourcesBlocksCurrentKnowledgeCardTldrBulletsFilter
@@ -4931,6 +5060,7 @@ input ResourcesBlocksRoiCalculatorPromoFilter {
 }
 
 input ResourcesBlocksLeadMagnetPromoFilter {
+  scheme: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -4944,6 +5074,7 @@ input ResourcesBlocksBreadcrumbItemsFilter {
 }
 
 input ResourcesBlocksBreadcrumbFilter {
+  scheme: StringFilter
   items: ResourcesBlocksBreadcrumbItemsFilter
 }
 
@@ -4960,6 +5091,7 @@ input ResourcesBlocksPartnerLogoCarouselFilter {
 }
 
 input ResourcesBlocksContactFormFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   salesEmail: StringFilter
@@ -5073,6 +5205,7 @@ type CompanyBlocksTrustBarItems {
 }
 
 type CompanyBlocksTrustBar {
+  scheme: String
   items: [CompanyBlocksTrustBarItems]
 }
 
@@ -5231,6 +5364,7 @@ type CompanyBlocksCtaBanner {
 }
 
 type CompanyBlocksCtaInline {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -5256,6 +5390,7 @@ type CompanyBlocksImageFeature {
 }
 
 type CompanyBlocksVideoSection {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -5271,6 +5406,7 @@ type CompanyBlocksTeamGridTeam {
 }
 
 type CompanyBlocksTeamGrid {
+  scheme: String
   heading: String
   team: [CompanyBlocksTeamGridTeam]
 }
@@ -5286,6 +5422,7 @@ type CompanyBlocksTeamShowcaseTeam {
 }
 
 type CompanyBlocksTeamShowcase {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -5298,10 +5435,12 @@ type CompanyBlocksTrustCertBlockBadges {
 }
 
 type CompanyBlocksTrustCertBlock {
+  scheme: String
   badges: [CompanyBlocksTrustCertBlockBadges]
 }
 
 type CompanyBlocksAlertBanner {
+  scheme: String
   type: String
   text: String!
   ctaText: String
@@ -5325,6 +5464,7 @@ type CompanyBlocksCurrentKnowledgeCardSources {
 }
 
 type CompanyBlocksCurrentKnowledgeCard {
+  scheme: String
   question: String!
   directAnswer: String!
   tldrBullets: [CompanyBlocksCurrentKnowledgeCardTldrBullets]
@@ -5358,6 +5498,7 @@ type CompanyBlocksRoiCalculatorPromo {
 }
 
 type CompanyBlocksLeadMagnetPromo {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -5371,6 +5512,7 @@ type CompanyBlocksBreadcrumbItems {
 }
 
 type CompanyBlocksBreadcrumb {
+  scheme: String
   items: [CompanyBlocksBreadcrumbItems]
 }
 
@@ -5387,6 +5529,7 @@ type CompanyBlocksPartnerLogoCarousel {
 }
 
 type CompanyBlocksContactForm {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -5460,6 +5603,7 @@ input CompanyBlocksTrustBarItemsFilter {
 }
 
 input CompanyBlocksTrustBarFilter {
+  scheme: StringFilter
   items: CompanyBlocksTrustBarItemsFilter
 }
 
@@ -5618,6 +5762,7 @@ input CompanyBlocksCtaBannerFilter {
 }
 
 input CompanyBlocksCtaInlineFilter {
+  scheme: StringFilter
   heading: StringFilter
   bodyText: StringFilter
   primaryCtaText: StringFilter
@@ -5643,6 +5788,7 @@ input CompanyBlocksImageFeatureFilter {
 }
 
 input CompanyBlocksVideoSectionFilter {
+  scheme: StringFilter
   heading: StringFilter
   videoUrl: StringFilter
   caption: StringFilter
@@ -5658,6 +5804,7 @@ input CompanyBlocksTeamGridTeamFilter {
 }
 
 input CompanyBlocksTeamGridFilter {
+  scheme: StringFilter
   heading: StringFilter
   team: CompanyBlocksTeamGridTeamFilter
 }
@@ -5673,6 +5820,7 @@ input CompanyBlocksTeamShowcaseTeamFilter {
 }
 
 input CompanyBlocksTeamShowcaseFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   layout: StringFilter
@@ -5685,10 +5833,12 @@ input CompanyBlocksTrustCertBlockBadgesFilter {
 }
 
 input CompanyBlocksTrustCertBlockFilter {
+  scheme: StringFilter
   badges: CompanyBlocksTrustCertBlockBadgesFilter
 }
 
 input CompanyBlocksAlertBannerFilter {
+  scheme: StringFilter
   type: StringFilter
   text: StringFilter
   ctaText: StringFilter
@@ -5712,6 +5862,7 @@ input CompanyBlocksCurrentKnowledgeCardSourcesFilter {
 }
 
 input CompanyBlocksCurrentKnowledgeCardFilter {
+  scheme: StringFilter
   question: StringFilter
   directAnswer: StringFilter
   tldrBullets: CompanyBlocksCurrentKnowledgeCardTldrBulletsFilter
@@ -5745,6 +5896,7 @@ input CompanyBlocksRoiCalculatorPromoFilter {
 }
 
 input CompanyBlocksLeadMagnetPromoFilter {
+  scheme: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -5758,6 +5910,7 @@ input CompanyBlocksBreadcrumbItemsFilter {
 }
 
 input CompanyBlocksBreadcrumbFilter {
+  scheme: StringFilter
   items: CompanyBlocksBreadcrumbItemsFilter
 }
 
@@ -5774,6 +5927,7 @@ input CompanyBlocksPartnerLogoCarouselFilter {
 }
 
 input CompanyBlocksContactFormFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   salesEmail: StringFilter
@@ -5887,6 +6041,7 @@ type KnowledgeBaseBlocksTrustBarItems {
 }
 
 type KnowledgeBaseBlocksTrustBar {
+  scheme: String
   items: [KnowledgeBaseBlocksTrustBarItems]
 }
 
@@ -6045,6 +6200,7 @@ type KnowledgeBaseBlocksCtaBanner {
 }
 
 type KnowledgeBaseBlocksCtaInline {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -6070,6 +6226,7 @@ type KnowledgeBaseBlocksImageFeature {
 }
 
 type KnowledgeBaseBlocksVideoSection {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -6085,6 +6242,7 @@ type KnowledgeBaseBlocksTeamGridTeam {
 }
 
 type KnowledgeBaseBlocksTeamGrid {
+  scheme: String
   heading: String
   team: [KnowledgeBaseBlocksTeamGridTeam]
 }
@@ -6100,6 +6258,7 @@ type KnowledgeBaseBlocksTeamShowcaseTeam {
 }
 
 type KnowledgeBaseBlocksTeamShowcase {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -6112,10 +6271,12 @@ type KnowledgeBaseBlocksTrustCertBlockBadges {
 }
 
 type KnowledgeBaseBlocksTrustCertBlock {
+  scheme: String
   badges: [KnowledgeBaseBlocksTrustCertBlockBadges]
 }
 
 type KnowledgeBaseBlocksAlertBanner {
+  scheme: String
   type: String
   text: String!
   ctaText: String
@@ -6139,6 +6300,7 @@ type KnowledgeBaseBlocksCurrentKnowledgeCardSources {
 }
 
 type KnowledgeBaseBlocksCurrentKnowledgeCard {
+  scheme: String
   question: String!
   directAnswer: String!
   tldrBullets: [KnowledgeBaseBlocksCurrentKnowledgeCardTldrBullets]
@@ -6172,6 +6334,7 @@ type KnowledgeBaseBlocksRoiCalculatorPromo {
 }
 
 type KnowledgeBaseBlocksLeadMagnetPromo {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -6185,6 +6348,7 @@ type KnowledgeBaseBlocksBreadcrumbItems {
 }
 
 type KnowledgeBaseBlocksBreadcrumb {
+  scheme: String
   items: [KnowledgeBaseBlocksBreadcrumbItems]
 }
 
@@ -6201,6 +6365,7 @@ type KnowledgeBaseBlocksPartnerLogoCarousel {
 }
 
 type KnowledgeBaseBlocksContactForm {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -6284,6 +6449,7 @@ input KnowledgeBaseBlocksTrustBarItemsFilter {
 }
 
 input KnowledgeBaseBlocksTrustBarFilter {
+  scheme: StringFilter
   items: KnowledgeBaseBlocksTrustBarItemsFilter
 }
 
@@ -6442,6 +6608,7 @@ input KnowledgeBaseBlocksCtaBannerFilter {
 }
 
 input KnowledgeBaseBlocksCtaInlineFilter {
+  scheme: StringFilter
   heading: StringFilter
   bodyText: StringFilter
   primaryCtaText: StringFilter
@@ -6467,6 +6634,7 @@ input KnowledgeBaseBlocksImageFeatureFilter {
 }
 
 input KnowledgeBaseBlocksVideoSectionFilter {
+  scheme: StringFilter
   heading: StringFilter
   videoUrl: StringFilter
   caption: StringFilter
@@ -6482,6 +6650,7 @@ input KnowledgeBaseBlocksTeamGridTeamFilter {
 }
 
 input KnowledgeBaseBlocksTeamGridFilter {
+  scheme: StringFilter
   heading: StringFilter
   team: KnowledgeBaseBlocksTeamGridTeamFilter
 }
@@ -6497,6 +6666,7 @@ input KnowledgeBaseBlocksTeamShowcaseTeamFilter {
 }
 
 input KnowledgeBaseBlocksTeamShowcaseFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   layout: StringFilter
@@ -6509,10 +6679,12 @@ input KnowledgeBaseBlocksTrustCertBlockBadgesFilter {
 }
 
 input KnowledgeBaseBlocksTrustCertBlockFilter {
+  scheme: StringFilter
   badges: KnowledgeBaseBlocksTrustCertBlockBadgesFilter
 }
 
 input KnowledgeBaseBlocksAlertBannerFilter {
+  scheme: StringFilter
   type: StringFilter
   text: StringFilter
   ctaText: StringFilter
@@ -6536,6 +6708,7 @@ input KnowledgeBaseBlocksCurrentKnowledgeCardSourcesFilter {
 }
 
 input KnowledgeBaseBlocksCurrentKnowledgeCardFilter {
+  scheme: StringFilter
   question: StringFilter
   directAnswer: StringFilter
   tldrBullets: KnowledgeBaseBlocksCurrentKnowledgeCardTldrBulletsFilter
@@ -6569,6 +6742,7 @@ input KnowledgeBaseBlocksRoiCalculatorPromoFilter {
 }
 
 input KnowledgeBaseBlocksLeadMagnetPromoFilter {
+  scheme: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -6582,6 +6756,7 @@ input KnowledgeBaseBlocksBreadcrumbItemsFilter {
 }
 
 input KnowledgeBaseBlocksBreadcrumbFilter {
+  scheme: StringFilter
   items: KnowledgeBaseBlocksBreadcrumbItemsFilter
 }
 
@@ -6598,6 +6773,7 @@ input KnowledgeBaseBlocksPartnerLogoCarouselFilter {
 }
 
 input KnowledgeBaseBlocksContactFormFilter {
+  scheme: StringFilter
   heading: StringFilter
   subtitle: StringFilter
   salesEmail: StringFilter
@@ -6946,6 +7122,7 @@ input PagesBlocksTrustBarItemsMutation {
 }
 
 input PagesBlocksTrustBarMutation {
+  scheme: String
   items: [PagesBlocksTrustBarItemsMutation]
 }
 
@@ -7104,6 +7281,7 @@ input PagesBlocksCtaBannerMutation {
 }
 
 input PagesBlocksCtaInlineMutation {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -7129,6 +7307,7 @@ input PagesBlocksImageFeatureMutation {
 }
 
 input PagesBlocksVideoSectionMutation {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -7144,6 +7323,7 @@ input PagesBlocksTeamGridTeamMutation {
 }
 
 input PagesBlocksTeamGridMutation {
+  scheme: String
   heading: String
   team: [PagesBlocksTeamGridTeamMutation]
 }
@@ -7159,6 +7339,7 @@ input PagesBlocksTeamShowcaseTeamMutation {
 }
 
 input PagesBlocksTeamShowcaseMutation {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -7171,10 +7352,12 @@ input PagesBlocksTrustCertBlockBadgesMutation {
 }
 
 input PagesBlocksTrustCertBlockMutation {
+  scheme: String
   badges: [PagesBlocksTrustCertBlockBadgesMutation]
 }
 
 input PagesBlocksAlertBannerMutation {
+  scheme: String
   type: String
   text: String
   ctaText: String
@@ -7198,6 +7381,7 @@ input PagesBlocksCurrentKnowledgeCardSourcesMutation {
 }
 
 input PagesBlocksCurrentKnowledgeCardMutation {
+  scheme: String
   question: String
   directAnswer: String
   tldrBullets: [PagesBlocksCurrentKnowledgeCardTldrBulletsMutation]
@@ -7231,6 +7415,7 @@ input PagesBlocksRoiCalculatorPromoMutation {
 }
 
 input PagesBlocksLeadMagnetPromoMutation {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -7244,6 +7429,7 @@ input PagesBlocksBreadcrumbItemsMutation {
 }
 
 input PagesBlocksBreadcrumbMutation {
+  scheme: String
   items: [PagesBlocksBreadcrumbItemsMutation]
 }
 
@@ -7260,6 +7446,7 @@ input PagesBlocksPartnerLogoCarouselMutation {
 }
 
 input PagesBlocksContactFormMutation {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -7362,6 +7549,7 @@ input SolutionsBlocksTrustBarItemsMutation {
 }
 
 input SolutionsBlocksTrustBarMutation {
+  scheme: String
   items: [SolutionsBlocksTrustBarItemsMutation]
 }
 
@@ -7520,6 +7708,7 @@ input SolutionsBlocksCtaBannerMutation {
 }
 
 input SolutionsBlocksCtaInlineMutation {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -7545,6 +7734,7 @@ input SolutionsBlocksImageFeatureMutation {
 }
 
 input SolutionsBlocksVideoSectionMutation {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -7560,6 +7750,7 @@ input SolutionsBlocksTeamGridTeamMutation {
 }
 
 input SolutionsBlocksTeamGridMutation {
+  scheme: String
   heading: String
   team: [SolutionsBlocksTeamGridTeamMutation]
 }
@@ -7575,6 +7766,7 @@ input SolutionsBlocksTeamShowcaseTeamMutation {
 }
 
 input SolutionsBlocksTeamShowcaseMutation {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -7587,10 +7779,12 @@ input SolutionsBlocksTrustCertBlockBadgesMutation {
 }
 
 input SolutionsBlocksTrustCertBlockMutation {
+  scheme: String
   badges: [SolutionsBlocksTrustCertBlockBadgesMutation]
 }
 
 input SolutionsBlocksAlertBannerMutation {
+  scheme: String
   type: String
   text: String
   ctaText: String
@@ -7614,6 +7808,7 @@ input SolutionsBlocksCurrentKnowledgeCardSourcesMutation {
 }
 
 input SolutionsBlocksCurrentKnowledgeCardMutation {
+  scheme: String
   question: String
   directAnswer: String
   tldrBullets: [SolutionsBlocksCurrentKnowledgeCardTldrBulletsMutation]
@@ -7647,6 +7842,7 @@ input SolutionsBlocksRoiCalculatorPromoMutation {
 }
 
 input SolutionsBlocksLeadMagnetPromoMutation {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -7660,6 +7856,7 @@ input SolutionsBlocksBreadcrumbItemsMutation {
 }
 
 input SolutionsBlocksBreadcrumbMutation {
+  scheme: String
   items: [SolutionsBlocksBreadcrumbItemsMutation]
 }
 
@@ -7676,6 +7873,7 @@ input SolutionsBlocksPartnerLogoCarouselMutation {
 }
 
 input SolutionsBlocksContactFormMutation {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -7778,6 +7976,7 @@ input SegmentsBlocksTrustBarItemsMutation {
 }
 
 input SegmentsBlocksTrustBarMutation {
+  scheme: String
   items: [SegmentsBlocksTrustBarItemsMutation]
 }
 
@@ -7936,6 +8135,7 @@ input SegmentsBlocksCtaBannerMutation {
 }
 
 input SegmentsBlocksCtaInlineMutation {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -7961,6 +8161,7 @@ input SegmentsBlocksImageFeatureMutation {
 }
 
 input SegmentsBlocksVideoSectionMutation {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -7976,6 +8177,7 @@ input SegmentsBlocksTeamGridTeamMutation {
 }
 
 input SegmentsBlocksTeamGridMutation {
+  scheme: String
   heading: String
   team: [SegmentsBlocksTeamGridTeamMutation]
 }
@@ -7991,6 +8193,7 @@ input SegmentsBlocksTeamShowcaseTeamMutation {
 }
 
 input SegmentsBlocksTeamShowcaseMutation {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -8003,10 +8206,12 @@ input SegmentsBlocksTrustCertBlockBadgesMutation {
 }
 
 input SegmentsBlocksTrustCertBlockMutation {
+  scheme: String
   badges: [SegmentsBlocksTrustCertBlockBadgesMutation]
 }
 
 input SegmentsBlocksAlertBannerMutation {
+  scheme: String
   type: String
   text: String
   ctaText: String
@@ -8030,6 +8235,7 @@ input SegmentsBlocksCurrentKnowledgeCardSourcesMutation {
 }
 
 input SegmentsBlocksCurrentKnowledgeCardMutation {
+  scheme: String
   question: String
   directAnswer: String
   tldrBullets: [SegmentsBlocksCurrentKnowledgeCardTldrBulletsMutation]
@@ -8063,6 +8269,7 @@ input SegmentsBlocksRoiCalculatorPromoMutation {
 }
 
 input SegmentsBlocksLeadMagnetPromoMutation {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -8076,6 +8283,7 @@ input SegmentsBlocksBreadcrumbItemsMutation {
 }
 
 input SegmentsBlocksBreadcrumbMutation {
+  scheme: String
   items: [SegmentsBlocksBreadcrumbItemsMutation]
 }
 
@@ -8092,6 +8300,7 @@ input SegmentsBlocksPartnerLogoCarouselMutation {
 }
 
 input SegmentsBlocksContactFormMutation {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -8194,6 +8403,7 @@ input CompareBlocksTrustBarItemsMutation {
 }
 
 input CompareBlocksTrustBarMutation {
+  scheme: String
   items: [CompareBlocksTrustBarItemsMutation]
 }
 
@@ -8352,6 +8562,7 @@ input CompareBlocksCtaBannerMutation {
 }
 
 input CompareBlocksCtaInlineMutation {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -8377,6 +8588,7 @@ input CompareBlocksImageFeatureMutation {
 }
 
 input CompareBlocksVideoSectionMutation {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -8392,6 +8604,7 @@ input CompareBlocksTeamGridTeamMutation {
 }
 
 input CompareBlocksTeamGridMutation {
+  scheme: String
   heading: String
   team: [CompareBlocksTeamGridTeamMutation]
 }
@@ -8407,6 +8620,7 @@ input CompareBlocksTeamShowcaseTeamMutation {
 }
 
 input CompareBlocksTeamShowcaseMutation {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -8419,10 +8633,12 @@ input CompareBlocksTrustCertBlockBadgesMutation {
 }
 
 input CompareBlocksTrustCertBlockMutation {
+  scheme: String
   badges: [CompareBlocksTrustCertBlockBadgesMutation]
 }
 
 input CompareBlocksAlertBannerMutation {
+  scheme: String
   type: String
   text: String
   ctaText: String
@@ -8446,6 +8662,7 @@ input CompareBlocksCurrentKnowledgeCardSourcesMutation {
 }
 
 input CompareBlocksCurrentKnowledgeCardMutation {
+  scheme: String
   question: String
   directAnswer: String
   tldrBullets: [CompareBlocksCurrentKnowledgeCardTldrBulletsMutation]
@@ -8479,6 +8696,7 @@ input CompareBlocksRoiCalculatorPromoMutation {
 }
 
 input CompareBlocksLeadMagnetPromoMutation {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -8492,6 +8710,7 @@ input CompareBlocksBreadcrumbItemsMutation {
 }
 
 input CompareBlocksBreadcrumbMutation {
+  scheme: String
   items: [CompareBlocksBreadcrumbItemsMutation]
 }
 
@@ -8508,6 +8727,7 @@ input CompareBlocksPartnerLogoCarouselMutation {
 }
 
 input CompareBlocksContactFormMutation {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -8610,6 +8830,7 @@ input LearnBlocksTrustBarItemsMutation {
 }
 
 input LearnBlocksTrustBarMutation {
+  scheme: String
   items: [LearnBlocksTrustBarItemsMutation]
 }
 
@@ -8768,6 +8989,7 @@ input LearnBlocksCtaBannerMutation {
 }
 
 input LearnBlocksCtaInlineMutation {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -8793,6 +9015,7 @@ input LearnBlocksImageFeatureMutation {
 }
 
 input LearnBlocksVideoSectionMutation {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -8808,6 +9031,7 @@ input LearnBlocksTeamGridTeamMutation {
 }
 
 input LearnBlocksTeamGridMutation {
+  scheme: String
   heading: String
   team: [LearnBlocksTeamGridTeamMutation]
 }
@@ -8823,6 +9047,7 @@ input LearnBlocksTeamShowcaseTeamMutation {
 }
 
 input LearnBlocksTeamShowcaseMutation {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -8835,10 +9060,12 @@ input LearnBlocksTrustCertBlockBadgesMutation {
 }
 
 input LearnBlocksTrustCertBlockMutation {
+  scheme: String
   badges: [LearnBlocksTrustCertBlockBadgesMutation]
 }
 
 input LearnBlocksAlertBannerMutation {
+  scheme: String
   type: String
   text: String
   ctaText: String
@@ -8862,6 +9089,7 @@ input LearnBlocksCurrentKnowledgeCardSourcesMutation {
 }
 
 input LearnBlocksCurrentKnowledgeCardMutation {
+  scheme: String
   question: String
   directAnswer: String
   tldrBullets: [LearnBlocksCurrentKnowledgeCardTldrBulletsMutation]
@@ -8895,6 +9123,7 @@ input LearnBlocksRoiCalculatorPromoMutation {
 }
 
 input LearnBlocksLeadMagnetPromoMutation {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -8908,6 +9137,7 @@ input LearnBlocksBreadcrumbItemsMutation {
 }
 
 input LearnBlocksBreadcrumbMutation {
+  scheme: String
   items: [LearnBlocksBreadcrumbItemsMutation]
 }
 
@@ -8924,6 +9154,7 @@ input LearnBlocksPartnerLogoCarouselMutation {
 }
 
 input LearnBlocksContactFormMutation {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -9034,6 +9265,7 @@ input ResourcesBlocksTrustBarItemsMutation {
 }
 
 input ResourcesBlocksTrustBarMutation {
+  scheme: String
   items: [ResourcesBlocksTrustBarItemsMutation]
 }
 
@@ -9192,6 +9424,7 @@ input ResourcesBlocksCtaBannerMutation {
 }
 
 input ResourcesBlocksCtaInlineMutation {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -9217,6 +9450,7 @@ input ResourcesBlocksImageFeatureMutation {
 }
 
 input ResourcesBlocksVideoSectionMutation {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -9232,6 +9466,7 @@ input ResourcesBlocksTeamGridTeamMutation {
 }
 
 input ResourcesBlocksTeamGridMutation {
+  scheme: String
   heading: String
   team: [ResourcesBlocksTeamGridTeamMutation]
 }
@@ -9247,6 +9482,7 @@ input ResourcesBlocksTeamShowcaseTeamMutation {
 }
 
 input ResourcesBlocksTeamShowcaseMutation {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -9259,10 +9495,12 @@ input ResourcesBlocksTrustCertBlockBadgesMutation {
 }
 
 input ResourcesBlocksTrustCertBlockMutation {
+  scheme: String
   badges: [ResourcesBlocksTrustCertBlockBadgesMutation]
 }
 
 input ResourcesBlocksAlertBannerMutation {
+  scheme: String
   type: String
   text: String
   ctaText: String
@@ -9286,6 +9524,7 @@ input ResourcesBlocksCurrentKnowledgeCardSourcesMutation {
 }
 
 input ResourcesBlocksCurrentKnowledgeCardMutation {
+  scheme: String
   question: String
   directAnswer: String
   tldrBullets: [ResourcesBlocksCurrentKnowledgeCardTldrBulletsMutation]
@@ -9319,6 +9558,7 @@ input ResourcesBlocksRoiCalculatorPromoMutation {
 }
 
 input ResourcesBlocksLeadMagnetPromoMutation {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -9332,6 +9572,7 @@ input ResourcesBlocksBreadcrumbItemsMutation {
 }
 
 input ResourcesBlocksBreadcrumbMutation {
+  scheme: String
   items: [ResourcesBlocksBreadcrumbItemsMutation]
 }
 
@@ -9348,6 +9589,7 @@ input ResourcesBlocksPartnerLogoCarouselMutation {
 }
 
 input ResourcesBlocksContactFormMutation {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -9450,6 +9692,7 @@ input CompanyBlocksTrustBarItemsMutation {
 }
 
 input CompanyBlocksTrustBarMutation {
+  scheme: String
   items: [CompanyBlocksTrustBarItemsMutation]
 }
 
@@ -9608,6 +9851,7 @@ input CompanyBlocksCtaBannerMutation {
 }
 
 input CompanyBlocksCtaInlineMutation {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -9633,6 +9877,7 @@ input CompanyBlocksImageFeatureMutation {
 }
 
 input CompanyBlocksVideoSectionMutation {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -9648,6 +9893,7 @@ input CompanyBlocksTeamGridTeamMutation {
 }
 
 input CompanyBlocksTeamGridMutation {
+  scheme: String
   heading: String
   team: [CompanyBlocksTeamGridTeamMutation]
 }
@@ -9663,6 +9909,7 @@ input CompanyBlocksTeamShowcaseTeamMutation {
 }
 
 input CompanyBlocksTeamShowcaseMutation {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -9675,10 +9922,12 @@ input CompanyBlocksTrustCertBlockBadgesMutation {
 }
 
 input CompanyBlocksTrustCertBlockMutation {
+  scheme: String
   badges: [CompanyBlocksTrustCertBlockBadgesMutation]
 }
 
 input CompanyBlocksAlertBannerMutation {
+  scheme: String
   type: String
   text: String
   ctaText: String
@@ -9702,6 +9951,7 @@ input CompanyBlocksCurrentKnowledgeCardSourcesMutation {
 }
 
 input CompanyBlocksCurrentKnowledgeCardMutation {
+  scheme: String
   question: String
   directAnswer: String
   tldrBullets: [CompanyBlocksCurrentKnowledgeCardTldrBulletsMutation]
@@ -9735,6 +9985,7 @@ input CompanyBlocksRoiCalculatorPromoMutation {
 }
 
 input CompanyBlocksLeadMagnetPromoMutation {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -9748,6 +9999,7 @@ input CompanyBlocksBreadcrumbItemsMutation {
 }
 
 input CompanyBlocksBreadcrumbMutation {
+  scheme: String
   items: [CompanyBlocksBreadcrumbItemsMutation]
 }
 
@@ -9764,6 +10016,7 @@ input CompanyBlocksPartnerLogoCarouselMutation {
 }
 
 input CompanyBlocksContactFormMutation {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
@@ -9866,6 +10119,7 @@ input KnowledgeBaseBlocksTrustBarItemsMutation {
 }
 
 input KnowledgeBaseBlocksTrustBarMutation {
+  scheme: String
   items: [KnowledgeBaseBlocksTrustBarItemsMutation]
 }
 
@@ -10024,6 +10278,7 @@ input KnowledgeBaseBlocksCtaBannerMutation {
 }
 
 input KnowledgeBaseBlocksCtaInlineMutation {
+  scheme: String
   heading: String
   bodyText: String
   primaryCtaText: String
@@ -10049,6 +10304,7 @@ input KnowledgeBaseBlocksImageFeatureMutation {
 }
 
 input KnowledgeBaseBlocksVideoSectionMutation {
+  scheme: String
   heading: String
   videoUrl: String
   caption: String
@@ -10064,6 +10320,7 @@ input KnowledgeBaseBlocksTeamGridTeamMutation {
 }
 
 input KnowledgeBaseBlocksTeamGridMutation {
+  scheme: String
   heading: String
   team: [KnowledgeBaseBlocksTeamGridTeamMutation]
 }
@@ -10079,6 +10336,7 @@ input KnowledgeBaseBlocksTeamShowcaseTeamMutation {
 }
 
 input KnowledgeBaseBlocksTeamShowcaseMutation {
+  scheme: String
   heading: String
   subtitle: String
   layout: String
@@ -10091,10 +10349,12 @@ input KnowledgeBaseBlocksTrustCertBlockBadgesMutation {
 }
 
 input KnowledgeBaseBlocksTrustCertBlockMutation {
+  scheme: String
   badges: [KnowledgeBaseBlocksTrustCertBlockBadgesMutation]
 }
 
 input KnowledgeBaseBlocksAlertBannerMutation {
+  scheme: String
   type: String
   text: String
   ctaText: String
@@ -10118,6 +10378,7 @@ input KnowledgeBaseBlocksCurrentKnowledgeCardSourcesMutation {
 }
 
 input KnowledgeBaseBlocksCurrentKnowledgeCardMutation {
+  scheme: String
   question: String
   directAnswer: String
   tldrBullets: [KnowledgeBaseBlocksCurrentKnowledgeCardTldrBulletsMutation]
@@ -10151,6 +10412,7 @@ input KnowledgeBaseBlocksRoiCalculatorPromoMutation {
 }
 
 input KnowledgeBaseBlocksLeadMagnetPromoMutation {
+  scheme: String
   heading: String
   promoBody: String
   ctaText: String
@@ -10164,6 +10426,7 @@ input KnowledgeBaseBlocksBreadcrumbItemsMutation {
 }
 
 input KnowledgeBaseBlocksBreadcrumbMutation {
+  scheme: String
   items: [KnowledgeBaseBlocksBreadcrumbItemsMutation]
 }
 
@@ -10180,6 +10443,7 @@ input KnowledgeBaseBlocksPartnerLogoCarouselMutation {
 }
 
 input KnowledgeBaseBlocksContactFormMutation {
+  scheme: String
   heading: String
   subtitle: String
   salesEmail: String
