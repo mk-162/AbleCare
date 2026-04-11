@@ -12,7 +12,8 @@ interface EditorialPageClientProps {
 }
 
 export function EditorialPageClient({ query, variables, data: initialData }: EditorialPageClientProps) {
-  const { data } = useTina({ query, variables, data: initialData });
+  const tinaResult = useTina({ query: query || "", variables, data: initialData });
+  const data = tinaResult.data;
 
   // Navigate the data object to find the first collection result
   const collectionKey = Object.keys(data).find(
