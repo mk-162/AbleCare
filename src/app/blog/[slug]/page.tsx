@@ -172,9 +172,9 @@ export default async function BlogArticlePage({
 
         {/* Two-column: Article body + Right rail */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
-          {/* Main content */}
+          {/* Main content — only render raw HTML content if no blocks exist */}
           <div className="flex-1 min-w-0 max-w-3xl">
-            {data.content && (
+            {!hasBlocks && data.content && (
               <div
                 className="article-prose"
                 dangerouslySetInnerHTML={{ __html: data.content }}

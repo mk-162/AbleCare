@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+  experimental: {
+    scrollRestoration: false,
+  },
   async redirects() {
     return [
       // Old segment URL
