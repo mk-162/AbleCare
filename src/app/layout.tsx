@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Able Care",
   },
   description:
-    "Digital, objective falls risk screening in under 5 minutes. Trusted by home care, senior living and clinicians across the US and UK.",
+    "Digital, objective falls risk screening in under 5 minutes. Trusted by home care and senior living organizations across the US and UK.",
   metadataBase: new URL("https://www.able-care.co"),
 };
 
@@ -42,7 +42,7 @@ export default function RootLayout({
               url: "https://www.able-care.co",
               logo: "https://www.able-care.co/images/able-care-logo.svg",
               description:
-                "Digital, objective falls risk screening in under 5 minutes. Trusted by home care, senior living and clinicians across the US and UK.",
+                "Digital, objective falls risk screening in under 5 minutes. Trusted by home care and senior living organizations across the US and UK.",
               email: "hello@able-care.co",
               telephone: "+44 20 7946 0958",
               sameAs: [

@@ -35,7 +35,6 @@ const segmentsMenu = {
   ],
   clinical: [
     { label: "Skilled Nursing", href: "/skilled-nursing", desc: "Standardised screening across every facility." },
-    { label: "Clinicians & Researchers", href: "/clinicians", desc: "Objective metrics in the flow of care." },
     { label: "Pharma & CROs", href: "/pharma", desc: "Digital endpoints for clinical trials." },
   ],
 };

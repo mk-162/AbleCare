@@ -43,7 +43,6 @@ export function SiteFooter() {
               <li><Link href="/home-care" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Home Care</Link></li>
               <li><Link href="/senior-living" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Senior Living</Link></li>
               <li><Link href="/skilled-nursing" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Skilled Nursing</Link></li>
-              <li><Link href="/clinicians" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Clinicians & Researchers</Link></li>
               <li><Link href="/pharma" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Pharma & CROs</Link></li>
               <li><Link href="/evidence/compliance" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Compliance</Link></li>
             </ul>
