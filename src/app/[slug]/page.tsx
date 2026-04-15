@@ -10,7 +10,6 @@ const SLUG_MAP: Record<string, { collection: string; filename: string }> = {
   "home-care": { collection: "segments", filename: "home-care" },
   "senior-living": { collection: "segments", filename: "senior-living" },
   "skilled-nursing": { collection: "segments", filename: "skilled-nursing" },
-  "clinicians": { collection: "segments", filename: "clinicians" },
   "pharma": { collection: "segments", filename: "pharma" },
   "about": { collection: "company", filename: "about" },
   "meet-the-team": { collection: "company", filename: "meet-the-team" },

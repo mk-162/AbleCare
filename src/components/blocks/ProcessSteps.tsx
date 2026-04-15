@@ -33,7 +33,7 @@ export function ProcessSteps({ scheme = "light", heading, steps, ctaText, ctaLin
   const items = steps && steps.length > 0 ? steps : defaultSteps;
 
   return (
-    <section className={`relative py-20 md:py-32 ${bgClass} ${textClass}`}>
+    <section id="how-it-works" className={`relative py-20 md:py-32 ${bgClass} ${textClass}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <div className={`text-xs font-bold uppercase tracking-[0.25em] mb-4 ${isBlue ? "text-ac-aqua" : "text-ac-blue"}`}>

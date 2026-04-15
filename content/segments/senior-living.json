@@ -3,7 +3,7 @@
   "slug": "senior-living",
   "seo": {
     "title": "Falls Prevention for Senior Living & CCRCs | Able Care",
-    "description": "Objective falls screening for CCRCs, rental retirement, independent and assisted living. Reduce resident turnover from falls by up to 25%.",
+    "description": "Objective falls screening for CCRCs, rental retirement, independent and assisted living. Protect residents, reduce staff turnover, and avoid falls-related liability.",
     "ogImage": "/images/og-senior-living.png"
   },
   "blocks": [
@@ -24,50 +24,22 @@
       "_template": "hero",
       "colorScheme": "blue",
       "waveStyle": "crest",
-      "backgroundImage": "/images/photos/clinical/patient-therapist-smiling.jpg",
-      "backgroundImageAlt": "Patient and therapist smiling during functional health assessment",
+      "backgroundImage": "/images/product/elderly-man-holding-gripable-resized.jpg",
+      "backgroundImageAlt": "Older man at a senior living community using Able Assess",
       "eyebrow": "Senior Living",
-      "headline": "Protect residents. Protect occupancy. Protect NOI.",
-      "subtitle": "Objective falls screening for CCRCs, rental retirement, independent and assisted living. Reduce resident turnover from falls by up to 25%.",
+      "headline": "Protect residents. Reduce staff turnover. Avoid falls-related liability.",
+      "subtitle": "Objective falls screening for CCRCs, rental retirement, independent and assisted living. Standardized across every level of care.",
       "primaryCta": {
         "label": "Book a Demo",
         "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the CCRC Guide",
-        "href": "/resources/ccrc-guide"
       }
-    },
-    {
-      "_template": "segmentRouter",
-      "heading": "Explore other settings",
-      "tiles": [
-        {
-          "label": "Home Care",
-          "benefit": "Standardize screening across every branch.",
-          "href": "/home-care",
-          "ctaText": "Explore"
-        },
-        {
-          "label": "Clinicians",
-          "benefit": "Objective metrics in the flow of care.",
-          "href": "/clinicians",
-          "ctaText": "Explore"
-        },
-        {
-          "label": "Pharma & CROs",
-          "benefit": "Decentralized functional endpoints.",
-          "href": "/pharma",
-          "ctaText": "Explore"
-        }
-      ]
     },
     {
       "_template": "imageFeature",
       "heading": "Technology built for the frontline",
       "body": "Able Assess fits into the resident's daily routine. Five minutes in the wellness center, the dining room, or the resident's apartment. Non-clinical staff can run it. Results are available immediately.",
       "imageSide": "right",
-      "imageAlt": "Wellness director running an Able Assess screening with a resident in a senior living community",
+      "imageAlt": "Older man at a senior living community during an Able Assess screening",
       "imageSrc": "/images/product/elderly-man-holding-gripable-resized.jpg"
     },
     {
@@ -78,7 +50,7 @@
         {
           "number": 1,
           "title": "Capture",
-          "description": "A wellness director or care aide runs a five-minute assessment on any tablet during a routine wellness check."
+          "description": "A wellness director or other staff member runs a five-minute assessment during a routine wellness check."
         },
         {
           "number": 2,
@@ -88,7 +60,7 @@
         {
           "number": 3,
           "title": "Act",
-          "description": "Risk banding triggers care plan updates, level-of-care transition conversations, and family communication."
+          "description": "Outcome report is available immediately and can be used for referrals to physical therapy, updated in the care plan, or sent to families to improve communication."
         },
         {
           "number": 4,
@@ -103,7 +75,7 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Upper-body strength proxy. Predicts frailty, mortality and functional decline."
+          "description": "Full body strength proxy. Predicts frailty, mortality and functional decline."
         },
         {
           "name": "Sit-to-stand",
@@ -111,11 +83,11 @@
         },
         {
           "name": "Gait speed",
-          "description": "The 'sixth vital sign' for older adults. Linked to fall risk and level-of-care transitions."
+          "description": "Walking speed over a standardized 4-metre distance. Linked to fall risk and level-of-care transitions."
         },
         {
           "name": "Timed Up and Go",
-          "description": "Falls risk in under a minute. Validated across community and clinical settings."
+          "description": "Captures mobility, balance and transfer ability in a single measure. Validated across community and clinical settings."
         }
       ]
     },
@@ -157,13 +129,6 @@
       ]
     },
     {
-      "_template": "roiCalculatorPromo",
-      "heading": "How much could you save?",
-      "promoBody": "Model the financial impact of reducing falls-related turnover and liability across your communities.",
-      "ctaText": "Run the numbers",
-      "ctaHref": "/resources/roi-calculator"
-    },
-    {
       "_template": "faqAccordion",
       "scheme": "grey",
       "heading": "Common questions from senior living operators",
@@ -171,11 +136,11 @@
       "items": [
         {
           "question": "What hardware do we need?",
-          "answer": "A GripAble sensor and any tablet. The sensor connects via Bluetooth. No additional infrastructure required."
+          "answer": "The sensor, pouch and measuring tape are all provided as part of the kit. It pairs via Bluetooth with any smartphone or tablet. No additional infrastructure required."
         },
         {
           "question": "Can non-clinical staff run the assessment?",
-          "answer": "Yes. Able Assess was built for non-clinical staff. Wellness directors, care aides and activities coordinators can all run the workflow with no training course."
+          "answer": "Yes, Able Assess was built for clinical and non-clinical staff. Wellness directors, care aides and activities coordinators can all run the protocol with no training course."
         },
         {
           "question": "How does it help with occupancy?",
@@ -188,10 +153,6 @@
         {
           "question": "How does it reduce liability?",
           "answer": "A standardized, documented screening protocol creates a defensible record of proactive falls risk management for every resident."
-        },
-        {
-          "question": "What does it cost?",
-          "answer": "Pricing is based on community size and assessment volume. The ROI calculator models payback against reduced falls-related turnover and liability. Book a demo to discuss your specific scenario."
         }
       ]
     },
@@ -205,15 +166,29 @@
       "colorScheme": "blue",
       "waveStyle": "ribbon",
       "heading": "See Able Assess in your community.",
-      "body": "20 minutes with a clinician who has run it in senior living.",
+      "body": "Book a presentation with a clinician who has run it in senior living.",
       "primaryCta": {
         "label": "Book a Demo",
         "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
       }
+    },
+    {
+      "_template": "segmentRouter",
+      "heading": "Explore other settings",
+      "tiles": [
+        {
+          "label": "Home Care",
+          "benefit": "Standardize screening across every branch.",
+          "href": "/home-care",
+          "ctaText": "Explore"
+        },
+        {
+          "label": "Pharma & CROs",
+          "benefit": "Decentralized functional endpoints.",
+          "href": "/pharma",
+          "ctaText": "Explore"
+        }
+      ]
     }
   ],
   "tags": [

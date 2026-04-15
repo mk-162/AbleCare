@@ -3,37 +3,17 @@
     {
       "scheme": "blue",
       "wave": "crest",
-      "eyebrow": "Falls prevention, reimagined",
-      "headline": "Keep people strong, steady and independent for life.",
-      "subtitle": "The falls prevention platform for home care, senior living and clinical teams. Four objective metrics in under five minutes. Evidence-based. Standardized. Built for scale.",
+      "eyebrow": "Falls prevention",
+      "headline": "Identify fall risk early. Act before a fall happens.",
+      "subtitle": "A quick, objective falls assessment in under five minutes. Evidence-based. Standardized. Built for the people you care for.",
       "primaryCtaText": "Book a demo",
       "primaryCtaLink": "/demo/",
       "secondaryCtaText": "Watch it work",
       "secondaryCtaLink": "#how-it-works",
-      "backgroundImage": "/images/photos/clinical/therapist-high-five.jpg",
-      "backgroundImageAlt": "Therapist and patient celebrating with a high five during GripAble assessment",
+      "backgroundImage": "/images/photos/home/gentleman-child-couch.jpg",
+      "backgroundImageAlt": "Older adult at home with family",
       "waveFill": "grey",
       "_template": "hero"
-    },
-    {
-      "items": [
-        {
-          "text": "FDA Listed"
-        },
-        {
-          "text": "CE Marked"
-        },
-        {
-          "text": "ISO 27001"
-        },
-        {
-          "text": "HIPAA Aligned"
-        },
-        {
-          "text": "Imperial College Origin"
-        }
-      ],
-      "_template": "trustBar"
     },
     {
       "scheme": "light",
@@ -55,9 +35,9 @@
           "sublabel": "Across home care, senior living and clinical sites"
         },
         {
-          "value": "12",
-          "label": "Peer-reviewed studies",
-          "sublabel": "Backing the Able Assess protocol"
+          "value": "Peer-reviewed",
+          "label": "Evidence base",
+          "sublabel": "Backed by published research behind every Able Assess metric"
         }
       ],
       "_template": "statsBar"
@@ -68,21 +48,15 @@
       "segments": [
         {
           "title": "Home Care",
-          "description": "Reduce hospitalizations and hit HHVBP targets with standardized falls screening across every branch.",
+          "description": "Reduce client falls, improve standardization across caregivers, and increase customer conversion rates.",
           "ctaText": "Explore",
           "link": "/home-care/"
         },
         {
           "title": "Senior Living",
-          "description": "Protect residents, protect occupancy, protect NOI. Objective screening for CCRCs, IL, AL and rental retirement.",
+          "description": "Protect residents, reduce staff turnover, and avoid falls-related liability. Objective screening of residents across all levels of care.",
           "ctaText": "Explore",
           "link": "/senior-living/"
-        },
-        {
-          "title": "Clinicians",
-          "description": "Multifactorial, evidence-based falls risk screening. Standardized. Peer-reviewed.",
-          "ctaText": "Explore",
-          "link": "/clinicians/"
         },
         {
           "title": "Pharma & CROs",
@@ -99,18 +73,18 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "whatItMeasures": "Upper-body strength proxy captured by the GripAble sensor.",
+          "whatItMeasures": "Full body strength proxy.",
           "whyItMatters": "Predicts all-cause mortality more reliably than systolic blood pressure. A validated marker of frailty, sarcopenia and falls risk."
         },
         {
           "name": "Sit-to-stand",
-          "whatItMeasures": "Lower-limb power and balance. Timed five-repetition protocol.",
+          "whatItMeasures": "Lower-limb power and balance. 30-second timed test.",
           "whyItMatters": "Independently predicts falls in older adults. Captures functional decline that grip strength alone can miss."
         },
         {
           "name": "Gait speed",
-          "whatItMeasures": "Walking speed over a standardized distance.",
-          "whyItMatters": "Known as the 'sixth vital sign' for older adults. A strong predictor of hospitalization, disability and mortality."
+          "whatItMeasures": "Walking speed over a standardized 4-metre distance.",
+          "whyItMatters": "A strong predictor of hospitalization, disability and mortality in older adults."
         },
         {
           "name": "Timed Up and Go",
@@ -132,17 +106,17 @@
         {
           "number": 1,
           "title": "Capture",
-          "description": "Run the five-minute Able Assess workflow on any tablet. No clinical training required."
+          "description": "Run the five-minute Able Assess protocol on any tablet. No clinical training required."
         },
         {
           "number": 2,
           "title": "Score",
-          "description": "Instant risk banding against age- and sex-matched normative data."
+          "description": "Instant risk score generated against age- and sex-matched normative data."
         },
         {
           "number": 3,
           "title": "Act",
-          "description": "Care plan triggers and alerts routed to the right team automatically."
+          "description": "Risk report available immediately to allow for quick referrals to preventative care."
         },
         {
           "number": 4,
@@ -170,7 +144,7 @@
           "text": "Results sync automatically when connected"
         },
         {
-          "text": "Integration-ready with EHR, OASIS and wellness platforms"
+          "text": "Integration ready with EHRs and risk monitoring platforms"
         }
       ],
       "ctaText": "See how it works",
@@ -255,7 +229,7 @@
           "metricLabel": "reduction in falls-related hospitalizations",
           "summary": "A PE-backed home care operator rolled out Able Assess across 12 branches. Non-clinical staff ran screenings in under five minutes, flagging at-risk clients six weeks earlier than their previous paper-based process.",
           "sector": "Home Care",
-          "link": "/customers/"
+          "link": "/home-care/"
         },
         {
           "title": "Senior living: protecting occupancy through prevention",
@@ -263,27 +237,18 @@
           "metricLabel": "fewer falls per resident per year",
           "summary": "A CCRC with 200 IL and AL units adopted Able Assess as part of their quarterly wellness program. Resident engagement increased and fall-related move-outs dropped.",
           "sector": "Senior Living",
-          "link": "/customers/"
+          "link": "/senior-living/"
         },
         {
           "title": "Clinical research: objective endpoints for decentralized trials",
           "metric": "4",
-          "metricLabel": "validated functional endpoints in one workflow",
+          "metricLabel": "validated functional endpoints in one protocol",
           "summary": "A CRO-led GLP-1 trial used Able Assess to capture grip strength and functional health remotely, replacing site-based Jamar assessments with digital, standardized capture.",
           "sector": "Pharma & CROs",
-          "link": "/customers/"
+          "link": "/pharma/"
         }
       ],
       "_template": "caseStudyCards"
-    },
-    {
-      "scheme": "aqua",
-      "eyebrow": "ROI Calculator",
-      "heading": "Model the financial impact of standardized falls screening.",
-      "promoBody": "Segment-aware. Two minutes. Emailable report. See how much you could save by reducing one fall per branch per month.",
-      "ctaText": "Open the ROI calculator",
-      "ctaLink": "/resources/roi-calculator/",
-      "_template": "roiCalculatorPromo"
     },
     {
       "scheme": "light",
@@ -292,7 +257,7 @@
       "faqs": [
         {
           "question": "What hardware does Able Assess require?",
-          "answer": "Able Assess runs on any iOS or Android tablet paired with the GripAble sensor for grip strength measurement. No specialist equipment beyond the sensor is needed."
+          "answer": "Able Assess runs on any iOS or Android tablet paired with the grip strength sensor kit. The kit includes the sensor, a pouch and a measuring tape. No specialist equipment beyond the kit is needed."
         },
         {
           "question": "How much training do staff need?",
@@ -300,7 +265,7 @@
         },
         {
           "question": "Does Able Assess integrate with our EHR or care management system?",
-          "answer": "Yes. Able Assess is integration-ready with EHR, OASIS and wellness platforms. The clinical team can walk you through the integration during a demo."
+          "answer": "Yes. Able Assess is integration ready with EHRs and other risk monitoring platforms. The clinical team can walk you through the integration during a demo."
         },
         {
           "question": "Where is patient data stored?",
@@ -308,21 +273,36 @@
         },
         {
           "question": "How is Able Assess different from paper-based assessments like the Morse Fall Scale?",
-          "answer": "Paper assessments are subjective, slow and difficult to standardize across staff. Able Assess captures four objective, peer-reviewed metrics in under five minutes, scores automatically against normative data, and routes results to the care team. No subjective scoring. No inter-rater variability."
+          "answer": "Paper assessments are subjective, slow and difficult to standardize across staff. Able Assess captures four objective, peer-reviewed metrics in under five minutes, scores automatically against normative data, and delivers a risk report to the care team. No subjective scoring. No inter-rater variability."
         }
       ],
       "_template": "faqAccordion"
+    },
+    {
+      "items": [
+        {
+          "text": "FDA Listed"
+        },
+        {
+          "text": "CE Marked"
+        },
+        {
+          "text": "ISO 27001"
+        },
+        {
+          "text": "HIPAA Aligned"
+        }
+      ],
+      "_template": "trustBar"
     },
     {
       "scheme": "blue",
       "wave": "ribbon",
       "waveFill": "light",
       "heading": "See Able Assess in your workflow.",
-      "bodyText": "A 20-minute demo with a clinician who has run it in the field.",
+      "bodyText": "Book a presentation with the Able Care team.",
       "primaryCtaText": "Book a demo",
       "primaryCtaLink": "/demo/",
-      "secondaryCtaText": "Download the buyers guide",
-      "secondaryCtaLink": "/resources/buyers-guide/",
       "_template": "ctaBanner"
     }
   ],

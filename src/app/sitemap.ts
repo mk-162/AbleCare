@@ -28,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // SLUG_MAP pages (segments, company, utility, etc.)
   const slugMapPages = [
-    "home-care", "senior-living", "skilled-nursing", "clinicians", "pharma",
+    "home-care", "senior-living", "skilled-nursing", "pharma",
     "about", "meet-the-team", "contact", "demo", "customers", "partners", "news",
     "privacy", "terms", "cookies", "security", "faqs", "careers",
   ].map((slug) => ({
