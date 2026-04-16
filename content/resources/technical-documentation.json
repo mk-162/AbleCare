@@ -1,0 +1,70 @@
+{
+  "title": "Technical Documentation",
+  "slug": "technical-documentation",
+  "seo": {
+    "title": "Technical Documentation | Able Care",
+    "description": "Integration documents and other technical documentation relating to the Able Care product. Full library coming soon — contact us for what you need today.",
+    "ogImage": "/images/og-default.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "Technical Documentation", "href": "/resources/technical-documentation" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "backgroundImage": "/images/heroes/devices-hero-new-min.png",
+      "backgroundImageAlt": "Able Assess product and tablet",
+      "eyebrow": "Coming Soon",
+      "headline": "Technical Documentation",
+      "subtitle": "Integration documents and other technical documentation relating to our product. A full self-service library is being prepared.",
+      "primaryCta": {
+        "label": "Request Documentation",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Back to Resources",
+        "href": "/resources"
+      }
+    },
+    {
+      "_template": "imageFeature",
+      "heading": "What will live here",
+      "body": "This page will become the home for everything an engineering, IT or clinical informatics team needs — integration guides for EHR and risk-monitoring platforms, API references, data schemas, security and compliance documentation, deployment checklists and sensor specifications. We're preparing the full library now.",
+      "imageSide": "right",
+      "imageAlt": "Technical documentation on a tablet",
+      "imageSrc": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg",
+      "ctaText": "Request a Document",
+      "ctaLink": "/contact",
+      "bulletPoints": [
+        { "text": "EHR and risk-monitoring platform integration guides" },
+        { "text": "API reference and data schemas" },
+        { "text": "Security, HIPAA and ISO 27001 documentation" },
+        { "text": "Deployment and rollout checklists" },
+        { "text": "Sensor specifications and accuracy data" }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "Need a specific document today?",
+      "body": "Tell us what your team is evaluating and we'll send the most relevant technical materials straight over.",
+      "primaryCta": {
+        "label": "Contact the Team",
+        "href": "/contact"
+      }
+    }
+  ],
+  "tags": [
+    "technical-documentation",
+    "integrations",
+    "holding-page"
+  ]
+}
