@@ -7,6 +7,7 @@ import { BackToTop } from "@/components/ui/BackToTop";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { PasswordGate } from "@/components/ui/PasswordGate";
 import { CookieBanner } from "@/components/ui/CookieBanner";
+import { CartProvider } from "@/lib/cart-context";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -53,15 +54,17 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans bg-white text-ac-black">
-        <PasswordGate>
-          <ScrollToTop />
-          <SiteHeader />
-          <main className="flex-grow">{children}</main>
-          <SiteFooter />
-          <BackToTop />
-          <CookieBanner />
-        </PasswordGate>
+      <body className="min-h-full flex flex-col font-sans bg-white text-ac-black" suppressHydrationWarning>
+        <CartProvider>
+          <PasswordGate>
+            <ScrollToTop />
+            <SiteHeader />
+            <main className="flex-grow">{children}</main>
+            <SiteFooter />
+            <BackToTop />
+            <CookieBanner />
+          </PasswordGate>
+        </CartProvider>
       </body>
     </html>
   );

@@ -3,19 +3,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCart } from "@/lib/cart-context";
 
 /* ─── Navigation data matching Site Navigation spec ─── */
 
-const solutionsMenu = {
+type NavItem = { label: string; href: string; desc?: string; external?: boolean };
+
+const solutionsMenu: { platform: NavItem[]; capabilities: NavItem[] } = {
   platform: [
     { label: "Able Assess", href: "/solutions/able-assess", desc: "Best in class assessment of strength and falls risk." },
     { label: "Able Assess — Falls Prevention Application", href: "/solutions/falls-prevention", desc: "Upstream screening for early and accurate identification of risk of falling." },
     { label: "Able Assess — Grip Strength Application", href: "/solutions/grip-strength", desc: "Unlocking the fifth vital sign for application in data-driven healthcare." },
     { label: "The GripAble Sensor", href: "/solutions/sensor", desc: "One best-in-class sensor, many applications." },
   ],
-  capabilities: [] as Array<{ label: string; href: string; desc: string }>,
+  capabilities: [],
 };
 
 const segmentsMenu = {
@@ -62,6 +65,8 @@ export function SiteHeader() {
   const [expandedMobileItem, setExpandedMobileItem] = useState<string | null>(null);
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const desktopNavRef = useRef<HTMLElement>(null);
+  const { itemCount } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -69,13 +74,38 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleMouseEnter = (menu: MenuKey) => {
+  // Close the open mega-menu when tapping/clicking outside of it (needed for touch devices).
+  useEffect(() => {
+    if (!openMenu) return;
+    const handleOutside = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as Node | null;
+      if (desktopNavRef.current && target && !desktopNavRef.current.contains(target)) {
+        setOpenMenu(null);
+      }
+    };
+    document.addEventListener("mousedown", handleOutside);
+    document.addEventListener("touchstart", handleOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("touchstart", handleOutside);
+    };
+  }, [openMenu]);
+
+  // Hover only applies to true mouse pointers. Touch devices (iPad) fire synthetic
+  // mouseenter/leave around a tap, which made the menu flash open then closed.
+  const handlePointerEnter = (menu: MenuKey, e: React.PointerEvent) => {
+    if (e.pointerType !== "mouse") return;
     if (closeTimer.current) clearTimeout(closeTimer.current);
     setOpenMenu(menu);
   };
 
-  const handleMouseLeave = () => {
+  const handlePointerLeave = (e: React.PointerEvent) => {
+    if (e.pointerType !== "mouse") return;
     closeTimer.current = setTimeout(() => setOpenMenu(null), 150);
+  };
+
+  const toggleMenu = (menu: MenuKey) => {
+    setOpenMenu((current) => (current === menu ? null : menu));
   };
 
   const closeMobile = () => setMobileMenuOpen(false);
@@ -102,10 +132,16 @@ export function SiteHeader() {
           </Link>
 
           {/* ── Desktop Nav ── */}
-          <nav className="hidden lg:flex items-center space-x-0.5">
+          <nav ref={desktopNavRef} className="hidden lg:flex items-center space-x-0.5">
             {/* Solutions mega-menu */}
-            <div className="relative" onMouseEnter={() => handleMouseEnter("solutions")} onMouseLeave={handleMouseLeave}>
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors">
+            <div className="relative" onPointerEnter={(e) => handlePointerEnter("solutions", e)} onPointerLeave={handlePointerLeave}>
+              <button
+                type="button"
+                onClick={() => toggleMenu("solutions")}
+                aria-expanded={openMenu === "solutions"}
+                aria-haspopup="true"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors"
+              >
                 Solutions <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "solutions" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "solutions" && (
@@ -125,10 +161,17 @@ export function SiteHeader() {
                       </Link>
                     </div>
                     {[...solutionsMenu.platform, ...solutionsMenu.capabilities].map((item) => (
-                      <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
-                        <div className="text-sm font-bold text-ac-black">{item.label}</div>
-                        <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
-                      </Link>
+                      item.external ? (
+                        <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer" className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
+                          <div className="text-sm font-bold text-ac-black">{item.label}</div>
+                          <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
+                        </a>
+                      ) : (
+                        <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
+                          <div className="text-sm font-bold text-ac-black">{item.label}</div>
+                          <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
+                        </Link>
+                      )
                     ))}
                   </div>
                 </div>
@@ -136,8 +179,14 @@ export function SiteHeader() {
             </div>
 
             {/* Who We Help mega-menu */}
-            <div className="relative" onMouseEnter={() => handleMouseEnter("segments")} onMouseLeave={handleMouseLeave}>
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors">
+            <div className="relative" onPointerEnter={(e) => handlePointerEnter("segments", e)} onPointerLeave={handlePointerLeave}>
+              <button
+                type="button"
+                onClick={() => toggleMenu("segments")}
+                aria-expanded={openMenu === "segments"}
+                aria-haspopup="true"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors"
+              >
                 Who We Help <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "segments" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "segments" && (
@@ -176,8 +225,14 @@ export function SiteHeader() {
             </div>
 
             {/* Resources mega-menu */}
-            <div className="relative" onMouseEnter={() => handleMouseEnter("resources")} onMouseLeave={handleMouseLeave}>
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors">
+            <div className="relative" onPointerEnter={(e) => handlePointerEnter("resources", e)} onPointerLeave={handlePointerLeave}>
+              <button
+                type="button"
+                onClick={() => toggleMenu("resources")}
+                aria-expanded={openMenu === "resources"}
+                aria-haspopup="true"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors"
+              >
                 Resources <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "resources" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "resources" && (
@@ -208,8 +263,14 @@ export function SiteHeader() {
             </div>
 
             {/* Company mega-menu */}
-            <div className="relative" onMouseEnter={() => handleMouseEnter("company")} onMouseLeave={handleMouseLeave}>
-              <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors">
+            <div className="relative" onPointerEnter={(e) => handlePointerEnter("company", e)} onPointerLeave={handlePointerLeave}>
+              <button
+                type="button"
+                onClick={() => toggleMenu("company")}
+                aria-expanded={openMenu === "company"}
+                aria-haspopup="true"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors"
+              >
                 Company <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "company" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "company" && (
@@ -239,6 +300,19 @@ export function SiteHeader() {
               )}
             </div>
 
+            {/* Shop + Cart */}
+            <Link href="/shop" className="px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors">
+              Shop
+            </Link>
+            <Link href="/cart" className="relative p-2 hover:bg-ac-grey/40 rounded-full transition-colors" aria-label="Cart">
+              <ShoppingBag className="w-5 h-5 text-ac-black" />
+              {itemCount > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-ac-blue text-white text-[10px] font-bold rounded-full leading-none">
+                  {itemCount > 99 ? "99+" : itemCount}
+                </span>
+              )}
+            </Link>
+
             {/* CTAs */}
             <Link href="/demo" className="ml-2">
               <Button className="bg-ac-blue text-white rounded-full px-6 font-bold shadow-sm hover:bg-ac-aqua hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-200">
@@ -265,7 +339,7 @@ export function SiteHeader() {
               {/* Solutions */}
               <MobileAccordion label="Solutions" expanded={expandedMobileItem} onToggle={setExpandedMobileItem}>
                 {[...solutionsMenu.platform, ...solutionsMenu.capabilities].map((item) => (
-                  <MobileSubLink key={item.href} href={item.href} label={item.label} desc={item.desc} onClose={closeMobile} />
+                  <MobileSubLink key={item.href} href={item.href} label={item.label} desc={item.desc} external={item.external} onClose={closeMobile} />
                 ))}
               </MobileAccordion>
 
@@ -290,7 +364,16 @@ export function SiteHeader() {
                 ))}
               </MobileAccordion>
             </ul>
-            <div className="px-5 py-4 border-t border-ac-grey/40">
+            <div className="px-5 py-4 border-t border-ac-grey/40 space-y-3">
+              <Link href="/shop" onClick={closeMobile} className="flex items-center gap-2 text-sm font-semibold text-ac-black hover:text-ac-blue transition-colors">
+                <ShoppingBag className="w-4 h-4" />
+                Shop
+                {itemCount > 0 && (
+                  <span className="ml-auto bg-ac-blue text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    {itemCount}
+                  </span>
+                )}
+              </Link>
               <Link href="/demo" onClick={closeMobile}>
                 <Button className="w-full bg-ac-blue text-white rounded-full font-bold hover:bg-ac-aqua hover:text-white hover:shadow-lg transition-all duration-200">
                   Book a demo
@@ -341,23 +424,33 @@ function MobileSubLink({
   href,
   label,
   desc,
+  external,
   onClose,
 }: {
   href: string;
   label: string;
   desc?: string;
+  external?: boolean;
   onClose: () => void;
 }) {
+  const content = (
+    <>
+      <span className="text-sm font-bold text-ac-black">{label}</span>
+      {desc && <span className="text-xs text-ac-black/55 font-light mt-0.5">{desc}</span>}
+    </>
+  );
+  const className = "flex flex-col px-7 py-3.5 border-b border-ac-grey/30 last:border-b-0 hover:bg-ac-grey/40 transition-colors";
   return (
     <li>
-      <Link
-        href={href}
-        className="flex flex-col px-7 py-3.5 border-b border-ac-grey/30 last:border-b-0 hover:bg-ac-grey/40 transition-colors"
-        onClick={onClose}
-      >
-        <span className="text-sm font-bold text-ac-black">{label}</span>
-        {desc && <span className="text-xs text-ac-black/55 font-light mt-0.5">{desc}</span>}
-      </Link>
+      {external ? (
+        <a href={href} target="_blank" rel="noopener noreferrer" className={className} onClick={onClose}>
+          {content}
+        </a>
+      ) : (
+        <Link href={href} className={className} onClick={onClose}>
+          {content}
+        </Link>
+      )}
     </li>
   );
 }
