@@ -10,15 +10,12 @@ import { Button } from "@/components/ui/button";
 
 const solutionsMenu = {
   platform: [
-    { label: "Able Assess", href: "/solutions/able-assess", desc: "Four metrics. Five minutes. One complete picture." },
-    { label: "Falls Prevention", href: "/solutions/falls-prevention", desc: "Upstream screening that prevents falls before they happen." },
-    { label: "How It Works", href: "/product/how-it-works", desc: "Unbox, train, screen, review, share. Five-minute workflow." },
+    { label: "Able Assess", href: "/solutions/able-assess", desc: "Best in class assessment of strength and falls risk." },
+    { label: "Able Assess — Falls Prevention Application", href: "/solutions/falls-prevention", desc: "Upstream screening for early and accurate identification of risk of falling." },
+    { label: "Able Assess — Grip Strength Application", href: "/solutions/grip-strength", desc: "Unlocking the fifth vital sign for application in data-driven healthcare." },
+    { label: "The GripAble Sensor", href: "/solutions/sensor", desc: "One best-in-class sensor, many applications." },
   ],
-  capabilities: [
-    { label: "Grip Strength", href: "/solutions/grip-strength", desc: "Clinical-grade digital grip strength measurement." },
-    { label: "Functional Health", href: "/solutions/functional-health", desc: "Beyond falls: frailty, oncology, GLP-1, longevity." },
-    { label: "Remote Monitoring", href: "/solutions/remote-monitoring", desc: "Home-based grip strength and falls screening." },
-  ],
+  capabilities: [] as Array<{ label: string; href: string; desc: string }>,
 };
 
 const segmentsMenu = {
@@ -41,24 +38,20 @@ const segmentsMenu = {
 
 const resourcesMenu = {
   learn: [
-    { label: "Blog", href: "/blog", desc: "Insights on falls prevention and functional assessment." },
-    { label: "Knowledge Base", href: "/knowledge-base", desc: "Evidence-based guides on assessments and care settings." },
-    { label: "Research Library", href: "/resources/evidence", desc: "Peer-reviewed evidence behind Able Assess." },
-    { label: "Guides & Downloads", href: "/resources/guides", desc: "HHVBP, CCRC, NICE and compliance guides." },
+    { label: "Blog", href: "/blog", desc: "The topics that we are talking about." },
+    { label: "Knowledge Base", href: "/knowledge-base", desc: "Our published papers, research summaries, and white papers." },
+    { label: "Research Library", href: "/resources/research-library", desc: "A searchable library of the academic papers we are excited about." },
   ],
   tools: [
-    { label: "Product Walkthrough", href: "/resources/walkthrough", desc: "See Able Assess in action, step by step." },
-    { label: "Case Studies", href: "/resources/case-studies", desc: "Real results from real organisations." },
+    { label: "Technical Documentation", href: "/resources/technical-documentation", desc: "Integration documents and other technical documentation relating to our product." },
+    { label: "Case Studies and Customer Testimonials", href: "/resources/case-studies", desc: "What our customers are saying about us." },
     { label: "Buyers Guide", href: "/resources/buyers-guide", desc: "Everything you need to brief procurement." },
   ],
 };
 
 const companyItems = [
-  { label: "Meet the Team", href: "/meet-the-team", desc: "The people behind Able Care." },
-  { label: "Customers", href: "/customers", desc: "Organisations we work with." },
-  { label: "Partners", href: "/partners", desc: "Our integration & channel partners." },
-  { label: "Careers", href: "/careers", desc: "Join the Able Care team." },
-  { label: "Contact", href: "/contact", desc: "Get in touch with us." },
+  { label: "About Able Care", href: "/about", desc: "The story behind Able Care." },
+  { label: "Contact Us", href: "/contact", desc: "Get in touch with us." },
 ];
 
 type MenuKey = "solutions" | "segments" | "resources" | "company";
