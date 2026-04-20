@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Able Care — Homepage Video</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  html, body {
+    margin: 0; padding: 0;
+    background: #0a0a0a;
+    min-height: 100vh;
+    font-family: "DM Sans", system-ui, sans-serif;
+    overflow: hidden;
+  }
+  #root { width: 100vw; height: 100vh; }
+  /* Disable body scroll */
+  ::-webkit-scrollbar { display: none; }
+
+  .ac-tweaks {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    width: 260px;
+    background: rgba(20,20,20,0.92);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 16px;
+    color: #f6f4ef;
+    font-family: "DM Sans", system-ui, sans-serif;
+    font-size: 13px;
+    z-index: 9999;
+    backdrop-filter: blur(8px);
+    display: none;
+  }
+  .ac-tweaks.on { display: block; }
+  .ac-tweaks h4 {
+    margin: 0 0 12px 0;
+    font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #00FFD2;
+    font-weight: 700;
+  }
+  .ac-tweaks label {
+    display: flex; justify-content: space-between;
+    align-items: center; gap: 8px;
+    margin-bottom: 10px;
+  }
+  .ac-tweaks input[type=range] { flex: 1; }
+  .ac-tweaks button {
+    width: 100%; padding: 8px 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 999px;
+    color: #f6f4ef;
+    font-size: 12px; font-weight: 500;
+    cursor: pointer;
+    margin-top: 4px;
+  }
+  .ac-tweaks button:hover { background: rgba(255,255,255,0.14); }
+  .ac-tweaks button.primary {
+    background: #1432FF; border-color: #1432FF; color: white;
+  }
+  .ac-tweaks button.primary:hover { background: #0b1fd4; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="scenes.jsx"></script>
+
+<script type="text/babel">
+const STAGE_W = 1080;
+const STAGE_H = 1080;
+const AUDIO_SRC = 'assets/voiceover.mp3';
+const FALLBACK_DURATION = 59.5;
+
+// Stylised caption segments — synced to tightened scene timings
+const CAPTIONS = [
+  { start: 0.2,  end: 6.0,  text: 'Strong. Steady. Independent.' },
+  { start: 6.4,  end: 8.8,  text: '1 in 4 adults over 65 falls each year.' },
+  { start: 9.0,  end: 14.4, text: 'Most risk is missed until after the first fall.' },
+  { start: 14.9, end: 19.3, text: 'Able Care — built to measure it.' },
+  { start: 19.8, end: 24.6, text: '15 years of research · Imperial College London' },
+  { start: 24.8, end: 28.2, text: '10× more accurate than legacy tools' },
+  { start: 28.8, end: 34.8, text: 'Grip strength is a powerful biomarker.' },
+  { start: 35.0, end: 37.8, text: 'An early warning before a fall.' },
+  { start: 38.4, end: 42.8, text: 'Four validated measurements.' },
+  { start: 43.0, end: 48.2, text: 'One screening. Five minutes.' },
+  { start: 48.8, end: 52.4, text: 'Results that let your team act early.' },
+  { start: 52.9, end: 56.0, text: 'FDA · HIPAA · CDC STEADI aligned' },
+  { start: 56.4, end: 59.4, text: 'Enabling intelligent health.' },
+];
+
+// ── Editable defaults ────────────────────────────────────────────────────
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "loop": false,
+  "muted": true,
+  "timeOffset": 1.2,
+  "showCaptions": false,
+  "startMuted": false
+}/*EDITMODE-END*/;
+
+const TWEAK_STORAGE_KEY = 'ac-homepage-tweaks';
+const loadSavedTweaks = () => {
+  try {
+    const saved = localStorage.getItem(TWEAK_STORAGE_KEY);
+    if (saved) return { ...TWEAK_DEFAULTS, ...JSON.parse(saved) };
+  } catch {}
+  return TWEAK_DEFAULTS;
+};
+
+function useAudioTime(audioRef, fallback) {
+  const [time, setTime] = React.useState(0);
+  const [duration, setDuration] = React.useState(fallback);
+
+  React.useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    const onTime = () => setTime(a.currentTime);
+    const onLoaded = () => {
+      if (isFinite(a.duration) && a.duration > 0) setDuration(a.duration);
+    };
+    const onEnded = () => {
+      if (TWEAK_DEFAULTS.loop) { a.currentTime = 0; a.play().catch(()=>{}); }
+    };
+    a.addEventListener('timeupdate', onTime);
+    a.addEventListener('loadedmetadata', onLoaded);
+    a.addEventListener('durationchange', onLoaded);
+    a.addEventListener('ended', onEnded);
+    // Poll (timeupdate fires ~4Hz; we need smoother)
+    let raf;
+    const tick = () => {
+      if (!a.paused) setTime(a.currentTime);
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => {
+      a.removeEventListener('timeupdate', onTime);
+      a.removeEventListener('loadedmetadata', onLoaded);
+      a.removeEventListener('durationchange', onLoaded);
+      a.removeEventListener('ended', onEnded);
+      cancelAnimationFrame(raf);
+    };
+  }, [audioRef]);
+
+  return [time, duration, setTime];
+}
+
+function Caption({ time, show }) {
+  if (!show) return null;
+  const active = CAPTIONS.find(c => time >= c.start && time <= c.end);
+  if (!active) return null;
+  const local = time - active.start;
+  const dur = active.end - active.start;
+  const inDur = 0.4, outDur = 0.4;
+  let opacity = 1;
+  if (local < inDur) opacity = local / inDur;
+  else if (local > dur - outDur) opacity = 1 - (local - (dur - outDur)) / outDur;
+  opacity = Math.max(0, Math.min(1, opacity));
+
+  return (
+    <div key={active.start} style={{
+      position: 'absolute',
+      left: 0, right: 0, bottom: 48,
+      display: 'flex', justifyContent: 'center',
+      pointerEvents: 'none',
+      opacity,
+      transition: 'opacity 120ms linear',
+    }}>
+      <div style={{
+        padding: '12px 22px',
+        background: 'rgba(0,0,0,0.55)',
+        color: 'white',
+        borderRadius: 999,
+        fontSize: 18, fontWeight: 500,
+        letterSpacing: '-0.005em',
+        backdropFilter: 'blur(10px)',
+        border: '1px solid rgba(255,255,255,0.1)',
+      }}>{active.text}</div>
+    </div>
+  );
+}
+
+function PlayButton({ onClick, visible }) {
+  if (!visible) return null;
+  return (
+    <button onClick={onClick} style={{
+      position: 'absolute', inset: 0, margin: 'auto',
+      width: 120, height: 120,
+      borderRadius: '50%',
+      background: 'rgba(20, 50, 255, 0.9)',
+      border: '2px solid rgba(0,255,210,0.4)',
+      color: 'white', cursor: 'pointer',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      backdropFilter: 'blur(6px)',
+      boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
+      zIndex: 10,
+    }}>
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="white">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </button>
+  );
+}
+
+function MuteToggle({ muted, onToggle }) {
+  return (
+    <button onClick={onToggle} title={muted ? 'Unmute' : 'Mute'} style={{
+      position: 'absolute', top: 20, right: 20,
+      width: 44, height: 44, borderRadius: 22,
+      background: 'rgba(0,0,0,0.5)',
+      border: '1px solid rgba(255,255,255,0.15)',
+      color: 'white', cursor: 'pointer',
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      backdropFilter: 'blur(8px)',
+      zIndex: 20,
+    }}>
+      {muted ? (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <line x1="23" y1="9" x2="17" y2="15"/>
+          <line x1="17" y1="9" x2="23" y2="15"/>
+        </svg>
+      ) : (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+          <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        </svg>
+      )}
+    </button>
+  );
+}
+
+function Progress({ time, duration, onSeek }) {
+  const pct = duration > 0 ? (time / duration) * 100 : 0;
+  const [hover, setHover] = React.useState(false);
+  return (
+    <div
+      onClick={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const p = (e.clientX - rect.left) / rect.width;
+        onSeek(Math.max(0, Math.min(1, p)) * duration);
+      }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      style={{
+        position: 'absolute', left: 0, right: 0, bottom: 0,
+        height: hover ? 6 : 3,
+        background: 'rgba(0,0,0,0.25)',
+        cursor: 'pointer',
+        zIndex: 20,
+        transition: 'height 120ms',
+      }}>
+      <div style={{
+        width: pct + '%', height: '100%',
+        background: '#00FFD2',
+      }}/>
+    </div>
+  );
+}
+
+function Tweaks({ tweaks, setTweaks, visible }) {
+  if (!visible) return null;
+  const update = (patch) => {
+    const next = { ...tweaks, ...patch };
+    setTweaks(next);
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: patch }, '*');
+  };
+  return (
+    <div className="ac-tweaks on">
+      <h4>Tweaks</h4>
+      <label>
+        <span>Loop</span>
+        <input type="checkbox" checked={tweaks.loop}
+          onChange={e => update({ loop: e.target.checked })}/>
+      </label>
+      <label>
+        <span>Autoplay muted</span>
+        <input type="checkbox" checked={tweaks.startMuted}
+          onChange={e => update({ startMuted: e.target.checked })}/>
+      </label>
+      <label>
+        <span>Show captions</span>
+        <input type="checkbox" checked={tweaks.showCaptions}
+          onChange={e => update({ showCaptions: e.target.checked })}/>
+      </label>
+      <label style={{flexDirection:'column',alignItems:'stretch',gap:6}}>
+        <div style={{display:'flex',justifyContent:'space-between'}}>
+          <span>Visual lead</span>
+          <span style={{color:'#00FFD2',fontVariantNumeric:'tabular-nums'}}>{(tweaks.timeOffset||0).toFixed(2)}s</span>
+        </div>
+        <input type="range" min="-1" max="2" step="0.05"
+          value={tweaks.timeOffset||0}
+          onChange={e => update({ timeOffset: parseFloat(e.target.value) })}/>
+        <div style={{fontSize:10,color:'rgba(246,244,239,0.5)',lineHeight:1.3}}>
+          Positive = visuals run ahead of VO. Try 0.3–0.8s.
+        </div>
+      </label>
+    </div>
+  );
+}
+
+function App() {
+  const audioRef = React.useRef(null);
+  const [tweaks, setTweaks] = React.useState(loadSavedTweaks);
+  const [tweaksOpen, setTweaksOpen] = React.useState(false);
+
+  // Persist tweaks across reloads so you can tune by ear without losing the value.
+  React.useEffect(() => {
+    try { localStorage.setItem(TWEAK_STORAGE_KEY, JSON.stringify(tweaks)); } catch {}
+  }, [tweaks]);
+  const [needsInteraction, setNeedsInteraction] = React.useState(true);
+  const [muted, setMuted] = React.useState(TWEAK_DEFAULTS.startMuted);
+  const [scale, setScale] = React.useState(1);
+  const [ended, setEnded] = React.useState(false);
+  const [time, duration, setTime] = useAudioTime(audioRef, FALLBACK_DURATION);
+
+  // When the VO finishes (and loop is off), freeze visuals on the Scene 1 poster.
+  React.useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    const onEnd = () => { if (!tweaks.loop) setEnded(true); };
+    a.addEventListener('ended', onEnd);
+    return () => a.removeEventListener('ended', onEnd);
+  }, [tweaks.loop]);
+
+  // Auto-scale to viewport
+  React.useEffect(() => {
+    const measure = () => {
+      const s = Math.min(
+        window.innerWidth / STAGE_W,
+        window.innerHeight / STAGE_H
+      );
+      setScale(s);
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
+
+  // Try autoplay on mount
+  React.useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    a.muted = muted;
+    a.loop = tweaks.loop;
+    a.play().then(() => setNeedsInteraction(false))
+      .catch(() => setNeedsInteraction(true));
+  }, []);
+
+  React.useEffect(() => {
+    if (audioRef.current) audioRef.current.muted = muted;
+  }, [muted]);
+
+  React.useEffect(() => {
+    if (audioRef.current) audioRef.current.loop = tweaks.loop;
+  }, [tweaks.loop]);
+
+  // Tweaks toggle: via parent toolbar (iframe mode), auto-open standalone, or `T` key.
+  React.useEffect(() => {
+    const standalone = window.parent === window;
+    if (standalone) setTweaksOpen(true);
+
+    const onMsg = (e) => {
+      if (e.data?.type === '__activate_edit_mode') setTweaksOpen(true);
+      else if (e.data?.type === '__deactivate_edit_mode') setTweaksOpen(false);
+    };
+    const onKey = (e) => {
+      if (e.key === 't' || e.key === 'T') setTweaksOpen(o => !o);
+    };
+    window.addEventListener('message', onMsg);
+    window.addEventListener('keydown', onKey);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => {
+      window.removeEventListener('message', onMsg);
+      window.removeEventListener('keydown', onKey);
+    };
+  }, []);
+
+  const handlePlay = () => {
+    const a = audioRef.current;
+    if (!a) return;
+    if (ended || a.currentTime >= (a.duration || FALLBACK_DURATION) - 0.05) {
+      a.currentTime = 0;
+      setTime(0);
+    }
+    setEnded(false);
+    setMuted(false);
+    a.muted = false;
+    a.play().then(() => setNeedsInteraction(false)).catch(()=>{});
+  };
+
+  const handleSeek = (t) => {
+    if (audioRef.current) {
+      audioRef.current.currentTime = t;
+      setTime(t);
+    }
+  };
+
+  const S = window.AbleScenes || {};
+
+  return (
+    <div style={{
+      position: 'absolute', inset: 0,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      background: '#0a0a0a',
+    }}>
+      {/* Audio */}
+      <audio ref={audioRef} src={AUDIO_SRC} preload="auto" playsInline/>
+
+      {/* Square stage */}
+      <div style={{
+        width: STAGE_W, height: STAGE_H,
+        transform: `scale(${scale})`,
+        transformOrigin: 'center center',
+        flexShrink: 0,
+        position: 'relative',
+        overflow: 'hidden',
+        background: '#DCDCDC',
+        boxShadow: '0 20px 80px rgba(0,0,0,0.6)',
+      }}>
+        {(() => { const vt = ended ? -0.01 : time + (tweaks.timeOffset || 0); return (<>
+          {S.Scene1 && <S.Scene1 t={vt}/>}
+          {S.Scene2 && <S.Scene2 t={vt}/>}
+          {S.Scene3 && <S.Scene3 t={vt}/>}
+          {S.Scene4 && <S.Scene4 t={vt}/>}
+          {S.Scene5 && <S.Scene5 t={vt}/>}
+          {S.Scene6 && <S.Scene6 t={vt}/>}
+          {S.Scene7 && <S.Scene7 t={vt}/>}
+          {S.Scene8 && <S.Scene8 t={vt}/>}
+          {S.Scene9 && <S.Scene9 t={vt} total={duration}/>}
+        </>); })()}
+
+        {/* Captions */}
+        <Caption time={time} show={tweaks.showCaptions}/>
+
+        {/* Controls */}
+        <MuteToggle muted={muted} onToggle={() => setMuted(m => !m)}/>
+        <PlayButton onClick={handlePlay} visible={needsInteraction || ended}/>
+        <Progress time={time} duration={duration} onSeek={handleSeek}/>
+      </div>
+
+      <Tweaks tweaks={tweaks} setTweaks={setTweaks} visible={tweaksOpen}/>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>

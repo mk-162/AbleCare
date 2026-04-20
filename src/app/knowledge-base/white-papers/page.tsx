@@ -27,6 +27,7 @@ const WHITE_PAPERS: WhitePaper[] = [
     description:
       "A clinical review of the evidence linking grip strength to mortality, frailty and functional decline — and why it belongs in every falls-prevention workflow. Includes normative data, clinical cut-offs and implementation guidance.",
     fileUrl: "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf",
+    coverImage: "/images/white-papers/grip-strength-cover.png",
     eyebrow: "White Paper",
     pageCount: 18,
     fileSizeMb: 2.4,

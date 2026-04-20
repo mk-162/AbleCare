@@ -573,9 +573,32 @@ const alertBannerBlock = {
   ],
 };
 
+const proseBlock = {
+  name: "prose",
+  label: "Prose (intro / section text)",
+  ui: {
+    itemProps: (item: { heading?: string; body?: string }) => ({
+      label: item?.heading ? `Prose: ${item.heading}` : item?.body ? `Prose: ${item.body.slice(0, 40)}` : "Prose",
+    }),
+    defaultItem: {
+      scheme: "light",
+      align: "left",
+      heading: "Section heading",
+      body: "A short intro paragraph. Use <strong>inline</strong> tags for emphasis and <p> tags for multiple paragraphs.",
+    },
+  },
+  fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"], ui: { defaultValue: "light" } },
+    { type: "string" as const, name: "align", label: "Alignment", options: ["left", "center"], ui: { defaultValue: "left" } },
+    { type: "string" as const, name: "eyebrow", label: "Eyebrow (small caps label above heading)" },
+    { type: "string" as const, name: "heading", label: "Heading" },
+    { type: "string" as const, name: "body", label: "Body (HTML allowed)", ui: { component: "textarea" } },
+  ],
+};
+
 const richTextBlock = {
   name: "richText",
-  label: "Rich Text",
+  label: "Rich Text (long-form article content)",
   ui: {
     itemProps: (item: { heading?: string; body?: string }) => {
       return { label: item?.heading ? `Rich Text: ${item.heading}` : item?.body ? `Rich Text: ${item.body.slice(0, 40)}` : "Rich Text" };
@@ -886,6 +909,7 @@ const allBlocks = [
   teamShowcaseBlock,
   trustCertBlock,
   alertBannerBlock,
+  proseBlock,
   richTextBlock,
   currentKnowledgeCardBlock,
   relatedKnowledgeBaseBlock,

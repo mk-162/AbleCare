@@ -169,15 +169,17 @@ export function EmailGateDownload({
           </div>
 
           {/* Right — cover art */}
-          <div className="w-full md:w-1/2 bg-ac-blue p-10 flex items-center justify-center relative overflow-hidden min-h-[320px]">
+          <div className="w-full md:w-1/2 bg-ac-blue p-8 md:p-10 flex items-center justify-center relative overflow-hidden min-h-[420px]">
             <div className="absolute inset-0 bg-gradient-to-br from-ac-blue to-ac-aqua opacity-50" />
-            <div className="relative z-10 w-52 h-72 bg-white shadow-2xl rounded-sm transform rotate-3 transition-transform hover:rotate-0 duration-500 flex flex-col border border-white/20 overflow-hidden">
+            <div className="relative z-10 w-64 md:w-72 lg:w-[22rem] aspect-[8.5/11] bg-white shadow-2xl rounded-sm transform rotate-3 transition-transform hover:rotate-0 duration-500 flex flex-col border border-white/20 overflow-hidden">
               {coverImage ? (
-                <img
-                  src={coverImage}
-                  alt=""
-                  className="w-full h-full object-cover"
-                />
+                <div className="w-full h-full p-3 md:p-4">
+                  <img
+                    src={coverImage}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               ) : (
                 <>
                   <div className="p-4 flex-grow border-b border-black/10">

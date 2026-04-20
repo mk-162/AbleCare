@@ -18,6 +18,7 @@ import { VideoSection } from "./VideoSection";
 import { TeamGrid } from "./TeamGrid";
 import { AlertBanner } from "./AlertBanner";
 import { RichText } from "./RichText";
+import { Prose } from "./Prose";
 import { RoiCalculatorPromo } from "./RoiCalculatorPromo";
 import { LeadMagnetPromo } from "./LeadMagnetPromo";
 import { ContactForm } from "./ContactForm";
@@ -245,6 +246,8 @@ export function BlockRenderer({ blocks, pageTags, pageSlug }: BlockRendererProps
             return <AlertBanner key={i} {...block} />;
           case "richText":
             return <RichText key={i} {...block} />;
+          case "prose":
+            return <Prose key={i} {...block} />;
           case "roiCalculatorPromo":
             return <RoiCalculatorPromo key={i} {...block} />;
           case "leadMagnetPromo":

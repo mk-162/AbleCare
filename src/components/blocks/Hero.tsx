@@ -32,6 +32,8 @@ interface HeroProps {
   heroPortraits?: HeroPortrait[];
   breadcrumb?: Array<{ label: string; href?: string }>;
   waveFill?: string;
+  /** Demo-only: if set, renders an iframe in the right-side visual slot. Intended to be swapped for a native <video> once the final MP4 render is ready. */
+  videoIframe?: string;
 }
 
 export function Hero({
