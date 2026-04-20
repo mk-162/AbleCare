@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen, FileText, Beaker, ShoppingBag } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
 export const revalidate = 60;
@@ -57,6 +57,27 @@ const CATEGORIES = [
 ];
 
 const SECTION_SCHEMES = ["bg-white", "bg-ac-blue/[0.03]", "bg-ac-aqua/[0.06]", "bg-white", "bg-ac-blue/[0.03]", "bg-ac-aqua/[0.06]"];
+
+const COLLECTIONS = [
+  {
+    name: "White Papers",
+    href: "/knowledge-base/white-papers",
+    description: "Original research from the Able Care clinical team. Evidence, data and analysis.",
+    Icon: FileText,
+  },
+  {
+    name: "Research Summaries",
+    href: "/knowledge-base/research-summaries",
+    description: "Plain-language summaries of the peer-reviewed evidence behind Able Assess.",
+    Icon: Beaker,
+  },
+  {
+    name: "Buyers Guides",
+    href: "/knowledge-base/buyers-guides",
+    description: "Procurement-ready guides for evaluating falls prevention technology.",
+    Icon: ShoppingBag,
+  },
+];
 
 async function getKBArticles(): Promise<KBArticle[]> {
   try {
@@ -121,6 +142,39 @@ export default async function KnowledgeBaseHub() {
             Written by our team, reviewed by experts, and backed by peer-reviewed evidence.
           </p>
         </div>
+        </div>
+      </section>
+
+      {/* Featured Collections */}
+      <section className="container mx-auto px-4 md:px-6 mb-16">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="text-xs font-bold uppercase tracking-widest text-ac-blue">
+            Collections
+          </span>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {COLLECTIONS.map((c) => {
+            const Icon = c.Icon;
+            return (
+              <Link
+                key={c.href}
+                href={c.href}
+                className="group rounded-2xl border-2 border-ac-blue/15 bg-gradient-to-br from-ac-blue/[0.03] to-transparent p-7 hover:border-ac-blue/30 hover:shadow-md transition-all duration-300 flex flex-col"
+              >
+                <Icon className="w-6 h-6 text-ac-blue mb-4" />
+                <h2 className="text-lg font-bold text-ac-black group-hover:text-ac-blue transition-colors mb-2">
+                  {c.name}
+                </h2>
+                <p className="text-sm text-ac-black/55 font-light leading-relaxed mb-5 flex-grow">
+                  {c.description}
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-ac-blue">
+                  Browse
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </section>
 

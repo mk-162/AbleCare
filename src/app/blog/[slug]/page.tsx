@@ -55,6 +55,7 @@ export default async function BlogArticlePage({
   if (!data) notFound();
 
   const hasBlocks = data.blocks && data.blocks.length > 0;
+  const hasContent = Boolean(data.content);
   const featuredImage = data.featuredImage || data.image;
   const categories = getCategories();
   const categorySlug = data.category ? slugifyCategory(data.category) : null;
@@ -172,9 +173,9 @@ export default async function BlogArticlePage({
 
         {/* Two-column: Article body + Right rail */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
-          {/* Main content — only render raw HTML content if no blocks exist */}
+          {/* Main content — render raw HTML content when present; blocks render full-width below */}
           <div className="flex-1 min-w-0 max-w-3xl">
-            {!hasBlocks && data.content && (
+            {hasContent && (
               <div
                 className="article-prose"
                 dangerouslySetInnerHTML={{ __html: data.content }}

@@ -200,6 +200,14 @@
         "href": "/resources/buyers-guide"
       },
       "scheme": "blue"
+    },
+    {
+      "_template": "leadMagnetPromo",
+      "eyebrow": "Product User Guide",
+      "heading": "Able Assess User Guide",
+      "promoBody": "The complete operator manual for Able Assess. Covers sensor setup, the screening workflow, interpreting results and sharing data with care teams.",
+      "ctaText": "Open the user guide",
+      "ctaLink": "/downloads/Able-Assess-User-Guide-V1.1.pdf"
     }
   ],
   "tags": [

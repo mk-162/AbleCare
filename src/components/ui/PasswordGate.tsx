@@ -13,7 +13,7 @@ export function PasswordGate({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setMounted(true);
-    if (sessionStorage.getItem(STORAGE_KEY) === "1") setAuthed(true);
+    if (localStorage.getItem(STORAGE_KEY) === "1") setAuthed(true);
   }, []);
 
   if (!mounted) return null;
@@ -22,7 +22,7 @@ export function PasswordGate({ children }: { children: React.ReactNode }) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (input === PASSWORD) {
-      sessionStorage.setItem(STORAGE_KEY, "1");
+      localStorage.setItem(STORAGE_KEY, "1");
       setAuthed(true);
     } else {
       setError(true);

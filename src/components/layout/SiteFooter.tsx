@@ -31,6 +31,7 @@ export function SiteFooter() {
               <li><Link href="/solutions/functional-health" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Functional Health</Link></li>
               <li><Link href="/solutions/remote-monitoring" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Remote Monitoring</Link></li>
               <li><Link href="/product/how-it-works" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">How It Works</Link></li>
+              <li><a href="https://gripable.co/" target="_blank" rel="noopener noreferrer" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Able Rehab</a></li>
             </ul>
           </div>
 
@@ -55,7 +56,8 @@ export function SiteFooter() {
             </h4>
             <ul className="space-y-4">
               <li><Link href="/blog" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Blog</Link></li>
-              <li><Link href="/resources/guides" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Guides & Downloads</Link></li>
+              <li><Link href="/resources/downloads" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Downloads</Link></li>
+              <li><Link href="/resources/guides" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Guides</Link></li>
               <li><Link href="/resources/evidence" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Research Library</Link></li>
               <li><Link href="/resources/case-studies" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Case Studies</Link></li>
               <li><Link href="/resources/walkthrough" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Product Walkthrough</Link></li>

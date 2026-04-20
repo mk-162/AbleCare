@@ -1,0 +1,63 @@
+{
+  "title": "Downloads",
+  "slug": "downloads",
+  "seo": {
+    "title": "Downloads | Able Care",
+    "description": "Download the Able Assess user guide, the grip strength whitepaper and the Able Assess mobile apps for iOS and Android.",
+    "ogImage": "/images/og-downloads.png"
+  },
+  "tags": ["resources", "downloads", "apps", "user-guide"],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "Downloads" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Resources",
+      "headline": "Downloads.",
+      "subtitle": "The Able Assess user guide, peer-reviewed clinical summaries and the mobile apps for iOS and Android. Everything you need to get started with Able Care, in one place.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Contact the Team",
+        "href": "/contact"
+      }
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Documents",
+      "body": "<h3><a href=\"/downloads/Able-Assess-User-Guide-V1.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Able Assess User Guide (v1.1)</a></h3><p>The complete operator manual for Able Assess. Covers sensor setup, the five-minute screening workflow, interpreting results and sharing data with care teams. Written for any member of staff running assessments at the bedside, in the clinic or in a resident's living room.</p><p><a href=\"/downloads/Able-Assess-User-Guide-V1.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the PDF</a></p><h3><a href=\"/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Grip Strength: The Essential Biomarker for Longevity</a></h3><p>A peer-reviewed clinical summary linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment. Useful for clinicians, researchers and wellness teams.</p><p><a href=\"/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the PDF</a></p>"
+    },
+    {
+      "_template": "richText",
+      "scheme": "grey",
+      "heading": "Mobile apps",
+      "body": "<p>The Able Assess app runs the full four-metric screening workflow on any iOS or Android tablet. The GripAble sensor pairs via Bluetooth. No specialist hardware required.</p><h3>Able Assess on iOS</h3><p>Available on the Apple App Store for iPad and iPhone.</p><p><a href=\"https://apps.apple.com/search?term=able%20assess\" target=\"_blank\" rel=\"noopener noreferrer\">Download on the App Store</a></p><h3>Able Assess on Android</h3><p>Available on Google Play for Android phones and tablets.</p><p><a href=\"https://play.google.com/store/search?q=able%20assess&c=apps\" target=\"_blank\" rel=\"noopener noreferrer\">Get it on Google Play</a></p><h3>Able Rehab (GripAble)</h3><p>Looking for the rehab platform? Able Rehab is our stroke and neuro recovery companion, powered by the same GripAble sensor. Explore the full platform on the GripAble site.</p><p><a href=\"https://gripable.co/\" target=\"_blank\" rel=\"noopener noreferrer\">Visit gripable.co</a></p>"
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "Need something we haven't listed?",
+      "body": "The team can share protocol templates, ROI models, integration specs and anything else you need to evaluate Able Assess for your setting.",
+      "primaryCta": {
+        "label": "Contact Us",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      }
+    }
+  ]
+}

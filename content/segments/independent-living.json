@@ -196,6 +196,14 @@
         "href": "/resources/buyers-guide"
       },
       "scheme": "blue"
+    },
+    {
+      "_template": "leadMagnetPromo",
+      "eyebrow": "Free Whitepaper",
+      "heading": "Grip Strength: The Essential Biomarker for Longevity",
+      "promoBody": "Download the full clinical summary — peer-reviewed evidence linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment.",
+      "ctaText": "Download the PDF",
+      "ctaLink": "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf"
     }
   ],
   "tags": [

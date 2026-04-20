@@ -33,7 +33,7 @@
       "backgroundImageAlt": "Therapist conducting evidence-based assessment",
       "eyebrow": "Research Library",
       "headline": "Every claim backed by the evidence.",
-      "subtitle": "Browse the peer-reviewed research behind Able Assess. Grip strength, functional health, falls prevention, frailty, sarcopenia and clinical outcomes, all in one place.",
+      "subtitle": "Browse the peer-reviewed research behind Able Assess. Our own publications on the GripAble sensor, plus the wider literature on grip strength and falls prevention, all in one place.",
       "primaryCtaText": "Talk to the Clinical Team",
       "primaryCtaLink": "/contact/",
       "secondaryCtaText": "Download the Research Summary",
@@ -42,13 +42,13 @@
     {
       "_template": "richText",
       "scheme": "light",
-      "heading": "Why the research matters",
-      "body": "Able Assess is built on four clinically validated metrics: grip strength, sit-to-stand, gait speed and Timed Up and Go. Each metric is supported by decades of peer-reviewed research linking it to falls risk, frailty, hospitalization and mortality.\n\nMultifactorial screening, combining strength, balance and gait measures, outperforms single-test approaches. Objective, standardized capture removes inter-rater variability and gives operators, clinicians and payers a defensible data trail.\n\nThe studies below are grouped by outcome domain. Every claim on the Able Care website traces back to this library."
+      "heading": "How this library is organized",
+      "body": "The library is grouped into three sections. <strong>Our Publications</strong> are peer-reviewed studies on the GripAble sensor that underpins Able Assess — reliability, precision, inter-instrument agreement with Jamar and normative reference values. <strong>Papers on Grip Strength</strong> covers the wider literature establishing grip strength as a vital-sign-grade biomarker of ageing, cardiovascular disease, cancer, respiratory disease and all-cause mortality. <strong>Papers on Falls Prevention</strong> gathers the guideline-level evidence (World Guidelines 2022, NICE NG249 2025, Cochrane) alongside the functional-health and readmission studies that make the operational case for objective, multifactorial screening."
     },
     {
       "_template": "evidenceBlock",
       "scheme": "aqua",
-      "heading": "GripAble device validation",
+      "heading": "Our Publications",
       "pulledStat": "GripAble has excellent inter-instrument reliability with Jamar, the incumbent gold standard.",
       "pulledStatSource": "BMC Musculoskeletal Disorders, 2022",
       "citations": [
@@ -105,52 +105,8 @@
     },
     {
       "_template": "evidenceBlock",
-      "scheme": "grey",
-      "heading": "Why is functional health assessment important?",
-      "pulledStat": "Functionally impaired patients face up to 42% higher readmission risk and 77% higher post-discharge costs.",
-      "pulledStatSource": "JAMA Internal Medicine, 2015",
-      "citations": [
-        {
-          "title": "Functional Status and Readmissions",
-          "journal": "JAMA Internal Medicine",
-          "year": "2015",
-          "finding": "Functionally impaired patients face up to 42% higher readmission risk.",
-          "link": "https://pubmed.ncbi.nlm.nih.gov/25642907/"
-        },
-        {
-          "title": "Functional Impairment and Post-Discharge Costs",
-          "journal": "Journal of the American Geriatrics Society",
-          "year": "2017",
-          "finding": "Functionally impaired patients pay 77% higher post-discharge costs.",
-          "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5603365/"
-        },
-        {
-          "title": "Functional Decline in Medicare Patients",
-          "journal": "European Heart Journal",
-          "year": "2021",
-          "finding": "Functional decline impacts over half of Medicare patients, significantly increasing healthcare utilization.",
-          "link": "https://pubmed.ncbi.nlm.nih.gov/34324648/"
-        },
-        {
-          "title": "Functional Independence Limitations and Healthcare Costs",
-          "journal": "BMC Geriatrics",
-          "year": "2022",
-          "finding": "Functional independence limitations cost US healthcare $24,000 per patient annually.",
-          "link": "https://bmcgeriatr.biomedcentral.com/articles/10.1186/s12877-022-03466-w"
-        },
-        {
-          "title": "Cost-effectiveness of a physical activity program on functional mobility decline in older adults",
-          "journal": "The Lancet Public Health",
-          "year": "2022",
-          "finding": "Prevention programs give a 0.04 QALY health benefit, demonstrating cost-effectiveness of functional health interventions.",
-          "link": "https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(22)00030-5/fulltext"
-        }
-      ]
-    },
-    {
-      "_template": "evidenceBlock",
       "scheme": "light",
-      "heading": "Why does grip strength matter?",
+      "heading": "Papers on Grip Strength",
       "pulledStat": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
       "pulledStatSource": "Lancet, 2015",
       "citations": [
@@ -188,12 +144,91 @@
           "year": "2021",
           "finding": "Comprehensive meta-analysis confirming grip strength predicts cardiovascular disease, cancer, respiratory disease and all-cause mortality.",
           "link": "https://www.sciencedirect.com/science/article/pii/S2095254620300752"
+        }
+      ]
+    },
+    {
+      "_template": "evidenceBlock",
+      "scheme": "grey",
+      "heading": "Papers on Falls Prevention",
+      "pulledStat": "Risk-stratified, multifactorial falls interventions reduce fall incidence by 25–35%.",
+      "pulledStatSource": "Cochrane Review, 2023",
+      "citations": [
+        {
+          "title": "World Guidelines on Falls Prevention and Management in Older Adults (Montero-Odasso et al.)",
+          "journal": "Age and Ageing",
+          "year": "2022",
+          "finding": "International consensus guideline setting the 3-tier falls risk stratification approach and Grade 1A evidence for gait speed as a screening tool.",
+          "link": "https://doi.org/10.1093/ageing/afac181"
+        },
+        {
+          "title": "NICE Guideline NG249: Falls in older people — assessment and prevention",
+          "journal": "National Institute for Health and Care Excellence",
+          "year": "2025",
+          "finding": "UK clinical guideline. Single screening tools identify only 40–60% of at-risk community-dwelling older adults; multifactorial interventions based on comprehensive assessment reduce fall incidence by 32–40%.",
+          "link": "https://www.nice.org.uk/guidance/ng249"
+        },
+        {
+          "title": "Interventions for preventing falls in older people living in the community",
+          "journal": "Cochrane Database of Systematic Reviews",
+          "year": "2023",
+          "finding": "Meta-analysis of multifactorial and exercise-based interventions; risk-stratified programmes reduce fall incidence by 25–35%.",
+          "link": "https://doi.org/10.1002/14651858.CD007146.pub4"
+        },
+        {
+          "title": "Predictive validity of the Timed Up and Go test for falls in older adults: a meta-analysis",
+          "journal": "American Journal of Preventive Medicine",
+          "year": "2021",
+          "finding": "Timed Up and Go time of ≥14 seconds predicts falls with 81% sensitivity across 21 studies.",
+          "link": "https://doi.org/10.1016/j.amepre.2021.10.001"
+        },
+        {
+          "title": "WHO Step Safely: Strategies for the prevention and management of falls across the life-course",
+          "journal": "World Health Organization",
+          "year": "2022",
+          "finding": "WHO framework on multifactorial falls prevention. Otago-style exercise and home-hazard interventions reduce fall incidence by up to 32%.",
+          "link": "https://www.who.int/publications/i/item/9789240026704"
         },
         {
           "title": "Multifactorial falls risk screening outperforms single-test approaches",
           "journal": "BMJ",
           "year": "2022",
           "finding": "Multifactorial assessment combining strength, balance and gait measures identified significantly more at-risk older adults than any single screening tool."
+        },
+        {
+          "title": "Functional Status and Readmissions",
+          "journal": "JAMA Internal Medicine",
+          "year": "2015",
+          "finding": "Functionally impaired patients face up to 42% higher readmission risk.",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/25642907/"
+        },
+        {
+          "title": "Functional Impairment and Post-Discharge Costs",
+          "journal": "Journal of the American Geriatrics Society",
+          "year": "2017",
+          "finding": "Functionally impaired patients face 77% higher post-discharge costs.",
+          "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5603365/"
+        },
+        {
+          "title": "Functional Decline in Medicare Patients",
+          "journal": "European Heart Journal",
+          "year": "2021",
+          "finding": "Functional decline affects over half of Medicare patients, significantly increasing healthcare utilization.",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/34324648/"
+        },
+        {
+          "title": "Functional Independence Limitations and Healthcare Costs",
+          "journal": "BMC Geriatrics",
+          "year": "2022",
+          "finding": "Functional independence limitations cost US healthcare $24,000 per patient annually.",
+          "link": "https://bmcgeriatr.biomedcentral.com/articles/10.1186/s12877-022-03466-w"
+        },
+        {
+          "title": "Cost-effectiveness of a physical activity programme on functional mobility decline in older adults",
+          "journal": "The Lancet Public Health",
+          "year": "2022",
+          "finding": "Prevention programmes give a 0.04 QALY health benefit, demonstrating cost-effectiveness of functional health interventions.",
+          "link": "https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(22)00030-5/fulltext"
         }
       ]
     },
@@ -207,6 +242,14 @@
       "primaryCtaLink": "/contact/",
       "secondaryCtaText": "Download the Buyers Guide",
       "secondaryCtaLink": "/resources/buyers-guide/"
+    },
+    {
+      "_template": "leadMagnetPromo",
+      "eyebrow": "Free Whitepaper",
+      "heading": "Grip Strength: The Essential Biomarker for Longevity",
+      "promoBody": "Download the full clinical summary — peer-reviewed evidence linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment.",
+      "ctaText": "Download the PDF",
+      "ctaLink": "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf"
     }
   ],
   "tags": [

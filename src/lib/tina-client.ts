@@ -64,16 +64,24 @@ function wrapData(collection: string, pageData: any): { query: string; variables
 
 /**
  * Fetch a page from a Tina collection by filename.
+ *
+ * In dev, try the Tina GraphQL client first (for live preview support).
+ * If the Tina sidecar isn't running or the request fails, fall back to a
+ * direct filesystem read — the same path prod uses — so pages still render.
  */
 export async function fetchPage(
   collection: string,
   filename: string
 ): Promise<{ query: string; variables: any; data: any }> {
   if (useTinaClient) {
-    const result = await (client.queries as any)[collection]({
-      relativePath: `${filename}.json`,
-    });
-    return { query: result.query, variables: result.variables, data: result.data };
+    try {
+      const result = await (client.queries as any)[collection]({
+        relativePath: `${filename}.json`,
+      });
+      return { query: result.query, variables: result.variables, data: result.data };
+    } catch {
+      // Tina sidecar unavailable — fall through to filesystem read.
+    }
   }
   const pageData = readJsonFile(collection, filename);
   return wrapData(collection, pageData);
@@ -87,10 +95,14 @@ export async function fetchMarkdownPage(
   filename: string
 ): Promise<{ query: string; variables: any; data: any }> {
   if (useTinaClient) {
-    const result = await (client.queries as any)[collection]({
-      relativePath: `${filename}.md`,
-    });
-    return { query: result.query, variables: result.variables, data: result.data };
+    try {
+      const result = await (client.queries as any)[collection]({
+        relativePath: `${filename}.md`,
+      });
+      return { query: result.query, variables: result.variables, data: result.data };
+    } catch {
+      // Tina sidecar unavailable — fall through to filesystem read.
+    }
   }
   const pageData = readMarkdownFile(collection, filename);
   return wrapData(collection, pageData);
@@ -103,9 +115,13 @@ export async function fetchCollection(
   collection: string
 ): Promise<{ query: string; variables: any; data: any }> {
   if (useTinaClient) {
-    const listQuery = `${collection}Connection`;
-    const result = await (client.queries as any)[listQuery]();
-    return { query: result.query, variables: result.variables, data: result.data };
+    try {
+      const listQuery = `${collection}Connection`;
+      const result = await (client.queries as any)[listQuery]();
+      return { query: result.query, variables: result.variables, data: result.data };
+    } catch {
+      // Tina sidecar unavailable — fall through to filesystem read.
+    }
   }
   // Read all JSON files from the collection directory
   const dir = path.join(CONTENT_DIR, collection);

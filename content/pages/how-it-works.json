@@ -111,6 +111,14 @@
       "body": "30 minutes with the clinical team. We will walk through the full five-step process using your care setting as the example.",
       "primaryCta": { "label": "Book a Demo", "href": "/demo" },
       "secondaryCta": { "label": "Watch the Walkthrough Video", "href": "/resources/walkthrough" }
+    },
+    {
+      "_template": "leadMagnetPromo",
+      "eyebrow": "Product User Guide",
+      "heading": "Able Assess User Guide",
+      "promoBody": "The complete operator manual for Able Assess. Covers sensor setup, the screening workflow, interpreting results and sharing data with care teams.",
+      "ctaText": "Open the user guide",
+      "ctaLink": "/downloads/Able-Assess-User-Guide-V1.1.pdf"
     }
   ]
 }
