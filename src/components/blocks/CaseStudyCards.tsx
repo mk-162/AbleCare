@@ -34,7 +34,7 @@ export function CaseStudyCards({ scheme = "light", heading, caseStudies }: CaseS
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{heading || "Proven outcomes"}</h2>
             <p className="text-lg text-ac-black/70 font-light max-w-xl">
-              See how healthcare organizations are using Able Assess to improve care quality and operational efficiency.
+              See how organizations are using Able Assess to improve care quality and operational efficiency.
             </p>
           </div>
         </div>

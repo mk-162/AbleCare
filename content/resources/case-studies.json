@@ -44,22 +44,22 @@
     },
     {
       "_template": "caseStudyCards",
-      "heading": "Featured case studies",
+      "heading": "Featured Case Studies",
       "cards": [
         {
-          "title": "Multi-branch Home Care: Catching Decline Six Weeks Earlier",
+          "title": "Why We Built Able Assess Into Our Tech Stack",
           "segment": "Home Care",
-          "outcome": "A 12-branch US home care operator deployed Able Assess across every branch in under 30 days. Care managers caught functional decline six weeks earlier than their previous paper-based process. Hospitalizations from falls dropped measurably within the first quarter, protecting HHVBP performance.",
+          "outcome": "Owner Bob Roth on why Cypress Home Care, one of the most technology-forward agencies in the US, added Able Assess to its differentiated care model — and how objective grip strength data supports client acquisition, retention and the mission to keep people at home.",
           "href": "/resources/case-studies"
         },
         {
-          "title": "CCRC: Protecting Occupancy and Reducing Liability",
-          "segment": "Senior Living",
-          "outcome": "A UK CCRC with 400+ residents screened its entire IL and AL population in two weeks. Falls reduced by 25% in the first year. Resident turnover from falls dropped, protecting occupancy and entrance-fee revenue. The operator cited reduced liability exposure as a key secondary outcome.",
+          "title": "Turning Inquiries Into Assessments, and Assessments Into Long-Term Care",
+          "segment": "Home Care",
+          "outcome": "Owner Jeff Welsh on how Right at Home Tri-County Metro uses Able Assess to convert family inquiries into in-home assessments, run recurring screening events inside senior living communities, and build a holistic falls-prevention model with referral partners.",
           "href": "/resources/case-studies"
         },
         {
-          "title": "Clinical Research: Standardized Endpoints Across Three Trial Sites",
+          "title": "How One CRO Improved Grip Strength Measurement in a Decentralized Trial",
           "segment": "Pharma & CROs",
           "outcome": "A clinical research team used Able Assess to capture grip strength as a functional endpoint across three decentralized trial sites. The standardized protocol eliminated inter-site variability and improved signal for GLP-1 muscle loss monitoring.",
           "href": "/resources/case-studies"
@@ -71,17 +71,35 @@
       "colorScheme": "aqua",
       "testimonials": [
         {
-          "quote": "We caught decline six weeks earlier than we would have with our old process.",
-          "attribution": "Clinical Director, US home care agency"
+          "quote": "I really like that it is a preventative tool, not a reactive tool. If we use it out of the gate with customers we really can prevent falls.",
+          "attribution": "Owner, multi-site home care company"
         },
         {
-          "quote": "It paid for itself in the first quarter.",
-          "attribution": "Operations Lead, UK CCRC"
+          "quote": "All of the therapists on the team love how quick and easy this is to use.",
+          "attribution": "Therapy Manager, Outpatient PT Provider in Senior Living"
         },
         {
-          "quote": "The standardized protocol eliminated the variability we were seeing across our trial sites.",
-          "attribution": "Principal Investigator, clinical research team"
+          "quote": "This really is like the blood pressure cuff for falls screening.",
+          "attribution": "Manager, CCRC"
+        },
+        {
+          "quote": "A lot of therapists in skilled nursing are not doing standardized testing regularly. I want to show them this and go 'do you know how easy this is?'",
+          "attribution": "Therapy Manager, Skilled Nursing Facility"
         }
+      ]
+    },
+    {
+      "_template": "partnerLogoCarousel",
+      "heading": "Where Able Assess is in use",
+      "scheme": "white",
+      "logos": [
+        { "src": "/images/logos/cypress-homecare-solutions.png", "alt": "Cypress Homecare Solutions" },
+        { "src": "/images/logos/right-at-home.png", "alt": "Right at Home" },
+        { "src": "/images/logos/caring-hands-caregivers.png", "alt": "Caring Hands Caregivers" },
+        { "src": "/images/logos/shore-homecare-services.png", "alt": "Shore Homecare Services" },
+        { "src": "/images/logos/eskaton.png", "alt": "Eskaton" },
+        { "src": "/images/logos/consonus.png", "alt": "Consonus" },
+        { "src": "/images/logos/us-physical-therapy.png", "alt": "US Physical Therapy" }
       ]
     },
     {
