@@ -23,7 +23,7 @@ function isStaticFile(href: string): boolean {
 }
 
 export function LeadMagnetPromo({
-  heading = "The Home Health Buyer's Guide to Functional Assessment",
+  heading = "The Buyer's Guide to Functional Assessment",
   promoBody: body = "A 24-page comprehensive resource for evaluating, procuring, and implementing objective functional measurement in community care.",
   ctaText = "Download the guide",
   ctaLink = "/resources/buyers-guide",

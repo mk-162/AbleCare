@@ -23,9 +23,9 @@ const solutionsMenu: { platform: NavItem[]; capabilities: NavItem[] } = {
 
 const segmentsMenu = {
   homeCare: [
-    { label: "Home Care", href: "/home-care", desc: "Reduce hospitalisations and hit HHVBP targets." },
+    { label: "Home Care", href: "/home-care", desc: "Reduce client falls and protect retention across every branch." },
     { label: "PE-Backed Home Care", href: "/home-care/pe-backed", desc: "One screening workflow, every branch." },
-    { label: "Independent Home Care", href: "/home-care/independent", desc: "Quality differentiation and HHVBP protection." },
+    { label: "Independent Home Care", href: "/home-care/independent", desc: "Evidence-led quality differentiation for referrers and families." },
   ],
   seniorLiving: [
     { label: "Senior Living", href: "/senior-living", desc: "Protect residents, occupancy and NOI." },

@@ -35,7 +35,7 @@
     },
     {
       "_template": "richText",
-      "body": "<h2>The Consistency Challenge Across Sites</h2><p>Multi-site home care operators face a critical problem: different branches screen for falls risk using different methods, timelines, and thresholds. Staff turnover is high. Training is inconsistent. Paper forms create silos of information. One branch may complete detailed risk assessments; another documents only basic facts. This variation creates two problems.</p><p>First, missed risks. A client flagged as high-risk by one carer may be screened differently by another. Second, documentation gaps. Auditors cannot verify that all clients received consistent screening. Liability exposure increases. Reimbursement claims may lack supporting evidence.</p>"
+      "body": "<h2>The Consistency Challenge Across Sites</h2><p>Multi-site home care operators face a critical problem: different branches screen for falls risk using different methods, timelines, and thresholds. Staff turnover is high. Training is inconsistent. Paper forms create silos of information. One branch may complete detailed risk assessments; another documents only basic facts. This variation creates two problems.</p><p>First, missed risks. A client flagged as high-risk by one carer may be screened differently by another. Second, documentation gaps. Auditors cannot verify that all clients received consistent screening. Liability exposure increases. Audit and payor documentation may lack supporting evidence.</p>"
     },
     {
       "_template": "richText",
@@ -47,7 +47,7 @@
     },
     {
       "_template": "richText",
-      "body": "<h2>Measuring Outcomes Across Sites</h2><p>Centralized reporting reveals falls risk trends and screening compliance across your network. Monthly dashboards show which branches screen most effectively and which need support. You identify clusters of high-risk clients and allocate prevention resources accordingly.</p><p>Data consistency enables benchmarking. Compare your falls prevention outcomes against sector standards. Demonstrate to commissioners and auditors that all sites meet the same quality threshold. This consistency supports contract renewal and competitive tender responses.</p>"
+      "body": "<h2>Measuring Outcomes Across Sites</h2><p>Centralized reporting reveals falls risk trends and screening compliance across your network. Monthly dashboards show which branches screen most effectively and which need support. You identify clusters of high-risk clients and allocate prevention resources accordingly.</p><p>Data consistency enables benchmarking. Compare your falls prevention outcomes against sector standards. Demonstrate to payors, referrers, and auditors that all sites meet the same quality threshold. This consistency supports contract renewal and competitive tender responses.</p>"
     },
     {
       "_template": "evidenceBlock",
