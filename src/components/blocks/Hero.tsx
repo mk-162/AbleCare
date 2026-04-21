@@ -51,6 +51,7 @@ export function Hero({
   heroPortraits,
   breadcrumb,
   waveFill,
+  videoIframe,
 }: HeroProps) {
   const isBlue = scheme === "blue";
   const isLight = scheme === "light" || scheme === "grey";
@@ -139,15 +140,26 @@ export function Hero({
         </motion.div>
       </div>
 
-      <div className="hidden lg:block absolute top-0 right-0 w-[55%] h-full z-10">
-        <div className="absolute top-0 left-0 h-full z-10 pointer-events-none" style={{ width: "18%" }}>
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full" fill="currentColor"
-            style={{ color: isBlue ? "#1432FF" : isLight ? "#ffffff" : "#00FFD2" }}>
-            <polygon points="0,0 100,0 0,100" />
-          </svg>
-        </div>
+      <div className={`hidden lg:block absolute right-0 w-[55%] z-10 ${videoIframe ? "top-24 bottom-[82px]" : "top-0 h-full"}`}>
+        {!videoIframe && (
+          <div className="absolute top-0 left-0 h-full z-10 pointer-events-none" style={{ width: "18%" }}>
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full" fill="currentColor"
+              style={{ color: isBlue ? "#1432FF" : isLight ? "#ffffff" : "#00FFD2" }}>
+              <polygon points="0,0 100,0 0,100" />
+            </svg>
+          </div>
+        )}
         <div className="absolute inset-0 overflow-hidden">
-          {heroPortraits && heroPortraits.length > 0 ? (
+          {videoIframe ? (
+            <iframe
+              src={videoIframe}
+              title={backgroundImageAlt}
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 0, background: "#1432FF" }}
+              loading="eager"
+              allow="autoplay"
+            />
+          ) : heroPortraits && heroPortraits.length > 0 ? (
             <div className="relative w-full h-full flex items-end justify-center gap-0" style={{ background: "linear-gradient(145deg, #0b1fd4 0%, #1432FF 35%, #00a896 75%, #00FFD2 100%)" }}>
               <div className="absolute inset-0 opacity-10" style={{ background: "radial-gradient(circle at 70% 30%, white, transparent 60%)" }} />
               {heroPortraits.map((portrait, i) => (

@@ -11,7 +11,8 @@
       "secondaryCtaText": "Watch it work",
       "secondaryCtaLink": "#how-it-works",
       "backgroundImage": "/images/photos/home/gentleman-child-couch.jpg",
-      "backgroundImageAlt": "Older adult at home with family",
+      "backgroundImageAlt": "Able Care homepage overview video",
+      "videoIframe": "/homepage-video/index.html",
       "waveFill": "grey",
       "_template": "hero"
     },
@@ -35,9 +36,9 @@
           "sublabel": "Across home care, senior living and clinical sites"
         },
         {
-          "value": "Peer-reviewed",
-          "label": "Evidence base",
-          "sublabel": "Backed by published research behind every Able Assess metric"
+          "value": "12",
+          "label": "Peer-reviewed studies",
+          "sublabel": "Backing the Able Assess protocol"
         }
       ],
       "_template": "statsBar"

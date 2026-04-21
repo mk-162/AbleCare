@@ -7,7 +7,7 @@
 <style>
   html, body {
     margin: 0; padding: 0;
-    background: #0a0a0a;
+    background: #1432FF;
     min-height: 100vh;
     font-family: "DM Sans", system-ui, sans-serif;
     overflow: hidden;
@@ -100,7 +100,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "muted": true,
   "timeOffset": 1.2,
   "showCaptions": false,
-  "startMuted": false
+  "startMuted": true
 }/*EDITMODE-END*/;
 
 const TWEAK_STORAGE_KEY = 'ac-homepage-tweaks';
@@ -206,17 +206,41 @@ function PlayButton({ onClick, visible }) {
   );
 }
 
+const CORNER_BUTTON_STYLE = {
+  position: 'absolute',
+  width: 44, height: 44, borderRadius: 22,
+  background: 'rgba(0,0,0,0.5)',
+  border: '1px solid rgba(255,255,255,0.15)',
+  color: 'white', cursor: 'pointer',
+  display: 'flex', alignItems: 'center', justifyContent: 'center',
+  backdropFilter: 'blur(8px)',
+  zIndex: 20,
+  bottom: 20,
+};
+
+function PlayPauseToggle({ isPlaying, onToggle }) {
+  return (
+    <button onClick={onToggle} title={isPlaying ? 'Pause' : 'Play'} style={{
+      ...CORNER_BUTTON_STYLE, right: 72,
+    }}>
+      {isPlaying ? (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+          <rect x="6" y="5" width="4" height="14" rx="1"/>
+          <rect x="14" y="5" width="4" height="14" rx="1"/>
+        </svg>
+      ) : (
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      )}
+    </button>
+  );
+}
+
 function MuteToggle({ muted, onToggle }) {
   return (
     <button onClick={onToggle} title={muted ? 'Unmute' : 'Mute'} style={{
-      position: 'absolute', top: 20, right: 20,
-      width: 44, height: 44, borderRadius: 22,
-      background: 'rgba(0,0,0,0.5)',
-      border: '1px solid rgba(255,255,255,0.15)',
-      color: 'white', cursor: 'pointer',
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      backdropFilter: 'blur(8px)',
-      zIndex: 20,
+      ...CORNER_BUTTON_STYLE, right: 20,
     }}>
       {muted ? (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
@@ -317,7 +341,23 @@ function App() {
   const [muted, setMuted] = React.useState(TWEAK_DEFAULTS.startMuted);
   const [scale, setScale] = React.useState(1);
   const [ended, setEnded] = React.useState(false);
+  const [isPlaying, setIsPlaying] = React.useState(false);
   const [time, duration, setTime] = useAudioTime(audioRef, FALLBACK_DURATION);
+
+  // Track play/pause state from the audio element so UI stays in sync with user
+  // taps, keyboard controls, tab-visibility changes, etc.
+  React.useEffect(() => {
+    const a = audioRef.current;
+    if (!a) return;
+    const onPlay = () => setIsPlaying(true);
+    const onPause = () => setIsPlaying(false);
+    a.addEventListener('play', onPlay);
+    a.addEventListener('pause', onPause);
+    return () => {
+      a.removeEventListener('play', onPlay);
+      a.removeEventListener('pause', onPause);
+    };
+  }, []);
 
   // When the VO finishes (and loop is off), freeze visuals on the Scene 1 poster.
   React.useEffect(() => {
@@ -389,9 +429,26 @@ function App() {
       setTime(0);
     }
     setEnded(false);
+    // Pressing Play is an intentional "I want to watch this" action, so unmute.
+    // Mid-playback pause/resume via stage-click preserves mute state instead.
     setMuted(false);
     a.muted = false;
     a.play().then(() => setNeedsInteraction(false)).catch(()=>{});
+  };
+
+  const togglePlay = (e) => {
+    // Don't hijack button clicks (mute toggle etc.)
+    if (e && e.target && e.target.closest && e.target.closest('button')) return;
+    const a = audioRef.current;
+    if (!a) return;
+    // Fresh-start cases go through handlePlay (which unmutes): never-played,
+    // blocked autoplay, ended, or seeked to the very end.
+    if (ended || needsInteraction || a.currentTime >= (a.duration || FALLBACK_DURATION) - 0.05) {
+      handlePlay();
+      return;
+    }
+    if (a.paused) a.play().catch(() => {});
+    else a.pause();
   };
 
   const handleSeek = (t) => {
@@ -407,13 +464,13 @@ function App() {
     <div style={{
       position: 'absolute', inset: 0,
       display: 'flex', alignItems: 'center', justifyContent: 'center',
-      background: '#0a0a0a',
+      background: '#1432FF',
     }}>
       {/* Audio */}
       <audio ref={audioRef} src={AUDIO_SRC} preload="auto" playsInline/>
 
       {/* Square stage */}
-      <div style={{
+      <div onClick={togglePlay} style={{
         width: STAGE_W, height: STAGE_H,
         transform: `scale(${scale})`,
         transformOrigin: 'center center',
@@ -422,6 +479,7 @@ function App() {
         overflow: 'hidden',
         background: '#DCDCDC',
         boxShadow: '0 20px 80px rgba(0,0,0,0.6)',
+        cursor: 'pointer',
       }}>
         {(() => { const vt = ended ? -0.01 : time + (tweaks.timeOffset || 0); return (<>
           {S.Scene1 && <S.Scene1 t={vt}/>}
@@ -439,8 +497,9 @@ function App() {
         <Caption time={time} show={tweaks.showCaptions}/>
 
         {/* Controls */}
+        <PlayPauseToggle isPlaying={isPlaying} onToggle={() => togglePlay()}/>
         <MuteToggle muted={muted} onToggle={() => setMuted(m => !m)}/>
-        <PlayButton onClick={handlePlay} visible={needsInteraction || ended}/>
+        <PlayButton onClick={handlePlay} visible={!isPlaying}/>
         <Progress time={time} duration={duration} onSeek={handleSeek}/>
       </div>
 

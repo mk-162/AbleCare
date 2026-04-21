@@ -38,6 +38,7 @@ const heroBlock = {
     { type: "string" as const, name: "secondaryCtaLink", label: "Secondary CTA Link" },
     { type: "image" as const, name: "backgroundImage", label: "Hero Image (right side)" },
     { type: "string" as const, name: "backgroundImageAlt", label: "Image Alt Text" },
+    { type: "string" as const, name: "videoIframe", label: "Video Iframe URL (demo only — overrides right-side image)", description: "Path to an HTML file served from /public, e.g. /homepage-video/index.html. Temporary staging slot; will be replaced by a native <video> once the final MP4 is rendered." },
     {
       type: "object" as const,
       name: "breadcrumb",
