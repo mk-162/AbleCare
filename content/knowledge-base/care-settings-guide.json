@@ -8,7 +8,9 @@
       "headline": "Care Settings Guide",
       "subtitle": "Falls prevention approaches vary across home care, assisted living, skilled nursing and retirement communities. Learn how to adapt screening and interventions to your setting.",
       "scheme": "blue",
-      "wave": "crest"
+      "wave": "crest",
+      "backgroundImage": "/images/photos/home/gentleman-child-couch.jpg",
+      "backgroundImageAlt": "Older adult at home with a family member"
     },
     {
       "_template": "richText",

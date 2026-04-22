@@ -6,14 +6,26 @@
     "description": "Download our gated guides: HHVBP compliance, CCRC best practices, NICE 2025 alignment, and more.",
     "ogImage": "/images/og-guides.png"
   },
-  "tags": ["resources", "guides", "downloads"],
+  "tags": [
+    "resources",
+    "guides",
+    "downloads"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "Guides" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Guides"
+        }
       ]
     },
     {
@@ -21,7 +33,12 @@
       "colorScheme": "blue",
       "headline": "Guides and resources.",
       "subtitle": "Practical, evidence-based guides for healthcare organizations implementing standardized falls prevention. Each guide is designed for a specific use case and care setting.",
-      "primaryCta": { "label": "Contact Us", "href": "/demo" }
+      "primaryCta": {
+        "label": "Contact Us",
+        "href": "/demo"
+      },
+      "backgroundImage": "/images/photos/clinical/nurse-handing-kit.jpg",
+      "backgroundImageAlt": "Nurse handing the Able Assess kit to a colleague"
     },
     {
       "_template": "richText",
@@ -34,7 +51,10 @@
       "scheme": "blue",
       "heading": "Cannot find what you are looking for?",
       "body": "Our team can help you find the right resources for your organization and care setting.",
-      "primaryCta": { "label": "Contact Us", "href": "/demo" }
+      "primaryCta": {
+        "label": "Contact Us",
+        "href": "/demo"
+      }
     },
     {
       "_template": "leadMagnetPromo",

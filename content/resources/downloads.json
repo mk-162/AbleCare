@@ -6,14 +6,27 @@
     "description": "Download the Able Assess user guide, the grip strength whitepaper and the Able Assess mobile apps for iOS and Android.",
     "ogImage": "/images/og-downloads.png"
   },
-  "tags": ["resources", "downloads", "apps", "user-guide"],
+  "tags": [
+    "resources",
+    "downloads",
+    "apps",
+    "user-guide"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "Downloads" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Downloads"
+        }
       ]
     },
     {
@@ -30,7 +43,9 @@
       "secondaryCta": {
         "label": "Contact the Team",
         "href": "/contact"
-      }
+      },
+      "backgroundImage": "/images/photos/studio/woman-reading-brochure.jpg",
+      "backgroundImageAlt": "Older adult reading the Able Care brochure"
     },
     {
       "_template": "richText",

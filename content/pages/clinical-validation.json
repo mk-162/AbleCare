@@ -33,7 +33,9 @@
       "primaryCta": {
         "label": "Contact the Clinical Team",
         "href": "/contact"
-      }
+      },
+      "backgroundImage": "/images/photos/clinical/sensor-closeup-hand.jpg",
+      "backgroundImageAlt": "Close-up of the GripAble sensor in a patient's hand"
     },
     {
       "_template": "richText",

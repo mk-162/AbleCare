@@ -6,14 +6,28 @@
     "description": "Bring clinical-grade grip strength assessment into home care and community settings. Remote monitoring enables early detection of decline, better tele-rehab outcomes, and OASIS integration.",
     "ogImage": "/images/og-remote-monitoring.png"
   },
-  "tags": ["solutions", "remote-monitoring", "home-care", "tele-rehab", "oasis"],
+  "tags": [
+    "solutions",
+    "remote-monitoring",
+    "home-care",
+    "tele-rehab",
+    "oasis"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Solutions", "href": "/solutions" },
-        { "label": "Remote Monitoring" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Solutions",
+          "href": "/solutions"
+        },
+        {
+          "label": "Remote Monitoring"
+        }
       ]
     },
     {
@@ -23,8 +37,16 @@
       "eyebrow": "Solutions",
       "headline": "Grip strength and falls risk screening without the clinic visit.",
       "subtitle": "Bring clinical-grade functional assessment into home care and community settings. Regular objective measurement without the cost and complexity of in-person visits.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
-      "secondaryCta": { "label": "Download Implementation Guide", "href": "/resources/remote-monitoring-guide" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download Implementation Guide",
+        "href": "/resources/remote-monitoring-guide"
+      },
+      "backgroundImage": "/images/photos/clinical/therapist-gentleman-desk.jpg",
+      "backgroundImageAlt": "Therapist reviewing assessment data with a patient at a desk"
     },
     {
       "_template": "valueProps",
@@ -120,7 +142,10 @@
       "scheme": "blue",
       "heading": "Start remote monitoring today",
       "body": "See how Able Assess brings clinical-grade functional assessment into home care and community settings.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      }
     }
   ]
 }

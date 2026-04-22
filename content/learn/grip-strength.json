@@ -19,7 +19,9 @@
       "primaryCtaText": "Book a demo",
       "primaryCtaLink": "/demo/",
       "secondaryCtaText": "See how Able Assess measures grip strength",
-      "secondaryCtaLink": "/solutions/grip-strength/"
+      "secondaryCtaLink": "/solutions/grip-strength/",
+      "backgroundImage": "/images/product/elderly-man-holding-gripable-resized.jpg",
+      "backgroundImageAlt": "Older man holding the GripAble sensor"
     },
     {
       "_template": "richText",

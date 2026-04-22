@@ -6,14 +6,28 @@
     "description": "Implement falls prevention in CCRCs and life plan communities. Download our guide with best practices and compliance checklists.",
     "ogImage": "/images/og-ccrc-guide.png"
   },
-  "tags": ["resources", "ccrc", "senior-living", "falls-prevention", "guide"],
+  "tags": [
+    "resources",
+    "ccrc",
+    "senior-living",
+    "falls-prevention",
+    "guide"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "CCRC Guide" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "CCRC Guide"
+        }
       ]
     },
     {
@@ -21,7 +35,12 @@
       "colorScheme": "blue",
       "headline": "Falls prevention for CCRCs and life plan communities.",
       "subtitle": "CCRCs face unique challenges across independent living, assisted living, and skilled nursing settings. This guide provides a framework for coordinated falls prevention across all care levels.",
-      "primaryCta": { "label": "Download the Guide", "href": "/resources/ccrc-guide-download" }
+      "primaryCta": {
+        "label": "Download the Guide",
+        "href": "/resources/ccrc-guide-download"
+      },
+      "backgroundImage": "/images/photos/clinical/therapist-gentleman-bed.jpg",
+      "backgroundImageAlt": "Therapist assessing a patient at their bedside"
     },
     {
       "_template": "richText",
@@ -40,7 +59,10 @@
       "scheme": "blue",
       "heading": "Download the CCRC Falls Prevention Guide",
       "body": "Get the full guide with setting-specific protocols, compliance checklists, and implementation plans.",
-      "primaryCta": { "label": "Download the Guide", "href": "/resources/ccrc-guide-download" }
+      "primaryCta": {
+        "label": "Download the Guide",
+        "href": "/resources/ccrc-guide-download"
+      }
     }
   ]
 }

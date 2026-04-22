@@ -6,14 +6,29 @@
     "description": "Comprehensive functional health assessment for frailty screening, oncology pre-habilitation, GLP-1 monitoring, and longevity research. Objective measurement of decline and intervention response.",
     "ogImage": "/images/og-functional-health.png"
   },
-  "tags": ["solutions", "functional-health", "frailty", "oncology", "glp-1", "longevity"],
+  "tags": [
+    "solutions",
+    "functional-health",
+    "frailty",
+    "oncology",
+    "glp-1",
+    "longevity"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Solutions", "href": "/solutions" },
-        { "label": "Functional Health" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Solutions",
+          "href": "/solutions"
+        },
+        {
+          "label": "Functional Health"
+        }
       ]
     },
     {
@@ -23,8 +38,16 @@
       "eyebrow": "Solutions",
       "headline": "Functional health measurement that goes beyond balance and gait.",
       "subtitle": "Grip strength, physical performance, muscle quality and metabolic reserve. Four dimensions of function measured objectively, tracked over time and linked to clinical outcomes.",
-      "primaryCta": { "label": "Talk to the Research Team", "href": "/demo" },
-      "secondaryCta": { "label": "Download Framework", "href": "/resources/functional-health-framework" }
+      "primaryCta": {
+        "label": "Talk to the Research Team",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download Framework",
+        "href": "/resources/functional-health-framework"
+      },
+      "backgroundImage": "/images/photos/clinical/standing-exercise.jpg",
+      "backgroundImageAlt": "Older adult performing a functional standing exercise"
     },
     {
       "_template": "metricsBlock",
@@ -94,7 +117,10 @@
       "scheme": "blue",
       "heading": "Functional health assessment for your setting",
       "body": "Whether you are running a frailty clinic, an oncology pre-habilitation program or a longevity service, we can show you how Able Assess fits.",
-      "primaryCta": { "label": "Talk to the Research Team", "href": "/demo" }
+      "primaryCta": {
+        "label": "Talk to the Research Team",
+        "href": "/demo"
+      }
     }
   ]
 }

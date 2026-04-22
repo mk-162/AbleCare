@@ -19,7 +19,9 @@
       "primaryCtaText": "Book a demo",
       "primaryCtaLink": "/demo/",
       "secondaryCtaText": "See the GripAble sensor in action",
-      "secondaryCtaLink": "/solutions/grip-strength/"
+      "secondaryCtaLink": "/solutions/grip-strength/",
+      "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
+      "backgroundImageAlt": "GripAble sensor in use"
     },
     {
       "_template": "richText",

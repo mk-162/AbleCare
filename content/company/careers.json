@@ -6,14 +6,25 @@
     "description": "Join the Able Care team. We are hiring talented people in clinical, commercial, and technical roles.",
     "ogImage": "/images/og-careers.png"
   },
-  "tags": ["company", "careers"],
+  "tags": [
+    "company",
+    "careers"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Company", "href": "/company" },
-        { "label": "Careers" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Company",
+          "href": "/company"
+        },
+        {
+          "label": "Careers"
+        }
       ]
     },
     {
@@ -23,7 +34,12 @@
       "eyebrow": "Careers",
       "headline": "Build the future of falls prevention.",
       "subtitle": "Our mission is to eliminate preventable falls. We work with clinical teams, care operators and technologists to build screening tools that protect older adults. Join us.",
-      "primaryCta": { "label": "Get in Touch", "href": "/contact" }
+      "primaryCta": {
+        "label": "Get in Touch",
+        "href": "/contact"
+      },
+      "backgroundImage": "/images/photos/clinical/arms-raised-celebration.jpg",
+      "backgroundImageAlt": "Patient celebrating a successful therapy milestone"
     },
     {
       "_template": "valueProps",
@@ -81,8 +97,14 @@
       "scheme": "blue",
       "heading": "Ready to join us?",
       "body": "Explore open roles or send us your CV to start the conversation.",
-      "primaryCta": { "label": "Get in Touch", "href": "/contact" },
-      "secondaryCta": { "label": "Send Us Your CV", "href": "mailto:hello@able-care.co" }
+      "primaryCta": {
+        "label": "Get in Touch",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Send Us Your CV",
+        "href": "mailto:hello@able-care.co"
+      }
     }
   ]
 }

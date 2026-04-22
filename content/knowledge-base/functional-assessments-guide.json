@@ -8,7 +8,9 @@
       "headline": "Functional Assessments Guide",
       "subtitle": "Standardized tests of gait, balance and strength predict falls, frailty and functional decline. Learn which assessments to use and how to interpret results.",
       "scheme": "blue",
-      "wave": "crest"
+      "wave": "crest",
+      "backgroundImage": "/images/photos/clinical/patient-using-alone.jpg",
+      "backgroundImageAlt": "Patient running an Able Assess screening"
     },
     {
       "_template": "richText",

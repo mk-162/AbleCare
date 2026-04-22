@@ -37,16 +37,33 @@
       "secondaryCta": {
         "label": "Request a Security Assessment",
         "href": "/contact"
-      }
+      },
+      "backgroundImage": "/images/photos/clinical/hands-fitting-sensor.jpg",
+      "backgroundImageAlt": "Clinician fitting the GripAble sensor for a patient"
     },
     {
       "_template": "trustBar",
       "items": [
-        { "text": "FDA Listed", "logo": "/images/badges/fda-trimmed.svg" },
-        { "text": "CE Marked", "logo": "/images/badges/ce-4.svg" },
-        { "text": "ISO 27001", "logo": "/images/badges/iso-31.svg" },
-        { "text": "HIPAA Aligned", "logo": "/images/badges/hipaa-trimmed.svg" },
-        { "text": "GDPR Compliant", "logo": "/images/badges/gdpr-trimmed-min.png" }
+        {
+          "text": "FDA Listed",
+          "logo": "/images/badges/fda-trimmed.svg"
+        },
+        {
+          "text": "CE Marked",
+          "logo": "/images/badges/ce-4.svg"
+        },
+        {
+          "text": "ISO 27001",
+          "logo": "/images/badges/iso-31.svg"
+        },
+        {
+          "text": "HIPAA Aligned",
+          "logo": "/images/badges/hipaa-trimmed.svg"
+        },
+        {
+          "text": "GDPR Compliant",
+          "logo": "/images/badges/gdpr-trimmed-min.png"
+        }
       ]
     },
     {

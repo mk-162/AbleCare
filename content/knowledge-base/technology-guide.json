@@ -8,7 +8,9 @@
       "headline": "Technology Guide",
       "subtitle": "Digital assessment platforms automate screening, improve data quality and integrate with clinical workflows. Learn how to select and implement falls prevention technology.",
       "scheme": "blue",
-      "wave": "crest"
+      "wave": "crest",
+      "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
+      "backgroundImageAlt": "GripAble sensor in use"
     },
     {
       "_template": "richText",

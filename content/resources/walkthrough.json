@@ -6,14 +6,27 @@
     "description": "See Able Assess in action. Video walkthrough and step-by-step guide to the screening workflow.",
     "ogImage": "/images/og-walkthrough.png"
   },
-  "tags": ["resources", "walkthrough", "product", "video"],
+  "tags": [
+    "resources",
+    "walkthrough",
+    "product",
+    "video"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "Walkthrough" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Walkthrough"
+        }
       ]
     },
     {
@@ -21,7 +34,12 @@
       "colorScheme": "blue",
       "headline": "See Able Assess in action.",
       "subtitle": "Watch the full screening workflow from sensor setup to results review. Under four minutes from unboxing to first screening.",
-      "primaryCta": { "label": "Book a Live Demo", "href": "/demo" }
+      "primaryCta": {
+        "label": "Book a Live Demo",
+        "href": "/demo"
+      },
+      "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
+      "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor"
     },
     {
       "_template": "richText",
@@ -88,8 +106,14 @@
       "scheme": "blue",
       "heading": "Ready to see it live?",
       "body": "Book a live demonstration with our clinical team. We will walk you through the full workflow using your care setting as the context.",
-      "primaryCta": { "label": "Book a Live Demo", "href": "/demo" },
-      "secondaryCta": { "label": "Download Transcript", "href": "/resources/walkthrough-transcript" }
+      "primaryCta": {
+        "label": "Book a Live Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Download Transcript",
+        "href": "/resources/walkthrough-transcript"
+      }
     },
     {
       "_template": "leadMagnetPromo",

@@ -6,14 +6,26 @@
     "description": "Step-by-step walkthrough. Unbox, train, screen, review, share. 5-minute screening process.",
     "ogImage": "/images/og-how-it-works.png"
   },
-  "tags": ["product", "how-it-works", "workflow"],
+  "tags": [
+    "product",
+    "how-it-works",
+    "workflow"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Product", "href": "/product" },
-        { "label": "How It Works" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Product",
+          "href": "/product"
+        },
+        {
+          "label": "How It Works"
+        }
       ]
     },
     {
@@ -23,7 +35,12 @@
       "eyebrow": "Product",
       "headline": "Able Assess in five minutes.",
       "subtitle": "From unboxing to sharing results, every step is designed for simplicity. No specialist training, no complex setup, no clinical background required.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
+      "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor"
     },
     {
       "_template": "processSteps",
@@ -75,10 +92,22 @@
       "_template": "statsBar",
       "colorScheme": "blue",
       "stats": [
-        { "value": "5 min", "label": "per screening" },
-        { "value": "15 min", "label": "staff training" },
-        { "value": "1 min", "label": "to share results" },
-        { "value": "0", "label": "specialist training required" }
+        {
+          "value": "5 min",
+          "label": "per screening"
+        },
+        {
+          "value": "15 min",
+          "label": "staff training"
+        },
+        {
+          "value": "1 min",
+          "label": "to share results"
+        },
+        {
+          "value": "0",
+          "label": "specialist training required"
+        }
       ]
     },
     {
@@ -109,8 +138,14 @@
       "scheme": "blue",
       "heading": "See Able Assess in your workflow",
       "body": "30 minutes with the clinical team. We will walk through the full five-step process using your care setting as the example.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
-      "secondaryCta": { "label": "Watch the Walkthrough Video", "href": "/resources/walkthrough" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "Watch the Walkthrough Video",
+        "href": "/resources/walkthrough"
+      }
     },
     {
       "_template": "leadMagnetPromo",

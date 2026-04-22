@@ -6,13 +6,23 @@
     "description": "Evidence-based protocols, safe delegation, and continuous outcome measurement for clinical leaders.",
     "ogImage": "/images/og-clinical-leaders.png"
   },
-  "tags": ["persona", "clinical-leaders", "protocols", "evidence"],
+  "tags": [
+    "persona",
+    "clinical-leaders",
+    "protocols",
+    "evidence"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Clinical Leaders" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Clinical Leaders"
+        }
       ]
     },
     {
@@ -22,7 +32,12 @@
       "eyebrow": "Clinical Leaders",
       "headline": "Evidence-based protocols. Peer-reviewed outcomes. Safe delegation.",
       "subtitle": "Standardized clinical frameworks built on research, not habit. Equip your team to deliver consistent outcomes.",
-      "primaryCta": { "label": "Talk to the Clinical Team", "href": "/contact" }
+      "primaryCta": {
+        "label": "Talk to the Clinical Team",
+        "href": "/contact"
+      },
+      "backgroundImage": "/images/photos/clinical/clinician-guiding-patient.jpg",
+      "backgroundImageAlt": "Clinician guiding a patient through an assessment"
     },
     {
       "_template": "richText",
@@ -86,7 +101,10 @@
       "_template": "ctaBanner",
       "heading": "Lead clinical excellence through evidence and data.",
       "body": "30 minutes with a clinician who has run it in the field.",
-      "primaryCta": { "label": "Talk to the Clinical Team", "href": "/contact" },
+      "primaryCta": {
+        "label": "Talk to the Clinical Team",
+        "href": "/contact"
+      },
       "scheme": "blue"
     }
   ]

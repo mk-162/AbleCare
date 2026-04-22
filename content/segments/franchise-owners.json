@@ -6,13 +6,23 @@
     "description": "Real-time branch P&L, rapid staff training, and objective outcome measurement for franchise care owners.",
     "ogImage": "/images/og-franchise-owners.png"
   },
-  "tags": ["persona", "franchise-owners", "branch", "referrals"],
+  "tags": [
+    "persona",
+    "franchise-owners",
+    "branch",
+    "referrals"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Franchise Owners" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Franchise Owners"
+        }
       ]
     },
     {
@@ -22,7 +32,12 @@
       "eyebrow": "Franchise Owners",
       "headline": "Run your branch like a business.",
       "subtitle": "Real-time insight into your branch performance. Train staff in 15 minutes. Differentiate through clinical excellence and patient outcomes.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "backgroundImage": "/images/photos/clinical/patient-therapist-smiling.jpg",
+      "backgroundImageAlt": "Therapist and patient smiling during an assessment session"
     },
     {
       "_template": "richText",
@@ -86,7 +101,10 @@
       "_template": "ctaBanner",
       "heading": "Own your branch's success. With real data and clear tools.",
       "body": "30 minutes with the team. Tailored to franchise branch operations.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
       "scheme": "blue"
     }
   ]

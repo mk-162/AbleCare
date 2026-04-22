@@ -6,14 +6,28 @@
     "description": "Protect your HHVBP score with standardized falls screening. Download our compliance guide for home care agencies.",
     "ogImage": "/images/og-hhvbp-guide.png"
   },
-  "tags": ["resources", "hhvbp", "home-care", "compliance", "guide"],
+  "tags": [
+    "resources",
+    "hhvbp",
+    "home-care",
+    "compliance",
+    "guide"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "HHVBP Guide" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "HHVBP Guide"
+        }
       ]
     },
     {
@@ -21,7 +35,12 @@
       "colorScheme": "blue",
       "headline": "Protect your HHVBP score with standardized falls screening.",
       "subtitle": "HHVBP includes falls prevention in its quality metrics. This guide explains the requirements and shows how Able Assess supports compliance across your home care agency.",
-      "primaryCta": { "label": "Download the Guide", "href": "/resources/hhvbp-guide-download" }
+      "primaryCta": {
+        "label": "Download the Guide",
+        "href": "/resources/hhvbp-guide-download"
+      },
+      "backgroundImage": "/images/photos/clinical/clinician-guiding-patient.jpg",
+      "backgroundImageAlt": "Clinician guiding a patient through an assessment"
     },
     {
       "_template": "richText",
@@ -40,7 +59,10 @@
       "scheme": "blue",
       "heading": "Download the HHVBP Compliance Guide",
       "body": "Get the full guide with compliance checklists, training templates, and implementation timelines.",
-      "primaryCta": { "label": "Download the Guide", "href": "/resources/hhvbp-guide-download" }
+      "primaryCta": {
+        "label": "Download the Guide",
+        "href": "/resources/hhvbp-guide-download"
+      }
     }
   ]
 }

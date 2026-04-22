@@ -37,7 +37,9 @@
       "secondaryCta": {
         "label": "Download API Documentation",
         "href": "/resources/api-docs"
-      }
+      },
+      "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
+      "backgroundImageAlt": "GripAble sensor in use"
     },
     {
       "_template": "richText",

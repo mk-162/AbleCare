@@ -8,7 +8,9 @@
       "headline": "Grip Strength Guide",
       "subtitle": "Hand grip strength is a validated marker of overall physical function, frailty and disease risk. Learn how to measure, interpret and apply grip strength screening in clinical and home care settings.",
       "scheme": "blue",
-      "wave": "crest"
+      "wave": "crest",
+      "backgroundImage": "/images/product/elderly-man-holding-gripable-resized.jpg",
+      "backgroundImageAlt": "Older man holding the GripAble sensor"
     },
     {
       "_template": "richText",

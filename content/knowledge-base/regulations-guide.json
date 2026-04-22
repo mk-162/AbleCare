@@ -8,7 +8,9 @@
       "headline": "Regulations Guide",
       "subtitle": "Falls prevention is mandated and measured by CMS, CDC, FDA and international bodies. Understand the regulatory landscape and ensure compliance.",
       "scheme": "blue",
-      "wave": "crest"
+      "wave": "crest",
+      "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
+      "backgroundImageAlt": "Therapist reviewing Able Assess results with a patient on a tablet"
     },
     {
       "_template": "richText",

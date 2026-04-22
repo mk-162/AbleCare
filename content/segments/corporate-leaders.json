@@ -6,13 +6,23 @@
     "description": "Board-ready metrics, standardized protocols, and compliance automation for corporate care leaders.",
     "ogImage": "/images/og-corporate-leaders.png"
   },
-  "tags": ["persona", "corporate-leaders", "compliance", "operations"],
+  "tags": [
+    "persona",
+    "corporate-leaders",
+    "compliance",
+    "operations"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Corporate Leaders" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Corporate Leaders"
+        }
       ]
     },
     {
@@ -22,7 +32,12 @@
       "eyebrow": "Corporate Leaders",
       "headline": "Turn operational data into board-ready insight.",
       "subtitle": "Standardized protocols, real-time compliance reporting, and outcome metrics that prove operational excellence.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "backgroundImage": "/images/photos/studio/woman-reading-brochure.jpg",
+      "backgroundImageAlt": "Older adult reading the Able Care brochure"
     },
     {
       "_template": "richText",
@@ -86,7 +101,10 @@
       "_template": "ctaBanner",
       "heading": "Prove operational excellence to your board.",
       "body": "30 minutes with the team. Tailored to corporate care leadership.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
       "scheme": "blue"
     }
   ]

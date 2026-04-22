@@ -8,7 +8,9 @@
       "headline": "Falls Prevention Guide",
       "subtitle": "Evidence-based strategies, screening protocols and clinical tools to identify and reduce fall risk. Learn how Able Care helps organizations implement falls prevention at scale.",
       "scheme": "blue",
-      "wave": "crest"
+      "wave": "crest",
+      "backgroundImage": "/images/photos/clinical/standing-exercise.jpg",
+      "backgroundImageAlt": "Older adult performing a functional standing exercise"
     },
     {
       "_template": "richText",

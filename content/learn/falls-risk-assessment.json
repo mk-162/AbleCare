@@ -19,7 +19,9 @@
       "primaryCtaText": "Book a demo",
       "primaryCtaLink": "/demo/",
       "secondaryCtaText": "See the Able Assess workflow",
-      "secondaryCtaLink": "/solutions/able-assess/"
+      "secondaryCtaLink": "/solutions/able-assess/",
+      "backgroundImage": "/images/photos/clinical/patient-thumbs-up.jpg",
+      "backgroundImageAlt": "Patient giving a thumbs up after a successful screening"
     },
     {
       "_template": "richText",
