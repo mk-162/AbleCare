@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   experimental: {
     scrollRestoration: false,
   },
+  images: {
+    remotePatterns: [
+      { protocol: "https", hostname: "assets.tina.io" },
+    ],
+  },
   async rewrites() {
     return [
       { source: "/admin", destination: "/admin/index.html" },
