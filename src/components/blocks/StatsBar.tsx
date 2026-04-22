@@ -38,7 +38,7 @@ export function StatsBar({ scheme = "light", heading, stats }: StatsBarProps) {
       ];
 
   return (
-    <section className={`relative pt-8 pb-20 md:pb-28 ${bgClass}`}>
+    <section className={`relative pt-8 pb-12 md:pb-16 ${bgClass}`}>
       <div className="container mx-auto px-4 md:px-6">
         {heading && (
           <div className="text-center mb-14">
