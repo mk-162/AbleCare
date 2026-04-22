@@ -9,12 +9,11 @@ interface MetricsBlockProps {
   metrics?: Array<{
     name: string;
     whatItMeasures?: string;
-    whyItMatters?: string;
   }>;
 }
 
 export function MetricsBlock({ scheme = "light", heading, metrics }: MetricsBlockProps) {
-  const defaultMetrics: Array<{ name: string; whatItMeasures?: string; whyItMatters?: string }> = [
+  const defaultMetrics: Array<{ name: string; whatItMeasures?: string }> = [
     { name: "Grip Strength", whatItMeasures: "A powerful biomarker of overall vitality. Predicts all-cause mortality more reliably than systolic blood pressure." },
     { name: "Sit-to-Stand", whatItMeasures: "Lower-limb power and balance. Five repetitions tell you more about fall risk than a lengthy clinical interview." },
     { name: "Gait Speed", whatItMeasures: "The 'sixth vital sign' for older adults. Slowing gait predicts cognitive decline, hospitalization, and mortality." },
@@ -47,7 +46,7 @@ export function MetricsBlock({ scheme = "light", heading, metrics }: MetricsBloc
               <div className="w-10 h-1 bg-ac-blue rounded-full mb-5" />
               <h3 className="text-xl font-bold mb-3 text-ac-black">{metric.name}</h3>
               <p className="text-ac-black/65 font-light text-sm leading-relaxed">
-                {metric.whatItMeasures ?? metric.whyItMatters}
+                {metric.whatItMeasures}
               </p>
             </motion.div>
           ))}

@@ -209,7 +209,6 @@ const metricsBlockBlock = {
       fields: [
         { type: "string" as const, name: "name", label: "Metric Name", required: true },
         { type: "string" as const, name: "whatItMeasures", label: "What It Measures", ui: { component: "textarea" } },
-        { type: "string" as const, name: "whyItMatters", label: "Why It Matters", ui: { component: "textarea" } },
       ],
     },
   ],
