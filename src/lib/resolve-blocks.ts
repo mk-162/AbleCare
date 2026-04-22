@@ -13,6 +13,12 @@
 
 import { getKBForPage, getPagesForKB } from "./content-index";
 
+function deriveTemplateFromTypename(typename: unknown): string | null {
+  if (typeof typename !== "string" || !typename) return null;
+  const stripped = typename.replace(/^.*Blocks/, "");
+  return stripped ? stripped.charAt(0).toLowerCase() + stripped.slice(1) : null;
+}
+
 export function resolveBlocks(
   blocks: any[],
   pageTags: string[] | undefined,
@@ -22,7 +28,8 @@ export function resolveBlocks(
   if (!blocks) return [];
 
   return blocks.map((block: any) => {
-    const template = block._template;
+    const template = block._template ?? deriveTemplateFromTypename(block.__typename);
+    if (!template) return block;
     const enriched = {
       ...block,
       __typename: `${collectionPrefix}Blocks${template.charAt(0).toUpperCase() + template.slice(1)}`,
