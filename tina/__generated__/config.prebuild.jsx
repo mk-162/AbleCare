@@ -1053,20 +1053,14 @@ var config_default = defineConfig({
         },
         fields: blockPageFields
       },
-      // ── Case Studies ────────────────────────────────────────────────────
-      {
-        name: "caseStudies",
-        label: "Case Studies",
-        path: "content/case-studies",
-        format: "json",
-        ui: {
-          router: ({ document }) => `/resources/case-studies/${document._sys.filename}/`
-        },
-        fields: [
-          { type: "string", name: "slug", label: "Slug (URL path)" },
-          ...blockPageFields
-        ]
-      },
+      // Case Studies are authored as filesystem-only JSON in
+      // content/case-studies/ and rendered by /resources/case-studies/[slug].
+      // They are intentionally not a Tina collection: the current JSON uses
+      // legacy field names (colorScheme, waveStyle, primaryCta object,
+      // caseStudyCustomerCard block) that pre-date the current Tina schema,
+      // and Tina's seeder rejects them. BlockRenderer.normalizeBlock handles
+      // the renames at render time, so the pages render correctly without
+      // Tina indexing them.
       // ── Company ─────────────────────────────────────────────────────────
       {
         name: "company",
