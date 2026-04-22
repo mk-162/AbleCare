@@ -5,7 +5,7 @@
     {
       "_template": "currentKnowledgeCard",
       "question": "What should I do if I'm worried my parent might fall?",
-      "directAnswer": "Start by recognizing the warning signs. Recent falls, balance problems, weakness, or confusion raise risk. Talk to your parent's GP about falls screening. Ask about home hazards. Small changes like better lighting, handrails, and removing clutter prevent most falls. A professional assessment can identify exactly what your parent needs.",
+      "directAnswer": "Start by recognizing the warning signs. Recent falls, balance problems, weakness, or confusion raise risk. Talk to your parent's primary care physician about falls screening. Ask about home hazards. Small changes like better lighting, handrails, and removing clutter prevent most falls. A professional assessment can identify exactly what your parent needs.",
       "tldrBullets": [
         {"text": "1 in 4 older adults falls each year. Most falls are preventable with simple changes."},
         {"text": "Warning signs include recent falls, poor balance, weakness, confusion, or vision problems."},
@@ -22,11 +22,11 @@
     },
     {
       "_template": "richText",
-      "body": "<h2>Warning signs that your parent might be at risk</h2><p>Watch for recent falls, even if your parent says they're fine. A single fall is a warning. Multiple near-misses (stumbling, catching themselves, feeling dizzy) are also important. Ask: 'Do you feel unsteady? Do you worry about falling? Have you changed how you move around the house?'</p><p>Other signs include sudden weakness in the legs, difficulty standing from a chair, shuffling gait, confusion or memory problems, and vision changes. If your parent has had a stroke, broken bones, or other health events recently, fall risk is higher.</p><p>Medication matters. Some medicines increase dizziness or confusion. If your parent started a new medicine before falls started, mention this to their GP. Not all medicines are the culprit, but timing is worth exploring.</p>"
+      "body": "<h2>Warning signs that your parent might be at risk</h2><p>Watch for recent falls, even if your parent says they're fine. A single fall is a warning. Multiple near-misses (stumbling, catching themselves, feeling dizzy) are also important. Ask: 'Do you feel unsteady? Do you worry about falling? Have you changed how you move around the house?'</p><p>Other signs include sudden weakness in the legs, difficulty standing from a chair, shuffling gait, confusion or memory problems, and vision changes. If your parent has had a stroke, broken bones, or other health events recently, fall risk is higher.</p><p>Medication matters. Some medicines increase dizziness or confusion. If your parent started a new medicine before falls started, mention this to their primary care physician. Not all medicines are the culprit, but timing is worth exploring.</p>"
     },
     {
       "_template": "richText",
-      "body": "<h2>What to do first: Conversations with your parent and GP</h2><p>Start a conversation without being alarmist. 'I've noticed you seem a bit wobbly when you stand. I'm wondering if we can talk to your GP about a falls check.' Frame it as helpful, not controlling.</p><p>Book an appointment with your parent's GP and mention falls or fall risk. Ask for a falls screening assessment. The GP can check medication, balance, strength, and vision. If your parent has fallen recently, the GP should offer an urgent assessment.</p><p>During the appointment, mention any warning signs you've noticed. Tell the GP about recent events: hospital stays, new medicines, changes at home. If your parent is anxious about falling, the GP should take this seriously. Fear of falling is itself a risk factor, and treatment can help.</p><p>Ask the GP about a referral to a physiotherapist or occupational therapist. These professionals can assess your parent at home and recommend specific exercises or modifications. This service is often free through the NHS.</p>"
+      "body": "<h2>What to do first: Conversations with your parent and primary care physician</h2><p>Start a conversation without being alarmist. 'I've noticed you seem a bit wobbly when you stand. I'm wondering if we can talk to your primary care physician about a falls check.' Frame it as helpful, not controlling.</p><p>Book an appointment with your parent's primary care physician and mention falls or fall risk. Ask for a falls screening assessment. The primary care physician can check medication, balance, strength, and vision. If your parent has fallen recently, the primary care physician should offer an urgent assessment.</p><p>During the appointment, mention any warning signs you've noticed. Tell the primary care physician about recent events: hospital stays, new medicines, changes at home. If your parent is anxious about falling, the primary care physician should take this seriously. Fear of falling is itself a risk factor, and treatment can help.</p><p>Ask the primary care physician about a referral to a physical therapist or occupational therapist. These professionals can assess your parent at home and recommend specific exercises or modifications. This service is often free through the NHS.</p>"
     },
     {
       "_template": "richText",
@@ -34,7 +34,7 @@
     },
     {
       "_template": "richText",
-      "body": "<h2>Getting a professional assessment</h2><p>A formal falls assessment by a physiotherapist or occupational therapist is valuable. They visit your parent's home, observe how they move, test balance and strength, and identify specific hazards. They recommend targeted exercises and practical modifications.</p><p>Assessment results help you understand your parent's specific risks. One parent might need balance training. Another might need medication review. A third might benefit from assistive devices like a walker or cane. Personalized recommendations are more effective than generic advice.</p><p>Professional assessment also documents your parent's baseline. If falls increase later, you have a record of previous status. This is helpful for GP follow-up and identifying changes over time.</p><p>Able Assess is a tablet-based falls screening tool that helps professionals assess your parent systematically. It captures information about mobility, balance, home environment, and medications. Results guide recommendations and track progress if your parent starts exercise or home modifications.</p>"
+      "body": "<h2>Getting a professional assessment</h2><p>A formal falls assessment by a physical therapist or occupational therapist is valuable. They visit your parent's home, observe how they move, test balance and strength, and identify specific hazards. They recommend targeted exercises and practical modifications.</p><p>Assessment results help you understand your parent's specific risks. One parent might need balance training. Another might need medication review. A third might benefit from assistive devices like a walker or cane. Personalized recommendations are more effective than generic advice.</p><p>Professional assessment also documents your parent's baseline. If falls increase later, you have a record of previous status. This is helpful for primary care physician follow-up and identifying changes over time.</p><p>Able Assess is a tablet-based falls screening tool that helps professionals assess your parent systematically. It captures information about mobility, balance, home environment, and medications. Results guide recommendations and track progress if your parent starts exercise or home modifications.</p>"
     },
     {
       "_template": "evidenceBlock",
@@ -52,7 +52,7 @@
       "items": [
         {
           "question": "My parent had a fall but they say they're fine. Should I still worry?",
-          "answer": "Yes. Even a single fall is a warning sign. Falls often follow a pattern: one fall increases the risk of another. Your parent might minimize the fall out of fear or embarrassment. Encourage them to tell their GP even if they feel okay. A screening assessment is worth doing."
+          "answer": "Yes. Even a single fall is a warning sign. Falls often follow a pattern: one fall increases the risk of another. Your parent might minimize the fall out of fear or embarrassment. Encourage them to tell their primary care physician even if they feel okay. A screening assessment is worth doing."
         },
         {
           "question": "How can I persuade my parent to make home changes without making them feel controlled?",
@@ -63,12 +63,12 @@
           "answer": "No. Assistive devices help people stay active and independent. A walker or cane reduces balance demands and allows your parent to do more, not less. Many people delay using one due to stigma, but this increases fall risk. If a professional recommends an aid, it's usually a good idea."
         },
         {
-          "question": "What if my parent refuses help or won't see a GP?",
-          "answer": "This is frustrating. Try a softer approach: 'I've been reading about falls in older adults and I'm worried. Could we just talk to the GP to rule out anything serious?' Sometimes framing it as a health check rather than a fall risk issue reduces resistance."
+          "question": "What if my parent refuses help or won't see a primary care physician?",
+          "answer": "This is frustrating. Try a softer approach: 'I've been reading about falls in older adults and I'm worried. Could we just talk to the primary care physician to rule out anything serious?' Sometimes framing it as a health check rather than a fall risk issue reduces resistance."
         },
         {
           "question": "Is exercise safe for someone at high fall risk?",
-          "answer": "Yes. Exercise reduces fall risk by improving balance, strength, and confidence. But it should be supervised by a physiotherapist initially to ensure it's safe and targets the right areas. Your parent's GP or occupational therapist can arrange this."
+          "answer": "Yes. Exercise reduces fall risk by improving balance, strength, and confidence. But it should be supervised by a physical therapist initially to ensure it's safe and targets the right areas. Your parent's primary care physician or occupational therapist can arrange this."
         }
       ]
     },
@@ -76,7 +76,7 @@
       "_template": "ctaBanner",
       "heading": "Get a professional assessment for your parent",
       "bodyText": "A falls screening assessment identifies what your parent needs: whether it's home modifications, exercises, or other support. Able Assess helps professionals assess fall risk systematically.",
-      "primaryCta": {"label": "Find a Physiotherapist", "url": "/find-help"},
+      "primaryCta": {"label": "Find a Physical therapist", "url": "/find-help"},
       "secondaryCta": {"label": "Learn how Able Assess helps families", "url": "/solutions/able-assess"},
       "scheme": "blue"
     }

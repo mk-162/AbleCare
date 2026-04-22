@@ -45,7 +45,7 @@
     },
     {
       "_template": "richText",
-      "body": "<h2>Question 2: Is the User Interface Intuitive and Designed for Your Workflows?</h2><p>Poor user interface design is the leading cause of health IT implementation failure. Staff avoid software they find frustrating or slow. Ask the vendor for a demonstration that focuses on workflow. Watch a carer or care assistant administer the assessment. Can they complete it in 10-15 minutes without complex navigation or excessive typing?</p><p>Request a free trial or sandbox environment. Have your staff use the software for a week. Gather feedback on ease of use. Ask staff: would you use this daily without complaint? Their answer matters more than vendor marketing claims. Software that takes 30 minutes to complete an assessment will face adoption resistance, no matter how clinically sound the underlying tool.</p>"
+      "body": "<h2>Question 2: Is the User Interface Intuitive and Designed for Your Workflows?</h2><p>Poor user interface design is the leading cause of health IT implementation failure. Staff avoid software they find frustrating or slow. Ask the vendor for a demonstration that focuses on workflow. Watch a caregiver or care assistant administer the assessment. Can they complete it in 10-15 minutes without complex navigation or excessive typing?</p><p>Request a free trial or sandbox environment. Have your staff use the software for a week. Gather feedback on ease of use. Ask staff: would you use this daily without complaint? Their answer matters more than vendor marketing claims. Software that takes 30 minutes to complete an assessment will face adoption resistance, no matter how clinically sound the underlying tool.</p>"
     },
     {
       "_template": "richText",

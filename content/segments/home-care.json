@@ -35,12 +35,23 @@
       }
     },
     {
-      "_template": "imageFeature",
-      "heading": "Technology built for the frontline",
-      "body": "Able Assess was designed for the caregiver's day, not the IT department's roadmap. Five minutes at the kitchen table. No clinical certification required. Run it during a routine visit or an introductory meeting — the report is ready immediately.",
-      "imageSide": "right",
-      "imageAlt": "Caregiver running an Able Assess screening with a client at home",
-      "imageSrc": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg"
+      "_template": "metricsBlock",
+      "scheme": "light",
+      "heading": "What Able Assess Offers Home Care",
+      "metrics": [
+        {
+          "name": "Client acquisition",
+          "description": "Utilize Able Assess during prospecting to give customers a tangible understanding of their risk profile and support needs. Offer inbound leads a free falls screening at initial assessment."
+        },
+        {
+          "name": "Client retention",
+          "description": "Falls are a leading cause of injury and death among home care customers. Help your clients stay healthy and safe at home by implementing better falls risk screening."
+        },
+        {
+          "name": "Differentiation",
+          "description": "Position your agency as tech-forward and clinically informed, without stepping outside a non-medical scope. Few competitors can match this story."
+        }
+      ]
     },
     {
       "_template": "processSteps",
@@ -50,7 +61,8 @@
         {
           "number": 1,
           "title": "Capture",
-          "description": "A caregiver runs a five-minute assessment on any phone during a routine visit or introductory meeting."
+          "subtitle": "On any phone or tablet",
+          "description": "A caregiver runs a five-minute assessment during a routine visit or introductory meeting."
         },
         {
           "number": 2,
@@ -83,7 +95,7 @@
         },
         {
           "name": "Gait speed",
-          "description": "Walking speed over a standardized 4-metre distance. Linked to rehospitalization rates."
+          "description": "Walking speed over a standardized 4-meter distance. Linked to rehospitalization rates."
         },
         {
           "name": "Timed Up and Go",
@@ -165,8 +177,7 @@
       "_template": "ctaBanner",
       "colorScheme": "blue",
       "waveStyle": "ribbon",
-      "heading": "See Able Assess in your workflow.",
-      "body": "Book a presentation with a clinician who has run it in the field.",
+      "heading": "See Able Assess in Action.",
       "primaryCta": {
         "label": "Book a Demo",
         "href": "/contact"

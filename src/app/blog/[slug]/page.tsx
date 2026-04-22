@@ -6,18 +6,19 @@ import { BlogSidebar } from "@/components/blocks/BlogSidebar";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { getCategories, slugifyCategory } from "@/lib/blog";
 import { ArticleFooterCta } from "@/components/blocks/ArticleFooterCta";
+import { ArticleBody } from "@/components/blocks/ArticleBody";
 import { resolveBlocks } from "@/lib/resolve-blocks";
+import { fetchPage, extractPageData } from "@/lib/tina-client";
 import { notFound } from "next/navigation";
 
 export const revalidate = 60;
 
 async function getArticle(slug: string) {
   try {
-    const fs = await import("fs");
-    const path = await import("path");
-    const filePath = path.join(process.cwd(), `content/learn/${slug}.json`);
-    const raw = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(raw);
+    const result = await fetchPage("learn", slug);
+    const data = extractPageData(result.data);
+    if (!data) return null;
+    return { query: result.query, variables: result.variables, raw: result.data, data };
   } catch {
     return null;
   }
@@ -29,8 +30,9 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const data = await getArticle(slug);
-  if (!data) return { title: "Article Not Found" };
+  const article = await getArticle(slug);
+  if (!article) return { title: "Article Not Found" };
+  const data = article.data;
   return {
     title: data.title,
     description: data.description || data.excerpt,
@@ -50,12 +52,13 @@ export default async function BlogArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const data = await getArticle(slug);
+  const article = await getArticle(slug);
 
-  if (!data) notFound();
+  if (!article) notFound();
 
+  const { query, variables, raw, data } = article;
   const hasBlocks = data.blocks && data.blocks.length > 0;
-  const hasContent = Boolean(data.content);
+  const hasBody = Array.isArray(data.body?.children) && data.body.children.length > 0;
   const featuredImage = data.featuredImage || data.image;
   const categories = getCategories();
   const categorySlug = data.category ? slugifyCategory(data.category) : null;
@@ -173,12 +176,14 @@ export default async function BlogArticlePage({
 
         {/* Two-column: Article body + Right rail */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
-          {/* Main content — render raw HTML content when present; blocks render full-width below */}
+          {/* Main content — rich-text body. Blocks render full-width below. */}
           <div className="flex-1 min-w-0 max-w-3xl">
-            {hasContent && (
-              <div
-                className="article-prose"
-                dangerouslySetInnerHTML={{ __html: data.content }}
+            {hasBody && (
+              <ArticleBody
+                query={query}
+                variables={variables}
+                data={raw}
+                collectionKey="learn"
               />
             )}
 
@@ -215,3 +220,4 @@ export async function generateStaticParams() {
     return [];
   }
 }
+

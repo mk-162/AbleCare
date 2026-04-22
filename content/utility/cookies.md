@@ -5,7 +5,7 @@ description: How Able Care uses cookies on our website.
 
 **Last updated: April 2026**
 
-This Cookie Policy explains how Able Care Ltd uses cookies and similar tracking technologies on our website.
+This Cookie Policy explains how GripAble Ltd uses cookies and similar tracking technologies on our website.
 
 ## What Are Cookies?
 

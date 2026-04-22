@@ -45,37 +45,61 @@
       "imageSrc": "/images/features/Able-Care-Product-Continuum-2-min.png"
     },
     {
+      "_template": "timeline",
+      "scheme": "light",
+      "heading": "Our journey",
+      "entries": [
+        {
+          "year": "2019",
+          "body": "Our two founders, Dr. Mike Mace and Dr. Paul Rinne, meet at Imperial College in London while completing their PhDs. They connect over a shared frustration: that functional health technology was stuck in the analog era — subjective, inconsistent, and disconnected from care workflows. They work together to begin designing the first iterations of a better technology for rehabilitation."
+        },
+        {
+          "year": "2020",
+          "body": "The first iteration of their idea goes to market. GripAble is a handheld sensor that measures grip strength and wrist range of motion. It connects to an app that allows patients to carry out upper limb neurorehabilitation by playing gamified activities."
+        },
+        {
+          "year": "2021",
+          "body": "GripAble is spun out of Imperial College London."
+        },
+        {
+          "year": "2022",
+          "body": "GripAble becomes the most widely distributed digital rehabilitation in the UK."
+        },
+        {
+          "year": "2023",
+          "body": "GripAble begins its expansion into the United States."
+        },
+        {
+          "year": "2024",
+          "body": "The team sets up a new brand — Able Care — to roll out new digital functional health products. It introduces Able Assess, a product that utilizes the same GripAble sensor to measure fall risk of individuals over 65."
+        }
+      ]
+    },
+    {
       "_template": "teamGrid",
       "heading": "Leadership",
       "id": "team",
       "members": [
         {
-          "name": "Dr Nabil Belbachir",
-          "role": "Co-Founder & CEO",
-          "credentials": "",
-          "bio": "Leads Able Care's commercial strategy and market expansion across the US and UK. Background in healthcare technology and digital health commercialization.",
-          "imageSrc": "/images/team/nabil-belbachir.jpg"
-        },
-        {
-          "name": "Dr Catriona Kelly",
-          "role": "Clinical Lead",
-          "credentials": "",
-          "bio": "Leads the clinical strategy and evidence program. Ensures every product decision is grounded in peer-reviewed research and clinical best practice.",
-          "imageSrc": "/images/team/catriona-kelly.jpg"
-        },
-        {
           "name": "Dr Paul Rinne",
-          "role": "Co-Founder & CTO",
-          "credentials": "",
-          "bio": "Leads the engineering and product team. Background in neuroscience and biomedical engineering at Imperial College London.",
+          "role": "CEO & Co-Founder",
+          "credentials": "PhD in Neuroscience",
+          "bio": "Healthcare entrepreneur dedicated to creating digital health solutions focused on healthspan and longevity. Founder and CEO of GripAble and Able Care, committed to delivering value-based care through data-driven digital transformation.",
           "imageSrc": "/images/team/dr-paul-rinne.jpg"
         },
         {
-          "name": "Clinical Advisory Board",
-          "role": "Research & Evidence",
-          "credentials": "",
-          "bio": "A panel of geriatricians, physiotherapists and researchers who review and validate the clinical evidence behind every Able Care product and protocol.",
-          "imageSrc": "/images/team/advisory-board.jpg"
+          "name": "Dr Mike Mace",
+          "role": "CTO & Co-Founder",
+          "credentials": "PhD in Bioengineering, Imperial College London",
+          "bio": "Former Research Associate in rehabilitation technology at Imperial College London's Human Robotics Group, where he led rehabilitation technology projects. Co-pioneered the GripAble device through collaboration with therapists, patients, and academic institutions.",
+          "imageSrc": "/images/team/dr-mike-mace.jpg"
+        },
+        {
+          "name": "Danielle Richards",
+          "role": "Commercial Director",
+          "credentials": "MBA, Cambridge Judge Business School",
+          "bio": "Commercial Director at both GripAble and Able Care, leading business and marketing strategy. Former Risk Analyst at Google. Passionate about the technology-health intersection with a proven track record scaling startups and scale-ups.",
+          "imageSrc": "/images/team/danielle-richards.jpg"
         }
       ]
     },

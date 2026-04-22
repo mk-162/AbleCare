@@ -138,38 +138,31 @@
       "rows": [
         {
           "feature": "Time per assessment",
-          "ableAssess": "Under 5 minutes",
-          "paper": "20+ minutes"
+          "values": ["Under 5 minutes", "20+ minutes"]
         },
         {
           "feature": "Scoring",
-          "ableAssess": "Automatic, objective",
-          "paper": "Subjective, observer-dependent"
+          "values": ["Automatic, objective", "Subjective, observer-dependent"]
         },
         {
           "feature": "Normative comparison",
-          "ableAssess": "Built in",
-          "paper": "Manual lookup"
+          "values": ["Built in", "Manual lookup"]
         },
         {
           "feature": "Trend tracking",
-          "ableAssess": "Longitudinal, automatic",
-          "paper": "Not available"
+          "values": ["Longitudinal, automatic", "Not available"]
         },
         {
           "feature": "Care plan integration",
-          "ableAssess": "Direct routing",
-          "paper": "Manual transcription"
+          "values": ["Direct routing", "Manual transcription"]
         },
         {
           "feature": "Staff requirement",
-          "ableAssess": "Non-clinical",
-          "paper": "Clinical"
+          "values": ["Non-clinical", "Clinical"]
         },
         {
           "feature": "Standardization",
-          "ableAssess": "One protocol, every site",
-          "paper": "Varies by observer"
+          "values": ["One protocol, every site", "Varies by observer"]
         }
       ]
     },

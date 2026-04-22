@@ -170,7 +170,7 @@ export function SiteFooter() {
               />
             </Link>
             <p className="text-ac-grey/50 text-sm font-light">
-              &copy; {new Date().getFullYear()} Able Care Ltd. All rights reserved.
+              &copy; {new Date().getFullYear()} GripAble Ltd. All rights reserved.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">

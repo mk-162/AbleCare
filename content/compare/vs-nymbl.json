@@ -27,10 +27,6 @@
       "scheme": "grey",
       "heading": "Head-to-head comparison",
       "tldr": "Nymbl is a consumer-facing balance training app. It guides users through short daily exercises designed to improve balance over time. Able Assess is a clinical screening tool. It captures four objective, sensor-based functional health metrics, scores them against normative data, stratifies risk, and routes the result to the care team. Nymbl is an intervention. Able Assess is the screening that tells you who needs an intervention and whether that intervention is working.",
-      "columns": [
-        "Able Assess",
-        "Nymbl"
-      ],
       "rows": [
         {
           "feature": "Category",
@@ -88,6 +84,10 @@
             "Wellness program, not typically accepted as clinical evidence by payers"
           ]
         }
+      ],
+      "columns": [
+        "Able Assess",
+        "Nymbl"
       ]
     },
     {

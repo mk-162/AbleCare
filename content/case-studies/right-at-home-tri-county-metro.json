@@ -1,0 +1,243 @@
+{
+  "title": "Right at Home Tri-County Metro Case Study",
+  "slug": "right-at-home-tri-county-metro",
+  "description": "How a Right at Home franchise moved its inquiry-to-assessment conversion with Able Assess, powering monthly screening and deeper skilled-agency referral loops.",
+  "seo": {
+    "title": "Right at Home Tri-County Metro Case Study | Able Care",
+    "description": "How a Right at Home franchise moved its inquiry-to-assessment conversion with Able Assess, powering monthly screening and deeper skilled-agency referral loops.",
+    "ogImage": "/images/og-case-studies.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "Case Studies", "href": "/resources/case-studies" },
+        { "label": "Right at Home Tri-County Metro", "href": "/resources/case-studies/right-at-home-tri-county-metro" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
+      "backgroundImageAlt": "Older adult completing an Able Assess screening at home",
+      "eyebrow": "Case Study: Right at Home Tri-County Metro",
+      "headline": "\"The reason I got so interested in this was to increase the likelihood that an inquiry for services would result in an assessment.\"",
+      "subtitle": "Jeff Welsh, Owner of Right at Home Tri-County Metro, on how Able Assess lifts the inquiry-to-assessment conversion, anchors a monthly screening cadence and feeds a reciprocal skilled-agency referral loop.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      }
+    },
+    {
+      "_template": "statsBar",
+      "scheme": "grey",
+      "heading": "Outcomes highlighted by Right at Home Tri-County Metro",
+      "stats": [
+        {
+          "value": "40-60%",
+          "label": "Inquiry-to-assessment conversion target",
+          "sublabel": "Up from a 33-40% baseline ([PENDING CUSTOMER APPROVAL])"
+        },
+        {
+          "value": "75-90%",
+          "label": "Assessment-to-client conversion baseline",
+          "sublabel": "Stated by Jeff Welsh ([PENDING CUSTOMER APPROVAL])"
+        },
+        {
+          "value": "Monthly",
+          "label": "Screening cadence per active client",
+          "sublabel": "Committed across the active caseload ([PENDING CUSTOMER APPROVAL])"
+        }
+      ]
+    },
+    {
+      "_template": "trustBar",
+      "scheme": "light",
+      "items": [
+        { "text": "FDA Listed" },
+        { "text": "CE Marked" },
+        { "text": "ISO 27001" },
+        { "text": "HIPAA Aligned" },
+        { "text": "GDPR Compliant" }
+      ]
+    },
+    {
+      "_template": "caseStudyCustomerCard",
+      "scheme": "light",
+      "eyebrow": "The customer",
+      "heading": "A franchise owner who brings in new ideas",
+      "body": "<p>Right at Home Tri-County Metro is a Right at Home franchise led by owner Jeff Welsh. Jeff is a member of a peer performance group inside the wider Right at Home network and has a track record of bringing in technology and new ideas.</p><p>His self-description is short and useful: \"I'm very innovative. I like bringing in technology, I like bringing in new ideas, I like solving problems systematically. That's just my nature.\"</p>",
+      "portraitSrc": "/images/team/jeff-welsh.jpg",
+      "portraitAlt": "Jeff Welsh, Owner of Right at Home Tri-County Metro",
+      "name": "Jeff Welsh",
+      "role": "Owner, Right at Home Tri-County Metro",
+      "logoSrc": "/images/logos/right-at-home.png",
+      "logoAlt": "Right at Home logo",
+      "highlightQuote": "The reason I got so interested in this was to increase the likelihood that an inquiry for services would result in an assessment."
+    },
+    {
+      "_template": "prose",
+      "scheme": "grey",
+      "eyebrow": "The challenge",
+      "heading": "A bottleneck at the top of the funnel",
+      "body": "<p>Jeff identified a metric that was holding his agency back. Only 33 to 40 percent of inbound inquiries were converting into an initial in-home assessment. Once an assessment happened, the downstream conversion was strong: 75 to 90 percent of assessments became active clients.</p><p>The bottleneck was at the top of the funnel, not at the close. It was costing his team the single biggest lever in the business.</p><p>The structural problem is familiar to every operator. Home care agencies have few tangible differentiators to offer a family who is calling three or four providers and deciding who should come to the home first. Reputation helps. A warm voice on the phone helps. Neither gives the family a reason to pick one agency over another.</p>"
+    },
+    {
+      "_template": "prose",
+      "scheme": "light",
+      "eyebrow": "The approach",
+      "heading": "An evidence-based screening at the point of inquiry",
+      "body": "<p>Jeff introduced Able Assess as a differentiated offer at the inquiry stage. \"We come in and we do a comprehensive, evidence-based assessment free of charge.\" The assessment establishes a baseline and gives the family immediate value.</p><p>From there, Jeff committed his team to a monthly cadence, re-measuring strength alongside caregiver-quality conversations. If the data shows decline, the team involves the client's primary care physician, recommends physical therapy and refers into a skilled Medicare-certified agency.</p><p>That referral loop matters. When Right at Home refers a skilled agency, the agency sees that Right at Home is helping their business and sends referrals back.</p><p>Jeff has also begun using Able Assess inside independent living and assisted living communities as a one-time public service event. Every resident who wants to be measured gets their grip strength, sit-to-stand, gait and timed up-and-go compared against norms. In Jeff's words, \"it's really a beautiful tool in terms of valuable information that's easy to obtain and to distribute to a potential client.\" Events can be co-sponsored with a skilled agency partner to strengthen the referral relationship.</p><p>Underneath all of this sits a wider thesis about the care model. Right at Home caregivers are typically in the home three hours a day, which leaves twenty-one hours unobserved. Able Assess sits alongside complementary tools such as Odessa Connect for vitals monitoring, giving the agency a fuller picture of how each client is tracking between visits.</p>"
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "blue",
+      "heading": "How Right at Home Tri-County Metro uses Able Assess",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Offer the assessment at inquiry",
+          "description": "When a family rings, the team offers a comprehensive, evidence-based assessment free of charge. The assessment itself is the differentiator."
+        },
+        {
+          "number": 2,
+          "title": "Baseline and commit to monthly",
+          "description": "Every new client gets a documented baseline. The team returns every month to re-measure, discuss caregiver quality and share the latest data."
+        },
+        {
+          "number": 3,
+          "title": "Act on decline",
+          "description": "Where the data shows decline, Right at Home escalates: involve the PCP, recommend physical therapy and refer into a trusted skilled agency. The skilled agency reciprocates with referrals back."
+        },
+        {
+          "number": 4,
+          "title": "Run community events",
+          "description": "Able Assess runs as a one-time public service event inside IL, AL and CCRC partners. The event seeds trust with residents, families and the community director, and opens the door for future referrals."
+        }
+      ],
+      "ctaText": "See the full Able Assess workflow",
+      "ctaLink": "/solutions/able-assess"
+    },
+    {
+      "_template": "prose",
+      "scheme": "light",
+      "eyebrow": "The results",
+      "heading": "What has changed since Able Assess went live",
+      "body": "<p><strong>[PENDING CUSTOMER APPROVAL:</strong> all numeric entries below are to be verified by Right at Home Tri-County Metro before publication. Figures Jeff stated in our conversations are flagged as \"stated by Jeff\" and still require written sign-off.]</p><p><strong>Inquiry to assessment conversion.</strong> Baseline 33 to 40 percent, target 60 percent. Stated by Jeff, awaiting written sign-off on exact figures and timeframe.</p><p><strong>Assessment to client conversion.</strong> 75 to 90 percent. Stated by Jeff as his internal baseline, awaiting written sign-off.</p><p><strong>Screening cadence.</strong> Monthly, committed across active clients. Confirmed in interview.</p><p><strong>Senior living community events featuring Able Assess.</strong> [PENDING: number per quarter and names of participating communities.]</p><p><strong>Skilled agency referral loop.</strong> [PENDING: number of reciprocal referrals generated, or framing the customer is comfortable publishing.]</p>"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "colorScheme": "aqua",
+      "heading": "In Jeff Welsh's words",
+      "testimonials": [
+        {
+          "quote": "When we refer a skilled agency, they look at us and say we are helping them, and they're going to help us with more referrals. AbleCare is central to that loop. It gives us a reason to be there, a reason to come back, and a reason for everyone in the care network to keep us close.",
+          "name": "Jeff Welsh",
+          "role": "Owner, Right at Home Tri-County Metro"
+        }
+      ]
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "light",
+      "heading": "What it means for operators like you",
+      "items": [
+        {
+          "title": "Change the inquiry conversation",
+          "body": "An evidence-based screening at the point of inquiry gives families a concrete reason to let you into the home. The downstream close is largely a function of quality you already deliver."
+        },
+        {
+          "title": "Commit to cadence",
+          "body": "A baseline that is never revisited is a missed opportunity. A monthly re-measure catches decline, strengthens the family relationship and fuels your care plan."
+        },
+        {
+          "title": "Build the referral loop",
+          "body": "Every decline signal is a potential referral to a skilled Medicare-certified agency. Agencies that see you as a source of their own business become a source of yours."
+        },
+        {
+          "title": "Be useful in the community",
+          "body": "An event at an IL, AL or CCRC partner is not a sales pitch. It is a public service that residents remember and directors appreciate, long before anyone needs to choose a home care provider."
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "scheme": "blue",
+      "stats": [
+        { "value": "4", "label": "Validated metrics", "sublabel": "Grip, sit-to-stand, gait, timed up-and-go" },
+        { "value": "< 5 min", "label": "Per screening", "sublabel": "In any care setting" },
+        { "value": "Non-clinical", "label": "Staff can run it", "sublabel": "After short training" },
+        { "value": "Monthly", "label": "Cadence per client", "sublabel": "Committed across active caseload" }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "grey",
+      "heading": "Questions franchise operators ask about this approach",
+      "emitSchema": true,
+      "faqs": [
+        {
+          "question": "Will this work inside a franchise network with master-brand marketing rules?",
+          "answer": "Able Assess runs as a location-level operational tool. Right at Home Tri-County Metro uses it inside its own sales process and community outreach. Use of any franchise logo in Able Care marketing is always subject to master brand approval, which Able Care requests on a case-by-case basis."
+        },
+        {
+          "question": "How does this change our cost of acquisition?",
+          "answer": "Jeff Welsh's commercial thesis is that Able Assess moves the inquiry-to-assessment rate, which is the metric he credits with the most operational leverage. Because assessment-to-client conversion is already strong, lifting the top of the funnel compounds downstream. Exact figures for any individual franchise will vary and should be modeled with the Able Care ROI calculator."
+        },
+        {
+          "question": "How do we run this at senior living community events without it looking like a sales pitch?",
+          "answer": "Jeff frames community events as a one-time public service. Residents who want to be measured get their grip strength, sit-to-stand, gait and timed up-and-go results, shown against population norms. Marketing material is available if requested, but the event is positioned as evidence-based education, not a pitch."
+        },
+        {
+          "question": "What is the referral fee story?",
+          "answer": "Jeff's franchise does not take referral fees when it refers to skilled agencies. The loop works on reciprocity, not cash. Able Care does not charge a referral fee either. Any referral arrangements are between the parties and subject to their regulatory context."
+        },
+        {
+          "question": "What about data privacy?",
+          "answer": "Able Assess is HIPAA aligned. All personally identifiable health information in the portal is encrypted in transit and at rest, and access is role-based at the organization and facility level."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See how Able Assess changes the inquiry conversation",
+      "body": "30 minutes with the Able Care clinical team. We'll walk through the workflow, the monthly cadence and the modeling behind the conversion lift.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Open the ROI Calculator",
+        "href": "/roi-calculator"
+      }
+    },
+    {
+      "_template": "caseStudyCards",
+      "heading": "Related case studies",
+      "cards": [
+        {
+          "title": "Why We Built Able Assess Into Our Tech Stack",
+          "segment": "Home Care",
+          "outcome": "Owner Bob Roth on why Cypress Home Care, one of the most technology-forward agencies in the US, added Able Assess to its differentiated care model and how objective grip strength data supports client acquisition, retention and the mission to keep people at home.",
+          "href": "/resources/case-studies/cypress-home-care"
+        },
+        {
+          "title": "PE-backed and franchised home care",
+          "segment": "Home Care",
+          "outcome": "The segment landing page for franchise and PE-backed home care operators considering Able Assess. Includes the commercial case and peer group framing.",
+          "href": "/home-care/pe-backed"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "able-assess",
+    "home-care",
+    "case-study"
+  ]
+}

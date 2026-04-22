@@ -18,7 +18,7 @@
           "text": "Digital tools require under 15 minutes of staff training per user."
         }
       ],
-      "expandedAnswer": "Task-shifting is the delegation of specific health tasks to less specialized workers. For falls risk screening, this means carers and care assistants administer validated assessment tools under supervision. Evidence shows this approach maintains screening reliability while reducing costs and improving scalability. Digital systems guide the assessment process, standardize data entry, and create audit trails proving competency. Non-clinical staff can screen as many residents as clinical staff in the same timeframe, expanding your screening capacity.",
+      "expandedAnswer": "Task-shifting is the delegation of specific health tasks to less specialized workers. For falls risk screening, this means caregivers and care assistants administer validated assessment tools under supervision. Evidence shows this approach maintains screening reliability while reducing costs and improving scalability. Digital systems guide the assessment process, standardize data entry, and create audit trails proving competency. Non-clinical staff can screen as many residents as clinical staff in the same timeframe, expanding your screening capacity.",
       "sources": [
         {
           "title": "Task-Shifting in Health Care: Evidence and Models",
@@ -41,11 +41,11 @@
     },
     {
       "_template": "richText",
-      "body": "<h2>Why Task-Shifting Works for Falls Screening</h2><p>Task-shifting is not a cost-cutting measure; it is a strategy to match task complexity with staff skill level. Falls risk screening does not require clinical judgment or diagnosis. It requires systematic data collection using a validated tool. Non-clinical staff can learn to administer validated screening tools reliably. The process is straightforward: ask standardized questions, observe functional ability, record responses, and flag risk levels according to protocol.</p><p>This separation of 'who screens' from 'who decides intervention' is key. Non-clinical staff screen. Clinical staff (nurses, physiotherapists, physicians) review results and prescribe interventions. This division of labor allows clinical staff to focus on clinical decisions while non-clinical staff increase screening coverage and capacity.</p>"
+      "body": "<h2>Why Task-Shifting Works for Falls Screening</h2><p>Task-shifting is not a cost-cutting measure; it is a strategy to match task complexity with staff skill level. Falls risk screening does not require clinical judgment or diagnosis. It requires systematic data collection using a validated tool. Non-clinical staff can learn to administer validated screening tools reliably. The process is straightforward: ask standardized questions, observe functional ability, record responses, and flag risk levels according to protocol.</p><p>This separation of 'who screens' from 'who decides intervention' is key. Non-clinical staff screen. Clinical staff (nurses, physical therapists, physicians) review results and prescribe interventions. This division of labor allows clinical staff to focus on clinical decisions while non-clinical staff increase screening coverage and capacity.</p>"
     },
     {
       "_template": "richText",
-      "body": "<h2>Evidence for Non-Clinical Screening Delivery</h2><p>Multiple studies demonstrate that non-clinical staff administer falls risk screening as reliably as nurses when using standardized tools. One landmark study compared nurses and trained carers administering a validated falls risk assessment. Reliability between the two groups exceeded 90%. Both groups identified high-risk residents with similar sensitivity and specificity.</p><p>The mechanism is simple: validated screening tools are designed to be objective. They do not rely on clinical inference or complex judgment. They use clear criteria: age, medication count, history of falls, mobility limitations, vision impairment. A trained carer can assess these objectively as accurately as a nurse. Digital tools make this process even more reliable by eliminating data entry errors and guiding the assessment workflow.</p>"
+      "body": "<h2>Evidence for Non-Clinical Screening Delivery</h2><p>Multiple studies demonstrate that non-clinical staff administer falls risk screening as reliably as nurses when using standardized tools. One landmark study compared nurses and trained caregivers administering a validated falls risk assessment. Reliability between the two groups exceeded 90%. Both groups identified high-risk residents with similar sensitivity and specificity.</p><p>The mechanism is simple: validated screening tools are designed to be objective. They do not rely on clinical inference or complex judgment. They use clear criteria: age, medication count, history of falls, mobility limitations, vision impairment. A trained caregiver can assess these objectively as accurately as a nurse. Digital tools make this process even more reliable by eliminating data entry errors and guiding the assessment workflow.</p>"
     },
     {
       "_template": "richText",
@@ -53,7 +53,7 @@
     },
     {
       "_template": "richText",
-      "body": "<h2>Able Assess and No Clinical Training Required</h2><p>Able Assess is designed for non-clinical delivery. The system guides users through screening step by step. It requires no clinical knowledge to administer. Carers enter observations and responses; the system calculates risk levels automatically. No clinical interpretation is needed by the person screening. Results are flagged for clinical review by nurses or physicians.</p><p>This design enables rapid scaling. You can train your entire care assistant workforce to screen in a single week. Non-clinical staff screen every new admission and every resident at risk. Clinical staff focus on interpreting results and designing interventions. Your organization screens more residents, identifies more risks, and prevents more falls without hiring additional nurses.</p>"
+      "body": "<h2>Able Assess and No Clinical Training Required</h2><p>Able Assess is designed for non-clinical delivery. The system guides users through screening step by step. It requires no clinical knowledge to administer. Caregivers enter observations and responses; the system calculates risk levels automatically. No clinical interpretation is needed by the person screening. Results are flagged for clinical review by nurses or physicians.</p><p>This design enables rapid scaling. You can train your entire care assistant workforce to screen in a single week. Non-clinical staff screen every new admission and every resident at risk. Clinical staff focus on interpreting results and designing interventions. Your organization screens more residents, identifies more risks, and prevents more falls without hiring additional nurses.</p>"
     },
     {
       "_template": "evidenceBlock",
@@ -82,7 +82,7 @@
       "emitSchema": true,
       "items": [
         {
-          "question": "What happens if a carer misses a falls risk during screening?",
+          "question": "What happens if a caregiver misses a falls risk during screening?",
           "answer": "Digital tools reduce missed risks by standardizing assessment criteria and using objective measures. Clinical staff review all screening results, providing a safety net. Additionally, continuous monitoring and incident reporting catch any missed risks; your team follows up with targeted reassessment."
         },
         {

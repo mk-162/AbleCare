@@ -17,7 +17,7 @@ export function MetricsBlock({ scheme = "light", heading, metrics }: MetricsBloc
   const defaultMetrics: Array<{ name: string; whatItMeasures?: string; whyItMatters?: string }> = [
     { name: "Grip Strength", whatItMeasures: "A powerful biomarker of overall vitality. Predicts all-cause mortality more reliably than systolic blood pressure." },
     { name: "Sit-to-Stand", whatItMeasures: "Lower-limb power and balance. Five repetitions tell you more about fall risk than a lengthy clinical interview." },
-    { name: "Gait Speed", whatItMeasures: "The 'sixth vital sign' for older adults. Slowing gait predicts cognitive decline, hospitalisation, and mortality." },
+    { name: "Gait Speed", whatItMeasures: "The 'sixth vital sign' for older adults. Slowing gait predicts cognitive decline, hospitalization, and mortality." },
     { name: "Timed Up and Go", whatItMeasures: "A composite of balance, agility, and mobility. Falls risk in under a minute — without specialist training." },
   ];
   const items = metrics && metrics.length > 0 ? metrics : defaultMetrics;

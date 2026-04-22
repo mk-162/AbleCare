@@ -32,7 +32,7 @@
       "backgroundImageAlt": "Patient independently using Able Assess",
       "eyebrow": "Case Studies",
       "headline": "Real results. Real organizations.",
-      "subtitle": "See how operators, communities and clinical teams use Able Assess to reduce falls, protect outcomes and standardize care across every site.",
+      "subtitle": "See how home care operators use Able Assess to standardize falls screening, lift conversion from inquiry to assessment, and keep more clients at home. Two stories, in their own words.",
       "primaryCta": {
         "label": "Book a Demo",
         "href": "/contact"
@@ -44,25 +44,23 @@
     },
     {
       "_template": "caseStudyCards",
-      "heading": "Featured Case Studies",
-      "cards": [
+      "heading": "Featured case studies",
+      "caseStudies": [
         {
           "title": "Why We Built Able Assess Into Our Tech Stack",
-          "segment": "Home Care",
-          "outcome": "Owner Bob Roth on why Cypress Home Care, one of the most technology-forward agencies in the US, added Able Assess to its differentiated care model — and how objective grip strength data supports client acquisition, retention and the mission to keep people at home.",
-          "href": "/resources/case-studies"
+          "sector": "Home Care, Arizona",
+          "metric": "Tech-first",
+          "metricLabel": "Integrated care stack",
+          "summary": "Owner Bob Roth on why Cypress Home Care, one of the most technology-forward agencies in the US, added Able Assess to its differentiated care model, and how objective grip strength data supports client retention and the mission to keep people at home.",
+          "link": "/resources/case-studies/cypress-home-care"
         },
         {
           "title": "Turning Inquiries Into Assessments, and Assessments Into Long-Term Care",
-          "segment": "Home Care",
-          "outcome": "Owner Jeff Welsh on how Right at Home Tri-County Metro uses Able Assess to convert family inquiries into in-home assessments, run recurring screening events inside senior living communities, and build a holistic falls-prevention model with referral partners.",
-          "href": "/resources/case-studies"
-        },
-        {
-          "title": "How One CRO Improved Grip Strength Measurement in a Decentralized Trial",
-          "segment": "Pharma & CROs",
-          "outcome": "A clinical research team used Able Assess to capture grip strength as a functional endpoint across three decentralized trial sites. The standardized protocol eliminated inter-site variability and improved signal for GLP-1 muscle loss monitoring.",
-          "href": "/resources/case-studies"
+          "sector": "Franchise Home Care, US",
+          "metric": "Monthly",
+          "metricLabel": "Screening cadence committed",
+          "summary": "Owner Jeff Welsh on how Right at Home Tri-County Metro uses Able Assess to convert family inquiries into in-home assessments, run recurring screening events inside senior living communities, and build a holistic falls-prevention model with referral partners.",
+          "link": "/resources/case-studies/right-at-home-tri-county-metro"
         }
       ]
     },

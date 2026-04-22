@@ -8,6 +8,7 @@ interface ProcessStepsProps {
   steps?: Array<{
     number?: number;
     title: string;
+    subtitle?: string;
     description?: string;
   }>;
   ctaText?: string;
@@ -24,7 +25,7 @@ export function ProcessSteps({ scheme = "light", heading, steps, ctaText, ctaLin
     ? "bg-ac-blue border-white/50 text-white"
     : "bg-white border-ac-blue/30 text-ac-blue shadow-md";
 
-  const defaultSteps: Array<{ number?: number; title: string; description?: string }> = [
+  const defaultSteps: Array<{ number?: number; title: string; subtitle?: string; description?: string }> = [
     { title: "Select patient", description: "Scan a wristband or select from your census — Able Assess pulls demographics automatically." },
     { title: "Guide assessment", description: "Clear on-screen prompts walk the care worker through each step. No clinical training required." },
     { title: "Capture data", description: "The device syncs wirelessly and scores results against age-matched normative data in seconds." },
@@ -58,6 +59,7 @@ export function ProcessSteps({ scheme = "light", heading, steps, ctaText, ctaLin
                 {String(step.number || i + 1).padStart(2, "0")}
               </div>
               <h3 className={`text-lg font-bold mb-2 ${textClass}`}>{step.title}</h3>
+              {step.subtitle && <p className={`text-xs font-semibold uppercase tracking-wider mb-2 ${isBlue ? "text-ac-aqua" : "text-ac-blue"}`}>{step.subtitle}</p>}
               {step.description && <p className={`text-sm leading-relaxed font-light ${descClass}`}>{step.description}</p>}
             </motion.div>
           ))}

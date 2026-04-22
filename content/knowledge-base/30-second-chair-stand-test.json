@@ -65,7 +65,7 @@
         },
         {
           "heading": "Discuss results and plan next steps",
-          "description": "Explain the result in clear language: 'Your lower leg strength is below average for your age, which increases your fall risk. I recommend starting a simple strengthening exercise program.' Provide specific, achievable recommendations such as chair squats, step-ups, or referral to a physiotherapy or exercise program."
+          "description": "Explain the result in clear language: 'Your lower leg strength is below average for your age, which increases your fall risk. I recommend starting a simple strengthening exercise program.' Provide specific, achievable recommendations such as chair squats, step-ups, or referral to a physical therapy or exercise program."
         }
       ]
     },
@@ -105,7 +105,7 @@
       "items": [
         {
           "question": "What if someone cannot complete even one repetition?",
-          "answer": "This indicates severe lower limb weakness and substantial fall risk. Document the result as 'unable to complete single repetition' rather than zero. This person requires immediate referral for physical assessment and likely physiotherapy. Do not forcefully encourage continued attempts as injury risk is high."
+          "answer": "This indicates severe lower limb weakness and substantial fall risk. Document the result as 'unable to complete single repetition' rather than zero. This person requires immediate referral for physical assessment and likely physical therapy. Do not forcefully encourage continued attempts as injury risk is high."
         },
         {
           "question": "Can I use the test if the person has knee pain?",

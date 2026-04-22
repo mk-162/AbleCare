@@ -27,7 +27,7 @@ const CATEGORIES = [
   {
     name: "Falls Prevention",
     slug: "falls-prevention",
-    description: "Falls risk screening, prevention programmes, and evidence-based strategies.",
+    description: "Falls risk screening, prevention programs, and evidence-based strategies.",
   },
   {
     name: "Grip Strength",

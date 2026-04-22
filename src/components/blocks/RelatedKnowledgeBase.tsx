@@ -20,7 +20,7 @@ interface RelatedKnowledgeBaseProps {
   items?: RelatedItem[];
   /** Section heading override. */
   heading?: string;
-  /** Colour scheme. */
+  /** Color scheme. */
   scheme?: string;
 }
 

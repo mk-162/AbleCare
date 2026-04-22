@@ -180,6 +180,7 @@ const processStepsBlock = {
       fields: [
         { type: "number" as const, name: "number", label: "Step Number", required: true },
         { type: "string" as const, name: "title", label: "Title", required: true },
+        { type: "string" as const, name: "subtitle", label: "Subtitle (optional, shown under title)" },
         { type: "string" as const, name: "description", label: "Description", ui: { component: "textarea" } },
       ],
     },
@@ -223,11 +224,16 @@ const featureComparisonBlock = {
     }),
   },
   fields: [
-    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
+    { type: "string" as const, name: "scheme", label: "Color Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
     { type: "string" as const, name: "heading", label: "Section Heading" },
     { type: "string" as const, name: "tldr", label: "TL;DR Verdict", ui: { component: "textarea" }, description: "40-80 word direct verdict for GEO." },
-    { type: "string" as const, name: "col1Header", label: "Column 1 Header", ui: { defaultValue: "Able Assess" } },
-    { type: "string" as const, name: "col2Header", label: "Column 2 Header", ui: { defaultValue: "Alternative" } },
+    {
+      type: "string" as const,
+      name: "columns",
+      label: "Column Headers",
+      list: true,
+      description: "One header per column. Typically 2, up to 4 supported.",
+    },
     {
       type: "object" as const,
       name: "rows",
@@ -236,8 +242,14 @@ const featureComparisonBlock = {
       ui: { itemProps: (item: { feature?: string }) => ({ label: item.feature || "Feature" }) },
       fields: [
         { type: "string" as const, name: "feature", label: "Feature", required: true },
-        { type: "string" as const, name: "col1", label: "Column 1 Value" },
-        { type: "string" as const, name: "col2", label: "Column 2 Value" },
+        {
+          type: "string" as const,
+          name: "values",
+          label: "Values",
+          list: true,
+          ui: { component: "textarea" },
+          description: "One value per column, in the same order as Column Headers.",
+        },
       ],
     },
   ],
@@ -848,6 +860,31 @@ const valuePropsBlock = {
   ],
 };
 
+const timelineBlock = {
+  name: "timeline",
+  label: "Timeline",
+  ui: {
+    itemProps: (item: { heading?: string; entries?: unknown[] }) => ({
+      label: item?.heading ? `Timeline: ${item.heading}` : `Timeline (${item?.entries?.length ?? 0} entries)`,
+    }),
+  },
+  fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"], ui: { defaultValue: "light" } },
+    { type: "string" as const, name: "heading", label: "Section Heading" },
+    {
+      type: "object" as const,
+      name: "entries",
+      label: "Timeline Entries",
+      list: true,
+      ui: { itemProps: (item: { year?: string }) => ({ label: item?.year || "Entry" }) },
+      fields: [
+        { type: "string" as const, name: "year", label: "Year / Date", required: true },
+        { type: "string" as const, name: "body", label: "Body", ui: { component: "textarea" } },
+      ],
+    },
+  ],
+};
+
 const breadcrumbBlock = {
   name: "breadcrumb",
   label: "Breadcrumb",
@@ -922,6 +959,7 @@ const allBlocks = [
   contactFormBlock,
   segmentCardsBlock,
   valuePropsBlock,
+  timelineBlock,
 ];
 
 const blockPageFields: any[] = [
@@ -940,7 +978,12 @@ const blockPageFields: any[] = [
 const articleFields: any[] = [
   { type: "string" as const, name: "title", label: "Title", isTitle: true, required: true },
   { type: "string" as const, name: "excerpt", label: "Excerpt", ui: { component: "textarea" as const } },
-  { type: "string" as const, name: "content", label: "Body Content (HTML)", ui: { component: "textarea" as const } },
+  {
+    type: "rich-text" as const,
+    name: "body",
+    label: "Body",
+    description: "Article body. Edit with the WYSIWYG editor.",
+  },
   { type: "string" as const, name: "category", label: "Category" },
   { type: "string" as const, name: "tags", label: "Tags", list: true },
   { type: "string" as const, name: "author", label: "Author Name" },
@@ -991,6 +1034,15 @@ export default defineConfig({
       mediaRoot: "images",
       publicFolder: "public",
     },
+  },
+
+  search: {
+    tina: {
+      indexerToken: process.env.TINA_SEARCH_TOKEN!,
+      stopwordLanguages: ["eng"],
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100,
   },
 
   schema: {
@@ -1067,6 +1119,21 @@ export default defineConfig({
             document._sys.filename === "overview" ? "/resources/" : `/resources/${document._sys.filename}/`,
         },
         fields: blockPageFields,
+      },
+
+      // ── Case Studies ────────────────────────────────────────────────────
+      {
+        name: "caseStudies",
+        label: "Case Studies",
+        path: "content/case-studies",
+        format: "json",
+        ui: {
+          router: ({ document }) => `/resources/case-studies/${document._sys.filename}/`,
+        },
+        fields: [
+          { type: "string" as const, name: "slug", label: "Slug (URL path)" },
+          ...blockPageFields,
+        ],
       },
 
       // ── Company ─────────────────────────────────────────────────────────

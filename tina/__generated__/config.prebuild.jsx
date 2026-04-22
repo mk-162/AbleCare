@@ -31,6 +31,7 @@ var heroBlock = {
     { type: "string", name: "secondaryCtaLink", label: "Secondary CTA Link" },
     { type: "image", name: "backgroundImage", label: "Hero Image (right side)" },
     { type: "string", name: "backgroundImageAlt", label: "Image Alt Text" },
+    { type: "string", name: "videoIframe", label: "Video Iframe URL (demo only \u2014 overrides right-side image)", description: "Path to an HTML file served from /public, e.g. /homepage-video/index.html. Temporary staging slot; will be replaced by a native <video> once the final MP4 is rendered." },
     {
       type: "object",
       name: "breadcrumb",
@@ -167,6 +168,7 @@ var processStepsBlock = {
       fields: [
         { type: "number", name: "number", label: "Step Number", required: true },
         { type: "string", name: "title", label: "Title", required: true },
+        { type: "string", name: "subtitle", label: "Subtitle (optional, shown under title)" },
         { type: "string", name: "description", label: "Description", ui: { component: "textarea" } }
       ]
     },
@@ -208,11 +210,16 @@ var featureComparisonBlock = {
     })
   },
   fields: [
-    { type: "string", name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
+    { type: "string", name: "scheme", label: "Color Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
     { type: "string", name: "heading", label: "Section Heading" },
     { type: "string", name: "tldr", label: "TL;DR Verdict", ui: { component: "textarea" }, description: "40-80 word direct verdict for GEO." },
-    { type: "string", name: "col1Header", label: "Column 1 Header", ui: { defaultValue: "Able Assess" } },
-    { type: "string", name: "col2Header", label: "Column 2 Header", ui: { defaultValue: "Alternative" } },
+    {
+      type: "string",
+      name: "columns",
+      label: "Column Headers",
+      list: true,
+      description: "One header per column. Typically 2, up to 4 supported."
+    },
     {
       type: "object",
       name: "rows",
@@ -221,8 +228,14 @@ var featureComparisonBlock = {
       ui: { itemProps: (item) => ({ label: item.feature || "Feature" }) },
       fields: [
         { type: "string", name: "feature", label: "Feature", required: true },
-        { type: "string", name: "col1", label: "Column 1 Value" },
-        { type: "string", name: "col2", label: "Column 2 Value" }
+        {
+          type: "string",
+          name: "values",
+          label: "Values",
+          list: true,
+          ui: { component: "textarea" },
+          description: "One value per column, in the same order as Column Headers."
+        }
       ]
     }
   ]
@@ -546,9 +559,31 @@ var alertBannerBlock = {
     { type: "string", name: "ctaLink", label: "CTA Link" }
   ]
 };
+var proseBlock = {
+  name: "prose",
+  label: "Prose (intro / section text)",
+  ui: {
+    itemProps: (item) => ({
+      label: item?.heading ? `Prose: ${item.heading}` : item?.body ? `Prose: ${item.body.slice(0, 40)}` : "Prose"
+    }),
+    defaultItem: {
+      scheme: "light",
+      align: "left",
+      heading: "Section heading",
+      body: "A short intro paragraph. Use <strong>inline</strong> tags for emphasis and <p> tags for multiple paragraphs."
+    }
+  },
+  fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"], ui: { defaultValue: "light" } },
+    { type: "string", name: "align", label: "Alignment", options: ["left", "center"], ui: { defaultValue: "left" } },
+    { type: "string", name: "eyebrow", label: "Eyebrow (small caps label above heading)" },
+    { type: "string", name: "heading", label: "Heading" },
+    { type: "string", name: "body", label: "Body (HTML allowed)", ui: { component: "textarea" } }
+  ]
+};
 var richTextBlock = {
   name: "richText",
-  label: "Rich Text",
+  label: "Rich Text (long-form article content)",
   ui: {
     itemProps: (item) => {
       return { label: item?.heading ? `Rich Text: ${item.heading}` : item?.body ? `Rich Text: ${item.body.slice(0, 40)}` : "Rich Text" };
@@ -787,6 +822,30 @@ var valuePropsBlock = {
     }
   ]
 };
+var timelineBlock = {
+  name: "timeline",
+  label: "Timeline",
+  ui: {
+    itemProps: (item) => ({
+      label: item?.heading ? `Timeline: ${item.heading}` : `Timeline (${item?.entries?.length ?? 0} entries)`
+    })
+  },
+  fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"], ui: { defaultValue: "light" } },
+    { type: "string", name: "heading", label: "Section Heading" },
+    {
+      type: "object",
+      name: "entries",
+      label: "Timeline Entries",
+      list: true,
+      ui: { itemProps: (item) => ({ label: item?.year || "Entry" }) },
+      fields: [
+        { type: "string", name: "year", label: "Year / Date", required: true },
+        { type: "string", name: "body", label: "Body", ui: { component: "textarea" } }
+      ]
+    }
+  ]
+};
 var breadcrumbBlock = {
   name: "breadcrumb",
   label: "Breadcrumb",
@@ -843,6 +902,7 @@ var allBlocks = [
   teamShowcaseBlock,
   trustCertBlock,
   alertBannerBlock,
+  proseBlock,
   richTextBlock,
   currentKnowledgeCardBlock,
   relatedKnowledgeBaseBlock,
@@ -853,7 +913,8 @@ var allBlocks = [
   partnerLogoCarouselBlock,
   contactFormBlock,
   segmentCardsBlock,
-  valuePropsBlock
+  valuePropsBlock,
+  timelineBlock
 ];
 var blockPageFields = [
   {
@@ -868,7 +929,12 @@ var blockPageFields = [
 var articleFields = [
   { type: "string", name: "title", label: "Title", isTitle: true, required: true },
   { type: "string", name: "excerpt", label: "Excerpt", ui: { component: "textarea" } },
-  { type: "string", name: "content", label: "Body Content (HTML)", ui: { component: "textarea" } },
+  {
+    type: "rich-text",
+    name: "body",
+    label: "Body",
+    description: "Article body. Edit with the WYSIWYG editor."
+  },
   { type: "string", name: "category", label: "Category" },
   { type: "string", name: "tags", label: "Tags", list: true },
   { type: "string", name: "author", label: "Author Name" },
@@ -910,6 +976,14 @@ var config_default = defineConfig({
       mediaRoot: "images",
       publicFolder: "public"
     }
+  },
+  search: {
+    tina: {
+      indexerToken: process.env.TINA_SEARCH_TOKEN,
+      stopwordLanguages: ["eng"]
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100
   },
   schema: {
     collections: [
@@ -978,6 +1052,20 @@ var config_default = defineConfig({
           router: ({ document }) => document._sys.filename === "overview" ? "/resources/" : `/resources/${document._sys.filename}/`
         },
         fields: blockPageFields
+      },
+      // ── Case Studies ────────────────────────────────────────────────────
+      {
+        name: "caseStudies",
+        label: "Case Studies",
+        path: "content/case-studies",
+        format: "json",
+        ui: {
+          router: ({ document }) => `/resources/case-studies/${document._sys.filename}/`
+        },
+        fields: [
+          { type: "string", name: "slug", label: "Slug (URL path)" },
+          ...blockPageFields
+        ]
       },
       // ── Company ─────────────────────────────────────────────────────────
       {

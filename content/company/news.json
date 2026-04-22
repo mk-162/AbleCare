@@ -20,7 +20,7 @@
     {
       "_template": "richText",
       "scheme": "aqua",
-      "body": "<h2>Recent News</h2><p>Check back soon for the latest updates from Able Care. For press enquiries, contact <a href='mailto:press@able-care.co'>press@able-care.co</a>.</p>"
+      "body": "<h2>Recent News</h2><p>Check back soon for the latest updates from Able Care. For press inquiries, contact <a href='mailto:press@able-care.co'>press@able-care.co</a>.</p>"
     },
     {
       "_template": "ctaBanner",

@@ -26,7 +26,7 @@ const DEFAULTS = {
   fallRatePct: 50, // roughly half of care-home residents experience a fall each year
   preventionRatePct: 25, // share of those falls that early screening can help avoid
   lawsuitRatePct: 3, // proportion of serious falls that lead to legal action
-  lawsuitCost: 250000, // combined settlement, legal defence and indirect costs
+  lawsuitCost: 250000, // combined settlement, legal defense and indirect costs
   moveOutRatePct: 20, // residents who leave care after a significant fall / injury
   replacementCost: 60000, // revenue lost while a room is empty + onboarding a new resident
 };
@@ -228,7 +228,7 @@ export function RoiCalculator() {
                   sliderMax={1000000}
                   step={5000}
                   prefix="$"
-                  hint="Settlement, legal defence and the wider toll on the home."
+                  hint="Settlement, legal defense and the wider toll on the home."
                 />
 
                 <NumberField

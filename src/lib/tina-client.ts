@@ -3,8 +3,11 @@
 /**
  * Tina CMS client helpers.
  *
- * In development (with Tina server running), uses the Tina GraphQL client.
- * In production builds (Vercel), reads JSON/MD files directly from the filesystem.
+ * Always queries the Tina GraphQL client first so server payloads carry the
+ * query + variables that `useTina()` needs to subscribe for live preview
+ * inside the Tina admin iframe. Falls back to a direct filesystem read if the
+ * client is unavailable (e.g. tinacms dev sidecar down, or generated client
+ * still pointing at localhost at build time).
  */
 
 import { client } from "../../tina/__generated__/client";
@@ -15,9 +18,6 @@ import matter from "gray-matter";
 export { client };
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
-
-/** True when the Tina dev server is likely running (local dev). */
-const useTinaClient = process.env.NODE_ENV === "development";
 
 /**
  * Extract the page document from a Tina GraphQL response or filesystem data.
@@ -73,15 +73,13 @@ export async function fetchPage(
   collection: string,
   filename: string
 ): Promise<{ query: string; variables: any; data: any }> {
-  if (useTinaClient) {
-    try {
-      const result = await (client.queries as any)[collection]({
-        relativePath: `${filename}.json`,
-      });
-      return { query: result.query, variables: result.variables, data: result.data };
-    } catch {
-      // Tina sidecar unavailable — fall through to filesystem read.
-    }
+  try {
+    const result = await (client.queries as any)[collection]({
+      relativePath: `${filename}.json`,
+    });
+    return { query: result.query, variables: result.variables, data: result.data };
+  } catch {
+    // Tina client unavailable — fall through to filesystem read.
   }
   const pageData = readJsonFile(collection, filename);
   return wrapData(collection, pageData);
@@ -94,15 +92,13 @@ export async function fetchMarkdownPage(
   collection: string,
   filename: string
 ): Promise<{ query: string; variables: any; data: any }> {
-  if (useTinaClient) {
-    try {
-      const result = await (client.queries as any)[collection]({
-        relativePath: `${filename}.md`,
-      });
-      return { query: result.query, variables: result.variables, data: result.data };
-    } catch {
-      // Tina sidecar unavailable — fall through to filesystem read.
-    }
+  try {
+    const result = await (client.queries as any)[collection]({
+      relativePath: `${filename}.md`,
+    });
+    return { query: result.query, variables: result.variables, data: result.data };
+  } catch {
+    // Tina client unavailable — fall through to filesystem read.
   }
   const pageData = readMarkdownFile(collection, filename);
   return wrapData(collection, pageData);
@@ -114,14 +110,12 @@ export async function fetchMarkdownPage(
 export async function fetchCollection(
   collection: string
 ): Promise<{ query: string; variables: any; data: any }> {
-  if (useTinaClient) {
-    try {
-      const listQuery = `${collection}Connection`;
-      const result = await (client.queries as any)[listQuery]();
-      return { query: result.query, variables: result.variables, data: result.data };
-    } catch {
-      // Tina sidecar unavailable — fall through to filesystem read.
-    }
+  try {
+    const listQuery = `${collection}Connection`;
+    const result = await (client.queries as any)[listQuery]();
+    return { query: result.query, variables: result.variables, data: result.data };
+  } catch {
+    // Tina client unavailable — fall through to filesystem read.
   }
   // Read all JSON files from the collection directory
   const dir = path.join(CONTENT_DIR, collection);

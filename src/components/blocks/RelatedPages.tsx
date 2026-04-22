@@ -21,7 +21,7 @@ interface RelatedPagesProps {
   pageTags?: string[];
   /** Section heading override. */
   heading?: string;
-  /** Colour scheme. */
+  /** Color scheme. */
   scheme?: string;
 }
 

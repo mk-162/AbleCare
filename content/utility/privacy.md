@@ -5,7 +5,7 @@ description: How Able Care collects, uses, and protects your personal informatio
 
 **Last updated: April 2026**
 
-Able Care Ltd ("Able Care", "we", "us", or "our") is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website [www.able-care.co](https://www.able-care.co) and use our services.
+GripAble Ltd ("Able Care", "we", "us", or "our") is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website [www.able-care.co](https://www.able-care.co) and use our services.
 
 ## Information We Collect
 
@@ -22,7 +22,7 @@ Able Care Ltd ("Able Care", "we", "us", or "our") is committed to protecting and
 ## How We Use Your Information
 
 - To provide, maintain, and improve our services
-- To respond to enquiries and provide customer support
+- To respond to inquiries and provide customer support
 - To send relevant communications about our products and services (with your consent)
 - To comply with legal obligations
 
@@ -32,7 +32,7 @@ All data is encrypted in transit (TLS 1.3) and at rest (AES-256). Our infrastruc
 
 ## Data Retention
 
-We retain personal data only for as long as necessary to fulfil the purposes for which it was collected, typically no longer than 36 months after your last interaction with us.
+We retain personal data only for as long as necessary to fulfill the purposes for which it was collected, typically no longer than 36 months after your last interaction with us.
 
 ## Your Rights
 
@@ -50,5 +50,5 @@ To exercise these rights, contact us at [privacy@able-care.co](mailto:privacy@ab
 
 ## Contact
 
-Able Care Ltd  
+GripAble Ltd  
 Email: privacy@able-care.co  

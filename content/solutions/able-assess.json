@@ -50,19 +50,19 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Upper-body strength proxy. Captured by the GripAble sensor. Predicts all-cause mortality, frailty and sarcopenia."
+          "description": "Full-body strength proxy. Predicts all-cause mortality, frailty and sarcopenia."
         },
         {
           "name": "Sit-to-stand",
-          "description": "Lower-limb power and balance. A validated marker of functional capacity and fall risk."
+          "description": "A 30-second assessment of lower-limb strength."
         },
         {
           "name": "Gait speed",
-          "description": "The 'sixth vital sign' for older adults. Linked to mortality, hospitalization and functional decline."
+          "description": "A measure of gait over about 13 feet."
         },
         {
           "name": "Timed Up and Go",
-          "description": "Falls risk in under a minute. One of the most widely validated functional assessments in geriatric medicine."
+          "description": "An assessment of balance and global falls risk."
         }
       ]
     },
@@ -83,7 +83,7 @@
         {
           "number": 3,
           "title": "Act",
-          "description": "Care plan triggers routed to the right team. Risk stratification that justifies level-of-care decisions to payers and families."
+          "description": "Report generated for referrals to preventative care. Risk stratification that justifies level-of-care decisions to payers and families."
         },
         {
           "number": 4,
@@ -108,7 +108,6 @@
         { "text": "CE marked" },
         { "text": "ISO 27001" },
         { "text": "HIPAA aligned" },
-        { "text": "Imperial College origin" },
         { "text": "NICE 2025 aligned" }
       ]
     },
@@ -136,47 +135,6 @@
       ]
     },
     {
-      "_template": "featureComparison",
-      "heading": "Able Assess vs paper-based assessment",
-      "tldr": "Paper assessments take 20+ minutes, are scored subjectively, and rarely make it into the care plan. Able Assess runs in under 5, scores automatically, and routes results to the team.",
-      "columns": [
-        "Able Assess",
-        "Paper"
-      ],
-      "rows": [
-        {
-          "feature": "Time per assessment",
-          "ableAssess": "Under 5 minutes",
-          "paper": "20+ minutes"
-        },
-        {
-          "feature": "Scoring",
-          "ableAssess": "Automatic, objective",
-          "paper": "Subjective, observer-dependent"
-        },
-        {
-          "feature": "Normative comparison",
-          "ableAssess": "Built in",
-          "paper": "Manual lookup"
-        },
-        {
-          "feature": "Trend tracking",
-          "ableAssess": "Longitudinal, automatic",
-          "paper": "Not available"
-        },
-        {
-          "feature": "Care plan integration",
-          "ableAssess": "Direct routing",
-          "paper": "Manual transcription"
-        },
-        {
-          "feature": "Staff requirement",
-          "ableAssess": "Non-clinical",
-          "paper": "Clinical"
-        }
-      ]
-    },
-    {
       "_template": "faqAccordion",
       "scheme": "grey",
       "heading": "Common questions about Able Assess",
@@ -184,7 +142,7 @@
       "items": [
         {
           "question": "What hardware is required?",
-          "answer": "A GripAble sensor (included) and any tablet. The sensor connects via Bluetooth. No additional infrastructure is required."
+          "answer": "A GripAble sensor (included) and any tablet or phone. The sensor connects via Bluetooth. No additional infrastructure is required."
         },
         {
           "question": "How long does the assessment take?",
@@ -196,7 +154,7 @@
         },
         {
           "question": "How does it integrate with existing systems?",
-          "answer": "Able Assess is integration-ready with EHR, OASIS and wellness platforms. The clinical team can walk you through the setup during a demo."
+          "answer": "Able Assess is integration-ready with EHR and wellness platforms. The clinical team can walk you through the setup during a demo."
         },
         {
           "question": "Is the data secure?",
@@ -204,7 +162,7 @@
         },
         {
           "question": "What is the GripAble sensor?",
-          "answer": "GripAble is an FDA-listed, CE-marked digital grip strength sensor commercialized out of Imperial College London neuroscience research. It captures clinical-grade grip strength measurement via Bluetooth."
+          "answer": "GripAble is an FDA-listed, CE-marked digital grip strength sensor commercialized out of Imperial College London neuroscience research. It captures all four measures objectively and syncs them to the app via bluetooth."
         }
       ]
     },

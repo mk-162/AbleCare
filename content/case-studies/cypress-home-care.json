@@ -1,0 +1,241 @@
+{
+  "title": "Cypress Home Care Case Study: Technology-First Home Care",
+  "slug": "cypress-home-care",
+  "description": "How Cypress Home Care integrates Able Assess into a technology-first care model, differentiating on retention, referrals and senior living community outreach.",
+  "seo": {
+    "title": "Cypress Home Care Case Study: Technology-First Home Care | Able Care",
+    "description": "How Cypress Home Care integrates Able Assess into a technology-first care model, differentiating on retention, referrals and senior living community outreach.",
+    "ogImage": "/images/og-case-studies.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Resources", "href": "/resources" },
+        { "label": "Case Studies", "href": "/resources/case-studies" },
+        { "label": "Cypress Home Care", "href": "/resources/case-studies/cypress-home-care" }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
+      "backgroundImageAlt": "Older adult completing an Able Assess screening at home",
+      "eyebrow": "Case Study: Cypress Home Care",
+      "headline": "\"Even if it's not customer acquisition, it's customer retention.\"",
+      "subtitle": "Bob Roth, Owner of Cypress Home Care, on why his independent multi-site agency in Arizona built Able Assess into a technology-first care model alongside GracieCare, Sensi and Smart Automations.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      }
+    },
+    {
+      "_template": "statsBar",
+      "scheme": "grey",
+      "heading": "Outcomes highlighted by Cypress Home Care",
+      "stats": [
+        {
+          "value": "Pending",
+          "label": "Baseline screening at every new client open"
+        },
+        {
+          "value": "4",
+          "label": "Integrated care technologies in the Cypress stack",
+          "sublabel": "Able Assess, GracieCare, Sensi and Smart Automations"
+        },
+        {
+          "value": "Pending",
+          "label": "Ongoing falls screening at monthly senior living community events"
+        }
+      ]
+    },
+    {
+      "_template": "trustBar",
+      "scheme": "light",
+      "items": [
+        { "text": "FDA Listed" },
+        { "text": "CE Marked" },
+        { "text": "ISO 27001" },
+        { "text": "HIPAA Aligned" },
+        { "text": "GDPR Compliant" }
+      ]
+    },
+    {
+      "_template": "caseStudyCustomerCard",
+      "scheme": "light",
+      "eyebrow": "The customer",
+      "heading": "An independent agency built around technology",
+      "body": "<p>Cypress Home Care is an independent multi-site home care agency based in Arizona, founded and led by owner Bob Roth. Bob is a long-standing voice in the home care innovation community and a regular on the conference circuit.</p><p>The Cypress model is deliberately technology-first. The agency pairs highly trained caregivers with a layered stack of partners and internally built tools, all organized around keeping clients at home and out of hospital.</p>",
+      "portraitSrc": "/images/team/bob-roth.jpg",
+      "portraitAlt": "Bob Roth, Owner of Cypress Home Care",
+      "name": "Bob Roth",
+      "role": "Owner, Cypress Home Care",
+      "logoSrc": "/images/logos/cypress-homecare-solutions.png",
+      "logoAlt": "Cypress Homecare Solutions logo",
+      "highlightQuote": "Even if it's not customer acquisition, it's customer retention."
+    },
+    {
+      "_template": "prose",
+      "scheme": "grey",
+      "eyebrow": "The challenge",
+      "heading": "Catching decline before it becomes a hospital admission",
+      "body": "<p>Two drivers account for most urgent-care admissions in the Cypress client population: falls, and medication adherence. For an operator whose commercial model depends on client retention, catching early signs of weakness and decline is not optional. It is the mechanism by which clients stay on service and out of the emergency department.</p><p>Before Able Assess, Cypress relied on subjective clinical judgment at intake to surface those risks. That made it harder to spot left-side weakness, slow chair rises or gait changes early. It also made it harder to show families, primary care physicians and referral partners objective evidence of how a client was tracking over time.</p><p>It left the agency with few tangible differentiators to use inside the senior living communities where Cypress was working to build a regular presence.</p>"
+    },
+    {
+      "_template": "prose",
+      "scheme": "light",
+      "eyebrow": "The approach",
+      "heading": "Able Assess at the center of a layered care stack",
+      "body": "<p>Cypress integrated Able Assess into its broader care model. At the individual client level, the team uses it at every new open to establish an objective baseline, then periodically afterwards to track trends. David Sax, Manager of Care Innovations at Cypress, leads deployment.</p><p>At the community level, Cypress features Able Assess at weekly senior living community tables and at resident group events. The device and the accompanying one-pager act as a conversation-starter on falls awareness and falls prevention. They give Cypress a tangible reason to be on site regularly.</p><p>Able Assess sits inside a wider stack. GracieCare provides virtual care management at no consumer cost via Medicare. Sensi and a second ambient monitoring system handle in-home observation. Smart Automations, built on the Cypress chassis by Bob's nephew Spencer, strips out redundant caregiver tasks so caregivers can be fully engaged in each visit. Together the stack lets Cypress identify risk, intervene early and keep clients at home.</p>"
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "blue",
+      "heading": "How Cypress uses Able Assess",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Baseline at every open",
+          "description": "Every new client gets an objective baseline: grip strength, sit-to-stand, gait speed and timed up-and-go. This grounds the care plan in evidence from day one."
+        },
+        {
+          "number": 2,
+          "title": "Re-screen to catch decline",
+          "description": "The team re-screens periodically. Trends are reviewed by David Sax, Manager of Care Innovations, and flagged to caregivers, family and, where appropriate, the client's primary care physician."
+        },
+        {
+          "number": 3,
+          "title": "Act with the wider stack",
+          "description": "Where Able Assess flags weakness, Cypress coordinates with GracieCare for virtual care management, Sensi for ambient monitoring and skilled agency partners for PT consults."
+        },
+        {
+          "number": 4,
+          "title": "Show up in the community",
+          "description": "Able Assess runs at Cypress's senior living community tables and events, supporting ongoing presence and relationships with community directors and residents."
+        }
+      ],
+      "ctaText": "See the full Able Assess workflow",
+      "ctaLink": "/solutions/able-assess"
+    },
+    {
+      "_template": "prose",
+      "scheme": "light",
+      "eyebrow": "The results",
+      "heading": "What has changed since Able Assess went live",
+      "body": "<p><strong>Baseline established at every new open.</strong> Confirmed in interview.</p><p><strong>Senior living community events featuring Able Assess.</strong></p><p><strong>Technology partners integrated around Able Assess.</strong> Four in the current Cypress stack: Able Assess, GracieCare, Sensi and Smart Automations.</p><p><strong>Falls risk conversations.</strong> Moved from subjective judgment to objective measurement.</p><p><strong>Commercial framing.</strong> Bob Roth estimates that a single retained 24/7 case generates roughly $350,000 in annual revenue and $140,000 in gross profit at a 40% margin. This is Bob's own business math, shared as his illustration, not as an Able Care outcome claim.</p>"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "colorScheme": "aqua",
+      "heading": "In Bob Roth's words",
+      "testimonials": [
+        {
+          "quote": "The thing that really stands out about Able Assess for us is the fact that it's not just running on a device. You don't just put it in your pocket and measure someone's gait. The physical device, the gripping thing, in and of itself, has science behind it. There's a physicality behind it. There's a measurement behind it. For those who aren't adept to understanding tech and innovation, there can be apprehension as to whether data is authentic or real. What differentiates Able Assess is the device itself.",
+          "name": "Bob Roth",
+          "role": "Owner, Cypress Home Care"
+        }
+      ]
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "light",
+      "heading": "What it means for operators like you",
+      "items": [
+        {
+          "title": "An objective baseline at every open",
+          "body": "Weakness and decline are caught with evidence, not hunches. Every new client walks into a documented care plan on day one."
+        },
+        {
+          "title": "A trend line you can share",
+          "body": "Families, primary care physicians and referral partners get proof rather than reassurance. The conversation moves from feeling to data."
+        },
+        {
+          "title": "A reason to be in the community",
+          "body": "Weekly senior living tables, anchored by the device and a simple one-pager on falls awareness. A tangible reason to show up every month."
+        },
+        {
+          "title": "A clinical hook into the wider network",
+          "body": "When Able Assess flags risk, you refer to skilled agencies or request a PT consultation. The referral loop deepens with every decline signal."
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "scheme": "blue",
+      "stats": [
+        { "value": "4", "label": "Validated metrics", "sublabel": "Grip, sit-to-stand, gait, timed up-and-go" },
+        { "value": "< 5 min", "label": "Per screening", "sublabel": "In any care setting" },
+        { "value": "Non-clinical", "label": "Staff can run it", "sublabel": "After short training" },
+        { "value": "Device-led", "label": "Measurable, reviewable", "sublabel": "Trend data in the portal" }
+      ]
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "grey",
+      "heading": "Questions operators ask about this approach",
+      "emitSchema": true,
+      "faqs": [
+        {
+          "question": "Is Able Assess a replacement for a clinical assessment?",
+          "answer": "No. Able Assess is a standardized screening that establishes a baseline and tracks change over time. Where the results flag risk, Cypress uses it to trigger a clinical referral, such as a PT consultation via a skilled agency, or a conversation with the client's primary care physician."
+        },
+        {
+          "question": "How does this fit alongside ambient monitoring and virtual care management tools?",
+          "answer": "It complements them. Cypress pairs Able Assess with Sensi for ambient monitoring and GracieCare for virtual care management. Able Assess provides the upstream signal of functional change, which informs how the other tools are used."
+        },
+        {
+          "question": "How do non-clinical caregivers run this?",
+          "answer": "Able Assess is designed for non-clinical staff. Any caregiver can run the full screening in under five minutes after short training. In states where initial assessments require nurse oversight, the nurse can review results remotely via the portal."
+        },
+        {
+          "question": "Can we use Able Assess at community events rather than just inside client homes?",
+          "answer": "Yes. Cypress runs weekly community tables at senior living and uses Able Assess as a conversation-starter on falls awareness and prevention. The device itself is a differentiator in that setting because it is a physical, measurable demonstration rather than a passive sensor."
+        },
+        {
+          "question": "What is the commercial case for an agency like Cypress?",
+          "answer": "Owner Bob Roth frames it as retention first, acquisition second. A retained 24/7 case generates substantial annual gross profit, and every early flag of decline that prevents a hospitalization protects both the client and the agency's caseload."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See how Able Assess fits into an independent home care model",
+      "body": "30 minutes with the Able Care clinical team. We'll walk through the workflow, the data and the retention case.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Download the Referral Source Pitch Kit",
+        "href": "/resources/referral-pitch-kit"
+      }
+    },
+    {
+      "_template": "caseStudyCards",
+      "heading": "Related case studies",
+      "cards": [
+        {
+          "title": "Turning Inquiries Into Assessments, and Assessments Into Long-Term Care",
+          "segment": "Home Care",
+          "outcome": "Owner Jeff Welsh on how Right at Home Tri-County Metro uses Able Assess to convert family inquiries into in-home assessments, run recurring screening events inside senior living communities, and build a holistic falls-prevention model with referral partners.",
+          "href": "/resources/case-studies/right-at-home-tri-county-metro"
+        },
+        {
+          "title": "Independent multi-site home care",
+          "segment": "Home Care",
+          "outcome": "The segment landing page for independent home care operators considering Able Assess. Includes the full commercial case, pricing framing and next steps.",
+          "href": "/home-care/independent"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "able-assess",
+    "home-care",
+    "case-study"
+  ]
+}

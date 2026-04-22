@@ -26,6 +26,7 @@ export function CaseStudyCards({ scheme = "light", heading, caseStudies }: CaseS
   ];
   const items = caseStudies && caseStudies.length > 0 ? caseStudies : defaultCases;
   const colors = ["bg-ac-blue", "bg-ac-aqua text-ac-black", "bg-ac-black"];
+  const gridCols = items.length === 1 ? "md:grid-cols-1" : items.length === 2 ? "md:grid-cols-2" : "md:grid-cols-3";
 
   return (
     <section className={`py-20 md:py-32 ${getSchemeClasses((scheme as any) || "light")}`}>
@@ -38,7 +39,7 @@ export function CaseStudyCards({ scheme = "light", heading, caseStudies }: CaseS
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className={`grid grid-cols-1 ${gridCols} gap-6`}>
           {items.map((c, i) => {
             const color = colors[i % colors.length];
             const isAqua = color.includes("bg-ac-aqua");

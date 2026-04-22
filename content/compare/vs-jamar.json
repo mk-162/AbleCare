@@ -27,10 +27,6 @@
       "scheme": "grey",
       "heading": "Head-to-head comparison",
       "tldr": "The Jamar dynamometer is the traditional analogue grip strength tool. It captures a single reading with no digital record, no normative comparison, and no route into a care plan. Able Assess captures grip strength digitally alongside three additional functional metrics, scores every result against age- and sex-matched normative data, and feeds risk banding straight into the clinical workflow.",
-      "columns": [
-        "Able Assess",
-        "Jamar Dynamometer"
-      ],
       "rows": [
         {
           "feature": "Measurement type",
@@ -88,6 +84,10 @@
             "One device per site, no centralized data, no trend reporting"
           ]
         }
+      ],
+      "columns": [
+        "Able Assess",
+        "Jamar Dynamometer"
       ]
     },
     {

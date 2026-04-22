@@ -24,7 +24,7 @@ interface TestimonialCarouselProps {
 export function TestimonialCarousel({ scheme = "aqua", wave = "fold", waveFill, heading, testimonials }: TestimonialCarouselProps) {
   const defaultTestimonials: Array<{ quote: string; name?: string; role?: string; organization?: string; photo?: string }> = [
     {
-      quote: "We caught decline six weeks earlier than we would have with our old process. The data gave us the confidence to act — and the resident avoided a hospitalisation.",
+      quote: "We caught decline six weeks earlier than we would have with our old process. The data gave us the confidence to act — and the resident avoided a hospitalization.",
       name: "Dr Sarah Jenkins",
       role: "Clinical Director, Horizon Senior Living",
     },

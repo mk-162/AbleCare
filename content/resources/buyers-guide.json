@@ -35,7 +35,7 @@
       "subtitle": "Everything you need to brief procurement on falls prevention technology. 24 pages covering evidence, features, pricing, integration and rollout.",
       "primaryCta": {
         "label": "Download the Guide",
-        "href": "#download"
+        "href": "/downloads/Falls-Prevention-Buyers-Guide.pdf"
       },
       "secondaryCta": {
         "label": "Book a Demo",
@@ -48,7 +48,7 @@
       "promoBody": "The Falls Prevention Buyers Guide covers everything procurement needs to know: the evidence base, feature comparison, integration requirements, pricing models and rollout timelines. Written for operators, approved by clinicians.",
       "coverImage": "/images/buyers-guide-cover.jpg",
       "ctaText": "Download the Guide",
-      "ctaHref": "#download"
+      "ctaLink": "/downloads/Falls-Prevention-Buyers-Guide.pdf"
     },
     {
       "_template": "processSteps",
@@ -89,7 +89,7 @@
       },
       "secondaryCta": {
         "label": "Download the Guide",
-        "href": "#download"
+        "href": "/downloads/Falls-Prevention-Buyers-Guide.pdf"
       }
     }
   ],

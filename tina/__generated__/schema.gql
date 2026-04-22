@@ -66,6 +66,8 @@ type Query {
   learnConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: LearnFilter): LearnConnection!
   resources(relativePath: String): Resources!
   resourcesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ResourcesFilter): ResourcesConnection!
+  caseStudies(relativePath: String): CaseStudies!
+  caseStudiesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: CaseStudiesFilter): CaseStudiesConnection!
   company(relativePath: String): Company!
   companyConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: CompanyFilter): CompanyConnection!
   knowledgeBase(relativePath: String): KnowledgeBase!
@@ -85,6 +87,7 @@ input DocumentFilter {
   compare: CompareFilter
   learn: LearnFilter
   resources: ResourcesFilter
+  caseStudies: CaseStudiesFilter
   company: CompanyFilter
   knowledgeBase: KnowledgeBaseFilter
   utility: UtilityFilter
@@ -115,7 +118,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Pages | Solutions | Segments | Compare | Learn | Resources | Company | KnowledgeBase | Utility | Global | Navigation | Folder
+union DocumentNode = Pages | Solutions | Segments | Compare | Learn | Resources | CaseStudies | Company | KnowledgeBase | Utility | Global | Navigation | Folder
 
 type PagesBlocksHeroBreadcrumb {
   label: String!
@@ -135,6 +138,7 @@ type PagesBlocksHero {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [PagesBlocksHeroBreadcrumb]
 }
 
@@ -191,6 +195,7 @@ type PagesBlocksSolutionCards {
 type PagesBlocksProcessStepsSteps {
   number: Float!
   title: String!
+  subtitle: String
   description: String
 }
 
@@ -216,16 +221,14 @@ type PagesBlocksMetricsBlock {
 
 type PagesBlocksFeatureComparisonRows {
   feature: String!
-  col1: String
-  col2: String
+  values: [String]
 }
 
 type PagesBlocksFeatureComparison {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [PagesBlocksFeatureComparisonRows]
 }
 
@@ -386,6 +389,14 @@ type PagesBlocksAlertBanner {
   ctaLink: String
 }
 
+type PagesBlocksProse {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 type PagesBlocksRichText {
   scheme: String
   heading: String
@@ -499,7 +510,18 @@ type PagesBlocksValueProps {
   items: [PagesBlocksValuePropsItems]
 }
 
-union PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksRichText | PagesBlocksCurrentKnowledgeCard | PagesBlocksRelatedKnowledgeBase | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSegmentCards | PagesBlocksValueProps
+type PagesBlocksTimelineEntries {
+  year: String!
+  body: String
+}
+
+type PagesBlocksTimeline {
+  scheme: String
+  heading: String
+  entries: [PagesBlocksTimelineEntries]
+}
+
+union PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksCurrentKnowledgeCard | PagesBlocksRelatedKnowledgeBase | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline
 
 type Pages implements Node & Document {
   blocks: [PagesBlocks]
@@ -547,6 +569,7 @@ input PagesBlocksHeroFilter {
   secondaryCtaLink: StringFilter
   backgroundImage: ImageFilter
   backgroundImageAlt: StringFilter
+  videoIframe: StringFilter
   breadcrumb: PagesBlocksHeroBreadcrumbFilter
 }
 
@@ -613,6 +636,7 @@ input NumberFilter {
 input PagesBlocksProcessStepsStepsFilter {
   number: NumberFilter
   title: StringFilter
+  subtitle: StringFilter
   description: StringFilter
 }
 
@@ -638,16 +662,14 @@ input PagesBlocksMetricsBlockFilter {
 
 input PagesBlocksFeatureComparisonRowsFilter {
   feature: StringFilter
-  col1: StringFilter
-  col2: StringFilter
+  values: StringFilter
 }
 
 input PagesBlocksFeatureComparisonFilter {
   scheme: StringFilter
   heading: StringFilter
   tldr: StringFilter
-  col1Header: StringFilter
-  col2Header: StringFilter
+  columns: StringFilter
   rows: PagesBlocksFeatureComparisonRowsFilter
 }
 
@@ -813,6 +835,14 @@ input PagesBlocksAlertBannerFilter {
   ctaLink: StringFilter
 }
 
+input PagesBlocksProseFilter {
+  scheme: StringFilter
+  align: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  body: StringFilter
+}
+
 input PagesBlocksRichTextFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -926,6 +956,17 @@ input PagesBlocksValuePropsFilter {
   items: PagesBlocksValuePropsItemsFilter
 }
 
+input PagesBlocksTimelineEntriesFilter {
+  year: StringFilter
+  body: StringFilter
+}
+
+input PagesBlocksTimelineFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  entries: PagesBlocksTimelineEntriesFilter
+}
+
 input PagesBlocksFilter {
   hero: PagesBlocksHeroFilter
   trustBar: PagesBlocksTrustBarFilter
@@ -947,6 +988,7 @@ input PagesBlocksFilter {
   teamShowcase: PagesBlocksTeamShowcaseFilter
   trustCertBlock: PagesBlocksTrustCertBlockFilter
   alertBanner: PagesBlocksAlertBannerFilter
+  prose: PagesBlocksProseFilter
   richText: PagesBlocksRichTextFilter
   currentKnowledgeCard: PagesBlocksCurrentKnowledgeCardFilter
   relatedKnowledgeBase: PagesBlocksRelatedKnowledgeBaseFilter
@@ -958,6 +1000,7 @@ input PagesBlocksFilter {
   contactForm: PagesBlocksContactFormFilter
   segmentCards: PagesBlocksSegmentCardsFilter
   valueProps: PagesBlocksValuePropsFilter
+  timeline: PagesBlocksTimelineFilter
 }
 
 input PagesFilter {
@@ -1000,6 +1043,7 @@ type SolutionsBlocksHero {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [SolutionsBlocksHeroBreadcrumb]
 }
 
@@ -1056,6 +1100,7 @@ type SolutionsBlocksSolutionCards {
 type SolutionsBlocksProcessStepsSteps {
   number: Float!
   title: String!
+  subtitle: String
   description: String
 }
 
@@ -1081,16 +1126,14 @@ type SolutionsBlocksMetricsBlock {
 
 type SolutionsBlocksFeatureComparisonRows {
   feature: String!
-  col1: String
-  col2: String
+  values: [String]
 }
 
 type SolutionsBlocksFeatureComparison {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [SolutionsBlocksFeatureComparisonRows]
 }
 
@@ -1251,6 +1294,14 @@ type SolutionsBlocksAlertBanner {
   ctaLink: String
 }
 
+type SolutionsBlocksProse {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 type SolutionsBlocksRichText {
   scheme: String
   heading: String
@@ -1364,7 +1415,18 @@ type SolutionsBlocksValueProps {
   items: [SolutionsBlocksValuePropsItems]
 }
 
-union SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksRichText | SolutionsBlocksCurrentKnowledgeCard | SolutionsBlocksRelatedKnowledgeBase | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps
+type SolutionsBlocksTimelineEntries {
+  year: String!
+  body: String
+}
+
+type SolutionsBlocksTimeline {
+  scheme: String
+  heading: String
+  entries: [SolutionsBlocksTimelineEntries]
+}
+
+union SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksCurrentKnowledgeCard | SolutionsBlocksRelatedKnowledgeBase | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline
 
 type Solutions implements Node & Document {
   blocks: [SolutionsBlocks]
@@ -1398,6 +1460,7 @@ input SolutionsBlocksHeroFilter {
   secondaryCtaLink: StringFilter
   backgroundImage: ImageFilter
   backgroundImageAlt: StringFilter
+  videoIframe: StringFilter
   breadcrumb: SolutionsBlocksHeroBreadcrumbFilter
 }
 
@@ -1454,6 +1517,7 @@ input SolutionsBlocksSolutionCardsFilter {
 input SolutionsBlocksProcessStepsStepsFilter {
   number: NumberFilter
   title: StringFilter
+  subtitle: StringFilter
   description: StringFilter
 }
 
@@ -1479,16 +1543,14 @@ input SolutionsBlocksMetricsBlockFilter {
 
 input SolutionsBlocksFeatureComparisonRowsFilter {
   feature: StringFilter
-  col1: StringFilter
-  col2: StringFilter
+  values: StringFilter
 }
 
 input SolutionsBlocksFeatureComparisonFilter {
   scheme: StringFilter
   heading: StringFilter
   tldr: StringFilter
-  col1Header: StringFilter
-  col2Header: StringFilter
+  columns: StringFilter
   rows: SolutionsBlocksFeatureComparisonRowsFilter
 }
 
@@ -1649,6 +1711,14 @@ input SolutionsBlocksAlertBannerFilter {
   ctaLink: StringFilter
 }
 
+input SolutionsBlocksProseFilter {
+  scheme: StringFilter
+  align: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  body: StringFilter
+}
+
 input SolutionsBlocksRichTextFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -1762,6 +1832,17 @@ input SolutionsBlocksValuePropsFilter {
   items: SolutionsBlocksValuePropsItemsFilter
 }
 
+input SolutionsBlocksTimelineEntriesFilter {
+  year: StringFilter
+  body: StringFilter
+}
+
+input SolutionsBlocksTimelineFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  entries: SolutionsBlocksTimelineEntriesFilter
+}
+
 input SolutionsBlocksFilter {
   hero: SolutionsBlocksHeroFilter
   trustBar: SolutionsBlocksTrustBarFilter
@@ -1783,6 +1864,7 @@ input SolutionsBlocksFilter {
   teamShowcase: SolutionsBlocksTeamShowcaseFilter
   trustCertBlock: SolutionsBlocksTrustCertBlockFilter
   alertBanner: SolutionsBlocksAlertBannerFilter
+  prose: SolutionsBlocksProseFilter
   richText: SolutionsBlocksRichTextFilter
   currentKnowledgeCard: SolutionsBlocksCurrentKnowledgeCardFilter
   relatedKnowledgeBase: SolutionsBlocksRelatedKnowledgeBaseFilter
@@ -1794,6 +1876,7 @@ input SolutionsBlocksFilter {
   contactForm: SolutionsBlocksContactFormFilter
   segmentCards: SolutionsBlocksSegmentCardsFilter
   valueProps: SolutionsBlocksValuePropsFilter
+  timeline: SolutionsBlocksTimelineFilter
 }
 
 input SolutionsFilter {
@@ -1836,6 +1919,7 @@ type SegmentsBlocksHero {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [SegmentsBlocksHeroBreadcrumb]
 }
 
@@ -1892,6 +1976,7 @@ type SegmentsBlocksSolutionCards {
 type SegmentsBlocksProcessStepsSteps {
   number: Float!
   title: String!
+  subtitle: String
   description: String
 }
 
@@ -1917,16 +2002,14 @@ type SegmentsBlocksMetricsBlock {
 
 type SegmentsBlocksFeatureComparisonRows {
   feature: String!
-  col1: String
-  col2: String
+  values: [String]
 }
 
 type SegmentsBlocksFeatureComparison {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [SegmentsBlocksFeatureComparisonRows]
 }
 
@@ -2087,6 +2170,14 @@ type SegmentsBlocksAlertBanner {
   ctaLink: String
 }
 
+type SegmentsBlocksProse {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 type SegmentsBlocksRichText {
   scheme: String
   heading: String
@@ -2200,7 +2291,18 @@ type SegmentsBlocksValueProps {
   items: [SegmentsBlocksValuePropsItems]
 }
 
-union SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksRichText | SegmentsBlocksCurrentKnowledgeCard | SegmentsBlocksRelatedKnowledgeBase | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps
+type SegmentsBlocksTimelineEntries {
+  year: String!
+  body: String
+}
+
+type SegmentsBlocksTimeline {
+  scheme: String
+  heading: String
+  entries: [SegmentsBlocksTimelineEntries]
+}
+
+union SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksCurrentKnowledgeCard | SegmentsBlocksRelatedKnowledgeBase | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline
 
 type Segments implements Node & Document {
   blocks: [SegmentsBlocks]
@@ -2234,6 +2336,7 @@ input SegmentsBlocksHeroFilter {
   secondaryCtaLink: StringFilter
   backgroundImage: ImageFilter
   backgroundImageAlt: StringFilter
+  videoIframe: StringFilter
   breadcrumb: SegmentsBlocksHeroBreadcrumbFilter
 }
 
@@ -2290,6 +2393,7 @@ input SegmentsBlocksSolutionCardsFilter {
 input SegmentsBlocksProcessStepsStepsFilter {
   number: NumberFilter
   title: StringFilter
+  subtitle: StringFilter
   description: StringFilter
 }
 
@@ -2315,16 +2419,14 @@ input SegmentsBlocksMetricsBlockFilter {
 
 input SegmentsBlocksFeatureComparisonRowsFilter {
   feature: StringFilter
-  col1: StringFilter
-  col2: StringFilter
+  values: StringFilter
 }
 
 input SegmentsBlocksFeatureComparisonFilter {
   scheme: StringFilter
   heading: StringFilter
   tldr: StringFilter
-  col1Header: StringFilter
-  col2Header: StringFilter
+  columns: StringFilter
   rows: SegmentsBlocksFeatureComparisonRowsFilter
 }
 
@@ -2485,6 +2587,14 @@ input SegmentsBlocksAlertBannerFilter {
   ctaLink: StringFilter
 }
 
+input SegmentsBlocksProseFilter {
+  scheme: StringFilter
+  align: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  body: StringFilter
+}
+
 input SegmentsBlocksRichTextFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -2598,6 +2708,17 @@ input SegmentsBlocksValuePropsFilter {
   items: SegmentsBlocksValuePropsItemsFilter
 }
 
+input SegmentsBlocksTimelineEntriesFilter {
+  year: StringFilter
+  body: StringFilter
+}
+
+input SegmentsBlocksTimelineFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  entries: SegmentsBlocksTimelineEntriesFilter
+}
+
 input SegmentsBlocksFilter {
   hero: SegmentsBlocksHeroFilter
   trustBar: SegmentsBlocksTrustBarFilter
@@ -2619,6 +2740,7 @@ input SegmentsBlocksFilter {
   teamShowcase: SegmentsBlocksTeamShowcaseFilter
   trustCertBlock: SegmentsBlocksTrustCertBlockFilter
   alertBanner: SegmentsBlocksAlertBannerFilter
+  prose: SegmentsBlocksProseFilter
   richText: SegmentsBlocksRichTextFilter
   currentKnowledgeCard: SegmentsBlocksCurrentKnowledgeCardFilter
   relatedKnowledgeBase: SegmentsBlocksRelatedKnowledgeBaseFilter
@@ -2630,6 +2752,7 @@ input SegmentsBlocksFilter {
   contactForm: SegmentsBlocksContactFormFilter
   segmentCards: SegmentsBlocksSegmentCardsFilter
   valueProps: SegmentsBlocksValuePropsFilter
+  timeline: SegmentsBlocksTimelineFilter
 }
 
 input SegmentsFilter {
@@ -2672,6 +2795,7 @@ type CompareBlocksHero {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [CompareBlocksHeroBreadcrumb]
 }
 
@@ -2728,6 +2852,7 @@ type CompareBlocksSolutionCards {
 type CompareBlocksProcessStepsSteps {
   number: Float!
   title: String!
+  subtitle: String
   description: String
 }
 
@@ -2753,16 +2878,14 @@ type CompareBlocksMetricsBlock {
 
 type CompareBlocksFeatureComparisonRows {
   feature: String!
-  col1: String
-  col2: String
+  values: [String]
 }
 
 type CompareBlocksFeatureComparison {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [CompareBlocksFeatureComparisonRows]
 }
 
@@ -2923,6 +3046,14 @@ type CompareBlocksAlertBanner {
   ctaLink: String
 }
 
+type CompareBlocksProse {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 type CompareBlocksRichText {
   scheme: String
   heading: String
@@ -3036,7 +3167,18 @@ type CompareBlocksValueProps {
   items: [CompareBlocksValuePropsItems]
 }
 
-union CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksRichText | CompareBlocksCurrentKnowledgeCard | CompareBlocksRelatedKnowledgeBase | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSegmentCards | CompareBlocksValueProps
+type CompareBlocksTimelineEntries {
+  year: String!
+  body: String
+}
+
+type CompareBlocksTimeline {
+  scheme: String
+  heading: String
+  entries: [CompareBlocksTimelineEntries]
+}
+
+union CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksCurrentKnowledgeCard | CompareBlocksRelatedKnowledgeBase | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline
 
 type Compare implements Node & Document {
   blocks: [CompareBlocks]
@@ -3070,6 +3212,7 @@ input CompareBlocksHeroFilter {
   secondaryCtaLink: StringFilter
   backgroundImage: ImageFilter
   backgroundImageAlt: StringFilter
+  videoIframe: StringFilter
   breadcrumb: CompareBlocksHeroBreadcrumbFilter
 }
 
@@ -3126,6 +3269,7 @@ input CompareBlocksSolutionCardsFilter {
 input CompareBlocksProcessStepsStepsFilter {
   number: NumberFilter
   title: StringFilter
+  subtitle: StringFilter
   description: StringFilter
 }
 
@@ -3151,16 +3295,14 @@ input CompareBlocksMetricsBlockFilter {
 
 input CompareBlocksFeatureComparisonRowsFilter {
   feature: StringFilter
-  col1: StringFilter
-  col2: StringFilter
+  values: StringFilter
 }
 
 input CompareBlocksFeatureComparisonFilter {
   scheme: StringFilter
   heading: StringFilter
   tldr: StringFilter
-  col1Header: StringFilter
-  col2Header: StringFilter
+  columns: StringFilter
   rows: CompareBlocksFeatureComparisonRowsFilter
 }
 
@@ -3321,6 +3463,14 @@ input CompareBlocksAlertBannerFilter {
   ctaLink: StringFilter
 }
 
+input CompareBlocksProseFilter {
+  scheme: StringFilter
+  align: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  body: StringFilter
+}
+
 input CompareBlocksRichTextFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -3434,6 +3584,17 @@ input CompareBlocksValuePropsFilter {
   items: CompareBlocksValuePropsItemsFilter
 }
 
+input CompareBlocksTimelineEntriesFilter {
+  year: StringFilter
+  body: StringFilter
+}
+
+input CompareBlocksTimelineFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  entries: CompareBlocksTimelineEntriesFilter
+}
+
 input CompareBlocksFilter {
   hero: CompareBlocksHeroFilter
   trustBar: CompareBlocksTrustBarFilter
@@ -3455,6 +3616,7 @@ input CompareBlocksFilter {
   teamShowcase: CompareBlocksTeamShowcaseFilter
   trustCertBlock: CompareBlocksTrustCertBlockFilter
   alertBanner: CompareBlocksAlertBannerFilter
+  prose: CompareBlocksProseFilter
   richText: CompareBlocksRichTextFilter
   currentKnowledgeCard: CompareBlocksCurrentKnowledgeCardFilter
   relatedKnowledgeBase: CompareBlocksRelatedKnowledgeBaseFilter
@@ -3466,6 +3628,7 @@ input CompareBlocksFilter {
   contactForm: CompareBlocksContactFormFilter
   segmentCards: CompareBlocksSegmentCardsFilter
   valueProps: CompareBlocksValuePropsFilter
+  timeline: CompareBlocksTimelineFilter
 }
 
 input CompareFilter {
@@ -3508,6 +3671,7 @@ type LearnBlocksHero {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [LearnBlocksHeroBreadcrumb]
 }
 
@@ -3564,6 +3728,7 @@ type LearnBlocksSolutionCards {
 type LearnBlocksProcessStepsSteps {
   number: Float!
   title: String!
+  subtitle: String
   description: String
 }
 
@@ -3589,16 +3754,14 @@ type LearnBlocksMetricsBlock {
 
 type LearnBlocksFeatureComparisonRows {
   feature: String!
-  col1: String
-  col2: String
+  values: [String]
 }
 
 type LearnBlocksFeatureComparison {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [LearnBlocksFeatureComparisonRows]
 }
 
@@ -3759,6 +3922,14 @@ type LearnBlocksAlertBanner {
   ctaLink: String
 }
 
+type LearnBlocksProse {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 type LearnBlocksRichText {
   scheme: String
   heading: String
@@ -3872,12 +4043,23 @@ type LearnBlocksValueProps {
   items: [LearnBlocksValuePropsItems]
 }
 
-union LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksRichText | LearnBlocksCurrentKnowledgeCard | LearnBlocksRelatedKnowledgeBase | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSegmentCards | LearnBlocksValueProps
+type LearnBlocksTimelineEntries {
+  year: String!
+  body: String
+}
+
+type LearnBlocksTimeline {
+  scheme: String
+  heading: String
+  entries: [LearnBlocksTimelineEntries]
+}
+
+union LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksCurrentKnowledgeCard | LearnBlocksRelatedKnowledgeBase | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline
 
 type Learn implements Node & Document {
   title: String!
   excerpt: String
-  content: String
+  body: JSON
   category: String
   tags: [String]
   author: String
@@ -3894,6 +4076,12 @@ type Learn implements Node & Document {
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
+}
+
+input RichTextFilter {
+  startsWith: String
+  eq: String
+  exists: Boolean
 }
 
 input LearnBlocksHeroBreadcrumbFilter {
@@ -3914,6 +4102,7 @@ input LearnBlocksHeroFilter {
   secondaryCtaLink: StringFilter
   backgroundImage: ImageFilter
   backgroundImageAlt: StringFilter
+  videoIframe: StringFilter
   breadcrumb: LearnBlocksHeroBreadcrumbFilter
 }
 
@@ -3970,6 +4159,7 @@ input LearnBlocksSolutionCardsFilter {
 input LearnBlocksProcessStepsStepsFilter {
   number: NumberFilter
   title: StringFilter
+  subtitle: StringFilter
   description: StringFilter
 }
 
@@ -3995,16 +4185,14 @@ input LearnBlocksMetricsBlockFilter {
 
 input LearnBlocksFeatureComparisonRowsFilter {
   feature: StringFilter
-  col1: StringFilter
-  col2: StringFilter
+  values: StringFilter
 }
 
 input LearnBlocksFeatureComparisonFilter {
   scheme: StringFilter
   heading: StringFilter
   tldr: StringFilter
-  col1Header: StringFilter
-  col2Header: StringFilter
+  columns: StringFilter
   rows: LearnBlocksFeatureComparisonRowsFilter
 }
 
@@ -4165,6 +4353,14 @@ input LearnBlocksAlertBannerFilter {
   ctaLink: StringFilter
 }
 
+input LearnBlocksProseFilter {
+  scheme: StringFilter
+  align: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  body: StringFilter
+}
+
 input LearnBlocksRichTextFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -4278,6 +4474,17 @@ input LearnBlocksValuePropsFilter {
   items: LearnBlocksValuePropsItemsFilter
 }
 
+input LearnBlocksTimelineEntriesFilter {
+  year: StringFilter
+  body: StringFilter
+}
+
+input LearnBlocksTimelineFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  entries: LearnBlocksTimelineEntriesFilter
+}
+
 input LearnBlocksFilter {
   hero: LearnBlocksHeroFilter
   trustBar: LearnBlocksTrustBarFilter
@@ -4299,6 +4506,7 @@ input LearnBlocksFilter {
   teamShowcase: LearnBlocksTeamShowcaseFilter
   trustCertBlock: LearnBlocksTrustCertBlockFilter
   alertBanner: LearnBlocksAlertBannerFilter
+  prose: LearnBlocksProseFilter
   richText: LearnBlocksRichTextFilter
   currentKnowledgeCard: LearnBlocksCurrentKnowledgeCardFilter
   relatedKnowledgeBase: LearnBlocksRelatedKnowledgeBaseFilter
@@ -4310,12 +4518,13 @@ input LearnBlocksFilter {
   contactForm: LearnBlocksContactFormFilter
   segmentCards: LearnBlocksSegmentCardsFilter
   valueProps: LearnBlocksValuePropsFilter
+  timeline: LearnBlocksTimelineFilter
 }
 
 input LearnFilter {
   title: StringFilter
   excerpt: StringFilter
-  content: StringFilter
+  body: RichTextFilter
   category: StringFilter
   tags: StringFilter
   author: StringFilter
@@ -4360,6 +4569,7 @@ type ResourcesBlocksHero {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [ResourcesBlocksHeroBreadcrumb]
 }
 
@@ -4416,6 +4626,7 @@ type ResourcesBlocksSolutionCards {
 type ResourcesBlocksProcessStepsSteps {
   number: Float!
   title: String!
+  subtitle: String
   description: String
 }
 
@@ -4441,16 +4652,14 @@ type ResourcesBlocksMetricsBlock {
 
 type ResourcesBlocksFeatureComparisonRows {
   feature: String!
-  col1: String
-  col2: String
+  values: [String]
 }
 
 type ResourcesBlocksFeatureComparison {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [ResourcesBlocksFeatureComparisonRows]
 }
 
@@ -4611,6 +4820,14 @@ type ResourcesBlocksAlertBanner {
   ctaLink: String
 }
 
+type ResourcesBlocksProse {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 type ResourcesBlocksRichText {
   scheme: String
   heading: String
@@ -4724,7 +4941,18 @@ type ResourcesBlocksValueProps {
   items: [ResourcesBlocksValuePropsItems]
 }
 
-union ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksRichText | ResourcesBlocksCurrentKnowledgeCard | ResourcesBlocksRelatedKnowledgeBase | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps
+type ResourcesBlocksTimelineEntries {
+  year: String!
+  body: String
+}
+
+type ResourcesBlocksTimeline {
+  scheme: String
+  heading: String
+  entries: [ResourcesBlocksTimelineEntries]
+}
+
+union ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksCurrentKnowledgeCard | ResourcesBlocksRelatedKnowledgeBase | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline
 
 type Resources implements Node & Document {
   blocks: [ResourcesBlocks]
@@ -4758,6 +4986,7 @@ input ResourcesBlocksHeroFilter {
   secondaryCtaLink: StringFilter
   backgroundImage: ImageFilter
   backgroundImageAlt: StringFilter
+  videoIframe: StringFilter
   breadcrumb: ResourcesBlocksHeroBreadcrumbFilter
 }
 
@@ -4814,6 +5043,7 @@ input ResourcesBlocksSolutionCardsFilter {
 input ResourcesBlocksProcessStepsStepsFilter {
   number: NumberFilter
   title: StringFilter
+  subtitle: StringFilter
   description: StringFilter
 }
 
@@ -4839,16 +5069,14 @@ input ResourcesBlocksMetricsBlockFilter {
 
 input ResourcesBlocksFeatureComparisonRowsFilter {
   feature: StringFilter
-  col1: StringFilter
-  col2: StringFilter
+  values: StringFilter
 }
 
 input ResourcesBlocksFeatureComparisonFilter {
   scheme: StringFilter
   heading: StringFilter
   tldr: StringFilter
-  col1Header: StringFilter
-  col2Header: StringFilter
+  columns: StringFilter
   rows: ResourcesBlocksFeatureComparisonRowsFilter
 }
 
@@ -5009,6 +5237,14 @@ input ResourcesBlocksAlertBannerFilter {
   ctaLink: StringFilter
 }
 
+input ResourcesBlocksProseFilter {
+  scheme: StringFilter
+  align: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  body: StringFilter
+}
+
 input ResourcesBlocksRichTextFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -5122,6 +5358,17 @@ input ResourcesBlocksValuePropsFilter {
   items: ResourcesBlocksValuePropsItemsFilter
 }
 
+input ResourcesBlocksTimelineEntriesFilter {
+  year: StringFilter
+  body: StringFilter
+}
+
+input ResourcesBlocksTimelineFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  entries: ResourcesBlocksTimelineEntriesFilter
+}
+
 input ResourcesBlocksFilter {
   hero: ResourcesBlocksHeroFilter
   trustBar: ResourcesBlocksTrustBarFilter
@@ -5143,6 +5390,7 @@ input ResourcesBlocksFilter {
   teamShowcase: ResourcesBlocksTeamShowcaseFilter
   trustCertBlock: ResourcesBlocksTrustCertBlockFilter
   alertBanner: ResourcesBlocksAlertBannerFilter
+  prose: ResourcesBlocksProseFilter
   richText: ResourcesBlocksRichTextFilter
   currentKnowledgeCard: ResourcesBlocksCurrentKnowledgeCardFilter
   relatedKnowledgeBase: ResourcesBlocksRelatedKnowledgeBaseFilter
@@ -5154,6 +5402,7 @@ input ResourcesBlocksFilter {
   contactForm: ResourcesBlocksContactFormFilter
   segmentCards: ResourcesBlocksSegmentCardsFilter
   valueProps: ResourcesBlocksValuePropsFilter
+  timeline: ResourcesBlocksTimelineFilter
 }
 
 input ResourcesFilter {
@@ -5178,6 +5427,884 @@ type ResourcesConnection implements Connection {
   edges: [ResourcesConnectionEdges]
 }
 
+type CaseStudiesBlocksHeroBreadcrumb {
+  label: String!
+  href: String
+}
+
+type CaseStudiesBlocksHero {
+  scheme: String
+  wave: String
+  waveFill: String
+  eyebrow: String
+  headline: String
+  subtitle: String
+  primaryCtaText: String
+  primaryCtaLink: String
+  secondaryCtaText: String
+  secondaryCtaLink: String
+  backgroundImage: String
+  backgroundImageAlt: String
+  videoIframe: String
+  breadcrumb: [CaseStudiesBlocksHeroBreadcrumb]
+}
+
+type CaseStudiesBlocksTrustBarItems {
+  text: String!
+  logo: String
+}
+
+type CaseStudiesBlocksTrustBar {
+  scheme: String
+  items: [CaseStudiesBlocksTrustBarItems]
+}
+
+type CaseStudiesBlocksStatsBarStats {
+  value: String!
+  label: String!
+  sublabel: String
+}
+
+type CaseStudiesBlocksStatsBar {
+  scheme: String
+  heading: String
+  stats: [CaseStudiesBlocksStatsBarStats]
+}
+
+type CaseStudiesBlocksSegmentRouterSegments {
+  title: String!
+  description: String
+  ctaText: String
+  link: String!
+}
+
+type CaseStudiesBlocksSegmentRouter {
+  scheme: String
+  heading: String
+  segments: [CaseStudiesBlocksSegmentRouterSegments]
+}
+
+type CaseStudiesBlocksSolutionCardsCards {
+  title: String!
+  description: String
+  link: String
+  iconHint: String
+  image: String
+}
+
+type CaseStudiesBlocksSolutionCards {
+  scheme: String
+  heading: String
+  subheading: String
+  cards: [CaseStudiesBlocksSolutionCardsCards]
+}
+
+type CaseStudiesBlocksProcessStepsSteps {
+  number: Float!
+  title: String!
+  subtitle: String
+  description: String
+}
+
+type CaseStudiesBlocksProcessSteps {
+  scheme: String
+  heading: String
+  steps: [CaseStudiesBlocksProcessStepsSteps]
+  ctaText: String
+  ctaLink: String
+}
+
+type CaseStudiesBlocksMetricsBlockMetrics {
+  name: String!
+  whatItMeasures: String
+  whyItMatters: String
+}
+
+type CaseStudiesBlocksMetricsBlock {
+  scheme: String
+  heading: String
+  metrics: [CaseStudiesBlocksMetricsBlockMetrics]
+}
+
+type CaseStudiesBlocksFeatureComparisonRows {
+  feature: String!
+  values: [String]
+}
+
+type CaseStudiesBlocksFeatureComparison {
+  scheme: String
+  heading: String
+  tldr: String
+  columns: [String]
+  rows: [CaseStudiesBlocksFeatureComparisonRows]
+}
+
+type CaseStudiesBlocksEvidenceBlockCitations {
+  title: String!
+  authors: String
+  journal: String
+  year: String
+  finding: String
+  link: String
+}
+
+type CaseStudiesBlocksEvidenceBlock {
+  scheme: String
+  heading: String
+  pulledStat: String
+  pulledStatSource: String
+  citations: [CaseStudiesBlocksEvidenceBlockCitations]
+}
+
+type CaseStudiesBlocksTestimonialCarouselTestimonials {
+  quote: String!
+  name: String
+  role: String
+  organization: String
+  photo: String
+}
+
+type CaseStudiesBlocksTestimonialCarousel {
+  scheme: String
+  wave: String
+  waveFill: String
+  heading: String
+  testimonials: [CaseStudiesBlocksTestimonialCarouselTestimonials]
+}
+
+type CaseStudiesBlocksCaseStudyCardsCaseStudies {
+  title: String!
+  metric: String
+  metricLabel: String
+  summary: String
+  sector: String
+  link: String
+  thumbnail: String
+}
+
+type CaseStudiesBlocksCaseStudyCards {
+  scheme: String
+  heading: String
+  caseStudies: [CaseStudiesBlocksCaseStudyCardsCaseStudies]
+}
+
+type CaseStudiesBlocksFaqAccordionFaqs {
+  question: String!
+  answer: String!
+}
+
+type CaseStudiesBlocksFaqAccordion {
+  scheme: String
+  heading: String
+  emitSchema: Boolean
+  faqs: [CaseStudiesBlocksFaqAccordionFaqs]
+}
+
+type CaseStudiesBlocksCtaBanner {
+  scheme: String
+  wave: String
+  waveFill: String
+  heading: String
+  bodyText: String
+  primaryCtaText: String
+  primaryCtaLink: String
+  secondaryCtaText: String
+  secondaryCtaLink: String
+}
+
+type CaseStudiesBlocksCtaInline {
+  scheme: String
+  heading: String
+  bodyText: String
+  primaryCtaText: String
+  primaryCtaLink: String
+  secondaryCtaText: String
+  secondaryCtaLink: String
+}
+
+type CaseStudiesBlocksImageFeatureBulletPoints {
+  text: String!
+}
+
+type CaseStudiesBlocksImageFeature {
+  scheme: String
+  imagePosition: String
+  image: String
+  imageAlt: String
+  headline: String
+  description: String
+  bulletPoints: [CaseStudiesBlocksImageFeatureBulletPoints]
+  ctaText: String
+  ctaLink: String
+}
+
+type CaseStudiesBlocksVideoSection {
+  scheme: String
+  heading: String
+  videoUrl: String
+  caption: String
+  thumbnail: String
+}
+
+type CaseStudiesBlocksTeamGridTeam {
+  name: String!
+  role: String!
+  credentials: String
+  bio: String
+  photo: String
+}
+
+type CaseStudiesBlocksTeamGrid {
+  scheme: String
+  heading: String
+  team: [CaseStudiesBlocksTeamGridTeam]
+}
+
+type CaseStudiesBlocksTeamShowcaseTeam {
+  name: String!
+  role: String!
+  credentials: String
+  bio: String
+  photo: String
+  linkedin: String
+  tier: String
+}
+
+type CaseStudiesBlocksTeamShowcase {
+  scheme: String
+  heading: String
+  subtitle: String
+  layout: String
+  team: [CaseStudiesBlocksTeamShowcaseTeam]
+}
+
+type CaseStudiesBlocksTrustCertBlockBadges {
+  label: String!
+  icon: String
+}
+
+type CaseStudiesBlocksTrustCertBlock {
+  scheme: String
+  badges: [CaseStudiesBlocksTrustCertBlockBadges]
+}
+
+type CaseStudiesBlocksAlertBanner {
+  scheme: String
+  type: String
+  text: String!
+  ctaText: String
+  ctaLink: String
+}
+
+type CaseStudiesBlocksProse {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
+type CaseStudiesBlocksRichText {
+  scheme: String
+  heading: String
+  body: String
+}
+
+type CaseStudiesBlocksCurrentKnowledgeCardTldrBullets {
+  text: String!
+}
+
+type CaseStudiesBlocksCurrentKnowledgeCardSources {
+  title: String!
+  url: String
+  year: String
+}
+
+type CaseStudiesBlocksCurrentKnowledgeCard {
+  scheme: String
+  question: String!
+  directAnswer: String!
+  tldrBullets: [CaseStudiesBlocksCurrentKnowledgeCardTldrBullets]
+  expandedAnswer: String
+  sources: [CaseStudiesBlocksCurrentKnowledgeCardSources]
+  reviewedBy: String
+  lastReviewed: String
+}
+
+type CaseStudiesBlocksRelatedKnowledgeBase {
+  scheme: String
+  heading: String
+  limit: Float
+  filterTags: [String]
+}
+
+type CaseStudiesBlocksRelatedPages {
+  scheme: String
+  heading: String
+  limit: Float
+  filterTags: [String]
+}
+
+type CaseStudiesBlocksRoiCalculatorPromo {
+  scheme: String
+  eyebrow: String
+  heading: String
+  promoBody: String
+  ctaText: String
+  ctaLink: String
+}
+
+type CaseStudiesBlocksLeadMagnetPromo {
+  scheme: String
+  heading: String
+  promoBody: String
+  ctaText: String
+  ctaLink: String
+  coverImage: String
+}
+
+type CaseStudiesBlocksBreadcrumbItems {
+  label: String!
+  href: String
+}
+
+type CaseStudiesBlocksBreadcrumb {
+  scheme: String
+  items: [CaseStudiesBlocksBreadcrumbItems]
+}
+
+type CaseStudiesBlocksPartnerLogoCarouselLogos {
+  src: String!
+  alt: String!
+}
+
+type CaseStudiesBlocksPartnerLogoCarousel {
+  heading: String
+  subheading: String
+  scheme: String
+  logos: [CaseStudiesBlocksPartnerLogoCarouselLogos]
+}
+
+type CaseStudiesBlocksContactForm {
+  scheme: String
+  heading: String
+  subtitle: String
+  salesEmail: String
+  supportEmail: String
+}
+
+type CaseStudiesBlocksSegmentCardsCards {
+  title: String!
+  body: String
+  icon: String
+  link: String
+}
+
+type CaseStudiesBlocksSegmentCards {
+  scheme: String
+  heading: String
+  cards: [CaseStudiesBlocksSegmentCardsCards]
+}
+
+type CaseStudiesBlocksValuePropsItems {
+  title: String!
+  body: String
+}
+
+type CaseStudiesBlocksValueProps {
+  scheme: String
+  heading: String
+  items: [CaseStudiesBlocksValuePropsItems]
+}
+
+type CaseStudiesBlocksTimelineEntries {
+  year: String!
+  body: String
+}
+
+type CaseStudiesBlocksTimeline {
+  scheme: String
+  heading: String
+  entries: [CaseStudiesBlocksTimelineEntries]
+}
+
+union CaseStudiesBlocks = CaseStudiesBlocksHero | CaseStudiesBlocksTrustBar | CaseStudiesBlocksStatsBar | CaseStudiesBlocksSegmentRouter | CaseStudiesBlocksSolutionCards | CaseStudiesBlocksProcessSteps | CaseStudiesBlocksMetricsBlock | CaseStudiesBlocksFeatureComparison | CaseStudiesBlocksEvidenceBlock | CaseStudiesBlocksTestimonialCarousel | CaseStudiesBlocksCaseStudyCards | CaseStudiesBlocksFaqAccordion | CaseStudiesBlocksCtaBanner | CaseStudiesBlocksCtaInline | CaseStudiesBlocksImageFeature | CaseStudiesBlocksVideoSection | CaseStudiesBlocksTeamGrid | CaseStudiesBlocksTeamShowcase | CaseStudiesBlocksTrustCertBlock | CaseStudiesBlocksAlertBanner | CaseStudiesBlocksProse | CaseStudiesBlocksRichText | CaseStudiesBlocksCurrentKnowledgeCard | CaseStudiesBlocksRelatedKnowledgeBase | CaseStudiesBlocksRelatedPages | CaseStudiesBlocksRoiCalculatorPromo | CaseStudiesBlocksLeadMagnetPromo | CaseStudiesBlocksBreadcrumb | CaseStudiesBlocksPartnerLogoCarousel | CaseStudiesBlocksContactForm | CaseStudiesBlocksSegmentCards | CaseStudiesBlocksValueProps | CaseStudiesBlocksTimeline
+
+type CaseStudies implements Node & Document {
+  slug: String
+  blocks: [CaseStudiesBlocks]
+  title: String!
+  description: String
+  url: String
+  keywords: [String]
+  primaryKeyword: String
+  h1: String
+  tags: [String]
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input CaseStudiesBlocksHeroBreadcrumbFilter {
+  label: StringFilter
+  href: StringFilter
+}
+
+input CaseStudiesBlocksHeroFilter {
+  scheme: StringFilter
+  wave: StringFilter
+  waveFill: StringFilter
+  eyebrow: StringFilter
+  headline: StringFilter
+  subtitle: StringFilter
+  primaryCtaText: StringFilter
+  primaryCtaLink: StringFilter
+  secondaryCtaText: StringFilter
+  secondaryCtaLink: StringFilter
+  backgroundImage: ImageFilter
+  backgroundImageAlt: StringFilter
+  videoIframe: StringFilter
+  breadcrumb: CaseStudiesBlocksHeroBreadcrumbFilter
+}
+
+input CaseStudiesBlocksTrustBarItemsFilter {
+  text: StringFilter
+  logo: ImageFilter
+}
+
+input CaseStudiesBlocksTrustBarFilter {
+  scheme: StringFilter
+  items: CaseStudiesBlocksTrustBarItemsFilter
+}
+
+input CaseStudiesBlocksStatsBarStatsFilter {
+  value: StringFilter
+  label: StringFilter
+  sublabel: StringFilter
+}
+
+input CaseStudiesBlocksStatsBarFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  stats: CaseStudiesBlocksStatsBarStatsFilter
+}
+
+input CaseStudiesBlocksSegmentRouterSegmentsFilter {
+  title: StringFilter
+  description: StringFilter
+  ctaText: StringFilter
+  link: StringFilter
+}
+
+input CaseStudiesBlocksSegmentRouterFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  segments: CaseStudiesBlocksSegmentRouterSegmentsFilter
+}
+
+input CaseStudiesBlocksSolutionCardsCardsFilter {
+  title: StringFilter
+  description: StringFilter
+  link: StringFilter
+  iconHint: StringFilter
+  image: ImageFilter
+}
+
+input CaseStudiesBlocksSolutionCardsFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  subheading: StringFilter
+  cards: CaseStudiesBlocksSolutionCardsCardsFilter
+}
+
+input CaseStudiesBlocksProcessStepsStepsFilter {
+  number: NumberFilter
+  title: StringFilter
+  subtitle: StringFilter
+  description: StringFilter
+}
+
+input CaseStudiesBlocksProcessStepsFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  steps: CaseStudiesBlocksProcessStepsStepsFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input CaseStudiesBlocksMetricsBlockMetricsFilter {
+  name: StringFilter
+  whatItMeasures: StringFilter
+  whyItMatters: StringFilter
+}
+
+input CaseStudiesBlocksMetricsBlockFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  metrics: CaseStudiesBlocksMetricsBlockMetricsFilter
+}
+
+input CaseStudiesBlocksFeatureComparisonRowsFilter {
+  feature: StringFilter
+  values: StringFilter
+}
+
+input CaseStudiesBlocksFeatureComparisonFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  tldr: StringFilter
+  columns: StringFilter
+  rows: CaseStudiesBlocksFeatureComparisonRowsFilter
+}
+
+input CaseStudiesBlocksEvidenceBlockCitationsFilter {
+  title: StringFilter
+  authors: StringFilter
+  journal: StringFilter
+  year: StringFilter
+  finding: StringFilter
+  link: StringFilter
+}
+
+input CaseStudiesBlocksEvidenceBlockFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  pulledStat: StringFilter
+  pulledStatSource: StringFilter
+  citations: CaseStudiesBlocksEvidenceBlockCitationsFilter
+}
+
+input CaseStudiesBlocksTestimonialCarouselTestimonialsFilter {
+  quote: StringFilter
+  name: StringFilter
+  role: StringFilter
+  organization: StringFilter
+  photo: ImageFilter
+}
+
+input CaseStudiesBlocksTestimonialCarouselFilter {
+  scheme: StringFilter
+  wave: StringFilter
+  waveFill: StringFilter
+  heading: StringFilter
+  testimonials: CaseStudiesBlocksTestimonialCarouselTestimonialsFilter
+}
+
+input CaseStudiesBlocksCaseStudyCardsCaseStudiesFilter {
+  title: StringFilter
+  metric: StringFilter
+  metricLabel: StringFilter
+  summary: StringFilter
+  sector: StringFilter
+  link: StringFilter
+  thumbnail: ImageFilter
+}
+
+input CaseStudiesBlocksCaseStudyCardsFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  caseStudies: CaseStudiesBlocksCaseStudyCardsCaseStudiesFilter
+}
+
+input CaseStudiesBlocksFaqAccordionFaqsFilter {
+  question: StringFilter
+  answer: StringFilter
+}
+
+input CaseStudiesBlocksFaqAccordionFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  emitSchema: BooleanFilter
+  faqs: CaseStudiesBlocksFaqAccordionFaqsFilter
+}
+
+input CaseStudiesBlocksCtaBannerFilter {
+  scheme: StringFilter
+  wave: StringFilter
+  waveFill: StringFilter
+  heading: StringFilter
+  bodyText: StringFilter
+  primaryCtaText: StringFilter
+  primaryCtaLink: StringFilter
+  secondaryCtaText: StringFilter
+  secondaryCtaLink: StringFilter
+}
+
+input CaseStudiesBlocksCtaInlineFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  bodyText: StringFilter
+  primaryCtaText: StringFilter
+  primaryCtaLink: StringFilter
+  secondaryCtaText: StringFilter
+  secondaryCtaLink: StringFilter
+}
+
+input CaseStudiesBlocksImageFeatureBulletPointsFilter {
+  text: StringFilter
+}
+
+input CaseStudiesBlocksImageFeatureFilter {
+  scheme: StringFilter
+  imagePosition: StringFilter
+  image: ImageFilter
+  imageAlt: StringFilter
+  headline: StringFilter
+  description: StringFilter
+  bulletPoints: CaseStudiesBlocksImageFeatureBulletPointsFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input CaseStudiesBlocksVideoSectionFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  videoUrl: StringFilter
+  caption: StringFilter
+  thumbnail: ImageFilter
+}
+
+input CaseStudiesBlocksTeamGridTeamFilter {
+  name: StringFilter
+  role: StringFilter
+  credentials: StringFilter
+  bio: StringFilter
+  photo: ImageFilter
+}
+
+input CaseStudiesBlocksTeamGridFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  team: CaseStudiesBlocksTeamGridTeamFilter
+}
+
+input CaseStudiesBlocksTeamShowcaseTeamFilter {
+  name: StringFilter
+  role: StringFilter
+  credentials: StringFilter
+  bio: StringFilter
+  photo: ImageFilter
+  linkedin: StringFilter
+  tier: StringFilter
+}
+
+input CaseStudiesBlocksTeamShowcaseFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  subtitle: StringFilter
+  layout: StringFilter
+  team: CaseStudiesBlocksTeamShowcaseTeamFilter
+}
+
+input CaseStudiesBlocksTrustCertBlockBadgesFilter {
+  label: StringFilter
+  icon: ImageFilter
+}
+
+input CaseStudiesBlocksTrustCertBlockFilter {
+  scheme: StringFilter
+  badges: CaseStudiesBlocksTrustCertBlockBadgesFilter
+}
+
+input CaseStudiesBlocksAlertBannerFilter {
+  scheme: StringFilter
+  type: StringFilter
+  text: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input CaseStudiesBlocksProseFilter {
+  scheme: StringFilter
+  align: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  body: StringFilter
+}
+
+input CaseStudiesBlocksRichTextFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  body: StringFilter
+}
+
+input CaseStudiesBlocksCurrentKnowledgeCardTldrBulletsFilter {
+  text: StringFilter
+}
+
+input CaseStudiesBlocksCurrentKnowledgeCardSourcesFilter {
+  title: StringFilter
+  url: StringFilter
+  year: StringFilter
+}
+
+input CaseStudiesBlocksCurrentKnowledgeCardFilter {
+  scheme: StringFilter
+  question: StringFilter
+  directAnswer: StringFilter
+  tldrBullets: CaseStudiesBlocksCurrentKnowledgeCardTldrBulletsFilter
+  expandedAnswer: StringFilter
+  sources: CaseStudiesBlocksCurrentKnowledgeCardSourcesFilter
+  reviewedBy: StringFilter
+  lastReviewed: StringFilter
+}
+
+input CaseStudiesBlocksRelatedKnowledgeBaseFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  limit: NumberFilter
+  filterTags: StringFilter
+}
+
+input CaseStudiesBlocksRelatedPagesFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  limit: NumberFilter
+  filterTags: StringFilter
+}
+
+input CaseStudiesBlocksRoiCalculatorPromoFilter {
+  scheme: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  promoBody: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+}
+
+input CaseStudiesBlocksLeadMagnetPromoFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  promoBody: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  coverImage: ImageFilter
+}
+
+input CaseStudiesBlocksBreadcrumbItemsFilter {
+  label: StringFilter
+  href: StringFilter
+}
+
+input CaseStudiesBlocksBreadcrumbFilter {
+  scheme: StringFilter
+  items: CaseStudiesBlocksBreadcrumbItemsFilter
+}
+
+input CaseStudiesBlocksPartnerLogoCarouselLogosFilter {
+  src: ImageFilter
+  alt: StringFilter
+}
+
+input CaseStudiesBlocksPartnerLogoCarouselFilter {
+  heading: StringFilter
+  subheading: StringFilter
+  scheme: StringFilter
+  logos: CaseStudiesBlocksPartnerLogoCarouselLogosFilter
+}
+
+input CaseStudiesBlocksContactFormFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  subtitle: StringFilter
+  salesEmail: StringFilter
+  supportEmail: StringFilter
+}
+
+input CaseStudiesBlocksSegmentCardsCardsFilter {
+  title: StringFilter
+  body: StringFilter
+  icon: StringFilter
+  link: StringFilter
+}
+
+input CaseStudiesBlocksSegmentCardsFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  cards: CaseStudiesBlocksSegmentCardsCardsFilter
+}
+
+input CaseStudiesBlocksValuePropsItemsFilter {
+  title: StringFilter
+  body: StringFilter
+}
+
+input CaseStudiesBlocksValuePropsFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  items: CaseStudiesBlocksValuePropsItemsFilter
+}
+
+input CaseStudiesBlocksTimelineEntriesFilter {
+  year: StringFilter
+  body: StringFilter
+}
+
+input CaseStudiesBlocksTimelineFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  entries: CaseStudiesBlocksTimelineEntriesFilter
+}
+
+input CaseStudiesBlocksFilter {
+  hero: CaseStudiesBlocksHeroFilter
+  trustBar: CaseStudiesBlocksTrustBarFilter
+  statsBar: CaseStudiesBlocksStatsBarFilter
+  segmentRouter: CaseStudiesBlocksSegmentRouterFilter
+  solutionCards: CaseStudiesBlocksSolutionCardsFilter
+  processSteps: CaseStudiesBlocksProcessStepsFilter
+  metricsBlock: CaseStudiesBlocksMetricsBlockFilter
+  featureComparison: CaseStudiesBlocksFeatureComparisonFilter
+  evidenceBlock: CaseStudiesBlocksEvidenceBlockFilter
+  testimonialCarousel: CaseStudiesBlocksTestimonialCarouselFilter
+  caseStudyCards: CaseStudiesBlocksCaseStudyCardsFilter
+  faqAccordion: CaseStudiesBlocksFaqAccordionFilter
+  ctaBanner: CaseStudiesBlocksCtaBannerFilter
+  ctaInline: CaseStudiesBlocksCtaInlineFilter
+  imageFeature: CaseStudiesBlocksImageFeatureFilter
+  videoSection: CaseStudiesBlocksVideoSectionFilter
+  teamGrid: CaseStudiesBlocksTeamGridFilter
+  teamShowcase: CaseStudiesBlocksTeamShowcaseFilter
+  trustCertBlock: CaseStudiesBlocksTrustCertBlockFilter
+  alertBanner: CaseStudiesBlocksAlertBannerFilter
+  prose: CaseStudiesBlocksProseFilter
+  richText: CaseStudiesBlocksRichTextFilter
+  currentKnowledgeCard: CaseStudiesBlocksCurrentKnowledgeCardFilter
+  relatedKnowledgeBase: CaseStudiesBlocksRelatedKnowledgeBaseFilter
+  relatedPages: CaseStudiesBlocksRelatedPagesFilter
+  roiCalculatorPromo: CaseStudiesBlocksRoiCalculatorPromoFilter
+  leadMagnetPromo: CaseStudiesBlocksLeadMagnetPromoFilter
+  breadcrumb: CaseStudiesBlocksBreadcrumbFilter
+  partnerLogoCarousel: CaseStudiesBlocksPartnerLogoCarouselFilter
+  contactForm: CaseStudiesBlocksContactFormFilter
+  segmentCards: CaseStudiesBlocksSegmentCardsFilter
+  valueProps: CaseStudiesBlocksValuePropsFilter
+  timeline: CaseStudiesBlocksTimelineFilter
+}
+
+input CaseStudiesFilter {
+  slug: StringFilter
+  blocks: CaseStudiesBlocksFilter
+  title: StringFilter
+  description: StringFilter
+  url: StringFilter
+  keywords: StringFilter
+  primaryKeyword: StringFilter
+  h1: StringFilter
+  tags: StringFilter
+}
+
+type CaseStudiesConnectionEdges {
+  cursor: String!
+  node: CaseStudies
+}
+
+type CaseStudiesConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [CaseStudiesConnectionEdges]
+}
+
 type CompanyBlocksHeroBreadcrumb {
   label: String!
   href: String
@@ -5196,6 +6323,7 @@ type CompanyBlocksHero {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [CompanyBlocksHeroBreadcrumb]
 }
 
@@ -5252,6 +6380,7 @@ type CompanyBlocksSolutionCards {
 type CompanyBlocksProcessStepsSteps {
   number: Float!
   title: String!
+  subtitle: String
   description: String
 }
 
@@ -5277,16 +6406,14 @@ type CompanyBlocksMetricsBlock {
 
 type CompanyBlocksFeatureComparisonRows {
   feature: String!
-  col1: String
-  col2: String
+  values: [String]
 }
 
 type CompanyBlocksFeatureComparison {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [CompanyBlocksFeatureComparisonRows]
 }
 
@@ -5447,6 +6574,14 @@ type CompanyBlocksAlertBanner {
   ctaLink: String
 }
 
+type CompanyBlocksProse {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 type CompanyBlocksRichText {
   scheme: String
   heading: String
@@ -5560,7 +6695,18 @@ type CompanyBlocksValueProps {
   items: [CompanyBlocksValuePropsItems]
 }
 
-union CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksRichText | CompanyBlocksCurrentKnowledgeCard | CompanyBlocksRelatedKnowledgeBase | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps
+type CompanyBlocksTimelineEntries {
+  year: String!
+  body: String
+}
+
+type CompanyBlocksTimeline {
+  scheme: String
+  heading: String
+  entries: [CompanyBlocksTimelineEntries]
+}
+
+union CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksCurrentKnowledgeCard | CompanyBlocksRelatedKnowledgeBase | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline
 
 type Company implements Node & Document {
   blocks: [CompanyBlocks]
@@ -5594,6 +6740,7 @@ input CompanyBlocksHeroFilter {
   secondaryCtaLink: StringFilter
   backgroundImage: ImageFilter
   backgroundImageAlt: StringFilter
+  videoIframe: StringFilter
   breadcrumb: CompanyBlocksHeroBreadcrumbFilter
 }
 
@@ -5650,6 +6797,7 @@ input CompanyBlocksSolutionCardsFilter {
 input CompanyBlocksProcessStepsStepsFilter {
   number: NumberFilter
   title: StringFilter
+  subtitle: StringFilter
   description: StringFilter
 }
 
@@ -5675,16 +6823,14 @@ input CompanyBlocksMetricsBlockFilter {
 
 input CompanyBlocksFeatureComparisonRowsFilter {
   feature: StringFilter
-  col1: StringFilter
-  col2: StringFilter
+  values: StringFilter
 }
 
 input CompanyBlocksFeatureComparisonFilter {
   scheme: StringFilter
   heading: StringFilter
   tldr: StringFilter
-  col1Header: StringFilter
-  col2Header: StringFilter
+  columns: StringFilter
   rows: CompanyBlocksFeatureComparisonRowsFilter
 }
 
@@ -5845,6 +6991,14 @@ input CompanyBlocksAlertBannerFilter {
   ctaLink: StringFilter
 }
 
+input CompanyBlocksProseFilter {
+  scheme: StringFilter
+  align: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  body: StringFilter
+}
+
 input CompanyBlocksRichTextFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -5958,6 +7112,17 @@ input CompanyBlocksValuePropsFilter {
   items: CompanyBlocksValuePropsItemsFilter
 }
 
+input CompanyBlocksTimelineEntriesFilter {
+  year: StringFilter
+  body: StringFilter
+}
+
+input CompanyBlocksTimelineFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  entries: CompanyBlocksTimelineEntriesFilter
+}
+
 input CompanyBlocksFilter {
   hero: CompanyBlocksHeroFilter
   trustBar: CompanyBlocksTrustBarFilter
@@ -5979,6 +7144,7 @@ input CompanyBlocksFilter {
   teamShowcase: CompanyBlocksTeamShowcaseFilter
   trustCertBlock: CompanyBlocksTrustCertBlockFilter
   alertBanner: CompanyBlocksAlertBannerFilter
+  prose: CompanyBlocksProseFilter
   richText: CompanyBlocksRichTextFilter
   currentKnowledgeCard: CompanyBlocksCurrentKnowledgeCardFilter
   relatedKnowledgeBase: CompanyBlocksRelatedKnowledgeBaseFilter
@@ -5990,6 +7156,7 @@ input CompanyBlocksFilter {
   contactForm: CompanyBlocksContactFormFilter
   segmentCards: CompanyBlocksSegmentCardsFilter
   valueProps: CompanyBlocksValuePropsFilter
+  timeline: CompanyBlocksTimelineFilter
 }
 
 input CompanyFilter {
@@ -6032,6 +7199,7 @@ type KnowledgeBaseBlocksHero {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [KnowledgeBaseBlocksHeroBreadcrumb]
 }
 
@@ -6088,6 +7256,7 @@ type KnowledgeBaseBlocksSolutionCards {
 type KnowledgeBaseBlocksProcessStepsSteps {
   number: Float!
   title: String!
+  subtitle: String
   description: String
 }
 
@@ -6113,16 +7282,14 @@ type KnowledgeBaseBlocksMetricsBlock {
 
 type KnowledgeBaseBlocksFeatureComparisonRows {
   feature: String!
-  col1: String
-  col2: String
+  values: [String]
 }
 
 type KnowledgeBaseBlocksFeatureComparison {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [KnowledgeBaseBlocksFeatureComparisonRows]
 }
 
@@ -6283,6 +7450,14 @@ type KnowledgeBaseBlocksAlertBanner {
   ctaLink: String
 }
 
+type KnowledgeBaseBlocksProse {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 type KnowledgeBaseBlocksRichText {
   scheme: String
   heading: String
@@ -6396,7 +7571,18 @@ type KnowledgeBaseBlocksValueProps {
   items: [KnowledgeBaseBlocksValuePropsItems]
 }
 
-union KnowledgeBaseBlocks = KnowledgeBaseBlocksHero | KnowledgeBaseBlocksTrustBar | KnowledgeBaseBlocksStatsBar | KnowledgeBaseBlocksSegmentRouter | KnowledgeBaseBlocksSolutionCards | KnowledgeBaseBlocksProcessSteps | KnowledgeBaseBlocksMetricsBlock | KnowledgeBaseBlocksFeatureComparison | KnowledgeBaseBlocksEvidenceBlock | KnowledgeBaseBlocksTestimonialCarousel | KnowledgeBaseBlocksCaseStudyCards | KnowledgeBaseBlocksFaqAccordion | KnowledgeBaseBlocksCtaBanner | KnowledgeBaseBlocksCtaInline | KnowledgeBaseBlocksImageFeature | KnowledgeBaseBlocksVideoSection | KnowledgeBaseBlocksTeamGrid | KnowledgeBaseBlocksTeamShowcase | KnowledgeBaseBlocksTrustCertBlock | KnowledgeBaseBlocksAlertBanner | KnowledgeBaseBlocksRichText | KnowledgeBaseBlocksCurrentKnowledgeCard | KnowledgeBaseBlocksRelatedKnowledgeBase | KnowledgeBaseBlocksRelatedPages | KnowledgeBaseBlocksRoiCalculatorPromo | KnowledgeBaseBlocksLeadMagnetPromo | KnowledgeBaseBlocksBreadcrumb | KnowledgeBaseBlocksPartnerLogoCarousel | KnowledgeBaseBlocksContactForm | KnowledgeBaseBlocksSegmentCards | KnowledgeBaseBlocksValueProps
+type KnowledgeBaseBlocksTimelineEntries {
+  year: String!
+  body: String
+}
+
+type KnowledgeBaseBlocksTimeline {
+  scheme: String
+  heading: String
+  entries: [KnowledgeBaseBlocksTimelineEntries]
+}
+
+union KnowledgeBaseBlocks = KnowledgeBaseBlocksHero | KnowledgeBaseBlocksTrustBar | KnowledgeBaseBlocksStatsBar | KnowledgeBaseBlocksSegmentRouter | KnowledgeBaseBlocksSolutionCards | KnowledgeBaseBlocksProcessSteps | KnowledgeBaseBlocksMetricsBlock | KnowledgeBaseBlocksFeatureComparison | KnowledgeBaseBlocksEvidenceBlock | KnowledgeBaseBlocksTestimonialCarousel | KnowledgeBaseBlocksCaseStudyCards | KnowledgeBaseBlocksFaqAccordion | KnowledgeBaseBlocksCtaBanner | KnowledgeBaseBlocksCtaInline | KnowledgeBaseBlocksImageFeature | KnowledgeBaseBlocksVideoSection | KnowledgeBaseBlocksTeamGrid | KnowledgeBaseBlocksTeamShowcase | KnowledgeBaseBlocksTrustCertBlock | KnowledgeBaseBlocksAlertBanner | KnowledgeBaseBlocksProse | KnowledgeBaseBlocksRichText | KnowledgeBaseBlocksCurrentKnowledgeCard | KnowledgeBaseBlocksRelatedKnowledgeBase | KnowledgeBaseBlocksRelatedPages | KnowledgeBaseBlocksRoiCalculatorPromo | KnowledgeBaseBlocksLeadMagnetPromo | KnowledgeBaseBlocksBreadcrumb | KnowledgeBaseBlocksPartnerLogoCarousel | KnowledgeBaseBlocksContactForm | KnowledgeBaseBlocksSegmentCards | KnowledgeBaseBlocksValueProps | KnowledgeBaseBlocksTimeline
 
 type KnowledgeBase implements Node & Document {
   title: String!
@@ -6440,6 +7626,7 @@ input KnowledgeBaseBlocksHeroFilter {
   secondaryCtaLink: StringFilter
   backgroundImage: ImageFilter
   backgroundImageAlt: StringFilter
+  videoIframe: StringFilter
   breadcrumb: KnowledgeBaseBlocksHeroBreadcrumbFilter
 }
 
@@ -6496,6 +7683,7 @@ input KnowledgeBaseBlocksSolutionCardsFilter {
 input KnowledgeBaseBlocksProcessStepsStepsFilter {
   number: NumberFilter
   title: StringFilter
+  subtitle: StringFilter
   description: StringFilter
 }
 
@@ -6521,16 +7709,14 @@ input KnowledgeBaseBlocksMetricsBlockFilter {
 
 input KnowledgeBaseBlocksFeatureComparisonRowsFilter {
   feature: StringFilter
-  col1: StringFilter
-  col2: StringFilter
+  values: StringFilter
 }
 
 input KnowledgeBaseBlocksFeatureComparisonFilter {
   scheme: StringFilter
   heading: StringFilter
   tldr: StringFilter
-  col1Header: StringFilter
-  col2Header: StringFilter
+  columns: StringFilter
   rows: KnowledgeBaseBlocksFeatureComparisonRowsFilter
 }
 
@@ -6691,6 +7877,14 @@ input KnowledgeBaseBlocksAlertBannerFilter {
   ctaLink: StringFilter
 }
 
+input KnowledgeBaseBlocksProseFilter {
+  scheme: StringFilter
+  align: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  body: StringFilter
+}
+
 input KnowledgeBaseBlocksRichTextFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -6804,6 +7998,17 @@ input KnowledgeBaseBlocksValuePropsFilter {
   items: KnowledgeBaseBlocksValuePropsItemsFilter
 }
 
+input KnowledgeBaseBlocksTimelineEntriesFilter {
+  year: StringFilter
+  body: StringFilter
+}
+
+input KnowledgeBaseBlocksTimelineFilter {
+  scheme: StringFilter
+  heading: StringFilter
+  entries: KnowledgeBaseBlocksTimelineEntriesFilter
+}
+
 input KnowledgeBaseBlocksFilter {
   hero: KnowledgeBaseBlocksHeroFilter
   trustBar: KnowledgeBaseBlocksTrustBarFilter
@@ -6825,6 +8030,7 @@ input KnowledgeBaseBlocksFilter {
   teamShowcase: KnowledgeBaseBlocksTeamShowcaseFilter
   trustCertBlock: KnowledgeBaseBlocksTrustCertBlockFilter
   alertBanner: KnowledgeBaseBlocksAlertBannerFilter
+  prose: KnowledgeBaseBlocksProseFilter
   richText: KnowledgeBaseBlocksRichTextFilter
   currentKnowledgeCard: KnowledgeBaseBlocksCurrentKnowledgeCardFilter
   relatedKnowledgeBase: KnowledgeBaseBlocksRelatedKnowledgeBaseFilter
@@ -6836,6 +8042,7 @@ input KnowledgeBaseBlocksFilter {
   contactForm: KnowledgeBaseBlocksContactFormFilter
   segmentCards: KnowledgeBaseBlocksSegmentCardsFilter
   valueProps: KnowledgeBaseBlocksValuePropsFilter
+  timeline: KnowledgeBaseBlocksTimelineFilter
 }
 
 input KnowledgeBaseFilter {
@@ -6878,12 +8085,6 @@ type Utility implements Node & Document {
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
-}
-
-input RichTextFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
 }
 
 input UtilityFilter {
@@ -7054,6 +8255,8 @@ type Mutation {
   createLearn(relativePath: String!, params: LearnMutation!): Learn!
   updateResources(relativePath: String!, params: ResourcesMutation!): Resources!
   createResources(relativePath: String!, params: ResourcesMutation!): Resources!
+  updateCaseStudies(relativePath: String!, params: CaseStudiesMutation!): CaseStudies!
+  createCaseStudies(relativePath: String!, params: CaseStudiesMutation!): CaseStudies!
   updateCompany(relativePath: String!, params: CompanyMutation!): Company!
   createCompany(relativePath: String!, params: CompanyMutation!): Company!
   updateKnowledgeBase(relativePath: String!, params: KnowledgeBaseMutation!): KnowledgeBase!
@@ -7073,6 +8276,7 @@ input DocumentUpdateMutation {
   compare: CompareMutation
   learn: LearnMutation
   resources: ResourcesMutation
+  caseStudies: CaseStudiesMutation
   company: CompanyMutation
   knowledgeBase: KnowledgeBaseMutation
   utility: UtilityMutation
@@ -7088,6 +8292,7 @@ input DocumentMutation {
   compare: CompareMutation
   learn: LearnMutation
   resources: ResourcesMutation
+  caseStudies: CaseStudiesMutation
   company: CompanyMutation
   knowledgeBase: KnowledgeBaseMutation
   utility: UtilityMutation
@@ -7113,6 +8318,7 @@ input PagesBlocksHeroMutation {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [PagesBlocksHeroBreadcrumbMutation]
 }
 
@@ -7169,6 +8375,7 @@ input PagesBlocksSolutionCardsMutation {
 input PagesBlocksProcessStepsStepsMutation {
   number: Float
   title: String
+  subtitle: String
   description: String
 }
 
@@ -7194,16 +8401,14 @@ input PagesBlocksMetricsBlockMutation {
 
 input PagesBlocksFeatureComparisonRowsMutation {
   feature: String
-  col1: String
-  col2: String
+  values: [String]
 }
 
 input PagesBlocksFeatureComparisonMutation {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [PagesBlocksFeatureComparisonRowsMutation]
 }
 
@@ -7364,6 +8569,14 @@ input PagesBlocksAlertBannerMutation {
   ctaLink: String
 }
 
+input PagesBlocksProseMutation {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 input PagesBlocksRichTextMutation {
   scheme: String
   heading: String
@@ -7477,6 +8690,17 @@ input PagesBlocksValuePropsMutation {
   items: [PagesBlocksValuePropsItemsMutation]
 }
 
+input PagesBlocksTimelineEntriesMutation {
+  year: String
+  body: String
+}
+
+input PagesBlocksTimelineMutation {
+  scheme: String
+  heading: String
+  entries: [PagesBlocksTimelineEntriesMutation]
+}
+
 input PagesBlocksMutation {
   hero: PagesBlocksHeroMutation
   trustBar: PagesBlocksTrustBarMutation
@@ -7498,6 +8722,7 @@ input PagesBlocksMutation {
   teamShowcase: PagesBlocksTeamShowcaseMutation
   trustCertBlock: PagesBlocksTrustCertBlockMutation
   alertBanner: PagesBlocksAlertBannerMutation
+  prose: PagesBlocksProseMutation
   richText: PagesBlocksRichTextMutation
   currentKnowledgeCard: PagesBlocksCurrentKnowledgeCardMutation
   relatedKnowledgeBase: PagesBlocksRelatedKnowledgeBaseMutation
@@ -7509,6 +8734,7 @@ input PagesBlocksMutation {
   contactForm: PagesBlocksContactFormMutation
   segmentCards: PagesBlocksSegmentCardsMutation
   valueProps: PagesBlocksValuePropsMutation
+  timeline: PagesBlocksTimelineMutation
 }
 
 input PagesMutation {
@@ -7540,6 +8766,7 @@ input SolutionsBlocksHeroMutation {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [SolutionsBlocksHeroBreadcrumbMutation]
 }
 
@@ -7596,6 +8823,7 @@ input SolutionsBlocksSolutionCardsMutation {
 input SolutionsBlocksProcessStepsStepsMutation {
   number: Float
   title: String
+  subtitle: String
   description: String
 }
 
@@ -7621,16 +8849,14 @@ input SolutionsBlocksMetricsBlockMutation {
 
 input SolutionsBlocksFeatureComparisonRowsMutation {
   feature: String
-  col1: String
-  col2: String
+  values: [String]
 }
 
 input SolutionsBlocksFeatureComparisonMutation {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [SolutionsBlocksFeatureComparisonRowsMutation]
 }
 
@@ -7791,6 +9017,14 @@ input SolutionsBlocksAlertBannerMutation {
   ctaLink: String
 }
 
+input SolutionsBlocksProseMutation {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 input SolutionsBlocksRichTextMutation {
   scheme: String
   heading: String
@@ -7904,6 +9138,17 @@ input SolutionsBlocksValuePropsMutation {
   items: [SolutionsBlocksValuePropsItemsMutation]
 }
 
+input SolutionsBlocksTimelineEntriesMutation {
+  year: String
+  body: String
+}
+
+input SolutionsBlocksTimelineMutation {
+  scheme: String
+  heading: String
+  entries: [SolutionsBlocksTimelineEntriesMutation]
+}
+
 input SolutionsBlocksMutation {
   hero: SolutionsBlocksHeroMutation
   trustBar: SolutionsBlocksTrustBarMutation
@@ -7925,6 +9170,7 @@ input SolutionsBlocksMutation {
   teamShowcase: SolutionsBlocksTeamShowcaseMutation
   trustCertBlock: SolutionsBlocksTrustCertBlockMutation
   alertBanner: SolutionsBlocksAlertBannerMutation
+  prose: SolutionsBlocksProseMutation
   richText: SolutionsBlocksRichTextMutation
   currentKnowledgeCard: SolutionsBlocksCurrentKnowledgeCardMutation
   relatedKnowledgeBase: SolutionsBlocksRelatedKnowledgeBaseMutation
@@ -7936,6 +9182,7 @@ input SolutionsBlocksMutation {
   contactForm: SolutionsBlocksContactFormMutation
   segmentCards: SolutionsBlocksSegmentCardsMutation
   valueProps: SolutionsBlocksValuePropsMutation
+  timeline: SolutionsBlocksTimelineMutation
 }
 
 input SolutionsMutation {
@@ -7967,6 +9214,7 @@ input SegmentsBlocksHeroMutation {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [SegmentsBlocksHeroBreadcrumbMutation]
 }
 
@@ -8023,6 +9271,7 @@ input SegmentsBlocksSolutionCardsMutation {
 input SegmentsBlocksProcessStepsStepsMutation {
   number: Float
   title: String
+  subtitle: String
   description: String
 }
 
@@ -8048,16 +9297,14 @@ input SegmentsBlocksMetricsBlockMutation {
 
 input SegmentsBlocksFeatureComparisonRowsMutation {
   feature: String
-  col1: String
-  col2: String
+  values: [String]
 }
 
 input SegmentsBlocksFeatureComparisonMutation {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [SegmentsBlocksFeatureComparisonRowsMutation]
 }
 
@@ -8218,6 +9465,14 @@ input SegmentsBlocksAlertBannerMutation {
   ctaLink: String
 }
 
+input SegmentsBlocksProseMutation {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 input SegmentsBlocksRichTextMutation {
   scheme: String
   heading: String
@@ -8331,6 +9586,17 @@ input SegmentsBlocksValuePropsMutation {
   items: [SegmentsBlocksValuePropsItemsMutation]
 }
 
+input SegmentsBlocksTimelineEntriesMutation {
+  year: String
+  body: String
+}
+
+input SegmentsBlocksTimelineMutation {
+  scheme: String
+  heading: String
+  entries: [SegmentsBlocksTimelineEntriesMutation]
+}
+
 input SegmentsBlocksMutation {
   hero: SegmentsBlocksHeroMutation
   trustBar: SegmentsBlocksTrustBarMutation
@@ -8352,6 +9618,7 @@ input SegmentsBlocksMutation {
   teamShowcase: SegmentsBlocksTeamShowcaseMutation
   trustCertBlock: SegmentsBlocksTrustCertBlockMutation
   alertBanner: SegmentsBlocksAlertBannerMutation
+  prose: SegmentsBlocksProseMutation
   richText: SegmentsBlocksRichTextMutation
   currentKnowledgeCard: SegmentsBlocksCurrentKnowledgeCardMutation
   relatedKnowledgeBase: SegmentsBlocksRelatedKnowledgeBaseMutation
@@ -8363,6 +9630,7 @@ input SegmentsBlocksMutation {
   contactForm: SegmentsBlocksContactFormMutation
   segmentCards: SegmentsBlocksSegmentCardsMutation
   valueProps: SegmentsBlocksValuePropsMutation
+  timeline: SegmentsBlocksTimelineMutation
 }
 
 input SegmentsMutation {
@@ -8394,6 +9662,7 @@ input CompareBlocksHeroMutation {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [CompareBlocksHeroBreadcrumbMutation]
 }
 
@@ -8450,6 +9719,7 @@ input CompareBlocksSolutionCardsMutation {
 input CompareBlocksProcessStepsStepsMutation {
   number: Float
   title: String
+  subtitle: String
   description: String
 }
 
@@ -8475,16 +9745,14 @@ input CompareBlocksMetricsBlockMutation {
 
 input CompareBlocksFeatureComparisonRowsMutation {
   feature: String
-  col1: String
-  col2: String
+  values: [String]
 }
 
 input CompareBlocksFeatureComparisonMutation {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [CompareBlocksFeatureComparisonRowsMutation]
 }
 
@@ -8645,6 +9913,14 @@ input CompareBlocksAlertBannerMutation {
   ctaLink: String
 }
 
+input CompareBlocksProseMutation {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 input CompareBlocksRichTextMutation {
   scheme: String
   heading: String
@@ -8758,6 +10034,17 @@ input CompareBlocksValuePropsMutation {
   items: [CompareBlocksValuePropsItemsMutation]
 }
 
+input CompareBlocksTimelineEntriesMutation {
+  year: String
+  body: String
+}
+
+input CompareBlocksTimelineMutation {
+  scheme: String
+  heading: String
+  entries: [CompareBlocksTimelineEntriesMutation]
+}
+
 input CompareBlocksMutation {
   hero: CompareBlocksHeroMutation
   trustBar: CompareBlocksTrustBarMutation
@@ -8779,6 +10066,7 @@ input CompareBlocksMutation {
   teamShowcase: CompareBlocksTeamShowcaseMutation
   trustCertBlock: CompareBlocksTrustCertBlockMutation
   alertBanner: CompareBlocksAlertBannerMutation
+  prose: CompareBlocksProseMutation
   richText: CompareBlocksRichTextMutation
   currentKnowledgeCard: CompareBlocksCurrentKnowledgeCardMutation
   relatedKnowledgeBase: CompareBlocksRelatedKnowledgeBaseMutation
@@ -8790,6 +10078,7 @@ input CompareBlocksMutation {
   contactForm: CompareBlocksContactFormMutation
   segmentCards: CompareBlocksSegmentCardsMutation
   valueProps: CompareBlocksValuePropsMutation
+  timeline: CompareBlocksTimelineMutation
 }
 
 input CompareMutation {
@@ -8821,6 +10110,7 @@ input LearnBlocksHeroMutation {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [LearnBlocksHeroBreadcrumbMutation]
 }
 
@@ -8877,6 +10167,7 @@ input LearnBlocksSolutionCardsMutation {
 input LearnBlocksProcessStepsStepsMutation {
   number: Float
   title: String
+  subtitle: String
   description: String
 }
 
@@ -8902,16 +10193,14 @@ input LearnBlocksMetricsBlockMutation {
 
 input LearnBlocksFeatureComparisonRowsMutation {
   feature: String
-  col1: String
-  col2: String
+  values: [String]
 }
 
 input LearnBlocksFeatureComparisonMutation {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [LearnBlocksFeatureComparisonRowsMutation]
 }
 
@@ -9072,6 +10361,14 @@ input LearnBlocksAlertBannerMutation {
   ctaLink: String
 }
 
+input LearnBlocksProseMutation {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 input LearnBlocksRichTextMutation {
   scheme: String
   heading: String
@@ -9185,6 +10482,17 @@ input LearnBlocksValuePropsMutation {
   items: [LearnBlocksValuePropsItemsMutation]
 }
 
+input LearnBlocksTimelineEntriesMutation {
+  year: String
+  body: String
+}
+
+input LearnBlocksTimelineMutation {
+  scheme: String
+  heading: String
+  entries: [LearnBlocksTimelineEntriesMutation]
+}
+
 input LearnBlocksMutation {
   hero: LearnBlocksHeroMutation
   trustBar: LearnBlocksTrustBarMutation
@@ -9206,6 +10514,7 @@ input LearnBlocksMutation {
   teamShowcase: LearnBlocksTeamShowcaseMutation
   trustCertBlock: LearnBlocksTrustCertBlockMutation
   alertBanner: LearnBlocksAlertBannerMutation
+  prose: LearnBlocksProseMutation
   richText: LearnBlocksRichTextMutation
   currentKnowledgeCard: LearnBlocksCurrentKnowledgeCardMutation
   relatedKnowledgeBase: LearnBlocksRelatedKnowledgeBaseMutation
@@ -9217,12 +10526,13 @@ input LearnBlocksMutation {
   contactForm: LearnBlocksContactFormMutation
   segmentCards: LearnBlocksSegmentCardsMutation
   valueProps: LearnBlocksValuePropsMutation
+  timeline: LearnBlocksTimelineMutation
 }
 
 input LearnMutation {
   title: String
   excerpt: String
-  content: String
+  body: JSON
   category: String
   tags: [String]
   author: String
@@ -9256,6 +10566,7 @@ input ResourcesBlocksHeroMutation {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [ResourcesBlocksHeroBreadcrumbMutation]
 }
 
@@ -9312,6 +10623,7 @@ input ResourcesBlocksSolutionCardsMutation {
 input ResourcesBlocksProcessStepsStepsMutation {
   number: Float
   title: String
+  subtitle: String
   description: String
 }
 
@@ -9337,16 +10649,14 @@ input ResourcesBlocksMetricsBlockMutation {
 
 input ResourcesBlocksFeatureComparisonRowsMutation {
   feature: String
-  col1: String
-  col2: String
+  values: [String]
 }
 
 input ResourcesBlocksFeatureComparisonMutation {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [ResourcesBlocksFeatureComparisonRowsMutation]
 }
 
@@ -9507,6 +10817,14 @@ input ResourcesBlocksAlertBannerMutation {
   ctaLink: String
 }
 
+input ResourcesBlocksProseMutation {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 input ResourcesBlocksRichTextMutation {
   scheme: String
   heading: String
@@ -9620,6 +10938,17 @@ input ResourcesBlocksValuePropsMutation {
   items: [ResourcesBlocksValuePropsItemsMutation]
 }
 
+input ResourcesBlocksTimelineEntriesMutation {
+  year: String
+  body: String
+}
+
+input ResourcesBlocksTimelineMutation {
+  scheme: String
+  heading: String
+  entries: [ResourcesBlocksTimelineEntriesMutation]
+}
+
 input ResourcesBlocksMutation {
   hero: ResourcesBlocksHeroMutation
   trustBar: ResourcesBlocksTrustBarMutation
@@ -9641,6 +10970,7 @@ input ResourcesBlocksMutation {
   teamShowcase: ResourcesBlocksTeamShowcaseMutation
   trustCertBlock: ResourcesBlocksTrustCertBlockMutation
   alertBanner: ResourcesBlocksAlertBannerMutation
+  prose: ResourcesBlocksProseMutation
   richText: ResourcesBlocksRichTextMutation
   currentKnowledgeCard: ResourcesBlocksCurrentKnowledgeCardMutation
   relatedKnowledgeBase: ResourcesBlocksRelatedKnowledgeBaseMutation
@@ -9652,10 +10982,460 @@ input ResourcesBlocksMutation {
   contactForm: ResourcesBlocksContactFormMutation
   segmentCards: ResourcesBlocksSegmentCardsMutation
   valueProps: ResourcesBlocksValuePropsMutation
+  timeline: ResourcesBlocksTimelineMutation
 }
 
 input ResourcesMutation {
   blocks: [ResourcesBlocksMutation]
+  title: String
+  description: String
+  url: String
+  keywords: [String]
+  primaryKeyword: String
+  h1: String
+  tags: [String]
+}
+
+input CaseStudiesBlocksHeroBreadcrumbMutation {
+  label: String
+  href: String
+}
+
+input CaseStudiesBlocksHeroMutation {
+  scheme: String
+  wave: String
+  waveFill: String
+  eyebrow: String
+  headline: String
+  subtitle: String
+  primaryCtaText: String
+  primaryCtaLink: String
+  secondaryCtaText: String
+  secondaryCtaLink: String
+  backgroundImage: String
+  backgroundImageAlt: String
+  videoIframe: String
+  breadcrumb: [CaseStudiesBlocksHeroBreadcrumbMutation]
+}
+
+input CaseStudiesBlocksTrustBarItemsMutation {
+  text: String
+  logo: String
+}
+
+input CaseStudiesBlocksTrustBarMutation {
+  scheme: String
+  items: [CaseStudiesBlocksTrustBarItemsMutation]
+}
+
+input CaseStudiesBlocksStatsBarStatsMutation {
+  value: String
+  label: String
+  sublabel: String
+}
+
+input CaseStudiesBlocksStatsBarMutation {
+  scheme: String
+  heading: String
+  stats: [CaseStudiesBlocksStatsBarStatsMutation]
+}
+
+input CaseStudiesBlocksSegmentRouterSegmentsMutation {
+  title: String
+  description: String
+  ctaText: String
+  link: String
+}
+
+input CaseStudiesBlocksSegmentRouterMutation {
+  scheme: String
+  heading: String
+  segments: [CaseStudiesBlocksSegmentRouterSegmentsMutation]
+}
+
+input CaseStudiesBlocksSolutionCardsCardsMutation {
+  title: String
+  description: String
+  link: String
+  iconHint: String
+  image: String
+}
+
+input CaseStudiesBlocksSolutionCardsMutation {
+  scheme: String
+  heading: String
+  subheading: String
+  cards: [CaseStudiesBlocksSolutionCardsCardsMutation]
+}
+
+input CaseStudiesBlocksProcessStepsStepsMutation {
+  number: Float
+  title: String
+  subtitle: String
+  description: String
+}
+
+input CaseStudiesBlocksProcessStepsMutation {
+  scheme: String
+  heading: String
+  steps: [CaseStudiesBlocksProcessStepsStepsMutation]
+  ctaText: String
+  ctaLink: String
+}
+
+input CaseStudiesBlocksMetricsBlockMetricsMutation {
+  name: String
+  whatItMeasures: String
+  whyItMatters: String
+}
+
+input CaseStudiesBlocksMetricsBlockMutation {
+  scheme: String
+  heading: String
+  metrics: [CaseStudiesBlocksMetricsBlockMetricsMutation]
+}
+
+input CaseStudiesBlocksFeatureComparisonRowsMutation {
+  feature: String
+  values: [String]
+}
+
+input CaseStudiesBlocksFeatureComparisonMutation {
+  scheme: String
+  heading: String
+  tldr: String
+  columns: [String]
+  rows: [CaseStudiesBlocksFeatureComparisonRowsMutation]
+}
+
+input CaseStudiesBlocksEvidenceBlockCitationsMutation {
+  title: String
+  authors: String
+  journal: String
+  year: String
+  finding: String
+  link: String
+}
+
+input CaseStudiesBlocksEvidenceBlockMutation {
+  scheme: String
+  heading: String
+  pulledStat: String
+  pulledStatSource: String
+  citations: [CaseStudiesBlocksEvidenceBlockCitationsMutation]
+}
+
+input CaseStudiesBlocksTestimonialCarouselTestimonialsMutation {
+  quote: String
+  name: String
+  role: String
+  organization: String
+  photo: String
+}
+
+input CaseStudiesBlocksTestimonialCarouselMutation {
+  scheme: String
+  wave: String
+  waveFill: String
+  heading: String
+  testimonials: [CaseStudiesBlocksTestimonialCarouselTestimonialsMutation]
+}
+
+input CaseStudiesBlocksCaseStudyCardsCaseStudiesMutation {
+  title: String
+  metric: String
+  metricLabel: String
+  summary: String
+  sector: String
+  link: String
+  thumbnail: String
+}
+
+input CaseStudiesBlocksCaseStudyCardsMutation {
+  scheme: String
+  heading: String
+  caseStudies: [CaseStudiesBlocksCaseStudyCardsCaseStudiesMutation]
+}
+
+input CaseStudiesBlocksFaqAccordionFaqsMutation {
+  question: String
+  answer: String
+}
+
+input CaseStudiesBlocksFaqAccordionMutation {
+  scheme: String
+  heading: String
+  emitSchema: Boolean
+  faqs: [CaseStudiesBlocksFaqAccordionFaqsMutation]
+}
+
+input CaseStudiesBlocksCtaBannerMutation {
+  scheme: String
+  wave: String
+  waveFill: String
+  heading: String
+  bodyText: String
+  primaryCtaText: String
+  primaryCtaLink: String
+  secondaryCtaText: String
+  secondaryCtaLink: String
+}
+
+input CaseStudiesBlocksCtaInlineMutation {
+  scheme: String
+  heading: String
+  bodyText: String
+  primaryCtaText: String
+  primaryCtaLink: String
+  secondaryCtaText: String
+  secondaryCtaLink: String
+}
+
+input CaseStudiesBlocksImageFeatureBulletPointsMutation {
+  text: String
+}
+
+input CaseStudiesBlocksImageFeatureMutation {
+  scheme: String
+  imagePosition: String
+  image: String
+  imageAlt: String
+  headline: String
+  description: String
+  bulletPoints: [CaseStudiesBlocksImageFeatureBulletPointsMutation]
+  ctaText: String
+  ctaLink: String
+}
+
+input CaseStudiesBlocksVideoSectionMutation {
+  scheme: String
+  heading: String
+  videoUrl: String
+  caption: String
+  thumbnail: String
+}
+
+input CaseStudiesBlocksTeamGridTeamMutation {
+  name: String
+  role: String
+  credentials: String
+  bio: String
+  photo: String
+}
+
+input CaseStudiesBlocksTeamGridMutation {
+  scheme: String
+  heading: String
+  team: [CaseStudiesBlocksTeamGridTeamMutation]
+}
+
+input CaseStudiesBlocksTeamShowcaseTeamMutation {
+  name: String
+  role: String
+  credentials: String
+  bio: String
+  photo: String
+  linkedin: String
+  tier: String
+}
+
+input CaseStudiesBlocksTeamShowcaseMutation {
+  scheme: String
+  heading: String
+  subtitle: String
+  layout: String
+  team: [CaseStudiesBlocksTeamShowcaseTeamMutation]
+}
+
+input CaseStudiesBlocksTrustCertBlockBadgesMutation {
+  label: String
+  icon: String
+}
+
+input CaseStudiesBlocksTrustCertBlockMutation {
+  scheme: String
+  badges: [CaseStudiesBlocksTrustCertBlockBadgesMutation]
+}
+
+input CaseStudiesBlocksAlertBannerMutation {
+  scheme: String
+  type: String
+  text: String
+  ctaText: String
+  ctaLink: String
+}
+
+input CaseStudiesBlocksProseMutation {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
+input CaseStudiesBlocksRichTextMutation {
+  scheme: String
+  heading: String
+  body: String
+}
+
+input CaseStudiesBlocksCurrentKnowledgeCardTldrBulletsMutation {
+  text: String
+}
+
+input CaseStudiesBlocksCurrentKnowledgeCardSourcesMutation {
+  title: String
+  url: String
+  year: String
+}
+
+input CaseStudiesBlocksCurrentKnowledgeCardMutation {
+  scheme: String
+  question: String
+  directAnswer: String
+  tldrBullets: [CaseStudiesBlocksCurrentKnowledgeCardTldrBulletsMutation]
+  expandedAnswer: String
+  sources: [CaseStudiesBlocksCurrentKnowledgeCardSourcesMutation]
+  reviewedBy: String
+  lastReviewed: String
+}
+
+input CaseStudiesBlocksRelatedKnowledgeBaseMutation {
+  scheme: String
+  heading: String
+  limit: Float
+  filterTags: [String]
+}
+
+input CaseStudiesBlocksRelatedPagesMutation {
+  scheme: String
+  heading: String
+  limit: Float
+  filterTags: [String]
+}
+
+input CaseStudiesBlocksRoiCalculatorPromoMutation {
+  scheme: String
+  eyebrow: String
+  heading: String
+  promoBody: String
+  ctaText: String
+  ctaLink: String
+}
+
+input CaseStudiesBlocksLeadMagnetPromoMutation {
+  scheme: String
+  heading: String
+  promoBody: String
+  ctaText: String
+  ctaLink: String
+  coverImage: String
+}
+
+input CaseStudiesBlocksBreadcrumbItemsMutation {
+  label: String
+  href: String
+}
+
+input CaseStudiesBlocksBreadcrumbMutation {
+  scheme: String
+  items: [CaseStudiesBlocksBreadcrumbItemsMutation]
+}
+
+input CaseStudiesBlocksPartnerLogoCarouselLogosMutation {
+  src: String
+  alt: String
+}
+
+input CaseStudiesBlocksPartnerLogoCarouselMutation {
+  heading: String
+  subheading: String
+  scheme: String
+  logos: [CaseStudiesBlocksPartnerLogoCarouselLogosMutation]
+}
+
+input CaseStudiesBlocksContactFormMutation {
+  scheme: String
+  heading: String
+  subtitle: String
+  salesEmail: String
+  supportEmail: String
+}
+
+input CaseStudiesBlocksSegmentCardsCardsMutation {
+  title: String
+  body: String
+  icon: String
+  link: String
+}
+
+input CaseStudiesBlocksSegmentCardsMutation {
+  scheme: String
+  heading: String
+  cards: [CaseStudiesBlocksSegmentCardsCardsMutation]
+}
+
+input CaseStudiesBlocksValuePropsItemsMutation {
+  title: String
+  body: String
+}
+
+input CaseStudiesBlocksValuePropsMutation {
+  scheme: String
+  heading: String
+  items: [CaseStudiesBlocksValuePropsItemsMutation]
+}
+
+input CaseStudiesBlocksTimelineEntriesMutation {
+  year: String
+  body: String
+}
+
+input CaseStudiesBlocksTimelineMutation {
+  scheme: String
+  heading: String
+  entries: [CaseStudiesBlocksTimelineEntriesMutation]
+}
+
+input CaseStudiesBlocksMutation {
+  hero: CaseStudiesBlocksHeroMutation
+  trustBar: CaseStudiesBlocksTrustBarMutation
+  statsBar: CaseStudiesBlocksStatsBarMutation
+  segmentRouter: CaseStudiesBlocksSegmentRouterMutation
+  solutionCards: CaseStudiesBlocksSolutionCardsMutation
+  processSteps: CaseStudiesBlocksProcessStepsMutation
+  metricsBlock: CaseStudiesBlocksMetricsBlockMutation
+  featureComparison: CaseStudiesBlocksFeatureComparisonMutation
+  evidenceBlock: CaseStudiesBlocksEvidenceBlockMutation
+  testimonialCarousel: CaseStudiesBlocksTestimonialCarouselMutation
+  caseStudyCards: CaseStudiesBlocksCaseStudyCardsMutation
+  faqAccordion: CaseStudiesBlocksFaqAccordionMutation
+  ctaBanner: CaseStudiesBlocksCtaBannerMutation
+  ctaInline: CaseStudiesBlocksCtaInlineMutation
+  imageFeature: CaseStudiesBlocksImageFeatureMutation
+  videoSection: CaseStudiesBlocksVideoSectionMutation
+  teamGrid: CaseStudiesBlocksTeamGridMutation
+  teamShowcase: CaseStudiesBlocksTeamShowcaseMutation
+  trustCertBlock: CaseStudiesBlocksTrustCertBlockMutation
+  alertBanner: CaseStudiesBlocksAlertBannerMutation
+  prose: CaseStudiesBlocksProseMutation
+  richText: CaseStudiesBlocksRichTextMutation
+  currentKnowledgeCard: CaseStudiesBlocksCurrentKnowledgeCardMutation
+  relatedKnowledgeBase: CaseStudiesBlocksRelatedKnowledgeBaseMutation
+  relatedPages: CaseStudiesBlocksRelatedPagesMutation
+  roiCalculatorPromo: CaseStudiesBlocksRoiCalculatorPromoMutation
+  leadMagnetPromo: CaseStudiesBlocksLeadMagnetPromoMutation
+  breadcrumb: CaseStudiesBlocksBreadcrumbMutation
+  partnerLogoCarousel: CaseStudiesBlocksPartnerLogoCarouselMutation
+  contactForm: CaseStudiesBlocksContactFormMutation
+  segmentCards: CaseStudiesBlocksSegmentCardsMutation
+  valueProps: CaseStudiesBlocksValuePropsMutation
+  timeline: CaseStudiesBlocksTimelineMutation
+}
+
+input CaseStudiesMutation {
+  slug: String
+  blocks: [CaseStudiesBlocksMutation]
   title: String
   description: String
   url: String
@@ -9683,6 +11463,7 @@ input CompanyBlocksHeroMutation {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [CompanyBlocksHeroBreadcrumbMutation]
 }
 
@@ -9739,6 +11520,7 @@ input CompanyBlocksSolutionCardsMutation {
 input CompanyBlocksProcessStepsStepsMutation {
   number: Float
   title: String
+  subtitle: String
   description: String
 }
 
@@ -9764,16 +11546,14 @@ input CompanyBlocksMetricsBlockMutation {
 
 input CompanyBlocksFeatureComparisonRowsMutation {
   feature: String
-  col1: String
-  col2: String
+  values: [String]
 }
 
 input CompanyBlocksFeatureComparisonMutation {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [CompanyBlocksFeatureComparisonRowsMutation]
 }
 
@@ -9934,6 +11714,14 @@ input CompanyBlocksAlertBannerMutation {
   ctaLink: String
 }
 
+input CompanyBlocksProseMutation {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 input CompanyBlocksRichTextMutation {
   scheme: String
   heading: String
@@ -10047,6 +11835,17 @@ input CompanyBlocksValuePropsMutation {
   items: [CompanyBlocksValuePropsItemsMutation]
 }
 
+input CompanyBlocksTimelineEntriesMutation {
+  year: String
+  body: String
+}
+
+input CompanyBlocksTimelineMutation {
+  scheme: String
+  heading: String
+  entries: [CompanyBlocksTimelineEntriesMutation]
+}
+
 input CompanyBlocksMutation {
   hero: CompanyBlocksHeroMutation
   trustBar: CompanyBlocksTrustBarMutation
@@ -10068,6 +11867,7 @@ input CompanyBlocksMutation {
   teamShowcase: CompanyBlocksTeamShowcaseMutation
   trustCertBlock: CompanyBlocksTrustCertBlockMutation
   alertBanner: CompanyBlocksAlertBannerMutation
+  prose: CompanyBlocksProseMutation
   richText: CompanyBlocksRichTextMutation
   currentKnowledgeCard: CompanyBlocksCurrentKnowledgeCardMutation
   relatedKnowledgeBase: CompanyBlocksRelatedKnowledgeBaseMutation
@@ -10079,6 +11879,7 @@ input CompanyBlocksMutation {
   contactForm: CompanyBlocksContactFormMutation
   segmentCards: CompanyBlocksSegmentCardsMutation
   valueProps: CompanyBlocksValuePropsMutation
+  timeline: CompanyBlocksTimelineMutation
 }
 
 input CompanyMutation {
@@ -10110,6 +11911,7 @@ input KnowledgeBaseBlocksHeroMutation {
   secondaryCtaLink: String
   backgroundImage: String
   backgroundImageAlt: String
+  videoIframe: String
   breadcrumb: [KnowledgeBaseBlocksHeroBreadcrumbMutation]
 }
 
@@ -10166,6 +11968,7 @@ input KnowledgeBaseBlocksSolutionCardsMutation {
 input KnowledgeBaseBlocksProcessStepsStepsMutation {
   number: Float
   title: String
+  subtitle: String
   description: String
 }
 
@@ -10191,16 +11994,14 @@ input KnowledgeBaseBlocksMetricsBlockMutation {
 
 input KnowledgeBaseBlocksFeatureComparisonRowsMutation {
   feature: String
-  col1: String
-  col2: String
+  values: [String]
 }
 
 input KnowledgeBaseBlocksFeatureComparisonMutation {
   scheme: String
   heading: String
   tldr: String
-  col1Header: String
-  col2Header: String
+  columns: [String]
   rows: [KnowledgeBaseBlocksFeatureComparisonRowsMutation]
 }
 
@@ -10361,6 +12162,14 @@ input KnowledgeBaseBlocksAlertBannerMutation {
   ctaLink: String
 }
 
+input KnowledgeBaseBlocksProseMutation {
+  scheme: String
+  align: String
+  eyebrow: String
+  heading: String
+  body: String
+}
+
 input KnowledgeBaseBlocksRichTextMutation {
   scheme: String
   heading: String
@@ -10474,6 +12283,17 @@ input KnowledgeBaseBlocksValuePropsMutation {
   items: [KnowledgeBaseBlocksValuePropsItemsMutation]
 }
 
+input KnowledgeBaseBlocksTimelineEntriesMutation {
+  year: String
+  body: String
+}
+
+input KnowledgeBaseBlocksTimelineMutation {
+  scheme: String
+  heading: String
+  entries: [KnowledgeBaseBlocksTimelineEntriesMutation]
+}
+
 input KnowledgeBaseBlocksMutation {
   hero: KnowledgeBaseBlocksHeroMutation
   trustBar: KnowledgeBaseBlocksTrustBarMutation
@@ -10495,6 +12315,7 @@ input KnowledgeBaseBlocksMutation {
   teamShowcase: KnowledgeBaseBlocksTeamShowcaseMutation
   trustCertBlock: KnowledgeBaseBlocksTrustCertBlockMutation
   alertBanner: KnowledgeBaseBlocksAlertBannerMutation
+  prose: KnowledgeBaseBlocksProseMutation
   richText: KnowledgeBaseBlocksRichTextMutation
   currentKnowledgeCard: KnowledgeBaseBlocksCurrentKnowledgeCardMutation
   relatedKnowledgeBase: KnowledgeBaseBlocksRelatedKnowledgeBaseMutation
@@ -10506,6 +12327,7 @@ input KnowledgeBaseBlocksMutation {
   contactForm: KnowledgeBaseBlocksContactFormMutation
   segmentCards: KnowledgeBaseBlocksSegmentCardsMutation
   valueProps: KnowledgeBaseBlocksValuePropsMutation
+  timeline: KnowledgeBaseBlocksTimelineMutation
 }
 
 input KnowledgeBaseMutation {

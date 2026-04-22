@@ -13,11 +13,11 @@ Able Care provides digital functional health assessment technology for healthcar
 
 ## Intellectual Property
 
-All content, features, and functionality of the Able Care website and services are owned by Able Care Ltd and are protected by international copyright, trademark, and other intellectual property laws.
+All content, features, and functionality of the Able Care website and services are owned by GripAble Ltd and are protected by international copyright, trademark, and other intellectual property laws.
 
 ## Limitation of Liability
 
-Able Care's tools are decision-support aids and do not replace clinical judgement. Healthcare professionals remain responsible for clinical decisions made using data from our platform.
+Able Care's tools are decision-support aids and do not replace clinical judgment. Healthcare professionals remain responsible for clinical decisions made using data from our platform.
 
 To the maximum extent permitted by law, Able Care shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services.
 

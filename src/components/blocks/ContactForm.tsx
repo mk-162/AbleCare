@@ -11,7 +11,7 @@ interface ContactFormProps {
 
 export function ContactForm({
   heading = "Let's talk about functional health.",
-  subtitle = "See how Able Assess can help your organisation spot decline, prevent falls, and empower your care teams.",
+  subtitle = "See how Able Assess can help your organization spot decline, prevent falls, and empower your care teams.",
   salesEmail = "hello@able-care.co",
   supportEmail = "hello@able-care.co",
 }: ContactFormProps) {

@@ -30,10 +30,6 @@
       "scheme": "grey",
       "heading": "Head-to-head comparison",
       "tldr": "Paper assessments like Morse and Tinetti take 20+ minutes, are scored subjectively by observation, vary from clinician to clinician and rarely make it into the care plan. Able Assess runs in under five minutes, scores automatically against normative data, delivers the same result regardless of who runs it and routes risk banding straight to the care team.",
-      "columns": [
-        "Able Assess",
-        "Paper Assessments (Morse, Tinetti)"
-      ],
       "rows": [
         {
           "feature": "Speed",
@@ -91,6 +87,10 @@
             "Requires clinical training at every site"
           ]
         }
+      ],
+      "columns": [
+        "Able Assess",
+        "Paper Assessments (Morse, Tinetti)"
       ]
     },
     {

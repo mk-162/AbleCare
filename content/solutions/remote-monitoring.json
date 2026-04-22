@@ -52,7 +52,7 @@
         {
           "number": 1,
           "title": "Orientation",
-          "description": "The therapist shows the patient and carer how to use the device. They complete a practice measurement together and agree on an assessment schedule."
+          "description": "The therapist shows the patient and caregiver how to use the device. They complete a practice measurement together and agree on an assessment schedule."
         },
         {
           "number": 2,
@@ -80,7 +80,7 @@
       "_template": "richText",
       "scheme": "light",
       "heading": "Tele-rehab integration",
-      "body": "<p>Physiotherapists delivering remote rehabilitation need objective evidence that exercises are working. Grip strength provides exactly that. A patient who sees their score improving builds confidence, stays motivated and sticks with their program.</p><p>This creates a feedback loop. The therapist prescribes, the patient measures, the data confirms progress or flags concern. Treatment decisions are based on objective trends rather than subjective self-report.</p>"
+      "body": "<p>Physical therapists delivering remote rehabilitation need objective evidence that exercises are working. Grip strength provides exactly that. A patient who sees their score improving builds confidence, stays motivated and sticks with their program.</p><p>This creates a feedback loop. The therapist prescribes, the patient measures, the data confirms progress or flags concern. Treatment decisions are based on objective trends rather than subjective self-report.</p>"
     },
     {
       "_template": "richText",

@@ -10,6 +10,7 @@ import { FeatureComparison } from "./FeatureComparison";
 import { EvidenceBlock } from "./EvidenceBlock";
 import { TestimonialCarousel } from "./TestimonialCarousel";
 import { CaseStudyCards } from "./CaseStudyCards";
+import { CaseStudyCustomerCard } from "./CaseStudyCustomerCard";
 import { FaqAccordion } from "./FaqAccordion";
 import { CtaBanner } from "./CtaBanner";
 import { CtaInline } from "./CtaInline";
@@ -29,8 +30,32 @@ import { ValueProps } from "./ValueProps";
 import { RelatedKnowledgeBase } from "./RelatedKnowledgeBase";
 import { RelatedPages } from "./RelatedPages";
 import { KnowledgeBaseCard } from "./KnowledgeBaseCard";
+import { Timeline } from "./Timeline";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { resolveBlockScheme } from "@/lib/resolve-scheme";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+/**
+ * Blocks whose wave sits at the TOP of the section — the rectangle
+ * above the wave curve must match the block that renders ABOVE them.
+ */
+const TOP_WAVE_BLOCKS = new Set(["ctaBanner", "testimonialCarousel"]);
+
+/**
+ * Blocks whose wave sits at the BOTTOM of the section — the rectangle
+ * below the wave curve must match the block that renders BELOW them.
+ */
+const BOTTOM_WAVE_BLOCKS = new Set(["hero"]);
+
+function getBlockType(block: any): string | null {
+  const typename = block.__typename;
+  if (typename) {
+    const stripped = typename.replace(/^.*Blocks/, "");
+    return stripped.charAt(0).toLowerCase() + stripped.slice(1);
+  }
+  return block._template || null;
+}
 
 /**
  * Normalize content JSON field names to component prop names.
@@ -153,27 +178,6 @@ function normalizeBlock(block: any): any {
     delete b.items;
   }
 
-  // featureComparison: ableAssess/paper → col1/col2
-  if (b.rows && Array.isArray(b.rows) && b.rows.length > 0 && b.rows[0]?.ableAssess !== undefined) {
-    b.rows = b.rows.map((r: any) => ({
-      feature: r.feature,
-      col1: r.ableAssess ?? r.col1,
-      col2: r.paper ?? r.col2,
-    }));
-  }
-
-  // featureComparison: columns/values format → col1Header/col2Header/col1/col2
-  if (b.columns && Array.isArray(b.columns) && b.rows && !b.col1Header) {
-    b.col1Header = b.columns[0] || "Able Assess";
-    b.col2Header = b.columns[1] || "Traditional";
-    b.rows = b.rows.map((r: any) => ({
-      feature: r.feature,
-      col1: r.values?.[0] ?? r.col1,
-      col2: r.values?.[1] ?? r.col2,
-    }));
-    delete b.columns;
-  }
-
   // title → heading for block types that use heading prop
   // (ctaInline, ctaBanner, etc. — most blocks use "heading" not "title")
   const template = b._template;
@@ -199,15 +203,24 @@ export function BlockRenderer({ blocks, pageTags, pageSlug }: BlockRendererProps
     <>
       {blocks.map((rawBlock, i) => {
         const block = normalizeBlock(rawBlock);
-        const typename = block.__typename;
+        const blockType = getBlockType(block);
 
-        // Extract collection prefix: "PagesBlocksHero" → "hero"
-        // TinaCMS __typename pattern: {Collection}Blocks{BlockName}
-        // Also support _template field (used by JSON content files)
-        const blockType = typename
-          ? typename.replace(/^.*Blocks/, "").charAt(0).toLowerCase() +
-            typename.replace(/^.*Blocks/, "").slice(1)
-          : block._template || null;
+        // Auto-derive waveFill from the adjacent block's scheme so the flat
+        // rectangle above/below the wave curve matches its neighbor. This
+        // replaces the manual `waveFill` field, which was error-prone.
+        if (blockType && BOTTOM_WAVE_BLOCKS.has(blockType)) {
+          // Skip non-visual blocks (breadcrumb renders null) when looking down.
+          let j = i + 1;
+          while (j < blocks.length && getBlockType(normalizeBlock(blocks[j])) === "breadcrumb") j++;
+          const next = j < blocks.length ? normalizeBlock(blocks[j]) : null;
+          block.waveFill = resolveBlockScheme(next);
+        }
+        if (blockType && TOP_WAVE_BLOCKS.has(blockType)) {
+          let j = i - 1;
+          while (j >= 0 && getBlockType(normalizeBlock(blocks[j])) === "breadcrumb") j--;
+          const prev = j >= 0 ? normalizeBlock(blocks[j]) : null;
+          block.waveFill = resolveBlockScheme(prev);
+        }
 
         switch (blockType) {
           case "hero":
@@ -230,6 +243,8 @@ export function BlockRenderer({ blocks, pageTags, pageSlug }: BlockRendererProps
             return <TestimonialCarousel key={i} {...block} />;
           case "caseStudyCards":
             return <CaseStudyCards key={i} {...block} />;
+          case "caseStudyCustomerCard":
+            return <CaseStudyCustomerCard key={i} {...block} />;
           case "faqAccordion":
             return <FaqAccordion key={i} {...block} />;
           case "ctaBanner":
@@ -267,19 +282,28 @@ export function BlockRenderer({ blocks, pageTags, pageSlug }: BlockRendererProps
             return <ValueProps key={i} {...block} />;
           case "currentKnowledgeCard":
             return <KnowledgeBaseCard key={i} {...block} />;
+          case "timeline":
+            return <Timeline key={i} {...block} />;
           case "relatedKnowledgeBase":
             return <RelatedKnowledgeBase key={i} items={block._resolvedItems} heading={block.heading} scheme={block.scheme} />;
           case "relatedPages":
             return <RelatedPages key={i} items={block._resolvedItems} pageTags={pageTags} heading={block.heading} scheme={block.scheme} />;
-          case "breadcrumb":
-            // breadcrumb blocks are handled by the hero component or skipped
-            return null;
+          case "breadcrumb": {
+            const items = Array.isArray(block.items) ? block.items : [];
+            if (items.length === 0) return null;
+            const variant = block.scheme === "blue" ? "light" : "dark";
+            return (
+              <div key={i} className="container mx-auto px-4 md:px-6 pt-24 md:pt-28">
+                <Breadcrumb items={items} variant={variant} />
+              </div>
+            );
+          }
           default:
             if (process.env.NODE_ENV === "development") {
               return (
                 <div key={i} className="py-8 px-4 bg-yellow-50 border border-yellow-200 text-center">
                   <p className="text-sm text-yellow-800 font-mono">
-                    Unknown block type: <strong>{typename || "undefined"}</strong>
+                    Unknown block type: <strong>{block.__typename || blockType || "undefined"}</strong>
                   </p>
                 </div>
               );
@@ -287,6 +311,31 @@ export function BlockRenderer({ blocks, pageTags, pageSlug }: BlockRendererProps
             return null;
         }
       })}
+      <FooterTransition
+        scheme={resolveBlockScheme(normalizeBlock(blocks[blocks.length - 1]))}
+      />
     </>
+  );
+}
+
+function FooterTransition({ scheme }: { scheme: ReturnType<typeof resolveBlockScheme> }) {
+  const schemeToHex: Record<string, string> = {
+    light: "#ffffff",
+    grey: "#DCDCDC",
+    blue: "#1432FF",
+    aqua: "#00FFD2",
+    black: "#191919",
+  };
+  const topColor = schemeToHex[scheme] ?? "#ffffff";
+  return (
+    <div className="relative w-full leading-none -mt-px -mb-px" aria-hidden="true" style={{ marginBottom: "-1px", marginTop: "-1px" }}>
+      <svg viewBox="-1 -1 1442 84" preserveAspectRatio="none" className="block w-full" style={{ height: "84px" }}>
+        <rect x="-1" y="-1" width="1442" height="84" fill={topColor} />
+        <path
+          fill="#191919"
+          d="M-1,41 C240,81 480,1 720,41 C960,81 1200,21 1441,41 L1441,83 L-1,83 Z"
+        />
+      </svg>
+    </div>
   );
 }

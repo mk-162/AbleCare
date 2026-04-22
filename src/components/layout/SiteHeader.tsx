@@ -3,9 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ChevronDown, ShoppingBag } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useCart } from "@/lib/cart-context";
 
 /* ─── Navigation data matching Site Navigation spec ─── */
 
@@ -13,35 +12,22 @@ type NavItem = { label: string; href: string; desc?: string; external?: boolean 
 
 const solutionsMenu: { platform: NavItem[]; capabilities: NavItem[] } = {
   platform: [
-    { label: "Able Assess", href: "/solutions/able-assess", desc: "Best in class assessment of strength and falls risk." },
-    { label: "Able Assess — Falls Prevention Application", href: "/solutions/falls-prevention", desc: "Upstream screening for early and accurate identification of risk of falling." },
+    { label: "Able Assess - Falls Prevention Application", href: "/solutions/able-assess", desc: "Best in class assessment of strength and falls risk." },
     { label: "Able Assess — Grip Strength Application", href: "/solutions/grip-strength", desc: "Unlocking the fifth vital sign for application in data-driven healthcare." },
     { label: "The GripAble Sensor", href: "/solutions/sensor", desc: "One best-in-class sensor, many applications." },
   ],
   capabilities: [],
 };
 
-const segmentsMenu = {
-  homeCare: [
-    { label: "Home Care", href: "/home-care", desc: "Reduce client falls and protect retention across every branch." },
-    { label: "PE-Backed Home Care", href: "/home-care/pe-backed", desc: "One screening workflow, every branch." },
-    { label: "Independent Home Care", href: "/home-care/independent", desc: "Evidence-led quality differentiation for referrers and families." },
-  ],
-  seniorLiving: [
-    { label: "Senior Living", href: "/senior-living", desc: "Protect residents, occupancy and NOI." },
-    { label: "CCRCs & Life Plan", href: "/senior-living/ccrc-life-plan", desc: "Coordinated screening across care levels." },
-    { label: "Independent Living", href: "/senior-living/independent-living", desc: "Proactive wellness and early risk identification." },
-    { label: "Assisted Living", href: "/senior-living/assisted-living", desc: "Standardised assessment for elevated-risk residents." },
-  ],
-  clinical: [
-    { label: "Skilled Nursing", href: "/skilled-nursing", desc: "Standardised screening across every facility." },
-    { label: "Pharma & CROs", href: "/pharma", desc: "Digital endpoints for clinical trials." },
-  ],
-};
+const segmentItems: NavItem[] = [
+  { label: "Home Care", href: "/home-care", desc: "Reduce client falls and protect retention across every branch." },
+  { label: "Senior Living", href: "/senior-living", desc: "Protect residents, occupancy and NOI." },
+  { label: "CRO/Pharma", href: "/pharma", desc: "Digital endpoints for clinical trials." },
+];
 
 const resourcesMenu = {
   learn: [
-    { label: "Blog", href: "/blog", desc: "The topics that we are talking about." },
+    { label: "Blogs", href: "/blog", desc: "The topics that we are talking about." },
     { label: "Knowledge Base", href: "/knowledge-base", desc: "Our published papers, research summaries, and white papers." },
     { label: "Research Library", href: "/resources/research-library", desc: "A searchable library of the academic papers we are excited about." },
   ],
@@ -66,7 +52,6 @@ export function SiteHeader() {
   const [openMenu, setOpenMenu] = useState<MenuKey | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const desktopNavRef = useRef<HTMLElement>(null);
-  const { itemCount } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -190,35 +175,14 @@ export function SiteHeader() {
                 Who We Help <ChevronDown className={`w-3.5 h-3.5 transition-transform ${openMenu === "segments" ? "rotate-180" : ""}`} />
               </button>
               {openMenu === "segments" && (
-                <div className="absolute top-full right-0 w-[640px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div>
-                      <div className="text-xs font-bold uppercase tracking-widest text-ac-black/40 px-3 mb-2">Home Care</div>
-                      {segmentsMenu.homeCare.map((item) => (
-                        <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
-                          <div className="text-sm font-bold text-ac-black">{item.label}</div>
-                          <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
-                        </Link>
-                      ))}
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold uppercase tracking-widest text-ac-black/40 px-3 mb-2">Senior Living</div>
-                      {segmentsMenu.seniorLiving.map((item) => (
-                        <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
-                          <div className="text-sm font-bold text-ac-black">{item.label}</div>
-                          <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
-                        </Link>
-                      ))}
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold uppercase tracking-widest text-ac-black/40 px-3 mb-2">Clinical</div>
-                      {segmentsMenu.clinical.map((item) => (
-                        <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
-                          <div className="text-sm font-bold text-ac-black">{item.label}</div>
-                          <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
-                        </Link>
-                      ))}
-                    </div>
+                <div className="absolute top-full right-0 w-[360px] bg-white shadow-xl rounded-xl border border-black/5 p-3 mt-1">
+                  <div className="flex flex-col">
+                    {segmentItems.map((item) => (
+                      <Link key={item.href} href={item.href} className="block rounded-lg p-3 hover:bg-ac-grey/50 transition-colors" onClick={() => setOpenMenu(null)}>
+                        <div className="text-sm font-bold text-ac-black">{item.label}</div>
+                        <p className="text-xs text-ac-black/60 font-light mt-0.5">{item.desc}</p>
+                      </Link>
+                    ))}
                   </div>
                 </div>
               )}
@@ -300,19 +264,6 @@ export function SiteHeader() {
               )}
             </div>
 
-            {/* Shop + Cart */}
-            <Link href="/shop" className="px-3 py-2 text-sm font-medium text-ac-black hover:text-ac-blue transition-colors">
-              Shop
-            </Link>
-            <Link href="/cart" className="relative p-2 hover:bg-ac-grey/40 rounded-full transition-colors" aria-label="Cart">
-              <ShoppingBag className="w-5 h-5 text-ac-black" />
-              {itemCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 flex items-center justify-center min-w-[18px] h-[18px] px-1 bg-ac-blue text-white text-[10px] font-bold rounded-full leading-none">
-                  {itemCount > 99 ? "99+" : itemCount}
-                </span>
-              )}
-            </Link>
-
             {/* CTAs */}
             <Link href="/demo" className="ml-2">
               <Button className="bg-ac-blue text-white rounded-full px-6 font-bold shadow-sm hover:bg-ac-aqua hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-200">
@@ -345,7 +296,7 @@ export function SiteHeader() {
 
               {/* Who We Help */}
               <MobileAccordion label="Who We Help" expanded={expandedMobileItem} onToggle={setExpandedMobileItem}>
-                {[...segmentsMenu.homeCare, ...segmentsMenu.seniorLiving, ...segmentsMenu.clinical].map((item) => (
+                {segmentItems.map((item) => (
                   <MobileSubLink key={item.href} href={item.href} label={item.label} desc={item.desc} onClose={closeMobile} />
                 ))}
               </MobileAccordion>
@@ -365,15 +316,6 @@ export function SiteHeader() {
               </MobileAccordion>
             </ul>
             <div className="px-5 py-4 border-t border-ac-grey/40 space-y-3">
-              <Link href="/shop" onClick={closeMobile} className="flex items-center gap-2 text-sm font-semibold text-ac-black hover:text-ac-blue transition-colors">
-                <ShoppingBag className="w-4 h-4" />
-                Shop
-                {itemCount > 0 && (
-                  <span className="ml-auto bg-ac-blue text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
-                    {itemCount}
-                  </span>
-                )}
-              </Link>
               <Link href="/demo" onClick={closeMobile}>
                 <Button className="w-full bg-ac-blue text-white rounded-full font-bold hover:bg-ac-aqua hover:text-white hover:shadow-lg transition-all duration-200">
                   Book a demo

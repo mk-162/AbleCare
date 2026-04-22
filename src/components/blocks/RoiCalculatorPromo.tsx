@@ -17,7 +17,7 @@ export function RoiCalculatorPromo({
   scheme = "aqua",
   eyebrow = "ROI Calculator",
   heading = "What would fewer falls mean for your bottom line?",
-  promoBody: body = "See how reducing hospitalisations and streamlining assessments translates to significant savings across your organisation.",
+  promoBody: body = "See how reducing hospitalizations and streamlining assessments translates to significant savings across your organization.",
   ctaText = "Open the calculator",
   ctaLink = "/roi-calculator",
 }: RoiCalculatorPromoProps) {

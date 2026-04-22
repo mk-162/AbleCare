@@ -35,7 +35,7 @@
     },
     {
       "_template": "richText",
-      "body": "<h2>The Consistency Challenge Across Sites</h2><p>Multi-site home care operators face a critical problem: different branches screen for falls risk using different methods, timelines, and thresholds. Staff turnover is high. Training is inconsistent. Paper forms create silos of information. One branch may complete detailed risk assessments; another documents only basic facts. This variation creates two problems.</p><p>First, missed risks. A client flagged as high-risk by one carer may be screened differently by another. Second, documentation gaps. Auditors cannot verify that all clients received consistent screening. Liability exposure increases. Audit and payor documentation may lack supporting evidence.</p>"
+      "body": "<h2>The Consistency Challenge Across Sites</h2><p>Multi-site home care operators face a critical problem: different branches screen for falls risk using different methods, timelines, and thresholds. Staff turnover is high. Training is inconsistent. Paper forms create silos of information. One branch may complete detailed risk assessments; another documents only basic facts. This variation creates two problems.</p><p>First, missed risks. A client flagged as high-risk by one caregiver may be screened differently by another. Second, documentation gaps. Auditors cannot verify that all clients received consistent screening. Liability exposure increases. Audit and payor documentation may lack supporting evidence.</p>"
     },
     {
       "_template": "richText",
@@ -43,7 +43,7 @@
     },
     {
       "_template": "richText",
-      "body": "<h2>Training at Scale</h2><p>Large home care agencies cannot afford lengthy clinical training programs for every site. Task-shifting evidence shows that non-clinical staff can administer falls risk screening reliably with minimal preparation. Digital tools make scaling training feasible.</p><p>A digital screening system requires less than 15 minutes of training per user. Non-clinical staff (carers, care assistants, administrative workers) learn the workflow in a single session. Refresher training happens automatically when protocols change. All sites receive updates simultaneously, eliminating knowledge gaps between branches.</p>"
+      "body": "<h2>Training at Scale</h2><p>Large home care agencies cannot afford lengthy clinical training programs for every site. Task-shifting evidence shows that non-clinical staff can administer falls risk screening reliably with minimal preparation. Digital tools make scaling training feasible.</p><p>A digital screening system requires less than 15 minutes of training per user. Non-clinical staff (caregivers, care assistants, administrative workers) learn the workflow in a single session. Refresher training happens automatically when protocols change. All sites receive updates simultaneously, eliminating knowledge gaps between branches.</p>"
     },
     {
       "_template": "richText",

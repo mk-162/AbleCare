@@ -122,7 +122,7 @@
     {
       "_template": "imageFeature",
       "heading": "Built for non-clinical staff",
-      "body": "Your carers are not clinicians, and they do not need to be. Able Assess was designed so any staff member can deliver a clinical-grade screening with zero training overhead. The sensor guides them through every step. Results are instant. No interpretation required.",
+      "body": "Your caregivers are not clinicians, and they do not need to be. Able Assess was designed so any staff member can deliver a clinical-grade screening with zero training overhead. The sensor guides them through every step. Results are instant. No interpretation required.",
       "imageSrc": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg",
       "imageAlt": "Care manager and client using GripAble sensor and tablet app",
       "imageSide": "right",
@@ -149,7 +149,7 @@
         },
         {
           "question": "Can non-clinical staff actually run this?",
-          "answer": "Yes. Able Assess was built specifically for non-clinical carers. The sensor and app guide each step. Staff do not need to interpret results. The system scores and risk-bands automatically. This is critical for franchises with high turnover and 1099 contract staff."
+          "answer": "Yes. Able Assess was built specifically for non-clinical caregivers. The sensor and app guide each step. Staff do not need to interpret results. The system scores and risk-bands automatically. This is critical for franchises with high turnover and 1099 contract staff."
         },
         {
           "question": "How does this protect our HHVBP performance?",
@@ -165,7 +165,7 @@
         },
         {
           "question": "What hardware do we need?",
-          "answer": "One GripAble sensor per branch (or per carer, for larger branches) and a tablet running the Able Assess app. The sensor is drop-proof, auto-calibrating, and FDA listed."
+          "answer": "One GripAble sensor per branch (or per caregiver, for larger branches) and a tablet running the Able Assess app. The sensor is drop-proof, auto-calibrating, and FDA listed."
         }
       ]
     },

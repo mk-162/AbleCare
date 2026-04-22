@@ -27,10 +27,6 @@
       "scheme": "grey",
       "heading": "Head-to-head comparison",
       "tldr": "SafelyYou uses AI-powered cameras to detect falls in real time and alert care staff. It is a response tool: it shortens the time a resident spends on the floor after a fall. Able Assess sits upstream. It screens every resident with four objective, sensor-based metrics, stratifies risk before a fall occurs, and gives the care team a data-backed plan to prevent it. Both tools have a place, but they solve different problems.",
-      "columns": [
-        "Able Assess",
-        "SafelyYou"
-      ],
       "rows": [
         {
           "feature": "Category",
@@ -88,6 +84,10 @@
             "Post-fall video informs root-cause analysis and reactive care adjustments"
           ]
         }
+      ],
+      "columns": [
+        "Able Assess",
+        "SafelyYou"
       ]
     },
     {

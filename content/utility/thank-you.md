@@ -12,4 +12,4 @@ In the meantime, you might find these resources helpful:
 - [Case studies](/resources/case-studies/)
 - [Download the Buyers Guide](/resources/buyers-guide/)
 
-If your enquiry is urgent, please email us directly at hello@able-care.co.
+If your inquiry is urgent, please email us directly at hello@able-care.co.

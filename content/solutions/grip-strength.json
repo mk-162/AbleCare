@@ -31,7 +31,7 @@
       "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
       "backgroundImageAlt": "Clinician holding the GripAble digital dynamometer",
       "eyebrow": "Solutions",
-      "headline": "The only fully digital grip strength platform.",
+      "headline": "Unlocking grip strength for application in data-driven healthcare.",
       "subtitle": "Clinical-grade grip strength measurement for clinicians, researchers and population health teams. Built from the ground up for data-driven healthcare.",
       "primaryCta": {
         "label": "Schedule a Demo",
@@ -48,12 +48,12 @@
       "heading": "Measurement built for clinical confidence",
       "metrics": [
         {
-          "name": "\u00b10.5 kg accuracy",
-          "description": "Clinical-grade digital dynamometry with calibration traceable to ISO 7500-1 standards."
+          "name": "Up-to-date population norms",
+          "description": "Gathered recently in the US and the UK, allowing for comparison to present-day populations."
         },
         {
-          "name": "ICC >0.95",
-          "description": "Intraclass correlation coefficient exceeding 0.95 across repeated measures, confirming excellent test-retest reliability."
+          "name": "Proven in Peer-Reviewed Research",
+          "description": "Best-in-class sensitivity, accuracy, and robustness."
         },
         {
           "name": "Fully standardized protocol",
@@ -78,26 +78,21 @@
       "steps": [
         {
           "number": 1,
-          "title": "Assess",
-          "description": "A guided 2-3 minute grip strength assessment on any tablet. Standardized positioning, timing and repetition."
+          "title": "Capture",
+          "description": "30 second assessment. Standardized positioning and instructions to ensure accuracy across assessments and raters."
         },
         {
           "number": 2,
-          "title": "Capture",
-          "description": "Results are auto-recorded digitally and compared against age and sex-matched normative data instantly."
+          "title": "Score",
+          "description": "Results automatically compared against population norms, no need for paper calculations or comparisons."
         },
         {
           "number": 3,
-          "title": "Interpret",
-          "description": "Automatic risk categorization flags individuals below normative thresholds. No manual scoring required."
+          "title": "Act",
+          "description": "Report generated for immediate referral of at-risk individuals."
         },
         {
           "number": 4,
-          "title": "Act",
-          "description": "Risk-stratified results inform care planning, referral pathways and preventive interventions."
-        },
-        {
-          "number": 5,
           "title": "Track",
           "description": "Monitor grip strength trends over time. Detect decline early and measure the impact of interventions."
         }

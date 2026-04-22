@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
   experimental: {
     scrollRestoration: false,
   },
+  async rewrites() {
+    return [
+      { source: "/admin", destination: "/admin/index.html" },
+      { source: "/admin/:path*", destination: "/admin/:path*" },
+    ];
+  },
   async redirects() {
     return [
       // Old segment URL

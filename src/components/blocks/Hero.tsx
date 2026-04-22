@@ -61,7 +61,7 @@ export function Hero({
   const waveBottom = waveFill ? schemeToHex(waveFill) : "#ffffff";
 
   return (
-    <div className="relative" style={{ marginBottom: "-82px" }}>
+    <div className="relative">
     <section className={`relative overflow-hidden ${bgClass} ${textClass}`}>
       <BrandmarkWatermark
         color="white"

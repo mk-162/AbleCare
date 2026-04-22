@@ -15,6 +15,7 @@ fragment PagesParts on Pages {
       secondaryCtaLink
       backgroundImage
       backgroundImageAlt
+      videoIframe
       breadcrumb {
         __typename
         label
@@ -70,6 +71,7 @@ fragment PagesParts on Pages {
         __typename
         number
         title
+        subtitle
         description
       }
       ctaText
@@ -89,13 +91,11 @@ fragment PagesParts on Pages {
       scheme
       heading
       tldr
-      col1Header
-      col2Header
+      columns
       rows {
         __typename
         feature
-        col1
-        col2
+        values
       }
     }
     ... on PagesBlocksEvidenceBlock {
@@ -235,6 +235,13 @@ fragment PagesParts on Pages {
       ctaText
       ctaLink
     }
+    ... on PagesBlocksProse {
+      scheme
+      align
+      eyebrow
+      heading
+      body
+    }
     ... on PagesBlocksRichText {
       scheme
       heading
@@ -331,6 +338,15 @@ fragment PagesParts on Pages {
         body
       }
     }
+    ... on PagesBlocksTimeline {
+      scheme
+      heading
+      entries {
+        __typename
+        year
+        body
+      }
+    }
   }
   title
   description
@@ -358,6 +374,7 @@ fragment SolutionsParts on Solutions {
       secondaryCtaLink
       backgroundImage
       backgroundImageAlt
+      videoIframe
       breadcrumb {
         __typename
         label
@@ -413,6 +430,7 @@ fragment SolutionsParts on Solutions {
         __typename
         number
         title
+        subtitle
         description
       }
       ctaText
@@ -432,13 +450,11 @@ fragment SolutionsParts on Solutions {
       scheme
       heading
       tldr
-      col1Header
-      col2Header
+      columns
       rows {
         __typename
         feature
-        col1
-        col2
+        values
       }
     }
     ... on SolutionsBlocksEvidenceBlock {
@@ -578,6 +594,13 @@ fragment SolutionsParts on Solutions {
       ctaText
       ctaLink
     }
+    ... on SolutionsBlocksProse {
+      scheme
+      align
+      eyebrow
+      heading
+      body
+    }
     ... on SolutionsBlocksRichText {
       scheme
       heading
@@ -674,6 +697,15 @@ fragment SolutionsParts on Solutions {
         body
       }
     }
+    ... on SolutionsBlocksTimeline {
+      scheme
+      heading
+      entries {
+        __typename
+        year
+        body
+      }
+    }
   }
   title
   description
@@ -701,6 +733,7 @@ fragment SegmentsParts on Segments {
       secondaryCtaLink
       backgroundImage
       backgroundImageAlt
+      videoIframe
       breadcrumb {
         __typename
         label
@@ -756,6 +789,7 @@ fragment SegmentsParts on Segments {
         __typename
         number
         title
+        subtitle
         description
       }
       ctaText
@@ -775,13 +809,11 @@ fragment SegmentsParts on Segments {
       scheme
       heading
       tldr
-      col1Header
-      col2Header
+      columns
       rows {
         __typename
         feature
-        col1
-        col2
+        values
       }
     }
     ... on SegmentsBlocksEvidenceBlock {
@@ -921,6 +953,13 @@ fragment SegmentsParts on Segments {
       ctaText
       ctaLink
     }
+    ... on SegmentsBlocksProse {
+      scheme
+      align
+      eyebrow
+      heading
+      body
+    }
     ... on SegmentsBlocksRichText {
       scheme
       heading
@@ -1017,6 +1056,15 @@ fragment SegmentsParts on Segments {
         body
       }
     }
+    ... on SegmentsBlocksTimeline {
+      scheme
+      heading
+      entries {
+        __typename
+        year
+        body
+      }
+    }
   }
   title
   description
@@ -1044,6 +1092,7 @@ fragment CompareParts on Compare {
       secondaryCtaLink
       backgroundImage
       backgroundImageAlt
+      videoIframe
       breadcrumb {
         __typename
         label
@@ -1099,6 +1148,7 @@ fragment CompareParts on Compare {
         __typename
         number
         title
+        subtitle
         description
       }
       ctaText
@@ -1118,13 +1168,11 @@ fragment CompareParts on Compare {
       scheme
       heading
       tldr
-      col1Header
-      col2Header
+      columns
       rows {
         __typename
         feature
-        col1
-        col2
+        values
       }
     }
     ... on CompareBlocksEvidenceBlock {
@@ -1264,6 +1312,13 @@ fragment CompareParts on Compare {
       ctaText
       ctaLink
     }
+    ... on CompareBlocksProse {
+      scheme
+      align
+      eyebrow
+      heading
+      body
+    }
     ... on CompareBlocksRichText {
       scheme
       heading
@@ -1360,6 +1415,15 @@ fragment CompareParts on Compare {
         body
       }
     }
+    ... on CompareBlocksTimeline {
+      scheme
+      heading
+      entries {
+        __typename
+        year
+        body
+      }
+    }
   }
   title
   description
@@ -1374,7 +1438,7 @@ fragment LearnParts on Learn {
   __typename
   title
   excerpt
-  content
+  body
   category
   tags
   author
@@ -1402,6 +1466,7 @@ fragment LearnParts on Learn {
       secondaryCtaLink
       backgroundImage
       backgroundImageAlt
+      videoIframe
       breadcrumb {
         __typename
         label
@@ -1457,6 +1522,7 @@ fragment LearnParts on Learn {
         __typename
         number
         title
+        subtitle
         description
       }
       ctaText
@@ -1476,13 +1542,11 @@ fragment LearnParts on Learn {
       scheme
       heading
       tldr
-      col1Header
-      col2Header
+      columns
       rows {
         __typename
         feature
-        col1
-        col2
+        values
       }
     }
     ... on LearnBlocksEvidenceBlock {
@@ -1622,6 +1686,13 @@ fragment LearnParts on Learn {
       ctaText
       ctaLink
     }
+    ... on LearnBlocksProse {
+      scheme
+      align
+      eyebrow
+      heading
+      body
+    }
     ... on LearnBlocksRichText {
       scheme
       heading
@@ -1718,6 +1789,15 @@ fragment LearnParts on Learn {
         body
       }
     }
+    ... on LearnBlocksTimeline {
+      scheme
+      heading
+      entries {
+        __typename
+        year
+        body
+      }
+    }
   }
 }
 
@@ -1738,6 +1818,7 @@ fragment ResourcesParts on Resources {
       secondaryCtaLink
       backgroundImage
       backgroundImageAlt
+      videoIframe
       breadcrumb {
         __typename
         label
@@ -1793,6 +1874,7 @@ fragment ResourcesParts on Resources {
         __typename
         number
         title
+        subtitle
         description
       }
       ctaText
@@ -1812,13 +1894,11 @@ fragment ResourcesParts on Resources {
       scheme
       heading
       tldr
-      col1Header
-      col2Header
+      columns
       rows {
         __typename
         feature
-        col1
-        col2
+        values
       }
     }
     ... on ResourcesBlocksEvidenceBlock {
@@ -1958,6 +2038,13 @@ fragment ResourcesParts on Resources {
       ctaText
       ctaLink
     }
+    ... on ResourcesBlocksProse {
+      scheme
+      align
+      eyebrow
+      heading
+      body
+    }
     ... on ResourcesBlocksRichText {
       scheme
       heading
@@ -2054,6 +2141,375 @@ fragment ResourcesParts on Resources {
         body
       }
     }
+    ... on ResourcesBlocksTimeline {
+      scheme
+      heading
+      entries {
+        __typename
+        year
+        body
+      }
+    }
+  }
+  title
+  description
+  url
+  keywords
+  primaryKeyword
+  h1
+  tags
+}
+
+fragment CaseStudiesParts on CaseStudies {
+  __typename
+  slug
+  blocks {
+    __typename
+    ... on CaseStudiesBlocksHero {
+      scheme
+      wave
+      waveFill
+      eyebrow
+      headline
+      subtitle
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+      backgroundImage
+      backgroundImageAlt
+      videoIframe
+      breadcrumb {
+        __typename
+        label
+        href
+      }
+    }
+    ... on CaseStudiesBlocksTrustBar {
+      scheme
+      items {
+        __typename
+        text
+        logo
+      }
+    }
+    ... on CaseStudiesBlocksStatsBar {
+      scheme
+      heading
+      stats {
+        __typename
+        value
+        label
+        sublabel
+      }
+    }
+    ... on CaseStudiesBlocksSegmentRouter {
+      scheme
+      heading
+      segments {
+        __typename
+        title
+        description
+        ctaText
+        link
+      }
+    }
+    ... on CaseStudiesBlocksSolutionCards {
+      scheme
+      heading
+      subheading
+      cards {
+        __typename
+        title
+        description
+        link
+        iconHint
+        image
+      }
+    }
+    ... on CaseStudiesBlocksProcessSteps {
+      scheme
+      heading
+      steps {
+        __typename
+        number
+        title
+        subtitle
+        description
+      }
+      ctaText
+      ctaLink
+    }
+    ... on CaseStudiesBlocksMetricsBlock {
+      scheme
+      heading
+      metrics {
+        __typename
+        name
+        whatItMeasures
+        whyItMatters
+      }
+    }
+    ... on CaseStudiesBlocksFeatureComparison {
+      scheme
+      heading
+      tldr
+      columns
+      rows {
+        __typename
+        feature
+        values
+      }
+    }
+    ... on CaseStudiesBlocksEvidenceBlock {
+      scheme
+      heading
+      pulledStat
+      pulledStatSource
+      citations {
+        __typename
+        title
+        authors
+        journal
+        year
+        finding
+        link
+      }
+    }
+    ... on CaseStudiesBlocksTestimonialCarousel {
+      scheme
+      wave
+      waveFill
+      heading
+      testimonials {
+        __typename
+        quote
+        name
+        role
+        organization
+        photo
+      }
+    }
+    ... on CaseStudiesBlocksCaseStudyCards {
+      scheme
+      heading
+      caseStudies {
+        __typename
+        title
+        metric
+        metricLabel
+        summary
+        sector
+        link
+        thumbnail
+      }
+    }
+    ... on CaseStudiesBlocksFaqAccordion {
+      scheme
+      heading
+      emitSchema
+      faqs {
+        __typename
+        question
+        answer
+      }
+    }
+    ... on CaseStudiesBlocksCtaBanner {
+      scheme
+      wave
+      waveFill
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on CaseStudiesBlocksCtaInline {
+      scheme
+      heading
+      bodyText
+      primaryCtaText
+      primaryCtaLink
+      secondaryCtaText
+      secondaryCtaLink
+    }
+    ... on CaseStudiesBlocksImageFeature {
+      scheme
+      imagePosition
+      image
+      imageAlt
+      headline
+      description
+      bulletPoints {
+        __typename
+        text
+      }
+      ctaText
+      ctaLink
+    }
+    ... on CaseStudiesBlocksVideoSection {
+      scheme
+      heading
+      videoUrl
+      caption
+      thumbnail
+    }
+    ... on CaseStudiesBlocksTeamGrid {
+      scheme
+      heading
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+      }
+    }
+    ... on CaseStudiesBlocksTeamShowcase {
+      scheme
+      heading
+      subtitle
+      layout
+      team {
+        __typename
+        name
+        role
+        credentials
+        bio
+        photo
+        linkedin
+        tier
+      }
+    }
+    ... on CaseStudiesBlocksTrustCertBlock {
+      scheme
+      badges {
+        __typename
+        label
+        icon
+      }
+    }
+    ... on CaseStudiesBlocksAlertBanner {
+      scheme
+      type
+      text
+      ctaText
+      ctaLink
+    }
+    ... on CaseStudiesBlocksProse {
+      scheme
+      align
+      eyebrow
+      heading
+      body
+    }
+    ... on CaseStudiesBlocksRichText {
+      scheme
+      heading
+      body
+    }
+    ... on CaseStudiesBlocksCurrentKnowledgeCard {
+      scheme
+      question
+      directAnswer
+      tldrBullets {
+        __typename
+        text
+      }
+      expandedAnswer
+      sources {
+        __typename
+        title
+        url
+        year
+      }
+      reviewedBy
+      lastReviewed
+    }
+    ... on CaseStudiesBlocksRelatedKnowledgeBase {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on CaseStudiesBlocksRelatedPages {
+      scheme
+      heading
+      limit
+      filterTags
+    }
+    ... on CaseStudiesBlocksRoiCalculatorPromo {
+      scheme
+      eyebrow
+      heading
+      promoBody
+      ctaText
+      ctaLink
+    }
+    ... on CaseStudiesBlocksLeadMagnetPromo {
+      scheme
+      heading
+      promoBody
+      ctaText
+      ctaLink
+      coverImage
+    }
+    ... on CaseStudiesBlocksBreadcrumb {
+      scheme
+      items {
+        __typename
+        label
+        href
+      }
+    }
+    ... on CaseStudiesBlocksPartnerLogoCarousel {
+      heading
+      subheading
+      scheme
+      logos {
+        __typename
+        src
+        alt
+      }
+    }
+    ... on CaseStudiesBlocksContactForm {
+      scheme
+      heading
+      subtitle
+      salesEmail
+      supportEmail
+    }
+    ... on CaseStudiesBlocksSegmentCards {
+      scheme
+      heading
+      cards {
+        __typename
+        title
+        body
+        icon
+        link
+      }
+    }
+    ... on CaseStudiesBlocksValueProps {
+      scheme
+      heading
+      items {
+        __typename
+        title
+        body
+      }
+    }
+    ... on CaseStudiesBlocksTimeline {
+      scheme
+      heading
+      entries {
+        __typename
+        year
+        body
+      }
+    }
   }
   title
   description
@@ -2081,6 +2537,7 @@ fragment CompanyParts on Company {
       secondaryCtaLink
       backgroundImage
       backgroundImageAlt
+      videoIframe
       breadcrumb {
         __typename
         label
@@ -2136,6 +2593,7 @@ fragment CompanyParts on Company {
         __typename
         number
         title
+        subtitle
         description
       }
       ctaText
@@ -2155,13 +2613,11 @@ fragment CompanyParts on Company {
       scheme
       heading
       tldr
-      col1Header
-      col2Header
+      columns
       rows {
         __typename
         feature
-        col1
-        col2
+        values
       }
     }
     ... on CompanyBlocksEvidenceBlock {
@@ -2301,6 +2757,13 @@ fragment CompanyParts on Company {
       ctaText
       ctaLink
     }
+    ... on CompanyBlocksProse {
+      scheme
+      align
+      eyebrow
+      heading
+      body
+    }
     ... on CompanyBlocksRichText {
       scheme
       heading
@@ -2397,6 +2860,15 @@ fragment CompanyParts on Company {
         body
       }
     }
+    ... on CompanyBlocksTimeline {
+      scheme
+      heading
+      entries {
+        __typename
+        year
+        body
+      }
+    }
   }
   title
   description
@@ -2441,6 +2913,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       secondaryCtaLink
       backgroundImage
       backgroundImageAlt
+      videoIframe
       breadcrumb {
         __typename
         label
@@ -2496,6 +2969,7 @@ fragment KnowledgeBaseParts on KnowledgeBase {
         __typename
         number
         title
+        subtitle
         description
       }
       ctaText
@@ -2515,13 +2989,11 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       scheme
       heading
       tldr
-      col1Header
-      col2Header
+      columns
       rows {
         __typename
         feature
-        col1
-        col2
+        values
       }
     }
     ... on KnowledgeBaseBlocksEvidenceBlock {
@@ -2661,6 +3133,13 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       ctaText
       ctaLink
     }
+    ... on KnowledgeBaseBlocksProse {
+      scheme
+      align
+      eyebrow
+      heading
+      body
+    }
     ... on KnowledgeBaseBlocksRichText {
       scheme
       heading
@@ -2754,6 +3233,15 @@ fragment KnowledgeBaseParts on KnowledgeBase {
       items {
         __typename
         title
+        body
+      }
+    }
+    ... on KnowledgeBaseBlocksTimeline {
+      scheme
+      heading
+      entries {
+        __typename
+        year
         body
       }
     }

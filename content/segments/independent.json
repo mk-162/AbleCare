@@ -100,9 +100,9 @@
     {
       "_template": "imageFeature",
       "heading": "Clinical credibility without clinical overhead",
-      "body": "Your carers do not need clinical qualifications to run Able Assess. The sensor guides each step. Results are scored automatically against normative data. You get clinical-grade screening without hiring additional clinicians or increasing training budgets.",
+      "body": "Your caregivers do not need clinical qualifications to run Able Assess. The sensor guides each step. Results are scored automatically against normative data. You get clinical-grade screening without hiring additional clinicians or increasing training budgets.",
       "imageSrc": "/images/features/holding-hands-solid-bg-min.jpg",
-      "imageAlt": "Carer supporting client during a screening session",
+      "imageAlt": "Caregiver supporting client during a screening session",
       "imageSide": "right",
       "primaryCta": { "label": "See how it works", "href": "/solutions/able-assess" }
     },

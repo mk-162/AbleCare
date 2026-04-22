@@ -328,6 +328,61 @@ query resourcesConnection($before: String, $after: String, $first: Float, $last:
   }
 }
 
+query caseStudies($relativePath: String!) {
+  caseStudies(relativePath: $relativePath) {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        hasReferences
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...CaseStudiesParts
+  }
+}
+
+query caseStudiesConnection($before: String, $after: String, $first: Float, $last: Float, $sort: String, $filter: CaseStudiesFilter) {
+  caseStudiesConnection(
+    before: $before
+    after: $after
+    first: $first
+    last: $last
+    sort: $sort
+    filter: $filter
+  ) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+    totalCount
+    edges {
+      cursor
+      node {
+        ... on Document {
+          _sys {
+            filename
+            basename
+            hasReferences
+            breadcrumbs
+            path
+            relativePath
+            extension
+          }
+          id
+        }
+        ...CaseStudiesParts
+      }
+    }
+  }
+}
+
 query company($relativePath: String!) {
   company(relativePath: $relativePath) {
     ... on Document {
