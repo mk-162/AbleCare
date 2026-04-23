@@ -195,8 +195,7 @@ var metricsBlockBlock = {
       ui: { itemProps: (item) => ({ label: item.name || "Metric" }) },
       fields: [
         { type: "string", name: "name", label: "Metric Name", required: true },
-        { type: "string", name: "whatItMeasures", label: "What It Measures", ui: { component: "textarea" } },
-        { type: "string", name: "whyItMatters", label: "Why It Matters", ui: { component: "textarea" } }
+        { type: "string", name: "whatItMeasures", label: "What It Measures", ui: { component: "textarea" } }
       ]
     }
   ]
@@ -716,10 +715,10 @@ var leadMagnetPromoBlock = {
       label: item?.heading ? `Lead Magnet: ${item.heading}` : "Lead Magnet Promo"
     }),
     defaultItem: {
-      heading: "The Home Health Buyers Guide",
-      promoBody: "Everything you need to brief procurement, in 24 pages.",
-      ctaText: "Download free",
-      ctaLink: "/resources/guides/"
+      heading: "The Buyer's Guide to Functional Assessment",
+      promoBody: "A 24-page comprehensive resource for evaluating, procuring, and implementing objective functional measurement in community care.",
+      ctaText: "Download the guide",
+      ctaLink: "/resources/buyers-guide"
     }
   },
   fields: [
@@ -1239,6 +1238,72 @@ var config_default = defineConfig({
                 fields: [
                   { type: "string", name: "label", label: "Label", required: true },
                   { type: "string", name: "url", label: "URL", required: true }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      // ── Sidebar Widgets ─────────────────────────────────────────────────
+      {
+        name: "sidebarWidgets",
+        label: "Sidebar Widgets",
+        path: "content/settings",
+        format: "json",
+        ui: {
+          global: true,
+          allowedActions: { create: false, delete: false }
+        },
+        match: { include: "sidebar-widgets" },
+        fields: [
+          {
+            type: "object",
+            name: "blogSidebar",
+            label: "Blog Sidebar",
+            fields: [
+              {
+                type: "object",
+                name: "widgets",
+                label: "Widgets",
+                list: true,
+                ui: { itemProps: (item) => ({ label: item.title || "Widget" }) },
+                fields: [
+                  { type: "string", name: "title", label: "Title", required: true },
+                  { type: "string", name: "description", label: "Description", ui: { component: "textarea" } },
+                  { type: "string", name: "ctaText", label: "CTA Text" },
+                  { type: "string", name: "ctaLink", label: "CTA Link", required: true },
+                  {
+                    type: "string",
+                    name: "variant",
+                    label: "Variant",
+                    options: ["whitepaper", "tool", "landing"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: "object",
+            name: "kbSidebar",
+            label: "Knowledge Base Sidebar",
+            fields: [
+              {
+                type: "object",
+                name: "widgets",
+                label: "Widgets",
+                list: true,
+                ui: { itemProps: (item) => ({ label: item.title || "Widget" }) },
+                fields: [
+                  { type: "string", name: "title", label: "Title", required: true },
+                  { type: "string", name: "description", label: "Description", ui: { component: "textarea" } },
+                  { type: "string", name: "ctaText", label: "CTA Text" },
+                  { type: "string", name: "ctaLink", label: "CTA Link", required: true },
+                  {
+                    type: "string",
+                    name: "variant",
+                    label: "Variant",
+                    options: ["whitepaper", "tool", "landing"]
+                  }
                 ]
               }
             ]

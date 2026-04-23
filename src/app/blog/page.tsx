@@ -2,7 +2,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { BlogSidebar } from "@/components/blocks/BlogSidebar";
+import { SearchBox } from "@/components/search/SearchBox";
 import { getArticles, getCategories, slugifyCategory } from "@/lib/blog";
+import { getSearchDocs } from "@/lib/search-index";
 
 export const revalidate = 60;
 
@@ -20,6 +22,7 @@ export default async function BlogIndexPage({
   const { category: filterCategory } = await searchParams;
   const allArticles = getArticles();
   const categories = getCategories(allArticles);
+  const searchDocs = getSearchDocs("blog");
 
   const articles = filterCategory
     ? allArticles.filter(
@@ -55,11 +58,14 @@ export default async function BlogIndexPage({
           <h1 className="text-4xl md:text-5xl font-bold text-ac-black mb-4">
             {activeCategoryName || "Current Knowledge & Insights"}
           </h1>
-          <p className="text-lg text-ac-black/70 font-light max-w-2xl">
+          <p className="text-lg text-ac-black/70 font-light max-w-2xl mb-6">
             {activeCategoryName
               ? `Articles and guides on ${activeCategoryName.toLowerCase()}.`
               : "Expert perspectives on falls prevention, functional assessment, and the future of senior care technology."}
           </p>
+          <div className="max-w-xl">
+            <SearchBox documents={searchDocs} placeholder="Search blog articles..." />
+          </div>
         </div>
 
         {/* Category pills */}

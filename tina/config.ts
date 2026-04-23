@@ -748,10 +748,10 @@ const leadMagnetPromoBlock = {
       label: item?.heading ? `Lead Magnet: ${item.heading}` : "Lead Magnet Promo",
     }),
     defaultItem: {
-      heading: "The Home Health Buyers Guide",
-      promoBody: "Everything you need to brief procurement, in 24 pages.",
-      ctaText: "Download free",
-      ctaLink: "/resources/guides/",
+      heading: "The Buyer's Guide to Functional Assessment",
+      promoBody: "A 24-page comprehensive resource for evaluating, procuring, and implementing objective functional measurement in community care.",
+      ctaText: "Download the guide",
+      ctaLink: "/resources/buyers-guide",
     },
   },
   fields: [
@@ -1311,6 +1311,73 @@ export default defineConfig({
                 fields: [
                   { type: "string" as const, name: "label", label: "Label", required: true },
                   { type: "string" as const, name: "url", label: "URL", required: true },
+                ] as any,
+              },
+            ] as any,
+          },
+        ] as any,
+      },
+
+      // ── Sidebar Widgets ─────────────────────────────────────────────────
+      {
+        name: "sidebarWidgets",
+        label: "Sidebar Widgets",
+        path: "content/settings",
+        format: "json",
+        ui: {
+          global: true,
+          allowedActions: { create: false, delete: false },
+        },
+        match: { include: "sidebar-widgets" },
+        fields: [
+          {
+            type: "object" as const,
+            name: "blogSidebar",
+            label: "Blog Sidebar",
+            fields: [
+              {
+                type: "object" as const,
+                name: "widgets",
+                label: "Widgets",
+                list: true,
+                ui: { itemProps: (item: { title?: string }) => ({ label: item.title || "Widget" }) },
+                fields: [
+                  { type: "string" as const, name: "title", label: "Title", required: true },
+                  { type: "string" as const, name: "description", label: "Description", ui: { component: "textarea" } },
+                  { type: "string" as const, name: "ctaText", label: "CTA Text" },
+                  { type: "string" as const, name: "ctaLink", label: "CTA Link", required: true },
+                  {
+                    type: "string" as const,
+                    name: "variant",
+                    label: "Variant",
+                    options: ["whitepaper", "tool", "landing"],
+                  },
+                ] as any,
+              },
+            ] as any,
+          },
+          {
+            type: "object" as const,
+            name: "kbSidebar",
+            label: "Knowledge Base Sidebar",
+            fields: [
+              {
+                type: "object" as const,
+                name: "widgets",
+                label: "Widgets",
+                list: true,
+                ui: { itemProps: (item: { title?: string }) => ({ label: item.title || "Widget" }) },
+                fields: [
+                  { type: "string" as const, name: "title", label: "Title", required: true },
+                  { type: "string" as const, name: "description", label: "Description", ui: { component: "textarea" } },
+                  { type: "string" as const, name: "ctaText", label: "CTA Text" },
+                  { type: "string" as const, name: "ctaLink", label: "CTA Link", required: true },
+                  {
+                    type: "string" as const,
+                    name: "variant",
+                    label: "Variant",
+                    options: ["whitepaper", "tool", "landing"],
+                  },
                 ] as any,
               },
             ] as any,

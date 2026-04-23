@@ -84,7 +84,6 @@ fragment PagesParts on Pages {
         __typename
         name
         whatItMeasures
-        whyItMatters
       }
     }
     ... on PagesBlocksFeatureComparison {
@@ -443,7 +442,6 @@ fragment SolutionsParts on Solutions {
         __typename
         name
         whatItMeasures
-        whyItMatters
       }
     }
     ... on SolutionsBlocksFeatureComparison {
@@ -802,7 +800,6 @@ fragment SegmentsParts on Segments {
         __typename
         name
         whatItMeasures
-        whyItMatters
       }
     }
     ... on SegmentsBlocksFeatureComparison {
@@ -1161,7 +1158,6 @@ fragment CompareParts on Compare {
         __typename
         name
         whatItMeasures
-        whyItMatters
       }
     }
     ... on CompareBlocksFeatureComparison {
@@ -1535,7 +1531,6 @@ fragment LearnParts on Learn {
         __typename
         name
         whatItMeasures
-        whyItMatters
       }
     }
     ... on LearnBlocksFeatureComparison {
@@ -1887,7 +1882,6 @@ fragment ResourcesParts on Resources {
         __typename
         name
         whatItMeasures
-        whyItMatters
       }
     }
     ... on ResourcesBlocksFeatureComparison {
@@ -2246,7 +2240,6 @@ fragment CompanyParts on Company {
         __typename
         name
         whatItMeasures
-        whyItMatters
       }
     }
     ... on CompanyBlocksFeatureComparison {
@@ -2622,7 +2615,6 @@ fragment KnowledgeBaseParts on KnowledgeBase {
         __typename
         name
         whatItMeasures
-        whyItMatters
       }
     }
     ... on KnowledgeBaseBlocksFeatureComparison {
@@ -2939,6 +2931,32 @@ fragment NavigationParts on Navigation {
       __typename
       label
       url
+    }
+  }
+}
+
+fragment SidebarWidgetsParts on SidebarWidgets {
+  __typename
+  blogSidebar {
+    __typename
+    widgets {
+      __typename
+      title
+      description
+      ctaText
+      ctaLink
+      variant
+    }
+  }
+  kbSidebar {
+    __typename
+    widgets {
+      __typename
+      title
+      description
+      ctaText
+      ctaLink
+      variant
     }
   }
 }

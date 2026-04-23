@@ -346,10 +346,10 @@ export const blockSamples: BlockSample[] = [
     label: "Lead Magnet Promo",
     block: {
       _template: "leadMagnetPromo",
-      heading: "The Home Health Buyers Guide",
-      promoBody: "Everything you need to brief procurement, in 24 pages.",
-      ctaText: "Download free",
-      ctaLink: "/resources/guides/",
+      heading: "The Buyer's Guide to Functional Assessment",
+      promoBody: "A 24-page comprehensive resource for evaluating, procuring, and implementing objective functional measurement in community care.",
+      ctaText: "Download the guide",
+      ctaLink: "/resources/buyers-guide",
     },
   },
   {

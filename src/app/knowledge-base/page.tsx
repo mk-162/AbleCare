@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { ArrowRight, BookOpen, FileText, Beaker, ShoppingBag } from "lucide-react";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { SearchBox } from "@/components/search/SearchBox";
+import { getSearchDocs } from "@/lib/search-index";
 
 export const revalidate = 60;
 
@@ -111,6 +113,7 @@ async function getKBArticles(): Promise<KBArticle[]> {
 
 export default async function KnowledgeBaseHub() {
   const articles = await getKBArticles();
+  const searchDocs = getSearchDocs("knowledge-base");
 
   // Group by category
   const byCategory = new Map<string, KBArticle[]>();
@@ -137,10 +140,17 @@ export default async function KnowledgeBaseHub() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Evidence-based answers for falls prevention
           </h1>
-          <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-2xl">
+          <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed max-w-2xl mb-8">
             Clinical guides, assessment protocols, and implementation resources.
             Written by our team, reviewed by experts, and backed by peer-reviewed evidence.
           </p>
+          <div className="max-w-xl">
+            <SearchBox
+              documents={searchDocs}
+              placeholder="Search the knowledge base..."
+              variant="dark"
+            />
+          </div>
         </div>
         </div>
       </section>

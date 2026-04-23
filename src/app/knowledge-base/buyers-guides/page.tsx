@@ -32,11 +32,11 @@ const GUIDES: BuyerGuide[] = [
     featured: true,
   },
   {
-    slug: "hand-dynamometry-guide",
-    title: "Digital Hand Dynamometers: The Complete Guide",
+    slug: "hand-dynamometer-guide",
+    title: "Hand Dynamometer Guide: The Essentials",
     description:
-      "Everything you need to know about digital, Bluetooth and connected hand dynamometers for clinical and research use. How they work, how they compare to analogue devices, and what to look for when procuring.",
-    href: "/blog/hand-dynamometers",
+      "A three-step guide to grip strength and the GripAble hand dynamometer — how to choose a reliable device, administer measurements, and integrate grip strength into clinical workflows.",
+    href: "/blog/hand-dynamometer-guide",
     eyebrow: "Device Guide",
     readTime: 9,
   },

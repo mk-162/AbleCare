@@ -2,12 +2,14 @@ import { TagList } from "./TagList";
 import { TeamCredentialsWidget } from "./TeamCredentialsWidget";
 import { ContextualPromoWidget } from "./ContextualPromoWidget";
 import { LeadMagnetWidget } from "./LeadMagnetWidget";
+import { getSidebarWidgets } from "@/lib/sidebar-widgets";
 
 interface KBSidebarProps {
   tags: string[];
 }
 
 export function KBSidebar({ tags }: KBSidebarProps) {
+  const { kbSidebar } = getSidebarWidgets();
   return (
     <aside className="w-full lg:w-80 shrink-0 space-y-6">
       {/* Article tags */}
@@ -26,14 +28,17 @@ export function KBSidebar({ tags }: KBSidebarProps) {
       {/* Contextual product promo */}
       <ContextualPromoWidget tags={tags} />
 
-      {/* Buyer's guide lead magnet */}
-      <LeadMagnetWidget
-        title="Falls Prevention Buyer's Guide"
-        description="Compare the leading falls prevention tools side-by-side. Download the free guide."
-        ctaText="Download Guide"
-        ctaLink="/resources/buyers-guide"
-        variant="whitepaper"
-      />
+      {/* Lead magnet widgets */}
+      {kbSidebar.widgets.map((widget, idx) => (
+        <LeadMagnetWidget
+          key={`${widget.ctaLink}-${idx}`}
+          title={widget.title}
+          description={widget.description}
+          ctaText={widget.ctaText}
+          ctaLink={widget.ctaLink}
+          variant={widget.variant}
+        />
+      ))}
     </aside>
   );
 }

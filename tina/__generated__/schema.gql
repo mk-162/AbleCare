@@ -76,6 +76,8 @@ type Query {
   globalConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: GlobalFilter): GlobalConnection!
   navigation(relativePath: String): Navigation!
   navigationConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: NavigationFilter): NavigationConnection!
+  sidebarWidgets(relativePath: String): SidebarWidgets!
+  sidebarWidgetsConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: SidebarWidgetsFilter): SidebarWidgetsConnection!
 }
 
 input DocumentFilter {
@@ -90,6 +92,7 @@ input DocumentFilter {
   utility: UtilityFilter
   global: GlobalFilter
   navigation: NavigationFilter
+  sidebarWidgets: SidebarWidgetsFilter
 }
 
 type DocumentConnectionEdges {
@@ -115,7 +118,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Pages | Solutions | Segments | Compare | Learn | Resources | Company | KnowledgeBase | Utility | Global | Navigation | Folder
+union DocumentNode = Pages | Solutions | Segments | Compare | Learn | Resources | Company | KnowledgeBase | Utility | Global | Navigation | SidebarWidgets | Folder
 
 type PagesBlocksHeroBreadcrumb {
   label: String!
@@ -207,7 +210,6 @@ type PagesBlocksProcessSteps {
 type PagesBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
-  whyItMatters: String
 }
 
 type PagesBlocksMetricsBlock {
@@ -648,7 +650,6 @@ input PagesBlocksProcessStepsFilter {
 input PagesBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
-  whyItMatters: StringFilter
 }
 
 input PagesBlocksMetricsBlockFilter {
@@ -1112,7 +1113,6 @@ type SolutionsBlocksProcessSteps {
 type SolutionsBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
-  whyItMatters: String
 }
 
 type SolutionsBlocksMetricsBlock {
@@ -1529,7 +1529,6 @@ input SolutionsBlocksProcessStepsFilter {
 input SolutionsBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
-  whyItMatters: StringFilter
 }
 
 input SolutionsBlocksMetricsBlockFilter {
@@ -1988,7 +1987,6 @@ type SegmentsBlocksProcessSteps {
 type SegmentsBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
-  whyItMatters: String
 }
 
 type SegmentsBlocksMetricsBlock {
@@ -2405,7 +2403,6 @@ input SegmentsBlocksProcessStepsFilter {
 input SegmentsBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
-  whyItMatters: StringFilter
 }
 
 input SegmentsBlocksMetricsBlockFilter {
@@ -2864,7 +2861,6 @@ type CompareBlocksProcessSteps {
 type CompareBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
-  whyItMatters: String
 }
 
 type CompareBlocksMetricsBlock {
@@ -3281,7 +3277,6 @@ input CompareBlocksProcessStepsFilter {
 input CompareBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
-  whyItMatters: StringFilter
 }
 
 input CompareBlocksMetricsBlockFilter {
@@ -3740,7 +3735,6 @@ type LearnBlocksProcessSteps {
 type LearnBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
-  whyItMatters: String
 }
 
 type LearnBlocksMetricsBlock {
@@ -4171,7 +4165,6 @@ input LearnBlocksProcessStepsFilter {
 input LearnBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
-  whyItMatters: StringFilter
 }
 
 input LearnBlocksMetricsBlockFilter {
@@ -4638,7 +4631,6 @@ type ResourcesBlocksProcessSteps {
 type ResourcesBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
-  whyItMatters: String
 }
 
 type ResourcesBlocksMetricsBlock {
@@ -5055,7 +5047,6 @@ input ResourcesBlocksProcessStepsFilter {
 input ResourcesBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
-  whyItMatters: StringFilter
 }
 
 input ResourcesBlocksMetricsBlockFilter {
@@ -5514,7 +5505,6 @@ type CompanyBlocksProcessSteps {
 type CompanyBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
-  whyItMatters: String
 }
 
 type CompanyBlocksMetricsBlock {
@@ -5931,7 +5921,6 @@ input CompanyBlocksProcessStepsFilter {
 input CompanyBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
-  whyItMatters: StringFilter
 }
 
 input CompanyBlocksMetricsBlockFilter {
@@ -6390,7 +6379,6 @@ type KnowledgeBaseBlocksProcessSteps {
 type KnowledgeBaseBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
-  whyItMatters: String
 }
 
 type KnowledgeBaseBlocksMetricsBlock {
@@ -6817,7 +6805,6 @@ input KnowledgeBaseBlocksProcessStepsFilter {
 input KnowledgeBaseBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
-  whyItMatters: StringFilter
 }
 
 input KnowledgeBaseBlocksMetricsBlockFilter {
@@ -7356,6 +7343,78 @@ type NavigationConnection implements Connection {
   edges: [NavigationConnectionEdges]
 }
 
+type SidebarWidgetsBlogSidebarWidgets {
+  title: String!
+  description: String
+  ctaText: String
+  ctaLink: String!
+  variant: String
+}
+
+type SidebarWidgetsBlogSidebar {
+  widgets: [SidebarWidgetsBlogSidebarWidgets]
+}
+
+type SidebarWidgetsKbSidebarWidgets {
+  title: String!
+  description: String
+  ctaText: String
+  ctaLink: String!
+  variant: String
+}
+
+type SidebarWidgetsKbSidebar {
+  widgets: [SidebarWidgetsKbSidebarWidgets]
+}
+
+type SidebarWidgets implements Node & Document {
+  blogSidebar: SidebarWidgetsBlogSidebar
+  kbSidebar: SidebarWidgetsKbSidebar
+  id: ID!
+  _sys: SystemInfo!
+  _values: JSON!
+}
+
+input SidebarWidgetsBlogSidebarWidgetsFilter {
+  title: StringFilter
+  description: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  variant: StringFilter
+}
+
+input SidebarWidgetsBlogSidebarFilter {
+  widgets: SidebarWidgetsBlogSidebarWidgetsFilter
+}
+
+input SidebarWidgetsKbSidebarWidgetsFilter {
+  title: StringFilter
+  description: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  variant: StringFilter
+}
+
+input SidebarWidgetsKbSidebarFilter {
+  widgets: SidebarWidgetsKbSidebarWidgetsFilter
+}
+
+input SidebarWidgetsFilter {
+  blogSidebar: SidebarWidgetsBlogSidebarFilter
+  kbSidebar: SidebarWidgetsKbSidebarFilter
+}
+
+type SidebarWidgetsConnectionEdges {
+  cursor: String!
+  node: SidebarWidgets
+}
+
+type SidebarWidgetsConnection implements Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+  edges: [SidebarWidgetsConnectionEdges]
+}
+
 type Mutation {
   addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
   updateDocument(collection: String, relativePath: String!, params: DocumentUpdateMutation!): DocumentNode!
@@ -7384,6 +7443,8 @@ type Mutation {
   createGlobal(relativePath: String!, params: GlobalMutation!): Global!
   updateNavigation(relativePath: String!, params: NavigationMutation!): Navigation!
   createNavigation(relativePath: String!, params: NavigationMutation!): Navigation!
+  updateSidebarWidgets(relativePath: String!, params: SidebarWidgetsMutation!): SidebarWidgets!
+  createSidebarWidgets(relativePath: String!, params: SidebarWidgetsMutation!): SidebarWidgets!
 }
 
 input DocumentUpdateMutation {
@@ -7398,6 +7459,7 @@ input DocumentUpdateMutation {
   utility: UtilityMutation
   global: GlobalMutation
   navigation: NavigationMutation
+  sidebarWidgets: SidebarWidgetsMutation
   relativePath: String
 }
 
@@ -7413,6 +7475,7 @@ input DocumentMutation {
   utility: UtilityMutation
   global: GlobalMutation
   navigation: NavigationMutation
+  sidebarWidgets: SidebarWidgetsMutation
 }
 
 input PagesBlocksHeroBreadcrumbMutation {
@@ -7505,7 +7568,6 @@ input PagesBlocksProcessStepsMutation {
 input PagesBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
-  whyItMatters: String
 }
 
 input PagesBlocksMetricsBlockMutation {
@@ -7953,7 +8015,6 @@ input SolutionsBlocksProcessStepsMutation {
 input SolutionsBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
-  whyItMatters: String
 }
 
 input SolutionsBlocksMetricsBlockMutation {
@@ -8401,7 +8462,6 @@ input SegmentsBlocksProcessStepsMutation {
 input SegmentsBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
-  whyItMatters: String
 }
 
 input SegmentsBlocksMetricsBlockMutation {
@@ -8849,7 +8909,6 @@ input CompareBlocksProcessStepsMutation {
 input CompareBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
-  whyItMatters: String
 }
 
 input CompareBlocksMetricsBlockMutation {
@@ -9297,7 +9356,6 @@ input LearnBlocksProcessStepsMutation {
 input LearnBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
-  whyItMatters: String
 }
 
 input LearnBlocksMetricsBlockMutation {
@@ -9753,7 +9811,6 @@ input ResourcesBlocksProcessStepsMutation {
 input ResourcesBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
-  whyItMatters: String
 }
 
 input ResourcesBlocksMetricsBlockMutation {
@@ -10201,7 +10258,6 @@ input CompanyBlocksProcessStepsMutation {
 input CompanyBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
-  whyItMatters: String
 }
 
 input CompanyBlocksMetricsBlockMutation {
@@ -10649,7 +10705,6 @@ input KnowledgeBaseBlocksProcessStepsMutation {
 input KnowledgeBaseBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
-  whyItMatters: String
 }
 
 input KnowledgeBaseBlocksMetricsBlockMutation {
@@ -11074,6 +11129,35 @@ input NavigationFooterNavMutation {
 input NavigationMutation {
   mainNav: [NavigationMainNavMutation]
   footerNav: [NavigationFooterNavMutation]
+}
+
+input SidebarWidgetsBlogSidebarWidgetsMutation {
+  title: String
+  description: String
+  ctaText: String
+  ctaLink: String
+  variant: String
+}
+
+input SidebarWidgetsBlogSidebarMutation {
+  widgets: [SidebarWidgetsBlogSidebarWidgetsMutation]
+}
+
+input SidebarWidgetsKbSidebarWidgetsMutation {
+  title: String
+  description: String
+  ctaText: String
+  ctaLink: String
+  variant: String
+}
+
+input SidebarWidgetsKbSidebarMutation {
+  widgets: [SidebarWidgetsKbSidebarWidgetsMutation]
+}
+
+input SidebarWidgetsMutation {
+  blogSidebar: SidebarWidgetsBlogSidebarMutation
+  kbSidebar: SidebarWidgetsKbSidebarMutation
 }
 
 schema {

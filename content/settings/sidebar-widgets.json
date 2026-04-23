@@ -1,0 +1,31 @@
+{
+  "blogSidebar": {
+    "widgets": [
+      {
+        "title": "Falls Prevention Buyer's Guide",
+        "description": "Compare the leading falls prevention tools side-by-side. Download the free guide.",
+        "ctaText": "Download Guide",
+        "ctaLink": "/resources/buyers-guide",
+        "variant": "whitepaper"
+      },
+      {
+        "title": "Book a 30-Minute Demo",
+        "description": "See Able Assess in action, tailored to your care setting. No slides, no fluff.",
+        "ctaText": "Book a Demo",
+        "ctaLink": "/demo",
+        "variant": "landing"
+      }
+    ]
+  },
+  "kbSidebar": {
+    "widgets": [
+      {
+        "title": "Falls Prevention Buyer's Guide",
+        "description": "Compare the leading falls prevention tools side-by-side. Download the free guide.",
+        "ctaText": "Download Guide",
+        "ctaLink": "/resources/buyers-guide",
+        "variant": "whitepaper"
+      }
+    ]
+  }
+}

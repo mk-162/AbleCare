@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LeadMagnetWidget } from "./LeadMagnetWidget";
+import { getSidebarWidgets } from "@/lib/sidebar-widgets";
 
 interface CategoryCount {
   name: string;
@@ -17,6 +18,7 @@ function slugifyCategory(name: string): string {
 }
 
 export function BlogSidebar({ categories, activeCategory }: BlogSidebarProps) {
+  const { blogSidebar } = getSidebarWidgets();
   return (
     <aside className="w-full lg:w-80 shrink-0 space-y-6">
       <div className="space-y-6">
@@ -65,20 +67,16 @@ export function BlogSidebar({ categories, activeCategory }: BlogSidebarProps) {
         </div>
 
         {/* Lead Magnets */}
-        <LeadMagnetWidget
-          title="Falls Prevention Buyer's Guide"
-          description="Compare the leading falls prevention tools side-by-side. Download the free guide."
-          ctaText="Download Guide"
-          ctaLink="/resources/buyers-guide"
-          variant="whitepaper"
-        />
-        <LeadMagnetWidget
-          title="Book a 30-Minute Demo"
-          description="See Able Assess in action, tailored to your care setting. No slides, no fluff."
-          ctaText="Book a Demo"
-          ctaLink="/demo"
-          variant="landing"
-        />
+        {blogSidebar.widgets.map((widget, idx) => (
+          <LeadMagnetWidget
+            key={`${widget.ctaLink}-${idx}`}
+            title={widget.title}
+            description={widget.description}
+            ctaText={widget.ctaText}
+            ctaLink={widget.ctaLink}
+            variant={widget.variant}
+          />
+        ))}
       </div>
     </aside>
   );
