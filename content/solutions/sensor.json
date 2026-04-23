@@ -1,5 +1,4 @@
 {
-  "title": "The GripAble Sensor",
   "slug": "sensor",
   "seo": {
     "title": "The GripAble Sensor | Able Care",
@@ -8,53 +7,42 @@
   },
   "blocks": [
     {
-      "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Solutions", "href": "/solutions/able-assess" },
-        { "label": "The GripAble Sensor", "href": "/solutions/sensor" }
-      ]
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Solutions",
+          "href": "/solutions/able-assess"
+        },
+        {
+          "label": "The GripAble Sensor",
+          "href": "/solutions/sensor"
+        }
+      ],
+      "_template": "breadcrumb"
     },
     {
-      "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
-      "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
-      "backgroundImageAlt": "The GripAble sensor",
       "eyebrow": "Coming Soon",
       "headline": "The GripAble Sensor",
-      "subtitle": "One best-in-class sensor, many applications. A dedicated page covering specifications, accuracy, validation and applications is on the way.",
-      "primaryCta": {
-        "label": "Talk to Our Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "See it in Able Assess",
-        "href": "/solutions/able-assess"
-      }
+      "subtitle": "One best-in-class sensor, many applications. ",
+      "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
+      "backgroundImageAlt": "The GripAble sensor",
+      "_template": "hero"
     },
     {
-      "_template": "imageFeature",
-      "heading": "Full details coming soon",
-      "body": "We're putting together a dedicated home for the GripAble sensor — covering hardware specs, the science behind the measurement, clinical validation, and every application it powers across falls prevention, grip strength, rehabilitation and research. If there's something specific you'd like to know now, we'd love to hear from you.",
-      "imageSide": "right",
       "imageAlt": "The GripAble sensor in use",
-      "imageSrc": "/images/product/elderly-man-holding-gripable-resized.jpg",
       "ctaText": "Get in Touch",
-      "ctaLink": "/contact"
+      "ctaLink": "/contact",
+      "_template": "imageFeature"
     },
     {
-      "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Want to know more before the page is live?",
-      "body": "Our team can walk you through the sensor's specifications, accuracy data and the applications most relevant to you.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      }
+      "_template": "ctaBanner"
     }
   ],
+  "title": "The GripAble Sensor",
   "tags": [
     "sensor",
     "gripable",
