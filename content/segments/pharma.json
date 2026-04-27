@@ -1,5 +1,4 @@
 {
-  "title": "Grip Strength as a Clinical Trial Endpoint",
   "slug": "pharma",
   "seo": {
     "title": "Grip Strength for Clinical Trials - Pharma & CROs | Able Care",
@@ -8,7 +7,6 @@
   },
   "blocks": [
     {
-      "_template": "breadcrumb",
       "items": [
         {
           "label": "Home",
@@ -18,46 +16,36 @@
           "label": "Pharma & CROs",
           "href": "/pharma"
         }
-      ]
+      ],
+      "_template": "breadcrumb"
     },
     {
-      "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
-      "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
-      "backgroundImageAlt": "Clinician reviewing assessment data on tablet",
       "eyebrow": "Pharma & CROs",
       "headline": "Decentralized functional endpoints for clinical trials.",
       "subtitle": "One of the most informative clinical data points can now be captured with one of the most accurate, sensitive, and robust sensors on the market.",
-      "primaryCta": {
-        "label": "Talk to the Research Team",
-        "href": "/contact"
-      }
+      "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
+      "backgroundImageAlt": "Clinician reviewing assessment data on tablet",
+      "_template": "hero"
     },
     {
-      "_template": "metricsBlock",
       "heading": "Validated functional endpoints",
       "metrics": [
         {
-          "name": "Grip strength",
-          "description": "The primary endpoint for muscle function in GLP-1 trials, sarcopenia studies and oncology rehabilitation. Objective, digital, remote-capable."
+          "name": "Grip strength"
         },
         {
-          "name": "Sit-to-stand",
-          "description": "Lower-limb power and functional capacity. A validated secondary endpoint for frailty and rehabilitation trials."
+          "name": "Sit-to-stand"
         },
         {
-          "name": "Gait speed",
-          "description": "Functional mobility endpoint linked to disability, hospitalization and mortality across multiple therapeutic areas."
+          "name": "Gait speed"
         },
         {
-          "name": "Timed Up and Go",
-          "description": "Composite mobility and balance endpoint. Validated in geriatric, neurological and orthopedic trial populations."
+          "name": "Timed Up and Go"
         }
-      ]
+      ],
+      "_template": "metricsBlock"
     },
     {
-      "_template": "processSteps",
       "scheme": "grey",
       "heading": "How it works in clinical trials",
       "steps": [
@@ -73,18 +61,18 @@
         },
         {
           "number": 3,
-          "title": "Remote capture",
-          "description": "Participants complete assessments at home or at site. Data captured digitally, timestamped, and uploaded automatically."
+          "title": "Data Capture",
+          "description": "Participants complete assessments at home or on-site. Data captured digitally, time stamped, and uploaded automatically."
         },
         {
           "number": 4,
           "title": "Data delivery",
           "description": "Clean, structured endpoint data delivered in your preferred format. Ready for statistical analysis with full audit trail."
         }
-      ]
+      ],
+      "_template": "processSteps"
     },
     {
-      "_template": "evidenceBlock",
       "scheme": "aqua",
       "heading": "The evidence base",
       "pulledStat": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
@@ -105,28 +93,22 @@
           "journal": "Journal of Clinical Medicine, 2023",
           "link": "#"
         }
-      ]
+      ],
+      "_template": "evidenceBlock"
     },
     {
-      "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Talk to the research team about your trial.",
-      "body": "We can discuss endpoint design, site deployment and data delivery for your specific protocol.",
-      "primaryCta": {
-        "label": "Talk to the Research Team",
-        "href": "/contact"
-      }
+      "_template": "ctaBanner"
     },
     {
-      "_template": "leadMagnetPromo",
-      "eyebrow": "Free Whitepaper",
       "heading": "Grip Strength: The Essential Biomarker for Longevity",
       "promoBody": "Download the full clinical summary — peer-reviewed evidence linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment.",
       "ctaText": "Download the PDF",
-      "ctaLink": "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf"
+      "ctaLink": "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf",
+      "_template": "leadMagnetPromo"
     }
   ],
+  "title": "Grip Strength as a Clinical Trial Endpoint",
   "tags": [
     "pharma",
     "grip-strength",
