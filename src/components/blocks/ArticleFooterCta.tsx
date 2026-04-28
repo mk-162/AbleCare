@@ -5,8 +5,6 @@ interface ArticleFooterCtaProps {
   bodyText?: string;
   primaryCtaText?: string;
   primaryCtaLink?: string;
-  secondaryCtaText?: string;
-  secondaryCtaLink?: string;
 }
 
 export function ArticleFooterCta({
@@ -14,8 +12,6 @@ export function ArticleFooterCta({
   bodyText = "A 20-minute demo with a clinician who has run it in the field.",
   primaryCtaText = "Book a demo",
   primaryCtaLink = "/demo/",
-  secondaryCtaText = "Download the buyer's guide",
-  secondaryCtaLink = "/resources/buyers-guide/",
 }: ArticleFooterCtaProps) {
   return (
     <aside className="mt-12 mb-8 rounded-2xl overflow-hidden bg-gradient-to-br from-[#1432FF] to-[#0f28cc] relative">
@@ -54,14 +50,6 @@ export function ArticleFooterCta({
               className="inline-flex items-center justify-center rounded-full bg-ac-aqua text-ac-black font-bold px-7 py-3 text-sm hover:bg-white hover:shadow-lg transition-all duration-200"
             >
               {primaryCtaText}
-            </Link>
-          )}
-          {secondaryCtaText && secondaryCtaLink && (
-            <Link
-              href={secondaryCtaLink}
-              className="inline-flex items-center justify-center rounded-full border-2 border-white/30 text-white font-bold px-7 py-3 text-sm hover:bg-white/10 transition-all duration-200"
-            >
-              {secondaryCtaText}
             </Link>
           )}
         </div>
