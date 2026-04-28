@@ -9,6 +9,7 @@ interface ImageFeatureProps {
   headline?: string;
   description?: string;
   image?: string;
+  videoSrc?: string;
   imageAlt?: string;
   imagePosition?: string;
   imageFit?: "cover" | "contain";
@@ -22,6 +23,7 @@ export function ImageFeature({
   headline,
   description,
   image,
+  videoSrc,
   imageAlt,
   imagePosition = "right",
   imageFit = "cover",
@@ -91,20 +93,18 @@ export function ImageFeature({
             className="w-full lg:w-1/2"
           >
             <div className={`relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] ${imageFit === "contain" ? "bg-white" : isBlue ? "bg-white/10" : "bg-ac-grey"}`}>
-              {image ? (
-                /\.(mp4|webm|mov)$/i.test(image) ? (
-                  <video
-                    src={image}
-                    className={`absolute inset-0 w-full h-full ${imageFit === "contain" ? "object-contain" : "object-cover"}`}
-                    controls
-                    muted
-                    playsInline
-                    preload="metadata"
-                    aria-label={altText}
-                  />
-                ) : (
-                  <Image src={image} alt={altText} fill className={imageFit === "contain" ? "object-contain" : "object-cover"} />
-                )
+              {videoSrc ? (
+                <video
+                  src={videoSrc}
+                  className={`absolute inset-0 w-full h-full ${imageFit === "contain" ? "object-contain" : "object-cover"}`}
+                  controls
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label={altText}
+                />
+              ) : image ? (
+                <Image src={image} alt={altText} fill className={imageFit === "contain" ? "object-contain" : "object-cover"} />
               ) : (
                 <div className="absolute inset-0 w-full h-full" style={{ background: "linear-gradient(135deg, #1432FF 0%, #0a2bcc 40%, #00a896 80%, #00FFD2 100%)" }} />
               )}

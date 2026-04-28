@@ -77,7 +77,7 @@
       ],
       "imagePosition": "right",
       "imageAlt": "Circus Escape — an engaging Able Rehab activity that trains hand and wrist movements",
-      "image": "/videos/circus-escape-activity.mp4"
+      "videoSrc": "/videos/circus-escape-activity.mp4"
     },
     {
       "_template": "imageFeature",

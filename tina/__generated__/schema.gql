@@ -320,6 +320,7 @@ type PagesBlocksImageFeature {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -739,6 +740,7 @@ input PagesBlocksImageFeatureFilter {
   scheme: StringFilter
   imagePosition: StringFilter
   image: ImageFilter
+  videoSrc: StringFilter
   imageAlt: StringFilter
   imageFit: StringFilter
   headline: StringFilter
@@ -1169,6 +1171,7 @@ type SolutionsBlocksImageFeature {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -1559,6 +1562,7 @@ input SolutionsBlocksImageFeatureFilter {
   scheme: StringFilter
   imagePosition: StringFilter
   image: ImageFilter
+  videoSrc: StringFilter
   imageAlt: StringFilter
   imageFit: StringFilter
   headline: StringFilter
@@ -1989,6 +1993,7 @@ type SegmentsBlocksImageFeature {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -2379,6 +2384,7 @@ input SegmentsBlocksImageFeatureFilter {
   scheme: StringFilter
   imagePosition: StringFilter
   image: ImageFilter
+  videoSrc: StringFilter
   imageAlt: StringFilter
   imageFit: StringFilter
   headline: StringFilter
@@ -2809,6 +2815,7 @@ type CompareBlocksImageFeature {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -3199,6 +3206,7 @@ input CompareBlocksImageFeatureFilter {
   scheme: StringFilter
   imagePosition: StringFilter
   image: ImageFilter
+  videoSrc: StringFilter
   imageAlt: StringFilter
   imageFit: StringFilter
   headline: StringFilter
@@ -3629,6 +3637,7 @@ type LearnBlocksImageFeature {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -4033,6 +4042,7 @@ input LearnBlocksImageFeatureFilter {
   scheme: StringFilter
   imagePosition: StringFilter
   image: ImageFilter
+  videoSrc: StringFilter
   imageAlt: StringFilter
   imageFit: StringFilter
   headline: StringFilter
@@ -4471,6 +4481,7 @@ type ResourcesBlocksImageFeature {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -4861,6 +4872,7 @@ input ResourcesBlocksImageFeatureFilter {
   scheme: StringFilter
   imagePosition: StringFilter
   image: ImageFilter
+  videoSrc: StringFilter
   imageAlt: StringFilter
   imageFit: StringFilter
   headline: StringFilter
@@ -5291,6 +5303,7 @@ type CompanyBlocksImageFeature {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -5681,6 +5694,7 @@ input CompanyBlocksImageFeatureFilter {
   scheme: StringFilter
   imagePosition: StringFilter
   image: ImageFilter
+  videoSrc: StringFilter
   imageAlt: StringFilter
   imageFit: StringFilter
   headline: StringFilter
@@ -6376,6 +6390,7 @@ input PagesBlocksImageFeatureMutation {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -6795,6 +6810,7 @@ input SolutionsBlocksImageFeatureMutation {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -7214,6 +7230,7 @@ input SegmentsBlocksImageFeatureMutation {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -7633,6 +7650,7 @@ input CompareBlocksImageFeatureMutation {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -8052,6 +8070,7 @@ input LearnBlocksImageFeatureMutation {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -8479,6 +8498,7 @@ input ResourcesBlocksImageFeatureMutation {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String
@@ -8898,6 +8918,7 @@ input CompanyBlocksImageFeatureMutation {
   scheme: String
   imagePosition: String
   image: String
+  videoSrc: String
   imageAlt: String
   imageFit: String
   headline: String

@@ -175,6 +175,7 @@ fragment PagesParts on Pages {
       scheme
       imagePosition
       image
+      videoSrc
       imageAlt
       imageFit
       headline
@@ -511,6 +512,7 @@ fragment SolutionsParts on Solutions {
       scheme
       imagePosition
       image
+      videoSrc
       imageAlt
       imageFit
       headline
@@ -847,6 +849,7 @@ fragment SegmentsParts on Segments {
       scheme
       imagePosition
       image
+      videoSrc
       imageAlt
       imageFit
       headline
@@ -1183,6 +1186,7 @@ fragment CompareParts on Compare {
       scheme
       imagePosition
       image
+      videoSrc
       imageAlt
       imageFit
       headline
@@ -1534,6 +1538,7 @@ fragment LearnParts on Learn {
       scheme
       imagePosition
       image
+      videoSrc
       imageAlt
       imageFit
       headline
@@ -1863,6 +1868,7 @@ fragment ResourcesParts on Resources {
       scheme
       imagePosition
       image
+      videoSrc
       imageAlt
       imageFit
       headline
@@ -2199,6 +2205,7 @@ fragment CompanyParts on Company {
       scheme
       imagePosition
       image
+      videoSrc
       imageAlt
       imageFit
       headline

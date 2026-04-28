@@ -443,6 +443,7 @@ const imageFeatureBlock: any = {
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
     { type: "string" as const, name: "imagePosition", label: "Image Position", options: ["left", "right"], ui: { defaultValue: "right" } },
     { type: "image" as const, name: "image", label: "Image" },
+    { type: "string" as const, name: "videoSrc", label: "Video Source (path or URL)", description: "Path to a self-hosted video, e.g. /videos/clip.mp4. If set, takes precedence over Image. Use this for .mp4/.webm/.mov files so Tina does not rewrite them to its image CDN." },
     { type: "string" as const, name: "imageAlt", label: "Image Alt Text" },
     { type: "string" as const, name: "imageFit", label: "Image Fit", options: ["cover", "contain"], description: "Use 'contain' for screenshots so they aren't cropped.", ui: { defaultValue: "cover" } },
     { type: "string" as const, name: "headline", label: "Heading" },
