@@ -54,7 +54,12 @@ export function TestimonialCarousel({ scheme = "aqua", wave = "fold", waveFill, 
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {items.map((t, i) => {
-            const initials = t.name ? t.name.split(" ").map(w => w[0]).join("").slice(0, 2) : "??";
+            const initials = t.name
+              ? t.name.split(" ").map(w => w[0]).filter(Boolean).join("").slice(0, 2)
+              : "";
+            const hasAvatar = !!t.photo || !!initials;
+            const meta = [t.role, t.organization].filter(Boolean).join(", ");
+            const hasMeta = !!t.name || !!meta;
             return (
               <motion.div
                 key={i}
@@ -70,17 +75,28 @@ export function TestimonialCarousel({ scheme = "aqua", wave = "fold", waveFill, 
                   </svg>
                 </div>
                 <p className="text-xl md:text-2xl font-light text-ac-black leading-snug flex-grow mb-8">{t.quote}</p>
-                <div className="flex items-center gap-4 mt-auto">
-                  <div className="w-10 h-10 rounded-full bg-ac-blue flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                    {initials}
+                {(hasAvatar || hasMeta) && (
+                  <div className="flex items-center gap-4 mt-auto">
+                    {t.photo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={t.photo}
+                        alt={t.name || ""}
+                        className="w-10 h-10 rounded-full object-cover flex-shrink-0"
+                      />
+                    ) : initials ? (
+                      <div className="w-10 h-10 rounded-full bg-ac-blue flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+                        {initials}
+                      </div>
+                    ) : null}
+                    {hasMeta && (
+                      <div>
+                        {t.name && <div className="font-bold text-ac-black text-sm">{t.name}</div>}
+                        {meta && <div className="text-xs text-ac-black/55 font-light">{meta}</div>}
+                      </div>
+                    )}
                   </div>
-                  <div>
-                    <div className="font-bold text-ac-black text-sm">{t.name}</div>
-                    <div className="text-xs text-ac-black/55 font-light">
-                      {[t.role, t.organization].filter(Boolean).join(", ")}
-                    </div>
-                  </div>
-                </div>
+                )}
               </motion.div>
             );
           })}
