@@ -3,6 +3,7 @@
     {
       "scheme": "blue",
       "wave": "crest",
+      "waveFill": "grey",
       "eyebrow": "Falls prevention",
       "headline": "Identify fall risk early. Act before a fall happens.",
       "subtitle": "A quick, objective falls assessment in under five minutes. Evidence-based. Standardized. Built for the people you care for.",
@@ -13,7 +14,6 @@
       "backgroundImage": "/images/photos/home/gentleman-child-couch.jpg",
       "backgroundImageAlt": "Able Care homepage overview video",
       "videoIframe": "/homepage-video/index.html",
-      "waveFill": "grey",
       "_template": "hero"
     },
     {
@@ -74,23 +74,19 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "whatItMeasures": "Full body strength proxy.",
-          "whyItMatters": "Predicts all-cause mortality more reliably than systolic blood pressure. A validated marker of frailty, sarcopenia and falls risk."
+          "whatItMeasures": "Full body strength proxy."
         },
         {
           "name": "Sit-to-stand",
-          "whatItMeasures": "Lower-limb power and balance. 30-second timed test.",
-          "whyItMatters": "Independently predicts falls in older adults. Captures functional decline that grip strength alone can miss."
+          "whatItMeasures": "Lower-limb power and balance. 30-second timed test."
         },
         {
           "name": "Gait speed",
-          "whatItMeasures": "Walking speed over a standardized 4-meter distance.",
-          "whyItMatters": "A strong predictor of hospitalization, disability and mortality in older adults."
+          "whatItMeasures": "Walking speed over a standardized 4-meter distance."
         },
         {
           "name": "Timed Up and Go",
-          "whatItMeasures": "Time to rise from a chair, walk three meters, turn, walk back and sit down.",
-          "whyItMatters": "The most widely used clinical falls risk screen. Captures mobility, balance and transfer ability in a single measure."
+          "whatItMeasures": "Time to rise from a chair, walk three meters, turn, walk back and sit down."
         }
       ],
       "_template": "metricsBlock"
@@ -139,13 +135,10 @@
           "text": "Works on any iOS or Android tablet"
         },
         {
-          "text": "No internet required during assessment"
-        },
-        {
-          "text": "Results sync automatically when connected"
-        },
-        {
           "text": "Integration ready with EHRs and risk monitoring platforms"
+        },
+        {
+          "text": "Assessments can be administered by anyone "
         }
       ],
       "ctaText": "See how it works",
