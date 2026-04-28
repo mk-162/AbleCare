@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Download, CheckCircle2, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -25,8 +26,10 @@ export function EmailGateDownload({
   pageCount,
   fileSizeMb,
 }: EmailGateDownloadProps) {
+  const pathname = usePathname();
   const [unlocked, setUnlocked] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [organization, setOrganization] = useState("");
@@ -34,14 +37,37 @@ export function EmailGateDownload({
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email || !firstName) return;
+    if (!email || !firstName || submitting) return;
 
+    setErrorMessage(null);
     setSubmitting(true);
-    // TODO: POST to newsletter/email-capture endpoint when backend is wired.
-    // Payload shape: { firstName, email, organization, subscribe, resource: fileUrl }
-    await new Promise((r) => setTimeout(r, 400));
-    setSubmitting(false);
-    setUnlocked(true);
+
+    try {
+      const response = await fetch("/api/email-gate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          email,
+          organization,
+          subscribe,
+          resourceTitle: title,
+          resourceUrl: fileUrl,
+          source: pathname || "/resources",
+        }),
+      });
+      if (!response.ok) {
+        const data = (await response.json().catch(() => ({}))) as { error?: string };
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setSubmitting(false);
+        return;
+      }
+      setSubmitting(false);
+      setUnlocked(true);
+    } catch {
+      setErrorMessage("Network error. Please try again.");
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -77,7 +103,7 @@ export function EmailGateDownload({
                   <span className="font-bold text-ac-black">You're in.</span>
                 </div>
                 <p className="text-sm text-ac-black/70 font-light mb-5">
-                  Your download is ready. We've sent a copy to {email}.
+                  Your download is ready. Click below to access your PDF.
                 </p>
                 <a href={fileUrl} target="_blank" rel="noopener noreferrer">
                   <Button
@@ -149,11 +175,19 @@ export function EmailGateDownload({
                     Send me the Able Care newsletter — new research, product updates and falls-prevention insights, once a month. Unsubscribe anytime.
                   </span>
                 </label>
+                {errorMessage && (
+                  <p
+                    role="alert"
+                    className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-md px-3 py-2"
+                  >
+                    {errorMessage}
+                  </p>
+                )}
                 <Button
                   type="submit"
                   size="lg"
                   disabled={submitting}
-                  className="w-full sm:w-auto bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold px-8 mt-2"
+                  className="w-full sm:w-auto bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold px-8 mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {submitting ? "Preparing your download…" : fileLabel}
                 </Button>

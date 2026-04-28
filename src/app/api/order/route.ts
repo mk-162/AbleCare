@@ -252,7 +252,7 @@ function renderInvoiceEmail(lead: OrderInvoice): { html: string; text: string; s
 
 export async function POST(request: NextRequest) {
   const apiKey = process.env.RESEND_API_KEY;
-  const fromEmail = process.env.ORDER_FROM_EMAIL || "Able Care <onboarding@resend.dev>";
+  const fromEmail = process.env.ORDER_FROM_EMAIL || "Able Care <hello@able-care.co>";
   const toEmail =
     process.env.ORDER_TO_EMAIL ||
     process.env.GRISWOLD_TO_EMAIL ||

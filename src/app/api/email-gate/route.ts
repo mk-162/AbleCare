@@ -23,31 +23,17 @@ function rateLimit(ip: string): boolean {
 
 /* ─── Payload shape ─────────────────────────────────────────────────────── */
 
-type GriswoldLead = {
-  franchiseName?: string;
-  contactName?: string;
+type EmailGateLead = {
+  firstName?: string;
   email?: string;
-  phone?: string;
-  sensorCount?: string;
-  sensorCountNA?: string;
-  documentType?: string;
-  shipName?: string;
-  shipCompany?: string;
-  shipAddress1?: string;
-  shipAddress2?: string;
-  shipCity?: string;
-  shipState?: string;
-  shipZip?: string;
-  shipCountry?: string;
-  shipPhone?: string;
+  organization?: string;
+  subscribe?: boolean;
+  resourceTitle?: string;
+  resourceUrl?: string;
+  source?: string;
 };
 
-const REQUIRED_FIELDS: Array<keyof GriswoldLead> = [
-  "franchiseName",
-  "contactName",
-  "email",
-  "phone",
-];
+const REQUIRED_FIELDS: Array<keyof EmailGateLead> = ["firstName", "email"];
 
 /* ─── Email rendering ───────────────────────────────────────────────────── */
 
@@ -64,80 +50,50 @@ function row(label: string, value?: string): string {
   if (!value || !value.trim()) return "";
   return `<tr><td style="padding:6px 12px 6px 0;color:#666;font-weight:600;vertical-align:top;white-space:nowrap;">${escapeHtml(
     label
-  )}</td><td style="padding:6px 0;color:#191919;">${escapeHtml(value)}</td></tr>`;
+  )}</td><td style="padding:6px 0;color:#191919;white-space:pre-wrap;">${escapeHtml(value)}</td></tr>`;
 }
 
-function renderEmail(lead: GriswoldLead): { html: string; text: string } {
-  const sensors = lead.sensorCountNA === "on" ? "Not sure yet" : lead.sensorCount || "";
-  const hasShipping =
-    lead.shipName ||
-    lead.shipAddress1 ||
-    lead.shipCity ||
-    lead.shipState ||
-    lead.shipZip;
+function renderEmail(lead: EmailGateLead): { html: string; text: string } {
+  const subscribed = lead.subscribe ? "Yes" : "No";
 
   const html = `
     <div style="font-family:'DM Sans',Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;color:#191919;">
-      <h1 style="font-size:22px;margin:0 0 4px;">New Griswold conference lead</h1>
-      <p style="color:#666;margin:0 0 20px;font-size:14px;">Submitted via /griswold</p>
+      <h1 style="font-size:22px;margin:0 0 4px;">New gated download</h1>
+      <p style="color:#666;margin:0 0 20px;font-size:14px;">Submitted via ${escapeHtml(
+        lead.source || "/resources"
+      )}</p>
 
-      <h2 style="font-size:14px;text-transform:uppercase;letter-spacing:0.1em;color:#1432FF;margin:24px 0 8px;">Contact</h2>
+      <h2 style="font-size:14px;text-transform:uppercase;letter-spacing:0.1em;color:#1432FF;margin:24px 0 8px;">Lead</h2>
       <table style="width:100%;border-collapse:collapse;font-size:14px;">
-        ${row("Franchise", lead.franchiseName)}
-        ${row("Contact", lead.contactName)}
+        ${row("Name", lead.firstName)}
         ${row("Email", lead.email)}
-        ${row("Phone", lead.phone)}
-        ${row("Sensors", sensors)}
-        ${row("Document", lead.documentType || "(not specified)")}
+        ${row("Organization", lead.organization)}
+        ${row("Newsletter opt-in", subscribed)}
       </table>
 
-      ${
-        hasShipping
-          ? `<h2 style="font-size:14px;text-transform:uppercase;letter-spacing:0.1em;color:#1432FF;margin:24px 0 8px;">Shipping address</h2>
+      <h2 style="font-size:14px;text-transform:uppercase;letter-spacing:0.1em;color:#1432FF;margin:24px 0 8px;">Resource</h2>
       <table style="width:100%;border-collapse:collapse;font-size:14px;">
-        ${row("Name", lead.shipName)}
-        ${row("Company", lead.shipCompany)}
-        ${row("Address 1", lead.shipAddress1)}
-        ${row("Address 2", lead.shipAddress2)}
-        ${row("City", lead.shipCity)}
-        ${row("State", lead.shipState)}
-        ${row("ZIP", lead.shipZip)}
-        ${row("Country", lead.shipCountry)}
-        ${row("Phone", lead.shipPhone)}
-      </table>`
-          : `<p style="color:#666;font-size:14px;margin:24px 0 0;"><em>No shipping address provided.</em></p>`
-      }
+        ${row("Title", lead.resourceTitle)}
+        ${row("File", lead.resourceUrl)}
+      </table>
     </div>
   `;
 
   const lines: string[] = [
-    "New Griswold conference lead",
+    "New gated download",
     "",
-    "CONTACT",
-    `Franchise: ${lead.franchiseName ?? ""}`,
-    `Contact:   ${lead.contactName ?? ""}`,
-    `Email:     ${lead.email ?? ""}`,
-    `Phone:     ${lead.phone ?? ""}`,
-    `Sensors:   ${sensors}`,
-    `Document:  ${lead.documentType ?? ""}`,
+    `Source:        ${lead.source || "/resources"}`,
+    "",
+    "LEAD",
+    `Name:          ${lead.firstName ?? ""}`,
+    `Email:         ${lead.email ?? ""}`,
+    `Organization:  ${lead.organization ?? ""}`,
+    `Newsletter:    ${subscribed}`,
+    "",
+    "RESOURCE",
+    `Title:         ${lead.resourceTitle ?? ""}`,
+    `File:          ${lead.resourceUrl ?? ""}`,
   ];
-  if (hasShipping) {
-    lines.push(
-      "",
-      "SHIPPING ADDRESS",
-      `Name:      ${lead.shipName ?? ""}`,
-      `Company:   ${lead.shipCompany ?? ""}`,
-      `Address 1: ${lead.shipAddress1 ?? ""}`,
-      `Address 2: ${lead.shipAddress2 ?? ""}`,
-      `City:      ${lead.shipCity ?? ""}`,
-      `State:     ${lead.shipState ?? ""}`,
-      `ZIP:       ${lead.shipZip ?? ""}`,
-      `Country:   ${lead.shipCountry ?? ""}`,
-      `Phone:     ${lead.shipPhone ?? ""}`
-    );
-  } else {
-    lines.push("", "No shipping address provided.");
-  }
 
   return { html, text: lines.join("\n") };
 }
@@ -146,8 +102,11 @@ function renderEmail(lead: GriswoldLead): { html: string; text: string } {
 
 export async function POST(request: NextRequest) {
   const apiKey = process.env.RESEND_API_KEY;
-  const fromEmail = process.env.GRISWOLD_FROM_EMAIL || "Able Care <hello@able-care.co>";
-  const toEmail = process.env.GRISWOLD_TO_EMAIL || "hello@able-care.co";
+  const fromEmail = process.env.EMAIL_GATE_FROM_EMAIL || "Able Care <hello@able-care.co>";
+  const toEmail =
+    process.env.EMAIL_GATE_TO_EMAIL ||
+    process.env.GRISWOLD_TO_EMAIL ||
+    "hello@able-care.co";
 
   if (!apiKey) {
     return NextResponse.json(
@@ -161,12 +120,15 @@ export async function POST(request: NextRequest) {
     request.headers.get("x-real-ip") ||
     "unknown";
   if (!rateLimit(ip)) {
-    return NextResponse.json({ error: "Too many submissions, try again shortly." }, { status: 429 });
+    return NextResponse.json(
+      { error: "Too many submissions, try again shortly." },
+      { status: 429 }
+    );
   }
 
-  let lead: GriswoldLead;
+  let lead: EmailGateLead;
   try {
-    lead = (await request.json()) as GriswoldLead;
+    lead = (await request.json()) as EmailGateLead;
   } catch {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
@@ -183,25 +145,27 @@ export async function POST(request: NextRequest) {
   const { html, text } = renderEmail(lead);
   const resend = new Resend(apiKey);
 
-  const subjectName = lead.franchiseName?.trim() || lead.contactName?.trim() || "lead";
+  const subjectName = lead.organization?.trim() || lead.firstName?.trim() || lead.email || "lead";
+  const subjectResource = lead.resourceTitle?.trim() || "resource";
+
   try {
     const { error } = await resend.emails.send({
       from: fromEmail,
       to: toEmail,
       replyTo: lead.email,
-      subject: `Griswold conference lead — ${subjectName}`,
+      subject: `Able Care download — ${subjectResource} — ${subjectName}`,
       html,
       text,
     });
     if (error) {
-      console.error("[griswold] resend error", error);
+      console.error("[email-gate] resend error", error);
       return NextResponse.json(
         { error: "Could not send email. Please try again." },
         { status: 502 }
       );
     }
   } catch (err) {
-    console.error("[griswold] resend exception", err);
+    console.error("[email-gate] resend exception", err);
     return NextResponse.json(
       { error: "Could not send email. Please try again." },
       { status: 502 }
