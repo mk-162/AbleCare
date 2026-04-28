@@ -146,8 +146,8 @@ function renderEmail(lead: GriswoldLead): { html: string; text: string } {
 
 export async function POST(request: NextRequest) {
   const apiKey = process.env.RESEND_API_KEY;
-  const fromEmail = process.env.GRISWOLD_FROM_EMAIL || "Able Care <hello@able-care.co>";
-  const toEmail = process.env.GRISWOLD_TO_EMAIL || "hello@able-care.co";
+  const fromEmail = "Able Care <hello@able-care.co>";
+  const toEmail = "hello@able-care.co";
 
   if (!apiKey) {
     return NextResponse.json(
