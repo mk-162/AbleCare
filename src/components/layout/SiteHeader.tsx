@@ -28,7 +28,6 @@ const segmentItems: NavItem[] = [
 const resourcesMenu = {
   learn: [
     { label: "Blogs", href: "/blog", desc: "The topics that we are talking about." },
-    { label: "Knowledge Base", href: "/knowledge-base", desc: "Our published papers, research summaries, and white papers." },
     { label: "Research Library", href: "/resources/research-library", desc: "A searchable library of the academic papers we are excited about." },
   ],
   tools: [
@@ -265,6 +264,11 @@ export function SiteHeader() {
             </div>
 
             {/* CTAs */}
+            <a href="https://portal.able-care.io/" target="_blank" rel="noopener noreferrer" className="ml-2">
+              <Button className="bg-ac-aqua text-ac-black rounded-full px-6 font-bold shadow-sm hover:bg-ac-blue hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-200">
+                Customer Portal
+              </Button>
+            </a>
             <Link href="/demo" className="ml-2">
               <Button className="bg-ac-blue text-white rounded-full px-6 font-bold shadow-sm hover:bg-ac-aqua hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-200">
                 Book a demo
@@ -316,6 +320,11 @@ export function SiteHeader() {
               </MobileAccordion>
             </ul>
             <div className="px-5 py-4 border-t border-ac-grey/40 space-y-3">
+              <a href="https://portal.able-care.io/" target="_blank" rel="noopener noreferrer" onClick={closeMobile}>
+                <Button className="w-full bg-ac-aqua text-ac-black rounded-full font-bold hover:bg-ac-blue hover:text-white hover:shadow-lg transition-all duration-200">
+                  Customer Portal
+                </Button>
+              </a>
               <Link href="/demo" onClick={closeMobile}>
                 <Button className="w-full bg-ac-blue text-white rounded-full font-bold hover:bg-ac-aqua hover:text-white hover:shadow-lg transition-all duration-200">
                   Book a demo

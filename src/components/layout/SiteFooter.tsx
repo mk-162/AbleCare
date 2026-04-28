@@ -26,26 +26,21 @@ export function SiteFooter() {
               Solutions
             </h4>
             <ul className="space-y-4">
-              <li><Link href="/solutions/able-assess" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Able Assess</Link></li>
-              <li><Link href="/solutions/grip-strength" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Grip Strength</Link></li>
-              <li><Link href="/solutions/functional-health" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Functional Health</Link></li>
-              <li><Link href="/solutions/remote-monitoring" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Remote Monitoring</Link></li>
-              <li><Link href="/product/how-it-works" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">How It Works</Link></li>
-              <li><a href="https://gripable.co/" target="_blank" rel="noopener noreferrer" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Able Rehab</a></li>
+              <li><Link href="/solutions/able-assess" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Able Assess - Falls Prevention</Link></li>
+              <li><Link href="/solutions/grip-strength" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Able Assess - Grip Strength</Link></li>
+              <li><Link href="/solutions/sensor" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">The GripAble Sensor</Link></li>
             </ul>
           </div>
 
-          {/* Segments */}
+          {/* Who We Help */}
           <div>
             <h4 className="font-bold text-sm uppercase tracking-widest text-ac-grey/50 mb-6">
-              Segments
+              Who We Help
             </h4>
             <ul className="space-y-4">
               <li><Link href="/home-care" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Home Care</Link></li>
               <li><Link href="/senior-living" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Senior Living</Link></li>
-              <li><Link href="/skilled-nursing" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Skilled Nursing</Link></li>
-              <li><Link href="/pharma" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Pharma & CROs</Link></li>
-              <li><Link href="/evidence/compliance" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Compliance</Link></li>
+              <li><Link href="/pharma" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">CRO/Pharma</Link></li>
             </ul>
           </div>
 
@@ -55,12 +50,11 @@ export function SiteFooter() {
               Resources
             </h4>
             <ul className="space-y-4">
-              <li><Link href="/blog" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Blog</Link></li>
-              <li><Link href="/resources/downloads" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Downloads</Link></li>
-              <li><Link href="/resources/guides" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Guides</Link></li>
-              <li><Link href="/resources/evidence" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Research Library</Link></li>
+              <li><Link href="/blog" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Blogs</Link></li>
+              <li><Link href="/resources/research-library" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Research Library</Link></li>
+              <li><Link href="/resources/technical-documentation" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Technical Documentation</Link></li>
               <li><Link href="/resources/case-studies" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Case Studies</Link></li>
-              <li><Link href="/resources/walkthrough" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Product Walkthrough</Link></li>
+              <li><Link href="/resources/buyers-guide" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Buyers Guide</Link></li>
             </ul>
           </div>
 
@@ -70,12 +64,8 @@ export function SiteFooter() {
               Company
             </h4>
             <ul className="space-y-4">
-              <li><Link href="/about" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">About</Link></li>
-              <li><Link href="/meet-the-team" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Meet the Team</Link></li>
-              <li><Link href="/customers" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Customers</Link></li>
-              <li><Link href="/partners" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Partners</Link></li>
-              <li><Link href="/careers" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Contact</Link></li>
+              <li><Link href="/about" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">About Able Care</Link></li>
+              <li><Link href="/contact" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -85,10 +75,15 @@ export function SiteFooter() {
               Get Started
             </h4>
             <Link href="/demo">
-              <button className="w-full bg-ac-blue text-white rounded-full px-6 py-3 font-bold text-sm hover:bg-ac-aqua hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-200 mb-6">
+              <button className="w-full bg-ac-blue text-white rounded-full px-6 py-3 font-bold text-sm hover:bg-ac-aqua hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-200 mb-3">
                 Book a Demo
               </button>
             </Link>
+            <a href="https://portal.able-care.io/" target="_blank" rel="noopener noreferrer">
+              <button className="w-full bg-ac-aqua text-ac-black rounded-full px-6 py-3 font-bold text-sm hover:bg-ac-blue hover:text-white hover:shadow-lg hover:scale-105 transition-all duration-200 mb-6">
+                Customer Portal
+              </button>
+            </a>
 
             {/* Contact info */}
             <div className="space-y-3 mb-6">
@@ -172,12 +167,6 @@ export function SiteFooter() {
             <p className="text-ac-grey/50 text-sm font-light">
               &copy; {new Date().getFullYear()} GripAble Ltd. All rights reserved.
             </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            <Link href="/privacy" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Terms of Service</Link>
-            <Link href="/cookies" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Cookies</Link>
-            <Link href="/security" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Security</Link>
           </div>
         </div>
       </div>
