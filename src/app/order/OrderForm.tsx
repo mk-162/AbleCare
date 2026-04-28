@@ -1,9 +1,59 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight, FileText, Receipt, Truck, Cpu, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+/**
+ * Shared submit hook for the two order forms — both POST to /api/order
+ * which routes by `formId` and emails the team via Resend.
+ */
+function useOrderSubmit() {
+  const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (submitting) return;
+
+    setErrorMessage(null);
+    setSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const payload: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      if (typeof value === "string") payload[key] = value;
+    });
+    // The hidden `form` input becomes the formId the API switches on.
+    if (payload.form) {
+      payload.formId = payload.form;
+      delete payload.form;
+    }
+
+    try {
+      const response = await fetch("/api/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        const data = (await response.json().catch(() => ({}))) as { error?: string };
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setSubmitting(false);
+        return;
+      }
+      router.push("/thank-you");
+    } catch {
+      setErrorMessage("Network error. Please try again.");
+      setSubmitting(false);
+    }
+  }
+
+  return { submitting, errorMessage, handleSubmit };
+}
 
 const SENSOR_PRICE = 199;
 const ANNUAL_SUB_PRICE = 360;
@@ -114,6 +164,7 @@ export function OrderForm() {
 
 function EstimateForm() {
   const [naSensors, setNaSensors] = useState(false);
+  const { submitting, errorMessage, handleSubmit } = useOrderSubmit();
 
   return (
     <motion.div
@@ -132,7 +183,7 @@ function EstimateForm() {
         We&rsquo;ll come back to you with pricing tailored to your order.
       </p>
 
-      <form className="space-y-6" action="/thank-you" method="GET">
+      <form className="space-y-6" onSubmit={handleSubmit}>
         <input type="hidden" name="form" value="order-estimate" />
 
         <Field
@@ -197,12 +248,22 @@ function EstimateForm() {
           </div>
         </div>
 
+        {errorMessage && (
+          <p
+            role="alert"
+            className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-3 py-2"
+          >
+            {errorMessage}
+          </p>
+        )}
+
         <Button
           type="submit"
-          className="w-full bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold text-lg h-13"
+          disabled={submitting}
+          className="w-full bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold text-lg h-13 disabled:opacity-70 disabled:cursor-not-allowed"
         >
-          Request a price estimate
-          <ArrowRight className="w-5 h-5 ml-1" />
+          {submitting ? "Sending…" : "Request a price estimate"}
+          {!submitting && <ArrowRight className="w-5 h-5 ml-1" />}
         </Button>
       </form>
     </motion.div>
@@ -212,6 +273,7 @@ function EstimateForm() {
 function InvoiceForm() {
   const [sensorCount, setSensorCount] = useState<number>(1);
   const [sameAsBilling, setSameAsBilling] = useState(true);
+  const { submitting, errorMessage, handleSubmit } = useOrderSubmit();
 
   const totals = useMemo(() => {
     const qty = Math.max(0, Math.floor(sensorCount || 0));
@@ -239,7 +301,7 @@ function InvoiceForm() {
         Provide your billing and shipping details and we&rsquo;ll send an invoice to your inbox.
       </p>
 
-      <form className="space-y-10" action="/thank-you" method="GET">
+      <form className="space-y-10" onSubmit={handleSubmit}>
         <input type="hidden" name="form" value="order-invoice" />
 
         <fieldset className="space-y-6">
@@ -412,12 +474,22 @@ function InvoiceForm() {
           </div>
         </fieldset>
 
+        {errorMessage && (
+          <p
+            role="alert"
+            className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-3 py-2"
+          >
+            {errorMessage}
+          </p>
+        )}
+
         <Button
           type="submit"
-          className="w-full bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold text-lg h-13"
+          disabled={submitting}
+          className="w-full bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold text-lg h-13 disabled:opacity-70 disabled:cursor-not-allowed"
         >
-          Request invoice
-          <ArrowRight className="w-5 h-5 ml-1" />
+          {submitting ? "Sending…" : "Request invoice"}
+          {!submitting && <ArrowRight className="w-5 h-5 ml-1" />}
         </Button>
       </form>
     </motion.div>
