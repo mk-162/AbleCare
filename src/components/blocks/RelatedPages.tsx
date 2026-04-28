@@ -49,8 +49,7 @@ function tagLabel(tag: string): string {
 
 /**
  * Renders links to relevant segment, solution, compare, and resource
- * pages from a KB article. The inverse of RelatedKnowledgeBase.
- * Items must be pre-resolved server-side.
+ * pages based on shared tags. Items must be pre-resolved server-side.
  */
 export function RelatedPages({
   items,

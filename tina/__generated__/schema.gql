@@ -68,8 +68,6 @@ type Query {
   resourcesConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: ResourcesFilter): ResourcesConnection!
   company(relativePath: String): Company!
   companyConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: CompanyFilter): CompanyConnection!
-  knowledgeBase(relativePath: String): KnowledgeBase!
-  knowledgeBaseConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: KnowledgeBaseFilter): KnowledgeBaseConnection!
   utility(relativePath: String): Utility!
   utilityConnection(before: String, after: String, first: Float, last: Float, sort: String, filter: UtilityFilter): UtilityConnection!
   global(relativePath: String): Global!
@@ -88,7 +86,6 @@ input DocumentFilter {
   learn: LearnFilter
   resources: ResourcesFilter
   company: CompanyFilter
-  knowledgeBase: KnowledgeBaseFilter
   utility: UtilityFilter
   global: GlobalFilter
   navigation: NavigationFilter
@@ -118,7 +115,7 @@ type Collection {
   documents(before: String, after: String, first: Float, last: Float, sort: String, filter: DocumentFilter, folder: String): DocumentConnection!
 }
 
-union DocumentNode = Pages | Solutions | Segments | Compare | Learn | Resources | Company | KnowledgeBase | Utility | Global | Navigation | SidebarWidgets | Folder
+union DocumentNode = Pages | Solutions | Segments | Compare | Learn | Resources | Company | Utility | Global | Navigation | SidebarWidgets | Folder
 
 type PagesBlocksHeroBreadcrumb {
   label: String!
@@ -402,34 +399,6 @@ type PagesBlocksRichText {
   body: String
 }
 
-type PagesBlocksCurrentKnowledgeCardTldrBullets {
-  text: String!
-}
-
-type PagesBlocksCurrentKnowledgeCardSources {
-  title: String!
-  url: String
-  year: String
-}
-
-type PagesBlocksCurrentKnowledgeCard {
-  scheme: String
-  question: String!
-  directAnswer: String!
-  tldrBullets: [PagesBlocksCurrentKnowledgeCardTldrBullets]
-  expandedAnswer: String
-  sources: [PagesBlocksCurrentKnowledgeCardSources]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-type PagesBlocksRelatedKnowledgeBase {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 type PagesBlocksRelatedPages {
   scheme: String
   heading: String
@@ -520,7 +489,7 @@ type PagesBlocksTimeline {
   entries: [PagesBlocksTimelineEntries]
 }
 
-union PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksCurrentKnowledgeCard | PagesBlocksRelatedKnowledgeBase | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline
+union PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline
 
 type Pages implements Node & Document {
   blocks: [PagesBlocks]
@@ -847,34 +816,6 @@ input PagesBlocksRichTextFilter {
   body: StringFilter
 }
 
-input PagesBlocksCurrentKnowledgeCardTldrBulletsFilter {
-  text: StringFilter
-}
-
-input PagesBlocksCurrentKnowledgeCardSourcesFilter {
-  title: StringFilter
-  url: StringFilter
-  year: StringFilter
-}
-
-input PagesBlocksCurrentKnowledgeCardFilter {
-  scheme: StringFilter
-  question: StringFilter
-  directAnswer: StringFilter
-  tldrBullets: PagesBlocksCurrentKnowledgeCardTldrBulletsFilter
-  expandedAnswer: StringFilter
-  sources: PagesBlocksCurrentKnowledgeCardSourcesFilter
-  reviewedBy: StringFilter
-  lastReviewed: StringFilter
-}
-
-input PagesBlocksRelatedKnowledgeBaseFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  limit: NumberFilter
-  filterTags: StringFilter
-}
-
 input PagesBlocksRelatedPagesFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -988,8 +929,6 @@ input PagesBlocksFilter {
   alertBanner: PagesBlocksAlertBannerFilter
   prose: PagesBlocksProseFilter
   richText: PagesBlocksRichTextFilter
-  currentKnowledgeCard: PagesBlocksCurrentKnowledgeCardFilter
-  relatedKnowledgeBase: PagesBlocksRelatedKnowledgeBaseFilter
   relatedPages: PagesBlocksRelatedPagesFilter
   roiCalculatorPromo: PagesBlocksRoiCalculatorPromoFilter
   leadMagnetPromo: PagesBlocksLeadMagnetPromoFilter
@@ -1305,34 +1244,6 @@ type SolutionsBlocksRichText {
   body: String
 }
 
-type SolutionsBlocksCurrentKnowledgeCardTldrBullets {
-  text: String!
-}
-
-type SolutionsBlocksCurrentKnowledgeCardSources {
-  title: String!
-  url: String
-  year: String
-}
-
-type SolutionsBlocksCurrentKnowledgeCard {
-  scheme: String
-  question: String!
-  directAnswer: String!
-  tldrBullets: [SolutionsBlocksCurrentKnowledgeCardTldrBullets]
-  expandedAnswer: String
-  sources: [SolutionsBlocksCurrentKnowledgeCardSources]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-type SolutionsBlocksRelatedKnowledgeBase {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 type SolutionsBlocksRelatedPages {
   scheme: String
   heading: String
@@ -1423,7 +1334,7 @@ type SolutionsBlocksTimeline {
   entries: [SolutionsBlocksTimelineEntries]
 }
 
-union SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksCurrentKnowledgeCard | SolutionsBlocksRelatedKnowledgeBase | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline
+union SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline
 
 type Solutions implements Node & Document {
   blocks: [SolutionsBlocks]
@@ -1721,34 +1632,6 @@ input SolutionsBlocksRichTextFilter {
   body: StringFilter
 }
 
-input SolutionsBlocksCurrentKnowledgeCardTldrBulletsFilter {
-  text: StringFilter
-}
-
-input SolutionsBlocksCurrentKnowledgeCardSourcesFilter {
-  title: StringFilter
-  url: StringFilter
-  year: StringFilter
-}
-
-input SolutionsBlocksCurrentKnowledgeCardFilter {
-  scheme: StringFilter
-  question: StringFilter
-  directAnswer: StringFilter
-  tldrBullets: SolutionsBlocksCurrentKnowledgeCardTldrBulletsFilter
-  expandedAnswer: StringFilter
-  sources: SolutionsBlocksCurrentKnowledgeCardSourcesFilter
-  reviewedBy: StringFilter
-  lastReviewed: StringFilter
-}
-
-input SolutionsBlocksRelatedKnowledgeBaseFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  limit: NumberFilter
-  filterTags: StringFilter
-}
-
 input SolutionsBlocksRelatedPagesFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -1862,8 +1745,6 @@ input SolutionsBlocksFilter {
   alertBanner: SolutionsBlocksAlertBannerFilter
   prose: SolutionsBlocksProseFilter
   richText: SolutionsBlocksRichTextFilter
-  currentKnowledgeCard: SolutionsBlocksCurrentKnowledgeCardFilter
-  relatedKnowledgeBase: SolutionsBlocksRelatedKnowledgeBaseFilter
   relatedPages: SolutionsBlocksRelatedPagesFilter
   roiCalculatorPromo: SolutionsBlocksRoiCalculatorPromoFilter
   leadMagnetPromo: SolutionsBlocksLeadMagnetPromoFilter
@@ -2179,34 +2060,6 @@ type SegmentsBlocksRichText {
   body: String
 }
 
-type SegmentsBlocksCurrentKnowledgeCardTldrBullets {
-  text: String!
-}
-
-type SegmentsBlocksCurrentKnowledgeCardSources {
-  title: String!
-  url: String
-  year: String
-}
-
-type SegmentsBlocksCurrentKnowledgeCard {
-  scheme: String
-  question: String!
-  directAnswer: String!
-  tldrBullets: [SegmentsBlocksCurrentKnowledgeCardTldrBullets]
-  expandedAnswer: String
-  sources: [SegmentsBlocksCurrentKnowledgeCardSources]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-type SegmentsBlocksRelatedKnowledgeBase {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 type SegmentsBlocksRelatedPages {
   scheme: String
   heading: String
@@ -2297,7 +2150,7 @@ type SegmentsBlocksTimeline {
   entries: [SegmentsBlocksTimelineEntries]
 }
 
-union SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksCurrentKnowledgeCard | SegmentsBlocksRelatedKnowledgeBase | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline
+union SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline
 
 type Segments implements Node & Document {
   blocks: [SegmentsBlocks]
@@ -2595,34 +2448,6 @@ input SegmentsBlocksRichTextFilter {
   body: StringFilter
 }
 
-input SegmentsBlocksCurrentKnowledgeCardTldrBulletsFilter {
-  text: StringFilter
-}
-
-input SegmentsBlocksCurrentKnowledgeCardSourcesFilter {
-  title: StringFilter
-  url: StringFilter
-  year: StringFilter
-}
-
-input SegmentsBlocksCurrentKnowledgeCardFilter {
-  scheme: StringFilter
-  question: StringFilter
-  directAnswer: StringFilter
-  tldrBullets: SegmentsBlocksCurrentKnowledgeCardTldrBulletsFilter
-  expandedAnswer: StringFilter
-  sources: SegmentsBlocksCurrentKnowledgeCardSourcesFilter
-  reviewedBy: StringFilter
-  lastReviewed: StringFilter
-}
-
-input SegmentsBlocksRelatedKnowledgeBaseFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  limit: NumberFilter
-  filterTags: StringFilter
-}
-
 input SegmentsBlocksRelatedPagesFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -2736,8 +2561,6 @@ input SegmentsBlocksFilter {
   alertBanner: SegmentsBlocksAlertBannerFilter
   prose: SegmentsBlocksProseFilter
   richText: SegmentsBlocksRichTextFilter
-  currentKnowledgeCard: SegmentsBlocksCurrentKnowledgeCardFilter
-  relatedKnowledgeBase: SegmentsBlocksRelatedKnowledgeBaseFilter
   relatedPages: SegmentsBlocksRelatedPagesFilter
   roiCalculatorPromo: SegmentsBlocksRoiCalculatorPromoFilter
   leadMagnetPromo: SegmentsBlocksLeadMagnetPromoFilter
@@ -3053,34 +2876,6 @@ type CompareBlocksRichText {
   body: String
 }
 
-type CompareBlocksCurrentKnowledgeCardTldrBullets {
-  text: String!
-}
-
-type CompareBlocksCurrentKnowledgeCardSources {
-  title: String!
-  url: String
-  year: String
-}
-
-type CompareBlocksCurrentKnowledgeCard {
-  scheme: String
-  question: String!
-  directAnswer: String!
-  tldrBullets: [CompareBlocksCurrentKnowledgeCardTldrBullets]
-  expandedAnswer: String
-  sources: [CompareBlocksCurrentKnowledgeCardSources]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-type CompareBlocksRelatedKnowledgeBase {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 type CompareBlocksRelatedPages {
   scheme: String
   heading: String
@@ -3171,7 +2966,7 @@ type CompareBlocksTimeline {
   entries: [CompareBlocksTimelineEntries]
 }
 
-union CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksCurrentKnowledgeCard | CompareBlocksRelatedKnowledgeBase | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline
+union CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline
 
 type Compare implements Node & Document {
   blocks: [CompareBlocks]
@@ -3469,34 +3264,6 @@ input CompareBlocksRichTextFilter {
   body: StringFilter
 }
 
-input CompareBlocksCurrentKnowledgeCardTldrBulletsFilter {
-  text: StringFilter
-}
-
-input CompareBlocksCurrentKnowledgeCardSourcesFilter {
-  title: StringFilter
-  url: StringFilter
-  year: StringFilter
-}
-
-input CompareBlocksCurrentKnowledgeCardFilter {
-  scheme: StringFilter
-  question: StringFilter
-  directAnswer: StringFilter
-  tldrBullets: CompareBlocksCurrentKnowledgeCardTldrBulletsFilter
-  expandedAnswer: StringFilter
-  sources: CompareBlocksCurrentKnowledgeCardSourcesFilter
-  reviewedBy: StringFilter
-  lastReviewed: StringFilter
-}
-
-input CompareBlocksRelatedKnowledgeBaseFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  limit: NumberFilter
-  filterTags: StringFilter
-}
-
 input CompareBlocksRelatedPagesFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -3610,8 +3377,6 @@ input CompareBlocksFilter {
   alertBanner: CompareBlocksAlertBannerFilter
   prose: CompareBlocksProseFilter
   richText: CompareBlocksRichTextFilter
-  currentKnowledgeCard: CompareBlocksCurrentKnowledgeCardFilter
-  relatedKnowledgeBase: CompareBlocksRelatedKnowledgeBaseFilter
   relatedPages: CompareBlocksRelatedPagesFilter
   roiCalculatorPromo: CompareBlocksRoiCalculatorPromoFilter
   leadMagnetPromo: CompareBlocksLeadMagnetPromoFilter
@@ -3927,34 +3692,6 @@ type LearnBlocksRichText {
   body: String
 }
 
-type LearnBlocksCurrentKnowledgeCardTldrBullets {
-  text: String!
-}
-
-type LearnBlocksCurrentKnowledgeCardSources {
-  title: String!
-  url: String
-  year: String
-}
-
-type LearnBlocksCurrentKnowledgeCard {
-  scheme: String
-  question: String!
-  directAnswer: String!
-  tldrBullets: [LearnBlocksCurrentKnowledgeCardTldrBullets]
-  expandedAnswer: String
-  sources: [LearnBlocksCurrentKnowledgeCardSources]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-type LearnBlocksRelatedKnowledgeBase {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 type LearnBlocksRelatedPages {
   scheme: String
   heading: String
@@ -4045,7 +3782,7 @@ type LearnBlocksTimeline {
   entries: [LearnBlocksTimelineEntries]
 }
 
-union LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksCurrentKnowledgeCard | LearnBlocksRelatedKnowledgeBase | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline
+union LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline
 
 type Learn implements Node & Document {
   title: String!
@@ -4357,34 +4094,6 @@ input LearnBlocksRichTextFilter {
   body: StringFilter
 }
 
-input LearnBlocksCurrentKnowledgeCardTldrBulletsFilter {
-  text: StringFilter
-}
-
-input LearnBlocksCurrentKnowledgeCardSourcesFilter {
-  title: StringFilter
-  url: StringFilter
-  year: StringFilter
-}
-
-input LearnBlocksCurrentKnowledgeCardFilter {
-  scheme: StringFilter
-  question: StringFilter
-  directAnswer: StringFilter
-  tldrBullets: LearnBlocksCurrentKnowledgeCardTldrBulletsFilter
-  expandedAnswer: StringFilter
-  sources: LearnBlocksCurrentKnowledgeCardSourcesFilter
-  reviewedBy: StringFilter
-  lastReviewed: StringFilter
-}
-
-input LearnBlocksRelatedKnowledgeBaseFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  limit: NumberFilter
-  filterTags: StringFilter
-}
-
 input LearnBlocksRelatedPagesFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -4498,8 +4207,6 @@ input LearnBlocksFilter {
   alertBanner: LearnBlocksAlertBannerFilter
   prose: LearnBlocksProseFilter
   richText: LearnBlocksRichTextFilter
-  currentKnowledgeCard: LearnBlocksCurrentKnowledgeCardFilter
-  relatedKnowledgeBase: LearnBlocksRelatedKnowledgeBaseFilter
   relatedPages: LearnBlocksRelatedPagesFilter
   roiCalculatorPromo: LearnBlocksRoiCalculatorPromoFilter
   leadMagnetPromo: LearnBlocksLeadMagnetPromoFilter
@@ -4823,34 +4530,6 @@ type ResourcesBlocksRichText {
   body: String
 }
 
-type ResourcesBlocksCurrentKnowledgeCardTldrBullets {
-  text: String!
-}
-
-type ResourcesBlocksCurrentKnowledgeCardSources {
-  title: String!
-  url: String
-  year: String
-}
-
-type ResourcesBlocksCurrentKnowledgeCard {
-  scheme: String
-  question: String!
-  directAnswer: String!
-  tldrBullets: [ResourcesBlocksCurrentKnowledgeCardTldrBullets]
-  expandedAnswer: String
-  sources: [ResourcesBlocksCurrentKnowledgeCardSources]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-type ResourcesBlocksRelatedKnowledgeBase {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 type ResourcesBlocksRelatedPages {
   scheme: String
   heading: String
@@ -4941,7 +4620,7 @@ type ResourcesBlocksTimeline {
   entries: [ResourcesBlocksTimelineEntries]
 }
 
-union ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksCurrentKnowledgeCard | ResourcesBlocksRelatedKnowledgeBase | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline
+union ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline
 
 type Resources implements Node & Document {
   blocks: [ResourcesBlocks]
@@ -5239,34 +4918,6 @@ input ResourcesBlocksRichTextFilter {
   body: StringFilter
 }
 
-input ResourcesBlocksCurrentKnowledgeCardTldrBulletsFilter {
-  text: StringFilter
-}
-
-input ResourcesBlocksCurrentKnowledgeCardSourcesFilter {
-  title: StringFilter
-  url: StringFilter
-  year: StringFilter
-}
-
-input ResourcesBlocksCurrentKnowledgeCardFilter {
-  scheme: StringFilter
-  question: StringFilter
-  directAnswer: StringFilter
-  tldrBullets: ResourcesBlocksCurrentKnowledgeCardTldrBulletsFilter
-  expandedAnswer: StringFilter
-  sources: ResourcesBlocksCurrentKnowledgeCardSourcesFilter
-  reviewedBy: StringFilter
-  lastReviewed: StringFilter
-}
-
-input ResourcesBlocksRelatedKnowledgeBaseFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  limit: NumberFilter
-  filterTags: StringFilter
-}
-
 input ResourcesBlocksRelatedPagesFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -5380,8 +5031,6 @@ input ResourcesBlocksFilter {
   alertBanner: ResourcesBlocksAlertBannerFilter
   prose: ResourcesBlocksProseFilter
   richText: ResourcesBlocksRichTextFilter
-  currentKnowledgeCard: ResourcesBlocksCurrentKnowledgeCardFilter
-  relatedKnowledgeBase: ResourcesBlocksRelatedKnowledgeBaseFilter
   relatedPages: ResourcesBlocksRelatedPagesFilter
   roiCalculatorPromo: ResourcesBlocksRoiCalculatorPromoFilter
   leadMagnetPromo: ResourcesBlocksLeadMagnetPromoFilter
@@ -5697,34 +5346,6 @@ type CompanyBlocksRichText {
   body: String
 }
 
-type CompanyBlocksCurrentKnowledgeCardTldrBullets {
-  text: String!
-}
-
-type CompanyBlocksCurrentKnowledgeCardSources {
-  title: String!
-  url: String
-  year: String
-}
-
-type CompanyBlocksCurrentKnowledgeCard {
-  scheme: String
-  question: String!
-  directAnswer: String!
-  tldrBullets: [CompanyBlocksCurrentKnowledgeCardTldrBullets]
-  expandedAnswer: String
-  sources: [CompanyBlocksCurrentKnowledgeCardSources]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-type CompanyBlocksRelatedKnowledgeBase {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 type CompanyBlocksRelatedPages {
   scheme: String
   heading: String
@@ -5815,7 +5436,7 @@ type CompanyBlocksTimeline {
   entries: [CompanyBlocksTimelineEntries]
 }
 
-union CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksCurrentKnowledgeCard | CompanyBlocksRelatedKnowledgeBase | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline
+union CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline
 
 type Company implements Node & Document {
   blocks: [CompanyBlocks]
@@ -6113,34 +5734,6 @@ input CompanyBlocksRichTextFilter {
   body: StringFilter
 }
 
-input CompanyBlocksCurrentKnowledgeCardTldrBulletsFilter {
-  text: StringFilter
-}
-
-input CompanyBlocksCurrentKnowledgeCardSourcesFilter {
-  title: StringFilter
-  url: StringFilter
-  year: StringFilter
-}
-
-input CompanyBlocksCurrentKnowledgeCardFilter {
-  scheme: StringFilter
-  question: StringFilter
-  directAnswer: StringFilter
-  tldrBullets: CompanyBlocksCurrentKnowledgeCardTldrBulletsFilter
-  expandedAnswer: StringFilter
-  sources: CompanyBlocksCurrentKnowledgeCardSourcesFilter
-  reviewedBy: StringFilter
-  lastReviewed: StringFilter
-}
-
-input CompanyBlocksRelatedKnowledgeBaseFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  limit: NumberFilter
-  filterTags: StringFilter
-}
-
 input CompanyBlocksRelatedPagesFilter {
   scheme: StringFilter
   heading: StringFilter
@@ -6254,8 +5847,6 @@ input CompanyBlocksFilter {
   alertBanner: CompanyBlocksAlertBannerFilter
   prose: CompanyBlocksProseFilter
   richText: CompanyBlocksRichTextFilter
-  currentKnowledgeCard: CompanyBlocksCurrentKnowledgeCardFilter
-  relatedKnowledgeBase: CompanyBlocksRelatedKnowledgeBaseFilter
   relatedPages: CompanyBlocksRelatedPagesFilter
   roiCalculatorPromo: CompanyBlocksRoiCalculatorPromoFilter
   leadMagnetPromo: CompanyBlocksLeadMagnetPromoFilter
@@ -6287,900 +5878,6 @@ type CompanyConnection implements Connection {
   pageInfo: PageInfo!
   totalCount: Float!
   edges: [CompanyConnectionEdges]
-}
-
-type KnowledgeBaseBlocksHeroBreadcrumb {
-  label: String!
-  href: String
-}
-
-type KnowledgeBaseBlocksHero {
-  scheme: String
-  wave: String
-  waveFill: String
-  eyebrow: String
-  headline: String
-  subtitle: String
-  primaryCtaText: String
-  primaryCtaLink: String
-  secondaryCtaText: String
-  secondaryCtaLink: String
-  backgroundImage: String
-  backgroundImageAlt: String
-  videoIframe: String
-  breadcrumb: [KnowledgeBaseBlocksHeroBreadcrumb]
-}
-
-type KnowledgeBaseBlocksTrustBarItems {
-  text: String!
-  logo: String
-}
-
-type KnowledgeBaseBlocksTrustBar {
-  scheme: String
-  items: [KnowledgeBaseBlocksTrustBarItems]
-}
-
-type KnowledgeBaseBlocksStatsBarStats {
-  value: String!
-  label: String!
-  sublabel: String
-}
-
-type KnowledgeBaseBlocksStatsBar {
-  scheme: String
-  heading: String
-  stats: [KnowledgeBaseBlocksStatsBarStats]
-}
-
-type KnowledgeBaseBlocksSegmentRouterSegments {
-  title: String!
-  description: String
-  ctaText: String
-  link: String!
-}
-
-type KnowledgeBaseBlocksSegmentRouter {
-  scheme: String
-  heading: String
-  segments: [KnowledgeBaseBlocksSegmentRouterSegments]
-}
-
-type KnowledgeBaseBlocksSolutionCardsCards {
-  title: String!
-  description: String
-  link: String
-  iconHint: String
-  image: String
-}
-
-type KnowledgeBaseBlocksSolutionCards {
-  scheme: String
-  heading: String
-  subheading: String
-  cards: [KnowledgeBaseBlocksSolutionCardsCards]
-}
-
-type KnowledgeBaseBlocksProcessStepsSteps {
-  number: Float!
-  title: String!
-  subtitle: String
-  description: String
-}
-
-type KnowledgeBaseBlocksProcessSteps {
-  scheme: String
-  heading: String
-  steps: [KnowledgeBaseBlocksProcessStepsSteps]
-  ctaText: String
-  ctaLink: String
-}
-
-type KnowledgeBaseBlocksMetricsBlockMetrics {
-  name: String!
-  whatItMeasures: String
-}
-
-type KnowledgeBaseBlocksMetricsBlock {
-  scheme: String
-  heading: String
-  metrics: [KnowledgeBaseBlocksMetricsBlockMetrics]
-}
-
-type KnowledgeBaseBlocksFeatureComparisonRows {
-  feature: String!
-  values: [String]
-}
-
-type KnowledgeBaseBlocksFeatureComparison {
-  scheme: String
-  heading: String
-  tldr: String
-  columns: [String]
-  rows: [KnowledgeBaseBlocksFeatureComparisonRows]
-}
-
-type KnowledgeBaseBlocksEvidenceBlockCitations {
-  title: String!
-  authors: String
-  journal: String
-  year: String
-  finding: String
-  link: String
-}
-
-type KnowledgeBaseBlocksEvidenceBlock {
-  scheme: String
-  heading: String
-  pulledStat: String
-  pulledStatSource: String
-  citations: [KnowledgeBaseBlocksEvidenceBlockCitations]
-}
-
-type KnowledgeBaseBlocksTestimonialCarouselTestimonials {
-  quote: String!
-  name: String
-  role: String
-  organization: String
-  photo: String
-}
-
-type KnowledgeBaseBlocksTestimonialCarousel {
-  scheme: String
-  wave: String
-  waveFill: String
-  heading: String
-  testimonials: [KnowledgeBaseBlocksTestimonialCarouselTestimonials]
-}
-
-type KnowledgeBaseBlocksCaseStudyCardsCaseStudies {
-  title: String!
-  metric: String
-  metricLabel: String
-  summary: String
-  sector: String
-  link: String
-  thumbnail: String
-}
-
-type KnowledgeBaseBlocksCaseStudyCards {
-  scheme: String
-  heading: String
-  caseStudies: [KnowledgeBaseBlocksCaseStudyCardsCaseStudies]
-}
-
-type KnowledgeBaseBlocksFaqAccordionFaqs {
-  question: String!
-  answer: String!
-}
-
-type KnowledgeBaseBlocksFaqAccordion {
-  scheme: String
-  heading: String
-  emitSchema: Boolean
-  faqs: [KnowledgeBaseBlocksFaqAccordionFaqs]
-}
-
-type KnowledgeBaseBlocksCtaBanner {
-  scheme: String
-  wave: String
-  waveFill: String
-  heading: String
-  bodyText: String
-  primaryCtaText: String
-  primaryCtaLink: String
-  secondaryCtaText: String
-  secondaryCtaLink: String
-}
-
-type KnowledgeBaseBlocksCtaInline {
-  scheme: String
-  heading: String
-  bodyText: String
-  primaryCtaText: String
-  primaryCtaLink: String
-  secondaryCtaText: String
-  secondaryCtaLink: String
-}
-
-type KnowledgeBaseBlocksImageFeatureBulletPoints {
-  text: String!
-}
-
-type KnowledgeBaseBlocksImageFeature {
-  scheme: String
-  imagePosition: String
-  image: String
-  imageAlt: String
-  headline: String
-  description: String
-  bulletPoints: [KnowledgeBaseBlocksImageFeatureBulletPoints]
-  ctaText: String
-  ctaLink: String
-}
-
-type KnowledgeBaseBlocksVideoSection {
-  scheme: String
-  heading: String
-  videoUrl: String
-  caption: String
-  thumbnail: String
-}
-
-type KnowledgeBaseBlocksTeamGridTeam {
-  name: String!
-  role: String!
-  credentials: String
-  bio: String
-  photo: String
-}
-
-type KnowledgeBaseBlocksTeamGrid {
-  scheme: String
-  heading: String
-  team: [KnowledgeBaseBlocksTeamGridTeam]
-}
-
-type KnowledgeBaseBlocksTeamShowcaseTeam {
-  name: String!
-  role: String!
-  credentials: String
-  bio: String
-  photo: String
-  linkedin: String
-  tier: String
-}
-
-type KnowledgeBaseBlocksTeamShowcase {
-  scheme: String
-  heading: String
-  subtitle: String
-  layout: String
-  team: [KnowledgeBaseBlocksTeamShowcaseTeam]
-}
-
-type KnowledgeBaseBlocksTrustCertBlockBadges {
-  label: String!
-  icon: String
-}
-
-type KnowledgeBaseBlocksTrustCertBlock {
-  scheme: String
-  badges: [KnowledgeBaseBlocksTrustCertBlockBadges]
-}
-
-type KnowledgeBaseBlocksAlertBanner {
-  scheme: String
-  type: String
-  text: String!
-  ctaText: String
-  ctaLink: String
-}
-
-type KnowledgeBaseBlocksProse {
-  scheme: String
-  align: String
-  eyebrow: String
-  heading: String
-  body: String
-}
-
-type KnowledgeBaseBlocksRichText {
-  scheme: String
-  heading: String
-  body: String
-}
-
-type KnowledgeBaseBlocksCurrentKnowledgeCardTldrBullets {
-  text: String!
-}
-
-type KnowledgeBaseBlocksCurrentKnowledgeCardSources {
-  title: String!
-  url: String
-  year: String
-}
-
-type KnowledgeBaseBlocksCurrentKnowledgeCard {
-  scheme: String
-  question: String!
-  directAnswer: String!
-  tldrBullets: [KnowledgeBaseBlocksCurrentKnowledgeCardTldrBullets]
-  expandedAnswer: String
-  sources: [KnowledgeBaseBlocksCurrentKnowledgeCardSources]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-type KnowledgeBaseBlocksRelatedKnowledgeBase {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
-type KnowledgeBaseBlocksRelatedPages {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
-type KnowledgeBaseBlocksRoiCalculatorPromo {
-  scheme: String
-  eyebrow: String
-  heading: String
-  promoBody: String
-  ctaText: String
-  ctaLink: String
-}
-
-type KnowledgeBaseBlocksLeadMagnetPromo {
-  scheme: String
-  heading: String
-  promoBody: String
-  ctaText: String
-  ctaLink: String
-  coverImage: String
-}
-
-type KnowledgeBaseBlocksBreadcrumbItems {
-  label: String!
-  href: String
-}
-
-type KnowledgeBaseBlocksBreadcrumb {
-  scheme: String
-  items: [KnowledgeBaseBlocksBreadcrumbItems]
-}
-
-type KnowledgeBaseBlocksPartnerLogoCarouselLogos {
-  src: String!
-  alt: String!
-}
-
-type KnowledgeBaseBlocksPartnerLogoCarousel {
-  heading: String
-  subheading: String
-  scheme: String
-  logos: [KnowledgeBaseBlocksPartnerLogoCarouselLogos]
-}
-
-type KnowledgeBaseBlocksContactForm {
-  scheme: String
-  heading: String
-  subtitle: String
-  salesEmail: String
-  supportEmail: String
-}
-
-type KnowledgeBaseBlocksSegmentCardsCards {
-  title: String!
-  body: String
-  icon: String
-  link: String
-}
-
-type KnowledgeBaseBlocksSegmentCards {
-  scheme: String
-  heading: String
-  cards: [KnowledgeBaseBlocksSegmentCardsCards]
-}
-
-type KnowledgeBaseBlocksValuePropsItems {
-  title: String!
-  body: String
-}
-
-type KnowledgeBaseBlocksValueProps {
-  scheme: String
-  heading: String
-  items: [KnowledgeBaseBlocksValuePropsItems]
-}
-
-type KnowledgeBaseBlocksTimelineEntries {
-  year: String!
-  body: String
-}
-
-type KnowledgeBaseBlocksTimeline {
-  scheme: String
-  heading: String
-  entries: [KnowledgeBaseBlocksTimelineEntries]
-}
-
-union KnowledgeBaseBlocks = KnowledgeBaseBlocksHero | KnowledgeBaseBlocksTrustBar | KnowledgeBaseBlocksStatsBar | KnowledgeBaseBlocksSegmentRouter | KnowledgeBaseBlocksSolutionCards | KnowledgeBaseBlocksProcessSteps | KnowledgeBaseBlocksMetricsBlock | KnowledgeBaseBlocksFeatureComparison | KnowledgeBaseBlocksEvidenceBlock | KnowledgeBaseBlocksTestimonialCarousel | KnowledgeBaseBlocksCaseStudyCards | KnowledgeBaseBlocksFaqAccordion | KnowledgeBaseBlocksCtaBanner | KnowledgeBaseBlocksCtaInline | KnowledgeBaseBlocksImageFeature | KnowledgeBaseBlocksVideoSection | KnowledgeBaseBlocksTeamGrid | KnowledgeBaseBlocksTeamShowcase | KnowledgeBaseBlocksTrustCertBlock | KnowledgeBaseBlocksAlertBanner | KnowledgeBaseBlocksProse | KnowledgeBaseBlocksRichText | KnowledgeBaseBlocksCurrentKnowledgeCard | KnowledgeBaseBlocksRelatedKnowledgeBase | KnowledgeBaseBlocksRelatedPages | KnowledgeBaseBlocksRoiCalculatorPromo | KnowledgeBaseBlocksLeadMagnetPromo | KnowledgeBaseBlocksBreadcrumb | KnowledgeBaseBlocksPartnerLogoCarousel | KnowledgeBaseBlocksContactForm | KnowledgeBaseBlocksSegmentCards | KnowledgeBaseBlocksValueProps | KnowledgeBaseBlocksTimeline
-
-type KnowledgeBase implements Node & Document {
-  title: String!
-  description: String
-  category: String!
-  pillar: String
-  primaryKeyword: String
-  keywords: [String]
-  tags: [String]
-  author: String
-  authorRole: String
-  reviewer: String
-  reviewerRole: String
-  publishedDate: String
-  lastReviewed: String
-  readTime: Float
-  image: String
-  imageAlt: String
-  schemaTypes: [String]
-  blocks: [KnowledgeBaseBlocks]
-  id: ID!
-  _sys: SystemInfo!
-  _values: JSON!
-}
-
-input KnowledgeBaseBlocksHeroBreadcrumbFilter {
-  label: StringFilter
-  href: StringFilter
-}
-
-input KnowledgeBaseBlocksHeroFilter {
-  scheme: StringFilter
-  wave: StringFilter
-  waveFill: StringFilter
-  eyebrow: StringFilter
-  headline: StringFilter
-  subtitle: StringFilter
-  primaryCtaText: StringFilter
-  primaryCtaLink: StringFilter
-  secondaryCtaText: StringFilter
-  secondaryCtaLink: StringFilter
-  backgroundImage: ImageFilter
-  backgroundImageAlt: StringFilter
-  videoIframe: StringFilter
-  breadcrumb: KnowledgeBaseBlocksHeroBreadcrumbFilter
-}
-
-input KnowledgeBaseBlocksTrustBarItemsFilter {
-  text: StringFilter
-  logo: ImageFilter
-}
-
-input KnowledgeBaseBlocksTrustBarFilter {
-  scheme: StringFilter
-  items: KnowledgeBaseBlocksTrustBarItemsFilter
-}
-
-input KnowledgeBaseBlocksStatsBarStatsFilter {
-  value: StringFilter
-  label: StringFilter
-  sublabel: StringFilter
-}
-
-input KnowledgeBaseBlocksStatsBarFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  stats: KnowledgeBaseBlocksStatsBarStatsFilter
-}
-
-input KnowledgeBaseBlocksSegmentRouterSegmentsFilter {
-  title: StringFilter
-  description: StringFilter
-  ctaText: StringFilter
-  link: StringFilter
-}
-
-input KnowledgeBaseBlocksSegmentRouterFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  segments: KnowledgeBaseBlocksSegmentRouterSegmentsFilter
-}
-
-input KnowledgeBaseBlocksSolutionCardsCardsFilter {
-  title: StringFilter
-  description: StringFilter
-  link: StringFilter
-  iconHint: StringFilter
-  image: ImageFilter
-}
-
-input KnowledgeBaseBlocksSolutionCardsFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  subheading: StringFilter
-  cards: KnowledgeBaseBlocksSolutionCardsCardsFilter
-}
-
-input KnowledgeBaseBlocksProcessStepsStepsFilter {
-  number: NumberFilter
-  title: StringFilter
-  subtitle: StringFilter
-  description: StringFilter
-}
-
-input KnowledgeBaseBlocksProcessStepsFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  steps: KnowledgeBaseBlocksProcessStepsStepsFilter
-  ctaText: StringFilter
-  ctaLink: StringFilter
-}
-
-input KnowledgeBaseBlocksMetricsBlockMetricsFilter {
-  name: StringFilter
-  whatItMeasures: StringFilter
-}
-
-input KnowledgeBaseBlocksMetricsBlockFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  metrics: KnowledgeBaseBlocksMetricsBlockMetricsFilter
-}
-
-input KnowledgeBaseBlocksFeatureComparisonRowsFilter {
-  feature: StringFilter
-  values: StringFilter
-}
-
-input KnowledgeBaseBlocksFeatureComparisonFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  tldr: StringFilter
-  columns: StringFilter
-  rows: KnowledgeBaseBlocksFeatureComparisonRowsFilter
-}
-
-input KnowledgeBaseBlocksEvidenceBlockCitationsFilter {
-  title: StringFilter
-  authors: StringFilter
-  journal: StringFilter
-  year: StringFilter
-  finding: StringFilter
-  link: StringFilter
-}
-
-input KnowledgeBaseBlocksEvidenceBlockFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  pulledStat: StringFilter
-  pulledStatSource: StringFilter
-  citations: KnowledgeBaseBlocksEvidenceBlockCitationsFilter
-}
-
-input KnowledgeBaseBlocksTestimonialCarouselTestimonialsFilter {
-  quote: StringFilter
-  name: StringFilter
-  role: StringFilter
-  organization: StringFilter
-  photo: ImageFilter
-}
-
-input KnowledgeBaseBlocksTestimonialCarouselFilter {
-  scheme: StringFilter
-  wave: StringFilter
-  waveFill: StringFilter
-  heading: StringFilter
-  testimonials: KnowledgeBaseBlocksTestimonialCarouselTestimonialsFilter
-}
-
-input KnowledgeBaseBlocksCaseStudyCardsCaseStudiesFilter {
-  title: StringFilter
-  metric: StringFilter
-  metricLabel: StringFilter
-  summary: StringFilter
-  sector: StringFilter
-  link: StringFilter
-  thumbnail: ImageFilter
-}
-
-input KnowledgeBaseBlocksCaseStudyCardsFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  caseStudies: KnowledgeBaseBlocksCaseStudyCardsCaseStudiesFilter
-}
-
-input KnowledgeBaseBlocksFaqAccordionFaqsFilter {
-  question: StringFilter
-  answer: StringFilter
-}
-
-input KnowledgeBaseBlocksFaqAccordionFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  emitSchema: BooleanFilter
-  faqs: KnowledgeBaseBlocksFaqAccordionFaqsFilter
-}
-
-input KnowledgeBaseBlocksCtaBannerFilter {
-  scheme: StringFilter
-  wave: StringFilter
-  waveFill: StringFilter
-  heading: StringFilter
-  bodyText: StringFilter
-  primaryCtaText: StringFilter
-  primaryCtaLink: StringFilter
-  secondaryCtaText: StringFilter
-  secondaryCtaLink: StringFilter
-}
-
-input KnowledgeBaseBlocksCtaInlineFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  bodyText: StringFilter
-  primaryCtaText: StringFilter
-  primaryCtaLink: StringFilter
-  secondaryCtaText: StringFilter
-  secondaryCtaLink: StringFilter
-}
-
-input KnowledgeBaseBlocksImageFeatureBulletPointsFilter {
-  text: StringFilter
-}
-
-input KnowledgeBaseBlocksImageFeatureFilter {
-  scheme: StringFilter
-  imagePosition: StringFilter
-  image: ImageFilter
-  imageAlt: StringFilter
-  headline: StringFilter
-  description: StringFilter
-  bulletPoints: KnowledgeBaseBlocksImageFeatureBulletPointsFilter
-  ctaText: StringFilter
-  ctaLink: StringFilter
-}
-
-input KnowledgeBaseBlocksVideoSectionFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  videoUrl: StringFilter
-  caption: StringFilter
-  thumbnail: ImageFilter
-}
-
-input KnowledgeBaseBlocksTeamGridTeamFilter {
-  name: StringFilter
-  role: StringFilter
-  credentials: StringFilter
-  bio: StringFilter
-  photo: ImageFilter
-}
-
-input KnowledgeBaseBlocksTeamGridFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  team: KnowledgeBaseBlocksTeamGridTeamFilter
-}
-
-input KnowledgeBaseBlocksTeamShowcaseTeamFilter {
-  name: StringFilter
-  role: StringFilter
-  credentials: StringFilter
-  bio: StringFilter
-  photo: ImageFilter
-  linkedin: StringFilter
-  tier: StringFilter
-}
-
-input KnowledgeBaseBlocksTeamShowcaseFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  subtitle: StringFilter
-  layout: StringFilter
-  team: KnowledgeBaseBlocksTeamShowcaseTeamFilter
-}
-
-input KnowledgeBaseBlocksTrustCertBlockBadgesFilter {
-  label: StringFilter
-  icon: ImageFilter
-}
-
-input KnowledgeBaseBlocksTrustCertBlockFilter {
-  scheme: StringFilter
-  badges: KnowledgeBaseBlocksTrustCertBlockBadgesFilter
-}
-
-input KnowledgeBaseBlocksAlertBannerFilter {
-  scheme: StringFilter
-  type: StringFilter
-  text: StringFilter
-  ctaText: StringFilter
-  ctaLink: StringFilter
-}
-
-input KnowledgeBaseBlocksProseFilter {
-  scheme: StringFilter
-  align: StringFilter
-  eyebrow: StringFilter
-  heading: StringFilter
-  body: StringFilter
-}
-
-input KnowledgeBaseBlocksRichTextFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  body: StringFilter
-}
-
-input KnowledgeBaseBlocksCurrentKnowledgeCardTldrBulletsFilter {
-  text: StringFilter
-}
-
-input KnowledgeBaseBlocksCurrentKnowledgeCardSourcesFilter {
-  title: StringFilter
-  url: StringFilter
-  year: StringFilter
-}
-
-input KnowledgeBaseBlocksCurrentKnowledgeCardFilter {
-  scheme: StringFilter
-  question: StringFilter
-  directAnswer: StringFilter
-  tldrBullets: KnowledgeBaseBlocksCurrentKnowledgeCardTldrBulletsFilter
-  expandedAnswer: StringFilter
-  sources: KnowledgeBaseBlocksCurrentKnowledgeCardSourcesFilter
-  reviewedBy: StringFilter
-  lastReviewed: StringFilter
-}
-
-input KnowledgeBaseBlocksRelatedKnowledgeBaseFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  limit: NumberFilter
-  filterTags: StringFilter
-}
-
-input KnowledgeBaseBlocksRelatedPagesFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  limit: NumberFilter
-  filterTags: StringFilter
-}
-
-input KnowledgeBaseBlocksRoiCalculatorPromoFilter {
-  scheme: StringFilter
-  eyebrow: StringFilter
-  heading: StringFilter
-  promoBody: StringFilter
-  ctaText: StringFilter
-  ctaLink: StringFilter
-}
-
-input KnowledgeBaseBlocksLeadMagnetPromoFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  promoBody: StringFilter
-  ctaText: StringFilter
-  ctaLink: StringFilter
-  coverImage: ImageFilter
-}
-
-input KnowledgeBaseBlocksBreadcrumbItemsFilter {
-  label: StringFilter
-  href: StringFilter
-}
-
-input KnowledgeBaseBlocksBreadcrumbFilter {
-  scheme: StringFilter
-  items: KnowledgeBaseBlocksBreadcrumbItemsFilter
-}
-
-input KnowledgeBaseBlocksPartnerLogoCarouselLogosFilter {
-  src: ImageFilter
-  alt: StringFilter
-}
-
-input KnowledgeBaseBlocksPartnerLogoCarouselFilter {
-  heading: StringFilter
-  subheading: StringFilter
-  scheme: StringFilter
-  logos: KnowledgeBaseBlocksPartnerLogoCarouselLogosFilter
-}
-
-input KnowledgeBaseBlocksContactFormFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  subtitle: StringFilter
-  salesEmail: StringFilter
-  supportEmail: StringFilter
-}
-
-input KnowledgeBaseBlocksSegmentCardsCardsFilter {
-  title: StringFilter
-  body: StringFilter
-  icon: StringFilter
-  link: StringFilter
-}
-
-input KnowledgeBaseBlocksSegmentCardsFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  cards: KnowledgeBaseBlocksSegmentCardsCardsFilter
-}
-
-input KnowledgeBaseBlocksValuePropsItemsFilter {
-  title: StringFilter
-  body: StringFilter
-}
-
-input KnowledgeBaseBlocksValuePropsFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  items: KnowledgeBaseBlocksValuePropsItemsFilter
-}
-
-input KnowledgeBaseBlocksTimelineEntriesFilter {
-  year: StringFilter
-  body: StringFilter
-}
-
-input KnowledgeBaseBlocksTimelineFilter {
-  scheme: StringFilter
-  heading: StringFilter
-  entries: KnowledgeBaseBlocksTimelineEntriesFilter
-}
-
-input KnowledgeBaseBlocksFilter {
-  hero: KnowledgeBaseBlocksHeroFilter
-  trustBar: KnowledgeBaseBlocksTrustBarFilter
-  statsBar: KnowledgeBaseBlocksStatsBarFilter
-  segmentRouter: KnowledgeBaseBlocksSegmentRouterFilter
-  solutionCards: KnowledgeBaseBlocksSolutionCardsFilter
-  processSteps: KnowledgeBaseBlocksProcessStepsFilter
-  metricsBlock: KnowledgeBaseBlocksMetricsBlockFilter
-  featureComparison: KnowledgeBaseBlocksFeatureComparisonFilter
-  evidenceBlock: KnowledgeBaseBlocksEvidenceBlockFilter
-  testimonialCarousel: KnowledgeBaseBlocksTestimonialCarouselFilter
-  caseStudyCards: KnowledgeBaseBlocksCaseStudyCardsFilter
-  faqAccordion: KnowledgeBaseBlocksFaqAccordionFilter
-  ctaBanner: KnowledgeBaseBlocksCtaBannerFilter
-  ctaInline: KnowledgeBaseBlocksCtaInlineFilter
-  imageFeature: KnowledgeBaseBlocksImageFeatureFilter
-  videoSection: KnowledgeBaseBlocksVideoSectionFilter
-  teamGrid: KnowledgeBaseBlocksTeamGridFilter
-  teamShowcase: KnowledgeBaseBlocksTeamShowcaseFilter
-  trustCertBlock: KnowledgeBaseBlocksTrustCertBlockFilter
-  alertBanner: KnowledgeBaseBlocksAlertBannerFilter
-  prose: KnowledgeBaseBlocksProseFilter
-  richText: KnowledgeBaseBlocksRichTextFilter
-  currentKnowledgeCard: KnowledgeBaseBlocksCurrentKnowledgeCardFilter
-  relatedKnowledgeBase: KnowledgeBaseBlocksRelatedKnowledgeBaseFilter
-  relatedPages: KnowledgeBaseBlocksRelatedPagesFilter
-  roiCalculatorPromo: KnowledgeBaseBlocksRoiCalculatorPromoFilter
-  leadMagnetPromo: KnowledgeBaseBlocksLeadMagnetPromoFilter
-  breadcrumb: KnowledgeBaseBlocksBreadcrumbFilter
-  partnerLogoCarousel: KnowledgeBaseBlocksPartnerLogoCarouselFilter
-  contactForm: KnowledgeBaseBlocksContactFormFilter
-  segmentCards: KnowledgeBaseBlocksSegmentCardsFilter
-  valueProps: KnowledgeBaseBlocksValuePropsFilter
-  timeline: KnowledgeBaseBlocksTimelineFilter
-}
-
-input KnowledgeBaseFilter {
-  title: StringFilter
-  description: StringFilter
-  category: StringFilter
-  pillar: StringFilter
-  primaryKeyword: StringFilter
-  keywords: StringFilter
-  tags: StringFilter
-  author: StringFilter
-  authorRole: StringFilter
-  reviewer: StringFilter
-  reviewerRole: StringFilter
-  publishedDate: StringFilter
-  lastReviewed: StringFilter
-  readTime: NumberFilter
-  image: ImageFilter
-  imageAlt: StringFilter
-  schemaTypes: StringFilter
-  blocks: KnowledgeBaseBlocksFilter
-}
-
-type KnowledgeBaseConnectionEdges {
-  cursor: String!
-  node: KnowledgeBase
-}
-
-type KnowledgeBaseConnection implements Connection {
-  pageInfo: PageInfo!
-  totalCount: Float!
-  edges: [KnowledgeBaseConnectionEdges]
 }
 
 type Utility implements Node & Document {
@@ -7355,21 +6052,8 @@ type SidebarWidgetsBlogSidebar {
   widgets: [SidebarWidgetsBlogSidebarWidgets]
 }
 
-type SidebarWidgetsKbSidebarWidgets {
-  title: String!
-  description: String
-  ctaText: String
-  ctaLink: String!
-  variant: String
-}
-
-type SidebarWidgetsKbSidebar {
-  widgets: [SidebarWidgetsKbSidebarWidgets]
-}
-
 type SidebarWidgets implements Node & Document {
   blogSidebar: SidebarWidgetsBlogSidebar
-  kbSidebar: SidebarWidgetsKbSidebar
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -7387,21 +6071,8 @@ input SidebarWidgetsBlogSidebarFilter {
   widgets: SidebarWidgetsBlogSidebarWidgetsFilter
 }
 
-input SidebarWidgetsKbSidebarWidgetsFilter {
-  title: StringFilter
-  description: StringFilter
-  ctaText: StringFilter
-  ctaLink: StringFilter
-  variant: StringFilter
-}
-
-input SidebarWidgetsKbSidebarFilter {
-  widgets: SidebarWidgetsKbSidebarWidgetsFilter
-}
-
 input SidebarWidgetsFilter {
   blogSidebar: SidebarWidgetsBlogSidebarFilter
-  kbSidebar: SidebarWidgetsKbSidebarFilter
 }
 
 type SidebarWidgetsConnectionEdges {
@@ -7435,8 +6106,6 @@ type Mutation {
   createResources(relativePath: String!, params: ResourcesMutation!): Resources!
   updateCompany(relativePath: String!, params: CompanyMutation!): Company!
   createCompany(relativePath: String!, params: CompanyMutation!): Company!
-  updateKnowledgeBase(relativePath: String!, params: KnowledgeBaseMutation!): KnowledgeBase!
-  createKnowledgeBase(relativePath: String!, params: KnowledgeBaseMutation!): KnowledgeBase!
   updateUtility(relativePath: String!, params: UtilityMutation!): Utility!
   createUtility(relativePath: String!, params: UtilityMutation!): Utility!
   updateGlobal(relativePath: String!, params: GlobalMutation!): Global!
@@ -7455,7 +6124,6 @@ input DocumentUpdateMutation {
   learn: LearnMutation
   resources: ResourcesMutation
   company: CompanyMutation
-  knowledgeBase: KnowledgeBaseMutation
   utility: UtilityMutation
   global: GlobalMutation
   navigation: NavigationMutation
@@ -7471,7 +6139,6 @@ input DocumentMutation {
   learn: LearnMutation
   resources: ResourcesMutation
   company: CompanyMutation
-  knowledgeBase: KnowledgeBaseMutation
   utility: UtilityMutation
   global: GlobalMutation
   navigation: NavigationMutation
@@ -7760,34 +6427,6 @@ input PagesBlocksRichTextMutation {
   body: String
 }
 
-input PagesBlocksCurrentKnowledgeCardTldrBulletsMutation {
-  text: String
-}
-
-input PagesBlocksCurrentKnowledgeCardSourcesMutation {
-  title: String
-  url: String
-  year: String
-}
-
-input PagesBlocksCurrentKnowledgeCardMutation {
-  scheme: String
-  question: String
-  directAnswer: String
-  tldrBullets: [PagesBlocksCurrentKnowledgeCardTldrBulletsMutation]
-  expandedAnswer: String
-  sources: [PagesBlocksCurrentKnowledgeCardSourcesMutation]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-input PagesBlocksRelatedKnowledgeBaseMutation {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 input PagesBlocksRelatedPagesMutation {
   scheme: String
   heading: String
@@ -7901,8 +6540,6 @@ input PagesBlocksMutation {
   alertBanner: PagesBlocksAlertBannerMutation
   prose: PagesBlocksProseMutation
   richText: PagesBlocksRichTextMutation
-  currentKnowledgeCard: PagesBlocksCurrentKnowledgeCardMutation
-  relatedKnowledgeBase: PagesBlocksRelatedKnowledgeBaseMutation
   relatedPages: PagesBlocksRelatedPagesMutation
   roiCalculatorPromo: PagesBlocksRoiCalculatorPromoMutation
   leadMagnetPromo: PagesBlocksLeadMagnetPromoMutation
@@ -8207,34 +6844,6 @@ input SolutionsBlocksRichTextMutation {
   body: String
 }
 
-input SolutionsBlocksCurrentKnowledgeCardTldrBulletsMutation {
-  text: String
-}
-
-input SolutionsBlocksCurrentKnowledgeCardSourcesMutation {
-  title: String
-  url: String
-  year: String
-}
-
-input SolutionsBlocksCurrentKnowledgeCardMutation {
-  scheme: String
-  question: String
-  directAnswer: String
-  tldrBullets: [SolutionsBlocksCurrentKnowledgeCardTldrBulletsMutation]
-  expandedAnswer: String
-  sources: [SolutionsBlocksCurrentKnowledgeCardSourcesMutation]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-input SolutionsBlocksRelatedKnowledgeBaseMutation {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 input SolutionsBlocksRelatedPagesMutation {
   scheme: String
   heading: String
@@ -8348,8 +6957,6 @@ input SolutionsBlocksMutation {
   alertBanner: SolutionsBlocksAlertBannerMutation
   prose: SolutionsBlocksProseMutation
   richText: SolutionsBlocksRichTextMutation
-  currentKnowledgeCard: SolutionsBlocksCurrentKnowledgeCardMutation
-  relatedKnowledgeBase: SolutionsBlocksRelatedKnowledgeBaseMutation
   relatedPages: SolutionsBlocksRelatedPagesMutation
   roiCalculatorPromo: SolutionsBlocksRoiCalculatorPromoMutation
   leadMagnetPromo: SolutionsBlocksLeadMagnetPromoMutation
@@ -8654,34 +7261,6 @@ input SegmentsBlocksRichTextMutation {
   body: String
 }
 
-input SegmentsBlocksCurrentKnowledgeCardTldrBulletsMutation {
-  text: String
-}
-
-input SegmentsBlocksCurrentKnowledgeCardSourcesMutation {
-  title: String
-  url: String
-  year: String
-}
-
-input SegmentsBlocksCurrentKnowledgeCardMutation {
-  scheme: String
-  question: String
-  directAnswer: String
-  tldrBullets: [SegmentsBlocksCurrentKnowledgeCardTldrBulletsMutation]
-  expandedAnswer: String
-  sources: [SegmentsBlocksCurrentKnowledgeCardSourcesMutation]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-input SegmentsBlocksRelatedKnowledgeBaseMutation {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 input SegmentsBlocksRelatedPagesMutation {
   scheme: String
   heading: String
@@ -8795,8 +7374,6 @@ input SegmentsBlocksMutation {
   alertBanner: SegmentsBlocksAlertBannerMutation
   prose: SegmentsBlocksProseMutation
   richText: SegmentsBlocksRichTextMutation
-  currentKnowledgeCard: SegmentsBlocksCurrentKnowledgeCardMutation
-  relatedKnowledgeBase: SegmentsBlocksRelatedKnowledgeBaseMutation
   relatedPages: SegmentsBlocksRelatedPagesMutation
   roiCalculatorPromo: SegmentsBlocksRoiCalculatorPromoMutation
   leadMagnetPromo: SegmentsBlocksLeadMagnetPromoMutation
@@ -9101,34 +7678,6 @@ input CompareBlocksRichTextMutation {
   body: String
 }
 
-input CompareBlocksCurrentKnowledgeCardTldrBulletsMutation {
-  text: String
-}
-
-input CompareBlocksCurrentKnowledgeCardSourcesMutation {
-  title: String
-  url: String
-  year: String
-}
-
-input CompareBlocksCurrentKnowledgeCardMutation {
-  scheme: String
-  question: String
-  directAnswer: String
-  tldrBullets: [CompareBlocksCurrentKnowledgeCardTldrBulletsMutation]
-  expandedAnswer: String
-  sources: [CompareBlocksCurrentKnowledgeCardSourcesMutation]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-input CompareBlocksRelatedKnowledgeBaseMutation {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 input CompareBlocksRelatedPagesMutation {
   scheme: String
   heading: String
@@ -9242,8 +7791,6 @@ input CompareBlocksMutation {
   alertBanner: CompareBlocksAlertBannerMutation
   prose: CompareBlocksProseMutation
   richText: CompareBlocksRichTextMutation
-  currentKnowledgeCard: CompareBlocksCurrentKnowledgeCardMutation
-  relatedKnowledgeBase: CompareBlocksRelatedKnowledgeBaseMutation
   relatedPages: CompareBlocksRelatedPagesMutation
   roiCalculatorPromo: CompareBlocksRoiCalculatorPromoMutation
   leadMagnetPromo: CompareBlocksLeadMagnetPromoMutation
@@ -9548,34 +8095,6 @@ input LearnBlocksRichTextMutation {
   body: String
 }
 
-input LearnBlocksCurrentKnowledgeCardTldrBulletsMutation {
-  text: String
-}
-
-input LearnBlocksCurrentKnowledgeCardSourcesMutation {
-  title: String
-  url: String
-  year: String
-}
-
-input LearnBlocksCurrentKnowledgeCardMutation {
-  scheme: String
-  question: String
-  directAnswer: String
-  tldrBullets: [LearnBlocksCurrentKnowledgeCardTldrBulletsMutation]
-  expandedAnswer: String
-  sources: [LearnBlocksCurrentKnowledgeCardSourcesMutation]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-input LearnBlocksRelatedKnowledgeBaseMutation {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 input LearnBlocksRelatedPagesMutation {
   scheme: String
   heading: String
@@ -9689,8 +8208,6 @@ input LearnBlocksMutation {
   alertBanner: LearnBlocksAlertBannerMutation
   prose: LearnBlocksProseMutation
   richText: LearnBlocksRichTextMutation
-  currentKnowledgeCard: LearnBlocksCurrentKnowledgeCardMutation
-  relatedKnowledgeBase: LearnBlocksRelatedKnowledgeBaseMutation
   relatedPages: LearnBlocksRelatedPagesMutation
   roiCalculatorPromo: LearnBlocksRoiCalculatorPromoMutation
   leadMagnetPromo: LearnBlocksLeadMagnetPromoMutation
@@ -10003,34 +8520,6 @@ input ResourcesBlocksRichTextMutation {
   body: String
 }
 
-input ResourcesBlocksCurrentKnowledgeCardTldrBulletsMutation {
-  text: String
-}
-
-input ResourcesBlocksCurrentKnowledgeCardSourcesMutation {
-  title: String
-  url: String
-  year: String
-}
-
-input ResourcesBlocksCurrentKnowledgeCardMutation {
-  scheme: String
-  question: String
-  directAnswer: String
-  tldrBullets: [ResourcesBlocksCurrentKnowledgeCardTldrBulletsMutation]
-  expandedAnswer: String
-  sources: [ResourcesBlocksCurrentKnowledgeCardSourcesMutation]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-input ResourcesBlocksRelatedKnowledgeBaseMutation {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 input ResourcesBlocksRelatedPagesMutation {
   scheme: String
   heading: String
@@ -10144,8 +8633,6 @@ input ResourcesBlocksMutation {
   alertBanner: ResourcesBlocksAlertBannerMutation
   prose: ResourcesBlocksProseMutation
   richText: ResourcesBlocksRichTextMutation
-  currentKnowledgeCard: ResourcesBlocksCurrentKnowledgeCardMutation
-  relatedKnowledgeBase: ResourcesBlocksRelatedKnowledgeBaseMutation
   relatedPages: ResourcesBlocksRelatedPagesMutation
   roiCalculatorPromo: ResourcesBlocksRoiCalculatorPromoMutation
   leadMagnetPromo: ResourcesBlocksLeadMagnetPromoMutation
@@ -10450,34 +8937,6 @@ input CompanyBlocksRichTextMutation {
   body: String
 }
 
-input CompanyBlocksCurrentKnowledgeCardTldrBulletsMutation {
-  text: String
-}
-
-input CompanyBlocksCurrentKnowledgeCardSourcesMutation {
-  title: String
-  url: String
-  year: String
-}
-
-input CompanyBlocksCurrentKnowledgeCardMutation {
-  scheme: String
-  question: String
-  directAnswer: String
-  tldrBullets: [CompanyBlocksCurrentKnowledgeCardTldrBulletsMutation]
-  expandedAnswer: String
-  sources: [CompanyBlocksCurrentKnowledgeCardSourcesMutation]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-input CompanyBlocksRelatedKnowledgeBaseMutation {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
 input CompanyBlocksRelatedPagesMutation {
   scheme: String
   heading: String
@@ -10591,8 +9050,6 @@ input CompanyBlocksMutation {
   alertBanner: CompanyBlocksAlertBannerMutation
   prose: CompanyBlocksProseMutation
   richText: CompanyBlocksRichTextMutation
-  currentKnowledgeCard: CompanyBlocksCurrentKnowledgeCardMutation
-  relatedKnowledgeBase: CompanyBlocksRelatedKnowledgeBaseMutation
   relatedPages: CompanyBlocksRelatedPagesMutation
   roiCalculatorPromo: CompanyBlocksRoiCalculatorPromoMutation
   leadMagnetPromo: CompanyBlocksLeadMagnetPromoMutation
@@ -10613,463 +9070,6 @@ input CompanyMutation {
   primaryKeyword: String
   h1: String
   tags: [String]
-}
-
-input KnowledgeBaseBlocksHeroBreadcrumbMutation {
-  label: String
-  href: String
-}
-
-input KnowledgeBaseBlocksHeroMutation {
-  scheme: String
-  wave: String
-  waveFill: String
-  eyebrow: String
-  headline: String
-  subtitle: String
-  primaryCtaText: String
-  primaryCtaLink: String
-  secondaryCtaText: String
-  secondaryCtaLink: String
-  backgroundImage: String
-  backgroundImageAlt: String
-  videoIframe: String
-  breadcrumb: [KnowledgeBaseBlocksHeroBreadcrumbMutation]
-}
-
-input KnowledgeBaseBlocksTrustBarItemsMutation {
-  text: String
-  logo: String
-}
-
-input KnowledgeBaseBlocksTrustBarMutation {
-  scheme: String
-  items: [KnowledgeBaseBlocksTrustBarItemsMutation]
-}
-
-input KnowledgeBaseBlocksStatsBarStatsMutation {
-  value: String
-  label: String
-  sublabel: String
-}
-
-input KnowledgeBaseBlocksStatsBarMutation {
-  scheme: String
-  heading: String
-  stats: [KnowledgeBaseBlocksStatsBarStatsMutation]
-}
-
-input KnowledgeBaseBlocksSegmentRouterSegmentsMutation {
-  title: String
-  description: String
-  ctaText: String
-  link: String
-}
-
-input KnowledgeBaseBlocksSegmentRouterMutation {
-  scheme: String
-  heading: String
-  segments: [KnowledgeBaseBlocksSegmentRouterSegmentsMutation]
-}
-
-input KnowledgeBaseBlocksSolutionCardsCardsMutation {
-  title: String
-  description: String
-  link: String
-  iconHint: String
-  image: String
-}
-
-input KnowledgeBaseBlocksSolutionCardsMutation {
-  scheme: String
-  heading: String
-  subheading: String
-  cards: [KnowledgeBaseBlocksSolutionCardsCardsMutation]
-}
-
-input KnowledgeBaseBlocksProcessStepsStepsMutation {
-  number: Float
-  title: String
-  subtitle: String
-  description: String
-}
-
-input KnowledgeBaseBlocksProcessStepsMutation {
-  scheme: String
-  heading: String
-  steps: [KnowledgeBaseBlocksProcessStepsStepsMutation]
-  ctaText: String
-  ctaLink: String
-}
-
-input KnowledgeBaseBlocksMetricsBlockMetricsMutation {
-  name: String
-  whatItMeasures: String
-}
-
-input KnowledgeBaseBlocksMetricsBlockMutation {
-  scheme: String
-  heading: String
-  metrics: [KnowledgeBaseBlocksMetricsBlockMetricsMutation]
-}
-
-input KnowledgeBaseBlocksFeatureComparisonRowsMutation {
-  feature: String
-  values: [String]
-}
-
-input KnowledgeBaseBlocksFeatureComparisonMutation {
-  scheme: String
-  heading: String
-  tldr: String
-  columns: [String]
-  rows: [KnowledgeBaseBlocksFeatureComparisonRowsMutation]
-}
-
-input KnowledgeBaseBlocksEvidenceBlockCitationsMutation {
-  title: String
-  authors: String
-  journal: String
-  year: String
-  finding: String
-  link: String
-}
-
-input KnowledgeBaseBlocksEvidenceBlockMutation {
-  scheme: String
-  heading: String
-  pulledStat: String
-  pulledStatSource: String
-  citations: [KnowledgeBaseBlocksEvidenceBlockCitationsMutation]
-}
-
-input KnowledgeBaseBlocksTestimonialCarouselTestimonialsMutation {
-  quote: String
-  name: String
-  role: String
-  organization: String
-  photo: String
-}
-
-input KnowledgeBaseBlocksTestimonialCarouselMutation {
-  scheme: String
-  wave: String
-  waveFill: String
-  heading: String
-  testimonials: [KnowledgeBaseBlocksTestimonialCarouselTestimonialsMutation]
-}
-
-input KnowledgeBaseBlocksCaseStudyCardsCaseStudiesMutation {
-  title: String
-  metric: String
-  metricLabel: String
-  summary: String
-  sector: String
-  link: String
-  thumbnail: String
-}
-
-input KnowledgeBaseBlocksCaseStudyCardsMutation {
-  scheme: String
-  heading: String
-  caseStudies: [KnowledgeBaseBlocksCaseStudyCardsCaseStudiesMutation]
-}
-
-input KnowledgeBaseBlocksFaqAccordionFaqsMutation {
-  question: String
-  answer: String
-}
-
-input KnowledgeBaseBlocksFaqAccordionMutation {
-  scheme: String
-  heading: String
-  emitSchema: Boolean
-  faqs: [KnowledgeBaseBlocksFaqAccordionFaqsMutation]
-}
-
-input KnowledgeBaseBlocksCtaBannerMutation {
-  scheme: String
-  wave: String
-  waveFill: String
-  heading: String
-  bodyText: String
-  primaryCtaText: String
-  primaryCtaLink: String
-  secondaryCtaText: String
-  secondaryCtaLink: String
-}
-
-input KnowledgeBaseBlocksCtaInlineMutation {
-  scheme: String
-  heading: String
-  bodyText: String
-  primaryCtaText: String
-  primaryCtaLink: String
-  secondaryCtaText: String
-  secondaryCtaLink: String
-}
-
-input KnowledgeBaseBlocksImageFeatureBulletPointsMutation {
-  text: String
-}
-
-input KnowledgeBaseBlocksImageFeatureMutation {
-  scheme: String
-  imagePosition: String
-  image: String
-  imageAlt: String
-  headline: String
-  description: String
-  bulletPoints: [KnowledgeBaseBlocksImageFeatureBulletPointsMutation]
-  ctaText: String
-  ctaLink: String
-}
-
-input KnowledgeBaseBlocksVideoSectionMutation {
-  scheme: String
-  heading: String
-  videoUrl: String
-  caption: String
-  thumbnail: String
-}
-
-input KnowledgeBaseBlocksTeamGridTeamMutation {
-  name: String
-  role: String
-  credentials: String
-  bio: String
-  photo: String
-}
-
-input KnowledgeBaseBlocksTeamGridMutation {
-  scheme: String
-  heading: String
-  team: [KnowledgeBaseBlocksTeamGridTeamMutation]
-}
-
-input KnowledgeBaseBlocksTeamShowcaseTeamMutation {
-  name: String
-  role: String
-  credentials: String
-  bio: String
-  photo: String
-  linkedin: String
-  tier: String
-}
-
-input KnowledgeBaseBlocksTeamShowcaseMutation {
-  scheme: String
-  heading: String
-  subtitle: String
-  layout: String
-  team: [KnowledgeBaseBlocksTeamShowcaseTeamMutation]
-}
-
-input KnowledgeBaseBlocksTrustCertBlockBadgesMutation {
-  label: String
-  icon: String
-}
-
-input KnowledgeBaseBlocksTrustCertBlockMutation {
-  scheme: String
-  badges: [KnowledgeBaseBlocksTrustCertBlockBadgesMutation]
-}
-
-input KnowledgeBaseBlocksAlertBannerMutation {
-  scheme: String
-  type: String
-  text: String
-  ctaText: String
-  ctaLink: String
-}
-
-input KnowledgeBaseBlocksProseMutation {
-  scheme: String
-  align: String
-  eyebrow: String
-  heading: String
-  body: String
-}
-
-input KnowledgeBaseBlocksRichTextMutation {
-  scheme: String
-  heading: String
-  body: String
-}
-
-input KnowledgeBaseBlocksCurrentKnowledgeCardTldrBulletsMutation {
-  text: String
-}
-
-input KnowledgeBaseBlocksCurrentKnowledgeCardSourcesMutation {
-  title: String
-  url: String
-  year: String
-}
-
-input KnowledgeBaseBlocksCurrentKnowledgeCardMutation {
-  scheme: String
-  question: String
-  directAnswer: String
-  tldrBullets: [KnowledgeBaseBlocksCurrentKnowledgeCardTldrBulletsMutation]
-  expandedAnswer: String
-  sources: [KnowledgeBaseBlocksCurrentKnowledgeCardSourcesMutation]
-  reviewedBy: String
-  lastReviewed: String
-}
-
-input KnowledgeBaseBlocksRelatedKnowledgeBaseMutation {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
-input KnowledgeBaseBlocksRelatedPagesMutation {
-  scheme: String
-  heading: String
-  limit: Float
-  filterTags: [String]
-}
-
-input KnowledgeBaseBlocksRoiCalculatorPromoMutation {
-  scheme: String
-  eyebrow: String
-  heading: String
-  promoBody: String
-  ctaText: String
-  ctaLink: String
-}
-
-input KnowledgeBaseBlocksLeadMagnetPromoMutation {
-  scheme: String
-  heading: String
-  promoBody: String
-  ctaText: String
-  ctaLink: String
-  coverImage: String
-}
-
-input KnowledgeBaseBlocksBreadcrumbItemsMutation {
-  label: String
-  href: String
-}
-
-input KnowledgeBaseBlocksBreadcrumbMutation {
-  scheme: String
-  items: [KnowledgeBaseBlocksBreadcrumbItemsMutation]
-}
-
-input KnowledgeBaseBlocksPartnerLogoCarouselLogosMutation {
-  src: String
-  alt: String
-}
-
-input KnowledgeBaseBlocksPartnerLogoCarouselMutation {
-  heading: String
-  subheading: String
-  scheme: String
-  logos: [KnowledgeBaseBlocksPartnerLogoCarouselLogosMutation]
-}
-
-input KnowledgeBaseBlocksContactFormMutation {
-  scheme: String
-  heading: String
-  subtitle: String
-  salesEmail: String
-  supportEmail: String
-}
-
-input KnowledgeBaseBlocksSegmentCardsCardsMutation {
-  title: String
-  body: String
-  icon: String
-  link: String
-}
-
-input KnowledgeBaseBlocksSegmentCardsMutation {
-  scheme: String
-  heading: String
-  cards: [KnowledgeBaseBlocksSegmentCardsCardsMutation]
-}
-
-input KnowledgeBaseBlocksValuePropsItemsMutation {
-  title: String
-  body: String
-}
-
-input KnowledgeBaseBlocksValuePropsMutation {
-  scheme: String
-  heading: String
-  items: [KnowledgeBaseBlocksValuePropsItemsMutation]
-}
-
-input KnowledgeBaseBlocksTimelineEntriesMutation {
-  year: String
-  body: String
-}
-
-input KnowledgeBaseBlocksTimelineMutation {
-  scheme: String
-  heading: String
-  entries: [KnowledgeBaseBlocksTimelineEntriesMutation]
-}
-
-input KnowledgeBaseBlocksMutation {
-  hero: KnowledgeBaseBlocksHeroMutation
-  trustBar: KnowledgeBaseBlocksTrustBarMutation
-  statsBar: KnowledgeBaseBlocksStatsBarMutation
-  segmentRouter: KnowledgeBaseBlocksSegmentRouterMutation
-  solutionCards: KnowledgeBaseBlocksSolutionCardsMutation
-  processSteps: KnowledgeBaseBlocksProcessStepsMutation
-  metricsBlock: KnowledgeBaseBlocksMetricsBlockMutation
-  featureComparison: KnowledgeBaseBlocksFeatureComparisonMutation
-  evidenceBlock: KnowledgeBaseBlocksEvidenceBlockMutation
-  testimonialCarousel: KnowledgeBaseBlocksTestimonialCarouselMutation
-  caseStudyCards: KnowledgeBaseBlocksCaseStudyCardsMutation
-  faqAccordion: KnowledgeBaseBlocksFaqAccordionMutation
-  ctaBanner: KnowledgeBaseBlocksCtaBannerMutation
-  ctaInline: KnowledgeBaseBlocksCtaInlineMutation
-  imageFeature: KnowledgeBaseBlocksImageFeatureMutation
-  videoSection: KnowledgeBaseBlocksVideoSectionMutation
-  teamGrid: KnowledgeBaseBlocksTeamGridMutation
-  teamShowcase: KnowledgeBaseBlocksTeamShowcaseMutation
-  trustCertBlock: KnowledgeBaseBlocksTrustCertBlockMutation
-  alertBanner: KnowledgeBaseBlocksAlertBannerMutation
-  prose: KnowledgeBaseBlocksProseMutation
-  richText: KnowledgeBaseBlocksRichTextMutation
-  currentKnowledgeCard: KnowledgeBaseBlocksCurrentKnowledgeCardMutation
-  relatedKnowledgeBase: KnowledgeBaseBlocksRelatedKnowledgeBaseMutation
-  relatedPages: KnowledgeBaseBlocksRelatedPagesMutation
-  roiCalculatorPromo: KnowledgeBaseBlocksRoiCalculatorPromoMutation
-  leadMagnetPromo: KnowledgeBaseBlocksLeadMagnetPromoMutation
-  breadcrumb: KnowledgeBaseBlocksBreadcrumbMutation
-  partnerLogoCarousel: KnowledgeBaseBlocksPartnerLogoCarouselMutation
-  contactForm: KnowledgeBaseBlocksContactFormMutation
-  segmentCards: KnowledgeBaseBlocksSegmentCardsMutation
-  valueProps: KnowledgeBaseBlocksValuePropsMutation
-  timeline: KnowledgeBaseBlocksTimelineMutation
-}
-
-input KnowledgeBaseMutation {
-  title: String
-  description: String
-  category: String
-  pillar: String
-  primaryKeyword: String
-  keywords: [String]
-  tags: [String]
-  author: String
-  authorRole: String
-  reviewer: String
-  reviewerRole: String
-  publishedDate: String
-  lastReviewed: String
-  readTime: Float
-  image: String
-  imageAlt: String
-  schemaTypes: [String]
-  blocks: [KnowledgeBaseBlocksMutation]
 }
 
 input UtilityMutation {
@@ -11143,21 +9143,8 @@ input SidebarWidgetsBlogSidebarMutation {
   widgets: [SidebarWidgetsBlogSidebarWidgetsMutation]
 }
 
-input SidebarWidgetsKbSidebarWidgetsMutation {
-  title: String
-  description: String
-  ctaText: String
-  ctaLink: String
-  variant: String
-}
-
-input SidebarWidgetsKbSidebarMutation {
-  widgets: [SidebarWidgetsKbSidebarWidgetsMutation]
-}
-
 input SidebarWidgetsMutation {
   blogSidebar: SidebarWidgetsBlogSidebarMutation
-  kbSidebar: SidebarWidgetsKbSidebarMutation
 }
 
 schema {

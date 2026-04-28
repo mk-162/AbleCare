@@ -246,30 +246,6 @@ fragment PagesParts on Pages {
       heading
       body
     }
-    ... on PagesBlocksCurrentKnowledgeCard {
-      scheme
-      question
-      directAnswer
-      tldrBullets {
-        __typename
-        text
-      }
-      expandedAnswer
-      sources {
-        __typename
-        title
-        url
-        year
-      }
-      reviewedBy
-      lastReviewed
-    }
-    ... on PagesBlocksRelatedKnowledgeBase {
-      scheme
-      heading
-      limit
-      filterTags
-    }
     ... on PagesBlocksRelatedPages {
       scheme
       heading
@@ -603,30 +579,6 @@ fragment SolutionsParts on Solutions {
       scheme
       heading
       body
-    }
-    ... on SolutionsBlocksCurrentKnowledgeCard {
-      scheme
-      question
-      directAnswer
-      tldrBullets {
-        __typename
-        text
-      }
-      expandedAnswer
-      sources {
-        __typename
-        title
-        url
-        year
-      }
-      reviewedBy
-      lastReviewed
-    }
-    ... on SolutionsBlocksRelatedKnowledgeBase {
-      scheme
-      heading
-      limit
-      filterTags
     }
     ... on SolutionsBlocksRelatedPages {
       scheme
@@ -962,30 +914,6 @@ fragment SegmentsParts on Segments {
       heading
       body
     }
-    ... on SegmentsBlocksCurrentKnowledgeCard {
-      scheme
-      question
-      directAnswer
-      tldrBullets {
-        __typename
-        text
-      }
-      expandedAnswer
-      sources {
-        __typename
-        title
-        url
-        year
-      }
-      reviewedBy
-      lastReviewed
-    }
-    ... on SegmentsBlocksRelatedKnowledgeBase {
-      scheme
-      heading
-      limit
-      filterTags
-    }
     ... on SegmentsBlocksRelatedPages {
       scheme
       heading
@@ -1319,30 +1247,6 @@ fragment CompareParts on Compare {
       scheme
       heading
       body
-    }
-    ... on CompareBlocksCurrentKnowledgeCard {
-      scheme
-      question
-      directAnswer
-      tldrBullets {
-        __typename
-        text
-      }
-      expandedAnswer
-      sources {
-        __typename
-        title
-        url
-        year
-      }
-      reviewedBy
-      lastReviewed
-    }
-    ... on CompareBlocksRelatedKnowledgeBase {
-      scheme
-      heading
-      limit
-      filterTags
     }
     ... on CompareBlocksRelatedPages {
       scheme
@@ -1693,30 +1597,6 @@ fragment LearnParts on Learn {
       heading
       body
     }
-    ... on LearnBlocksCurrentKnowledgeCard {
-      scheme
-      question
-      directAnswer
-      tldrBullets {
-        __typename
-        text
-      }
-      expandedAnswer
-      sources {
-        __typename
-        title
-        url
-        year
-      }
-      reviewedBy
-      lastReviewed
-    }
-    ... on LearnBlocksRelatedKnowledgeBase {
-      scheme
-      heading
-      limit
-      filterTags
-    }
     ... on LearnBlocksRelatedPages {
       scheme
       heading
@@ -2043,30 +1923,6 @@ fragment ResourcesParts on Resources {
       scheme
       heading
       body
-    }
-    ... on ResourcesBlocksCurrentKnowledgeCard {
-      scheme
-      question
-      directAnswer
-      tldrBullets {
-        __typename
-        text
-      }
-      expandedAnswer
-      sources {
-        __typename
-        title
-        url
-        year
-      }
-      reviewedBy
-      lastReviewed
-    }
-    ... on ResourcesBlocksRelatedKnowledgeBase {
-      scheme
-      heading
-      limit
-      filterTags
     }
     ... on ResourcesBlocksRelatedPages {
       scheme
@@ -2402,30 +2258,6 @@ fragment CompanyParts on Company {
       heading
       body
     }
-    ... on CompanyBlocksCurrentKnowledgeCard {
-      scheme
-      question
-      directAnswer
-      tldrBullets {
-        __typename
-        text
-      }
-      expandedAnswer
-      sources {
-        __typename
-        title
-        url
-        year
-      }
-      reviewedBy
-      lastReviewed
-    }
-    ... on CompanyBlocksRelatedKnowledgeBase {
-      scheme
-      heading
-      limit
-      filterTags
-    }
     ... on CompanyBlocksRelatedPages {
       scheme
       heading
@@ -2512,374 +2344,6 @@ fragment CompanyParts on Company {
   tags
 }
 
-fragment KnowledgeBaseParts on KnowledgeBase {
-  __typename
-  title
-  description
-  category
-  pillar
-  primaryKeyword
-  keywords
-  tags
-  author
-  authorRole
-  reviewer
-  reviewerRole
-  publishedDate
-  lastReviewed
-  readTime
-  image
-  imageAlt
-  schemaTypes
-  blocks {
-    __typename
-    ... on KnowledgeBaseBlocksHero {
-      scheme
-      wave
-      waveFill
-      eyebrow
-      headline
-      subtitle
-      primaryCtaText
-      primaryCtaLink
-      secondaryCtaText
-      secondaryCtaLink
-      backgroundImage
-      backgroundImageAlt
-      videoIframe
-      breadcrumb {
-        __typename
-        label
-        href
-      }
-    }
-    ... on KnowledgeBaseBlocksTrustBar {
-      scheme
-      items {
-        __typename
-        text
-        logo
-      }
-    }
-    ... on KnowledgeBaseBlocksStatsBar {
-      scheme
-      heading
-      stats {
-        __typename
-        value
-        label
-        sublabel
-      }
-    }
-    ... on KnowledgeBaseBlocksSegmentRouter {
-      scheme
-      heading
-      segments {
-        __typename
-        title
-        description
-        ctaText
-        link
-      }
-    }
-    ... on KnowledgeBaseBlocksSolutionCards {
-      scheme
-      heading
-      subheading
-      cards {
-        __typename
-        title
-        description
-        link
-        iconHint
-        image
-      }
-    }
-    ... on KnowledgeBaseBlocksProcessSteps {
-      scheme
-      heading
-      steps {
-        __typename
-        number
-        title
-        subtitle
-        description
-      }
-      ctaText
-      ctaLink
-    }
-    ... on KnowledgeBaseBlocksMetricsBlock {
-      scheme
-      heading
-      metrics {
-        __typename
-        name
-        whatItMeasures
-      }
-    }
-    ... on KnowledgeBaseBlocksFeatureComparison {
-      scheme
-      heading
-      tldr
-      columns
-      rows {
-        __typename
-        feature
-        values
-      }
-    }
-    ... on KnowledgeBaseBlocksEvidenceBlock {
-      scheme
-      heading
-      pulledStat
-      pulledStatSource
-      citations {
-        __typename
-        title
-        authors
-        journal
-        year
-        finding
-        link
-      }
-    }
-    ... on KnowledgeBaseBlocksTestimonialCarousel {
-      scheme
-      wave
-      waveFill
-      heading
-      testimonials {
-        __typename
-        quote
-        name
-        role
-        organization
-        photo
-      }
-    }
-    ... on KnowledgeBaseBlocksCaseStudyCards {
-      scheme
-      heading
-      caseStudies {
-        __typename
-        title
-        metric
-        metricLabel
-        summary
-        sector
-        link
-        thumbnail
-      }
-    }
-    ... on KnowledgeBaseBlocksFaqAccordion {
-      scheme
-      heading
-      emitSchema
-      faqs {
-        __typename
-        question
-        answer
-      }
-    }
-    ... on KnowledgeBaseBlocksCtaBanner {
-      scheme
-      wave
-      waveFill
-      heading
-      bodyText
-      primaryCtaText
-      primaryCtaLink
-      secondaryCtaText
-      secondaryCtaLink
-    }
-    ... on KnowledgeBaseBlocksCtaInline {
-      scheme
-      heading
-      bodyText
-      primaryCtaText
-      primaryCtaLink
-      secondaryCtaText
-      secondaryCtaLink
-    }
-    ... on KnowledgeBaseBlocksImageFeature {
-      scheme
-      imagePosition
-      image
-      imageAlt
-      headline
-      description
-      bulletPoints {
-        __typename
-        text
-      }
-      ctaText
-      ctaLink
-    }
-    ... on KnowledgeBaseBlocksVideoSection {
-      scheme
-      heading
-      videoUrl
-      caption
-      thumbnail
-    }
-    ... on KnowledgeBaseBlocksTeamGrid {
-      scheme
-      heading
-      team {
-        __typename
-        name
-        role
-        credentials
-        bio
-        photo
-      }
-    }
-    ... on KnowledgeBaseBlocksTeamShowcase {
-      scheme
-      heading
-      subtitle
-      layout
-      team {
-        __typename
-        name
-        role
-        credentials
-        bio
-        photo
-        linkedin
-        tier
-      }
-    }
-    ... on KnowledgeBaseBlocksTrustCertBlock {
-      scheme
-      badges {
-        __typename
-        label
-        icon
-      }
-    }
-    ... on KnowledgeBaseBlocksAlertBanner {
-      scheme
-      type
-      text
-      ctaText
-      ctaLink
-    }
-    ... on KnowledgeBaseBlocksProse {
-      scheme
-      align
-      eyebrow
-      heading
-      body
-    }
-    ... on KnowledgeBaseBlocksRichText {
-      scheme
-      heading
-      body
-    }
-    ... on KnowledgeBaseBlocksCurrentKnowledgeCard {
-      scheme
-      question
-      directAnswer
-      tldrBullets {
-        __typename
-        text
-      }
-      expandedAnswer
-      sources {
-        __typename
-        title
-        url
-        year
-      }
-      reviewedBy
-      lastReviewed
-    }
-    ... on KnowledgeBaseBlocksRelatedKnowledgeBase {
-      scheme
-      heading
-      limit
-      filterTags
-    }
-    ... on KnowledgeBaseBlocksRelatedPages {
-      scheme
-      heading
-      limit
-      filterTags
-    }
-    ... on KnowledgeBaseBlocksRoiCalculatorPromo {
-      scheme
-      eyebrow
-      heading
-      promoBody
-      ctaText
-      ctaLink
-    }
-    ... on KnowledgeBaseBlocksLeadMagnetPromo {
-      scheme
-      heading
-      promoBody
-      ctaText
-      ctaLink
-      coverImage
-    }
-    ... on KnowledgeBaseBlocksBreadcrumb {
-      scheme
-      items {
-        __typename
-        label
-        href
-      }
-    }
-    ... on KnowledgeBaseBlocksPartnerLogoCarousel {
-      heading
-      subheading
-      scheme
-      logos {
-        __typename
-        src
-        alt
-      }
-    }
-    ... on KnowledgeBaseBlocksContactForm {
-      scheme
-      heading
-      subtitle
-      salesEmail
-      supportEmail
-    }
-    ... on KnowledgeBaseBlocksSegmentCards {
-      scheme
-      heading
-      cards {
-        __typename
-        title
-        body
-        icon
-        link
-      }
-    }
-    ... on KnowledgeBaseBlocksValueProps {
-      scheme
-      heading
-      items {
-        __typename
-        title
-        body
-      }
-    }
-    ... on KnowledgeBaseBlocksTimeline {
-      scheme
-      heading
-      entries {
-        __typename
-        year
-        body
-      }
-    }
-  }
-}
-
 fragment UtilityParts on Utility {
   __typename
   title
@@ -2938,17 +2402,6 @@ fragment NavigationParts on Navigation {
 fragment SidebarWidgetsParts on SidebarWidgets {
   __typename
   blogSidebar {
-    __typename
-    widgets {
-      __typename
-      title
-      description
-      ctaText
-      ctaLink
-      variant
-    }
-  }
-  kbSidebar {
     __typename
     widgets {
       __typename

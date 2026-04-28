@@ -212,8 +212,8 @@ export function Hero({
 
     </section>
 
-      <div className="absolute left-0 bottom-0 w-full z-30 leading-none" aria-hidden="true">
-        <svg viewBox="0 0 1440 82" preserveAspectRatio="none" className="block w-full" style={{ height: "82px" }}>
+      <div className="absolute left-0 -bottom-px w-full z-30 leading-none" aria-hidden="true">
+        <svg viewBox="0 0 1440 82" preserveAspectRatio="none" className="block w-full" style={{ height: "82px", marginBottom: "-1px" }}>
           <rect width="1440" height="82" fill={waveBottom} />
           {wave === "crest" && <path fill={heroBg} d="M0,0 L0,40 C240,80 480,0 720,30 C960,60 1200,20 1440,40 L1440,0 Z" />}
           {wave === "ribbon" && <path fill={heroBg} d="M0,0 L0,60 C360,0 720,80 1080,40 C1260,20 1380,50 1440,60 L1440,0 Z" />}

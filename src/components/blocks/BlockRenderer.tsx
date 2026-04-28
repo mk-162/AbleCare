@@ -27,9 +27,7 @@ import { TeamShowcase } from "./TeamShowcase";
 import { PartnerLogoCarousel } from "./PartnerLogoCarousel";
 import { SegmentCards } from "./SegmentCards";
 import { ValueProps } from "./ValueProps";
-import { RelatedKnowledgeBase } from "./RelatedKnowledgeBase";
 import { RelatedPages } from "./RelatedPages";
-import { KnowledgeBaseCard } from "./KnowledgeBaseCard";
 import { Timeline } from "./Timeline";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { resolveBlockScheme } from "@/lib/resolve-scheme";
@@ -190,7 +188,7 @@ function normalizeBlock(block: any): any {
 
 interface BlockRendererProps {
   blocks: any[];
-  /** Page-level tags, injected into relatedKnowledgeBase/relatedPages blocks. */
+  /** Page-level tags, injected into relatedPages blocks. */
   pageTags?: string[];
   /** Page slug, injected into relatedPages blocks to exclude self. */
   pageSlug?: string;
@@ -280,12 +278,8 @@ export function BlockRenderer({ blocks, pageTags, pageSlug }: BlockRendererProps
             return <SegmentCards key={i} {...block} />;
           case "valueProps":
             return <ValueProps key={i} {...block} />;
-          case "currentKnowledgeCard":
-            return <KnowledgeBaseCard key={i} {...block} />;
           case "timeline":
             return <Timeline key={i} {...block} />;
-          case "relatedKnowledgeBase":
-            return <RelatedKnowledgeBase key={i} items={block._resolvedItems} heading={block.heading} scheme={block.scheme} />;
           case "relatedPages":
             return <RelatedPages key={i} items={block._resolvedItems} pageTags={pageTags} heading={block.heading} scheme={block.scheme} />;
           case "breadcrumb": {

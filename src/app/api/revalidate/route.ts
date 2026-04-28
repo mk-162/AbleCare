@@ -60,8 +60,6 @@ function pathsFor(collection: string, filename: string): string[] {
         : [`/resources/${filename}`, "/resources"];
     case "company":
       return [COMPANY_PATHS[filename] ?? `/${filename}`];
-    case "knowledgeBase":
-      return [`/knowledge-base/${filename}`, "/knowledge-base"];
     case "utility":
       return [`/${filename}`];
     default:

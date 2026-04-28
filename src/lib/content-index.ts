@@ -6,7 +6,7 @@
  * and is cached per request via Next.js module-level caching.
  *
  * Usage:
- *   import { getRelatedContent, getKBForPage, getPagesForKB } from "@/lib/content-index";
+ *   import { getRelatedContent, getRelatedPages } from "@/lib/content-index";
  *   const related = getRelatedContent(["grip-strength", "home-care"], "current-slug");
  */
 
@@ -46,7 +46,6 @@ type CollectionName =
   | "compare"
   | "resources"
   | "company"
-  | "knowledge-base"
   | "pages";
 
 interface CollectionConfig {
@@ -91,10 +90,6 @@ const COLLECTIONS: Record<CollectionName, CollectionConfig> = {
       contact: "/contact/",
       demo: "/demo/",
     },
-  },
-  "knowledge-base": {
-    path: "content/knowledge-base",
-    hrefPrefix: "/knowledge-base/",
   },
   pages: {
     path: "content/pages",
@@ -234,26 +229,10 @@ export function getRelatedContent(
 }
 
 /**
- * Get KB articles relevant to a given page's tags.
- * Use on segment, solution, compare, and resource pages to surface
- * related knowledge base content.
+ * Get pages (segments, solutions, compare, resources) relevant to the
+ * given tags, excluding the current slug. Used by the relatedPages block.
  */
-export function getKBForPage(
-  tags: string[],
-  limit = 4
-): ContentItem[] {
-  return getRelatedContent(tags, "", {
-    collections: ["learn", "knowledge-base"],
-    limit,
-  });
-}
-
-/**
- * Get non-article pages relevant to a KB article's tags.
- * Use on KB article pages to surface related segments, solutions,
- * resources, and compare pages.
- */
-export function getPagesForKB(
+export function getRelatedPages(
   tags: string[],
   excludeSlug: string,
   limit = 6

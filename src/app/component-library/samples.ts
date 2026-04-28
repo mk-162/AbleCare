@@ -403,27 +403,6 @@ export const blockSamples: BlockSample[] = [
     },
   },
   {
-    name: "currentKnowledgeCard",
-    label: "Current Knowledge Card",
-    block: {
-      _template: "currentKnowledgeCard",
-      question: "What is grip strength testing?",
-      directAnswer: "Grip strength testing measures the maximum force a person can generate when squeezing a dynamometer. It is used as a proxy for overall muscle strength, frailty, and functional health — and predicts falls, hospitalization and all-cause mortality in older adults.",
-      tldrBullets: [
-        { text: "Objective, validated biomarker of strength and frailty." },
-        { text: "Predicts mortality more reliably than systolic blood pressure (Lancet, 2015)." },
-        { text: "Takes under a minute to administer with a calibrated dynamometer." },
-      ],
-      expandedAnswer: "Grip strength has been used as a functional biomarker since the 1940s. Modern digital dynamometers make the measurement instant, repeatable, and comparable across age- and sex-matched normative data.",
-      sources: [
-        { title: "Prognostic value of grip strength (PURE study)", url: "https://www.thelancet.com/", year: "2015" },
-        { title: "Grip Strength: An Indispensable Biomarker For Older Adults", url: "https://pubmed.ncbi.nlm.nih.gov/31631989/", year: "2019" },
-      ],
-      reviewedBy: "Dr Paul Rinne, PhD",
-      lastReviewed: "2026-03-15",
-    },
-  },
-  {
     name: "timeline",
     label: "Timeline",
     block: {
@@ -435,20 +414,6 @@ export const blockSamples: BlockSample[] = [
         { year: "2021", body: "FDA listing and first US pilots in home care." },
         { year: "2023", body: "Able Assess platform launched with four validated metrics." },
         { year: "2026", body: "Deployments across 1,000+ care sites in the US and UK." },
-      ],
-    },
-  },
-  {
-    name: "relatedKnowledgeBase",
-    label: "Related Knowledge Base Articles",
-    block: {
-      _template: "relatedKnowledgeBase",
-      scheme: "grey",
-      heading: "Related articles",
-      _resolvedItems: [
-        { id: "1", slug: "grip-strength-testing", href: "/knowledge-base/grip-strength-testing", title: "What is grip strength testing?", description: "A validated biomarker of strength, frailty and falls risk.", tags: ["grip-strength", "assessment"], category: "Assessments", readTime: 6 },
-        { id: "2", slug: "hhvbp-falls-measure", href: "/knowledge-base/hhvbp-falls-measure", title: "The HHVBP falls measure, explained", description: "How CMS scores home health agencies on falls outcomes.", tags: ["home-care", "hhvbp"], category: "Reimbursement", readTime: 8 },
-        { id: "3", slug: "tug-test", href: "/knowledge-base/tug-test", title: "The Timed Up and Go test", description: "The most widely used clinical falls risk screen.", tags: ["falls-prevention"], category: "Assessments", readTime: 4 },
       ],
     },
   },
@@ -475,7 +440,7 @@ export const blockSamples: BlockSample[] = [
       scheme: "light",
       items: [
         { label: "Home", href: "/" },
-        { label: "Knowledge Base", href: "/knowledge-base/" },
+        { label: "Resources", href: "/resources/" },
         { label: "Grip strength testing" },
       ],
     },

@@ -2,13 +2,13 @@
  * Sidebar widget loader.
  *
  * Reads content/settings/sidebar-widgets.json at build time and exposes the
- * configured widgets for the blog sidebar and knowledge-base sidebar.
- * Falls back to hard-coded defaults if the file is missing or malformed,
- * so the site never breaks on a bad edit in Tina.
+ * configured widgets for the blog sidebar. Falls back to hard-coded defaults
+ * if the file is missing or malformed, so the site never breaks on a bad edit
+ * in Tina.
  *
  * Usage:
  *   import { getSidebarWidgets } from "@/lib/sidebar-widgets";
- *   const { blogSidebar, kbSidebar } = getSidebarWidgets();
+ *   const { blogSidebar } = getSidebarWidgets();
  */
 
 export type SidebarWidgetVariant = "whitepaper" | "tool" | "landing";
@@ -23,10 +23,8 @@ export interface SidebarWidget {
 
 export interface SidebarWidgets {
   blogSidebar: { widgets: SidebarWidget[] };
-  kbSidebar: { widgets: SidebarWidget[] };
 }
 
-// Hard-coded fallback — mirrors the previous in-component defaults.
 const DEFAULTS: SidebarWidgets = {
   blogSidebar: {
     widgets: [
@@ -48,18 +46,6 @@ const DEFAULTS: SidebarWidgets = {
       },
     ],
   },
-  kbSidebar: {
-    widgets: [
-      {
-        title: "Falls Prevention Buyer's Guide",
-        description:
-          "Compare the leading falls prevention tools side-by-side. Download the free guide.",
-        ctaText: "Download Guide",
-        ctaLink: "/resources/buyers-guide",
-        variant: "whitepaper",
-      },
-    ],
-  },
 };
 
 let _cache: SidebarWidgets | null = null;
@@ -76,7 +62,7 @@ function normalise(section: unknown, fallback: { widgets: SidebarWidget[] }): { 
     const title = typeof widget.title === "string" ? widget.title : "";
     const description = typeof widget.description === "string" ? widget.description : "";
     const ctaLink = typeof widget.ctaLink === "string" ? widget.ctaLink : "";
-    if (!title || !ctaLink) continue; // required fields
+    if (!title || !ctaLink) continue;
     cleaned.push({
       title,
       description,
@@ -107,7 +93,6 @@ export function getSidebarWidgets(): SidebarWidgets {
 
     _cache = {
       blogSidebar: normalise(data?.blogSidebar, DEFAULTS.blogSidebar),
-      kbSidebar: normalise(data?.kbSidebar, DEFAULTS.kbSidebar),
     };
   } catch {
     _cache = DEFAULTS;

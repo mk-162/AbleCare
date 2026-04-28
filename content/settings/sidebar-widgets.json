@@ -16,16 +16,5 @@
         "variant": "landing"
       }
     ]
-  },
-  "kbSidebar": {
-    "widgets": [
-      {
-        "title": "Falls Prevention Buyer's Guide",
-        "description": "Compare the leading falls prevention tools side-by-side. Download the free guide.",
-        "ctaText": "Download Guide",
-        "ctaLink": "/resources/buyers-guide",
-        "variant": "whitepaper"
-      }
-    ]
   }
 }

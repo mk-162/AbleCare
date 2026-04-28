@@ -168,6 +168,11 @@ export function SiteFooter() {
               &copy; {new Date().getFullYear()} GripAble Ltd. All rights reserved.
             </p>
           </div>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <Link href="/privacy" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Terms of Service</Link>
+            <Link href="/cookies" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Cookies</Link>
+          </div>
         </div>
       </div>
     </footer>

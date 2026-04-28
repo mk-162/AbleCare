@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-export type SearchScope = "blog" | "knowledge-base" | "all";
+export type SearchScope = "blog" | "all";
 
 export interface SearchDoc {
   id: string;
@@ -9,7 +9,7 @@ export interface SearchDoc {
   title: string;
   excerpt: string;
   category: string;
-  type: "blog" | "knowledge-base";
+  type: "blog";
   url: string;
 }
 
@@ -39,21 +39,6 @@ export function getSearchDocs(scope: SearchScope = "all"): SearchDoc[] {
         category: String(data.category ?? ""),
         type: "blog",
         url: `/blog/${slug}`,
-      });
-    }
-  }
-
-  if (scope === "knowledge-base" || scope === "all") {
-    const entries = readJsonDir(path.join(process.cwd(), "content/knowledge-base"));
-    for (const { slug, data } of entries) {
-      docs.push({
-        id: `kb:${slug}`,
-        slug,
-        title: String(data.title ?? ""),
-        excerpt: String(data.description ?? ""),
-        category: String(data.category ?? ""),
-        type: "knowledge-base",
-        url: `/knowledge-base/${slug}`,
       });
     }
   }

@@ -594,32 +594,6 @@ var richTextBlock = {
     { type: "string", name: "body", label: "Body (HTML)", ui: { component: "textarea" } }
   ]
 };
-var relatedKnowledgeBaseBlock = {
-  name: "relatedKnowledgeBase",
-  label: "Related Knowledge Base Articles",
-  ui: {
-    itemProps: (item) => ({
-      label: item?.heading ? `Related KB: ${item.heading}` : "Related Knowledge Base Articles"
-    }),
-    defaultItem: {
-      scheme: "grey",
-      heading: "Related articles",
-      limit: 4
-    }
-  },
-  fields: [
-    { type: "string", name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "grey" } },
-    { type: "string", name: "heading", label: "Section Heading" },
-    { type: "number", name: "limit", label: "Max Articles", description: "Maximum number of articles to show (default 4)." },
-    {
-      type: "string",
-      name: "filterTags",
-      label: "Filter Tags (override)",
-      list: true,
-      description: "Manually specify tags to filter by. Leave empty to use the page's own tags."
-    }
-  ]
-};
 var relatedPagesBlock = {
   name: "relatedPages",
   label: "Related Pages",
@@ -644,43 +618,6 @@ var relatedPagesBlock = {
       list: true,
       description: "Manually specify tags to filter by. Leave empty to use the page's own tags."
     }
-  ]
-};
-var currentKnowledgeCardBlock = {
-  name: "currentKnowledgeCard",
-  label: "Current Knowledge Card",
-  ui: {
-    itemProps: (item) => ({
-      label: item?.question ? `KB: ${item.question}` : "Current Knowledge Card"
-    })
-  },
-  fields: [
-    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
-    { type: "string", name: "question", label: "Question (H1)", required: true },
-    { type: "string", name: "directAnswer", label: "Direct Answer (40-60 words)", required: true, ui: { component: "textarea" } },
-    {
-      type: "object",
-      name: "tldrBullets",
-      label: "TL;DR Bullets",
-      list: true,
-      fields: [
-        { type: "string", name: "text", label: "Bullet point", required: true }
-      ]
-    },
-    { type: "string", name: "expandedAnswer", label: "Expanded Answer", ui: { component: "textarea" } },
-    {
-      type: "object",
-      name: "sources",
-      label: "Sources",
-      list: true,
-      fields: [
-        { type: "string", name: "title", label: "Source Title", required: true },
-        { type: "string", name: "url", label: "URL" },
-        { type: "string", name: "year", label: "Year" }
-      ]
-    },
-    { type: "string", name: "reviewedBy", label: "Reviewed By (named clinician)" },
-    { type: "string", name: "lastReviewed", label: "Last Reviewed Date (YYYY-MM-DD)" }
   ]
 };
 var roiCalculatorPromoBlock = {
@@ -903,8 +840,6 @@ var allBlocks = [
   alertBannerBlock,
   proseBlock,
   richTextBlock,
-  currentKnowledgeCardBlock,
-  relatedKnowledgeBaseBlock,
   relatedPagesBlock,
   roiCalculatorPromoBlock,
   leadMagnetPromoBlock,
@@ -1082,55 +1017,6 @@ var config_default = defineConfig({
         },
         fields: blockPageFields
       },
-      // ── Knowledge Base ────────────────────────────────────────────────
-      {
-        name: "knowledgeBase",
-        label: "Knowledge Base",
-        path: "content/knowledge-base",
-        format: "json",
-        ui: {
-          router: ({ document }) => `/knowledge-base/${document._sys.filename}/`
-        },
-        fields: [
-          { type: "string", name: "title", label: "Title (H1)", isTitle: true, required: true },
-          { type: "string", name: "description", label: "Meta Description", ui: { component: "textarea" } },
-          { type: "string", name: "category", label: "Category", options: ["Falls Prevention", "Grip Strength", "Assessments", "Care Settings", "Regulations", "Technology"], required: true },
-          { type: "string", name: "pillar", label: "Pillar Hub Slug", description: "Parent hub article slug (e.g. falls-risk-assessment)" },
-          { type: "string", name: "primaryKeyword", label: "Primary Keyword" },
-          { type: "string", name: "keywords", label: "SEO Keywords", list: true },
-          {
-            type: "string",
-            name: "tags",
-            label: "Content Tags",
-            list: true,
-            description: "Tags for cross-referencing: topic, segment, solution, type slugs."
-          },
-          { type: "string", name: "author", label: "Author Name" },
-          { type: "string", name: "authorRole", label: "Author Role" },
-          { type: "string", name: "reviewer", label: "Clinical Reviewer" },
-          { type: "string", name: "reviewerRole", label: "Reviewer Role" },
-          { type: "string", name: "publishedDate", label: "Published Date (YYYY-MM-DD)" },
-          { type: "string", name: "lastReviewed", label: "Last Reviewed Date (YYYY-MM-DD)" },
-          { type: "number", name: "readTime", label: "Read Time (minutes)" },
-          { type: "image", name: "image", label: "Featured Image" },
-          { type: "string", name: "imageAlt", label: "Featured Image Alt Text" },
-          {
-            type: "string",
-            name: "schemaTypes",
-            label: "Schema Types",
-            list: true,
-            options: ["Article", "MedicalWebPage", "FAQPage", "HowTo"],
-            description: "JSON-LD schema types to emit."
-          },
-          {
-            type: "object",
-            name: "blocks",
-            label: "Article Blocks",
-            list: true,
-            templates: allBlocks
-          }
-        ]
-      },
       // ── Utility (privacy, terms, cookies, thank-you) ────────────────────
       {
         name: "utility",
@@ -1260,32 +1146,6 @@ var config_default = defineConfig({
             type: "object",
             name: "blogSidebar",
             label: "Blog Sidebar",
-            fields: [
-              {
-                type: "object",
-                name: "widgets",
-                label: "Widgets",
-                list: true,
-                ui: { itemProps: (item) => ({ label: item.title || "Widget" }) },
-                fields: [
-                  { type: "string", name: "title", label: "Title", required: true },
-                  { type: "string", name: "description", label: "Description", ui: { component: "textarea" } },
-                  { type: "string", name: "ctaText", label: "CTA Text" },
-                  { type: "string", name: "ctaLink", label: "CTA Link", required: true },
-                  {
-                    type: "string",
-                    name: "variant",
-                    label: "Variant",
-                    options: ["whitepaper", "tool", "landing"]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            type: "object",
-            name: "kbSidebar",
-            label: "Knowledge Base Sidebar",
             fields: [
               {
                 type: "object",

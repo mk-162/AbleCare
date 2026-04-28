@@ -65,7 +65,7 @@ const PROMO_RULES: PromoRule[] = [
     heading: "The ROI of digital screening",
     body: "See how falls prevention technology pays for itself through reduced hospitalizations and improved star ratings.",
     ctaText: "Read the guide",
-    ctaLink: "/knowledge-base/falls-prevention-roi",
+    ctaLink: "/resources/roi-calculator",
     variant: "whitepaper",
   },
   {

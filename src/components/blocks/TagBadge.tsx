@@ -30,7 +30,7 @@ export function TagBadge({ tag, linked = true, size = "sm" }: TagBadgeProps) {
   if (linked) {
     return (
       <Link
-        href={`/knowledge-base?tag=${tag}`}
+        href={`/blog?tag=${tag}`}
         className={`${className} hover:opacity-80 transition-opacity`}
       >
         {label}
