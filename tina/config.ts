@@ -444,6 +444,7 @@ const imageFeatureBlock: any = {
     { type: "string" as const, name: "imagePosition", label: "Image Position", options: ["left", "right"], ui: { defaultValue: "right" } },
     { type: "image" as const, name: "image", label: "Image" },
     { type: "string" as const, name: "imageAlt", label: "Image Alt Text" },
+    { type: "string" as const, name: "imageFit", label: "Image Fit", options: ["cover", "contain"], description: "Use 'contain' for screenshots so they aren't cropped.", ui: { defaultValue: "cover" } },
     { type: "string" as const, name: "headline", label: "Heading" },
     { type: "string" as const, name: "description", label: "Body Text", ui: { component: "textarea" } },
     {

@@ -90,6 +90,7 @@
         { "text": "Monitor patient activity remotely between sessions" }
       ],
       "imagePosition": "left",
+      "imageFit": "contain",
       "imageAlt": "Able Rehab Achievements screen showing today's repetitions broken down by movement against goals",
       "image": "/images/photos/clinical/achievements-progress-tracking.jpg"
     },
@@ -104,6 +105,7 @@
         { "text": "Easy, stress-free recalibration in under a minute" }
       ],
       "imagePosition": "right",
+      "imageFit": "contain",
       "imageAlt": "Able Rehab Single Maximum Grip Test screen showing left hand strength compared to right",
       "image": "/images/photos/clinical/single-maximum-grip-test.jpg"
     },

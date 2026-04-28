@@ -423,6 +423,7 @@ var imageFeatureBlock = {
     { type: "string", name: "imagePosition", label: "Image Position", options: ["left", "right"], ui: { defaultValue: "right" } },
     { type: "image", name: "image", label: "Image" },
     { type: "string", name: "imageAlt", label: "Image Alt Text" },
+    { type: "string", name: "imageFit", label: "Image Fit", options: ["cover", "contain"], description: "Use 'contain' for screenshots so they aren't cropped.", ui: { defaultValue: "cover" } },
     { type: "string", name: "headline", label: "Heading" },
     { type: "string", name: "description", label: "Body Text", ui: { component: "textarea" } },
     {

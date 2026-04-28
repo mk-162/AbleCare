@@ -11,6 +11,7 @@ interface ImageFeatureProps {
   image?: string;
   imageAlt?: string;
   imagePosition?: string;
+  imageFit?: "cover" | "contain";
   ctaText?: string;
   ctaLink?: string;
   bulletPoints?: Array<{ text: string }>;
@@ -23,6 +24,7 @@ export function ImageFeature({
   image,
   imageAlt,
   imagePosition = "right",
+  imageFit = "cover",
   ctaText,
   ctaLink,
   bulletPoints,
@@ -88,12 +90,12 @@ export function ImageFeature({
             transition={{ duration: 0.6, delay: 0.1 }}
             className="w-full lg:w-1/2"
           >
-            <div className={`relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] ${isBlue ? "bg-white/10" : "bg-ac-grey"}`}>
+            <div className={`relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] ${imageFit === "contain" ? "bg-white" : isBlue ? "bg-white/10" : "bg-ac-grey"}`}>
               {image ? (
                 /\.(mp4|webm|mov)$/i.test(image) ? (
                   <video
                     src={image}
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className={`absolute inset-0 w-full h-full ${imageFit === "contain" ? "object-contain" : "object-cover"}`}
                     controls
                     muted
                     playsInline
@@ -101,7 +103,7 @@ export function ImageFeature({
                     aria-label={altText}
                   />
                 ) : (
-                  <Image src={image} alt={altText} fill className="object-cover" />
+                  <Image src={image} alt={altText} fill className={imageFit === "contain" ? "object-contain" : "object-cover"} />
                 )
               ) : (
                 <div className="absolute inset-0 w-full h-full" style={{ background: "linear-gradient(135deg, #1432FF 0%, #0a2bcc 40%, #00a896 80%, #00FFD2 100%)" }} />

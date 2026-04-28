@@ -176,6 +176,7 @@ fragment PagesParts on Pages {
       imagePosition
       image
       imageAlt
+      imageFit
       headline
       description
       bulletPoints {
@@ -511,6 +512,7 @@ fragment SolutionsParts on Solutions {
       imagePosition
       image
       imageAlt
+      imageFit
       headline
       description
       bulletPoints {
@@ -846,6 +848,7 @@ fragment SegmentsParts on Segments {
       imagePosition
       image
       imageAlt
+      imageFit
       headline
       description
       bulletPoints {
@@ -1181,6 +1184,7 @@ fragment CompareParts on Compare {
       imagePosition
       image
       imageAlt
+      imageFit
       headline
       description
       bulletPoints {
@@ -1531,6 +1535,7 @@ fragment LearnParts on Learn {
       imagePosition
       image
       imageAlt
+      imageFit
       headline
       description
       bulletPoints {
@@ -1859,6 +1864,7 @@ fragment ResourcesParts on Resources {
       imagePosition
       image
       imageAlt
+      imageFit
       headline
       description
       bulletPoints {
@@ -2194,6 +2200,7 @@ fragment CompanyParts on Company {
       imagePosition
       image
       imageAlt
+      imageFit
       headline
       description
       bulletPoints {

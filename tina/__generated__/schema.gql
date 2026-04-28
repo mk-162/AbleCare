@@ -321,6 +321,7 @@ type PagesBlocksImageFeature {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [PagesBlocksImageFeatureBulletPoints]
@@ -739,6 +740,7 @@ input PagesBlocksImageFeatureFilter {
   imagePosition: StringFilter
   image: ImageFilter
   imageAlt: StringFilter
+  imageFit: StringFilter
   headline: StringFilter
   description: StringFilter
   bulletPoints: PagesBlocksImageFeatureBulletPointsFilter
@@ -1168,6 +1170,7 @@ type SolutionsBlocksImageFeature {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [SolutionsBlocksImageFeatureBulletPoints]
@@ -1557,6 +1560,7 @@ input SolutionsBlocksImageFeatureFilter {
   imagePosition: StringFilter
   image: ImageFilter
   imageAlt: StringFilter
+  imageFit: StringFilter
   headline: StringFilter
   description: StringFilter
   bulletPoints: SolutionsBlocksImageFeatureBulletPointsFilter
@@ -1986,6 +1990,7 @@ type SegmentsBlocksImageFeature {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [SegmentsBlocksImageFeatureBulletPoints]
@@ -2375,6 +2380,7 @@ input SegmentsBlocksImageFeatureFilter {
   imagePosition: StringFilter
   image: ImageFilter
   imageAlt: StringFilter
+  imageFit: StringFilter
   headline: StringFilter
   description: StringFilter
   bulletPoints: SegmentsBlocksImageFeatureBulletPointsFilter
@@ -2804,6 +2810,7 @@ type CompareBlocksImageFeature {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [CompareBlocksImageFeatureBulletPoints]
@@ -3193,6 +3200,7 @@ input CompareBlocksImageFeatureFilter {
   imagePosition: StringFilter
   image: ImageFilter
   imageAlt: StringFilter
+  imageFit: StringFilter
   headline: StringFilter
   description: StringFilter
   bulletPoints: CompareBlocksImageFeatureBulletPointsFilter
@@ -3622,6 +3630,7 @@ type LearnBlocksImageFeature {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [LearnBlocksImageFeatureBulletPoints]
@@ -4025,6 +4034,7 @@ input LearnBlocksImageFeatureFilter {
   imagePosition: StringFilter
   image: ImageFilter
   imageAlt: StringFilter
+  imageFit: StringFilter
   headline: StringFilter
   description: StringFilter
   bulletPoints: LearnBlocksImageFeatureBulletPointsFilter
@@ -4462,6 +4472,7 @@ type ResourcesBlocksImageFeature {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [ResourcesBlocksImageFeatureBulletPoints]
@@ -4851,6 +4862,7 @@ input ResourcesBlocksImageFeatureFilter {
   imagePosition: StringFilter
   image: ImageFilter
   imageAlt: StringFilter
+  imageFit: StringFilter
   headline: StringFilter
   description: StringFilter
   bulletPoints: ResourcesBlocksImageFeatureBulletPointsFilter
@@ -5280,6 +5292,7 @@ type CompanyBlocksImageFeature {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [CompanyBlocksImageFeatureBulletPoints]
@@ -5669,6 +5682,7 @@ input CompanyBlocksImageFeatureFilter {
   imagePosition: StringFilter
   image: ImageFilter
   imageAlt: StringFilter
+  imageFit: StringFilter
   headline: StringFilter
   description: StringFilter
   bulletPoints: CompanyBlocksImageFeatureBulletPointsFilter
@@ -6363,6 +6377,7 @@ input PagesBlocksImageFeatureMutation {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [PagesBlocksImageFeatureBulletPointsMutation]
@@ -6781,6 +6796,7 @@ input SolutionsBlocksImageFeatureMutation {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [SolutionsBlocksImageFeatureBulletPointsMutation]
@@ -7199,6 +7215,7 @@ input SegmentsBlocksImageFeatureMutation {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [SegmentsBlocksImageFeatureBulletPointsMutation]
@@ -7617,6 +7634,7 @@ input CompareBlocksImageFeatureMutation {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [CompareBlocksImageFeatureBulletPointsMutation]
@@ -8035,6 +8053,7 @@ input LearnBlocksImageFeatureMutation {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [LearnBlocksImageFeatureBulletPointsMutation]
@@ -8461,6 +8480,7 @@ input ResourcesBlocksImageFeatureMutation {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [ResourcesBlocksImageFeatureBulletPointsMutation]
@@ -8879,6 +8899,7 @@ input CompanyBlocksImageFeatureMutation {
   imagePosition: String
   image: String
   imageAlt: String
+  imageFit: String
   headline: String
   description: String
   bulletPoints: [CompanyBlocksImageFeatureBulletPointsMutation]
