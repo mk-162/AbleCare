@@ -90,7 +90,19 @@ export function ImageFeature({
           >
             <div className={`relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] ${isBlue ? "bg-white/10" : "bg-ac-grey"}`}>
               {image ? (
-                <Image src={image} alt={altText} fill className="object-cover" />
+                /\.(mp4|webm|mov)$/i.test(image) ? (
+                  <video
+                    src={image}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    controls
+                    muted
+                    playsInline
+                    preload="metadata"
+                    aria-label={altText}
+                  />
+                ) : (
+                  <Image src={image} alt={altText} fill className="object-cover" />
+                )
               ) : (
                 <div className="absolute inset-0 w-full h-full" style={{ background: "linear-gradient(135deg, #1432FF 0%, #0a2bcc 40%, #00a896 80%, #00FFD2 100%)" }} />
               )}

@@ -14,6 +14,7 @@ const solutionsMenu: { platform: NavItem[]; capabilities: NavItem[] } = {
   platform: [
     { label: "Able Assess - Falls Prevention Application", href: "/solutions/able-assess", desc: "Best in class assessment of strength and falls risk." },
     { label: "Able Assess — Grip Strength Application", href: "/solutions/grip-strength", desc: "Unlocking the fifth vital sign for application in data-driven healthcare." },
+    { label: "Able Rehab — Neurorehabilitation", href: "/solutions/able-rehab", desc: "Train hand and wrist movements with engaging activities and goal tracking." },
     { label: "The GripAble Sensor", href: "/solutions/sensor", desc: "One best-in-class sensor, many applications." },
   ],
   capabilities: [

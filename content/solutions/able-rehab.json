@@ -1,0 +1,132 @@
+{
+  "title": "Able Rehab",
+  "slug": "able-rehab",
+  "seo": {
+    "title": "Able Rehab — Neurorehabilitation with the GripAble Sensor | Able Care",
+    "description": "Able Rehab uses the GripAble sensor to train the four core movements of the hand and wrist with engaging activities, goal tracking, and clinically validated grip tests.",
+    "ogImage": "/images/og-able-rehab.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Solutions",
+          "href": "/solutions"
+        },
+        {
+          "label": "Able Rehab",
+          "href": "/solutions/able-rehab"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Solutions",
+      "headline": "Able Rehab",
+      "subtitle": "Utilizing the GripAble sensor for neurorehabilitation. Train the hand and wrist, motivate patients with engaging activities, and track progress with objective data.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "See How It Works",
+        "href": "#movements"
+      },
+      "backgroundImage": "/images/photos/clinical/clinician-patient-grippable-session.jpg",
+      "backgroundImageAlt": "Therapist guiding a patient through a GripAble rehabilitation session"
+    },
+    {
+      "_template": "metricsBlock",
+      "scheme": "light",
+      "heading": "Train the four core movements of the hand and wrist",
+      "metrics": [
+        {
+          "name": "Grip / Release",
+          "description": "Opening and closing the hand against resistance. Rebuilds the fundamental power grip needed for everyday tasks like holding a cup, turning a key, or shaking hands."
+        },
+        {
+          "name": "Pronation / Supination",
+          "description": "Rotating the forearm palm-up and palm-down. Restores the control needed to turn a doorknob, accept change, or pour from a jug."
+        },
+        {
+          "name": "Wrist Radial / Ulnar Deviation",
+          "description": "Tilting the wrist side to side toward the thumb and little finger. Trains the lateral control required for writing, brushing teeth, and using utensils."
+        },
+        {
+          "name": "Wrist Extension / Flexion",
+          "description": "Bending the wrist up and down. Recovers the range of motion that underpins typing, lifting, and almost every functional reach."
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "grey",
+      "headline": "Engaging activities that keep patients training",
+      "description": "Therapy is only effective if patients keep doing it. Able Rehab turns repetitions into gameplay, so the work that drives recovery feels like something patients want to come back to.",
+      "bulletPoints": [
+        { "text": "Fun, motivating activities that meet clinical goals" },
+        { "text": "Multiple difficulty levels to grade each patient" },
+        { "text": "Assess each individual's ability, then set the activities to match — and adjust as they progress" }
+      ],
+      "imagePosition": "right",
+      "imageAlt": "Circus Escape — an engaging Able Rehab activity that trains hand and wrist movements",
+      "image": "/videos/circus-escape-activity.mp4"
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "light",
+      "headline": "Goal setting and achievement tracking",
+      "description": "Objective progress data motivates patients and gives clinicians the evidence they need for payers, families, and care teams.",
+      "bulletPoints": [
+        { "text": "Set goals by minutes of training or repetitions completed" },
+        { "text": "Generate objective progress reports to motivate patients and report to payers" },
+        { "text": "Monitor patient activity remotely between sessions" }
+      ],
+      "imagePosition": "left",
+      "imageAlt": "Able Rehab Achievements screen showing today's repetitions broken down by movement against goals",
+      "image": "/images/photos/clinical/achievements-progress-tracking.jpg"
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "grey",
+      "headline": "Hand function tests",
+      "description": "Clinically validated grip strength testing built into the same workflow as therapy — so assessment, training, and reporting all live in one place.",
+      "bulletPoints": [
+        { "text": "Clinically proven grip strength test with published clinical norms" },
+        { "text": "Test grip in multiple ways: single maximum grip, rapid exchange, and endurance" },
+        { "text": "Easy, stress-free recalibration in under a minute" }
+      ],
+      "imagePosition": "right",
+      "imageAlt": "Able Rehab Single Maximum Grip Test screen showing left hand strength compared to right",
+      "image": "/images/photos/clinical/single-maximum-grip-test.jpg"
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See Able Rehab in your clinic.",
+      "body": "20 minutes with a clinician who has used Able Rehab in practice — book a walkthrough today.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "See Able Assess",
+        "href": "/solutions/able-assess"
+      }
+    }
+  ],
+  "tags": [
+    "able-rehab",
+    "neurorehabilitation",
+    "hand-therapy",
+    "grip-strength"
+  ]
+}
