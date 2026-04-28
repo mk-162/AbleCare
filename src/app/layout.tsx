@@ -46,8 +46,8 @@ export default function RootLayout({
               email: "hello@able-care.co",
               telephone: "+44 20 7946 0958",
               sameAs: [
-                "https://linkedin.com/company/able-care",
-                "https://twitter.com/ablecarehealth",
+                "https://www.linkedin.com/company/ablecarecompany/",
+                "https://www.instagram.com/gripable_rehab/",
               ],
             }),
           }}
