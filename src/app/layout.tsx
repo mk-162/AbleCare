@@ -5,7 +5,6 @@ import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
-import { PasswordGate } from "@/components/ui/PasswordGate";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { EditButton } from "@/components/ui/EditButton";
 
@@ -55,15 +54,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-white text-ac-black" suppressHydrationWarning>
-        <PasswordGate>
-          <ScrollToTop />
-          <SiteHeader />
-          <main className="flex-grow">{children}</main>
-          <SiteFooter />
-          <BackToTop />
-          <CookieBanner />
-          <EditButton />
-        </PasswordGate>
+        <ScrollToTop />
+        <SiteHeader />
+        <main className="flex-grow">{children}</main>
+        <SiteFooter />
+        <BackToTop />
+        <CookieBanner />
+        <EditButton />
       </body>
     </html>
   );
