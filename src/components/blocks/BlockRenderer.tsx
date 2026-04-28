@@ -118,8 +118,10 @@ function normalizeBlock(block: any): any {
     delete b.studies;
   }
 
-  // cards → caseStudies (caseStudyCards)
-  if (b.cards && !b.caseStudies) {
+  // cards → caseStudies (caseStudyCards only — other card-based blocks
+  // like segmentCards and solutionCards keep their own `cards` field)
+  const blockTemplate = b._template || (b.__typename ? b.__typename.replace(/^.*Blocks/, "").charAt(0).toLowerCase() + b.__typename.replace(/^.*Blocks/, "").slice(1) : null);
+  if (blockTemplate === "caseStudyCards" && b.cards && !b.caseStudies) {
     b.caseStudies = b.cards.map((c: any) => ({
       title: c.title,
       sector: c.segment,

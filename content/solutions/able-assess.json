@@ -93,13 +93,21 @@
       ]
     },
     {
-      "_template": "imageFeature",
+      "_template": "segmentCards",
       "scheme": "grey",
-      "heading": "Clinical-grade, tablet-simple",
-      "body": "Purpose-built for the bedside, the kitchen table, and the resident's living room. The GripAble sensor and Able Assess app work together to deliver four peer-reviewed measurements in a single workflow that any member of staff can run.",
-      "imageSide": "right",
-      "imageAlt": "Able Assess app running on a tablet alongside the GripAble sensor",
-      "imageSrc": "/images/heroes/devices-hero-new-min.png"
+      "heading": "See Able Assess in action",
+      "cards": [
+        {
+          "title": "Falls Risk Tests",
+          "body": "Walkthrough: four validated falls risk assessments captured in five minutes — grip strength, Timed Up & Go, gait speed and chair stand.",
+          "link": "/falls-risk-tests"
+        },
+        {
+          "title": "Falls Risk Screening Results",
+          "body": "Walkthrough: how the platform clearly communicates at-risk and not-at-risk outcomes to support timely decisions.",
+          "link": "/low-and-at-risk"
+        }
+      ]
     },
     {
       "_template": "trustBar",
