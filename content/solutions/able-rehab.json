@@ -81,6 +81,15 @@
     },
     {
       "_template": "imageFeature",
+      "scheme": "grey",
+      "headline": "An activity for every movement",
+      "description": "Different activities target different movements. Pufferfish trains wrist flexion; other games train grip, pronation, supination, and ulnar/radial deviation — so clinicians can match the activity to each patient's clinical goal.",
+      "imagePosition": "left",
+      "imageAlt": "Pufferfish — an Able Rehab activity that trains wrist flexion",
+      "videoSrc": "/videos/pufferfish-flexion-activity.mp4"
+    },
+    {
+      "_template": "imageFeature",
       "scheme": "light",
       "headline": "Goal setting and achievement tracking",
       "description": "Objective progress data motivates patients and gives clinicians the evidence they need for payers, families, and care teams.",
