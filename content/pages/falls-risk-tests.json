@@ -1,0 +1,68 @@
+{
+  "title": "Walkthrough: Able Assess Falls Risk Tests",
+  "seo": {
+    "title": "Walkthrough: Able Assess Falls Risk Tests | Able Care",
+    "description": "Watch how Able Assess captures four validated falls risk assessments — grip strength, Timed Up & Go, gait speed and chair stand — in five minutes.",
+    "ogImage": "/images/og-falls-prevention.png"
+  },
+  "tags": [
+    "able-assess",
+    "falls-prevention",
+    "falls-risk-assessment",
+    "walkthrough"
+  ],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Solutions",
+          "href": "/solutions"
+        },
+        {
+          "label": "Falls Risk Tests",
+          "href": "/falls-risk-tests"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Walkthrough",
+      "headline": "Able Assess Falls Risk Tests",
+      "subtitle": "Four validated falls risk assessments. Five minutes. One workflow.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "See the Results Walkthrough",
+        "href": "/low-and-at-risk"
+      },
+      "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
+      "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor"
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Four key falls risk assessments in five minutes",
+      "body": "<p>We&rsquo;ve designed the first sensor in the world to measure four key falls risk assessments in five minutes:</p><ul><li>Single Maximum Grip Strength</li><li>Timed Up &amp; Go Test</li><li>Gait Speed</li><li>Chair Stand Test</li></ul><p>This video showcases how to complete all four falls risk assessments in Able Assess:</p><figure style=\"margin: 2rem auto; text-align: center;\"><video controls playsinline preload=\"metadata\" style=\"max-height: min(70vh, 560px); max-width: 100%; width: auto; height: auto; border-radius: 12px; background: #000;\" src=\"/videos/falls-risk-assessment-walkthrough.mp4\"></video></figure>"
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See Able Assess in your workflow.",
+      "bodyText": "A 20-minute demo with a clinician who has run it in the field.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
+    }
+  ]
+}

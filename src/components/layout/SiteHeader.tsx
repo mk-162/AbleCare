@@ -16,7 +16,10 @@ const solutionsMenu: { platform: NavItem[]; capabilities: NavItem[] } = {
     { label: "Able Assess — Grip Strength Application", href: "/solutions/grip-strength", desc: "Unlocking the fifth vital sign for application in data-driven healthcare." },
     { label: "The GripAble Sensor", href: "/solutions/sensor", desc: "One best-in-class sensor, many applications." },
   ],
-  capabilities: [],
+  capabilities: [
+    { label: "Falls Risk Tests", href: "/falls-risk-tests", desc: "Walkthrough: four falls risk assessments in five minutes." },
+    { label: "Falls Risk Screening Results", href: "/low-and-at-risk", desc: "Walkthrough: how at-risk and not-at-risk results are presented." },
+  ],
 };
 
 const segmentItems: NavItem[] = [

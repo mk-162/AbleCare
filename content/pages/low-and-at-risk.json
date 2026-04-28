@@ -1,0 +1,68 @@
+{
+  "title": "Walkthrough: Falls Risk Screening Results in Able Assess",
+  "seo": {
+    "title": "Walkthrough: Falls Risk Screening Results in Able Assess | Able Care",
+    "description": "See how Able Assess presents falls risk screening results — clearly flagging patients who are at risk, and reassuring those who are not — to support timely decisions.",
+    "ogImage": "/images/og-falls-prevention.png"
+  },
+  "tags": [
+    "able-assess",
+    "falls-prevention",
+    "falls-risk-assessment",
+    "walkthrough"
+  ],
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Solutions",
+          "href": "/solutions"
+        },
+        {
+          "label": "Falls Risk Screening Results",
+          "href": "/low-and-at-risk"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
+      "eyebrow": "Walkthrough",
+      "headline": "Falls Risk Screening Results in Able Assess",
+      "subtitle": "Clear, objective outcomes the moment screening ends. At risk or not at risk, every result is communicated in seconds.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/demo"
+      },
+      "secondaryCta": {
+        "label": "See the Tests Walkthrough",
+        "href": "/falls-risk-tests"
+      },
+      "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
+      "backgroundImageAlt": "Therapist reviewing Able Assess results with a patient on a tablet"
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Results that drive timely decisions",
+      "body": "<p>These videos showcase the results screen that appears after completing all four falls risk assessments in Able Assess:</p><ul><li>Single Maximum Grip Strength</li><li>Timed Up &amp; Go Test</li><li>Gait Speed</li><li>Chair Stand Test</li></ul><p>One video highlights a patient flagged as <strong>at risk</strong>, while the other shows a patient assessed as <strong>not at risk</strong> &mdash; demonstrating how the platform clearly communicates outcomes to support timely decision-making.</p><div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2.5rem;\"><figure style=\"margin: 0; text-align: center;\"><h2 style=\"margin-top: 0; margin-bottom: 1rem;\">At Risk</h2><video controls playsinline preload=\"metadata\" style=\"max-height: min(60vh, 520px); max-width: 100%; width: auto; height: auto; border-radius: 12px; background: #000;\" src=\"/videos/at-risk-results-screen.mp4\"></video></figure><figure style=\"margin: 0; text-align: center;\"><h2 style=\"margin-top: 0; margin-bottom: 1rem;\">Not at Risk</h2><video controls playsinline preload=\"metadata\" style=\"max-height: min(60vh, 520px); max-width: 100%; width: auto; height: auto; border-radius: 12px; background: #000;\" src=\"/videos/low-risk-results-screen.mp4\"></video></figure></div>"
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See Able Assess in your workflow.",
+      "bodyText": "A 20-minute demo with a clinician who has run it in the field.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
+    }
+  ]
+}
