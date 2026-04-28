@@ -1,9 +1,9 @@
 {
-  "title": "Real Results. Real Organizations.",
+  "title": "What Our Customers Say",
   "slug": "case-studies",
   "seo": {
-    "title": "Case Studies | Able Care",
-    "description": "See how home care operators, senior living communities and clinical teams use Able Assess to reduce falls, protect outcomes and standardize care.",
+    "title": "What Customers Say About Able Care | Able Care",
+    "description": "Hear directly from home care operators, senior living communities and clinical teams using Able Assess to standardize falls screening and protect outcomes.",
     "ogImage": "/images/og-case-studies.png"
   },
   "blocks": [
@@ -30,39 +30,9 @@
       "waveStyle": "ribbon",
       "backgroundImage": "/images/photos/clinical/patient-using-alone.jpg",
       "backgroundImageAlt": "Patient independently using Able Assess",
-      "eyebrow": "Case Studies",
-      "headline": "Real results. Real organizations.",
-      "subtitle": "See how home care operators use Able Assess to standardize falls screening, lift conversion from inquiry to assessment, and keep more clients at home. Two stories, in their own words.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
-    },
-    {
-      "_template": "caseStudyCards",
-      "heading": "Featured case studies",
-      "caseStudies": [
-        {
-          "title": "Why We Built Able Assess Into Our Tech Stack",
-          "sector": "Home Care, Arizona",
-          "metric": "Tech-first",
-          "metricLabel": "Integrated care stack",
-          "summary": "Owner Bob Roth on why Cypress Home Care, one of the most technology-forward agencies in the US, added Able Assess to its differentiated care model, and how objective grip strength data supports client retention and the mission to keep people at home.",
-          "link": "/resources/case-studies/cypress-home-care"
-        },
-        {
-          "title": "Turning Inquiries Into Assessments, and Assessments Into Long-Term Care",
-          "sector": "Franchise Home Care, US",
-          "metric": "Monthly",
-          "metricLabel": "Screening cadence committed",
-          "summary": "Owner Jeff Welsh on how Right at Home Tri-County Metro uses Able Assess to convert family inquiries into in-home assessments, run recurring screening events inside senior living communities, and build a holistic falls-prevention model with referral partners.",
-          "link": "/resources/case-studies/right-at-home-tri-county-metro"
-        }
-      ]
+      "eyebrow": "Customer Voices",
+      "headline": "What our customers say.",
+      "subtitle": "Hear directly from the home care operators, senior living teams and clinicians using Able Assess in the field."
     },
     {
       "_template": "testimonialCarousel",
@@ -70,19 +40,23 @@
       "testimonials": [
         {
           "quote": "I really like that it is a preventative tool, not a reactive tool. If we use it out of the gate with customers we really can prevent falls.",
-          "attribution": "Owner, multi-site home care company"
+          "role": "Owner",
+          "organization": "Multi-site home care company"
         },
         {
           "quote": "All of the therapists on the team love how quick and easy this is to use.",
-          "attribution": "Therapy Manager, Outpatient PT Provider in Senior Living"
+          "role": "Therapy Manager",
+          "organization": "Outpatient PT Provider in Senior Living"
         },
         {
           "quote": "This really is like the blood pressure cuff for falls screening.",
-          "attribution": "Manager, CCRC"
+          "role": "Manager",
+          "organization": "CCRC"
         },
         {
           "quote": "A lot of therapists in skilled nursing are not doing standardized testing regularly. I want to show them this and go 'do you know how easy this is?'",
-          "attribution": "Therapy Manager, Skilled Nursing Facility"
+          "role": "Therapy Manager",
+          "organization": "Skilled Nursing Facility"
         }
       ]
     },
@@ -99,21 +73,6 @@
         { "src": "/images/logos/consonus.png", "alt": "Consonus" },
         { "src": "/images/logos/us-physical-therapy.png", "alt": "US Physical Therapy" }
       ]
-    },
-    {
-      "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
-      "heading": "See Able Assess in your workflow.",
-      "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
     }
   ],
   "tags": [

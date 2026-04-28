@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import fs from "fs";
 import path from "path";
 import { EditorialPageClient } from "@/components/blocks/EditorialPageClient";
@@ -7,15 +8,27 @@ export const revalidate = 60;
 
 const CASE_STUDY_DIR = path.join(process.cwd(), "data/case-studies");
 
+type CaseStudy = {
+  draft?: boolean;
+  title?: string;
+  description?: string;
+  seo?: { title?: string; description?: string; ogImage?: string };
+} & Record<string, unknown>;
+
 /**
  * Case studies are authored in data/case-studies/*.json (outside content/)
  * so TinaCloud does not try to seed them. They use legacy field shapes
  * that BlockRenderer.normalizeBlock handles at render time.
+ *
+ * Files with `"draft": true` are treated as not published — they are
+ * excluded from the static params and return a 404 if requested.
  */
-function readCaseStudy(slug: string): Record<string, unknown> | null {
+function readCaseStudy(slug: string): CaseStudy | null {
   const filePath = path.join(CASE_STUDY_DIR, `${slug}.json`);
   if (!fs.existsSync(filePath)) return null;
-  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+  const data = JSON.parse(fs.readFileSync(filePath, "utf-8")) as CaseStudy;
+  if (data.draft) return null;
+  return data;
 }
 
 export async function generateMetadata({
@@ -24,9 +37,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const page = readCaseStudy(slug) as
-    | { title?: string; description?: string; seo?: { title?: string; description?: string; ogImage?: string } }
-    | null;
+  const page = readCaseStudy(slug);
   if (!page) return { title: "Case Study Not Found" };
   return {
     title: page.seo?.title || page.title,
@@ -46,7 +57,7 @@ export default async function CaseStudyPage({
 }) {
   const { slug } = await params;
   const page = readCaseStudy(slug);
-  if (!page) return null;
+  if (!page) notFound();
 
   const data = { caseStudies: page };
   return <EditorialPageClient query="" variables={{}} data={data} />;
@@ -55,5 +66,12 @@ export default async function CaseStudyPage({
 export async function generateStaticParams() {
   if (!fs.existsSync(CASE_STUDY_DIR)) return [];
   const files = fs.readdirSync(CASE_STUDY_DIR).filter((f) => f.endsWith(".json"));
-  return files.map((f) => ({ slug: f.replace(".json", "") }));
+  return files
+    .map((f) => {
+      const filePath = path.join(CASE_STUDY_DIR, f);
+      const data = JSON.parse(fs.readFileSync(filePath, "utf-8")) as CaseStudy;
+      if (data.draft) return null;
+      return { slug: f.replace(".json", "") };
+    })
+    .filter((p): p is { slug: string } => p !== null);
 }

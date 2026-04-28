@@ -17,12 +17,14 @@ interface TestimonialCarouselProps {
     name?: string;
     role?: string;
     organization?: string;
+    /** Alternative to role/organization — used by content authored before the structured fields existed. */
+    attribution?: string;
     photo?: string;
   }>;
 }
 
 export function TestimonialCarousel({ scheme = "aqua", wave = "fold", waveFill, heading, testimonials }: TestimonialCarouselProps) {
-  const defaultTestimonials: Array<{ quote: string; name?: string; role?: string; organization?: string; photo?: string }> = [
+  const defaultTestimonials: Array<{ quote: string; name?: string; role?: string; organization?: string; attribution?: string; photo?: string }> = [
     {
       quote: "We caught decline six weeks earlier than we would have with our old process. The data gave us the confidence to act — and the resident avoided a hospitalization.",
       name: "Dr Sarah Jenkins",
@@ -58,7 +60,8 @@ export function TestimonialCarousel({ scheme = "aqua", wave = "fold", waveFill, 
               ? t.name.split(" ").map(w => w[0]).filter(Boolean).join("").slice(0, 2)
               : "";
             const hasAvatar = !!t.photo || !!initials;
-            const meta = [t.role, t.organization].filter(Boolean).join(", ");
+            const structuredMeta = [t.role, t.organization].filter(Boolean).join(", ");
+            const meta = structuredMeta || t.attribution || "";
             const hasMeta = !!t.name || !!meta;
             return (
               <motion.div
