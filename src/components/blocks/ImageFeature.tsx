@@ -21,12 +21,13 @@ export function ImageFeature({
   headline,
   description,
   image,
-  imageAlt = "Able Assess in use",
+  imageAlt,
   imagePosition = "right",
   ctaText,
   ctaLink,
   bulletPoints,
 }: ImageFeatureProps) {
+  const altText = imageAlt || "Able Assess in use";
   const isRight = imagePosition === "right";
   const isBlue = scheme === "blue";
   const bgClass = isBlue ? "bg-ac-blue" : scheme === "aqua" ? "bg-ac-aqua" : scheme === "grey" ? "bg-ac-grey" : "bg-white";
@@ -89,7 +90,7 @@ export function ImageFeature({
           >
             <div className={`relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] ${isBlue ? "bg-white/10" : "bg-ac-grey"}`}>
               {image ? (
-                <Image src={image} alt={imageAlt} fill className="object-cover" />
+                <Image src={image} alt={altText} fill className="object-cover" />
               ) : (
                 <div className="absolute inset-0 w-full h-full" style={{ background: "linear-gradient(135deg, #1432FF 0%, #0a2bcc 40%, #00a896 80%, #00FFD2 100%)" }} />
               )}

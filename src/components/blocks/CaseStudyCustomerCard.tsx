@@ -24,13 +24,15 @@ export function CaseStudyCustomerCard({
   heading,
   body,
   portraitSrc,
-  portraitAlt = "",
+  portraitAlt,
   name,
   role,
   logoSrc,
-  logoAlt = "",
+  logoAlt,
   highlightQuote,
 }: CaseStudyCustomerCardProps) {
+  const portraitAltText = portraitAlt || name || "";
+  const logoAltText = logoAlt || (name ? `${name} company logo` : "Customer logo");
   const isBlue = scheme === "blue";
   const bg = getSchemeClasses((scheme as ColorScheme) || "light");
   const bodyColor = isBlue ? "text-white/80" : "text-ac-black/70";
@@ -83,7 +85,7 @@ export function CaseStudyCustomerCard({
                 <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden ring-4 ring-ac-aqua/30 mb-5 bg-ac-grey">
                   <Image
                     src={portraitSrc}
-                    alt={portraitAlt}
+                    alt={portraitAltText}
                     fill
                     sizes="128px"
                     className="object-cover object-top"
@@ -96,7 +98,7 @@ export function CaseStudyCustomerCard({
               {logoSrc && (
                 <div className={`mt-6 pt-6 border-t ${dividerColor} w-full flex items-center justify-center`}>
                   <div className="relative h-10 w-48">
-                    <Image src={logoSrc} alt={logoAlt} fill className="object-contain" sizes="192px" />
+                    <Image src={logoSrc} alt={logoAltText} fill className="object-contain" sizes="192px" />
                   </div>
                 </div>
               )}

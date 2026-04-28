@@ -47,12 +47,13 @@ export function Hero({
   secondaryCtaText,
   secondaryCtaLink,
   backgroundImage,
-  backgroundImageAlt = "Functional health assessment in action",
+  backgroundImageAlt,
   heroPortraits,
   breadcrumb,
   waveFill,
   videoIframe,
 }: HeroProps) {
+  const altText = backgroundImageAlt || "Functional health assessment in action";
   const isBlue = scheme === "blue";
   const isLight = scheme === "light" || scheme === "grey";
   const bgClass = isBlue ? "bg-ac-blue" : scheme === "grey" ? "bg-ac-grey" : scheme === "aqua" ? "bg-ac-aqua/10" : "bg-white";
@@ -153,7 +154,7 @@ export function Hero({
           {videoIframe ? (
             <iframe
               src={videoIframe}
-              title={backgroundImageAlt}
+              title={altText}
               className="absolute inset-0 w-full h-full"
               style={{ border: 0, background: "#1432FF" }}
               loading="eager"
@@ -184,7 +185,7 @@ export function Hero({
               <div className={`absolute inset-0 z-[1] ${isBlue ? "bg-gradient-to-r from-ac-blue/55 via-black/20 to-black/5" : "bg-black/10"}`} />
               <Image
                 src={backgroundImage}
-                alt={backgroundImageAlt}
+                alt={altText}
                 fill
                 className="object-cover object-[center_25%]"
                 priority
@@ -202,7 +203,7 @@ export function Hero({
       {(backgroundImage || heroPortraits) && (
         <div className="lg:hidden absolute inset-0 z-0">
           <div className={`absolute inset-0 z-10 ${isBlue ? "bg-ac-blue/88" : "bg-white/88"}`} />
-          {backgroundImage && <Image src={backgroundImage} alt={backgroundImageAlt} fill className="object-cover" />}
+          {backgroundImage && <Image src={backgroundImage} alt={altText} fill className="object-cover" />}
           {!backgroundImage && heroPortraits && (
             <div className="absolute inset-0" style={{ background: "linear-gradient(145deg, #0b1fd4 0%, #1432FF 50%, #00a896 100%)" }} />
           )}
