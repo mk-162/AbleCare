@@ -48,19 +48,35 @@ function Hero() {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-[1.1]">
               Subscription discount for Griswold franchises.
             </h1>
-            <p className="text-base md:text-lg font-light text-white/85 leading-relaxed mb-7">
+            <p className="text-base md:text-lg font-light text-white/85 leading-relaxed mb-6">
               Add the Griswold Strength Score to your Care Assured offering at a conference-only
               rate on Able Assess subscriptions. Valid through {DEADLINE_LABEL}.
             </p>
 
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 mb-6 border border-white/20">
+              <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-ac-aqua mb-3">
+                Annual subscription pricing
+              </div>
+              <dl className="space-y-2 text-sm md:text-base">
+                <div className="flex items-center justify-between">
+                  <dt className="text-white/70 font-light">RRP</dt>
+                  <dd className="font-semibold text-white/70 line-through">$499</dd>
+                </div>
+                <div className="flex items-center justify-between">
+                  <dt className="text-white/70 font-light">Griswold preferential pricing</dt>
+                  <dd className="font-semibold text-white/70 line-through">$399</dd>
+                </div>
+                <div className="flex items-center justify-between border-t border-white/15 pt-2">
+                  <dt className="font-semibold">Conference launch price</dt>
+                  <dd className="font-bold text-ac-aqua text-lg">$360</dd>
+                </div>
+              </dl>
+              <p className="text-xs text-white/65 font-light mt-3">
+                Per sensor, per year. Valid until {DEADLINE_LABEL}.
+              </p>
+            </div>
+
             <ul className="space-y-2.5 text-sm md:text-base text-white/90">
-              <li className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-ac-aqua shrink-0 mt-0.5" />
-                <span>
-                  Exclusive Griswold discount on the annual data subscription (standard rate
-                  $360/yr per sensor)
-                </span>
-              </li>
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-5 h-5 text-ac-aqua shrink-0 mt-0.5" />
                 <span>Standard hardware ($199 per sensor) and shipping ($39.95 flat)</span>
@@ -165,6 +181,58 @@ function LeadForm() {
               Not sure yet
             </label>
           </div>
+        </div>
+
+        <fieldset className="space-y-2">
+          <legend className="block text-sm font-bold text-ac-black mb-1">
+            Would you like us to send you an estimate or invoice?
+            <span className="text-ac-blue ml-1">*</span>
+          </legend>
+          <div className="flex gap-6">
+            <label className="inline-flex items-center gap-2 text-sm text-ac-black cursor-pointer select-none">
+              <input
+                type="radio"
+                name="documentType"
+                value="estimate"
+                required
+                className="w-4 h-4 border-ac-black/20 text-ac-blue focus:ring-ac-aqua"
+              />
+              Estimate
+            </label>
+            <label className="inline-flex items-center gap-2 text-sm text-ac-black cursor-pointer select-none">
+              <input
+                type="radio"
+                name="documentType"
+                value="invoice"
+                className="w-4 h-4 border-ac-black/20 text-ac-blue focus:ring-ac-aqua"
+              />
+              Invoice
+            </label>
+          </div>
+        </fieldset>
+
+        <div className="border-t border-ac-grey pt-5 space-y-4">
+          <div>
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-ac-blue">
+              Shipping address
+            </h3>
+            <p className="text-xs text-ac-black/55 font-light mt-1">
+              Where we&rsquo;ll send your sensors once your rate is confirmed.
+            </p>
+          </div>
+          <Field id="shipName" name="shipName" label="Full name" placeholder="Jane Doe" required />
+          <Field id="shipCompany" name="shipCompany" label="Company name" placeholder="Griswold Home Care of Doylestown" />
+          <Field id="shipAddress1" name="shipAddress1" label="Address line 1" placeholder="123 Main Street" required />
+          <Field id="shipAddress2" name="shipAddress2" label="Address line 2" placeholder="Suite 200 (optional)" />
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Field id="shipCity" name="shipCity" label="Town / city" placeholder="Doylestown" required />
+            <Field id="shipState" name="shipState" label="State" placeholder="PA" required />
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Field id="shipZip" name="shipZip" label="ZIP / postal code" placeholder="18901" required />
+            <Field id="shipCountry" name="shipCountry" label="Country" placeholder="United States" required />
+          </div>
+          <Field id="shipPhone" name="shipPhone" type="tel" label="Phone number" placeholder="(555) 123-4567" />
         </div>
 
         <Button
