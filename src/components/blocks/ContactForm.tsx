@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 interface ContactFormProps {
@@ -13,8 +15,45 @@ export function ContactForm({
   heading = "Let's talk about functional health.",
   subtitle = "See how Able Assess can help your organization spot decline, prevent falls, and empower your care teams.",
   salesEmail = "hello@able-care.co",
-  supportEmail = "hello@able-care.co",
+  supportEmail: _supportEmail = "hello@able-care.co",
 }: ContactFormProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (submitting) return;
+
+    setErrorMessage(null);
+    setSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const payload: Record<string, string> = { source: pathname || "/demo" };
+    formData.forEach((value, key) => {
+      if (typeof value === "string") payload[key] = value;
+    });
+
+    try {
+      const response = await fetch("/api/demo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        const data = (await response.json().catch(() => ({}))) as { error?: string };
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setSubmitting(false);
+        return;
+      }
+      router.push("/thank-you");
+    } catch {
+      setErrorMessage("Network error. Please try again.");
+      setSubmitting(false);
+    }
+  }
+
   return (
     <section className="pt-32 pb-24">
       <div className="container mx-auto px-4 md:px-6 max-w-6xl">
@@ -62,7 +101,7 @@ export function ContactForm({
           <div className="w-full lg:w-1/2">
             <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-black/5">
               <h2 className="text-2xl font-bold mb-6">Book a demo</h2>
-              <form className="space-y-6" action="/thank-you" method="GET">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="firstName" className="text-sm font-medium leading-none">First name</label>
@@ -90,6 +129,7 @@ export function ContactForm({
                     id="email"
                     name="email"
                     type="email"
+                    required
                     placeholder="jane@company.com"
                     className="flex h-10 w-full rounded-md border border-black/10 bg-ac-grey/30 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ac-aqua focus-visible:ring-offset-2"
                   />
@@ -115,11 +155,21 @@ export function ContactForm({
                   />
                 </div>
 
+                {errorMessage && (
+                  <p
+                    role="alert"
+                    className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-md px-3 py-2"
+                  >
+                    {errorMessage}
+                  </p>
+                )}
+
                 <Button
                   type="submit"
-                  className="w-full bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold text-lg h-12"
+                  disabled={submitting}
+                  className="w-full bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold text-lg h-12 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Request Demo
+                  {submitting ? "Sending…" : "Request Demo"}
                 </Button>
               </form>
             </div>

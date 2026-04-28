@@ -224,7 +224,7 @@ function LeadForm() {
         <fieldset className="space-y-2">
           <legend className="block text-sm font-bold text-ac-black mb-1">
             Would you like us to send you an estimate or invoice?
-            <span className="text-ac-blue ml-1">*</span>
+            <span className="text-ac-black/50 font-normal ml-1">(optional)</span>
           </legend>
           <div className="flex gap-6">
             <label className="inline-flex items-center gap-2 text-sm text-ac-black cursor-pointer select-none">
@@ -232,7 +232,6 @@ function LeadForm() {
                 type="radio"
                 name="documentType"
                 value="estimate"
-                required
                 className="w-4 h-4 border-ac-black/20 text-ac-blue focus:ring-ac-aqua"
               />
               Estimate

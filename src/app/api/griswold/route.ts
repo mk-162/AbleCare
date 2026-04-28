@@ -47,7 +47,6 @@ const REQUIRED_FIELDS: Array<keyof GriswoldLead> = [
   "contactName",
   "email",
   "phone",
-  "documentType",
 ];
 
 /* ─── Email rendering ───────────────────────────────────────────────────── */
@@ -89,7 +88,7 @@ function renderEmail(lead: GriswoldLead): { html: string; text: string } {
         ${row("Email", lead.email)}
         ${row("Phone", lead.phone)}
         ${row("Sensors", sensors)}
-        ${row("Document", lead.documentType)}
+        ${row("Document", lead.documentType || "(not specified)")}
       </table>
 
       ${
