@@ -1,51 +1,134 @@
 {
+  "title": "The GripAble Sensor",
   "slug": "sensor",
   "seo": {
-    "title": "The GripAble Sensor | Able Care",
-    "description": "One best-in-class sensor, many applications. A dedicated page on the GripAble sensor is coming soon. In the meantime, talk to our team.",
+    "title": "The GripAble Sensor — One Sensor, Three Use Cases | Able Care",
+    "description": "Clinical-grade hand-strength sensor developed at Imperial College London. Powers grip strength testing, fall risk screening, and neuro-rehabilitation in one device.",
     "ogImage": "/images/og-default.png"
   },
   "blocks": [
     {
+      "_template": "breadcrumb",
       "items": [
-        {
-          "label": "Home",
-          "href": "/"
-        },
-        {
-          "label": "Solutions",
-          "href": "/solutions/able-assess"
-        },
-        {
-          "label": "The GripAble Sensor",
-          "href": "/solutions/sensor"
-        }
-      ],
-      "_template": "breadcrumb"
+        { "label": "Home", "href": "/" },
+        { "label": "Solutions", "href": "/solutions/able-assess" },
+        { "label": "The GripAble Sensor", "href": "/solutions/sensor" }
+      ]
     },
     {
+      "_template": "hero",
       "eyebrow": "",
       "headline": "The GripAble Sensor",
-      "subtitle": "Developed at Imperial College London in a partnership between the departments of medicine and bioengineering",
+      "subtitle": "Developed at Imperial College London in a partnership between the departments of medicine and bioengineering.",
       "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
-      "backgroundImageAlt": "The GripAble sensor",
-      "_template": "hero"
+      "backgroundImageAlt": "The GripAble sensor"
     },
     {
-      "imageAlt": "The GripAble sensor in use",
-      "ctaText": "Get in Touch",
-      "ctaLink": "/contact",
-      "_template": "imageFeature"
+      "_template": "segmentCards",
+      "scheme": "light",
+      "heading": "One Sensor. Three Use Cases.",
+      "cards": [
+        {
+          "title": "Grip Strength",
+          "body": "Utilizes the GripAble sensor and the Able Assess app.",
+          "link": "/solutions/grip-strength/"
+        },
+        {
+          "title": "Fall Risk Screening",
+          "body": "Utilizes the GripAble sensor, the Able Assess app, the carry pouch, and a measuring tape.",
+          "link": "/solutions/falls-prevention/"
+        },
+        {
+          "title": "Neuro-Rehabilitation",
+          "body": "Utilizes the GripAble sensor and the Able Rehab app.",
+          "link": "/solutions/able-rehab/"
+        }
+      ]
     },
     {
-      "heading": "Want to know more before the page is live?",
-      "_template": "ctaBanner"
+      "_template": "segmentRouter",
+      "scheme": "grey",
+      "heading": "Setting the Standard",
+      "subheading": "The research speaks for itself. Learn about what sets us apart.",
+      "segments": [
+        {
+          "title": "Immediate, In-App Calibration",
+          "description": "No need to send the product away to re-calibrate.",
+          "ctaText": "Talk to our team",
+          "link": "/contact/"
+        },
+        {
+          "title": "Accurate",
+          "description": "Proven accuracy across users and assessments.",
+          "ctaText": "See the research",
+          "link": "/resources/research-library/"
+        },
+        {
+          "title": "Robust",
+          "description": "Maintains accuracy even after bumps and jostles.",
+          "ctaText": "See the research",
+          "link": "/resources/research-library/"
+        },
+        {
+          "title": "Sensitive",
+          "description": "Senses the smallest of movements through to hundreds of pounds of force.",
+          "ctaText": "See the research",
+          "link": "/resources/research-library/"
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "light",
+      "imagePosition": "right",
+      "headline": "GripAble Sensor Features",
+      "description": "Everything you need for clinical-grade hand-strength measurement, in a single rugged, pocket-sized device.",
+      "image": "/images/product/gripable-sensor-cutout-min.png",
+      "imageAlt": "The GripAble sensor with annotated features",
+      "bulletPoints": [
+        { "text": "Locking Button — used to switch grip modes. Squeeze and hold the GripAble, then push down the lock button." },
+        { "text": "Strap Hooks — six attachment points for silicon straps." },
+        { "text": "Grip Plate — use your fingers to squeeze the plate." },
+        { "text": "Battery LED — indicator for battery status (see table below)." },
+        { "text": "Lanyard Hook — attachment point for wrist lanyard." },
+        { "text": "Charging Port — magnetic connector for charging." },
+        { "text": "Connection LED — indicator for app pairing status (see table below)." }
+      ]
+    },
+    {
+      "_template": "richText",
+      "scheme": "grey",
+      "heading": "Battery LED",
+      "body": "<p>Indicator of battery status.</p><table style=\"width:100%; max-width:520px; border-collapse:collapse; margin-top:1.5rem; background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 1px 2px rgba(0,0,0,0.04);\"><thead><tr style=\"background:#f3f4f6;\"><th style=\"padding:14px 16px; text-align:left; border-bottom:1px solid #e5e7eb; font-weight:700;\">Color</th><th style=\"padding:14px 16px; text-align:left; border-bottom:1px solid #e5e7eb; font-weight:700;\">Status</th></tr></thead><tbody><tr><td style=\"padding:14px 16px; border-bottom:1px solid #e5e7eb;\"><span style=\"display:inline-block; width:10px; height:10px; border-radius:50%; background:#16a34a; margin-right:10px; vertical-align:middle;\"></span>Green</td><td style=\"padding:14px 16px; border-bottom:1px solid #e5e7eb;\">Fully charged</td></tr><tr><td style=\"padding:14px 16px; border-bottom:1px solid #e5e7eb;\"><span style=\"display:inline-block; width:10px; height:10px; border-radius:50%; background:#eab308; margin-right:10px; vertical-align:middle;\"></span>Yellow</td><td style=\"padding:14px 16px; border-bottom:1px solid #e5e7eb;\">Charging</td></tr><tr><td style=\"padding:14px 16px; border-bottom:1px solid #e5e7eb;\"><span style=\"display:inline-block; width:10px; height:10px; border-radius:50%; background:#f97316; margin-right:10px; vertical-align:middle;\"></span>Orange</td><td style=\"padding:14px 16px; border-bottom:1px solid #e5e7eb;\">Battery OK</td></tr><tr><td style=\"padding:14px 16px;\"><span style=\"display:inline-block; width:10px; height:10px; border-radius:50%; background:#dc2626; margin-right:10px; vertical-align:middle;\"></span>Red</td><td style=\"padding:14px 16px;\">Battery low</td></tr></tbody></table>"
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Connection LED",
+      "body": "<p>Indicator of connection with the app.</p><table style=\"width:100%; max-width:520px; border-collapse:collapse; margin-top:1.5rem; background:#ffffff; border-radius:12px; overflow:hidden; box-shadow:0 1px 2px rgba(0,0,0,0.04); border:1px solid #e5e7eb;\"><thead><tr style=\"background:#f3f4f6;\"><th style=\"padding:14px 16px; text-align:left; border-bottom:1px solid #e5e7eb; font-weight:700;\">Light</th><th style=\"padding:14px 16px; text-align:left; border-bottom:1px solid #e5e7eb; font-weight:700;\">Status</th></tr></thead><tbody><tr><td style=\"padding:14px 16px; border-bottom:1px solid #e5e7eb;\"><span style=\"display:inline-block; width:10px; height:10px; border-radius:50%; background:#d1d5db; margin-right:10px; vertical-align:middle;\"></span>No light</td><td style=\"padding:14px 16px; border-bottom:1px solid #e5e7eb;\">Device is asleep</td></tr><tr><td style=\"padding:14px 16px; border-bottom:1px solid #e5e7eb;\"><span style=\"display:inline-block; width:10px; height:10px; border-radius:50%; background:#1432FF; margin-right:10px; vertical-align:middle;\"></span>Flashing blue</td><td style=\"padding:14px 16px; border-bottom:1px solid #e5e7eb;\">Pairing mode &mdash; device is ready to connect</td></tr><tr><td style=\"padding:14px 16px;\"><span style=\"display:inline-block; width:10px; height:10px; border-radius:50%; background:#1432FF; margin-right:10px; vertical-align:middle;\"></span>Solid blue</td><td style=\"padding:14px 16px;\">Connection established</td></tr></tbody></table>"
+    },
+    {
+      "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
+      "heading": "See the GripAble sensor in your workflow.",
+      "body": "20 minutes with a clinician who has run it across grip strength, fall risk screening, and neuro-rehab.",
+      "primaryCta": {
+        "label": "Book a Demo",
+        "href": "/contact/"
+      },
+      "secondaryCta": {
+        "label": "Download the Buyers Guide",
+        "href": "/resources/buyers-guide/"
+      }
     }
   ],
-  "title": "The GripAble Sensor",
   "tags": [
     "sensor",
     "gripable",
-    "holding-page"
+    "able-assess",
+    "able-rehab",
+    "grip-strength",
+    "falls-prevention"
   ]
 }

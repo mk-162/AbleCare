@@ -115,6 +115,7 @@ const segmentRouterBlock = {
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "grey" } },
     { type: "string" as const, name: "heading", label: "Section Heading" },
+    { type: "string" as const, name: "subheading", label: "Subheading", ui: { component: "textarea" } },
     {
       type: "object" as const,
       name: "segments",

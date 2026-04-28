@@ -43,6 +43,7 @@ fragment PagesParts on Pages {
     ... on PagesBlocksSegmentRouter {
       scheme
       heading
+      subheading
       segments {
         __typename
         title
@@ -377,6 +378,7 @@ fragment SolutionsParts on Solutions {
     ... on SolutionsBlocksSegmentRouter {
       scheme
       heading
+      subheading
       segments {
         __typename
         title
@@ -711,6 +713,7 @@ fragment SegmentsParts on Segments {
     ... on SegmentsBlocksSegmentRouter {
       scheme
       heading
+      subheading
       segments {
         __typename
         title
@@ -1045,6 +1048,7 @@ fragment CompareParts on Compare {
     ... on CompareBlocksSegmentRouter {
       scheme
       heading
+      subheading
       segments {
         __typename
         title
@@ -1394,6 +1398,7 @@ fragment LearnParts on Learn {
     ... on LearnBlocksSegmentRouter {
       scheme
       heading
+      subheading
       segments {
         __typename
         title
@@ -1721,6 +1726,7 @@ fragment ResourcesParts on Resources {
     ... on ResourcesBlocksSegmentRouter {
       scheme
       heading
+      subheading
       segments {
         __typename
         title
@@ -2055,6 +2061,7 @@ fragment CompanyParts on Company {
     ... on CompanyBlocksSegmentRouter {
       scheme
       heading
+      subheading
       segments {
         __typename
         title

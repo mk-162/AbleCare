@@ -7,6 +7,7 @@ import { getSchemeClasses, type ColorScheme } from "@/lib/color-schemes";
 interface SegmentRouterProps {
   scheme?: string;
   heading?: string;
+  subheading?: string;
   segments?: Array<{
     title: string;
     description?: string;
@@ -15,7 +16,7 @@ interface SegmentRouterProps {
   }>;
 }
 
-export function SegmentRouter({ scheme = "light", heading, segments }: SegmentRouterProps) {
+export function SegmentRouter({ scheme = "light", heading, subheading, segments }: SegmentRouterProps) {
   const defaultSegments: Array<{ title: string; description?: string; ctaText?: string; link: string }> = [
     { title: "Home Care", description: "Empower care workers to spot decline before a fall occurs.", link: "/home-care" },
     { title: "Senior Living", description: "Manage population risk proactively across your facilities.", link: "/senior-living" },
@@ -30,7 +31,7 @@ export function SegmentRouter({ scheme = "light", heading, segments }: SegmentRo
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-ac-black mb-4">{heading || "Where do you work?"}</h2>
           <p className="text-lg text-ac-black/70 font-light max-w-2xl">
-            Able Assess adapts to your environment, providing the right insights for your specific care model.
+            {subheading || "Able Assess adapts to your environment, providing the right insights for your specific care model."}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

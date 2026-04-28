@@ -105,6 +105,7 @@ var segmentRouterBlock = {
   fields: [
     { type: "string", name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "grey" } },
     { type: "string", name: "heading", label: "Section Heading" },
+    { type: "string", name: "subheading", label: "Subheading", ui: { component: "textarea" } },
     {
       type: "object",
       name: "segments",
