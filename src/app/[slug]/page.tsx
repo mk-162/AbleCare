@@ -20,6 +20,7 @@ const SLUG_MAP: Record<string, { collection: string; filename: string }> = {
   "news": { collection: "company", filename: "news" },
   "privacy": { collection: "utility", filename: "privacy" },
   "terms": { collection: "utility", filename: "terms" },
+  "terms-of-sale": { collection: "utility", filename: "terms-of-sale" },
   "cookies": { collection: "utility", filename: "cookies" },
   "security": { collection: "utility", filename: "security" },
   "thank-you": { collection: "utility", filename: "thank-you" },
