@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -9,6 +10,7 @@ import {
   Mail,
   Phone,
   CheckCircle2,
+  ChevronDown,
   ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -105,7 +107,43 @@ function Hero() {
 }
 
 function LeadForm() {
+  const router = useRouter();
   const [naSensors, setNaSensors] = useState(false);
+  const [shippingOpen, setShippingOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (submitting) return;
+
+    setErrorMessage(null);
+    setSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const payload: Record<string, string> = {};
+    formData.forEach((value, key) => {
+      if (typeof value === "string") payload[key] = value;
+    });
+
+    try {
+      const response = await fetch("/api/griswold", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        const data = (await response.json().catch(() => ({}))) as { error?: string };
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setSubmitting(false);
+        return;
+      }
+      router.push("/thank-you");
+    } catch {
+      setErrorMessage("Network error. Please try again.");
+      setSubmitting(false);
+    }
+  }
 
   return (
     <div className="bg-white text-ac-black rounded-3xl p-7 md:p-9 shadow-2xl border border-white/10">
@@ -118,7 +156,7 @@ function LeadForm() {
         We&rsquo;ll come back to you with your subscription rate and next steps.
       </p>
 
-      <form className="space-y-5" action="/thank-you" method="GET">
+      <form className="space-y-5" onSubmit={handleSubmit}>
         <input type="hidden" name="form" value="griswold-lead" />
 
         <Field
@@ -211,36 +249,66 @@ function LeadForm() {
           </div>
         </fieldset>
 
-        <div className="border-t border-ac-grey pt-5 space-y-4">
-          <div>
-            <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-ac-blue">
-              Shipping address
-            </h3>
-            <p className="text-xs text-ac-black/55 font-light mt-1">
-              Where we&rsquo;ll send your sensors once your rate is confirmed.
-            </p>
-          </div>
-          <Field id="shipName" name="shipName" label="Full name" placeholder="Jane Doe" required />
-          <Field id="shipCompany" name="shipCompany" label="Company name" placeholder="Griswold Home Care of Doylestown" />
-          <Field id="shipAddress1" name="shipAddress1" label="Address line 1" placeholder="123 Main Street" required />
-          <Field id="shipAddress2" name="shipAddress2" label="Address line 2" placeholder="Suite 200 (optional)" />
-          <div className="grid sm:grid-cols-2 gap-4">
-            <Field id="shipCity" name="shipCity" label="Town / city" placeholder="Doylestown" required />
-            <Field id="shipState" name="shipState" label="State" placeholder="PA" required />
-          </div>
-          <div className="grid sm:grid-cols-2 gap-4">
-            <Field id="shipZip" name="shipZip" label="ZIP / postal code" placeholder="18901" required />
-            <Field id="shipCountry" name="shipCountry" label="Country" placeholder="United States" required />
-          </div>
-          <Field id="shipPhone" name="shipPhone" type="tel" label="Phone number" placeholder="(555) 123-4567" />
+        <div className="border-t border-ac-grey pt-5">
+          <button
+            type="button"
+            onClick={() => setShippingOpen((open) => !open)}
+            aria-expanded={shippingOpen}
+            aria-controls="griswold-shipping-fields"
+            className="w-full flex items-start justify-between gap-3 text-left rounded-xl px-3 -mx-3 py-2 hover:bg-ac-grey/30 transition-colors"
+          >
+            <span className="flex-1">
+              <span className="block text-[11px] font-bold uppercase tracking-[0.2em] text-ac-blue">
+                Shipping address
+                <span className="text-ac-black/50 font-normal normal-case tracking-normal ml-1">
+                  (optional)
+                </span>
+              </span>
+              <span className="block text-xs text-ac-black/55 font-light mt-1">
+                Add it now to speed up shipping once your rate is confirmed.
+              </span>
+            </span>
+            <ChevronDown
+              className={`w-5 h-5 text-ac-black/50 shrink-0 mt-0.5 transition-transform ${
+                shippingOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+          {shippingOpen && (
+            <div id="griswold-shipping-fields" className="space-y-4 pt-4">
+              <Field id="shipName" name="shipName" label="Full name" placeholder="Jane Doe" />
+              <Field id="shipCompany" name="shipCompany" label="Company name" placeholder="Griswold Home Care of Doylestown" />
+              <Field id="shipAddress1" name="shipAddress1" label="Address line 1" placeholder="123 Main Street" />
+              <Field id="shipAddress2" name="shipAddress2" label="Address line 2" placeholder="Suite 200" />
+              <div className="grid sm:grid-cols-2 gap-4">
+                <Field id="shipCity" name="shipCity" label="Town / city" placeholder="Doylestown" />
+                <Field id="shipState" name="shipState" label="State" placeholder="PA" />
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <Field id="shipZip" name="shipZip" label="ZIP / postal code" placeholder="18901" />
+                <Field id="shipCountry" name="shipCountry" label="Country" placeholder="United States" />
+              </div>
+              <Field id="shipPhone" name="shipPhone" type="tel" label="Phone number" placeholder="(555) 123-4567" />
+            </div>
+          )}
         </div>
+
+        {errorMessage && (
+          <p
+            role="alert"
+            className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-3 py-2"
+          >
+            {errorMessage}
+          </p>
+        )}
 
         <Button
           type="submit"
-          className="w-full bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold text-base h-12 mt-2"
+          disabled={submitting}
+          className="w-full bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold text-base h-12 mt-2 disabled:opacity-70 disabled:cursor-not-allowed"
         >
-          Claim my Griswold discount
-          <ArrowRight className="w-4 h-4 ml-1" />
+          {submitting ? "Sending…" : "Claim my Griswold discount"}
+          {!submitting && <ArrowRight className="w-4 h-4 ml-1" />}
         </Button>
 
         <p className="text-xs text-ac-black/55 text-center font-light">
