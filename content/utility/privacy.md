@@ -170,7 +170,7 @@ e) Right to restriction. You have the right, in some circumstances, to require u
 
 a) Strictly necessary cookies. These are cookies that are required for the operation of our Platform. They include, for example, cookies that enable you to use a shopping basket or pay for your Plan through our Platform.
 
-b) Analytical/performance cookies. They allow us to recognise and count the number of visitors and to see how visitors move around our Platform when they are using it. This helps us to improve the way our Platform works, for example, by ensuring that users are finding what they are looking for easily. We may use third-party analytics tools such as Google Analytics, to help us measure traffic and usage trends for the Platform and to understand more about the demographics of our users. You can learn more about Google's practices at http://www.google.com/policies/privacy/partners, and view its currently available opt-out options at https://tools.google.com/dlpage/gaoptout.
+b) Analytical/performance cookies. They allow us to recognise and count the number of visitors and to see how visitors move around our Platform when they are using it. This helps us to improve the way our Platform works, for example, by ensuring that users are finding what they are looking for easily. We may use third-party analytics tools such as Google Analytics, to help us measure traffic and usage trends for the Platform and to understand more about the demographics of our users. You can learn more about Google's practices at https://policies.google.com/technologies/partner-sites, and view its currently available opt-out options at https://tools.google.com/dlpage/gaoptout.
 
 c) Functionality cookies. These are used to recognise you when you return to our Platform. This enables us to personalise our content for you, greet you by name and remember your preferences (for example, your choice of language or region).
 
@@ -182,7 +182,7 @@ e) Third party cookies. Please be aware that advertisers and other third parties
 
 12.6 The cookies we use are designed to help you get the most from our Platform but if you do not wish to receive cookies, most browsers allow you to change your cookie settings. Please note that if you choose to refuse all cookies you may not be able to use the full functionality of our Platform. These settings will typically be found in the "options" or "preferences" menu of your browser. In order to understand these settings, please use the "Help" option in your browser for more details.
 
-12.7 If you would like to find out more about cookies and other similar technologies, please visit www.allaboutcookies.org or the Network Advertising Initiative's online sources at www.networkadvertising.org.
+12.7 If you would like to find out more about cookies and other similar technologies, please visit https://allaboutcookies.org/ or the Network Advertising Initiative's online sources at https://thenai.org/.
 
 12.8 Please note that deleting or blocking cookies may not be effective for all types of tracking technologies, such as Local Storage Objects (LSOs) like HTML5.
 
@@ -202,17 +202,17 @@ e) Third party cookies. Please be aware that advertisers and other third parties
 
 14.3 We and our third-party partners use this information to make the advertisements you see online more relevant to your interests, as well as to provide advertising-related services such as reporting, attribution, analytics and market research.
 
-14.4 We may also use certain forms of display advertising and other advanced features through Google Universal Analytics, such as Remarketing with Google Analytics, Google Display Network Impression Reporting, the DoubleClick Campaign Manager Integration, and Google Analytics Demographics and Interest Reporting. These features enable us to use first-party cookies (such as the Google Analytics cookie) and third-party cookies (such as the Doubleclick advertising cookie) or other third party cookies together to inform, optimize, and display ads based on your past visits to the Platform. You may control your advertising preferences or opt-out of certain Google advertising products by visiting the Google Ads Preferences Manager, currently available at https://google.com/ads/preferences or by visiting NAI's online resources at www.networkadvertising.org/choices.
+14.4 We may also use certain forms of display advertising and other advanced features through Google Universal Analytics, such as Remarketing with Google Analytics, Google Display Network Impression Reporting, the DoubleClick Campaign Manager Integration, and Google Analytics Demographics and Interest Reporting. These features enable us to use first-party cookies (such as the Google Analytics cookie) and third-party cookies (such as the Doubleclick advertising cookie) or other third party cookies together to inform, optimize, and display ads based on your past visits to the Platform. You may control your advertising preferences or opt-out of certain Google advertising products by visiting the Google Ads Preferences Manager, currently available at https://www.google.com/ads/preferences or by visiting NAI's online resources at https://thenai.org/how-to-opt-out/.
 
-14.5 You may be able to limit the use of these identifiers for interest-based advertising on a particular device through the settings on your device by selecting "limit ad tracking" (iOS) or "opt out of interest-based ads" (Android). You may also be able to opt-out of some, but not all, interest-based ads served by mobile ad networks by visiting http://youradchoices.com/appchoices and downloading the mobile AppChoices app.
+14.5 You may be able to limit the use of these identifiers for interest-based advertising on a particular device through the settings on your device by selecting "limit ad tracking" (iOS) or "opt out of interest-based ads" (Android). You may also be able to opt-out of some, but not all, interest-based ads served by mobile ad networks by visiting https://youradchoices.com/appchoices and downloading the mobile AppChoices app.
 
 14.6 To learn more about interest-based advertising and how you may be able to opt-out of some of this advertising, you may wish to visit:
 
-a) the Network Advertising Initiative's online resources, at www.networkadvertising.org/choices;
+a) the Network Advertising Initiative's online resources, at https://thenai.org/how-to-opt-out/;
 
-b) the DAA's resources at www.aboutads.info/choices; and/or
+b) the DAA's resources at https://optout.aboutads.info/; and/or
 
-c) Your Online Choices at www.youronlinechoices.eu.
+c) Your Online Choices at https://youronlinechoices.eu/.
 
 14.7 Please note that opting-out of receiving interest-based advertising through the NAI's and DAA's or Your Online Choices online resources will only opt you out from receiving interest-based ads on that specific browser or device, but you may still receive interest-based ads on your other devices. You would need to perform the opt-out on each browser or device you use.
 

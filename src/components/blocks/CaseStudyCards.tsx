@@ -20,9 +20,9 @@ interface CaseStudyCardsProps {
 
 export function CaseStudyCards({ scheme = "light", heading, caseStudies }: CaseStudyCardsProps) {
   const defaultCases: Array<{ title: string; metric?: string; metricLabel?: string; summary?: string; sector?: string; link?: string; thumbnail?: string }> = [
-    { title: "Reducing falls by 32% in community settings", sector: "Home Care", metric: "32%", metricLabel: "Reduction in falls", link: "/case-studies/home-care" },
-    { title: "Standardizing assessments across 40 facilities", sector: "Senior Living", metric: "100%", metricLabel: "Compliance rate", link: "/case-studies/senior-living" },
-    { title: "Accelerating physical therapy discharge decisions", sector: "Clinicians", metric: "2.4x", metricLabel: "Faster decision making", link: "/case-studies/clinicians" },
+    { title: "Reducing falls by 32% in community settings", sector: "Home Care", metric: "32%", metricLabel: "Reduction in falls", link: "/resources/case-studies" },
+    { title: "Standardizing assessments across 40 facilities", sector: "Senior Living", metric: "100%", metricLabel: "Compliance rate", link: "/resources/case-studies" },
+    { title: "Accelerating physical therapy discharge decisions", sector: "Clinicians", metric: "2.4x", metricLabel: "Faster decision making", link: "/resources/case-studies" },
   ];
   const items = caseStudies && caseStudies.length > 0 ? caseStudies : defaultCases;
   const colors = ["bg-ac-blue", "bg-ac-aqua text-ac-black", "bg-ac-black"];

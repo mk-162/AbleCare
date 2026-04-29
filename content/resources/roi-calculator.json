@@ -37,7 +37,7 @@
       "primaryCtaText": "Open the Calculator",
       "primaryCtaLink": "#calculator",
       "secondaryCtaText": "Book a Demo",
-      "secondaryCtaLink": "/demo/"
+      "secondaryCtaLink": "/demo"
     },
     {
       "_template": "roiCalculatorPromo",
@@ -107,7 +107,7 @@
       "primaryCtaText": "Open the Calculator",
       "primaryCtaLink": "#calculator",
       "secondaryCtaText": "Book a Demo",
-      "secondaryCtaLink": "/demo/"
+      "secondaryCtaLink": "/demo"
     }
   ],
   "tags": [

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { fetchPage, extractPageData } from "@/lib/tina-client";
 import { EditorialPageClient } from "@/components/blocks/EditorialPageClient";
 
@@ -24,7 +25,7 @@ export async function generateMetadata({
       },
     };
   } catch {
-    return { title: slug.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase()) };
+    return { title: "Page Not Found" };
   }
 }
 
@@ -34,7 +35,13 @@ export default async function SolutionPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { query, variables, data } = await fetchPage("solutions", slug);
+  let result;
+  try {
+    result = await fetchPage("solutions", slug);
+  } catch {
+    notFound();
+  }
+  const { query, variables, data } = result;
 
   return <EditorialPageClient query={query} variables={variables} data={data} />;
 }

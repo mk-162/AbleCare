@@ -3,67 +3,29 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, Receipt, Truck, Cpu, ShoppingCart } from "lucide-react";
+import {
+  ArrowRight,
+  FileText,
+  Receipt,
+  Truck,
+  Cpu,
+  ShoppingCart,
+  Tag,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-/**
- * Shared submit hook for the two order forms — both POST to /api/order
- * which routes by `formId` and emails the team via Resend.
- */
-function useOrderSubmit() {
-  const router = useRouter();
-  const [submitting, setSubmitting] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    if (submitting) return;
-
-    setErrorMessage(null);
-    setSubmitting(true);
-
-    const formData = new FormData(event.currentTarget);
-    const payload: Record<string, string> = {};
-    formData.forEach((value, key) => {
-      if (typeof value === "string") payload[key] = value;
-    });
-    // The hidden `form` input becomes the formId the API switches on.
-    if (payload.form) {
-      payload.formId = payload.form;
-      delete payload.form;
-    }
-
-    try {
-      const response = await fetch("/api/order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!response.ok) {
-        const data = (await response.json().catch(() => ({}))) as { error?: string };
-        setErrorMessage(data.error || "Something went wrong. Please try again.");
-        setSubmitting(false);
-        return;
-      }
-      router.push("/thank-you");
-    } catch {
-      setErrorMessage("Network error. Please try again.");
-      setSubmitting(false);
-    }
-  }
-
-  return { submitting, errorMessage, handleSubmit };
-}
-
 const SENSOR_PRICE = 199;
+const ANNUAL_SUB_RRP = 499;
 const ANNUAL_SUB_PRICE = 360;
+const ANNUAL_SUB_SAVINGS = ANNUAL_SUB_RRP - ANNUAL_SUB_PRICE;
 const SHIPPING_COST = 39.95;
 const PER_SENSOR_TOTAL = SENSOR_PRICE + ANNUAL_SUB_PRICE;
+const PER_SENSOR_RRP = SENSOR_PRICE + ANNUAL_SUB_RRP;
 
 const CONTACT_EMAIL = "hello@able-care.co";
 const CONTACT_PHONE = "+1 406 318 9624";
 
-type Mode = "estimate" | "invoice";
+type DocumentType = "estimate" | "invoice";
 
 function formatCurrency(value: number): string {
   return new Intl.NumberFormat("en-US", {
@@ -75,8 +37,6 @@ function formatCurrency(value: number): string {
 }
 
 export function OrderForm() {
-  const [mode, setMode] = useState<Mode>("estimate");
-
   return (
     <>
       <section className="bg-ac-blue text-white pt-20 pb-8 md:pt-24 md:pb-10">
@@ -90,8 +50,8 @@ export function OrderForm() {
               Order Able Assess.
             </h1>
             <p className="text-sm md:text-base font-light text-white/85 leading-relaxed">
-              Request a price estimate or send a purchase invoice request. Our team will follow up
-              to confirm and ship.
+              Tell us how many sensors you need and we&rsquo;ll email a formal estimate or
+              invoice &mdash; show pricing applied. Our team will follow up to confirm and ship.
             </p>
           </div>
         </div>
@@ -99,42 +59,7 @@ export function OrderForm() {
 
       <section className="bg-white py-16 md:py-20">
         <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-          <div className="flex flex-col items-center mb-10">
-            <div
-              role="tablist"
-              aria-label="Choose how you'd like to proceed"
-              className="inline-flex p-1.5 bg-ac-grey/60 rounded-full"
-            >
-              <button
-                role="tab"
-                aria-selected={mode === "estimate"}
-                onClick={() => setMode("estimate")}
-                className={`flex items-center gap-2 px-5 md:px-7 py-3 rounded-full text-sm md:text-base font-bold transition-all ${
-                  mode === "estimate"
-                    ? "bg-ac-blue text-white shadow-md"
-                    : "text-ac-black/70 hover:text-ac-black"
-                }`}
-              >
-                <FileText className="w-4 h-4" />
-                I would like a price estimate
-              </button>
-              <button
-                role="tab"
-                aria-selected={mode === "invoice"}
-                onClick={() => setMode("invoice")}
-                className={`flex items-center gap-2 px-5 md:px-7 py-3 rounded-full text-sm md:text-base font-bold transition-all ${
-                  mode === "invoice"
-                    ? "bg-ac-blue text-white shadow-md"
-                    : "text-ac-black/70 hover:text-ac-black"
-                }`}
-              >
-                <Receipt className="w-4 h-4" />
-                I am ready to purchase, please send an invoice
-              </button>
-            </div>
-          </div>
-
-          {mode === "estimate" ? <EstimateForm /> : <InvoiceForm />}
+          <UnifiedOrderForm />
         </div>
       </section>
 
@@ -162,127 +87,69 @@ export function OrderForm() {
   );
 }
 
-function EstimateForm() {
-  const [naSensors, setNaSensors] = useState(false);
-  const { submitting, errorMessage, handleSubmit } = useOrderSubmit();
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="bg-white rounded-3xl p-8 md:p-10 border border-ac-grey shadow-sm"
-    >
-      <div className="text-xs font-bold uppercase tracking-[0.25em] text-ac-blue mb-2">
-        Price estimate
-      </div>
-      <h2 className="text-2xl md:text-3xl font-bold text-ac-black mb-2">
-        Tell us a little about your organization
-      </h2>
-      <p className="text-sm text-ac-black/60 font-light mb-8">
-        We&rsquo;ll come back to you with pricing tailored to your order.
-      </p>
-
-      <form className="space-y-6" onSubmit={handleSubmit}>
-        <input type="hidden" name="form" value="order-estimate" />
-
-        <Field
-          id="customerName"
-          name="customerName"
-          label="Organization Name"
-          placeholder="e.g. Acme Home Care"
-          required
-        />
-
-        <Field
-          id="individualName"
-          name="individualName"
-          label="Individual Name"
-          placeholder="Jane Doe"
-          required
-        />
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <Field
-            id="phone"
-            name="phone"
-            type="tel"
-            label="Phone Number"
-            placeholder="(555) 123-4567"
-            required
-          />
-          <Field
-            id="email"
-            name="email"
-            type="email"
-            label="Email Address"
-            placeholder="jane@acmehomecare.com"
-            required
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="sensorCount" className="block text-sm font-bold text-ac-black">
-            Number of sensors I could potentially be interested in
-          </label>
-          <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
-            <input
-              id="sensorCount"
-              name="sensorCount"
-              type="number"
-              min={0}
-              disabled={naSensors}
-              placeholder="e.g. 5"
-              className="flex h-12 w-full sm:w-48 rounded-xl border border-black/10 bg-ac-grey/30 px-4 text-base font-semibold text-ac-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ac-aqua focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-            />
-            <label className="inline-flex items-center gap-2 text-sm text-ac-black/80 cursor-pointer select-none">
-              <input
-                type="checkbox"
-                name="sensorCountNA"
-                checked={naSensors}
-                onChange={(e) => setNaSensors(e.target.checked)}
-                className="w-4 h-4 rounded border-ac-black/20 text-ac-blue focus:ring-ac-aqua"
-              />
-              I&rsquo;m not sure yet (N/A)
-            </label>
-          </div>
-        </div>
-
-        {errorMessage && (
-          <p
-            role="alert"
-            className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-3 py-2"
-          >
-            {errorMessage}
-          </p>
-        )}
-
-        <Button
-          type="submit"
-          disabled={submitting}
-          className="w-full bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold text-lg h-13 disabled:opacity-70 disabled:cursor-not-allowed"
-        >
-          {submitting ? "Sending…" : "Request a price estimate"}
-          {!submitting && <ArrowRight className="w-5 h-5 ml-1" />}
-        </Button>
-      </form>
-    </motion.div>
-  );
-}
-
-function InvoiceForm() {
+function UnifiedOrderForm() {
+  const router = useRouter();
   const [sensorCount, setSensorCount] = useState<number>(1);
   const [sameAsBilling, setSameAsBilling] = useState(true);
-  const { submitting, errorMessage, handleSubmit } = useOrderSubmit();
+  const [documentType, setDocumentType] = useState<DocumentType>("estimate");
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const totals = useMemo(() => {
     const qty = Math.max(0, Math.floor(sensorCount || 0));
     const sensorsLine = SENSOR_PRICE * qty;
     const subscriptionLine = ANNUAL_SUB_PRICE * qty;
+    const subscriptionRrpLine = ANNUAL_SUB_RRP * qty;
     const shipping = qty > 0 ? SHIPPING_COST : 0;
     const total = sensorsLine + subscriptionLine + shipping;
-    return { qty, sensorsLine, subscriptionLine, shipping, total };
+    const totalAtRrp = sensorsLine + subscriptionRrpLine + shipping;
+    const savings = totalAtRrp - total;
+    return {
+      qty,
+      sensorsLine,
+      subscriptionLine,
+      subscriptionRrpLine,
+      shipping,
+      total,
+      totalAtRrp,
+      savings,
+    };
   }, [sensorCount]);
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (submitting) return;
+
+    setErrorMessage(null);
+    setSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const payload: Record<string, string> = { formId: "order" };
+    formData.forEach((value, key) => {
+      if (typeof value === "string") payload[key] = value;
+    });
+
+    try {
+      const response = await fetch("/api/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) {
+        const data = (await response.json().catch(() => ({}))) as { error?: string };
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setSubmitting(false);
+        return;
+      }
+      router.push("/thank-you");
+    } catch {
+      setErrorMessage("Network error. Please try again.");
+      setSubmitting(false);
+    }
+  }
+
+  const submitLabel =
+    documentType === "estimate" ? "Request a formal estimate" : "Request an invoice";
 
   return (
     <motion.div
@@ -292,17 +159,18 @@ function InvoiceForm() {
       className="bg-white rounded-3xl p-8 md:p-10 border border-ac-grey shadow-sm"
     >
       <div className="text-xs font-bold uppercase tracking-[0.25em] text-ac-blue mb-2">
-        Request an invoice
+        Place your order
       </div>
       <h2 className="text-2xl md:text-3xl font-bold text-ac-black mb-2">
-        Ready to purchase
+        Tell us where to ship and what to send.
       </h2>
       <p className="text-sm text-ac-black/60 font-light mb-8">
-        Provide your billing and shipping details and we&rsquo;ll send an invoice to your inbox.
+        Pricing below reflects our current show price. Submit the form and we&rsquo;ll email a
+        formal estimate or invoice &mdash; whichever you choose &mdash; to confirm.
       </p>
 
       <form className="space-y-10" onSubmit={handleSubmit}>
-        <input type="hidden" name="form" value="order-invoice" />
+        <input type="hidden" name="documentType" value={documentType} />
 
         <fieldset className="space-y-6">
           <legend className="text-base font-bold text-ac-black mb-4 flex items-center gap-2">
@@ -329,6 +197,7 @@ function InvoiceForm() {
           <div className="space-y-2">
             <label htmlFor="billAddress" className="block text-sm font-bold text-ac-black">
               Mailing Address
+              <span className="text-ac-blue ml-1">*</span>
             </label>
             <textarea
               id="billAddress"
@@ -397,6 +266,7 @@ function InvoiceForm() {
               <div className="space-y-2">
                 <label htmlFor="shipAddress" className="block text-sm font-bold text-ac-black">
                   Mailing Address
+                  <span className="text-ac-blue ml-1">*</span>
                 </label>
                 <textarea
                   id="shipAddress"
@@ -437,9 +307,12 @@ function InvoiceForm() {
             Sensors &amp; Total
           </legend>
 
+          <ShowPriceCallout savings={totals.savings} qty={totals.qty} />
+
           <div className="space-y-2">
             <label htmlFor="invoiceSensorCount" className="block text-sm font-bold text-ac-black">
               Number of sensors
+              <span className="text-ac-blue ml-1">*</span>
             </label>
             <input
               id="invoiceSensorCount"
@@ -454,23 +327,37 @@ function InvoiceForm() {
           </div>
 
           <PriceTable totals={totals} />
+        </fieldset>
 
-          <div className="pt-4">
-            <label className="flex items-start gap-3 p-4 rounded-2xl border border-ac-blue/20 bg-ac-blue/5 cursor-pointer">
-              <input
-                type="checkbox"
-                name="confirmInvoice"
-                required
-                className="mt-1 w-5 h-5 rounded border-ac-black/20 text-ac-blue focus:ring-ac-aqua"
-              />
-              <span className="text-sm md:text-base text-ac-black font-medium leading-snug">
-                Please send me an invoice for{" "}
-                <span className="font-bold text-ac-blue">
-                  {formatCurrency(totals.total)}
-                </span>
-                .
-              </span>
-            </label>
+        <fieldset className="space-y-3">
+          <legend className="text-base font-bold text-ac-black mb-4 flex items-center gap-2">
+            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-ac-blue text-white text-xs font-bold">
+              4
+            </span>
+            What should we email you?
+          </legend>
+          <p className="text-sm text-ac-black/60 font-light -mt-2 mb-2">
+            Pricing above is your show price. Choose how you&rsquo;d like us to confirm it in
+            writing.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-3">
+            <DocumentTypeOption
+              value="estimate"
+              checked={documentType === "estimate"}
+              onChange={setDocumentType}
+              icon={<FileText className="w-5 h-5" />}
+              title="Send me a formal estimate"
+              description="A signed, dated estimate emailed to you for approval — no obligation to buy yet."
+            />
+            <DocumentTypeOption
+              value="invoice"
+              checked={documentType === "invoice"}
+              onChange={setDocumentType}
+              icon={<Receipt className="w-5 h-5" />}
+              title="I’m ready — send me an invoice"
+              description="An invoice for the total above, ready to pay so we can ship."
+            />
           </div>
         </fieldset>
 
@@ -488,7 +375,7 @@ function InvoiceForm() {
           disabled={submitting}
           className="w-full bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold text-lg h-13 disabled:opacity-70 disabled:cursor-not-allowed"
         >
-          {submitting ? "Sending…" : "Request invoice"}
+          {submitting ? "Sending…" : submitLabel}
           {!submitting && <ArrowRight className="w-5 h-5 ml-1" />}
         </Button>
       </form>
@@ -496,12 +383,59 @@ function InvoiceForm() {
   );
 }
 
+function ShowPriceCallout({ savings, qty }: { savings: number; qty: number }) {
+  return (
+    <div className="rounded-2xl border border-ac-blue/20 bg-ac-blue/5 p-4 md:p-5">
+      <div className="flex items-start gap-3">
+        <span className="inline-flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-ac-blue text-white">
+          <Tag className="w-4 h-4" />
+        </span>
+        <div className="flex-1">
+          <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-ac-blue mb-1">
+            Show price applied
+          </div>
+          <p className="text-sm md:text-base text-ac-black font-medium leading-snug">
+            Annual subscription is{" "}
+            <span className="text-ac-black/60 line-through">
+              {formatCurrency(ANNUAL_SUB_RRP)}
+            </span>{" "}
+            <span className="font-bold">{formatCurrency(ANNUAL_SUB_PRICE)}</span> per sensor
+            &mdash; you save{" "}
+            <span className="font-bold text-ac-blue">
+              {formatCurrency(ANNUAL_SUB_SAVINGS)}
+            </span>{" "}
+            per sensor.
+            {qty > 1 && (
+              <>
+                {" "}
+                That&rsquo;s{" "}
+                <span className="font-bold text-ac-blue">{formatCurrency(savings)}</span> off
+                this order.
+              </>
+            )}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function PriceTable({
   totals,
 }: {
-  totals: { qty: number; sensorsLine: number; subscriptionLine: number; shipping: number; total: number };
+  totals: {
+    qty: number;
+    sensorsLine: number;
+    subscriptionLine: number;
+    subscriptionRrpLine: number;
+    shipping: number;
+    total: number;
+    totalAtRrp: number;
+    savings: number;
+  };
 }) {
-  const { qty, sensorsLine, subscriptionLine, shipping, total } = totals;
+  const { qty, sensorsLine, subscriptionLine, subscriptionRrpLine, shipping, total, savings } =
+    totals;
 
   return (
     <div className="rounded-2xl border border-ac-grey overflow-hidden">
@@ -511,7 +445,7 @@ function PriceTable({
             <th className="text-left font-bold px-4 py-3">Item</th>
             <th className="text-left font-bold px-4 py-3 hidden sm:table-cell">Description</th>
             <th className="text-right font-bold px-4 py-3 w-16">Qty</th>
-            <th className="text-right font-bold px-4 py-3 w-24">Price</th>
+            <th className="text-right font-bold px-4 py-3 w-28">Price</th>
             <th className="text-right font-bold px-4 py-3 w-28">Amount</th>
           </tr>
         </thead>
@@ -543,13 +477,22 @@ function PriceTable({
             </td>
             <td className="px-4 py-3 align-top text-ac-black/70 hidden sm:table-cell">
               Annual subscription &mdash; 1 year
+              <span className="block text-xs text-ac-blue font-semibold mt-0.5">
+                Show price (RRP {formatCurrency(ANNUAL_SUB_RRP)})
+              </span>
             </td>
             <td className="px-4 py-3 align-top text-right tabular-nums">{qty}</td>
             <td className="px-4 py-3 align-top text-right tabular-nums">
-              {formatCurrency(ANNUAL_SUB_PRICE)}
+              <span className="block text-xs text-ac-black/50 line-through">
+                {formatCurrency(ANNUAL_SUB_RRP)}
+              </span>
+              <span className="block">{formatCurrency(ANNUAL_SUB_PRICE)}</span>
             </td>
             <td className="px-4 py-3 align-top text-right tabular-nums font-semibold">
-              {formatCurrency(subscriptionLine)}
+              <span className="block text-xs text-ac-black/50 line-through font-normal">
+                {formatCurrency(subscriptionRrpLine)}
+              </span>
+              <span className="block">{formatCurrency(subscriptionLine)}</span>
             </td>
           </tr>
           <tr>
@@ -572,6 +515,16 @@ function PriceTable({
           </tr>
         </tbody>
         <tfoot className="bg-ac-blue/5">
+          {qty > 0 && savings > 0 && (
+            <tr>
+              <td colSpan={4} className="px-4 py-2 text-right text-sm text-ac-blue font-semibold">
+                Show price savings
+              </td>
+              <td className="px-4 py-2 text-right text-sm text-ac-blue font-semibold tabular-nums">
+                &minus;{formatCurrency(savings)}
+              </td>
+            </tr>
+          )}
           <tr>
             <td colSpan={4} className="px-4 py-4 text-right font-bold text-ac-black">
               Total Due
@@ -583,10 +536,55 @@ function PriceTable({
         </tfoot>
       </table>
       <p className="text-xs text-ac-black/60 px-4 py-3 bg-white border-t border-ac-grey">
-        Per sensor: {formatCurrency(PER_SENSOR_TOTAL)} (hardware + 1-year subscription). Shipping is
-        a flat {formatCurrency(SHIPPING_COST)} regardless of quantity.
+        Per sensor at show price: {formatCurrency(PER_SENSOR_TOTAL)} (hardware + 1-year
+        subscription) &mdash; RRP would be {formatCurrency(PER_SENSOR_RRP)}. Shipping is a flat{" "}
+        {formatCurrency(SHIPPING_COST)} regardless of quantity.
       </p>
     </div>
+  );
+}
+
+interface DocumentTypeOptionProps {
+  value: DocumentType;
+  checked: boolean;
+  onChange: (value: DocumentType) => void;
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+function DocumentTypeOption({
+  value,
+  checked,
+  onChange,
+  icon,
+  title,
+  description,
+}: DocumentTypeOptionProps) {
+  return (
+    <label
+      className={`flex items-start gap-3 p-4 rounded-2xl border cursor-pointer transition-colors ${
+        checked
+          ? "border-ac-blue bg-ac-blue/5 ring-2 ring-ac-blue/30"
+          : "border-ac-grey bg-white hover:border-ac-blue/40"
+      }`}
+    >
+      <input
+        type="radio"
+        name="documentTypeChoice"
+        value={value}
+        checked={checked}
+        onChange={() => onChange(value)}
+        className="mt-1 w-4 h-4 border-ac-black/20 text-ac-blue focus:ring-ac-aqua"
+      />
+      <div className="flex-1">
+        <div className="flex items-center gap-2 font-bold text-ac-black mb-1">
+          <span className="text-ac-blue">{icon}</span>
+          <span>{title}</span>
+        </div>
+        <p className="text-sm text-ac-black/70 font-light leading-snug">{description}</p>
+      </div>
+    </label>
   );
 }
 

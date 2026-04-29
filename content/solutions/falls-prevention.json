@@ -15,8 +15,7 @@
           "href": "/"
         },
         {
-          "label": "Solutions",
-          "href": "/solutions"
+          "label": "Solutions"
         },
         {
           "label": "Falls Prevention",
@@ -173,17 +172,17 @@
         {
           "title": "Home Care",
           "outcome": "Detected functional decline six weeks earlier than the previous paper-based process.",
-          "href": "/resources/case-studies/home-care"
+          "href": "/resources/case-studies"
         },
         {
           "title": "Senior Living",
           "outcome": "Reduced falls-related resident turnover and protected occupancy rates across the community.",
-          "href": "/resources/case-studies/senior-living"
+          "href": "/resources/case-studies"
         },
         {
           "title": "Clinical",
           "outcome": "Standardized multifactorial screening across a multi-site clinical network.",
-          "href": "/resources/case-studies/clinical"
+          "href": "/resources/case-studies"
         }
       ]
     },

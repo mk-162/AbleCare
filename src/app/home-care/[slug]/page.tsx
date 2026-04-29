@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { fetchPage, extractPageData } from "@/lib/tina-client";
 import { EditorialPageClient } from "@/components/blocks/EditorialPageClient";
 
@@ -34,7 +35,13 @@ export default async function HomeCareSubPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { query, variables, data } = await fetchPage("segments", slug);
+  let result;
+  try {
+    result = await fetchPage("segments", slug);
+  } catch {
+    notFound();
+  }
+  const { query, variables, data } = result;
 
   return <EditorialPageClient query={query} variables={variables} data={data} />;
 }

@@ -31,17 +31,17 @@
         {
           "title": "Grip Strength",
           "body": "Utilizes the GripAble sensor and the Able Assess app.",
-          "link": "/solutions/grip-strength/"
+          "link": "/solutions/grip-strength"
         },
         {
           "title": "Fall Risk Screening",
           "body": "Utilizes the GripAble sensor, the Able Assess app, the carry pouch, and a measuring tape.",
-          "link": "/solutions/falls-prevention/"
+          "link": "/solutions/falls-prevention"
         },
         {
           "title": "Neuro-Rehabilitation",
           "body": "Utilizes the GripAble sensor and the Able Rehab app.",
-          "link": "/solutions/able-rehab/"
+          "link": "/solutions/able-rehab"
         }
       ]
     },
@@ -55,25 +55,25 @@
           "title": "Immediate, In-App Calibration",
           "description": "No need to send the product away to re-calibrate.",
           "ctaText": "Talk to our team",
-          "link": "/contact/"
+          "link": "/contact"
         },
         {
           "title": "Accurate",
           "description": "Proven accuracy across users and assessments.",
           "ctaText": "See the research",
-          "link": "/resources/research-library/"
+          "link": "/resources/research-library"
         },
         {
           "title": "Robust",
           "description": "Maintains accuracy even after bumps and jostles.",
           "ctaText": "See the research",
-          "link": "/resources/research-library/"
+          "link": "/resources/research-library"
         },
         {
           "title": "Sensitive",
           "description": "Senses the smallest of movements through to hundreds of pounds of force.",
           "ctaText": "See the research",
-          "link": "/resources/research-library/"
+          "link": "/resources/research-library"
         }
       ]
     },
@@ -115,11 +115,11 @@
       "body": "20 minutes with a clinician who has run it across grip strength, fall risk screening, and neuro-rehab.",
       "primaryCta": {
         "label": "Book a Demo",
-        "href": "/contact/"
+        "href": "/contact"
       },
       "secondaryCta": {
         "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide/"
+        "href": "/resources/buyers-guide"
       }
     }
   ],

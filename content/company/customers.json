@@ -11,8 +11,7 @@
       "_template": "breadcrumb",
       "items": [
         { "label": "Home", "href": "/" },
-        { "label": "Company", "href": "/company" },
-        { "label": "Customers", "href": "/company/customers" }
+        { "label": "Customers", "href": "/customers" }
       ]
     },
     {
@@ -25,7 +24,7 @@
       "headline": "Trusted by care teams who refuse to guess.",
       "subtitle": "From single-site home care agencies to multi-site senior living portfolios, organizations choose Able Assess because it delivers objective data their teams can act on.",
       "primaryCtaText": "Join them",
-      "primaryCtaLink": "/company/demo"
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "segmentCards",
@@ -94,7 +93,7 @@
       "heading": "Ready to see what they saw?",
       "bodyText": "Book a 30-minute demo with the Able Care clinical team. Segment-tailored. See the workflow. Get your questions answered.",
       "primaryCtaText": "Book a demo",
-      "primaryCtaLink": "/company/demo",
+      "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the buyers guide",
       "secondaryCtaLink": "/resources/buyers-guide"
     }

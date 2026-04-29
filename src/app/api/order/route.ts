@@ -8,6 +8,7 @@ export const dynamic = "force-dynamic";
 
 const SENSOR_PRICE = 199;
 const ANNUAL_SUB_PRICE = 360;
+const ANNUAL_SUB_RRP = 499;
 const SHIPPING_COST = 39.95;
 
 /* ─── Rate limiting ─────────────────────────────────────────────────────── */
@@ -29,18 +30,9 @@ function rateLimit(ip: string): boolean {
 
 /* ─── Payload shapes ────────────────────────────────────────────────────── */
 
-type OrderEstimate = {
-  formId: "order-estimate";
-  customerName?: string;
-  individualName?: string;
-  phone?: string;
-  email?: string;
-  sensorCount?: string;
-  sensorCountNA?: string;
-};
-
-type OrderInvoice = {
-  formId: "order-invoice";
+type OrderRequest = {
+  formId?: "order" | "order-estimate" | "order-invoice";
+  documentType?: "estimate" | "invoice";
   billCustomer?: string;
   billIndividual?: string;
   billAddress?: string;
@@ -52,19 +44,9 @@ type OrderInvoice = {
   shipPhone?: string;
   shipEmail?: string;
   sensorCount?: string;
-  confirmInvoice?: string;
 };
 
-type OrderPayload = OrderEstimate | OrderInvoice;
-
-const ESTIMATE_REQUIRED: Array<keyof OrderEstimate> = [
-  "customerName",
-  "individualName",
-  "phone",
-  "email",
-];
-
-const INVOICE_REQUIRED: Array<keyof OrderInvoice> = [
+const ORDER_REQUIRED: Array<keyof OrderRequest> = [
   "billCustomer",
   "billIndividual",
   "billAddress",
@@ -111,38 +93,17 @@ function computeInvoiceTotals(sensorCountRaw?: string) {
 
 /* ─── Email rendering ───────────────────────────────────────────────────── */
 
-function renderEstimateEmail(lead: OrderEstimate): { html: string; text: string; subject: string } {
-  const sensors = lead.sensorCountNA === "on" ? "Not sure yet" : lead.sensorCount || "";
-  const html = `
-    <div style="font-family:'DM Sans',Arial,sans-serif;max-width:640px;margin:0 auto;padding:24px;color:#191919;">
-      <h1 style="font-size:22px;margin:0 0 4px;">New order — estimate request</h1>
-      <p style="color:#666;margin:0 0 20px;font-size:14px;">Submitted via /order</p>
-      <table style="width:100%;border-collapse:collapse;font-size:14px;">
-        ${row("Organization", lead.customerName)}
-        ${row("Contact", lead.individualName)}
-        ${row("Phone", lead.phone)}
-        ${row("Email", lead.email)}
-        ${row("Sensors", sensors)}
-      </table>
-    </div>
-  `;
-  const text = [
-    "New order — estimate request",
-    "",
-    `Organization: ${lead.customerName ?? ""}`,
-    `Contact:      ${lead.individualName ?? ""}`,
-    `Phone:        ${lead.phone ?? ""}`,
-    `Email:        ${lead.email ?? ""}`,
-    `Sensors:      ${sensors}`,
-  ].join("\n");
-
-  const subjectName = lead.customerName?.trim() || lead.individualName?.trim() || "lead";
-  return { html, text, subject: `Able Care order — estimate request from ${subjectName}` };
-}
-
-function renderInvoiceEmail(lead: OrderInvoice): { html: string; text: string; subject: string } {
+function renderOrderEmail(
+  lead: OrderRequest,
+  documentType: "estimate" | "invoice"
+): { html: string; text: string; subject: string } {
   const totals = computeInvoiceTotals(lead.sensorCount);
   const sameAsBilling = !lead.shipAddress;
+  const docLabel = documentType === "estimate" ? "estimate" : "invoice";
+  const headline = documentType === "estimate" ? "estimate request" : "invoice request";
+  const subscriptionLineLabel = `Able Assess Data Sub (1 year, show price — RRP ${formatCurrency(
+    ANNUAL_SUB_RRP
+  )})`;
 
   const lineItemsHtml = `
     <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;">
@@ -162,7 +123,7 @@ function renderInvoiceEmail(lead: OrderInvoice): { html: string; text: string; s
           <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${formatCurrency(totals.sensorsLine)}</td>
         </tr>
         <tr>
-          <td style="padding:8px;border-bottom:1px solid #f0f0f0;">Able Assess Data Sub (1 year)</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0;">${subscriptionLineLabel}</td>
           <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${totals.qty}</td>
           <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${formatCurrency(ANNUAL_SUB_PRICE)}</td>
           <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${formatCurrency(totals.subscriptionLine)}</td>
@@ -185,8 +146,8 @@ function renderInvoiceEmail(lead: OrderInvoice): { html: string; text: string; s
 
   const html = `
     <div style="font-family:'DM Sans',Arial,sans-serif;max-width:680px;margin:0 auto;padding:24px;color:#191919;">
-      <h1 style="font-size:22px;margin:0 0 4px;">New order — invoice request</h1>
-      <p style="color:#666;margin:0 0 20px;font-size:14px;">Submitted via /order</p>
+      <h1 style="font-size:22px;margin:0 0 4px;">New order — ${headline}</h1>
+      <p style="color:#666;margin:0 0 20px;font-size:14px;">Submitted via /order &mdash; customer asked for an ${docLabel}</p>
 
       <h2 style="font-size:14px;text-transform:uppercase;letter-spacing:0.1em;color:#1432FF;margin:24px 0 8px;">Bill to</h2>
       <table style="width:100%;border-collapse:collapse;font-size:14px;">
@@ -216,7 +177,7 @@ function renderInvoiceEmail(lead: OrderInvoice): { html: string; text: string; s
   `;
 
   const text = [
-    "New order — invoice request",
+    `New order — ${headline}`,
     "",
     "BILL TO",
     `Organization: ${lead.billCustomer ?? ""}`,
@@ -244,7 +205,7 @@ function renderInvoiceEmail(lead: OrderInvoice): { html: string; text: string; s
   ].join("\n");
 
   const subjectName = lead.billCustomer?.trim() || lead.billIndividual?.trim() || "lead";
-  const subject = `Able Care order — invoice request from ${subjectName} (${formatCurrency(totals.total)})`;
+  const subject = `Able Care order — ${headline} from ${subjectName} (${formatCurrency(totals.total)})`;
   return { html, text, subject };
 }
 
@@ -273,58 +234,33 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  let payload: OrderPayload;
+  let payload: OrderRequest;
   try {
-    payload = (await request.json()) as OrderPayload;
+    payload = (await request.json()) as OrderRequest;
   } catch {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  let html: string;
-  let text: string;
-  let subject: string;
-  let replyTo: string | undefined;
-
-  if (payload.formId === "order-estimate") {
-    for (const field of ESTIMATE_REQUIRED) {
-      if (!payload[field] || !String(payload[field]).trim()) {
-        return NextResponse.json(
-          { error: `Missing required field: ${field}` },
-          { status: 400 }
-        );
-      }
-    }
-    const rendered = renderEstimateEmail(payload);
-    html = rendered.html;
-    text = rendered.text;
-    subject = rendered.subject;
-    replyTo = payload.email;
-  } else if (payload.formId === "order-invoice") {
-    for (const field of INVOICE_REQUIRED) {
-      if (!payload[field] || !String(payload[field]).trim()) {
-        return NextResponse.json(
-          { error: `Missing required field: ${field}` },
-          { status: 400 }
-        );
-      }
-    }
-    if (Number(payload.sensorCount) <= 0) {
+  for (const field of ORDER_REQUIRED) {
+    if (!payload[field] || !String(payload[field]).trim()) {
       return NextResponse.json(
-        { error: "Sensor count must be at least 1." },
+        { error: `Missing required field: ${field}` },
         { status: 400 }
       );
     }
-    const rendered = renderInvoiceEmail(payload);
-    html = rendered.html;
-    text = rendered.text;
-    subject = rendered.subject;
-    replyTo = payload.billEmail;
-  } else {
+  }
+  if (Number(payload.sensorCount) <= 0) {
     return NextResponse.json(
-      { error: "Unknown form type." },
+      { error: "Sensor count must be at least 1." },
       { status: 400 }
     );
   }
+
+  const documentType: "estimate" | "invoice" =
+    payload.documentType === "invoice" ? "invoice" : "estimate";
+
+  const { html, text, subject } = renderOrderEmail(payload, documentType);
+  const replyTo = payload.billEmail;
 
   const resend = new Resend(apiKey);
   try {

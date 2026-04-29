@@ -37,7 +37,7 @@
       "primaryCtaText": "Register for the Next Webinar",
       "primaryCtaLink": "#upcoming",
       "secondaryCtaText": "Book a Demo",
-      "secondaryCtaLink": "/demo/"
+      "secondaryCtaLink": "/demo"
     },
     {
       "_template": "richText",
@@ -52,9 +52,9 @@
       "heading": "Want a session tailored to your team?",
       "bodyText": "The clinical team can run a private webinar for your organization covering the evidence, the workflow and the rollout plan for your setting.",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/demo/",
+      "primaryCtaLink": "/demo",
       "secondaryCtaText": "Talk to the Clinical Team",
-      "secondaryCtaLink": "/contact/"
+      "secondaryCtaLink": "/contact"
     }
   ],
   "tags": [

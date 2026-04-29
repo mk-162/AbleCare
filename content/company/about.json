@@ -11,8 +11,7 @@
       "_template": "breadcrumb",
       "items": [
         { "label": "Home", "href": "/" },
-        { "label": "Company", "href": "/company" },
-        { "label": "About", "href": "/company/about" }
+        { "label": "About", "href": "/about" }
       ]
     },
     {

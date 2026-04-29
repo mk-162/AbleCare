@@ -8,7 +8,7 @@
       "headline": "Identify fall risk early. Act before a fall happens.",
       "subtitle": "A quick, objective falls assessment in under five minutes. Evidence-based. Standardized. Built for the people you care for.",
       "primaryCtaText": "Book a demo",
-      "primaryCtaLink": "/demo/",
+      "primaryCtaLink": "/demo",
       "secondaryCtaText": "Watch it work",
       "secondaryCtaLink": "#how-it-works",
       "backgroundImage": "/images/photos/home/gentleman-child-couch.jpg",
@@ -51,13 +51,13 @@
           "title": "Home Care",
           "description": "Reduce client falls, improve standardization across caregivers, and increase customer conversion rates.",
           "ctaText": "Explore",
-          "link": "/home-care/"
+          "link": "/home-care"
         },
         {
           "title": "Senior Living",
           "description": "Protect residents, reduce staff turnover, and avoid falls-related liability. Objective screening of residents across all levels of care.",
           "ctaText": "Explore",
-          "link": "/senior-living/"
+          "link": "/senior-living"
         },
         {
           "title": "Pharma & CROs",
@@ -142,7 +142,7 @@
         }
       ],
       "ctaText": "See how it works",
-      "ctaLink": "/solutions/able-assess/",
+      "ctaLink": "/solutions/able-assess",
       "_template": "imageFeature"
     },
     {
@@ -223,7 +223,7 @@
           "metricLabel": "reduction in falls-related hospitalizations",
           "summary": "A PE-backed home care operator rolled out Able Assess across 12 branches. Non-clinical staff ran screenings in under five minutes, flagging at-risk clients six weeks earlier than their previous paper-based process.",
           "sector": "Home Care",
-          "link": "/home-care/"
+          "link": "/home-care"
         },
         {
           "title": "Senior living: protecting occupancy through prevention",
@@ -231,7 +231,7 @@
           "metricLabel": "fewer falls per resident per year",
           "summary": "A CCRC with 200 IL and AL units adopted Able Assess as part of their quarterly wellness program. Resident engagement increased and fall-related move-outs dropped.",
           "sector": "Senior Living",
-          "link": "/senior-living/"
+          "link": "/senior-living"
         },
         {
           "title": "Clinical research: objective endpoints for decentralized trials",
@@ -239,7 +239,7 @@
           "metricLabel": "validated functional endpoints in one protocol",
           "summary": "A CRO-led GLP-1 trial used Able Assess to capture grip strength and functional health remotely, replacing site-based Jamar assessments with digital, standardized capture.",
           "sector": "Pharma & CROs",
-          "link": "/pharma/"
+          "link": "/pharma"
         }
       ],
       "_template": "caseStudyCards"
@@ -296,7 +296,7 @@
       "heading": "See Able Assess in your workflow.",
       "bodyText": "Book a presentation with the Able Care team.",
       "primaryCtaText": "Book a demo",
-      "primaryCtaLink": "/demo/",
+      "primaryCtaLink": "/demo",
       "_template": "ctaBanner"
     }
   ],

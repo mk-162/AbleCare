@@ -35,9 +35,9 @@
       "headline": "Every claim backed by the evidence.",
       "subtitle": "Browse the peer-reviewed research behind Able Assess. Our own publications on the GripAble sensor, plus the wider literature on grip strength and falls prevention, all in one place.",
       "primaryCtaText": "Talk to the Clinical Team",
-      "primaryCtaLink": "/contact/",
+      "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Research Summary",
-      "secondaryCtaLink": "/resources/buyers-guide/"
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "prose",
@@ -169,13 +169,6 @@
           "link": "https://www.nice.org.uk/guidance/ng249"
         },
         {
-          "title": "Interventions for preventing falls in older people living in the community",
-          "journal": "Cochrane Database of Systematic Reviews",
-          "year": "2023",
-          "finding": "Meta-analysis of multifactorial and exercise-based interventions; risk-stratified programs reduce fall incidence by 25–35%.",
-          "link": "https://doi.org/10.1002/14651858.CD007146.pub4"
-        },
-        {
           "title": "Predictive validity of the Timed Up and Go test for falls in older adults: a meta-analysis",
           "journal": "American Journal of Preventive Medicine",
           "year": "2021",
@@ -239,9 +232,9 @@
       "heading": "Talk to the clinical team about the evidence.",
       "bodyText": "Our clinical team can walk you through the research and how it applies to your setting.",
       "primaryCtaText": "Talk to the Clinical Team",
-      "primaryCtaLink": "/contact/",
+      "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide/"
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "leadMagnetPromo",

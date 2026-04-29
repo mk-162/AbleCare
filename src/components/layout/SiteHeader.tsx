@@ -17,10 +17,7 @@ const solutionsMenu: { platform: NavItem[]; capabilities: NavItem[] } = {
     { label: "Able Rehab — Neurorehabilitation", href: "/solutions/able-rehab", desc: "Train hand and wrist movements with engaging activities and goal tracking." },
     { label: "The GripAble Sensor", href: "/solutions/sensor", desc: "One best-in-class sensor, many applications." },
   ],
-  capabilities: [
-    { label: "Falls Risk Tests", href: "/falls-risk-tests", desc: "Walkthrough: four falls risk assessments in five minutes." },
-    { label: "Falls Risk Screening Results", href: "/low-and-at-risk", desc: "Walkthrough: how at-risk and not-at-risk results are presented." },
-  ],
+  capabilities: [],
 };
 
 const segmentItems: NavItem[] = [
@@ -324,12 +321,12 @@ export function SiteHeader() {
               </MobileAccordion>
             </ul>
             <div className="px-5 py-4 border-t border-ac-grey/40 space-y-3">
-              <a href="https://portal.able-care.io/" target="_blank" rel="noopener noreferrer" onClick={closeMobile}>
+              <a href="https://portal.able-care.io/" target="_blank" rel="noopener noreferrer" onClick={closeMobile} className="block">
                 <Button className="w-full bg-ac-aqua text-ac-black rounded-full font-bold hover:bg-ac-blue hover:text-white hover:shadow-lg transition-all duration-200">
                   Customer Portal
                 </Button>
               </a>
-              <Link href="/demo" onClick={closeMobile}>
+              <Link href="/demo" onClick={closeMobile} className="block">
                 <Button className="w-full bg-ac-blue text-white rounded-full font-bold hover:bg-ac-aqua hover:text-white hover:shadow-lg transition-all duration-200">
                   Book a demo
                 </Button>

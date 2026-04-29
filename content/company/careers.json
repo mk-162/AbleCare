@@ -19,11 +19,8 @@
           "href": "/"
         },
         {
-          "label": "Company",
-          "href": "/company"
-        },
-        {
-          "label": "Careers"
+          "label": "Careers",
+          "href": "/careers"
         }
       ]
     },

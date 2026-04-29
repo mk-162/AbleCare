@@ -5,69 +5,69 @@
       {
         "label": "Solutions",
         "children": [
-          { "label": "Able Assess - Falls Prevention Application", "href": "/solutions/able-assess/", "desc": "Four metrics. Five minutes. One complete picture." },
-          { "label": "Able Strength", "href": "/solutions/able-strength/", "desc": "Self-serve grip strength for patients at home." },
-          { "label": "Population Health", "href": "/solutions/population-health/", "desc": "Track risk across your entire census." },
-          { "label": "Falls Risk Tests", "href": "/falls-risk-tests/", "desc": "Walkthrough: four falls risk assessments in five minutes." },
-          { "label": "Falls Risk Screening Results", "href": "/low-and-at-risk/", "desc": "Walkthrough: how at-risk and not-at-risk results are presented." }
+          { "label": "Able Assess - Falls Prevention Application", "href": "/solutions/able-assess", "desc": "Four metrics. Five minutes. One complete picture." },
+          { "label": "Able Strength", "href": "/solutions/able-strength", "desc": "Self-serve grip strength for patients at home." },
+          { "label": "Population Health", "href": "/solutions/population-health", "desc": "Track risk across your entire census." },
+          { "label": "Falls Risk Tests", "href": "/falls-risk-tests", "desc": "Walkthrough: four falls risk assessments in five minutes." },
+          { "label": "Falls Risk Screening Results", "href": "/low-and-at-risk", "desc": "Walkthrough: how at-risk and not-at-risk results are presented." }
         ]
       },
       {
         "label": "Who We Help",
         "children": [
-          { "label": "Home Care", "href": "/home-care/", "desc": "Reduce hospitalizations and hit HHVBP targets." },
-          { "label": "Senior Living", "href": "/senior-living/", "desc": "Protect residents and your CCRC reputation." },
-          { "label": "CRO/Pharma", "href": "/pharma/", "desc": "Digital endpoints for clinical trials." }
+          { "label": "Home Care", "href": "/home-care", "desc": "Reduce hospitalizations and hit HHVBP targets." },
+          { "label": "Senior Living", "href": "/senior-living", "desc": "Protect residents and your CCRC reputation." },
+          { "label": "CRO/Pharma", "href": "/pharma", "desc": "Digital endpoints for clinical trials." }
         ]
       },
       {
         "label": "Resources",
         "children": [
-          { "label": "Blog", "href": "/blog/", "desc": "Insights on falls prevention and functional assessment." },
-          { "label": "Case Studies", "href": "/resources/case-studies/", "desc": "Real results from real organizations." },
-          { "label": "Clinical Evidence", "href": "/resources/evidence/", "desc": "Peer-reviewed research backing our approach." },
-          { "label": "Buyers Guide", "href": "/resources/buyers-guide/", "desc": "Everything you need to brief procurement." }
+          { "label": "Blog", "href": "/blog", "desc": "Insights on falls prevention and functional assessment." },
+          { "label": "Case Studies", "href": "/resources/case-studies", "desc": "Real results from real organizations." },
+          { "label": "Clinical Evidence", "href": "/resources/evidence", "desc": "Peer-reviewed research backing our approach." },
+          { "label": "Buyers Guide", "href": "/resources/buyers-guide", "desc": "Everything you need to brief procurement." }
         ]
       },
-      { "label": "About", "href": "/about/" },
-      { "label": "Contact", "href": "/contact/" }
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
     ],
-    "cta": { "label": "Book a demo", "href": "/demo/" }
+    "cta": { "label": "Book a demo", "href": "/demo" }
   },
   "footer": {
     "columns": [
       {
         "title": "Solutions",
         "links": [
-          { "label": "Home Care", "href": "/home-care/" },
-          { "label": "Senior Living", "href": "/senior-living/" },
-          { "label": "Clinicians", "href": "/clinicians/" },
-          { "label": "Pharma & CROs", "href": "/pharma/" }
+          { "label": "Home Care", "href": "/home-care" },
+          { "label": "Senior Living", "href": "/senior-living" },
+          { "label": "Clinicians", "href": "/clinicians" },
+          { "label": "Pharma & CROs", "href": "/pharma" }
         ]
       },
       {
         "title": "Resources",
         "links": [
-          { "label": "Blog", "href": "/blog/" },
-          { "label": "Case Studies", "href": "/resources/case-studies/" },
-          { "label": "Clinical Evidence", "href": "/resources/evidence/" },
-          { "label": "Buyers Guide", "href": "/resources/buyers-guide/" }
+          { "label": "Blog", "href": "/blog" },
+          { "label": "Case Studies", "href": "/resources/case-studies" },
+          { "label": "Clinical Evidence", "href": "/resources/evidence" },
+          { "label": "Buyers Guide", "href": "/resources/buyers-guide" }
         ]
       },
       {
         "title": "Company",
         "links": [
-          { "label": "About Us", "href": "/about/" },
-          { "label": "Meet the Team", "href": "/meet-the-team/" },
-          { "label": "Contact", "href": "/contact/" },
-          { "label": "News", "href": "/news/" }
+          { "label": "About Us", "href": "/about" },
+          { "label": "Meet the Team", "href": "/meet-the-team" },
+          { "label": "Contact", "href": "/contact" },
+          { "label": "News", "href": "/news" }
         ]
       }
     ],
     "legal": [
-      { "label": "Privacy Policy", "href": "/privacy/" },
-      { "label": "Terms of Service", "href": "/terms/" },
-      { "label": "Security", "href": "/security/" }
+      { "label": "Privacy Policy", "href": "/privacy" },
+      { "label": "Terms of Service", "href": "/terms" },
+      { "label": "Security", "href": "/security" }
     ]
   }
 }
