@@ -22,17 +22,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
       "backgroundImageAlt": "Older woman using the Able Assess sensor at home",
       "eyebrow": "Home Care",
       "headline": "Standardized falls screening for home care agencies.",
       "subtitle": "Reduce client falls. Standardize care across branches and caregivers. Improve customer conversion.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      }
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact"
     },
     {
       "_template": "metricsBlock",
@@ -41,15 +39,15 @@
       "metrics": [
         {
           "name": "Client acquisition",
-          "description": "Utilize Able Assess during prospecting to give customers a tangible understanding of their risk profile and support needs. Offer inbound leads a free falls screening at initial assessment."
+          "whatItMeasures": "Utilize Able Assess during prospecting to give customers a tangible understanding of their risk profile and support needs. Offer inbound leads a free falls screening at initial assessment."
         },
         {
           "name": "Client retention",
-          "description": "Falls are a leading cause of injury and death among home care customers. Help your clients stay healthy and safe at home by implementing better falls risk screening."
+          "whatItMeasures": "Falls are a leading cause of injury and death among home care customers. Help your clients stay healthy and safe at home by implementing better falls risk screening."
         },
         {
           "name": "Differentiation",
-          "description": "Position your agency as tech-forward and clinically informed, without stepping outside a non-medical scope. Few competitors can match this story."
+          "whatItMeasures": "Position your agency as tech-forward and clinically informed, without stepping outside a non-medical scope. Few competitors can match this story."
         }
       ]
     },
@@ -87,26 +85,25 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Full body strength proxy. Predicts all-cause mortality and hospitalization risk."
+          "whatItMeasures": "Full body strength proxy. Predicts all-cause mortality and hospitalization risk."
         },
         {
           "name": "Sit-to-stand",
-          "description": "Lower-limb power and balance. A key indicator of fall likelihood."
+          "whatItMeasures": "Lower-limb power and balance. A key indicator of fall likelihood."
         },
         {
           "name": "Gait speed",
-          "description": "Walking speed over a standardized 4-meter distance. Linked to rehospitalization rates."
+          "whatItMeasures": "Walking speed over a standardized 4-meter distance. Linked to rehospitalization rates."
         },
         {
           "name": "Timed Up and Go",
-          "description": "Falls risk in under a minute. Validated across home and clinical settings."
+          "whatItMeasures": "Falls risk in under a minute. Validated across home and clinical settings."
         }
       ]
     },
     {
       "_template": "statsBar",
       "heading": "The numbers that matter to home care",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "25%",
@@ -124,28 +121,31 @@
           "value": "0",
           "label": "Clinical certifications required to run it"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "testimonialCarousel",
-      "colorScheme": "aqua",
       "testimonials": [
         {
           "quote": "We caught decline six weeks earlier than we would have with our old process.",
-          "attribution": "Clinical Director, US home care agency"
+          "role": "Clinical Director",
+          "organization": "US home care agency"
         },
         {
           "quote": "It paid for itself in the first quarter.",
-          "attribution": "Operations Lead, multi-branch home care operator"
+          "role": "Operations Lead",
+          "organization": "multi-branch home care operator"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "faqAccordion",
       "scheme": "grey",
       "heading": "Common questions from home care operators",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "What hardware do we need?",
           "answer": "The sensor, pouch and measuring tape are all provided as part of the kit. Everything pairs via Bluetooth with any smartphone or tablet. No additional infrastructure required."
@@ -175,28 +175,26 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in Action.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      }
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact"
     },
     {
       "_template": "segmentRouter",
       "heading": "Explore other settings",
-      "tiles": [
+      "segments": [
         {
-          "label": "Senior Living",
-          "benefit": "Protect residents, occupancy and NOI.",
-          "href": "/senior-living",
+          "title": "Senior Living",
+          "description": "Protect residents, occupancy and NOI.",
+          "link": "/senior-living",
           "ctaText": "Explore"
         },
         {
-          "label": "Pharma & CROs",
-          "benefit": "Decentralized functional endpoints.",
-          "href": "/pharma",
+          "title": "Pharma & CROs",
+          "description": "Decentralized functional endpoints.",
+          "link": "/pharma",
           "ctaText": "Explore"
         }
       ]

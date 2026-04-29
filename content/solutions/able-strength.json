@@ -25,29 +25,25 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/studio/gentleman-sensor-studio.jpg",
       "backgroundImageAlt": "Patient using GripAble grip strength sensor",
       "eyebrow": "Able Strength",
       "headline": "Grip strength in every patient's pocket.",
       "subtitle": "Self-serve grip strength measurement for patients and residents. Download the app, squeeze the sensor, compare against normative data, share results with your care team.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "See How It Works",
-        "href": "#how-it-works"
-      }
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "See How It Works",
+      "secondaryCtaLink": "#how-it-works"
     },
     {
       "_template": "imageFeature",
       "heading": "Clinical-grade, patient-simple",
-      "body": "Able Strength puts grip strength measurement directly in the hands of patients and residents. Connected to the GripAble sensor via Bluetooth, the app captures clinical-grade data in seconds. Patients can track their own progress, set milestones and share results with their care team or family.",
-      "imageSide": "right",
       "imageAlt": "Able Strength app showing grip strength results on a smartphone",
-      "imageSrc": "/images/features/phone-trimmed-min.png"
+      "imagePosition": "right",
+      "image": "/images/features/phone-trimmed-min.png",
+      "description": "Able Strength puts grip strength measurement directly in the hands of patients and residents. Connected to the GripAble sensor via Bluetooth, the app captures clinical-grade data in seconds. Patients can track their own progress, set milestones and share results with their care team or family."
     },
     {
       "_template": "metricsBlock",
@@ -56,19 +52,19 @@
       "metrics": [
         {
           "name": "Whole-body strength proxy",
-          "description": "Grip strength is a validated proxy for overall muscle strength and physical function in adults over 60."
+          "whatItMeasures": "Grip strength is a validated proxy for overall muscle strength and physical function in adults over 60."
         },
         {
           "name": "Falls risk indicator",
-          "description": "Low grip strength is strongly associated with increased falls risk, frailty and loss of independence."
+          "whatItMeasures": "Low grip strength is strongly associated with increased falls risk, frailty and loss of independence."
         },
         {
           "name": "Mortality predictor",
-          "description": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure (Lancet, 2015)."
+          "whatItMeasures": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure (Lancet, 2015)."
         },
         {
           "name": "Recovery tracker",
-          "description": "Longitudinal grip strength trends track recovery from surgery, illness and deconditioning over time."
+          "whatItMeasures": "Longitudinal grip strength trends track recovery from surgery, illness and deconditioning over time."
         }
       ]
     },
@@ -101,18 +97,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Put grip strength measurement in your patients' hands.",
-      "body": "See how Able Strength integrates with Able Assess for a complete functional health picture.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "See Able Assess",
-        "href": "/solutions/able-assess"
-      }
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "See Able Assess",
+      "secondaryCtaLink": "/solutions/able-assess",
+      "bodyText": "See how Able Strength integrates with Able Assess for a complete functional health picture."
     }
   ],
   "tags": [

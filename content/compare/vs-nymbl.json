@@ -11,7 +11,6 @@
     {
       "_template": "hero",
       "scheme": "light",
-      "waveStyle": "ribbon",
       "backgroundImage": "/images/photos/clinical/standing-exercise.jpg",
       "backgroundImageAlt": "Patient performing functional assessment exercise",
       "eyebrow": "Comparison",
@@ -20,7 +19,8 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Comparison PDF",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "wave": "ribbon"
     },
     {
       "_template": "featureComparison",
@@ -117,13 +117,13 @@
     {
       "_template": "ctaBanner",
       "scheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Screen first, then intervene.",
-      "body": "A 20-minute demo showing how objective screening identifies who needs intervention and tracks whether it is working.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "wave": "ribbon",
+      "bodyText": "A 20-minute demo showing how objective screening identifies who needs intervention and tracks whether it is working."
     }
   ],
   "tags": [

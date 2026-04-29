@@ -6,36 +6,67 @@
     "description": "Standardized falls screening across every franchise branch. Protect HHVBP. Defend enterprise value. Under five minutes per client, non-clinical staff.",
     "ogImage": "/images/og-pe-backed.png"
   },
-  "tags": ["home-care", "pe-backed", "franchise", "hhvbp", "falls-prevention"],
+  "tags": [
+    "home-care",
+    "pe-backed",
+    "franchise",
+    "hhvbp",
+    "falls-prevention"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Home Care", "href": "/home-care" },
-        { "label": "PE-Backed & Franchised" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Home Care",
+          "href": "/home-care"
+        },
+        {
+          "label": "PE-Backed & Franchised"
+        }
       ]
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
       "backgroundImageAlt": "Older woman using GripAble sensor at home during care visit",
       "eyebrow": "PE-Backed Home Care",
       "headline": "One screening workflow, every branch.",
       "subtitle": "For PE-backed and franchised home care operators who need standardization, HHVBP protection and a low-training rollout. Four objective metrics in under five minutes.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
-      "secondaryCta": { "label": "Download the HHVBP Guide", "href": "/resources/hhvbp-guide" }
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the HHVBP Guide",
+      "secondaryCtaLink": "/resources/hhvbp-guide"
     },
     {
       "_template": "trustBar",
       "items": [
-        { "text": "FDA Listed", "logo": "/images/badges/fda-trimmed.svg" },
-        { "text": "CE Marked", "logo": "/images/badges/ce-4.svg" },
-        { "text": "ISO 27001", "logo": "/images/badges/iso-31.svg" },
-        { "text": "HIPAA Aligned", "logo": "/images/badges/hipaa-trimmed.svg" },
-        { "text": "GDPR Compliant", "logo": "/images/badges/gdpr-trimmed-min.png" }
+        {
+          "text": "FDA Listed",
+          "logo": "/images/badges/fda-trimmed.svg"
+        },
+        {
+          "text": "CE Marked",
+          "logo": "/images/badges/ce-4.svg"
+        },
+        {
+          "text": "ISO 27001",
+          "logo": "/images/badges/iso-31.svg"
+        },
+        {
+          "text": "HIPAA Aligned",
+          "logo": "/images/badges/hipaa-trimmed.svg"
+        },
+        {
+          "text": "GDPR Compliant",
+          "logo": "/images/badges/gdpr-trimmed-min.png"
+        }
       ]
     },
     {
@@ -70,7 +101,8 @@
           "description": "Aggregate data across branches for corporate-level reporting. Track HHVBP performance, demonstrate outcomes to investors, and identify underperforming sites."
         }
       ],
-      "primaryCta": { "label": "See the full Able Assess workflow", "href": "/solutions/able-assess" }
+      "primaryCtaText": "See the full Able Assess workflow",
+      "primaryCtaLink": "/solutions/able-assess"
     },
     {
       "_template": "metricsBlock",
@@ -111,38 +143,53 @@
       "testimonials": [
         {
           "quote": "We caught decline six weeks earlier than we would have with our old paper process. The data gave us something to show the family and the payer.",
-          "attribution": "Clinical Director, US home care agency"
+          "role": "Clinical Director",
+          "organization": "US home care agency"
         },
         {
           "quote": "It paid for itself in the first quarter. The real win was the consistency: every branch running the same protocol.",
-          "attribution": "Operations Lead, PE-backed home care franchise"
+          "role": "Operations Lead",
+          "organization": "PE-backed home care franchise"
         }
       ]
     },
     {
       "_template": "imageFeature",
       "heading": "Built for non-clinical staff",
-      "body": "Your caregivers are not clinicians, and they do not need to be. Able Assess was designed so any staff member can deliver a clinical-grade screening with zero training overhead. The sensor guides them through every step. Results are instant. No interpretation required.",
-      "imageSrc": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg",
       "imageAlt": "Care manager and client using GripAble sensor and tablet app",
-      "imageSide": "right",
-      "primaryCta": { "label": "See how it works", "href": "/solutions/able-assess" }
+      "primaryCtaText": "See how it works",
+      "primaryCtaLink": "/solutions/able-assess",
+      "imagePosition": "right",
+      "image": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg",
+      "description": "Your caregivers are not clinicians, and they do not need to be. Able Assess was designed so any staff member can deliver a clinical-grade screening with zero training overhead. The sensor guides them through every step. Results are instant. No interpretation required."
     },
     {
       "_template": "statsBar",
-      "colorScheme": "blue",
       "stats": [
-        { "value": "4", "label": "validated metrics" },
-        { "value": "<5 min", "label": "per screening" },
-        { "value": "15 min", "label": "staff training" },
-        { "value": "25%", "label": "average fall reduction" }
-      ]
+        {
+          "value": "4",
+          "label": "validated metrics"
+        },
+        {
+          "value": "<5 min",
+          "label": "per screening"
+        },
+        {
+          "value": "15 min",
+          "label": "staff training"
+        },
+        {
+          "value": "25%",
+          "label": "average fall reduction"
+        }
+      ],
+      "scheme": "blue"
     },
     {
       "_template": "faqAccordion",
       "heading": "Questions from franchise operators",
       "scheme": "light",
-      "items": [
+      "faqs": [
         {
           "question": "How quickly can we roll out across 50+ branches?",
           "answer": "Most franchise operators deploy across their full network in 30 days. We ship sensors direct to each branch, and staff are proficient in under 15 minutes with the guided workflow. No site visits required for initial deployment."
@@ -172,10 +219,12 @@
     {
       "_template": "ctaBanner",
       "heading": "See Able Assess in a franchise home care workflow",
-      "body": "30 minutes with the clinical team. Tailored to multi-site home care operations. Focused on your workflow.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
-      "secondaryCta": { "label": "Download the HHVBP Guide", "href": "/resources/hhvbp-guide" },
-      "scheme": "blue"
+      "scheme": "blue",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the HHVBP Guide",
+      "secondaryCtaLink": "/resources/hhvbp-guide",
+      "bodyText": "30 minutes with the clinical team. Tailored to multi-site home care operations. Focused on your workflow."
     }
   ]
 }

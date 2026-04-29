@@ -9,21 +9,17 @@
   "blocks": [
     {
       "_template": "hero",
-      "colorScheme": "light",
-      "waveStyle": "ribbon",
       "backgroundImage": "/images/photos/clinical/hands-fitting-sensor.jpg",
       "backgroundImageAlt": "Hands fitting digital sensor versus manual assessment",
       "eyebrow": "Comparison",
       "headline": "Able Assess vs paper-based falls assessments.",
       "subtitle": "Objective, standardized, five minutes. Everything paper cannot do.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Comparison PDF",
-        "href": "/resources/buyers-guide"
-      }
+      "scheme": "light",
+      "wave": "ribbon",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Comparison PDF",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "featureComparison",
@@ -119,18 +115,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See the difference in your workflow.",
-      "body": "A 20-minute demo with a clinician who has run both approaches.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "bodyText": "A 20-minute demo with a clinician who has run both approaches."
     }
   ],
   "tags": [

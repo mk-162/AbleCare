@@ -22,42 +22,38 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "light",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/clinical/clinician-guiding-patient.jpg",
       "backgroundImageAlt": "Clinician guiding patient through GripAble assessment",
       "eyebrow": "Clinicians",
       "headline": "Multifactorial, evidence-based falls risk screening.",
       "subtitle": "Peer-reviewed protocols. Standardized capture. Built for clinical and research teams.",
-      "primaryCta": {
-        "label": "Talk to the Clinical Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Browse the Research",
-        "href": "/resources/research-library"
-      }
+      "scheme": "light",
+      "wave": "crest",
+      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Browse the Research",
+      "secondaryCtaLink": "/resources/research-library"
     },
     {
       "_template": "segmentRouter",
       "heading": "Explore other settings",
-      "tiles": [
+      "segments": [
         {
-          "label": "Home Care",
-          "benefit": "Standardize screening across every branch.",
-          "href": "/home-care",
+          "title": "Home Care",
+          "description": "Standardize screening across every branch.",
+          "link": "/home-care",
           "ctaText": "Explore"
         },
         {
-          "label": "Senior Living",
-          "benefit": "Protect residents, occupancy and NOI.",
-          "href": "/senior-living",
+          "title": "Senior Living",
+          "description": "Protect residents, occupancy and NOI.",
+          "link": "/senior-living",
           "ctaText": "Explore"
         },
         {
-          "label": "Pharma & CROs",
-          "benefit": "Decentralized functional endpoints.",
-          "href": "/pharma",
+          "title": "Pharma & CROs",
+          "description": "Decentralized functional endpoints.",
+          "link": "/pharma",
           "ctaText": "Explore"
         }
       ]
@@ -65,10 +61,10 @@
     {
       "_template": "imageFeature",
       "heading": "Clinical-grade data, captured digitally",
-      "body": "Able Assess replaces subjective paper scoring with four peer-reviewed measurements captured by the GripAble sensor. Grip strength, sit-to-stand, gait speed and timed up-and-go in one standardized workflow. Results flow directly into the clinical record.",
-      "imageSide": "right",
       "imageAlt": "Clinician reviewing Able Assess results on a tablet with a patient",
-      "imageSrc": "/images/photos/clinical/therapist-patient-tablet.jpg"
+      "imagePosition": "right",
+      "image": "/images/photos/clinical/therapist-patient-tablet.jpg",
+      "description": "Able Assess replaces subjective paper scoring with four peer-reviewed measurements captured by the GripAble sensor. Grip strength, sit-to-stand, gait speed and timed up-and-go in one standardized workflow. Results flow directly into the clinical record."
     },
     {
       "_template": "processSteps",
@@ -103,19 +99,19 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Upper-body strength proxy. Predicts all-cause mortality more reliably than systolic blood pressure (Lancet, 2015)."
+          "whatItMeasures": "Upper-body strength proxy. Predicts all-cause mortality more reliably than systolic blood pressure (Lancet, 2015)."
         },
         {
           "name": "Sit-to-stand",
-          "description": "Lower-limb power and balance. Validated marker of functional capacity and fall risk."
+          "whatItMeasures": "Lower-limb power and balance. Validated marker of functional capacity and fall risk."
         },
         {
           "name": "Gait speed",
-          "description": "The 'sixth vital sign' for older adults. Linked to mortality, hospitalization and functional decline."
+          "whatItMeasures": "The 'sixth vital sign' for older adults. Linked to mortality, hospitalization and functional decline."
         },
         {
           "name": "Timed Up and Go",
-          "description": "Falls risk in under a minute. One of the most widely validated functional assessments in geriatric medicine."
+          "whatItMeasures": "Falls risk in under a minute. One of the most widely validated functional assessments in geriatric medicine."
         }
       ]
     },
@@ -148,7 +144,6 @@
     {
       "_template": "statsBar",
       "heading": "Built on the evidence",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "4",
@@ -166,7 +161,8 @@
           "value": "1,000+",
           "label": "Assessments delivered"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "trustBar",
@@ -193,23 +189,25 @@
     },
     {
       "_template": "testimonialCarousel",
-      "colorScheme": "aqua",
       "testimonials": [
         {
           "quote": "We caught decline six weeks earlier than we would have with our old process.",
-          "attribution": "Clinical Director, US home care agency"
+          "role": "Clinical Director",
+          "organization": "US home care agency"
         },
         {
           "quote": "The data quality is a step change from paper. We can finally track functional trends over time.",
-          "attribution": "Consultant Geriatrician, NHS Trust"
+          "role": "Consultant Geriatrician",
+          "organization": "NHS Trust"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "faqAccordion",
       "heading": "Common questions from clinicians",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "How does Able Assess compare to paper-based assessments like Morse or Tinetti?",
           "answer": "Paper assessments are scored subjectively, take 20+ minutes and rarely produce a data trail. Able Assess captures four objective metrics in under five minutes, scores automatically against normative data, and integrates with your clinical record."
@@ -234,18 +232,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in your clinical workflow.",
-      "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": {
-        "label": "Talk to the Clinical Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Browse the Research Library",
-        "href": "/resources/research-library"
-      }
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Browse the Research Library",
+      "secondaryCtaLink": "/resources/research-library",
+      "bodyText": "20 minutes with a clinician who has run it in the field."
     },
     {
       "_template": "leadMagnetPromo",

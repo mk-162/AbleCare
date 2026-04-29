@@ -30,21 +30,17 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Walkthrough",
       "headline": "Falls Risk Screening Results in Able Assess",
       "subtitle": "Clear, objective outcomes the moment screening ends. At risk or not at risk, every result is communicated in seconds.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "See the Tests Walkthrough",
-        "href": "/falls-risk-tests"
-      },
       "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
-      "backgroundImageAlt": "Therapist reviewing Able Assess results with a patient on a tablet"
+      "backgroundImageAlt": "Therapist reviewing Able Assess results with a patient on a tablet",
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "See the Tests Walkthrough",
+      "secondaryCtaLink": "/falls-risk-tests"
     },
     {
       "_template": "richText",
@@ -54,14 +50,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in your workflow.",
       "bodyText": "A 20-minute demo with a clinician who has run it in the field.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "ribbon"
     }
   ]
 }

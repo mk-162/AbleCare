@@ -31,15 +31,13 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
       "headline": "See Able Assess in action.",
       "subtitle": "Watch the full screening workflow from sensor setup to results review. Under four minutes from unboxing to first screening.",
-      "primaryCta": {
-        "label": "Book a Live Demo",
-        "href": "/demo"
-      },
       "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
-      "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor"
+      "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor",
+      "scheme": "blue",
+      "primaryCtaText": "Book a Live Demo",
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "richText",
@@ -105,15 +103,11 @@
       "_template": "ctaBanner",
       "scheme": "blue",
       "heading": "Ready to see it live?",
-      "body": "Book a live demonstration with our clinical team. We will walk you through the full workflow using your care setting as the context.",
-      "primaryCta": {
-        "label": "Book a Live Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download Transcript",
-        "href": "/resources/walkthrough-transcript"
-      }
+      "primaryCtaText": "Book a Live Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download Transcript",
+      "secondaryCtaLink": "/resources/walkthrough-transcript",
+      "bodyText": "Book a live demonstration with our clinical team. We will walk you through the full workflow using your care setting as the context."
     },
     {
       "_template": "leadMagnetPromo",

@@ -30,15 +30,13 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
       "headline": "Guides and resources.",
       "subtitle": "Practical, evidence-based guides for healthcare organizations implementing standardized falls prevention. Each guide is designed for a specific use case and care setting.",
-      "primaryCta": {
-        "label": "Contact Us",
-        "href": "/demo"
-      },
       "backgroundImage": "/images/photos/clinical/nurse-handing-kit.jpg",
-      "backgroundImageAlt": "Nurse handing the Able Assess kit to a colleague"
+      "backgroundImageAlt": "Nurse handing the Able Assess kit to a colleague",
+      "scheme": "blue",
+      "primaryCtaText": "Contact Us",
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "richText",
@@ -50,11 +48,9 @@
       "_template": "ctaBanner",
       "scheme": "blue",
       "heading": "Cannot find what you are looking for?",
-      "body": "Our team can help you find the right resources for your organization and care setting.",
-      "primaryCta": {
-        "label": "Contact Us",
-        "href": "/demo"
-      }
+      "primaryCtaText": "Contact Us",
+      "primaryCtaLink": "/demo",
+      "bodyText": "Our team can help you find the right resources for your organization and care setting."
     },
     {
       "_template": "leadMagnetPromo",

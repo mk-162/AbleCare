@@ -10,28 +10,33 @@
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "Technical Documentation", "href": "/resources/technical-documentation" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Technical Documentation",
+          "href": "/resources/technical-documentation"
+        }
       ]
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/heroes/devices-hero-new-min.png",
       "backgroundImageAlt": "Able Assess product and tablet",
       "eyebrow": "Resources",
       "headline": "Technical Documentation",
       "subtitle": "Integration guides, webhook specifications, user guides, change management and the compliance background that underpins Able Assess. Download what you need, or ask the team for anything else.",
-      "primaryCta": {
-        "label": "Contact the Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Back to Resources",
-        "href": "/resources"
-      }
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Contact the Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Back to Resources",
+      "secondaryCtaLink": "/resources"
     },
     {
       "_template": "richText",
@@ -75,18 +80,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Need a specific document or staging access?",
-      "body": "Tell us what your team is evaluating — OpenAPI specs, DPAs, security whitepapers, pen test summaries, a staging webhook account — and we will send the most relevant technical materials straight over.",
-      "primaryCta": {
-        "label": "Contact the Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Back to Resources",
-        "href": "/resources"
-      }
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Contact the Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Back to Resources",
+      "secondaryCtaLink": "/resources",
+      "bodyText": "Tell us what your team is evaluating — OpenAPI specs, DPAs, security whitepapers, pen test summaries, a staging webhook account — and we will send the most relevant technical materials straight over."
     }
   ],
   "tags": [

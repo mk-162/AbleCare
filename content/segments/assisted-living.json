@@ -26,21 +26,17 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/clinical/nurse-handing-kit.jpg",
       "backgroundImageAlt": "Nurse handing an assessment kit to a care team member",
       "eyebrow": "Assisted Living",
       "headline": "Falls management for assisted living.",
       "subtitle": "Reduce the fall burden on staff. Protect length of stay. Defend against liability. Objective screening in under five minutes.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download the AL Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the AL Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "richText",
@@ -104,10 +100,10 @@
     {
       "_template": "imageFeature",
       "heading": "Delegate screening, not responsibility",
-      "body": "Able Assess enables CNAs and med techs to run standardized screenings. The DON retains oversight through a dashboard that surfaces declining residents and population-level trends without adding to their workload.",
-      "imageSide": "right",
       "imageAlt": "Clinician and patient using Able Assess on a tablet during a screening session",
-      "imageSrc": "/images/photos/clinical/therapist-patient-tablet.jpg"
+      "imagePosition": "right",
+      "image": "/images/photos/clinical/therapist-patient-tablet.jpg",
+      "description": "Able Assess enables CNAs and med techs to run standardized screenings. The DON retains oversight through a dashboard that surfaces declining residents and population-level trends without adding to their workload."
     },
     {
       "_template": "roiCalculatorPromo",
@@ -118,22 +114,23 @@
     },
     {
       "_template": "testimonialCarousel",
-      "colorScheme": "aqua",
       "testimonials": [
         {
           "quote": "The data is timestamped and objective. When a family or attorney asks what we did to prevent a fall, we can show them exactly what we documented and when.",
-          "attribution": "Director of Nursing, AL community"
+          "role": "Director of Nursing",
+          "organization": "AL community"
         },
         {
           "quote": "The time from incident to intervention dropped significantly. We are catching decline earlier and acting on it faster.",
-          "attribution": "Executive Director, AL community"
+          "role": "Executive Director",
+          "organization": "AL community"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "statsBar",
       "heading": "The numbers that matter to assisted living",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "4",
@@ -151,14 +148,15 @@
           "value": "25%",
           "label": "Average fall reduction"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "faqAccordion",
       "scheme": "light",
       "heading": "Common questions from AL operators",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "Can CNAs and med techs run the screening?",
           "answer": "Yes. Able Assess was designed for frontline staff. CNAs, med techs and care aides can all run the five-minute workflow after a short onboarding session. No clinical certifications are required."
@@ -187,19 +185,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in an assisted living workflow.",
-      "body": "20 minutes with a clinician who has deployed it in assisted living communities.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      },
-      "scheme": "blue"
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "bodyText": "20 minutes with a clinician who has deployed it in assisted living communities."
     },
     {
       "_template": "leadMagnetPromo",

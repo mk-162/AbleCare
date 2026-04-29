@@ -27,17 +27,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Corporate Leaders",
       "headline": "Turn operational data into board-ready insight.",
       "subtitle": "Standardized protocols, real-time compliance reporting, and outcome metrics that prove operational excellence.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
       "backgroundImage": "/images/photos/studio/woman-reading-brochure.jpg",
-      "backgroundImageAlt": "Older adult reading the Able Care brochure"
+      "backgroundImageAlt": "Older adult reading the Able Care brochure",
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "richText",
@@ -74,7 +72,8 @@
       "testimonials": [
         {
           "quote": "Corporate leadership testimonial coming soon.",
-          "attribution": "VP Operations, Multi-Site Care Provider"
+          "role": "VP Operations",
+          "organization": "Multi-Site Care Provider"
         }
       ]
     },
@@ -82,7 +81,7 @@
       "_template": "faqAccordion",
       "heading": "Questions from corporate leaders",
       "scheme": "light",
-      "items": [
+      "faqs": [
         {
           "question": "How does this reduce our compliance burden?",
           "answer": "Every screening generates a timestamped, attributed digital record. These records are stored centrally and formatted for regulatory review. Audit preparation shifts from manual file assembly to a single export."
@@ -100,12 +99,10 @@
     {
       "_template": "ctaBanner",
       "heading": "Prove operational excellence to your board.",
-      "body": "30 minutes with the team. Tailored to corporate care leadership.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "scheme": "blue"
+      "scheme": "blue",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "bodyText": "30 minutes with the team. Tailored to corporate care leadership."
     }
   ]
 }

@@ -25,22 +25,18 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "waveFill": "#DCDCDC",
       "backgroundImage": "/images/photos/clinical/sensor-closeup-hand.jpg",
       "backgroundImageAlt": "Close-up of patient using GripAble sensor",
       "eyebrow": "Able Assess",
       "headline": "Four metrics. Five minutes. One complete picture.",
       "subtitle": "Able Assess captures grip strength, sit-to-stand, gait speed and timed up-and-go in a single workflow that any member of staff can run.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Watch the Walkthrough",
-        "href": "/resources/walkthrough"
-      }
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Watch the Walkthrough",
+      "secondaryCtaLink": "/resources/walkthrough"
     },
     {
       "_template": "metricsBlock",
@@ -49,19 +45,19 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Full-body strength proxy. Predicts all-cause mortality, frailty and sarcopenia."
+          "whatItMeasures": "Full-body strength proxy. Predicts all-cause mortality, frailty and sarcopenia."
         },
         {
           "name": "Sit-to-stand",
-          "description": "A 30-second assessment of lower-limb strength."
+          "whatItMeasures": "A 30-second assessment of lower-limb strength."
         },
         {
           "name": "Gait speed",
-          "description": "A measure of gait over about 13 feet."
+          "whatItMeasures": "A measure of gait over about 13 feet."
         },
         {
           "name": "Timed Up and Go",
-          "description": "An assessment of balance and global falls risk."
+          "whatItMeasures": "An assessment of balance and global falls risk."
         }
       ]
     },
@@ -111,17 +107,26 @@
     {
       "_template": "trustBar",
       "items": [
-        { "text": "FDA listed" },
-        { "text": "CE marked" },
-        { "text": "ISO 27001" },
-        { "text": "HIPAA aligned" },
-        { "text": "NICE 2025 aligned" }
+        {
+          "text": "FDA listed"
+        },
+        {
+          "text": "CE marked"
+        },
+        {
+          "text": "ISO 27001"
+        },
+        {
+          "text": "HIPAA aligned"
+        },
+        {
+          "text": "NICE 2025 aligned"
+        }
       ]
     },
     {
       "_template": "statsBar",
       "heading": "Built on the evidence",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "4",
@@ -139,14 +144,15 @@
           "value": "1,000+",
           "label": "Assessments delivered"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "faqAccordion",
       "scheme": "grey",
       "heading": "Common questions about Able Assess",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "What hardware is required?",
           "answer": "A GripAble sensor (included) and any tablet or phone. The sensor connects via Bluetooth. No additional infrastructure is required."
@@ -180,18 +186,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in your workflow.",
-      "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "bodyText": "20 minutes with a clinician who has run it in the field."
     },
     {
       "_template": "leadMagnetPromo",

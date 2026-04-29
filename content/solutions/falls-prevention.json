@@ -25,22 +25,18 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "waveFill": "#DCDCDC",
       "backgroundImage": "/images/photos/clinical/standing-exercise.jpg",
       "backgroundImageAlt": "Patient performing standing exercise during assessment",
       "eyebrow": "Solutions",
       "headline": "The objective case for prevention.",
       "subtitle": "Objective screening, risk stratification, and clinical proof in one workflow. Roll it out across every branch, community or clinical site.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "metricsBlock",
@@ -49,19 +45,19 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Upper-body strength proxy. Predicts all-cause mortality more reliably than systolic blood pressure."
+          "whatItMeasures": "Upper-body strength proxy. Predicts all-cause mortality more reliably than systolic blood pressure."
         },
         {
           "name": "Sit-to-stand",
-          "description": "Lower-limb power and balance. A key indicator of fall likelihood."
+          "whatItMeasures": "Lower-limb power and balance. A key indicator of fall likelihood."
         },
         {
           "name": "Gait speed",
-          "description": "The 'sixth vital sign' for older adults. Linked to mortality, hospitalization and functional decline."
+          "whatItMeasures": "The 'sixth vital sign' for older adults. Linked to mortality, hospitalization and functional decline."
         },
         {
           "name": "Timed Up and Go",
-          "description": "Falls risk in under a minute. One of the most widely validated functional assessments."
+          "whatItMeasures": "Falls risk in under a minute. One of the most widely validated functional assessments."
         }
       ]
     },
@@ -121,10 +117,10 @@
       "_template": "imageFeature",
       "scheme": "grey",
       "heading": "We sit upstream of detection and response",
-      "body": "Fall detection looks at falls after they happen. Balance training apps push exercises to residents. Paper assessments ask clinicians to score by observation. Able Care screens every resident or client objectively, stratifies risk, and hands the operator a standardized workflow they can roll out to every site.",
-      "imageSide": "left",
       "imageAlt": "Diagram showing Able Care's position upstream of fall detection and response",
-      "imageSrc": "/images/features/Able-Care-Product-Continuum-2-min.png"
+      "imagePosition": "left",
+      "image": "/images/features/Able-Care-Product-Continuum-2-min.png",
+      "description": "Fall detection looks at falls after they happen. Balance training apps push exercises to residents. Paper assessments ask clinicians to score by observation. Able Care screens every resident or client objectively, stratifies risk, and hands the operator a standardized workflow they can roll out to every site."
     },
     {
       "_template": "featureComparison",
@@ -137,59 +133,79 @@
       "rows": [
         {
           "feature": "Time per assessment",
-          "values": ["Under 5 minutes", "20+ minutes"]
+          "values": [
+            "Under 5 minutes",
+            "20+ minutes"
+          ]
         },
         {
           "feature": "Scoring",
-          "values": ["Automatic, objective", "Subjective, observer-dependent"]
+          "values": [
+            "Automatic, objective",
+            "Subjective, observer-dependent"
+          ]
         },
         {
           "feature": "Normative comparison",
-          "values": ["Built in", "Manual lookup"]
+          "values": [
+            "Built in",
+            "Manual lookup"
+          ]
         },
         {
           "feature": "Trend tracking",
-          "values": ["Longitudinal, automatic", "Not available"]
+          "values": [
+            "Longitudinal, automatic",
+            "Not available"
+          ]
         },
         {
           "feature": "Care plan integration",
-          "values": ["Direct routing", "Manual transcription"]
+          "values": [
+            "Direct routing",
+            "Manual transcription"
+          ]
         },
         {
           "feature": "Staff requirement",
-          "values": ["Non-clinical", "Clinical"]
+          "values": [
+            "Non-clinical",
+            "Clinical"
+          ]
         },
         {
           "feature": "Standardization",
-          "values": ["One protocol, every site", "Varies by observer"]
+          "values": [
+            "One protocol, every site",
+            "Varies by observer"
+          ]
         }
       ]
     },
     {
       "_template": "caseStudyCards",
       "heading": "In practice",
-      "cards": [
+      "caseStudies": [
         {
           "title": "Home Care",
-          "outcome": "Detected functional decline six weeks earlier than the previous paper-based process.",
-          "href": "/resources/case-studies"
+          "summary": "Detected functional decline six weeks earlier than the previous paper-based process.",
+          "link": "/resources/case-studies"
         },
         {
           "title": "Senior Living",
-          "outcome": "Reduced falls-related resident turnover and protected occupancy rates across the community.",
-          "href": "/resources/case-studies"
+          "summary": "Reduced falls-related resident turnover and protected occupancy rates across the community.",
+          "link": "/resources/case-studies"
         },
         {
           "title": "Clinical",
-          "outcome": "Standardized multifactorial screening across a multi-site clinical network.",
-          "href": "/resources/case-studies"
+          "summary": "Standardized multifactorial screening across a multi-site clinical network.",
+          "link": "/resources/case-studies"
         }
       ]
     },
     {
       "_template": "statsBar",
       "heading": "Built on the evidence",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "25%",
@@ -207,7 +223,8 @@
           "value": "1,000+",
           "label": "Assessments delivered"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "trustBar",
@@ -237,7 +254,7 @@
       "scheme": "grey",
       "heading": "Common questions",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "How is Able Care different from SafelyYou?",
           "answer": "SafelyYou detects falls after they happen. Able Care screens residents before they fall. We sit upstream of detection and response, at the prevention layer."
@@ -262,19 +279,15 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "waveFill": "#DCDCDC",
       "heading": "See Able Assess in your workflow.",
-      "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "bodyText": "20 minutes with a clinician who has run it in the field."
     }
   ],
   "tags": [

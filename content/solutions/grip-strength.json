@@ -25,21 +25,17 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
       "backgroundImageAlt": "Clinician holding the GripAble digital dynamometer",
       "eyebrow": "Solutions",
       "headline": "Unlocking grip strength for application in data-driven healthcare.",
       "subtitle": "Clinical-grade grip strength measurement for clinicians, researchers and population health teams. Built from the ground up for data-driven healthcare.",
-      "primaryCta": {
-        "label": "Schedule a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download Evidence Summary",
-        "href": "/resources/grip-strength-evidence"
-      }
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Schedule a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download Evidence Summary",
+      "secondaryCtaLink": "/resources/grip-strength-evidence"
     },
     {
       "_template": "metricsBlock",
@@ -48,19 +44,19 @@
       "metrics": [
         {
           "name": "Up-to-date population norms",
-          "description": "Gathered recently in the US and the UK, allowing for comparison to present-day populations."
+          "whatItMeasures": "Gathered recently in the US and the UK, allowing for comparison to present-day populations."
         },
         {
           "name": "Proven in Peer-Reviewed Research",
-          "description": "Best-in-class sensitivity, accuracy, and robustness."
+          "whatItMeasures": "Best-in-class sensitivity, accuracy, and robustness."
         },
         {
           "name": "Fully standardized protocol",
-          "description": "Guided on-screen instructions ensure consistent positioning, timing and repetition across every assessment."
+          "whatItMeasures": "Guided on-screen instructions ensure consistent positioning, timing and repetition across every assessment."
         },
         {
           "name": "Real-time data capture",
-          "description": "Results are recorded digitally at the point of assessment, eliminating transcription errors and manual data entry."
+          "whatItMeasures": "Results are recorded digitally at the point of assessment, eliminating transcription errors and manual data entry."
         }
       ]
     },
@@ -102,7 +98,7 @@
       "scheme": "grey",
       "heading": "Common questions about grip strength testing",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "How does digital dynamometry compare to manual testing with a Jamar?",
           "answer": "The GripAble sensor correlates to within 2% of the Jamar dynamometer, the traditional gold standard. The key advantage of digital capture is that results are recorded automatically, eliminating transcription errors, observer bias and the need for manual data entry. Protocol standardization is also enforced by the guided on-screen instructions."
@@ -127,18 +123,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Talk to the Clinical Team.",
-      "body": "See how digital grip strength measurement fits your clinical or research workflow.",
-      "primaryCta": {
-        "label": "Schedule a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download: Grip Strength Evidence Summary",
-        "href": "/resources/grip-strength-evidence"
-      }
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Schedule a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download: Grip Strength Evidence Summary",
+      "secondaryCtaLink": "/resources/grip-strength-evidence",
+      "bodyText": "See how digital grip strength measurement fits your clinical or research workflow."
     },
     {
       "_template": "leadMagnetPromo",

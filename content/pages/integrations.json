@@ -25,21 +25,17 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Product",
       "headline": "Seamless Integration with Your Existing Systems.",
       "subtitle": "FHIR-compliant APIs, OASIS data export, and direct EHR integration.",
-      "primaryCta": {
-        "label": "Book a Technical Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download API Documentation",
-        "href": "/resources/api-docs"
-      },
       "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
-      "backgroundImageAlt": "GripAble sensor in use"
+      "backgroundImageAlt": "GripAble sensor in use",
+      "scheme": "blue",
+      "wave": "crest",
+      "primaryCtaText": "Book a Technical Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download API Documentation",
+      "secondaryCtaLink": "/resources/api-docs"
     },
     {
       "_template": "richText",
@@ -52,7 +48,7 @@
       "scheme": "grey",
       "heading": "Integration questions",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "Does Able Assess integrate with my specific EHR?",
           "answer": "We currently support PointClickCare, MatrixCare and Epic with built-in connectors. FHIR and HL7v2 APIs allow integration with most modern EHR platforms. If your system is not listed, contact our integration team to discuss a custom connection."
@@ -73,18 +69,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See the integration in action.",
-      "body": "Our technical team can walk you through the API, data formats and EHR connector setup.",
-      "primaryCta": {
-        "label": "Book a Technical Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download the API Documentation",
-        "href": "/resources/api-docs"
-      }
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Book a Technical Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the API Documentation",
+      "secondaryCtaLink": "/resources/api-docs",
+      "bodyText": "Our technical team can walk you through the API, data formats and EHR connector setup."
     }
   ],
   "tags": [

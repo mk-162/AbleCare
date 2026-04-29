@@ -10,38 +10,46 @@
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "About", "href": "/about" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "About",
+          "href": "/about"
+        }
       ]
     },
     {
       "_template": "hero",
-      "colorScheme": "light",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/clinical/patient-thumbs-up.jpg",
       "backgroundImageAlt": "Patient giving thumbs up during functional health assessment",
       "eyebrow": "About Able Care",
       "headline": "Science-led. Impact-driven.",
       "subtitle": "Able Care is the falls prevention platform for operators and clinicians who need objective, standardized falls risk screening across every site. Commercialized out of Imperial College London neuroscience research.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Meet the Team", "href": "#team" }
+      "scheme": "light",
+      "wave": "crest",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Meet the Team",
+      "secondaryCtaLink": "#team"
     },
     {
       "_template": "imageFeature",
       "heading": "From Imperial College to the frontline",
-      "body": "Able Care was born from neuroscience research at Imperial College London. The founding team saw that functional health measurement was stuck in the analogue era: subjective, inconsistent, and disconnected from care workflows. They built a digital platform that captures four clinically validated metrics in under five minutes, usable by non-clinical staff, defensible to payers and regulators, and scalable across multi-site operations.",
-      "imageSide": "right",
       "imageAlt": "Imperial College London campus where Able Care research originated",
-      "imageSrc": "/images/product/gripable-on-platform-min.jpg"
+      "imagePosition": "right",
+      "image": "/images/product/gripable-on-platform-min.jpg",
+      "description": "Able Care was born from neuroscience research at Imperial College London. The founding team saw that functional health measurement was stuck in the analogue era: subjective, inconsistent, and disconnected from care workflows. They built a digital platform that captures four clinically validated metrics in under five minutes, usable by non-clinical staff, defensible to payers and regulators, and scalable across multi-site operations."
     },
     {
       "_template": "imageFeature",
       "scheme": "grey",
       "heading": "The problem we solve",
-      "body": "Falls are the leading cause of injury-related death in adults over 65. Paper-based assessments are slow, subjective, and rarely standardized across sites. Fall detection technology looks at falls after they happen. Able Care sits upstream, screening every resident or client objectively and handing operators a standardized workflow they can roll out everywhere.",
-      "imageSide": "left",
       "imageAlt": "Diagram showing Able Care's upstream prevention approach",
-      "imageSrc": "/images/features/Able-Care-Product-Continuum-2-min.png"
+      "imagePosition": "left",
+      "image": "/images/features/Able-Care-Product-Continuum-2-min.png",
+      "description": "Falls are the leading cause of injury-related death in adults over 65. Paper-based assessments are slow, subjective, and rarely standardized across sites. Fall detection technology looks at falls after they happen. Able Care sits upstream, screening every resident or client objectively and handing operators a standardized workflow they can roll out everywhere."
     },
     {
       "_template": "timeline",
@@ -106,24 +114,54 @@
       "_template": "trustCertBlock",
       "heading": "Certifications and regulatory posture",
       "badges": [
-        { "label": "FDA listed", "icon": "fda" },
-        { "label": "CE marked", "icon": "ce" },
-        { "label": "ISO 27001", "icon": "iso" },
-        { "label": "HIPAA aligned", "icon": "hipaa" },
-        { "label": "GDPR compliant", "icon": "gdpr" },
-        { "label": "NICE 2025 aligned", "icon": "nice" }
+        {
+          "label": "FDA listed",
+          "icon": "fda"
+        },
+        {
+          "label": "CE marked",
+          "icon": "ce"
+        },
+        {
+          "label": "ISO 27001",
+          "icon": "iso"
+        },
+        {
+          "label": "HIPAA aligned",
+          "icon": "hipaa"
+        },
+        {
+          "label": "GDPR compliant",
+          "icon": "gdpr"
+        },
+        {
+          "label": "NICE 2025 aligned",
+          "icon": "nice"
+        }
       ]
     },
     {
       "_template": "statsBar",
       "heading": "By the numbers",
-      "colorScheme": "aqua",
       "stats": [
-        { "value": "4", "label": "Validated metrics" },
-        { "value": "< 5 min", "label": "Per assessment" },
-        { "value": "12", "label": "Peer-reviewed studies" },
-        { "value": "1,000+", "label": "Assessments delivered" }
-      ]
+        {
+          "value": "4",
+          "label": "Validated metrics"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per assessment"
+        },
+        {
+          "value": "12",
+          "label": "Peer-reviewed studies"
+        },
+        {
+          "value": "1,000+",
+          "label": "Assessments delivered"
+        }
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "partnerLogoCarousel",
@@ -132,12 +170,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in your workflow.",
-      "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": { "label": "Book a Demo", "href": "/contact" },
-      "secondaryCta": { "label": "Browse the Research Library", "href": "/resources/research-library" }
+      "scheme": "blue",
+      "wave": "ribbon",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Browse the Research Library",
+      "secondaryCtaLink": "/resources/research-library",
+      "bodyText": "20 minutes with a clinician who has run it in the field."
     }
   ]
 }
