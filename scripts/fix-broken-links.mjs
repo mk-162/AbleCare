@@ -96,9 +96,6 @@ const TRAILING_SLASH_RE = new RegExp(
   "g",
 );
 
-const SOLUTIONS_BREADCRUMB_BLOCK = /\{\s*"label":\s*"Solutions",\s*"href":\s*"\/solutions"\s*\}/g;
-const SOLUTIONS_BREADCRUMB_INLINE = /\{\s*"label":\s*"Solutions",\s*"href":\s*"\/solutions"\s*\}/g;
-
 for (const file of candidates) {
   let text = readFileSync(file, "utf8");
   const original = text;

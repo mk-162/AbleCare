@@ -38,8 +38,12 @@ export default async function HomeCareSubPage({
   let result;
   try {
     result = await fetchPage("segments", slug);
-  } catch {
-    notFound();
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException)?.code === "ENOENT") {
+      notFound();
+    }
+    console.error(`[home-care/[slug]] fetchPage failed for slug="${slug}"`, err);
+    throw err;
   }
   const { query, variables, data } = result;
 

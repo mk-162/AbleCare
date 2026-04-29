@@ -31,7 +31,6 @@ function rateLimit(ip: string): boolean {
 /* ─── Payload shapes ────────────────────────────────────────────────────── */
 
 type OrderRequest = {
-  formId?: "order" | "order-estimate" | "order-invoice";
   documentType?: "estimate" | "invoice";
   billCustomer?: string;
   billIndividual?: string;
@@ -241,6 +240,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
+  if (payload.documentType !== "estimate" && payload.documentType !== "invoice") {
+    return NextResponse.json(
+      { error: "documentType must be 'estimate' or 'invoice'." },
+      { status: 400 }
+    );
+  }
+  const documentType = payload.documentType;
+
   for (const field of ORDER_REQUIRED) {
     if (!payload[field] || !String(payload[field]).trim()) {
       return NextResponse.json(
@@ -249,15 +256,13 @@ export async function POST(request: NextRequest) {
       );
     }
   }
-  if (Number(payload.sensorCount) <= 0) {
+  const parsedQty = Number(payload.sensorCount);
+  if (!Number.isInteger(parsedQty) || parsedQty < 1) {
     return NextResponse.json(
-      { error: "Sensor count must be at least 1." },
+      { error: "Sensor count must be a whole number of 1 or more." },
       { status: 400 }
     );
   }
-
-  const documentType: "estimate" | "invoice" =
-    payload.documentType === "invoice" ? "invoice" : "estimate";
 
   const { html, text, subject } = renderOrderEmail(payload, documentType);
   const replyTo = payload.billEmail;

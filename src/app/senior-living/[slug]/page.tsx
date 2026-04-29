@@ -38,8 +38,12 @@ export default async function SeniorLivingSubPage({
   let result;
   try {
     result = await fetchPage("segments", slug);
-  } catch {
-    notFound();
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException)?.code === "ENOENT") {
+      notFound();
+    }
+    console.error(`[senior-living/[slug]] fetchPage failed for slug="${slug}"`, err);
+    throw err;
   }
   const { query, variables, data } = result;
 

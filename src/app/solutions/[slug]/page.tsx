@@ -38,8 +38,12 @@ export default async function SolutionPage({
   let result;
   try {
     result = await fetchPage("solutions", slug);
-  } catch {
-    notFound();
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException)?.code === "ENOENT") {
+      notFound();
+    }
+    console.error(`[solutions/[slug]] fetchPage failed for slug="${slug}"`, err);
+    throw err;
   }
   const { query, variables, data } = result;
 

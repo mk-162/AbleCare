@@ -89,14 +89,14 @@ export function OrderForm() {
 
 function UnifiedOrderForm() {
   const router = useRouter();
-  const [sensorCount, setSensorCount] = useState<number>(1);
+  const [sensorCountInput, setSensorCountInput] = useState<string>("1");
   const [sameAsBilling, setSameAsBilling] = useState(true);
   const [documentType, setDocumentType] = useState<DocumentType>("estimate");
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const totals = useMemo(() => {
-    const qty = Math.max(0, Math.floor(sensorCount || 0));
+    const qty = Math.max(0, Math.floor(Number(sensorCountInput) || 0));
     const sensorsLine = SENSOR_PRICE * qty;
     const subscriptionLine = ANNUAL_SUB_PRICE * qty;
     const subscriptionRrpLine = ANNUAL_SUB_RRP * qty;
@@ -114,7 +114,7 @@ function UnifiedOrderForm() {
       totalAtRrp,
       savings,
     };
-  }, [sensorCount]);
+  }, [sensorCountInput]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -124,7 +124,7 @@ function UnifiedOrderForm() {
     setSubmitting(true);
 
     const formData = new FormData(event.currentTarget);
-    const payload: Record<string, string> = { formId: "order" };
+    const payload: Record<string, string> = {};
     formData.forEach((value, key) => {
       if (typeof value === "string") payload[key] = value;
     });
@@ -136,14 +136,28 @@ function UnifiedOrderForm() {
         body: JSON.stringify(payload),
       });
       if (!response.ok) {
-        const data = (await response.json().catch(() => ({}))) as { error?: string };
-        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        let serverError: string | undefined;
+        try {
+          const data = (await response.json()) as { error?: string };
+          serverError = data.error;
+        } catch (parseErr) {
+          console.error("[order] response not JSON", response.status, parseErr);
+        }
+        setErrorMessage(
+          serverError ||
+            (response.status >= 500
+              ? `Our server hit an error (${response.status}). Please try again or email hello@able-care.co.`
+              : `Request failed (${response.status}). Please check your details and try again.`),
+        );
         setSubmitting(false);
         return;
       }
       router.push("/thank-you");
-    } catch {
-      setErrorMessage("Network error. Please try again.");
+    } catch (err) {
+      console.error("[order] submit failed", err);
+      setErrorMessage(
+        "We couldn't reach our server. Check your connection and try again, or email hello@able-care.co.",
+      );
       setSubmitting(false);
     }
   }
@@ -318,10 +332,16 @@ function UnifiedOrderForm() {
               id="invoiceSensorCount"
               name="sensorCount"
               type="number"
+              inputMode="numeric"
               min={1}
               required
-              value={sensorCount}
-              onChange={(e) => setSensorCount(Number(e.target.value))}
+              value={sensorCountInput}
+              onFocus={(e) => e.currentTarget.select()}
+              onChange={(e) => {
+                const raw = e.target.value;
+                const cleaned = raw === "" ? "" : raw.replace(/^0+(?=\d)/, "");
+                setSensorCountInput(cleaned);
+              }}
               className="flex h-12 w-full sm:w-48 rounded-xl border border-black/10 bg-ac-grey/30 px-4 text-base font-semibold text-ac-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ac-aqua focus-visible:ring-offset-2"
             />
           </div>
@@ -395,22 +415,18 @@ function ShowPriceCallout({ savings, qty }: { savings: number; qty: number }) {
             Show price applied
           </div>
           <p className="text-sm md:text-base text-ac-black font-medium leading-snug">
-            Annual subscription is{" "}
-            <span className="text-ac-black/60 line-through">
-              {formatCurrency(ANNUAL_SUB_RRP)}
-            </span>{" "}
-            <span className="font-bold">{formatCurrency(ANNUAL_SUB_PRICE)}</span> per sensor
-            &mdash; you save{" "}
-            <span className="font-bold text-ac-blue">
-              {formatCurrency(ANNUAL_SUB_SAVINGS)}
-            </span>{" "}
-            per sensor.
+            {"Annual subscription is "}
+            <span className="text-ac-black/60 line-through">{formatCurrency(ANNUAL_SUB_RRP)}</span>
+            {" "}
+            <span className="font-bold">{formatCurrency(ANNUAL_SUB_PRICE)}</span>
+            {" per sensor — you save "}
+            <span className="font-bold text-ac-blue">{formatCurrency(ANNUAL_SUB_SAVINGS)}</span>
+            {" per sensor."}
             {qty > 1 && (
               <>
-                {" "}
-                That&rsquo;s{" "}
-                <span className="font-bold text-ac-blue">{formatCurrency(savings)}</span> off
-                this order.
+                {" That’s "}
+                <span className="font-bold text-ac-blue">{formatCurrency(savings)}</span>
+                {" off this order."}
               </>
             )}
           </p>
