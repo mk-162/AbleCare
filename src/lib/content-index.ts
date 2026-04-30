@@ -137,6 +137,7 @@ function buildIndex(): ContentItem[] {
       try {
         const raw = fs.readFileSync(path.join(dir, file), "utf-8");
         const data = JSON.parse(raw);
+        if (data.draft === true) continue;
         const slug = file.replace(".json", "");
 
         items.push({

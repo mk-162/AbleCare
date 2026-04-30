@@ -30,16 +30,10 @@
       "eyebrow": "Product",
       "headline": "Enterprise-Grade Security by Design.",
       "subtitle": "ISO 27001 certified. Encryption at rest and in transit. Annual penetration testing.",
-      "primaryCta": {
-        "label": "Download the Security Whitepaper",
-        "href": "/resources/security-whitepaper"
-      },
-      "secondaryCta": {
-        "label": "Request a Security Assessment",
-        "href": "/contact"
-      },
       "backgroundImage": "/images/photos/clinical/hands-fitting-sensor.jpg",
-      "backgroundImageAlt": "Clinician fitting the GripAble sensor for a patient"
+      "backgroundImageAlt": "Clinician fitting the GripAble sensor for a patient",
+      "primaryCtaText": "Request a Security Assessment",
+      "primaryCtaLink": "/contact"
     },
     {
       "_template": "trustBar",
@@ -77,15 +71,9 @@
       "colorScheme": "blue",
       "waveStyle": "ribbon",
       "heading": "Need more detail?",
-      "body": "Our security team can provide the full whitepaper, penetration test summaries and data processing agreements.",
-      "primaryCta": {
-        "label": "Download the Security Whitepaper",
-        "href": "/resources/security-whitepaper"
-      },
-      "secondaryCta": {
-        "label": "Request a Security Assessment",
-        "href": "/contact"
-      }
+      "body": "Our security team can provide the full whitepaper, penetration test summaries and data processing agreements on request.",
+      "primaryCtaText": "Request a Security Assessment",
+      "primaryCtaLink": "/contact"
     }
   ],
   "tags": [

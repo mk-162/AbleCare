@@ -10,9 +10,18 @@
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Solutions", "href": "/solutions/able-assess" },
-        { "label": "The GripAble Sensor", "href": "/solutions/sensor" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Solutions",
+          "href": "/solutions/able-assess"
+        },
+        {
+          "label": "The GripAble Sensor",
+          "href": "/solutions/sensor"
+        }
       ]
     },
     {
@@ -86,13 +95,27 @@
       "image": "/images/product/gripable-sensor-cutout-min.png",
       "imageAlt": "The GripAble sensor with annotated features",
       "bulletPoints": [
-        { "text": "Locking Button — used to switch grip modes. Squeeze and hold the GripAble, then push down the lock button." },
-        { "text": "Strap Hooks — six attachment points for silicon straps." },
-        { "text": "Grip Plate — use your fingers to squeeze the plate." },
-        { "text": "Battery LED — indicator for battery status (see table below)." },
-        { "text": "Lanyard Hook — attachment point for wrist lanyard." },
-        { "text": "Charging Port — magnetic connector for charging." },
-        { "text": "Connection LED — indicator for app pairing status (see table below)." }
+        {
+          "text": "Locking Button — used to switch grip modes. Squeeze and hold the GripAble, then push down the lock button."
+        },
+        {
+          "text": "Strap Hooks — six attachment points for silicon straps."
+        },
+        {
+          "text": "Grip Plate — use your fingers to squeeze the plate."
+        },
+        {
+          "text": "Battery LED — indicator for battery status (see table below)."
+        },
+        {
+          "text": "Lanyard Hook — attachment point for wrist lanyard."
+        },
+        {
+          "text": "Charging Port — magnetic connector for charging."
+        },
+        {
+          "text": "Connection LED — indicator for app pairing status (see table below)."
+        }
       ]
     },
     {
@@ -113,14 +136,10 @@
       "waveStyle": "ribbon",
       "heading": "See the GripAble sensor in your workflow.",
       "body": "20 minutes with a clinician who has run it across grip strength, fall risk screening, and neuro-rehab.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     }
   ],
   "tags": [

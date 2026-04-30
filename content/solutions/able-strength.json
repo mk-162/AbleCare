@@ -32,14 +32,10 @@
       "eyebrow": "Able Strength",
       "headline": "Grip strength in every patient's pocket.",
       "subtitle": "Self-serve grip strength measurement for patients and residents. Download the app, squeeze the sensor, compare against normative data, share results with your care team.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "See How It Works",
-        "href": "#how-it-works"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "See How It Works",
+      "secondaryCtaLink": "#how-it-works"
     },
     {
       "_template": "imageFeature",
@@ -105,14 +101,10 @@
       "waveStyle": "ribbon",
       "heading": "Put grip strength measurement in your patients' hands.",
       "body": "See how Able Strength integrates with Able Assess for a complete functional health picture.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "See Able Assess",
-        "href": "/solutions/able-assess"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "See Able Assess",
+      "secondaryCtaLink": "/solutions/able-assess"
     }
   ],
   "tags": [

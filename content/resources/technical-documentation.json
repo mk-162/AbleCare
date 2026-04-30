@@ -10,9 +10,18 @@
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Resources", "href": "/resources" },
-        { "label": "Technical Documentation", "href": "/resources/technical-documentation" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Technical Documentation",
+          "href": "/resources/technical-documentation"
+        }
       ]
     },
     {
@@ -24,14 +33,10 @@
       "eyebrow": "Resources",
       "headline": "Technical Documentation",
       "subtitle": "Integration guides, webhook specifications, user guides, change management and the compliance background that underpins Able Assess. Download what you need, or ask the team for anything else.",
-      "primaryCta": {
-        "label": "Contact the Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Back to Resources",
-        "href": "/resources"
-      }
+      "primaryCtaText": "Contact the Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Back to Resources",
+      "secondaryCtaLink": "/resources"
     },
     {
       "_template": "richText",
@@ -79,14 +84,10 @@
       "waveStyle": "ribbon",
       "heading": "Need a specific document or staging access?",
       "body": "Tell us what your team is evaluating — OpenAPI specs, DPAs, security whitepapers, pen test summaries, a staging webhook account — and we will send the most relevant technical materials straight over.",
-      "primaryCta": {
-        "label": "Contact the Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Back to Resources",
-        "href": "/resources"
-      }
+      "primaryCtaText": "Contact the Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Back to Resources",
+      "secondaryCtaLink": "/resources"
     }
   ],
   "tags": [

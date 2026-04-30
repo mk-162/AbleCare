@@ -220,6 +220,12 @@ c) Your Online Choices at https://youronlinechoices.eu/.
 
 14.9 Please note that opting out of interest-based advertising does not mean you will no longer see advertising on your device – it just means that adverts may no longer be tailored to your interests.
 
+14.10 Visitor Identification and B2B Intent Data. We use third-party visitor identification services, including ZoomInfo (operated by ZoomInfo Technologies LLC), to identify business visitors to our website and to understand which organizations are interacting with our content. These services use cookies, scripts, IP address lookup, device fingerprinting, and similar technologies to associate website visits with the businesses or organizations they originate from. The information collected may include your IP address, the pages you view, the time and duration of your visit, referring URLs, your browser and device characteristics, and inferred organizational affiliation.
+
+14.11 We use this information for marketing analytics, to measure the effectiveness of our campaigns, to prioritize sales outreach to organizations in our target market, and to improve the relevance of the content we provide. The information collected through these services is shared with the relevant service provider for the purposes described in their own privacy notices.
+
+14.12 You can learn more about ZoomInfo's privacy practices, and exercise your right to opt out of ZoomInfo's processing of your Personal Information, at https://www.zoominfo.com/about/privacy and through the data subject request form at https://www.zoominfo.com/about/privacy/privacy-do-not-sell-form. Opting out through ZoomInfo will limit the extent to which ZoomInfo can identify you as you visit websites that use its services.
+
 ## 15. Links to third party Platforms
 
 15.1 The Platform and our apps may, from time to time, contain links to and from third party websites, including those of our partner networks, advertisers, partner merchants, news publications, and retailers. If you follow a link to any of these websites, please note that these websites have their own privacy policies and that we do not accept any responsibility or liability for their policies. Please check the individual policies before you submit any information to those websites.
@@ -271,5 +277,6 @@ We use cookies, pixels, and other technologies (collectively, "cookies") to reco
 - Delivering content, including ads, relevant to your interests on third-party Platforms.
 - Reporting. This allows us to measure and analyse the performance of our services.
 - Approved third parties may also set cookies when you interact with our Platform. Third parties include search engines, providers of measurement and analytics services, social media networks, and advertising companies. Third parties use cookies in the process of delivering content, including ads relevant to your interests, to measure the effectiveness of their ads.
+- Identifying business visitors and the organizations they are associated with through B2B visitor identification services. We use ZoomInfo WebSights (a script loaded from ws.zoominfo.com) to record page visits and interactions, perform IP-to-organization lookup, and share that information with ZoomInfo Technologies LLC for the purposes described in section 14. You can review ZoomInfo's privacy notice and submit an opt-out request at https://www.zoominfo.com/about/privacy.
 
 You can manage browser cookies through your browser settings. The 'Help' feature on most browsers will tell you how to prevent your browser from accepting new cookies, how to have the browser notify you when you receive a new cookie, how to disable cookies, and when cookies will expire. If you disable all cookies on your browser, neither we nor third parties will transfer cookies to your browser. If you do this, however, you may have to manually adjust some preferences every time you visit a Platform, and some features and services may not work.

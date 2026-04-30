@@ -33,14 +33,10 @@
       "eyebrow": "Clinical Evidence",
       "headline": "The science behind Able Assess.",
       "subtitle": "Peer-reviewed research linking grip strength and functional health to falls, frailty, mortality and clinical outcomes. Every claim on this site is grounded in the evidence below.",
-      "primaryCta": {
-        "label": "Talk to the Clinical Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Research Summary",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Research Summary",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "evidenceBlock",
@@ -102,8 +98,9 @@
           "link": "https://doi.org/10.1177/2047487316680695"
         },
         {
-          "title": "Sarcopenia and grip strength in oncology patients: a systematic review",
-          "journal": "Critical Reviews in Oncology/Hematology, 2020"
+          "title": "Handgrip strength and health outcomes: Umbrella review of systematic reviews with meta-analyses of observational studies",
+          "journal": "Journal of Sport and Health Science, 2021",
+          "link": "https://www.sciencedirect.com/science/article/pii/S2095254620300752"
         },
         {
           "title": "Changes in lean body mass with glucagon-like peptide-1-based therapies and mitigation strategies",
@@ -141,14 +138,10 @@
       "waveStyle": "ribbon",
       "heading": "Talk to the clinical team about the evidence.",
       "body": "Our clinical team can walk you through the research and how it applies to your setting.",
-      "primaryCta": {
-        "label": "Talk to the Clinical Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "leadMagnetPromo",

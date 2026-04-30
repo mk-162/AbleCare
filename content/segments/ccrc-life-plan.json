@@ -33,14 +33,10 @@
       "eyebrow": "CCRCs & Life Plan Communities",
       "headline": "Keep residents independent for longer.",
       "subtitle": "For CCRCs and life plan communities. Falls screening that protects your IL feeder, your level-of-care transitions and your entrance-fee model. Under five minutes per resident.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download the CCRC Guide",
-        "href": "/resources/ccrc-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the CCRC Guide",
+      "secondaryCtaLink": "/resources/ccrc-guide"
     },
     {
       "_template": "richText",
@@ -191,15 +187,11 @@
       "waveStyle": "ribbon",
       "heading": "See Able Assess in a CCRC wellness workflow.",
       "body": "20 minutes with a clinician who has deployed it across life plan communities.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download the CCRC Guide",
-        "href": "/resources/ccrc-guide"
-      },
-      "scheme": "blue"
+      "scheme": "blue",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the CCRC Guide",
+      "secondaryCtaLink": "/resources/ccrc-guide"
     },
     {
       "_template": "leadMagnetPromo",

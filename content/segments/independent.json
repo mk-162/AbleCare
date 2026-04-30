@@ -1,19 +1,33 @@
 {
   "title": "Falls Screening for Independent Multi-Site Home Care",
   "slug": "independent",
+  "draft": true,
   "seo": {
     "title": "Falls Screening for Independent Multi-Site Home Care | Able Care",
     "description": "Win more referrals with objective falls screening. Clinical credibility for independent multi-site home care agencies. Under five minutes, non-clinical staff.",
     "ogImage": "/images/og-independent.png"
   },
-  "tags": ["home-care", "independent", "referrals", "falls-prevention"],
+  "tags": [
+    "home-care",
+    "independent",
+    "referrals",
+    "falls-prevention"
+  ],
   "blocks": [
     {
       "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Home Care", "href": "/home-care" },
-        { "label": "Independent Multi-Site" }
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Home Care",
+          "href": "/home-care"
+        },
+        {
+          "label": "Independent Multi-Site"
+        }
       ]
     },
     {
@@ -25,16 +39,32 @@
       "eyebrow": "Independent Multi-Site Home Care",
       "headline": "Win more referrals with objective falls screening.",
       "subtitle": "The differentiator for independent multi-site home care. Clinical credibility that shows up in every referral conversation. Non-clinical staff can run it in under five minutes.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "trustBar",
       "items": [
-        { "text": "FDA Listed", "logo": "/images/badges/fda-trimmed.svg" },
-        { "text": "CE Marked", "logo": "/images/badges/ce-4.svg" },
-        { "text": "ISO 27001", "logo": "/images/badges/iso-31.svg" },
-        { "text": "HIPAA Aligned", "logo": "/images/badges/hipaa-trimmed.svg" },
-        { "text": "GDPR Compliant", "logo": "/images/badges/gdpr-trimmed-min.png" }
+        {
+          "text": "FDA Listed",
+          "logo": "/images/badges/fda-trimmed.svg"
+        },
+        {
+          "text": "CE Marked",
+          "logo": "/images/badges/ce-4.svg"
+        },
+        {
+          "text": "ISO 27001",
+          "logo": "/images/badges/iso-31.svg"
+        },
+        {
+          "text": "HIPAA Aligned",
+          "logo": "/images/badges/hipaa-trimmed.svg"
+        },
+        {
+          "text": "GDPR Compliant",
+          "logo": "/images/badges/gdpr-trimmed-min.png"
+        }
       ]
     },
     {
@@ -69,7 +99,8 @@
           "description": "Use aggregated outcomes data to win new MCO contracts and hospital partnerships. Evidence of quality scales your referral pipeline."
         }
       ],
-      "primaryCta": { "label": "See the full Able Assess workflow", "href": "/solutions/able-assess" }
+      "primaryCtaText": "See the full Able Assess workflow",
+      "primaryCtaLink": "/solutions/able-assess"
     },
     {
       "_template": "metricsBlock",
@@ -104,7 +135,8 @@
       "imageSrc": "/images/features/holding-hands-solid-bg-min.jpg",
       "imageAlt": "Caregiver supporting client during a screening session",
       "imageSide": "right",
-      "primaryCta": { "label": "See how it works", "href": "/solutions/able-assess" }
+      "primaryCtaText": "See how it works",
+      "primaryCtaLink": "/solutions/able-assess"
     },
     {
       "_template": "roiCalculatorPromo",
@@ -131,10 +163,22 @@
       "_template": "statsBar",
       "colorScheme": "blue",
       "stats": [
-        { "value": "4", "label": "validated metrics" },
-        { "value": "<5 min", "label": "per screening" },
-        { "value": "15 min", "label": "staff training" },
-        { "value": "25%", "label": "average fall reduction" }
+        {
+          "value": "4",
+          "label": "validated metrics"
+        },
+        {
+          "value": "<5 min",
+          "label": "per screening"
+        },
+        {
+          "value": "15 min",
+          "label": "staff training"
+        },
+        {
+          "value": "25%",
+          "label": "average fall reduction"
+        }
       ]
     },
     {
@@ -172,8 +216,9 @@
       "_template": "ctaBanner",
       "heading": "See Able Assess in an independent home care workflow",
       "body": "30 minutes with the clinical team. Tailored to multi-site independent agencies. Focused on referral differentiation.",
-      "primaryCta": { "label": "Book a Demo", "href": "/demo" },
-      "scheme": "blue"
+      "scheme": "blue",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     }
   ]
 }

@@ -33,14 +33,10 @@
       "eyebrow": "Able Assess",
       "headline": "Four metrics. Five minutes. One complete picture.",
       "subtitle": "Able Assess captures grip strength, sit-to-stand, gait speed and timed up-and-go in a single workflow that any member of staff can run.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Watch the Walkthrough",
-        "href": "/resources/walkthrough"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Watch the Walkthrough",
+      "secondaryCtaLink": "/resources/walkthrough"
     },
     {
       "_template": "metricsBlock",
@@ -111,11 +107,21 @@
     {
       "_template": "trustBar",
       "items": [
-        { "text": "FDA listed" },
-        { "text": "CE marked" },
-        { "text": "ISO 27001" },
-        { "text": "HIPAA aligned" },
-        { "text": "NICE 2025 aligned" }
+        {
+          "text": "FDA listed"
+        },
+        {
+          "text": "CE marked"
+        },
+        {
+          "text": "ISO 27001"
+        },
+        {
+          "text": "HIPAA aligned"
+        },
+        {
+          "text": "NICE 2025 aligned"
+        }
       ]
     },
     {
@@ -184,14 +190,10 @@
       "waveStyle": "ribbon",
       "heading": "See Able Assess in your workflow.",
       "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "leadMagnetPromo",

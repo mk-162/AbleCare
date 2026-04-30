@@ -1,6 +1,7 @@
 {
   "title": "Falls Screening for PE-Backed Care Portfolios",
   "slug": "pe-operators",
+  "draft": true,
   "seo": {
     "title": "Falls Screening for PE-Backed Care Portfolios | Able Care",
     "description": "Portfolio-level visibility across clinical outcomes and financial performance. Standardize 8+ locations. EBITDA uplift through process harmonization.",
@@ -32,12 +33,10 @@
       "eyebrow": "PE Operators",
       "headline": "Standardize your care portfolio. Unlock EBITDA growth across 8+ locations.",
       "subtitle": "Portfolio-level visibility across clinical outcomes, financial performance, and operational metrics. Due diligence in days, not weeks.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
       "backgroundImage": "/images/photos/studio/gentleman-sensor-studio.jpg",
-      "backgroundImageAlt": "Gentleman using the GripAble sensor in a studio portrait"
+      "backgroundImageAlt": "Gentleman using the GripAble sensor in a studio portrait",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "richText",
@@ -101,11 +100,9 @@
       "_template": "ctaBanner",
       "heading": "Ready to standardize and unlock portfolio EBITDA?",
       "body": "30 minutes with the team. Tailored to multi-site PE-backed operations.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "scheme": "blue"
+      "scheme": "blue",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     }
   ]
 }

@@ -30,16 +30,10 @@
       "eyebrow": "Product",
       "headline": "Seamless Integration with Your Existing Systems.",
       "subtitle": "FHIR-compliant APIs, OASIS data export, and direct EHR integration.",
-      "primaryCta": {
-        "label": "Book a Technical Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download API Documentation",
-        "href": "/resources/api-docs"
-      },
       "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
-      "backgroundImageAlt": "GripAble sensor in use"
+      "backgroundImageAlt": "GripAble sensor in use",
+      "primaryCtaText": "Book a Technical Demo",
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "richText",
@@ -77,14 +71,8 @@
       "waveStyle": "ribbon",
       "heading": "See the integration in action.",
       "body": "Our technical team can walk you through the API, data formats and EHR connector setup.",
-      "primaryCta": {
-        "label": "Book a Technical Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download the API Documentation",
-        "href": "/resources/api-docs"
-      }
+      "primaryCtaText": "Book a Technical Demo",
+      "primaryCtaLink": "/demo"
     }
   ],
   "tags": [

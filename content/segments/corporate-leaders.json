@@ -1,6 +1,7 @@
 {
   "title": "Falls Prevention for Corporate Care Leaders",
   "slug": "corporate-leaders",
+  "draft": true,
   "seo": {
     "title": "Falls Prevention for Corporate Care Leaders | Able Care",
     "description": "Board-ready metrics, standardized protocols, and compliance automation for corporate care leaders.",
@@ -32,12 +33,10 @@
       "eyebrow": "Corporate Leaders",
       "headline": "Turn operational data into board-ready insight.",
       "subtitle": "Standardized protocols, real-time compliance reporting, and outcome metrics that prove operational excellence.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
       "backgroundImage": "/images/photos/studio/woman-reading-brochure.jpg",
-      "backgroundImageAlt": "Older adult reading the Able Care brochure"
+      "backgroundImageAlt": "Older adult reading the Able Care brochure",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "richText",
@@ -101,11 +100,9 @@
       "_template": "ctaBanner",
       "heading": "Prove operational excellence to your board.",
       "body": "30 minutes with the team. Tailored to corporate care leadership.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "scheme": "blue"
+      "scheme": "blue",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     }
   ]
 }

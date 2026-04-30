@@ -33,14 +33,10 @@
       "eyebrow": "Independent Living",
       "headline": "Wellness-led falls screening for IL.",
       "subtitle": "Objective milestones residents can see. Programming tied to measurable changes in grip strength, balance and gait speed. Non-clinical staff can run it in under five minutes.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download the IL Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the IL Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "richText",
@@ -187,15 +183,11 @@
       "waveStyle": "ribbon",
       "heading": "See Able Assess in an IL wellness workflow.",
       "body": "20 minutes with a clinician who has deployed it in independent living communities.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      },
-      "scheme": "blue"
+      "scheme": "blue",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "leadMagnetPromo",

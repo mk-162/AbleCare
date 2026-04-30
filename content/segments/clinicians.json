@@ -29,14 +29,10 @@
       "eyebrow": "Clinicians",
       "headline": "Multifactorial, evidence-based falls risk screening.",
       "subtitle": "Peer-reviewed protocols. Standardized capture. Built for clinical and research teams.",
-      "primaryCta": {
-        "label": "Talk to the Clinical Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Browse the Research",
-        "href": "/resources/research-library"
-      }
+      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Browse the Research",
+      "secondaryCtaLink": "/resources/research-library"
     },
     {
       "_template": "segmentRouter",
@@ -238,14 +234,10 @@
       "waveStyle": "ribbon",
       "heading": "See Able Assess in your clinical workflow.",
       "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": {
-        "label": "Talk to the Clinical Team",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Browse the Research Library",
-        "href": "/resources/research-library"
-      }
+      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Browse the Research Library",
+      "secondaryCtaLink": "/resources/research-library"
     },
     {
       "_template": "leadMagnetPromo",

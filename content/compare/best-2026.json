@@ -1,6 +1,7 @@
 {
   "title": "Best Falls Prevention Technology 2026",
   "slug": "best-2026",
+  "draft": true,
   "seo": {
     "title": "Best Falls Prevention Technology 2026 | Able Care",
     "description": "The 2026 buyers guide to falls prevention software. Features, evidence, pricing and fit by segment. An honest comparison of Able Assess, SafelyYou, Nymbl and paper-based methods.",
@@ -16,14 +17,10 @@
       "eyebrow": "2026 Buyers Guide",
       "headline": "Best Falls Prevention Technology 2026",
       "subtitle": "Features, evidence, pricing and fit by segment. An honest comparison.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "featureComparison",
@@ -115,23 +112,23 @@
       "_template": "evidenceBlock",
       "scheme": "aqua",
       "heading": "Backed by the research",
-      "pulledStat": "Objective, multifactorial falls risk screening has been shown to reduce falls by 25%.",
-      "pulledStatSource": "Able Care 2026 Falls Prevention Commercialization Strategy",
+      "pulledStat": "Multifactorial falls risk screening outperforms single-test approaches in predicting falls in older adults.",
+      "pulledStatSource": "International Journal of Nursing Studies, 2020",
       "citations": [
         {
-          "title": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure",
+          "title": "Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study",
           "journal": "Lancet, 2015",
-          "link": "#"
+          "link": "https://doi.org/10.1016/S0140-6736(14)62000-6"
         },
         {
-          "title": "Multifactorial falls risk screening outperforms single-test paper approaches",
-          "journal": "BMJ, 2018",
-          "link": "#"
+          "title": "Effectiveness of multifactorial interventions in preventing falls among older adults in the community",
+          "journal": "International Journal of Nursing Studies, 2020",
+          "link": "https://doi.org/10.1016/j.ijnurstu.2020.103564"
         },
         {
-          "title": "NICE 2025 falls prevention guidelines recommend objective, standardized screening",
-          "journal": "NICE, 2025",
-          "link": "#"
+          "title": "Falls in older people: assessing risk and prevention",
+          "journal": "NICE Guideline NG249, 2025",
+          "link": "https://www.nice.org.uk/guidance/ng249"
         }
       ]
     },
@@ -165,14 +162,10 @@
       "waveStyle": "ribbon",
       "heading": "See how Able Assess compares in your setting.",
       "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     }
   ],
   "tags": [
