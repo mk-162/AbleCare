@@ -16,6 +16,7 @@ export function CookieBanner() {
 
   function handleAccept() {
     localStorage.setItem(COOKIE_CONSENT_KEY, "accepted");
+    (window as unknown as { __loadZoomInfo?: () => void }).__loadZoomInfo?.();
     setVisible(false);
   }
 
