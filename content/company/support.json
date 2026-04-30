@@ -1,0 +1,45 @@
+{
+  "title": "Support | Able Care",
+  "slug": "support",
+  "description": "Get help with your GripAble device or Able Assess software. Submit a support request and our team will get back to you within one business day.",
+  "seo": {
+    "title": "Support | Able Care",
+    "description": "Submit a support request for your GripAble device or Able Assess software. Our team responds within one business day.",
+    "ogImage": "/images/og-demo.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        { "label": "Home", "href": "/" },
+        { "label": "Support", "href": "/support" }
+      ]
+    },
+    {
+      "_template": "supportForm",
+      "heading": "Need help with your GripAble device?",
+      "subtitle": "Tell us a little about the issue and our support team will get back to you within one business day.",
+      "supportEmail": "hello@able-care.co"
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "grey",
+      "heading": "Common support questions",
+      "emitSchema": true,
+      "faqs": [
+        {
+          "question": "Where do I find my GripAble serial number?",
+          "answer": "Each GripAble sensor has a serial number printed on the underside of the device, beginning with FLEX000. If you have multiple sensors, please include all of the serial numbers when you submit a support request so we can pull the right device records."
+        },
+        {
+          "question": "How quickly will I get a response?",
+          "answer": "We aim to respond to every support request within one business day. Urgent issues are prioritized — if a device is unusable or affecting patient care, please mention that in the description."
+        },
+        {
+          "question": "What information should I include?",
+          "answer": "Tell us what is happening, what you expected to happen, and any error messages you saw. Screenshots, the affected resident or patient ID, and the steps you took before the issue occurred all help us resolve the request faster."
+        }
+      ]
+    }
+  ]
+}

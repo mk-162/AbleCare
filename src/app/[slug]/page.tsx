@@ -16,6 +16,7 @@ const SLUG_MAP: Record<string, { collection: string; filename: string }> = {
   "meet-the-team": { collection: "company", filename: "meet-the-team" },
   "contact": { collection: "company", filename: "contact" },
   "demo": { collection: "company", filename: "demo" },
+  "support": { collection: "company", filename: "support" },
   "customers": { collection: "company", filename: "customers" },
   "partners": { collection: "company", filename: "partners" },
   "news": { collection: "company", filename: "news" },

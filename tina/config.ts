@@ -745,6 +745,21 @@ const contactFormBlock = {
   ],
 };
 
+const supportFormBlock = {
+  name: "supportForm",
+  label: "Support Form",
+  ui: {
+    itemProps: (item: { heading?: string }) => ({
+      label: item?.heading ? `Support: ${item.heading}` : "Support Form",
+    }),
+  },
+  fields: [
+    { type: "string" as const, name: "heading", label: "Heading" },
+    { type: "string" as const, name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
+    { type: "string" as const, name: "supportEmail", label: "Support Email" },
+  ],
+};
+
 const segmentCardsBlock = {
   name: "segmentCards",
   label: "Segment Cards",
@@ -892,6 +907,7 @@ const allBlocks = [
   breadcrumbBlock,
   partnerLogoCarouselBlock,
   contactFormBlock,
+  supportFormBlock,
   segmentCardsBlock,
   valuePropsBlock,
   timelineBlock,
@@ -1081,6 +1097,7 @@ export default defineConfig({
               news: "/news/",
               contact: "/contact/",
               demo: "/demo/",
+              support: "/support/",
             };
             return map[document._sys.filename] || `/${document._sys.filename}/`;
           },
