@@ -33,14 +33,10 @@
       "eyebrow": "Solutions",
       "headline": "The objective case for prevention.",
       "subtitle": "Objective screening, risk stratification, and clinical proof in one workflow. Roll it out across every branch, community or clinical site.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "metricsBlock",
@@ -137,31 +133,52 @@
       "rows": [
         {
           "feature": "Time per assessment",
-          "values": ["Under 5 minutes", "20+ minutes"]
+          "values": [
+            "Under 5 minutes",
+            "20+ minutes"
+          ]
         },
         {
           "feature": "Scoring",
-          "values": ["Automatic, objective", "Subjective, observer-dependent"]
+          "values": [
+            "Automatic, objective",
+            "Subjective, observer-dependent"
+          ]
         },
         {
           "feature": "Normative comparison",
-          "values": ["Built in", "Manual lookup"]
+          "values": [
+            "Built in",
+            "Manual lookup"
+          ]
         },
         {
           "feature": "Trend tracking",
-          "values": ["Longitudinal, automatic", "Not available"]
+          "values": [
+            "Longitudinal, automatic",
+            "Not available"
+          ]
         },
         {
           "feature": "Care plan integration",
-          "values": ["Direct routing", "Manual transcription"]
+          "values": [
+            "Direct routing",
+            "Manual transcription"
+          ]
         },
         {
           "feature": "Staff requirement",
-          "values": ["Non-clinical", "Clinical"]
+          "values": [
+            "Non-clinical",
+            "Clinical"
+          ]
         },
         {
           "feature": "Standardization",
-          "values": ["One protocol, every site", "Varies by observer"]
+          "values": [
+            "One protocol, every site",
+            "Varies by observer"
+          ]
         }
       ]
     },
@@ -267,14 +284,10 @@
       "waveFill": "#DCDCDC",
       "heading": "See Able Assess in your workflow.",
       "body": "20 minutes with a clinician who has run it in the field.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     }
   ],
   "tags": [

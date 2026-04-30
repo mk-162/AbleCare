@@ -1,9 +1,24 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import fs from "fs";
+import path from "path";
 import { fetchPage, extractPageData } from "@/lib/tina-client";
 import { EditorialPageClient } from "@/components/blocks/EditorialPageClient";
 
 export const revalidate = 60;
+
+const COMPARE_DIR = path.join(process.cwd(), "content/compare");
+
+function isDraft(slug: string): boolean {
+  const filePath = path.join(COMPARE_DIR, `${slug}.json`);
+  if (!fs.existsSync(filePath)) return false;
+  try {
+    const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+    return data.draft === true;
+  } catch {
+    return false;
+  }
+}
 
 export async function generateMetadata({
   params,
@@ -11,6 +26,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (isDraft(slug)) return { title: "Page Not Found" };
   try {
     const { data } = await fetchPage("compare", slug);
     const page = extractPageData(data);
@@ -35,6 +51,7 @@ export default async function ComparePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  if (isDraft(slug)) notFound();
   let result;
   try {
     result = await fetchPage("compare", slug);
@@ -52,11 +69,11 @@ export default async function ComparePage({
 
 export async function generateStaticParams() {
   try {
-    const fs = await import("fs");
-    const path = await import("path");
-    const dir = path.join(process.cwd(), "content/compare");
-    const files = fs.readdirSync(dir).filter((f: string) => f.endsWith(".json"));
-    return files.map((f: string) => ({ slug: f.replace(".json", "") }));
+    const files = fs.readdirSync(COMPARE_DIR).filter((f: string) => f.endsWith(".json"));
+    return files
+      .map((f: string) => ({ slug: f.replace(".json", ""), file: f }))
+      .filter(({ slug }) => !isDraft(slug))
+      .map(({ slug }) => ({ slug }));
   } catch {
     return [];
   }

@@ -1,6 +1,7 @@
 {
   "title": "Able Assess vs SafelyYou",
   "slug": "vs-safelyyou",
+  "draft": true,
   "description": "Side-by-side comparison of Able Assess and SafelyYou. Upstream falls prevention screening vs post-fall detection and response.",
   "seo": {
     "title": "Able Assess vs SafelyYou | Able Care",
@@ -94,23 +95,23 @@
       "_template": "evidenceBlock",
       "scheme": "aqua",
       "heading": "Why upstream screening matters",
-      "pulledStat": "Objective screening has been shown to reduce falls by 25%.",
-      "pulledStatSource": "Able Care 2026 Commercialization Strategy",
+      "pulledStat": "Multifactorial falls risk screening outperforms single-test approaches in predicting falls in older adults.",
+      "pulledStatSource": "International Journal of Nursing Studies, 2020",
       "citations": [
         {
-          "title": "Multifactorial falls risk screening outperforms single-test paper approaches in predicting falls in older adults",
+          "title": "Effectiveness of multifactorial interventions in preventing falls among older adults in the community",
+          "journal": "International Journal of Nursing Studies, 2020",
+          "link": "https://doi.org/10.1016/j.ijnurstu.2020.103564"
+        },
+        {
+          "title": "Grip strength as a predictor of all-cause mortality: a systematic review and meta-analysis",
           "journal": "BMJ, 2018",
-          "link": "#"
+          "link": "https://doi.org/10.1136/bmj.k1651"
         },
         {
-          "title": "Proactive screening and intervention reduces fall incidence more effectively than reactive detection alone",
-          "journal": "[TODO: source needed]",
-          "link": "#"
-        },
-        {
-          "title": "NICE 2025 guidelines recommend standardized, objective falls risk screening as a primary prevention measure",
-          "journal": "NICE, 2025",
-          "link": "#"
+          "title": "Falls in older people: assessing risk and prevention",
+          "journal": "NICE Guideline NG249, 2025",
+          "link": "https://www.nice.org.uk/guidance/ng249"
         }
       ]
     },

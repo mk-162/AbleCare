@@ -1,6 +1,7 @@
 {
   "title": "Able Assess vs Nymbl",
   "slug": "vs-nymbl",
+  "draft": true,
   "description": "Side-by-side comparison of Able Assess and Nymbl. Objective clinical screening and risk stratification vs consumer balance exercise program.",
   "seo": {
     "title": "Able Assess vs Nymbl | Able Care",
@@ -95,22 +96,22 @@
       "scheme": "aqua",
       "heading": "Why screening comes before exercise",
       "pulledStat": "Multifactorial falls risk screening outperforms single-test approaches in predicting falls in older adults.",
-      "pulledStatSource": "BMJ, 2018",
+      "pulledStatSource": "International Journal of Nursing Studies, 2020",
       "citations": [
         {
-          "title": "Objective screening identifies high-risk individuals who benefit most from targeted intervention",
-          "journal": "[TODO: source needed]",
-          "link": "#"
+          "title": "Effectiveness of multifactorial interventions in preventing falls among older adults in the community",
+          "journal": "International Journal of Nursing Studies, 2020",
+          "link": "https://doi.org/10.1016/j.ijnurstu.2020.103564"
         },
         {
-          "title": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure",
+          "title": "Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study",
           "journal": "Lancet, 2015",
-          "link": "#"
+          "link": "https://doi.org/10.1016/S0140-6736(14)62000-6"
         },
         {
-          "title": "NICE 2025 guidelines recommend standardized, objective falls risk screening before prescribing intervention programs",
-          "journal": "NICE, 2025",
-          "link": "#"
+          "title": "Falls in older people: assessing risk and prevention",
+          "journal": "NICE Guideline NG249, 2025",
+          "link": "https://www.nice.org.uk/guidance/ng249"
         }
       ]
     },

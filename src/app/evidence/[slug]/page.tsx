@@ -5,12 +5,15 @@ import { EditorialPageClient } from "@/components/blocks/EditorialPageClient";
 
 export const revalidate = 60;
 
+const PUBLISHED_EVIDENCE_SLUGS = ["compliance"];
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (!PUBLISHED_EVIDENCE_SLUGS.includes(slug)) return { title: "Page Not Found" };
   try {
     const { data } = await fetchPage("pages", slug);
     const page = extractPageData(data);
@@ -35,6 +38,9 @@ export default async function EvidencePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  if (!PUBLISHED_EVIDENCE_SLUGS.includes(slug)) {
+    notFound();
+  }
   let result;
   try {
     result = await fetchPage("pages", slug);
@@ -55,8 +61,7 @@ export async function generateStaticParams() {
     const fs = await import("fs");
     const path = await import("path");
     const dir = path.join(process.cwd(), "content/pages");
-    const evidenceSlugs = ["clinical-validation", "compliance"];
-    return evidenceSlugs
+    return PUBLISHED_EVIDENCE_SLUGS
       .filter((slug) => fs.existsSync(path.join(dir, `${slug}.json`)))
       .map((slug) => ({ slug }));
   } catch {

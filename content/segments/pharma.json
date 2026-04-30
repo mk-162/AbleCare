@@ -79,19 +79,19 @@
       "pulledStatSource": "Lancet, 2015",
       "citations": [
         {
-          "title": "Grip strength as a surrogate marker for GLP-1 related muscle loss",
-          "journal": "Diabetes, Obesity and Metabolism, 2024",
-          "link": "#"
+          "title": "GripAble: An Accurate, Sensitive and Robust Digital Device for Measuring Grip Strength",
+          "journal": "Journal of Rehabilitation and Assistive Technologies Engineering, 2022",
+          "link": "https://journals.sagepub.com/doi/10.1177/20556683221078455"
         },
         {
-          "title": "Sarcopenia and grip strength in oncology patients: a systematic review",
-          "journal": "Critical Reviews in Oncology/Hematology, 2020",
-          "link": "#"
+          "title": "Modernising grip dynamometry: Inter-instrument reliability between GripAble and Jamar",
+          "journal": "BMC Musculoskeletal Disorders, 2022",
+          "link": "https://bmcmusculoskeletdisord.biomedcentral.com/articles/10.1186/s12891-022-05026-0"
         },
         {
-          "title": "Digital grip dynamometry for remote functional assessment in clinical trials",
-          "journal": "Journal of Clinical Medicine, 2023",
-          "link": "#"
+          "title": "Test-Retest Reliability and Precision of GripAble, a Multi-Purpose Exergaming Device",
+          "journal": "Games for Health Journal, 2025",
+          "link": "https://www.liebertpub.com/doi/10.1089/g4h.2024.0216"
         }
       ],
       "_template": "evidenceBlock"

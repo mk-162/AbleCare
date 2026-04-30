@@ -30,16 +30,12 @@
       "eyebrow": "Solutions",
       "headline": "Able Rehab",
       "subtitle": "Utilizing the GripAble sensor for neurorehabilitation. Train the hand and wrist, motivate patients with engaging activities, and track progress with objective data.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "See How It Works",
-        "href": "#movements"
-      },
       "backgroundImage": "/images/photos/clinical/clinician-patient-grippable-session.jpg",
-      "backgroundImageAlt": "Therapist guiding a patient through a GripAble rehabilitation session"
+      "backgroundImageAlt": "Therapist guiding a patient through a GripAble rehabilitation session",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "See How It Works",
+      "secondaryCtaLink": "#movements"
     },
     {
       "_template": "metricsBlock",
@@ -70,9 +66,15 @@
       "headline": "Engaging activities that keep patients training",
       "description": "Therapy is only effective if patients keep doing it. Able Rehab turns repetitions into gameplay, so the work that drives recovery feels like something patients want to come back to.",
       "bulletPoints": [
-        { "text": "Fun, motivating activities that meet clinical goals" },
-        { "text": "Multiple difficulty levels to grade each patient" },
-        { "text": "Assess each individual's ability, then set the activities to match — and adjust as they progress" }
+        {
+          "text": "Fun, motivating activities that meet clinical goals"
+        },
+        {
+          "text": "Multiple difficulty levels to grade each patient"
+        },
+        {
+          "text": "Assess each individual's ability, then set the activities to match — and adjust as they progress"
+        }
       ],
       "imagePosition": "right",
       "imageAlt": "Circus Escape — an engaging Able Rehab activity that trains hand and wrist movements",
@@ -93,9 +95,15 @@
       "headline": "Goal setting and achievement tracking",
       "description": "Objective progress data motivates patients and gives clinicians the evidence they need for payers, families, and care teams.",
       "bulletPoints": [
-        { "text": "Set goals by minutes of training or repetitions completed" },
-        { "text": "Generate objective progress reports to motivate patients and report to payers" },
-        { "text": "Monitor patient activity remotely between sessions" }
+        {
+          "text": "Set goals by minutes of training or repetitions completed"
+        },
+        {
+          "text": "Generate objective progress reports to motivate patients and report to payers"
+        },
+        {
+          "text": "Monitor patient activity remotely between sessions"
+        }
       ],
       "imagePosition": "left",
       "imageFit": "contain",
@@ -108,9 +116,15 @@
       "headline": "Hand function tests",
       "description": "Clinically validated grip strength testing built into the same workflow as therapy — so assessment, training, and reporting all live in one place.",
       "bulletPoints": [
-        { "text": "Clinically proven grip strength test with published clinical norms" },
-        { "text": "Test grip in multiple ways: single maximum grip, rapid exchange, and endurance" },
-        { "text": "Easy, stress-free recalibration in under a minute" }
+        {
+          "text": "Clinically proven grip strength test with published clinical norms"
+        },
+        {
+          "text": "Test grip in multiple ways: single maximum grip, rapid exchange, and endurance"
+        },
+        {
+          "text": "Easy, stress-free recalibration in under a minute"
+        }
       ],
       "imagePosition": "right",
       "imageFit": "contain",
@@ -123,14 +137,10 @@
       "waveStyle": "ribbon",
       "heading": "See Able Rehab in your clinic.",
       "body": "20 minutes with a clinician who has used Able Rehab in practice — book a walkthrough today.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "See Able Assess",
-        "href": "/solutions/able-assess"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "See Able Assess",
+      "secondaryCtaLink": "/solutions/able-assess"
     }
   ],
   "tags": [

@@ -29,10 +29,8 @@
       "eyebrow": "Senior Living",
       "headline": "Protect residents. Reduce staff turnover. Avoid falls-related liability.",
       "subtitle": "Objective falls screening across the entire continuum of senior living.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact"
     },
     {
       "_template": "metricsBlock",
@@ -177,10 +175,8 @@
       "colorScheme": "blue",
       "waveStyle": "ribbon",
       "heading": "See Able Assess in Action.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact"
     },
     {
       "_template": "segmentRouter",

@@ -32,14 +32,10 @@
       "eyebrow": "Population Health",
       "headline": "See the whole picture. Act on the risk that matters.",
       "subtitle": "Population-level falls risk tracking for multi-site operators, health systems and commissioners. Stratify risk across every branch, community or clinical site from a single dashboard.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "statsBar",
@@ -102,14 +98,10 @@
       "waveStyle": "ribbon",
       "heading": "See your population's risk in one dashboard.",
       "body": "A 20-minute demo with a clinician who has deployed population-level screening.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     }
   ],
   "tags": [

@@ -32,14 +32,10 @@
       "eyebrow": "Solutions",
       "headline": "Unlocking grip strength for application in data-driven healthcare.",
       "subtitle": "Clinical-grade grip strength measurement for clinicians, researchers and population health teams. Built from the ground up for data-driven healthcare.",
-      "primaryCta": {
-        "label": "Schedule a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download Evidence Summary",
-        "href": "/resources/grip-strength-evidence"
-      }
+      "primaryCtaText": "Schedule a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "View the Clinical Evidence",
+      "secondaryCtaLink": "/resources/evidence"
     },
     {
       "_template": "metricsBlock",
@@ -131,14 +127,10 @@
       "waveStyle": "ribbon",
       "heading": "Talk to the Clinical Team.",
       "body": "See how digital grip strength measurement fits your clinical or research workflow.",
-      "primaryCta": {
-        "label": "Schedule a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download: Grip Strength Evidence Summary",
-        "href": "/resources/grip-strength-evidence"
-      }
+      "primaryCtaText": "Schedule a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "View the Clinical Evidence",
+      "secondaryCtaLink": "/resources/evidence"
     },
     {
       "_template": "leadMagnetPromo",

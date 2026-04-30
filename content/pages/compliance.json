@@ -30,12 +30,10 @@
       "eyebrow": "Evidence",
       "headline": "Compliance & Regulatory Status.",
       "subtitle": "Able Assess meets stringent regulatory and data protection requirements across the US and UK.",
-      "primaryCta": {
-        "label": "Talk to the Clinical Team",
-        "href": "/contact"
-      },
       "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
-      "backgroundImageAlt": "Therapist reviewing Able Assess results with a patient on a tablet"
+      "backgroundImageAlt": "Therapist reviewing Able Assess results with a patient on a tablet",
+      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaLink": "/contact"
     },
     {
       "_template": "trustBar",
@@ -77,10 +75,8 @@
       "waveStyle": "ribbon",
       "heading": "Questions about compliance?",
       "body": "Our team can provide regulatory documentation, data processing agreements and technical security details.",
-      "primaryCta": {
-        "label": "Talk to the Clinical Team",
-        "href": "/contact"
-      }
+      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaLink": "/contact"
     }
   ],
   "tags": [

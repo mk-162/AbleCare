@@ -35,16 +35,12 @@
       "eyebrow": "Walkthrough",
       "headline": "Able Assess Falls Risk Tests",
       "subtitle": "Four validated falls risk assessments. Five minutes. One workflow.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "See the Results Walkthrough",
-        "href": "/low-and-at-risk"
-      },
       "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
-      "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor"
+      "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "See the Results Walkthrough",
+      "secondaryCtaLink": "/low-and-at-risk"
     },
     {
       "_template": "richText",

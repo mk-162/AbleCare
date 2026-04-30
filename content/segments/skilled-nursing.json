@@ -29,14 +29,10 @@
       "eyebrow": "Skilled Nursing Facilities",
       "headline": "Falls prevention for skilled nursing.",
       "subtitle": "Protect Five-Star ratings. Defend VBP performance. Reduce rehospitalization. Objective, standardized falls screening in under five minutes, usable by any member of staff.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the SNF Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the SNF Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "metricsBlock",
@@ -138,14 +134,10 @@
       "waveStyle": "ribbon",
       "heading": "See Able Assess in your skilled nursing workflow.",
       "body": "20 minutes with a clinician who has deployed it in SNF settings.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "leadMagnetPromo",

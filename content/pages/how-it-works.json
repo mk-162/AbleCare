@@ -35,12 +35,10 @@
       "eyebrow": "Product",
       "headline": "Able Assess in five minutes.",
       "subtitle": "From unboxing to sharing results, every step is designed for simplicity. No specialist training, no complex setup, no clinical background required.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
       "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
-      "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor"
+      "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "processSteps",
@@ -138,14 +136,10 @@
       "scheme": "blue",
       "heading": "See Able Assess in your workflow",
       "body": "30 minutes with the clinical team. We will walk through the full five-step process using your care setting as the example.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Watch the Walkthrough Video",
-        "href": "/resources/walkthrough"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Watch the Walkthrough Video",
+      "secondaryCtaLink": "/resources/walkthrough"
     },
     {
       "_template": "leadMagnetPromo",

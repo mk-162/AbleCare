@@ -36,16 +36,10 @@
       "eyebrow": "Solutions",
       "headline": "Grip strength and falls risk screening without the clinic visit.",
       "subtitle": "Bring clinical-grade functional assessment into home care and community settings. Regular objective measurement without the cost and complexity of in-person visits.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
-      "secondaryCta": {
-        "label": "Download Implementation Guide",
-        "href": "/resources/remote-monitoring-guide"
-      },
       "backgroundImage": "/images/photos/clinical/therapist-gentleman-desk.jpg",
-      "backgroundImageAlt": "Therapist reviewing assessment data with a patient at a desk"
+      "backgroundImageAlt": "Therapist reviewing assessment data with a patient at a desk",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "valueProps",
@@ -141,10 +135,8 @@
       "scheme": "blue",
       "heading": "Start remote monitoring today",
       "body": "See how Able Assess brings clinical-grade functional assessment into home care and community settings.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     }
   ]
 }

@@ -1,6 +1,7 @@
 {
   "title": "Able Assess vs Jamar Dynamometer",
   "slug": "vs-jamar",
+  "draft": true,
   "description": "Side-by-side comparison of Able Assess and the Jamar hand dynamometer. Digital data capture, normative comparison, and workflow integration vs analogue measurement.",
   "seo": {
     "title": "Able Assess vs Jamar Dynamometer | Able Care",
@@ -98,19 +99,19 @@
       "pulledStatSource": "Lancet, 2015",
       "citations": [
         {
-          "title": "Grip strength is a validated marker for frailty, sarcopenia and functional decline in older adults",
+          "title": "Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study",
           "journal": "Lancet, 2015",
-          "link": "#"
+          "link": "https://doi.org/10.1016/S0140-6736(14)62000-6"
         },
         {
-          "title": "Multifactorial screening outperforms single-test approaches in predicting falls",
+          "title": "Grip strength as a predictor of all-cause mortality: a systematic review and meta-analysis",
           "journal": "BMJ, 2018",
-          "link": "#"
+          "link": "https://doi.org/10.1136/bmj.k1651"
         },
         {
-          "title": "NICE 2025 guidelines recommend standardized, objective falls risk screening",
-          "journal": "NICE, 2025",
-          "link": "#"
+          "title": "Falls in older people: assessing risk and prevention",
+          "journal": "NICE Guideline NG249, 2025",
+          "link": "https://www.nice.org.uk/guidance/ng249"
         }
       ]
     },

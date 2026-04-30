@@ -29,10 +29,8 @@
       "eyebrow": "Home Care",
       "headline": "Standardized falls screening for home care agencies.",
       "subtitle": "Reduce client falls. Standardize care across branches and caregivers. Improve customer conversion.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact"
     },
     {
       "_template": "metricsBlock",
@@ -178,10 +176,8 @@
       "colorScheme": "blue",
       "waveStyle": "ribbon",
       "heading": "See Able Assess in Action.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact"
     },
     {
       "_template": "segmentRouter",

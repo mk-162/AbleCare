@@ -34,12 +34,10 @@
       "colorScheme": "blue",
       "headline": "Able Assess for your care setting.",
       "subtitle": "Every care setting has unique falls prevention challenges. Each 1-pager shows how Able Assess fits your specific workflow, regulatory requirements, and operational priorities.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/demo"
-      },
       "backgroundImage": "/images/photos/clinical/patient-therapist-laughing.jpg",
-      "backgroundImageAlt": "Therapist and patient laughing during a session"
+      "backgroundImageAlt": "Therapist and patient laughing during a session",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/demo"
     },
     {
       "_template": "richText",
@@ -52,10 +50,8 @@
       "scheme": "blue",
       "heading": "Need a custom overview for your setting?",
       "body": "Our team can create a tailored overview for your specific care setting and operational requirements.",
-      "primaryCta": {
-        "label": "Contact Us",
-        "href": "/demo"
-      }
+      "primaryCtaText": "Contact Us",
+      "primaryCtaLink": "/demo"
     }
   ]
 }

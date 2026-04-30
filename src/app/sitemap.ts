@@ -10,6 +10,14 @@ function getJsonSlugs(dir: string): string[] {
     return fs
       .readdirSync(fullPath)
       .filter((f) => f.endsWith(".json"))
+      .filter((f) => {
+        try {
+          const data = JSON.parse(fs.readFileSync(path.join(fullPath, f), "utf-8"));
+          return data.draft !== true;
+        } catch {
+          return true;
+        }
+      })
       .map((f) => f.replace(".json", ""));
   } catch {
     return [];
@@ -54,14 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Persona pages
-  const personaPages = ["pe-operators", "corporate-leaders", "clinical-leaders", "innovation-it", "franchise-owners"].map((slug) => ({
-    url: `${BASE_URL}/for/${slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
   // Product pages
   const productSlugs = getJsonSlugs("content/pages").filter((s) => ["how-it-works", "integrations", "security"].includes(s));
   const productPages = productSlugs.map((slug) => ({
@@ -72,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Evidence pages
-  const evidenceSlugs = getJsonSlugs("content/pages").filter((s) => ["clinical-validation", "compliance"].includes(s));
+  const evidenceSlugs = getJsonSlugs("content/pages").filter((s) => ["compliance"].includes(s));
   const evidencePages = evidenceSlugs.map((slug) => ({
     url: `${BASE_URL}/evidence/${slug}`,
     lastModified: now,
@@ -121,7 +121,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...slugMapPages,
     ...homeCareSubPages,
     ...seniorLivingSubPages,
-    ...personaPages,
     ...productPages,
     ...evidencePages,
     ...solutionPages,

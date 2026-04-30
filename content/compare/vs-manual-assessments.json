@@ -1,6 +1,7 @@
 {
   "title": "Able Assess vs Manual Assessments",
   "slug": "vs-manual-assessments",
+  "draft": true,
   "seo": {
     "title": "Able Assess vs Manual Assessments | Able Care",
     "description": "Side-by-side comparison of Able Assess and paper-based falls assessments. Objective, standardized, five minutes. Everything paper cannot do.",
@@ -16,14 +17,10 @@
       "eyebrow": "Comparison",
       "headline": "Able Assess vs paper-based falls assessments.",
       "subtitle": "Objective, standardized, five minutes. Everything paper cannot do.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Comparison PDF",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Comparison PDF",
+      "secondaryCtaLink": "/resources/buyers-guide"
     },
     {
       "_template": "featureComparison",
@@ -98,22 +95,22 @@
       "scheme": "aqua",
       "heading": "Why objectivity matters",
       "pulledStat": "Multifactorial falls risk screening outperforms single-test paper approaches in predicting falls in older adults.",
-      "pulledStatSource": "BMJ, 2018",
+      "pulledStatSource": "International Journal of Nursing Studies, 2020",
       "citations": [
         {
-          "title": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure",
+          "title": "Prognostic value of grip strength: findings from the Prospective Urban Rural Epidemiology (PURE) study",
           "journal": "Lancet, 2015",
-          "link": "#"
+          "link": "https://doi.org/10.1016/S0140-6736(14)62000-6"
         },
         {
-          "title": "Objective screening has been shown to reduce falls by 25%",
-          "journal": "Able Care 2026 Commercialization Strategy",
-          "link": "#"
+          "title": "Effectiveness of multifactorial interventions in preventing falls among older adults in the community",
+          "journal": "International Journal of Nursing Studies, 2020",
+          "link": "https://doi.org/10.1016/j.ijnurstu.2020.103564"
         },
         {
-          "title": "NICE 2025 guidelines recommend standardized, objective falls risk screening",
-          "journal": "NICE, 2025",
-          "link": "#"
+          "title": "Falls in older people: assessing risk and prevention",
+          "journal": "NICE Guideline NG249, 2025",
+          "link": "https://www.nice.org.uk/guidance/ng249"
         }
       ]
     },
@@ -123,14 +120,10 @@
       "waveStyle": "ribbon",
       "heading": "See the difference in your workflow.",
       "body": "A 20-minute demo with a clinician who has run both approaches.",
-      "primaryCta": {
-        "label": "Book a Demo",
-        "href": "/contact"
-      },
-      "secondaryCta": {
-        "label": "Download the Buyers Guide",
-        "href": "/resources/buyers-guide"
-      }
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     }
   ],
   "tags": [
