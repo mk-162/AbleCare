@@ -296,6 +296,11 @@ fragment PagesParts on Pages {
       salesEmail
       supportEmail
     }
+    ... on PagesBlocksSupportForm {
+      heading
+      subtitle
+      supportEmail
+    }
     ... on PagesBlocksSegmentCards {
       scheme
       heading
@@ -631,6 +636,11 @@ fragment SolutionsParts on Solutions {
       heading
       subtitle
       salesEmail
+      supportEmail
+    }
+    ... on SolutionsBlocksSupportForm {
+      heading
+      subtitle
       supportEmail
     }
     ... on SolutionsBlocksSegmentCards {
@@ -970,6 +980,11 @@ fragment SegmentsParts on Segments {
       salesEmail
       supportEmail
     }
+    ... on SegmentsBlocksSupportForm {
+      heading
+      subtitle
+      supportEmail
+    }
     ... on SegmentsBlocksSegmentCards {
       scheme
       heading
@@ -1305,6 +1320,11 @@ fragment CompareParts on Compare {
       heading
       subtitle
       salesEmail
+      supportEmail
+    }
+    ... on CompareBlocksSupportForm {
+      heading
+      subtitle
       supportEmail
     }
     ... on CompareBlocksSegmentCards {
@@ -1659,6 +1679,11 @@ fragment LearnParts on Learn {
       salesEmail
       supportEmail
     }
+    ... on LearnBlocksSupportForm {
+      heading
+      subtitle
+      supportEmail
+    }
     ... on LearnBlocksSegmentCards {
       scheme
       heading
@@ -1987,6 +2012,11 @@ fragment ResourcesParts on Resources {
       heading
       subtitle
       salesEmail
+      supportEmail
+    }
+    ... on ResourcesBlocksSupportForm {
+      heading
+      subtitle
       supportEmail
     }
     ... on ResourcesBlocksSegmentCards {
@@ -2324,6 +2354,11 @@ fragment CompanyParts on Company {
       heading
       subtitle
       salesEmail
+      supportEmail
+    }
+    ... on CompanyBlocksSupportForm {
+      heading
+      subtitle
       supportEmail
     }
     ... on CompanyBlocksSegmentCards {

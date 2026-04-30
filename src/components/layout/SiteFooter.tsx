@@ -66,6 +66,7 @@ export function SiteFooter() {
             <ul className="space-y-4">
               <li><Link href="/about" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">About Able Care</Link></li>
               <li><Link href="/contact" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Contact Us</Link></li>
+              <li><Link href="/support" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Support</Link></li>
             </ul>
           </div>
 

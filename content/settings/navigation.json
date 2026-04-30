@@ -60,6 +60,7 @@
           { "label": "About Us", "href": "/about" },
           { "label": "Meet the Team", "href": "/meet-the-team" },
           { "label": "Contact", "href": "/contact" },
+          { "label": "Support", "href": "/support" },
           { "label": "News", "href": "/news" }
         ]
       }

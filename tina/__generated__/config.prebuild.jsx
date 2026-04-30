@@ -711,6 +711,20 @@ var contactFormBlock = {
     { type: "string", name: "supportEmail", label: "Support Email" }
   ]
 };
+var supportFormBlock = {
+  name: "supportForm",
+  label: "Support Form",
+  ui: {
+    itemProps: (item) => ({
+      label: item?.heading ? `Support: ${item.heading}` : "Support Form"
+    })
+  },
+  fields: [
+    { type: "string", name: "heading", label: "Heading" },
+    { type: "string", name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
+    { type: "string", name: "supportEmail", label: "Support Email" }
+  ]
+};
 var segmentCardsBlock = {
   name: "segmentCards",
   label: "Segment Cards",
@@ -849,6 +863,7 @@ var allBlocks = [
   breadcrumbBlock,
   partnerLogoCarouselBlock,
   contactFormBlock,
+  supportFormBlock,
   segmentCardsBlock,
   valuePropsBlock,
   timelineBlock
@@ -1013,7 +1028,8 @@ var config_default = defineConfig({
               partners: "/partners/",
               news: "/news/",
               contact: "/contact/",
-              demo: "/demo/"
+              demo: "/demo/",
+              support: "/support/"
             };
             return map[document._sys.filename] || `/${document._sys.filename}/`;
           }

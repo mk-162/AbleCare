@@ -23,6 +23,7 @@ import { Prose } from "./Prose";
 import { RoiCalculatorPromo } from "./RoiCalculatorPromo";
 import { LeadMagnetPromo } from "./LeadMagnetPromo";
 import { ContactForm } from "./ContactForm";
+import { SupportForm } from "./SupportForm";
 import { TeamShowcase } from "./TeamShowcase";
 import { PartnerLogoCarousel } from "./PartnerLogoCarousel";
 import { SegmentCards } from "./SegmentCards";
@@ -272,6 +273,8 @@ export function BlockRenderer({ blocks, pageTags, pageSlug }: BlockRendererProps
             return <TrustBar key={i} items={block.badges?.map((b: any) => ({ text: b.label || b.text })) || block.items} />;
           case "contactForm":
             return <ContactForm key={i} {...block} />;
+          case "supportForm":
+            return <SupportForm key={i} {...block} />;
           case "teamShowcase":
             return <TeamShowcase key={i} {...block} />;
           case "partnerLogoCarousel":

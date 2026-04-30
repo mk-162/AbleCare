@@ -41,6 +41,7 @@ const resourcesMenu = {
 const companyItems = [
   { label: "About Able Care", href: "/about", desc: "The story behind Able Care." },
   { label: "Contact Us", href: "/contact", desc: "Get in touch with us." },
+  { label: "Support", href: "/support", desc: "Help with your GripAble device or Able Assess software." },
 ];
 
 type MenuKey = "solutions" | "segments" | "resources" | "company";
