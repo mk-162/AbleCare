@@ -146,6 +146,16 @@ export function ContactForm({
                 </div>
 
                 <div className="space-y-2">
+                  <label htmlFor="referralCode" className="text-sm font-medium leading-none">Referral code</label>
+                  <input
+                    id="referralCode"
+                    name="referralCode"
+                    placeholder="Optional"
+                    className="flex h-10 w-full rounded-md border border-black/10 bg-ac-grey/30 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ac-aqua focus-visible:ring-offset-2"
+                  />
+                </div>
+
+                <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium leading-none">How can we help?</label>
                   <textarea
                     id="message"
