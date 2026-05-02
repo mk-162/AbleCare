@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GripAble Banner Preview</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  body {
+    margin: 0;
+    background: #0b1fd4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    gap: 14px;
+  }
+  .toolbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background: rgba(255,255,255,0.95);
+    padding: 8px 14px;
+    border-radius: 9999px;
+    font: 13px var(--font-sans);
+    color: #111;
+  }
+  .toolbar button {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 5px 12px;
+    border-radius: 9999px;
+    cursor: pointer;
+    font: inherit;
+  }
+  .toolbar button.active { background: var(--ac-blue); color: #fff; border-color: var(--ac-blue); }
+  #stage {
+    background: var(--ac-gradient-hero);
+    border-radius: 12px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.35);
+    overflow: hidden;
+  }
+  .hint { color: rgba(255,255,255,0.85); font: 12px var(--font-sans); }
+</style>
+</head>
+<body>
+  <div class="toolbar">
+    <span style="font-weight:600">Size:</span>
+    <button data-size="1280x880" class="active">1280×880</button>
+    <button data-size="1440x900">1440×900</button>
+    <button data-size="1024x720">1024×720</button>
+    <button data-size="900x640">900×640</button>
+    <span style="margin-left:14px;color:#666">Drag or hover the device to rotate. Click a feature card to tour.</span>
+  </div>
+  <div id="stage"></div>
+  <div class="hint">preview.html — renders gripable-rotate.jsx with the calibrated F_KEYS</div>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel" data-presets="env,react" src="gripable-rotate.jsx"></script>
+
+<script type="text/babel" data-presets="env,react">
+  const root = ReactDOM.createRoot(document.getElementById("stage"));
+  let current = { w: 1280, h: 880 };
+  function mount(w, h) {
+    current = { w, h };
+    root.render(<window.GAClassicAnimated width={w} height={h} />);
+  }
+  // Wait for the JSX module above to define window.GAClassicAnimated
+  const tryMount = () => {
+    if (window.GAClassicAnimated) { mount(current.w, current.h); return; }
+    setTimeout(tryMount, 50);
+  };
+  tryMount();
+
+  document.querySelectorAll(".toolbar button[data-size]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".toolbar button[data-size]").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const [w, h] = btn.dataset.size.split("x").map(Number);
+      mount(w, h);
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   ABLE CARE — COLORS & TYPE TOKENS
+   Source: Able Care Brand Guidelines V1 (250324) + AbleCare Next.js codebase
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* DM Sans is the interim web stand-in for Aeonik (official typeface).
+   Aeonik is not licensed yet. Arial is the Google-Slides fallback. */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
+
+:root {
+  /* ─── Brand Colors (guidelines p.14) ──────────────────────────────────── */
+  --ac-blue:   #1432FF;   /* Pantone 2935 C — primary */
+  --ac-aqua:   #00FFD2;   /* Pantone 333 C  — secondary */
+  --ac-grey:   #DCDCDC;   /* Cool Gray 1 C  — default background */
+  --ac-black:  #191919;   /* 90% black      — body copy only */
+  --ac-white:  #FFFFFF;   /* surface */
+
+  /* Gradient accent (used as hero background, brandmark fill) */
+  --ac-gradient: linear-gradient(135deg, #1432FF 0%, #00FFD2 100%);
+  --ac-gradient-hero: linear-gradient(145deg, #0b1fd4 0%, #1432FF 35%, #00a896 75%, #00FFD2 100%);
+
+  /* ─── Semantic Colors ─────────────────────────────────────────────────── */
+  --bg-default:       var(--ac-grey);     /* 30% of surface area */
+  --bg-surface:       var(--ac-white);    /* cards, panels */
+  --bg-emphasis:      var(--ac-blue);     /* hero, high-impact CTA */
+  --bg-accent:        var(--ac-aqua);     /* testimonials, trust strips */
+
+  --fg-default:       var(--ac-black);
+  --fg-muted:         rgba(25, 25, 25, 0.70);
+  --fg-subtle:        rgba(25, 25, 25, 0.50);
+  --fg-on-blue:       var(--ac-white);
+  --fg-on-blue-muted: rgba(255, 255, 255, 0.80);
+  --fg-eyebrow-blue:  var(--ac-aqua);     /* eyebrow label on blue scheme */
+  --fg-eyebrow-light: var(--ac-blue);     /* eyebrow label on light scheme */
+
+  --border-subtle:    rgba(0, 0, 0, 0.05);
+  --border-default:   rgba(0, 0, 0, 0.10);
+  --border-focus:     var(--ac-aqua);
+
+  /* ─── Typography Stack ────────────────────────────────────────────────── */
+  --font-sans:        "DM Sans", "Aeonik", "Arial", sans-serif;
+  --font-body-weight: 300;   /* Aeonik Light / DM Sans Light — body copy */
+  --font-ui-weight:   400;   /* Aeonik Regular — subheadings, buttons */
+  --font-bold-weight: 700;   /* Aeonik Bold — headlines, CTAs, stats */
+
+  /* Type scale — clamp()-based, responsive */
+  --fs-display:  clamp(2.75rem, 4.5vw + 1rem, 4.5rem);   /* 44–72px  hero h1 */
+  --fs-h1:       clamp(2.25rem, 3vw + 1rem, 3.5rem);     /* 36–56px */
+  --fs-h2:       clamp(1.75rem, 2vw + 0.75rem, 2.5rem);  /* 28–40px */
+  --fs-h3:       1.5rem;    /* 24px */
+  --fs-h4:       1.25rem;   /* 20px */
+  --fs-body-lg:  1.125rem;  /* 18px — intro / subtitle */
+  --fs-body:     1rem;      /* 16px — default body */
+  --fs-body-sm:  0.875rem;  /* 14px — meta, small print */
+  --fs-eyebrow:  0.75rem;   /* 12px — uppercase eyebrow */
+  --fs-caption:  0.75rem;   /* 12px — captions, credits */
+
+  --lh-tight:    1.08;      /* headlines */
+  --lh-heading:  1.2;       /* h2 / h3 */
+  --lh-body:     1.6;       /* body copy */
+  --lh-prose:    1.8;       /* long-form article prose */
+
+  --tracking-tight:   -0.01em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.05em;
+  --tracking-eyebrow: 0.25em; /* UPPERCASE EYEBROWS */
+
+  --measure: 70ch;           /* body copy max line length */
+
+  /* ─── Radius (rounded-capsule geometry) ───────────────────────────────── */
+  --radius-sm:     0.5rem;   /*  8px — inputs */
+  --radius-md:     1rem;     /* 16px — cards */
+  --radius-lg:     1.5rem;   /* 24px — feature panels */
+  --radius-pill:   9999px;   /* buttons, lozenges, tags */
+
+  /* ─── Elevation / Shadow ──────────────────────────────────────────────── */
+  --shadow-none: none;
+  --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lift: 0 4px 24px rgba(0, 0, 0, 0.08); /* .hover-elevate */
+  --shadow-focus: 0 0 0 2px var(--ac-aqua);
+
+  /* ─── Spacing rhythm ──────────────────────────────────────────────────── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-28: 7rem;
+
+  --section-y-mobile:  3rem;   /* 48px */
+  --section-y-desktop: 7rem;   /* 112px — py-28 pattern in the codebase */
+
+  --container-max: 1440px;
+
+  /* ─── Motion ──────────────────────────────────────────────────────────── */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-quick:  150ms;
+  --dur-base:   200ms;
+  --dur-slow:   400ms;
+  --dur-reveal: 700ms;     /* hero content fade+slide-in */
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   SEMANTIC TYPE STYLES — apply directly, no extra class juggling.
+   ────────────────────────────────────────────────────────────────────────── */
+
+html, body {
+  font-family: var(--font-sans);
+  font-weight: var(--font-body-weight);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-default);
+  background: var(--bg-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-bold-weight);
+  line-height: var(--lh-heading);
+  color: var(--fg-default);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+
+h1        { font-size: var(--fs-h1);      line-height: var(--lh-tight); }
+h1.display{ font-size: var(--fs-display); line-height: var(--lh-tight); }
+h2        { font-size: var(--fs-h2); }
+h3        { font-size: var(--fs-h3); }
+h4        { font-size: var(--fs-h4); }
+
+p, li { font-weight: var(--font-body-weight); line-height: var(--lh-body); }
+
+.prose-body { max-width: var(--measure); }
+
+.eyebrow {
+  font-size: var(--fs-eyebrow);
+  font-weight: var(--font-bold-weight);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--fg-eyebrow-light);
+}
+
+.eyebrow--on-blue { color: var(--fg-eyebrow-blue); }
+
+.muted  { color: var(--fg-muted); }
+.subtle { color: var(--fg-subtle); }
+
+code, pre, kbd {
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.925em;
+}
+
+/* Links — underlined with subtle decoration, blue-on-hover (editorial rule) */
+a.editorial {
+  color: var(--fg-default);
+  text-decoration: underline;
+  text-decoration-color: rgba(25, 25, 25, 0.3);
+  text-underline-offset: 3px;
+  transition: color var(--dur-base), text-decoration-color var(--dur-base);
+}
+a.editorial:hover {
+  color: var(--ac-blue);
+  text-decoration-color: var(--ac-blue);
+}
+
+/* Focus ring — WCAG 2.2 AA, 2px aqua */
+:focus-visible {
+  outline: 2px solid var(--ac-aqua);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
