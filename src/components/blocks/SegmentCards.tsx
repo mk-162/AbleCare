@@ -7,15 +7,18 @@ import { getSchemeClasses } from "@/lib/color-schemes";
 interface SegmentCardsProps {
   scheme?: string;
   heading?: string;
+  centered?: boolean;
   cards?: Array<{
     title: string;
     body?: string;
     icon?: string;
     link?: string;
+    linkText?: string;
+    logos?: string[];
   }>;
 }
 
-export function SegmentCards({ scheme = "light", heading, cards }: SegmentCardsProps) {
+export function SegmentCards({ scheme = "light", heading, centered, cards }: SegmentCardsProps) {
   if (!cards || cards.length === 0) return null;
 
   return (
@@ -28,13 +31,20 @@ export function SegmentCards({ scheme = "light", heading, cards }: SegmentCardsP
           {cards.map((card, i) => {
             const content = (
               <div className="group h-full p-8 rounded-2xl bg-white border border-black/5 hover:border-ac-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
-                <h3 className="text-xl font-bold text-ac-black mb-3">{card.title}</h3>
+                <h3 className={`text-xl font-bold text-ac-black mb-3${centered ? " text-center" : ""}`}>{card.title}</h3>
                 {card.body && (
                   <p className="text-ac-black/70 font-light text-sm leading-relaxed mb-6 flex-grow">{card.body}</p>
                 )}
                 {card.link && (
                   <div className="flex items-center text-ac-blue font-medium group-hover:translate-x-2 transition-transform text-sm">
-                    Learn more <ArrowRight className="ml-2 w-4 h-4" />
+                    {card.linkText || "Learn more"} <ArrowRight className="ml-2 w-4 h-4" />
+                  </div>
+                )}
+                {card.logos && card.logos.length > 0 && (
+                  <div className="flex justify-center items-center gap-4 mt-6">
+                    {card.logos.map((logo, j) => (
+                      <img key={j} src={logo} alt="" className="h-16 w-auto object-contain" />
+                    ))}
                   </div>
                 )}
               </div>
