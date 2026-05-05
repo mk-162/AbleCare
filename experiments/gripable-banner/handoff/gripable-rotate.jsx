@@ -1,106 +1,65 @@
-/* GripAble interactive rotation viewer
-   - 21 PNG frames driven by mouse X over the device area (or drag)
-   - Per-feature hotspots tracked across frames (x, y, vis) so lead-lines
-     always point at the correct part of the device.
-   - Tour mode: click a feature → animates to its bestFrame, highlights
-     the hotspot + lead-line, dims others.
+/* GripAble interactive rotation viewer (v2 — ported from Replit redesign).
+   - Three responsive layouts (mobile / tablet / desktop) driven by ResizeObserver.
+   - Numbered badges park on the outer rails (4% / 96%); leader lines stretch
+     from each badge to the live device-side anchor for the current frame.
+   - Auto-cycling: as the device rotates, the closest feature (by bestFrame)
+     auto-highlights so cards 1→7 light up in order.
+   - Click-mode: clicking a card snaps the device to its bestFrame and shows
+     only that feature's line. Drag/hover/keyboard exits click-mode.
+
+   Render rule kept from the calibrator: a feature's line only draws on a
+   frame where F.pos has interpolatable data — outside its key range the line
+   is hidden but the badge stays parked.
+
+   Loaded via Babel-standalone in preview.html, so React/ReactDOM are on
+   `window` rather than imported.
 */
+const { useState, useRef, useEffect, useCallback } = React;
 
-const FRAMES = Array.from({ length: 21 }, (_, i) => `assets/rotate/${String(i + 1).padStart(2, "0")}.png`);
+/* ─── Frame data ──────────────────────────────────────────────────────────── */
+const FRAMES = Array.from({ length: 21 }, (_, i) =>
+  `assets/rotate/${String(i + 1).padStart(2, "0")}.png`
+);
 
-/* Each frame is 600x779. Coordinates below are in those same units;
-   we scale them to the rendered device size at runtime.
-
-   Per feature, we store an array of 21 entries — one per frame:
-     { x, y, vis }   where vis ∈ [0, 1] (1 = clearly seen, 0 = on the back / hidden)
-
-   Coordinates were read from the source frames. If a feature is on the
-   far side of the device for a given frame, vis = 0 and the line hides.
-
-   Frame index is 0..20 (UI shows 1..21).
-*/
-
-// Helper: build a smooth visibility curve. Peaks at `peak`, fades out around it.
-const visCurve = (peak, halfWidth) => (i) => {
-  const d = Math.abs(i - peak);
-  if (d > halfWidth) return 0;
-  const t = 1 - d / halfWidth;
-  return Math.max(0, t);
-};
-
-// Anchor coordinates per frame, picked from the contact sheet.
-// Frames are 600x779. Center column of the device varies by frame as it
-// foreshortens; here are roughly-centered "device center" anchors per frame:
-const DEVICE_CX = [
-  295, 290, 285, 285, 290, 295, 300, // 1-7 (blue rotating to face)
-  305, 310, 312, 312, 312, 308, 305, // 8-14 (rotating away)
-  300, 295, 295, 298, 302, 305, 300, // 15-21 (back → returning)
-];
-
-// Per-feature data: we describe "best frame" + a hand-tuned position
-// trajectory. For each feature we provide an array of {x,y} per frame and
-// a vis curve. To keep the file tractable, positions for non-peak frames are
-// interpolated from a few keyframes per feature.
-
-// Render rule: a feature shows on a frame iff F.pos[frame] is defined.
-// visKeys / visCurve are vestigial — kept only for legacy/debugging.
+/* ─── Feature hotspot calibration (600×779 image coords) ─────────────────── */
+/* Features are numbered in left-to-right rotation order across the 21 frames.
+   Each card gets a roughly even slice of the rotation: card N's bestFrame
+   is around (N-1)*3+1, so as the device rotates the auto-highlight cycles
+   through cards 1..7 in order. */
 const F_KEYS = {
-  // 1 — Locking Button (frames 0–20, traces top of grip across rotation)
   1: {
-    label: "Locking Button",
-    desc: "Switches grip modes. Squeeze and hold, then push down to lock.",
-    bestFrame: 0,
-    vis: visCurve(0, 2),
+    n: 1, label: "Grip Plate", desc: "Squeeze the plate with your fingers to record force.",
+    bestFrame: 1,
     pos: {
-      0:  { x: 263, y: 114 }, 1:  { x: 273, y: 114 }, 2:  { x: 282, y: 114 },
-      3:  { x: 284, y: 114 }, 4:  { x: 286, y: 113 }, 5:  { x: 291, y: 117 },
-      6:  { x: 304, y: 116 }, 7:  { x: 309, y: 115 }, 8:  { x: 315, y: 115 },
-      9:  { x: 326, y: 115 }, 10: { x: 335, y: 115 }, 11: { x: 325, y: 107 },
-      12: { x: 319, y: 106 }, 13: { x: 314, y: 106 }, 14: { x: 304, y: 107 },
-      15: { x: 294, y: 108 }, 16: { x: 284, y: 109 }, 17: { x: 268, y: 110 },
-      18: { x: 255, y: 113 }, 19: { x: 248, y: 114 }, 20: { x: 251, y: 114 },
+      0:{x:216,y:368},1:{x:245,y:368},2:{x:272,y:371},3:{x:294,y:372},4:{x:347,y:369},
+      5:{x:368,y:369},6:{x:378,y:369},7:{x:384,y:369},8:{x:384,y:369},9:{x:384,y:369},
+      10:{x:374,y:369},11:{x:363,y:369},12:{x:352,y:369},
+      18:{x:239,y:367},19:{x:220,y:367},20:{x:205,y:368},
     },
-    visKeys: {},
   },
-  // 2 — Strap Hooks (frames 0–20)
   2: {
-    label: "Strap Hooks",
-    desc: "Two attachment points for silicone straps.",
-    bestFrame: 5,
-    vis: visCurve(5, 10),
+    n: 2, label: "Locking Button", desc: "Switches grip modes. Squeeze and hold, then push down to lock.",
+    bestFrame: 4,
     pos: {
-      0:  { x: 356, y: 176 }, 1:  { x: 362, y: 176 }, 2:  { x: 362, y: 176 },
-      3:  { x: 368, y: 173 }, 4:  { x: 227, y: 177 }, 5:  { x: 240, y: 177 },
-      6:  { x: 251, y: 177 }, 7:  { x: 270, y: 179 }, 8:  { x: 287, y: 178 },
-      9:  { x: 308, y: 177 }, 10: { x: 330, y: 176 }, 11: { x: 345, y: 176 },
-      12: { x: 361, y: 176 }, 13: { x: 364, y: 177 }, 14: { x: 372, y: 177 },
-      15: { x: 372, y: 176 }, 16: { x: 242, y: 175 }, 17: { x: 251, y: 177 },
-      18: { x: 267, y: 177 }, 19: { x: 290, y: 177 }, 20: { x: 331, y: 177 },
+      0:{x:263,y:114},1:{x:273,y:114},2:{x:282,y:114},3:{x:284,y:114},4:{x:286,y:113},
+      5:{x:291,y:117},6:{x:304,y:116},7:{x:309,y:115},8:{x:315,y:115},9:{x:326,y:115},
+      10:{x:335,y:115},11:{x:325,y:107},12:{x:319,y:106},13:{x:314,y:106},14:{x:304,y:107},
+      15:{x:294,y:108},16:{x:284,y:109},17:{x:268,y:110},18:{x:255,y:113},19:{x:248,y:114},20:{x:251,y:114},
     },
-    visKeys: {},
   },
-  // 3 — Grip Plate (frames 0–12, 18–20)
   3: {
-    label: "Grip Plate",
-    desc: "Squeeze the plate with your fingers to record force.",
-    bestFrame: 2,
-    vis: visCurve(2, 3),
+    n: 3, label: "Strap Hooks", desc: "Two attachment points for silicone straps.",
+    bestFrame: 7,
     pos: {
-      0:  { x: 216, y: 368 }, 1:  { x: 245, y: 368 }, 2:  { x: 272, y: 371 },
-      3:  { x: 294, y: 372 }, 4:  { x: 347, y: 369 }, 5:  { x: 368, y: 369 },
-      6:  { x: 378, y: 369 }, 7:  { x: 384, y: 369 }, 8:  { x: 384, y: 369 },
-      9:  { x: 384, y: 369 }, 10: { x: 374, y: 369 }, 11: { x: 363, y: 369 },
-      12: { x: 352, y: 369 },
-      18: { x: 239, y: 367 }, 19: { x: 220, y: 367 }, 20: { x: 205, y: 368 },
+      0:{x:356,y:176},1:{x:362,y:176},2:{x:362,y:176},3:{x:368,y:173},4:{x:227,y:177},
+      5:{x:240,y:177},6:{x:251,y:177},7:{x:270,y:179},8:{x:287,y:178},9:{x:308,y:177},
+      10:{x:330,y:176},11:{x:345,y:176},12:{x:361,y:176},13:{x:364,y:177},14:{x:372,y:177},
+      15:{x:372,y:176},16:{x:242,y:175},17:{x:251,y:177},18:{x:267,y:177},19:{x:290,y:177},20:{x:331,y:177},
     },
-    visKeys: {},
   },
-  // 4 — Battery LED (frames 7–15)
   4: {
-    label: "Battery LED",
-    desc: "At-a-glance charge status. Green / Yellow / Orange / Red.",
-    bestFrame: 9,
-    vis: visCurve(9, 3),
+    n: 4, label: "Battery LED", desc: "At-a-glance charge status. Green / Yellow / Orange / Red.",
+    bestFrame: 10,
     legend: {
       title: "Battery LED",
       items: [
@@ -111,45 +70,31 @@ const F_KEYS = {
       ],
     },
     pos: {
-      7:  { x: 240, y: 620 }, 8:  { x: 240, y: 621 }, 9:  { x: 239, y: 623 },
-      10: { x: 252, y: 627 }, 11: { x: 266, y: 630 }, 12: { x: 292, y: 633 },
-      13: { x: 317, y: 634 }, 14: { x: 325, y: 634 }, 15: { x: 350, y: 630 },
+      7:{x:240,y:620},8:{x:240,y:621},9:{x:239,y:623},10:{x:252,y:627},11:{x:266,y:630},
+      12:{x:292,y:633},13:{x:317,y:634},14:{x:325,y:634},15:{x:350,y:630},
     },
-    visKeys: {},
   },
-  // 5 — Lanyard Hook (frames 11–17)
   5: {
-    label: "Lanyard Hook",
-    desc: "Attachment point for the wrist lanyard.",
-    bestFrame: 14,
-    vis: visCurve(14, 4),
+    n: 5, label: "Lanyard Hook", desc: "Attachment point for the wrist lanyard.",
+    bestFrame: 13,
     pos: {
-      11: { x: 232, y: 658 }, 12: { x: 249, y: 665 }, 13: { x: 270, y: 667 },
-      14: { x: 291, y: 670 }, 15: { x: 315, y: 667 }, 16: { x: 331, y: 665 },
-      17: { x: 352, y: 659 },
+      11:{x:232,y:658},12:{x:249,y:665},13:{x:270,y:667},14:{x:291,y:670},
+      15:{x:315,y:667},16:{x:331,y:665},17:{x:352,y:659},
     },
-    visKeys: {},
   },
-  // 6 — Charging Port (frames 9–18)
   6: {
-    label: "Charging Port",
-    desc: "Magnetic connector for fast, fumble-free charging.",
-    bestFrame: 14,
-    vis: visCurve(14, 3),
+    n: 6, label: "Charging Port", desc: "Magnetic connector for fast, fumble-free charging.",
+    bestFrame: 16,
     pos: {
-      9:  { x: 212, y: 616 }, 10: { x: 214, y: 621 }, 11: { x: 228, y: 624 },
-      12: { x: 248, y: 629 }, 13: { x: 270, y: 631 }, 14: { x: 294, y: 634 },
-      15: { x: 316, y: 632 }, 16: { x: 337, y: 628 }, 17: { x: 357, y: 623 },
-      18: { x: 367, y: 616 },
+      9:{x:212,y:616},10:{x:214,y:621},11:{x:228,y:624},12:{x:248,y:629},13:{x:270,y:631},
+      14:{x:294,y:634},15:{x:316,y:632},16:{x:337,y:628},17:{x:357,y:623},18:{x:367,y:616},
     },
-    visKeys: {},
   },
-  // 7 — Connection LED (frames 7–17)
   7: {
-    label: "Connection LED",
-    desc: "Pairing and connection status indicator.",
-    bestFrame: 18,
-    vis: visCurve(18, 3),
+    n: 7, label: "Connection LED", desc: "Pairing and connection status indicator.",
+    // Connection LED's anchor data only covers frames 7-17, so bestFrame
+    // stays inside that window even though its slot extends to frame 20.
+    bestFrame: 17,
     legend: {
       title: "Connection LED",
       items: [
@@ -159,56 +104,444 @@ const F_KEYS = {
       ],
     },
     pos: {
-      7:  { x: 205, y: 177 }, 8:  { x: 204, y: 178 }, 9:  { x: 210, y: 178 },
-      10: { x: 215, y: 178 }, 11: { x: 229, y: 178 }, 12: { x: 250, y: 177 },
-      13: { x: 277, y: 178 }, 14: { x: 294, y: 178 }, 15: { x: 317, y: 176 },
-      16: { x: 347, y: 177 }, 17: { x: 353, y: 177 },
+      7:{x:205,y:177},8:{x:204,y:178},9:{x:210,y:178},10:{x:215,y:178},11:{x:229,y:178},
+      12:{x:250,y:177},13:{x:277,y:178},14:{x:294,y:178},15:{x:317,y:176},16:{x:347,y:177},17:{x:353,y:177},
     },
-    visKeys: {},
   },
 };
 
-// Linear-interpolate keyframe data for a feature at frame index `f` (0..20)
-const interpKey = (keys, f, fallback) => {
-  if (keys[f] !== undefined) return keys[f];
-  // find surrounding keys
-  const ks = Object.keys(keys).map(Number).sort((a, b) => a - b);
+const FEATURES = Object.values(F_KEYS);
+
+/* Cards 1-4 down the left rail, 5-7 down the right rail, in numbered order. */
+const LEFT_FEATURES = [1, 2, 3, 4];
+const RIGHT_FEATURES = [5, 6, 7];
+
+/* Vertical offset (in % of stage height) applied to the floating badge —
+   lets us spread crowded hotspots without moving the anchor point on the
+   device. Positive = nudge down, negative = nudge up. */
+const BADGE_Y_OFFSET = {
+  2: -4,  // Locking Button — sits just marginally above the device anchor
+  4: -3,  // Battery LED — nudge up so it doesn't crowd the Lanyard Hook below
+  5:  3,  // Lanyard Hook — nudge down for the same reason
+};
+
+/* Badges are parked on the outer rails of the stage (in % of stage width)
+   so they never overlap the device silhouette as it rotates. The leader
+   lines do all the stretching. */
+const LEFT_RAIL_X = 4;   // % from left edge
+const RIGHT_RAIL_X = 96; // % from left edge
+const LINE_GAP = 4;      // % — line stops this far short of the feature point
+
+/* ─── Helpers ──────────────────────────────────────────────────────────────── */
+const interpPos = (pos, f) => {
+  if (pos[f]) return pos[f];
+  const ks = Object.keys(pos).map(Number).sort((a, b) => a - b);
+  if (ks.length === 0) return null;
+  if (f < ks[0] || f > ks[ks.length - 1]) return null;
   let lo = ks[0], hi = ks[ks.length - 1];
   for (const k of ks) { if (k <= f) lo = k; }
-  for (let i = ks.length - 1; i >= 0; i--) { if (ks[i] >= f) hi = ks[i]; }
-  if (lo === hi) return keys[lo];
-  if (f < ks[0]) return keys[ks[0]];
-  if (f > ks[ks.length - 1]) return keys[ks[ks.length - 1]];
+  for (let i = ks.length - 1; i >= 0; i--) { if (ks[i] >= f) { hi = ks[i]; break; } }
+  if (lo === hi) return pos[lo];
   const t = (f - lo) / (hi - lo);
-  const a = keys[lo], b = keys[hi];
-  if (typeof a === "number") return a + (b - a) * t;
-  return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t };
+  return { x: pos[lo].x + (pos[hi].x - pos[lo].x) * t, y: pos[lo].y + (pos[hi].y - pos[lo].y) * t };
 };
 
-const hotspotAt = (featureN, frame) => {
-  const F = F_KEYS[featureN];
-  const pos = interpKey(F.pos, frame, { x: 300, y: 400 });
-  const vis = interpKey(F.visKeys, frame, 0);
-  return { x: pos.x, y: pos.y, vis: Math.max(0, Math.min(1, vis)) };
-};
+/* ─── LED Legend ─────────────────────────────────────────────────────────────── */
+function LedLegend({ legend }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 12 }}>
+      {legend.items.map((it, i) => (
+        <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5 }}>
+          <span style={{
+            width: 10, height: 10, borderRadius: 9999, background: it.dot, flexShrink: 0,
+            boxShadow: it.dot.startsWith("rgba") ? "inset 0 0 0 1px rgba(0,0,0,0.15)" : "0 0 0 2px rgba(255,255,255,0.6)",
+            animation: it.pulse ? "gr-pulse 1.4s ease-in-out infinite" : "none",
+          }} />
+          <span style={{ fontWeight: 600, color: "#191919", minWidth: 78 }}>{it.k}</span>
+          <span style={{ color: "rgba(25,25,25,0.7)" }}>{it.v}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
-const FEATURES = Object.entries(F_KEYS).map(([n, v]) => ({ n: Number(n), ...v }));
+/* ─── Feature card (shared across breakpoints) ─────────────────────────────── */
+function FeatureCard({ feature, active, align, compact, onSelect }) {
+  const reverse = align === "left";
+  return (
+    <button
+      type="button"
+      onClick={onSelect}
+      style={{
+        width: "100%", textAlign: reverse ? "right" : "left",
+        background: active ? "#fff" : "rgba(255,255,255,0.08)",
+        backdropFilter: "blur(6px)",
+        border: active ? "1px solid rgba(0,255,210,0.6)" : "1px solid rgba(255,255,255,0.16)",
+        borderRadius: 14,
+        padding: compact ? "12px 14px" : "14px 16px",
+        cursor: "pointer",
+        boxShadow: active
+          ? "0 16px 40px -8px rgba(0,0,0,0.32), 0 0 0 4px rgba(0,255,210,0.18)"
+          : "0 1px 2px rgba(0,0,0,0.10)",
+        transition: "background 220ms, border-color 220ms, box-shadow 240ms cubic-bezier(0.16,1,0.3,1), transform 240ms cubic-bezier(0.16,1,0.3,1)",
+        transform: active ? "translateY(-1px)" : "translateY(0)",
+        fontFamily: "inherit",
+        display: "block",
+      }}
+    >
+      <div style={{
+        display: "flex", alignItems: "flex-start", gap: 12,
+        flexDirection: reverse ? "row-reverse" : "row",
+      }}>
+        <span
+          aria-hidden="true"
+          style={{
+            flexShrink: 0,
+            width: 30, height: 30, borderRadius: 9999,
+            background: active ? "#00FFD2" : "rgba(255,255,255,0.95)",
+            color: active ? "#191919" : "#1432FF",
+            fontWeight: 700, fontSize: 13,
+            display: "inline-flex", alignItems: "center", justifyContent: "center",
+            boxShadow: active ? "0 0 0 4px rgba(0,255,210,0.25)" : "0 1px 3px rgba(0,0,0,0.18)",
+            transition: "all 220ms cubic-bezier(0.16,1,0.3,1)",
+          }}
+        >{feature.n}</span>
+        <div style={{ minWidth: 0, flex: 1 }}>
+          <div style={{
+            fontSize: 14, fontWeight: 700,
+            color: active ? "#191919" : "#fff",
+            marginBottom: 3, letterSpacing: "-0.005em",
+          }}>{feature.label}</div>
+          <div style={{
+            fontSize: 13,
+            color: active ? "rgba(25,25,25,0.72)" : "rgba(255,255,255,0.78)",
+            lineHeight: 1.5, fontWeight: 400,
+          }}>{feature.desc}</div>
+          {feature.legend && active && (
+            <div style={{ animation: "gr-fadein 320ms ease-out" }}>
+              <LedLegend legend={feature.legend} />
+            </div>
+          )}
+        </div>
+      </div>
+    </button>
+  );
+}
 
-/* ─────────── Rotation viewer with tracked hotspots ─────────── */
+/* ─── Device stage (shared across breakpoints) ─────────────────────────────── */
+function DeviceStage({
+  frame, active, clicked, hint, drag, rotating,
+  onPointerDown, onPointerMove, onPointerUp,
+  onHoverRotate, onKeyRotate, onSelectFeature,
+  maxWidth, enableHoverRotate,
+}) {
+  // Hotspots stay visible at all times — no fade during rotation. Flashing
+  // them in and out as the user rotates reads as visual noise.
+  const hotspotOpacity = 1;
+  const hotspotTransition = "none";
+  const frameInt = Math.round(frame);
 
-const GAClassicAnimated = ({ width = 1280, height = 880 }) => {
-  const FRAME_COUNT = FRAMES.length;
-  const [frame, setFrame] = React.useState(2); // start near a nice angle
-  const [active, setActive] = React.useState(null); // null | featureN
-  const [tourMode, setTourMode] = React.useState(false);
-  const [hint, setHint] = React.useState(true); // "drag to rotate" hint
-  const targetFrame = React.useRef(2);
-  const rafRef = React.useRef(null);
-  const stageRef = React.useRef(null);
+  return (
+    <div
+      role="slider"
+      tabIndex={0}
+      aria-label="GripAble sensor — drag or use arrow keys to rotate"
+      aria-valuemin={1}
+      aria-valuemax={FRAMES.length}
+      aria-valuenow={frameInt + 1}
+      style={{
+        position: "relative",
+        width: "100%",
+        maxWidth,
+        margin: "0 auto",
+        aspectRatio: "600 / 779",
+        touchAction: "none",
+        userSelect: "none",
+        cursor: drag ? "grabbing" : "grab",
+        outline: "none",
+      }}
+      onPointerDown={onPointerDown}
+      onPointerMove={(e) => {
+        if (drag) onPointerMove(e);
+        // Hover-to-rotate fires for any mouse pointer. Touch devices use drag instead
+        // (pointerType !== "mouse"), so they aren't affected by this branch.
+        else if (e.pointerType === "mouse") onHoverRotate(e);
+      }}
+      onPointerUp={onPointerUp}
+      onPointerLeave={onPointerUp}
+      onKeyDown={onKeyRotate}
+    >
+      {/* Soft contact shadow under device */}
+      <div style={{
+        position: "absolute", left: "50%", bottom: "2%",
+        transform: "translateX(-50%)",
+        width: "62%", height: "5%",
+        borderRadius: "50%",
+        background: "radial-gradient(ellipse at center, rgba(0,0,0,0.32) 0%, transparent 70%)",
+        filter: "blur(6px)", pointerEvents: "none", zIndex: 0,
+      }} />
 
-  // Smoothly chase a target frame
-  const setTarget = (t) => {
-    targetFrame.current = Math.max(0, Math.min(FRAME_COUNT - 1, t));
+      {/* Aqua glow */}
+      <div style={{
+        position: "absolute", left: "50%", bottom: "1%",
+        transform: "translateX(-50%)",
+        width: "56%", height: "4%",
+        borderRadius: "50%",
+        background: "radial-gradient(ellipse at center, rgba(0,255,210,0.45) 0%, transparent 70%)",
+        filter: "blur(8px)", pointerEvents: "none", zIndex: 0,
+      }} />
+
+      {/* Frame stack — all eager so fast rotations never land on an unloaded frame */}
+      {FRAMES.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt=""
+          draggable={false}
+          loading="eager"
+          decoding="sync"
+          fetchpriority={i === frameInt ? "high" : "low"}
+          style={{
+            position: "absolute", inset: 0,
+            width: "100%", height: "100%",
+            objectFit: "contain",
+            pointerEvents: "none",
+            // Snap between frames instantly. A fade transition causes brief
+            // moments where neighboring frames are both partially visible,
+            // which reads as the device "disappearing" mid-rotation.
+            opacity: i === frameInt ? 1 : 0,
+            filter: "drop-shadow(0 24px 28px rgba(0,0,0,0.22))",
+            zIndex: 1,
+          }}
+        />
+      ))}
+
+      {/* Leader lines — single SVG overlay. Lines stretch dynamically from
+          each feature anchor (which moves with rotation) to a fixed badge
+          position parked off the device on either side rail. */}
+      <svg
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+        style={{
+          position: "absolute", inset: 0, width: "100%", height: "100%",
+          pointerEvents: "none", zIndex: 3, overflow: "visible",
+          opacity: hotspotOpacity, transition: hotspotTransition,
+        }}
+      >
+        {FEATURES.map((F) => {
+          // In click-mode, only the clicked feature's line is shown.
+          if (clicked != null && clicked !== F.n) return null;
+          const p = interpPos(F.pos, frameInt);
+          if (!p) return null;
+          const isActive = active === F.n;
+          const goesLeft = LEFT_FEATURES.includes(F.n);
+          const ax = (p.x / 600) * 100;
+          const ay = (p.y / 779) * 100;
+          // Badge Y is anchored to the bestFrame's Y so it stays put across rotation;
+          // only the device-side end of the line moves with the active frame.
+          const restPos = F.pos[F.bestFrame] ?? p;
+          const badgeY = (restPos.y / 779) * 100 + (BADGE_Y_OFFSET[F.n] ?? 0);
+          const tickX = goesLeft ? ax - LINE_GAP : ax + LINE_GAP;
+          const badgeX = goesLeft ? LEFT_RAIL_X : RIGHT_RAIL_X;
+          return (
+            <line
+              key={F.n}
+              x1={tickX} y1={ay} x2={badgeX} y2={badgeY}
+              stroke={isActive ? "rgba(0,255,210,0.95)" : "rgba(255,255,255,0.7)"}
+              strokeWidth={isActive ? 1.5 : 1}
+              vectorEffect="non-scaling-stroke"
+              strokeLinecap="round"
+              style={{
+                filter: isActive ? "drop-shadow(0 0 3px rgba(0,255,210,0.6))" : "none",
+                transition: "stroke 220ms, stroke-width 220ms",
+              }}
+            />
+          );
+        })}
+      </svg>
+
+      {/* Numbered hotspots — badge is always rendered at its stable rail position;
+          the device-side tick only appears when the feature anchor is visible
+          for the current frame. In click-mode, only the clicked feature shows. */}
+      {FEATURES.map((F) => {
+        if (clicked != null && clicked !== F.n) return null;
+        const p = interpPos(F.pos, frameInt);
+        const isActive = active === F.n;
+        const goesLeft = LEFT_FEATURES.includes(F.n);
+        const restPos = F.pos[F.bestFrame] ?? p;
+        if (!restPos) return null;
+        const restY = (restPos.y / 779) * 100;
+        const ax = p ? (p.x / 600) * 100 : null;
+        const ay = p ? (p.y / 779) * 100 : null;
+        const badgeY = restY + (BADGE_Y_OFFSET[F.n] ?? 0);
+        const tickX = ax != null ? (goesLeft ? ax - LINE_GAP : ax + LINE_GAP) : null;
+        const badgeCx = goesLeft ? LEFT_RAIL_X : RIGHT_RAIL_X;
+
+        return (
+          <div
+            key={F.n}
+            style={{
+              position: "absolute",
+              left: 0, top: 0, right: 0, bottom: 0,
+              pointerEvents: "none",
+              zIndex: 4,
+              opacity: hotspotOpacity,
+              transition: hotspotTransition,
+            }}
+          >
+            {/* Tiny tick at the device-side end of the line, stopping short of
+                the point. Only rendered when this feature has an anchor for the
+                current frame (otherwise the badge stays parked but with no line). */}
+            {tickX != null && ay != null && (
+              <span
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  left: `${tickX}%`,
+                  top: `${ay}%`,
+                  width: 5, height: 5,
+                  borderRadius: 9999,
+                  transform: "translate(-50%, -50%)",
+                  background: isActive ? "#00FFD2" : "rgba(255,255,255,0.95)",
+                  boxShadow: isActive
+                    ? "0 0 0 3px rgba(0,255,210,0.28)"
+                    : "0 0 0 1px rgba(20,50,255,0.18)",
+                  transition: "background 220ms, box-shadow 220ms",
+                }}
+              />
+            )}
+            {/* Numbered badge — floats to the side, slightly offset vertically when crowded */}
+            <button
+              type="button"
+              onClick={(e) => { e.stopPropagation(); onSelectFeature(F.n); }}
+              onPointerDown={(e) => e.stopPropagation()}
+              aria-label={`Feature ${F.n}: ${F.label}`}
+              style={{
+                position: "absolute",
+                left: `${badgeCx}%`,
+                top: `${badgeY}%`,
+                transform: "translate(-50%, -50%)",
+                width: "clamp(22px, 4.6%, 30px)",
+                aspectRatio: "1 / 1",
+                padding: 0, border: "none",
+                borderRadius: 9999,
+                background: isActive ? "#00FFD2" : "rgba(255,255,255,0.96)",
+                color: isActive ? "#191919" : "#1432FF",
+                fontWeight: 700,
+                fontSize: "clamp(10px, 2vw, 13px)",
+                fontFamily: "inherit",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                boxShadow: isActive
+                  ? "0 0 0 5px rgba(0,255,210,0.32), 0 2px 6px rgba(0,0,0,0.25)"
+                  : "0 2px 6px rgba(0,0,0,0.22), 0 0 0 1px rgba(20,50,255,0.08)",
+                cursor: "pointer",
+                pointerEvents: rotating ? "none" : "auto",
+                transition: "background 200ms, color 200ms, box-shadow 240ms cubic-bezier(0.16,1,0.3,1), transform 240ms",
+                animation: isActive ? "gr-dot-pulse 1.8s ease-in-out infinite" : "none",
+              }}
+            >
+              {F.n}
+            </button>
+          </div>
+        );
+      })}
+
+      {/* Hint pill */}
+      {hint && (
+        <div style={{
+          position: "absolute", left: "50%", bottom: "-6%",
+          transform: "translateX(-50%)",
+          background: "rgba(20,50,255,0.95)", color: "#fff",
+          padding: "7px 16px", borderRadius: 9999,
+          fontSize: 12, fontWeight: 600, letterSpacing: "0.04em",
+          display: "inline-flex", alignItems: "center", gap: 7,
+          whiteSpace: "nowrap", pointerEvents: "none", zIndex: 4,
+          animation: "gr-bob 2s ease-in-out infinite",
+        }}>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 12a9 9 0 1 0 3-6.7"/>
+            <polyline points="3 4 3 9 8 9"/>
+          </svg>
+          Drag to rotate
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ─── Main component ─────────────────────────────────────────────────────────── */
+function GripableRotate() {
+  const containerRef = useRef(null);
+  const stageRef = useRef(null);
+  const [containerW, setContainerW] = useState(1200);
+  const [frame, setFrame] = useState(2);
+  // `clicked` is set when the user clicks a feature card; in this mode only
+  // the clicked feature's hotspot is shown and the device snaps to its peak
+  // frame. When null, the component is in auto-mode: hover/drag rotates the
+  // device and the active card is derived from the current frame.
+  const [clicked, setClicked] = useState(null);
+  const [hint, setHint] = useState(true);
+  const [mobileIdx, setMobileIdx] = useState(0);
+  const targetFrame = useRef(2);
+  const rafRef = useRef(null);
+  const dragRef = useRef({ active: false, startX: 0, startFrame: 0, dragged: false });
+  const [isDragging, setIsDragging] = useState(false);
+  const [isRotating, setIsRotating] = useState(false);
+  const rotateIdleTimer = useRef(null);
+
+  /* Mark that the user is actively rotating the device. Hotspots fade out
+     while this is true and fade back in ~280ms after the last rotate event.
+     Manual rotation also exits click-mode so all 7 cards become live again. */
+  const flagRotating = useCallback(() => {
+    setClicked(null);
+    setIsRotating(true);
+    if (rotateIdleTimer.current) clearTimeout(rotateIdleTimer.current);
+    rotateIdleTimer.current = setTimeout(() => setIsRotating(false), 280);
+  }, []);
+
+  useEffect(() => () => {
+    if (rotateIdleTimer.current) clearTimeout(rotateIdleTimer.current);
+  }, []);
+
+  /* Measure container */
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver((entries) => {
+      setContainerW(entries[0].contentRect.width);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  /* Pre-decode every frame on mount. Without this, the PNG that we promote
+     to opacity:1 may still be decoding (decoding="async"), so during fast
+     rotation there's a beat where the new frame hasn't painted yet and the
+     old frame already went to opacity:0 — visually the device "disappears".
+     Pre-decoding guarantees all 21 frames are paint-ready before the user
+     ever rotates. */
+  useEffect(() => {
+    let cancelled = false;
+    Promise.all(
+      FRAMES.map((src) => {
+        const img = new Image();
+        img.src = src;
+        return img.decode().catch(() => undefined);
+      })
+    ).then(() => {
+      if (cancelled) return;
+    });
+    return () => { cancelled = true; };
+  }, []);
+
+  const isMobile  = containerW < 700;
+  const isTablet  = containerW >= 700 && containerW < 1100;
+  const isDesktop = containerW >= 1100;
+
+  /* Smooth frame chasing */
+  const setTarget = useCallback((t) => {
+    targetFrame.current = Math.max(0, Math.min(FRAMES.length - 1, t));
     if (!rafRef.current) {
       const tick = () => {
         setFrame((f) => {
@@ -218,495 +551,347 @@ const GAClassicAnimated = ({ width = 1280, height = 880 }) => {
             return targetFrame.current;
           }
           rafRef.current = requestAnimationFrame(tick);
-          return f + diff * 0.18;
+          return f + diff * 0.22;
         });
       };
       rafRef.current = requestAnimationFrame(tick);
     }
-  };
+  }, []);
 
-  // Drag-to-rotate
-  const drag = React.useRef({ active: false, startX: 0, startFrame: 0 });
+  useEffect(() => {
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, []);
+
+  /* Auto-highlight: in auto-mode, derive the active card from the current
+     frame by picking whichever feature's bestFrame is closest. This makes
+     cards highlight in order 1→7 as the device scrolls left-to-right. */
+  const frameInt = Math.round(frame);
+  const autoActive = (() => {
+    let best = FEATURES[0].n;
+    let minD = Infinity;
+    for (const F of FEATURES) {
+      const d = Math.abs(F.bestFrame - frameInt);
+      if (d < minD) { minD = d; best = F.n; }
+    }
+    return best;
+  })();
+  const active = clicked ?? autoActive;
+
+  /* Pointer handlers — drag-to-rotate on the device */
   const onPointerDown = (e) => {
-    drag.current = { active: true, startX: e.clientX, startFrame: targetFrame.current };
+    dragRef.current = {
+      active: true,
+      startX: e.clientX,
+      startFrame: targetFrame.current,
+      dragged: false,
+    };
+    setIsDragging(true);
     setHint(false);
-    e.currentTarget.setPointerCapture?.(e.pointerId);
+    e.currentTarget.setPointerCapture(e.pointerId);
   };
   const onPointerMove = (e) => {
-    if (!drag.current.active) {
-      // Mouse-hover rotation across the device area
-      if (!stageRef.current || tourMode) return;
-      const rect = stageRef.current.getBoundingClientRect();
-      const t = (e.clientX - rect.left) / rect.width; // 0..1
-      const tt = Math.max(0, Math.min(1, t));
-      // Map to frame range with a softer center bias so it feels natural
-      setTarget(tt * (FRAME_COUNT - 1));
-      return;
-    }
-    const dx = e.clientX - drag.current.startX;
-    // rotation sensitivity: 320px to traverse all frames
-    const next = drag.current.startFrame + (dx / 320) * (FRAME_COUNT - 1);
-    setTarget(next);
+    if (!dragRef.current.active) return;
+    const dx = e.clientX - dragRef.current.startX;
+    if (Math.abs(dx) > 3) dragRef.current.dragged = true;
+    // 280px swipe = full rotation. Reasonable across all sizes.
+    setTarget(dragRef.current.startFrame + (dx / 280) * (FRAMES.length - 1));
+    flagRotating();
   };
   const onPointerUp = (e) => {
-    drag.current.active = false;
-    e.currentTarget.releasePointerCapture?.(e.pointerId);
+    if (!dragRef.current.active) return;
+    dragRef.current.active = false;
+    setIsDragging(false);
+    try { e.currentTarget.releasePointerCapture(e.pointerId); } catch { /* ignore */ }
   };
 
-  // Tour mode: animate to the active feature's bestFrame
-  React.useEffect(() => {
-    if (active == null) return;
-    const f = F_KEYS[active];
-    if (f) setTarget(f.bestFrame);
-  }, [active]);
-
-  // Auto-loop in idle when the user hasn't interacted for a while → off by default,
-  // a subtle micro-float instead.
-  // (kept calm: the explicit drag/tour drives motion.)
-
-  const onSelectFeature = (n) => {
-    setTourMode(true);
-    setActive(n);
-    setHint(false);
-  };
-  const exitTour = () => {
-    setTourMode(false);
-    setActive(null);
+  /* Desktop hover-to-rotate: maps cursor X across the stage to a frame */
+  const onHoverRotate = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const t = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+    setTarget(t * (FRAMES.length - 1));
+    flagRotating();
+    if (hint) setHint(false);
   };
 
-  // Card layout (responsive)
-  const isCompact = width < 1100;
-  const cardW = isCompact ? 200 : 250;
-  const railLeftX = isCompact ? 32 : 56;
-  const railRightX = width - railLeftX - cardW;
-  const cardGap = 24;
-
-  // Device size — clamp so cards never collide with the device.
-  const maxDevByWidth = Math.max(260, width - 2 * (railLeftX + cardW + cardGap));
-  const devW = Math.min(540, maxDevByWidth);
-  const devH = devW * (779 / 600);
-  const devX = width / 2 - devW / 2;
-  const devY = (height - devH) / 2 + 30;
-  const SCALE = devW / 600;
-
-  // Distribute cards along the side rails using each feature's "best side" to match the screenshot:
-  // 1 Locking, 6 Charging, 7 Connection on left
-  // 2 Strap, 3 Grip, 4 Battery, 5 Lanyard on right
-  const leftSide = [1, 6, 7];
-  const rightSide = [2, 3, 4, 5];
-
-  const placeCol = (ids, side) => {
-    const padTop = 150, padBot = 80;
-    const usable = height - padTop - padBot;
-    const step = usable / Math.max(ids.length, 1);
-    return ids.map((n, idx) => ({
-      n,
-      cardX: side === "left" ? railLeftX : railRightX,
-      cardY: padTop + step * idx,
-      side,
-    }));
-  };
-  const cards = [...placeCol(leftSide, "left"), ...placeCol(rightSide, "right")];
-
-  const frameInt = Math.round(frame);
-
-  // Compute current hotspot positions in stage coordinates.
-  // Rule: a feature renders ONLY on frames where F.pos has an explicit key —
-  // no interpolation fallback, no visibility curve. If you didn't click it
-  // in the calibrator, it doesn't show.
-  const hotspots = FEATURES.map((F) => {
-    const exact = F_KEYS[F.n].pos[frameInt];
-    if (!exact) {
-      return { n: F.n, sx: 0, sy: 0, vis: 0, hidden: true };
+  /* Keyboard arrows rotate the device by one frame at a time. Like
+     hover/drag rotation, this exits click-mode so the auto-cycling
+     active-card highlight resumes. */
+  const onKeyRotate = (e) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      flagRotating();
+      setTarget(targetFrame.current - 1);
+      setHint(false);
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      flagRotating();
+      setTarget(targetFrame.current + 1);
+      setHint(false);
+    } else if (e.key === "Home") {
+      e.preventDefault();
+      flagRotating();
+      setTarget(0);
+    } else if (e.key === "End") {
+      e.preventDefault();
+      flagRotating();
+      setTarget(FRAMES.length - 1);
     }
-    return {
-      n: F.n,
-      sx: devX + exact.x * SCALE,
-      sy: devY + exact.y * SCALE,
-      vis: 1,
-      hidden: false,
-    };
-  });
+  };
+
+  const selectFeature = (n) => {
+    setClicked(n);
+    setTarget(F_KEYS[n].bestFrame);
+    setHint(false);
+    setMobileIdx(FEATURES.findIndex((f) => f.n === n));
+  };
+
+  const stageProps = {
+    frame, active, clicked, hint, drag: isDragging,
+    rotating: isRotating,
+    onPointerDown, onPointerMove, onPointerUp,
+    onHoverRotate, onKeyRotate,
+    onSelectFeature: selectFeature,
+    enableHoverRotate: isDesktop,
+  };
 
   return (
-    <div style={{
-      width, height, position: "relative",
-      background: "var(--ac-gradient-hero)",
-      fontFamily: "var(--font-sans)", color: "#fff",
-      overflow: "hidden",
-      userSelect: "none",
-      cursor: drag.current.active ? "grabbing" : "default",
-    }}>
-      {/* Atmospheric overlays from Spotlight */}
-      <div style={{
-        position: "absolute", inset: 0,
-        background: "radial-gradient(900px 560px at 90% 0%, rgba(0,255,210,0.22), transparent 60%), radial-gradient(900px 560px at 0% 100%, rgba(255,255,255,0.10), transparent 60%)",
-        pointerEvents: "none",
-        zIndex: 0,
-      }} />
-      {/* Brandmark watermark — proper Able Care 'A' (white, low opacity over gradient) */}
-      <AbleCareMark x={width - 480} y={height - 380} size={420} opacity={0.10} color="#ffffff" />
+    <section
+      ref={containerRef}
+      style={{
+        width: "100%",
+        background: "linear-gradient(145deg, #0b1fd4 0%, #1432FF 35%, #00a896 75%, #00FFD2 100%)",
+        fontFamily: '"DM Sans", "Arial", sans-serif',
+        color: "#fff",
+        position: "relative",
+        overflow: "hidden",
+      }}
+      aria-label="GripAble sensor interactive viewer"
+    >
+      <style>{`
+        @keyframes gr-pulse {
+          0%,100% { box-shadow: 0 0 0 0 rgba(20,50,255,0.6); }
+          50%      { box-shadow: 0 0 0 6px rgba(20,50,255,0); }
+        }
+        @keyframes gr-dot-pulse {
+          0%,100% { box-shadow: 0 0 0 5px rgba(0,255,210,0.32), 0 2px 6px rgba(0,0,0,0.25); }
+          50%      { box-shadow: 0 0 0 9px rgba(0,255,210,0.10), 0 2px 6px rgba(0,0,0,0.25); }
+        }
+        @keyframes gr-bob {
+          0%,100% { transform: translateX(-50%) translateY(0); }
+          50%      { transform: translateX(-50%) translateY(-3px); }
+        }
+        @keyframes gr-fadein {
+          from { opacity: 0; transform: translateY(4px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
+
+      {/* Atmospheric overlay */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute", inset: 0, pointerEvents: "none", zIndex: 0,
+          background:
+            "radial-gradient(700px 400px at 85% 10%, rgba(0,255,210,0.20), transparent 60%), radial-gradient(600px 400px at 10% 90%, rgba(255,255,255,0.08), transparent 60%)",
+        }}
+      />
 
       {/* Header */}
-      <div style={{ position: "absolute", top: 56, left: 0, right: 0, textAlign: "center", padding: "0 80px", zIndex: 5 }}>
-        <div style={{ fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.25em", color: "var(--ac-aqua)", marginBottom: 14 }}>
+      <header
+        style={{
+          position: "relative", zIndex: 5, textAlign: "center",
+          padding: isMobile ? "40px 24px 0" : "56px 40px 0",
+          maxWidth: 760, margin: "0 auto",
+        }}
+      >
+        <div style={{
+          fontSize: 11, fontWeight: 700, textTransform: "uppercase",
+          letterSpacing: "0.25em", color: "#00FFD2", marginBottom: 12,
+        }}>
           ABOUT GRIPABLE
         </div>
-        <h2 style={{ fontSize: 44, fontWeight: 700, lineHeight: 1.08, letterSpacing: "-0.01em", margin: 0, color: "#fff" }}>
+        <h2 style={{
+          fontSize: isMobile ? 28 : isTablet ? 36 : 44,
+          fontWeight: 700, lineHeight: 1.08, margin: 0,
+          color: "#fff", letterSpacing: "-0.015em",
+        }}>
           GripAble sensor features.
         </h2>
-        <p style={{ fontSize: 17, color: "rgba(255,255,255,0.78)", margin: "10px 0 0", fontWeight: 300 }}>
+        <p style={{
+          fontSize: isMobile ? 14 : 16,
+          color: "rgba(255,255,255,0.78)",
+          margin: "10px 0 0", fontWeight: 300,
+        }}>
           Designed with precision. Built for real-world care.
         </p>
-      </div>
+      </header>
 
-      {/* Connector SVG layer */}
-      <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height}
-           style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 3 }}>
-        {cards.map((c) => {
-          const h = hotspots.find((x) => x.n === c.n);
-          if (!h) return null;
-          const isActive = active === c.n;
-          // Line lands on the badge center. After the layout flip, badges sit
-          // on the device-facing edge of every card (right edge for left-side,
-          // left edge for right-side).
-          const badgeCenterX = c.side === "left" ? c.cardX + cardW - 14 : c.cardX + 14;
-          const cardCenterY = c.cardY + 14;
-          if (h.hidden) return null;
-          if (tourMode && !isActive) return null;
-          const lineOpacity = 1;
-          const stroke = isActive ? "var(--ac-aqua)" : "rgba(255,255,255,0.55)";
-          const w = isActive ? 2 : 1;
-          const dx = (badgeCenterX - h.sx) * 0.5;
-          const d = `M ${h.sx},${h.sy} C ${h.sx + dx},${h.sy} ${badgeCenterX - dx},${cardCenterY} ${badgeCenterX},${cardCenterY}`;
-          return (
-            <g key={c.n} style={{ opacity: lineOpacity, transition: "opacity 240ms" }}>
-              <path d={d} fill="none" stroke={stroke} strokeWidth={w} strokeLinecap="round" />
-            </g>
-          );
-        })}
-      </svg>
+      {/* ─── DESKTOP LAYOUT ───────────────────────────────────────────────── */}
+      {isDesktop && (
+        <div
+          style={{
+            position: "relative", zIndex: 2,
+            display: "grid",
+            gridTemplateColumns: "minmax(220px, 280px) minmax(360px, 1fr) minmax(220px, 280px)",
+            gap: 32,
+            alignItems: "center",
+            maxWidth: 1320,
+            margin: "0 auto",
+            padding: "40px 32px 56px",
+          }}
+        >
+          {/* Left rail */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            {LEFT_FEATURES.map((n) => (
+              <FeatureCard
+                key={n}
+                feature={F_KEYS[n]}
+                active={active === n}
+                align="left"
+                onSelect={() => selectFeature(n)}
+              />
+            ))}
+          </div>
 
-      {/* Device stage — captures pointer events for rotation */}
-      <div
-        ref={stageRef}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={onPointerUp}
-        onPointerLeave={onPointerUp}
-        style={{
-          position: "absolute",
-          left: devX - 80, top: devY - 40,
-          width: devW + 160, height: devH + 80,
-          zIndex: 2,
-          cursor: drag.current.active ? "grabbing" : "grab",
-          touchAction: "none",
-        }}>
-        <div style={{
-          position: "absolute", left: 80, top: 40,
-          width: devW, height: devH,
-        }}>
-          {/* preload all frames, show only current */}
-          {FRAMES.map((src, i) => (
-            <img key={i} src={src} alt="" aria-hidden={i !== frameInt}
-                 draggable={false}
-                 style={{
-                   position: "absolute", inset: 0,
-                   width: "100%", height: "100%",
-                   objectFit: "contain",
-                   opacity: i === frameInt ? 1 : 0,
-                   transition: "opacity 60ms linear",
-                   filter: "drop-shadow(0 30px 40px rgba(0,0,0,0.18))",
-                   pointerEvents: "none",
-                 }} />
-          ))}
-          {/* aqua glow under */}
-          <div style={{
-            position: "absolute", left: "50%", bottom: -10, transform: "translateX(-50%)",
-            width: devW * 0.55, height: 22, borderRadius: "50%",
-            background: "radial-gradient(ellipse at center, rgba(0,255,210,0.35) 0%, transparent 70%)",
-            filter: "blur(10px)",
-            pointerEvents: "none",
-          }} />
+          {/* Device stage */}
+          <div ref={stageRef}>
+            <DeviceStage {...stageProps} maxWidth={420} />
+          </div>
+
+          {/* Right rail */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            {RIGHT_FEATURES.map((n) => (
+              <FeatureCard
+                key={n}
+                feature={F_KEYS[n]}
+                active={active === n}
+                align="right"
+                onSelect={() => selectFeature(n)}
+              />
+            ))}
+          </div>
         </div>
+      )}
 
-        {/* Hotspot dots overlaid on the device — clickable */}
-        {hotspots.map((h) => {
-          if (h.hidden) return null;
-          const isActive = active === h.n;
-          if (tourMode && !isActive) return null;
-          const opacity = 1;
-          return (
-            <button
-              key={h.n}
-              onClick={(e) => { e.stopPropagation(); onSelectFeature(h.n); }}
-              onPointerDown={(e) => e.stopPropagation()}
-              style={{
-                position: "absolute",
-                left: h.sx - devX + 80,
-                top: h.sy - devY + 40,
-                transform: "translate(-50%,-50%)",
-                width: 28, height: 28,
-                borderRadius: 9999,
-                background: "transparent",
-                border: "none",
-                cursor: "pointer",
-                padding: 0,
-                zIndex: 4,
-              }}
-              aria-label={`Feature ${h.n}: ${F_KEYS[h.n].label}`}
-            ></button>
-          );
-        })}
+      {/* ─── TABLET LAYOUT ────────────────────────────────────────────────── */}
+      {isTablet && (
+        <div
+          style={{
+            position: "relative", zIndex: 2,
+            padding: "40px 32px 48px",
+            maxWidth: 880, margin: "0 auto",
+          }}
+        >
+          <div style={{ marginBottom: 36 }}>
+            <DeviceStage {...stageProps} maxWidth={360} />
+          </div>
 
-        {/* Drag-to-rotate hint */}
-        {hint && (
           <div style={{
-            position: "absolute",
-            left: "50%", bottom: 0, transform: "translateX(-50%)",
-            background: "rgba(20,50,255,0.95)", color: "#fff",
-            padding: "8px 16px", borderRadius: 9999,
-            fontSize: 12, fontWeight: 600, letterSpacing: "0.04em",
-            display: "inline-flex", alignItems: "center", gap: 8,
-            boxShadow: "0 4px 16px rgba(20,50,255,0.3)",
-            animation: "ga-bob 2s ease-in-out infinite",
-            pointerEvents: "none",
-            whiteSpace: "nowrap",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: 12,
           }}>
-            <RotateIconRot /> Drag or hover to rotate
+            {FEATURES.map((F) => (
+              <FeatureCard
+                key={F.n}
+                feature={F}
+                active={active === F.n}
+                align="right"
+                compact
+                onSelect={() => selectFeature(F.n)}
+              />
+            ))}
           </div>
-        )}
-      </div>
-
-      {/* Callout cards */}
-      {cards.map((c) => {
-        const F = F_KEYS[c.n];
-        const isActive = active === c.n;
-        return (
-          <div key={c.n}
-               onClick={() => onSelectFeature(c.n)}
-               style={{
-                 position: "absolute", left: c.cardX - (isActive ? 14 : 0), top: c.cardY - (isActive ? 10 : 0),
-                 width: cardW + (isActive ? 28 : 0), cursor: "pointer", zIndex: isActive ? 10 : 4,
-                 opacity: 1,
-                 transition: "all 280ms cubic-bezier(0.16,1,0.3,1)",
-                 padding: isActive ? "14px 16px" : "0",
-                 borderRadius: isActive ? 14 : 0,
-                 background: isActive ? "#fff" : "transparent",
-                 boxShadow: isActive ? "0 12px 32px rgba(0,0,0,0.22), 0 0 0 1px rgba(0,255,210,0.4)" : "none",
-                 border: "none",
-               }}>
-            <div style={{
-              display: "flex",
-              alignItems: "flex-start",
-              gap: 12,
-              flexDirection: c.side === "left" ? "row-reverse" : "row",
-            }}>
-              <BadgeRot n={c.n} active={isActive} scheme={isActive ? "light" : "blue"} onClick={(e) => { e.stopPropagation(); onSelectFeature(c.n); }} />
-              <div style={{ minWidth: 0, textAlign: c.side === "left" ? "right" : "left" }}>
-                <div style={{
-                  fontSize: isActive ? 17 : (isCompact ? 14 : 16),
-                  fontWeight: 700,
-                  letterSpacing: "-0.005em",
-                  marginBottom: 4,
-                  color: isActive ? "var(--ac-black)" : "#fff",
-                  transition: "font-size 220ms, color 220ms",
-                }}>
-                  {F.label}
-                </div>
-                <div style={{
-                  fontSize: isCompact ? 12 : 13.5,
-                  color: isActive ? "var(--ac-black)" : "#fff",
-                  fontWeight: 500,
-                  lineHeight: 1.5,
-                }}>
-                  {F.desc}
-                </div>
-                {F.legend && isActive && (
-                  <div style={{ animation: "ga-fadein 360ms ease-out" }}>
-                    <LedLegendRot legend={F.legend} compact />
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        );
-      })}
-
-      {/* Tour controls — desktop: only shown in tour mode (rotation handles browse) */}
-      {tourMode && (
-        <TourControlsRot
-          active={active}
-          setActive={(n) => onSelectFeature(typeof n === "function" ? n(active ?? 0) : n)}
-          count={FEATURES.length}
-          featureNs={FEATURES.map((f) => f.n)}
-          onExit={exitTour}
-          tourMode={tourMode}
-        />
-      )}
-
-      <KeyframesRot />
-    </div>
-  );
-};
-
-/* ─────────── Sub-components (Badge/LedLegend reused from gripable-features.jsx) ─────────── */
-
-const BadgeRot = ({ n, active, scheme = "light", onClick, size = 28 }) => {
-  const isBlueScheme = scheme === "blue";
-  const bg = active ? "var(--ac-aqua)" : isBlueScheme ? "rgba(255,255,255,0.95)" : "var(--ac-blue)";
-  const fg = active ? "var(--ac-black)" : isBlueScheme ? "var(--ac-blue)" : "#fff";
-  return (
-    <button
-      onClick={onClick}
-      style={{
-        width: size, height: size, borderRadius: 9999,
-        background: bg, color: fg,
-        border: "none",
-        boxShadow: active ? "0 0 0 6px rgba(0,255,210,0.25)" : "0 1px 2px rgba(0,0,0,0.15)",
-        fontWeight: 700, fontSize: size * 0.45, lineHeight: 1,
-        display: "inline-flex", alignItems: "center", justifyContent: "center",
-        cursor: "pointer", transition: "all 220ms cubic-bezier(0.16,1,0.3,1)",
-        fontFamily: "var(--font-sans)",
-        flexShrink: 0,
-      }}
-      aria-label={`Feature ${n}`}
-    >
-      {n}
-    </button>
-  );
-};
-
-const LedLegendRot = ({ legend, compact = false }) => {
-  if (!legend) return null;
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: compact ? 5 : 8, marginTop: 10 }}>
-      {legend.items.map((it, i) => (
-        <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: compact ? 12 : 13 }}>
-          <span style={{
-            width: 10, height: 10, borderRadius: 9999, background: it.dot,
-            flexShrink: 0,
-            boxShadow: it.dot.startsWith("rgba") ? "inset 0 0 0 1px rgba(0,0,0,0.15)" : "0 0 0 2px rgba(255,255,255,0.6)",
-            animation: it.pulse ? "ga-pulse 1.4s ease-in-out infinite" : "none",
-          }} />
-          <span style={{ fontWeight: 600, minWidth: 76, color: "var(--ac-black)" }}>{it.k}</span>
-          <span style={{ color: "var(--ac-black)", opacity: 0.7 }}>{it.v}</span>
         </div>
-      ))}
-    </div>
-  );
-};
-
-const TourControlsRot = ({ active, setActive, count, featureNs, onExit, tourMode }) => {
-  const idx = active == null ? -1 : featureNs.indexOf(active);
-  return (
-    <div style={{
-      position: "absolute", bottom: 36, left: "50%", transform: "translateX(-50%)",
-      display: "flex", alignItems: "center", gap: 14, zIndex: 6,
-      padding: "10px 14px",
-      background: "rgba(255,255,255,0.92)",
-      borderRadius: 9999,
-      border: "1px solid rgba(0,0,0,0.06)",
-      boxShadow: "0 4px 18px rgba(0,0,0,0.07)",
-    }}>
-      <button onClick={() => {
-        const next = idx <= 0 ? featureNs[count - 1] : featureNs[idx - 1];
-        setActive(next);
-      }} style={navBtnRot}>←</button>
-      <div style={{ display: "flex", gap: 6 }}>
-        {featureNs.map((n, i) => (
-          <button key={n} onClick={() => setActive(n)} aria-label={`Feature ${n}`}
-            style={{
-              width: i === idx ? 22 : 7, height: 7, borderRadius: 9999,
-              background: i === idx ? "var(--ac-blue)" : "rgba(0,0,0,0.18)",
-              border: "none", padding: 0, cursor: "pointer",
-              transition: "all 240ms cubic-bezier(0.16,1,0.3,1)",
-            }} />
-        ))}
-      </div>
-      <button onClick={() => {
-        const next = idx >= count - 1 || idx < 0 ? featureNs[0] : featureNs[idx + 1];
-        setActive(next);
-      }} style={navBtnRot}>→</button>
-      <div style={{
-        fontSize: 12, fontWeight: 600, color: "rgba(25,25,25,0.65)",
-        paddingLeft: 8, marginLeft: 4, borderLeft: "1px solid rgba(0,0,0,0.08)",
-        minWidth: 50,
-      }}>
-        {active != null ? `${String(idx + 1).padStart(2, "0")} / ${String(count).padStart(2, "0")}` : `— / ${String(count).padStart(2, "0")}`}
-      </div>
-      {tourMode && (
-        <button onClick={onExit} style={{
-          ...navBtnRot, width: "auto", padding: "0 12px", borderRadius: 9999,
-          background: "transparent", color: "var(--ac-black)",
-          border: "1px solid rgba(0,0,0,0.12)", fontSize: 12,
-        }}>Reset</button>
       )}
-    </div>
+
+      {/* ─── MOBILE LAYOUT ────────────────────────────────────────────────── */}
+      {isMobile && (
+        <div
+          style={{
+            position: "relative", zIndex: 2,
+            padding: "32px 20px 36px",
+          }}
+        >
+          <div style={{ marginBottom: 32 }}>
+            <DeviceStage {...stageProps} maxWidth={280} />
+          </div>
+
+          {/* Carousel nav */}
+          <div style={{
+            display: "flex", alignItems: "center", justifyContent: "center",
+            gap: 8, marginBottom: 14,
+          }}>
+            <button
+              type="button"
+              onClick={() => {
+                const prev = (mobileIdx - 1 + FEATURES.length) % FEATURES.length;
+                selectFeature(FEATURES[prev].n);
+              }}
+              aria-label="Previous feature"
+              style={{
+                width: 32, height: 32, borderRadius: 9999,
+                background: "rgba(255,255,255,0.16)", border: "none",
+                color: "#fff", cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: 16, fontFamily: "inherit",
+              }}
+            >‹</button>
+            <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+              {FEATURES.map((F, i) => (
+                <button
+                  key={F.n}
+                  type="button"
+                  onClick={() => selectFeature(F.n)}
+                  aria-label={`Show ${F.label}`}
+                  style={{
+                    width: i === mobileIdx ? 20 : 8,
+                    height: 8, borderRadius: 9999, padding: 0,
+                    background: i === mobileIdx ? "#00FFD2" : "rgba(255,255,255,0.35)",
+                    border: "none", cursor: "pointer",
+                    transition: "all 240ms cubic-bezier(0.16,1,0.3,1)",
+                  }}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                const next = (mobileIdx + 1) % FEATURES.length;
+                selectFeature(FEATURES[next].n);
+              }}
+              aria-label="Next feature"
+              style={{
+                width: 32, height: 32, borderRadius: 9999,
+                background: "rgba(255,255,255,0.16)", border: "none",
+                color: "#fff", cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: 16, fontFamily: "inherit",
+              }}
+            >›</button>
+          </div>
+
+          {/* Active card */}
+          <FeatureCard
+            feature={FEATURES[mobileIdx]}
+            active
+            align="right"
+            onSelect={() => selectFeature(FEATURES[mobileIdx].n)}
+          />
+
+          <div style={{
+            textAlign: "center", marginTop: 12, fontSize: 12,
+            color: "rgba(255,255,255,0.6)", fontWeight: 500,
+          }}>
+            {mobileIdx + 1} of {FEATURES.length}
+          </div>
+        </div>
+      )}
+    </section>
   );
-};
+}
 
-const navBtnRot = {
-  width: 30, height: 30, borderRadius: 9999,
-  background: "var(--ac-blue)",
-  color: "#fff",
-  border: "none",
-  fontSize: 14, fontWeight: 600,
-  cursor: "pointer",
-  display: "inline-flex", alignItems: "center", justifyContent: "center",
-  transition: "all 200ms",
-  fontFamily: "var(--font-sans)",
-};
-
-const RotateIconRot = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M3 12a9 9 0 1 0 3-6.7" />
-    <polyline points="3 4 3 9 8 9" />
-  </svg>
-);
-
-/* Proper Able Care 'A' brandmark — extracted from the official logo SVG.
-   This is the rounded-A glyph (two arches forming an A) at the bottom of the
-   logo. Rendered as a soft watermark. */
-const AbleCareMark = ({ x, y, size = 320, opacity = 0.06, color = "#1432FF" }) => (
-  <svg viewBox="0 0 754 540"
-       style={{ position: "absolute", left: x, top: y, width: size, height: size * (540 / 754),
-                opacity, pointerEvents: "none", zIndex: 1 }}
-       aria-hidden="true">
-    <g fill={color} transform="translate(0, -100)">
-      <path d="M377.3,340.5l101.06,140.55l0.03,0.05c22.43,34.28,61.15,56.93,105.17,56.93c69.37,0,125.6-56.23,125.6-125.6
-        c0-29.28-10.02-56.22-26.81-77.57l0-0.01L481.14,55.02C458.54,21.81,420.43,0,377.23,0c-43.58,0-81.97,22.19-104.49,55.89
-        L171.61,196.53l-1.66,2.31c-6.5,9.89-10.29,21.72-10.29,34.43c0,24.08,13.55,44.98,33.44,55.51c7.46,3.95,15.81,6.44,24.67,7.09
-        c1.55,0.11,3.11,0.19,4.68,0.19c21.29,0,40.1-10.59,51.46-26.79l71.07-98.84l0.46-0.65c11.46-15.27,29.71-25.16,50.27-25.16
-        c34.68,0,62.8,28.12,62.8,62.8c0,12.67-3.76,24.45-10.22,34.32L377.3,340.5z" />
-      <path d="M271.72,487.33c-22.89,30.76-59.53,50.7-100.82,50.7c-69.37,0-125.6-56.23-125.6-125.6
-        c0-29.47,10.15-56.56,27.14-77.98l-5.12,7.12l5.12-7.12l97.51-135.6c-6.5,9.89-10.29,21.72-10.29,34.43
-        c0,24.08,13.55,44.98,33.44,55.51c7.46,3.95,15.81,6.44,24.67,7.09c1.55,0.11,3.11,0.19,4.68,0.19c21.29,0,40.1-10.59,51.46-26.79
-        l71.07-98.84l0.46-0.65c11.46-15.27,29.71-25.16,50.27-25.16c34.68,0,62.8,28.12,62.8,62.8c0,12.67-3.76,24.45-10.22,34.32
-        L271.72,487.33" />
-    </g>
-  </svg>
-);
-
-const KeyframesRot = () => (
-  <style>{`
-    @keyframes ga-fadein {
-      from { opacity: 0; transform: translateY(4px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes ga-pulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(20,50,255,0.6); }
-      50%      { box-shadow: 0 0 0 6px rgba(20,50,255,0); }
-    }
-    @keyframes ga-ring {
-      0%   { transform: scale(1);   opacity: 0.7; }
-      100% { transform: scale(1.6); opacity: 0;   }
-    }
-    @keyframes ga-bob {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50%      { transform: translateX(-50%) translateY(-3px); }
-    }
-  `}</style>
-);
-
-Object.assign(window, { GAClassicAnimated, AbleCareMark, TourControlsRot });
+// Expose to preview.html (Babel-CDN setup)
+Object.assign(window, { GripableRotate });

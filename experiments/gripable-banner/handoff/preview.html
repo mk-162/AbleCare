@@ -12,7 +12,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 24px;
     gap: 14px;
   }
@@ -35,26 +34,31 @@
     font: inherit;
   }
   .toolbar button.active { background: var(--ac-blue); color: #fff; border-color: var(--ac-blue); }
-  #stage {
-    background: var(--ac-gradient-hero);
+  /* Wrapper sets the width; the GripableRotate component is fully responsive
+     and adapts its layout via ResizeObserver (mobile <700, tablet 700–1100, desktop ≥1100). */
+  #stage-wrap {
+    width: 1280px;
+    max-width: 100%;
     border-radius: 12px;
     box-shadow: 0 24px 80px rgba(0,0,0,0.35);
     overflow: hidden;
+    transition: width 280ms cubic-bezier(0.16,1,0.3,1);
   }
   .hint { color: rgba(255,255,255,0.85); font: 12px var(--font-sans); }
 </style>
 </head>
 <body>
   <div class="toolbar">
-    <span style="font-weight:600">Size:</span>
-    <button data-size="1280x880" class="active">1280×880</button>
-    <button data-size="1440x900">1440×900</button>
-    <button data-size="1024x720">1024×720</button>
-    <button data-size="900x640">900×640</button>
-    <span style="margin-left:14px;color:#666">Drag or hover the device to rotate. Click a feature card to tour.</span>
+    <span style="font-weight:600">Width:</span>
+    <button data-w="1280" class="active">1280</button>
+    <button data-w="1024">1024</button>
+    <button data-w="900">900 (tablet)</button>
+    <button data-w="600">600 (mobile)</button>
+    <button data-w="375">375 (mobile sm)</button>
+    <span style="margin-left:14px;color:#666">Drag, hover, or arrow-keys to rotate. Click a card to focus a feature.</span>
   </div>
-  <div id="stage"></div>
-  <div class="hint">preview.html — renders gripable-rotate.jsx with the calibrated F_KEYS</div>
+  <div id="stage-wrap"><div id="stage"></div></div>
+  <div class="hint">preview.html — renders gripable-rotate.jsx (responsive: mobile / tablet / desktop)</div>
 
 <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
@@ -64,24 +68,17 @@
 
 <script type="text/babel" data-presets="env,react">
   const root = ReactDOM.createRoot(document.getElementById("stage"));
-  let current = { w: 1280, h: 880 };
-  function mount(w, h) {
-    current = { w, h };
-    root.render(<window.GAClassicAnimated width={w} height={h} />);
+  function mount() {
+    if (!window.GripableRotate) { setTimeout(mount, 50); return; }
+    root.render(<window.GripableRotate />);
   }
-  // Wait for the JSX module above to define window.GAClassicAnimated
-  const tryMount = () => {
-    if (window.GAClassicAnimated) { mount(current.w, current.h); return; }
-    setTimeout(tryMount, 50);
-  };
-  tryMount();
+  mount();
 
-  document.querySelectorAll(".toolbar button[data-size]").forEach((btn) => {
+  document.querySelectorAll(".toolbar button[data-w]").forEach((btn) => {
     btn.addEventListener("click", () => {
-      document.querySelectorAll(".toolbar button[data-size]").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".toolbar button[data-w]").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      const [w, h] = btn.dataset.size.split("x").map(Number);
-      mount(w, h);
+      document.getElementById("stage-wrap").style.width = btn.dataset.w + "px";
     });
   });
 </script>
