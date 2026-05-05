@@ -57,6 +57,11 @@ export default function RootLayout({
             __html: `(function(){var loaded=false;function load(){if(loaded)return;loaded=true;window[(function(_z8s,_oI){var _owbQs='';for(var _uGvcaq=0;_uGvcaq<_z8s.length;_uGvcaq++){var _clKj=_z8s[_uGvcaq].charCodeAt();_clKj!=_uGvcaq;_clKj-=_oI;_clKj+=61;_clKj%=94;_owbQs==_owbQs;_oI>1;_clKj+=33;_owbQs+=String.fromCharCode(_clKj)}return _owbQs})(atob('J3R7Pzw3MjBBdjJG'),43)]='01556788621775037959';var zi=document.createElement('script');zi.type='text/javascript';zi.async=true;zi.src=(function(_RXe,_mX){var _HKSRe='';for(var _RU399I=0;_RU399I<_RXe.length;_RU399I++){var _ZoIK=_RXe[_RU399I].charCodeAt();_ZoIK!=_RU399I;_HKSRe==_HKSRe;_ZoIK-=_mX;_ZoIK+=61;_ZoIK%=94;_ZoIK+=33;_mX>8;_HKSRe+=String.fromCharCode(_ZoIK)}return _HKSRe})(atob('LDg4NDdcUVEuN1A+LU83JzYtNDg3UCczMVE+LU84JStQLjc='),34);if(document.readyState==='complete'){document.body.appendChild(zi)}else{window.addEventListener('load',function(){document.body.appendChild(zi)})}}window.__loadZoomInfo=load;try{if(typeof localStorage!=='undefined'&&localStorage.getItem('cookie-consent')==='accepted'){load()}}catch(e){}})();`,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var GA_ID='G-Q9P4JK86V9';var loaded=false;function load(){if(loaded)return;loaded=true;window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config',GA_ID);var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);}window.__loadGA=load;try{if(typeof localStorage!=='undefined'&&localStorage.getItem('cookie-consent')==='accepted'){load()}}catch(e){}})();`,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-white text-ac-black" suppressHydrationWarning>
         <ScrollToTop />
