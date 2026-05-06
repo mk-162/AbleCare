@@ -163,18 +163,44 @@ const interpPos = (pos: PosMap, f: number): { x: number; y: number } | null => {
 };
 
 /* ─── LED Legend ─────────────────────────────────────────────────────────────── */
-function LedLegend({ legend }: { legend: NonNullable<Feature["legend"]> }) {
+function LedLegend({
+  legend, align = "right",
+}: {
+  legend: NonNullable<Feature["legend"]>;
+  align?: "left" | "right";
+}) {
+  // On left-rail cards the parent text-aligns right and the badge sits on
+  // the right edge — so we mirror the legend rows too: dot on the right,
+  // key + value flow toward it.
+  const reverse = align === "left";
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 12 }}>
       {legend.items.map((it, i) => (
-        <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5 }}>
+        <div key={i} style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 8,
+          fontSize: 12.5,
+          flexDirection: reverse ? "row-reverse" : "row",
+        }}>
           <span style={{
             width: 10, height: 10, borderRadius: 9999, background: it.dot, flexShrink: 0,
             boxShadow: it.dot.startsWith("rgba") ? "inset 0 0 0 1px rgba(0,0,0,0.15)" : "0 0 0 2px rgba(255,255,255,0.6)",
             animation: it.pulse ? "gr-pulse 1.4s ease-in-out infinite" : "none",
           }} />
-          <span style={{ fontWeight: 600, color: "#191919", minWidth: 78 }}>{it.k}</span>
-          <span style={{ color: "rgba(25,25,25,0.7)" }}>{it.v}</span>
+          {/* Wider key column so "Red flashing" fits without forcing the
+              value text to wrap. flexShrink:0 prevents long values from
+              squeezing the key. */}
+          <span style={{
+            fontWeight: 600, color: "#191919",
+            minWidth: 102, flexShrink: 0,
+            textAlign: reverse ? "left" : "right",
+          }}>{it.k}</span>
+          <span style={{
+            color: "rgba(25,25,25,0.7)",
+            flex: 1,
+            textAlign: reverse ? "right" : "left",
+          }}>{it.v}</span>
         </div>
       ))}
     </div>
@@ -243,7 +269,7 @@ function FeatureCard({
           }}>{feature.desc}</div>
           {feature.legend && active && (
             <div style={{ animation: "gr-fadein 320ms ease-out" }}>
-              <LedLegend legend={feature.legend} />
+              <LedLegend legend={feature.legend} align={align} />
             </div>
           )}
         </div>
@@ -255,7 +281,7 @@ function FeatureCard({
 /* ─── Device stage (shared across breakpoints) ─────────────────────────────── */
 function DeviceStage({
   frame, active, clicked, hint, drag, rotating, onPointerDown, onPointerMove, onPointerUp,
-  onHoverRotate, onKeyRotate, onSelectFeature, maxWidth, enableHoverRotate,
+  onHoverRotate, onKeyRotate, onSelectFeature, maxWidth, enableHoverRotate, restrictTo,
 }: {
   frame: number;
   active: number | null;
@@ -271,6 +297,9 @@ function DeviceStage({
   onSelectFeature: (n: number) => void;
   maxWidth: number;
   enableHoverRotate: boolean;
+  /* When set (mobile carousel), only this feature's line + badge are
+     rendered. null = render all features (desktop / tablet). */
+  restrictTo: number | null;
 }) {
   // Hotspots stay visible at all times — no fade during rotation. Flashing
   // them in and out as the user rotates reads as visual noise.
@@ -367,8 +396,9 @@ function DeviceStage({
         }}
       >
         {FEATURES.map((F) => {
-          // Always render every feature's line. interpPos clamps to the
-          // nearest endpoint when out of range, so there's always an anchor.
+          // On mobile, restrictTo limits rendering to the current carousel
+          // card. On desktop / tablet it's null, so every line draws.
+          if (restrictTo != null && restrictTo !== F.n) return null;
           const p = interpPos(F.pos, frameInt);
           if (!p) return null;
           const isActive = active === F.n;
@@ -386,11 +416,11 @@ function DeviceStage({
               key={F.n}
               x1={tickX} y1={ay} x2={badgeX} y2={badgeY}
               stroke={isActive ? "rgba(0,255,210,0.95)" : "rgba(255,255,255,0.7)"}
-              strokeWidth={isActive ? 1.5 : 1}
+              strokeWidth={isActive ? 2.5 : 1}
               vectorEffect="non-scaling-stroke"
               strokeLinecap="round"
               style={{
-                filter: isActive ? "drop-shadow(0 0 3px rgba(0,255,210,0.6))" : "none",
+                filter: isActive ? "drop-shadow(0 0 4px rgba(0,255,210,0.7))" : "none",
                 transition: "stroke 220ms, stroke-width 220ms",
               }}
             />
@@ -402,7 +432,8 @@ function DeviceStage({
           the device-side tick only appears when the feature anchor is visible
           for the current frame. In click-mode, only the clicked feature shows. */}
       {FEATURES.map((F) => {
-        // Always render every feature's badge + tick.
+        // Same mobile filter as the lines above.
+        if (restrictTo != null && restrictTo !== F.n) return null;
         const p = interpPos(F.pos, frameInt);
         const isActive = active === F.n;
         const goesLeft = LEFT_FEATURES.includes(F.n);
@@ -422,7 +453,9 @@ function DeviceStage({
               position: "absolute",
               left: 0, top: 0, right: 0, bottom: 0,
               pointerEvents: "none",
-              zIndex: 4,
+              // Bump active feature above its siblings so the 3× scaled
+              // badge isn't covered by adjacent rail badges.
+              zIndex: isActive ? 6 : 4,
               opacity: hotspotOpacity,
               transition: hotspotTransition,
             }}
@@ -458,7 +491,10 @@ function DeviceStage({
                 position: "absolute",
                 left: `${badgeCx}%`,
                 top: `${badgeY}%`,
-                transform: "translate(-50%, -50%)",
+                // Active badge scales 3× and bounces in with a back-easing
+                // curve, so the rotation makes it crystal-clear which
+                // feature is being pointed at.
+                transform: `translate(-50%, -50%) scale(${isActive ? 3 : 1})`,
                 width: "clamp(22px, 4.6%, 30px)",
                 aspectRatio: "1 / 1",
                 padding: 0, border: "none",
@@ -469,12 +505,15 @@ function DeviceStage({
                 fontSize: "clamp(10px, 2vw, 13px)",
                 fontFamily: "inherit",
                 display: "flex", alignItems: "center", justifyContent: "center",
+                // Halo size is small in the base style — the 3× transform
+                // amplifies it visually so the active badge has a big glow
+                // without dwarfing the inactive ones.
                 boxShadow: isActive
-                  ? "0 0 0 5px rgba(0,255,210,0.32), 0 2px 6px rgba(0,0,0,0.25)"
+                  ? "0 0 0 3px rgba(0,255,210,0.45), 0 4px 10px rgba(0,0,0,0.3)"
                   : "0 2px 6px rgba(0,0,0,0.22), 0 0 0 1px rgba(20,50,255,0.08)",
                 cursor: "pointer",
                 pointerEvents: rotating ? "none" : "auto",
-                transition: "background 200ms, color 200ms, box-shadow 240ms cubic-bezier(0.16,1,0.3,1), transform 240ms",
+                transition: "background 220ms, color 220ms, box-shadow 360ms cubic-bezier(0.16,1,0.3,1), transform 380ms cubic-bezier(0.34, 1.56, 0.64, 1)",
                 animation: isActive ? "gr-dot-pulse 1.8s ease-in-out infinite" : "none",
               }}
             >
@@ -691,6 +730,9 @@ export function GripableRotate() {
     onHoverRotate, onKeyRotate,
     onSelectFeature: selectFeature,
     enableHoverRotate: isDesktop,
+    // Default: render every feature. Mobile overrides this below to
+    // show only the current carousel card's line + badge.
+    restrictTo: null as number | null,
   };
 
   return (
@@ -853,7 +895,11 @@ export function GripableRotate() {
           }}
         >
           <div style={{ marginBottom: 32 }}>
-            <DeviceStage {...stageProps} maxWidth={280} />
+            <DeviceStage
+              {...stageProps}
+              maxWidth={280}
+              restrictTo={FEATURES[mobileIdx].n}
+            />
           </div>
 
           {/* Carousel nav */}
