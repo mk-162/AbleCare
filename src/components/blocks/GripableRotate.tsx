@@ -45,7 +45,7 @@ const F_KEYS: Record<number, Feature> = {
     },
   },
   3: {
-    n: 3, label: "Strap Hooks", desc: "Two attachment points for silicone straps.",
+    n: 3, label: "Strap Hooks", desc: "Six attachment points for silicone straps.",
     bestFrame: 7,
     pos: {
       0:{x:356,y:176},1:{x:362,y:176},2:{x:362,y:176},3:{x:368,y:173},4:{x:227,y:177},
@@ -55,15 +55,16 @@ const F_KEYS: Record<number, Feature> = {
     },
   },
   4: {
-    n: 4, label: "Battery LED", desc: "At-a-glance charge status. Green / Yellow / Orange / Red.",
+    n: 4, label: "Battery LED", desc: "8+ hours of continuous use. At-a-glance charge status.",
     bestFrame: 10,
     legend: {
       title: "Battery LED",
       items: [
-        { dot: "#22c55e", k: "Green",  v: "Fully charged" },
-        { dot: "#eab308", k: "Yellow", v: "Charging" },
-        { dot: "#f97316", k: "Orange", v: "Battery OK" },
-        { dot: "#ef4444", k: "Red",    v: "Battery low" },
+        { dot: "#22c55e", k: "Green",         v: "Fully charged" },
+        { dot: "#eab308", k: "Yellow",        v: "Charging" },
+        { dot: "#f97316", k: "Orange",        v: "Battery OK" },
+        { dot: "#ef4444", k: "Red",           v: "Battery low" },
+        { dot: "#ef4444", k: "Red flashing",  v: "Battery critically low", pulse: true },
       ],
     },
     pos: {
@@ -105,13 +106,28 @@ const F_KEYS: Record<number, Feature> = {
       12:{x:250,y:177},13:{x:277,y:178},14:{x:294,y:178},15:{x:317,y:176},16:{x:347,y:177},17:{x:353,y:177},
     },
   },
+  8: {
+    n: 8, label: "Motion Sensors",
+    desc: "Internal sensors that track movement and orientation for gait assessments.",
+    // Internal feature — anchor traces the device's mid-body across the
+    // rotation so the leader line points into the centre of the silhouette
+    // on every frame.
+    bestFrame: 19,
+    pos: {
+      0:{x:216,y:470},1:{x:245,y:470},2:{x:272,y:471},3:{x:294,y:472},4:{x:347,y:469},
+      5:{x:368,y:469},6:{x:378,y:469},7:{x:384,y:469},8:{x:384,y:469},9:{x:384,y:469},
+      10:{x:374,y:469},11:{x:363,y:469},12:{x:352,y:469},
+      13:{x:340,y:470},14:{x:315,y:470},15:{x:290,y:470},16:{x:270,y:470},17:{x:260,y:470},
+      18:{x:239,y:467},19:{x:220,y:467},20:{x:205,y:468},
+    },
+  },
 };
 
 const FEATURES = Object.values(F_KEYS);
 
-/* Cards 1-4 down the left rail, 5-7 down the right rail, in numbered order. */
+/* Cards 1-4 down the left rail, 5-8 down the right rail, in numbered order. */
 const LEFT_FEATURES = [1, 2, 3, 4];
-const RIGHT_FEATURES = [5, 6, 7];
+const RIGHT_FEATURES = [5, 6, 7, 8];
 
 /* Vertical offset (in % of stage height) applied to the floating badge —
    lets us spread crowded hotspots without moving the anchor point on the
