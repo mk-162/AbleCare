@@ -1,5 +1,4 @@
 {
-  "title": "Able Assess",
   "slug": "able-assess",
   "seo": {
     "title": "Able Assess — Four Falls Risk Metrics in Five Minutes | Able Care",
@@ -8,7 +7,6 @@
   },
   "blocks": [
     {
-      "_template": "breadcrumb",
       "items": [
         {
           "label": "Home",
@@ -18,51 +16,45 @@
           "label": "Solutions"
         },
         {
-          "label": "Able Assess",
+          "label": "Able Assess- Falls Risk Screening",
           "href": "/solutions/able-assess"
         }
-      ]
+      ],
+      "_template": "breadcrumb"
     },
     {
-      "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "waveFill": "#DCDCDC",
-      "backgroundImage": "/images/photos/clinical/sensor-closeup-hand.jpg",
-      "backgroundImageAlt": "Close-up of patient using GripAble sensor",
       "eyebrow": "Able Assess",
       "headline": "Four metrics. Five minutes. One complete picture.",
       "subtitle": "Able Assess captures grip strength, sit-to-stand, gait speed and timed up-and-go in a single workflow that any member of staff can run.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Watch the Walkthrough",
-      "secondaryCtaLink": "/resources/walkthrough"
+      "secondaryCtaLink": "/resources/walkthrough",
+      "backgroundImage": "/images/photos/clinical/sensor-closeup-hand.jpg",
+      "backgroundImageAlt": "Close-up of patient using GripAble sensor",
+      "_template": "hero"
     },
     {
-      "_template": "metricsBlock",
       "scheme": "grey",
       "heading": "Four metrics, one picture of function",
       "metrics": [
         {
-          "name": "Grip strength",
-          "description": "Full-body strength proxy. Predicts all-cause mortality, frailty and sarcopenia."
+          "name": "Grip strength"
         },
         {
-          "name": "Sit-to-stand",
-          "description": "A 30-second assessment of lower-limb strength."
+          "name": "Sit-to-stand"
         },
         {
-          "name": "Gait speed",
-          "description": "A measure of gait over about 13 feet."
+          "name": "Gait speed"
         },
         {
-          "name": "Timed Up and Go",
-          "description": "An assessment of balance and global falls risk."
+          "name": "Timed Up and Go"
         }
-      ]
+      ],
+      "_template": "metricsBlock"
     },
     {
-      "_template": "processSteps",
       "heading": "The Able Assess workflow",
       "steps": [
         {
@@ -85,10 +77,10 @@
           "title": "Track",
           "description": "Longitudinal trends surface decline early. Objective milestones residents and clients can see and understand."
         }
-      ]
+      ],
+      "_template": "processSteps"
     },
     {
-      "_template": "segmentCards",
       "scheme": "grey",
       "heading": "See Able Assess in action",
       "cards": [
@@ -102,10 +94,10 @@
           "body": "Walkthrough: how the platform clearly communicates at-risk and not-at-risk outcomes to support timely decisions.",
           "link": "/low-and-at-risk"
         }
-      ]
+      ],
+      "_template": "segmentCards"
     },
     {
-      "_template": "trustBar",
       "items": [
         {
           "text": "FDA listed"
@@ -122,12 +114,11 @@
         {
           "text": "NICE 2025 aligned"
         }
-      ]
+      ],
+      "_template": "trustBar"
     },
     {
-      "_template": "statsBar",
       "heading": "Built on the evidence",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "4",
@@ -145,65 +136,37 @@
           "value": "1,000+",
           "label": "Assessments delivered"
         }
-      ]
+      ],
+      "_template": "statsBar"
     },
     {
-      "_template": "faqAccordion",
       "scheme": "grey",
       "heading": "Common questions about Able Assess",
       "emitSchema": true,
-      "items": [
-        {
-          "question": "What hardware is required?",
-          "answer": "A GripAble sensor (included) and any tablet or phone. The sensor connects via Bluetooth. No additional infrastructure is required."
-        },
-        {
-          "question": "How long does the assessment take?",
-          "answer": "Under five minutes per person. The workflow guides the operator through grip strength, sit-to-stand, gait speed and timed up-and-go in sequence."
-        },
-        {
-          "question": "Can non-clinical staff run it?",
-          "answer": "Yes. Able Assess was designed so that any member of staff can run the assessment with minimal training. No clinical certification required."
-        },
-        {
-          "question": "How does it integrate with existing systems?",
-          "answer": "Able Assess is integration-ready with EHR and wellness platforms. The clinical team can walk you through the setup during a demo."
-        },
-        {
-          "question": "Is the data secure?",
-          "answer": "ISO 27001 certified. HIPAA aligned. GDPR compliant. Data residency options available for US and UK."
-        },
-        {
-          "question": "What is the GripAble sensor?",
-          "answer": "GripAble is an FDA-listed, CE-marked digital grip strength sensor commercialized out of Imperial College London neuroscience research. It captures all four measures objectively and syncs them to the app via bluetooth."
-        }
-      ]
+      "_template": "faqAccordion"
     },
     {
-      "_template": "partnerLogoCarousel",
       "heading": "Trusted by Leading Organizations",
-      "scheme": "white"
+      "scheme": "white",
+      "_template": "partnerLogoCarousel"
     },
     {
-      "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in your workflow.",
-      "body": "20 minutes with a clinician who has run it in the field.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "_template": "ctaBanner"
     },
     {
-      "_template": "leadMagnetPromo",
-      "eyebrow": "Product User Guide",
       "heading": "Able Assess User Guide",
       "promoBody": "The complete operator manual for Able Assess. Covers sensor setup, the screening workflow, interpreting results and sharing data with care teams.",
       "ctaText": "Open the user guide",
-      "ctaLink": "/downloads/Able-Assess-User-Guide-V1.1.pdf"
+      "ctaLink": "/downloads/Able-Assess-User-Guide-V1.1.pdf",
+      "_template": "leadMagnetPromo"
     }
   ],
+  "title": "Able Assess",
   "tags": [
     "able-assess",
     "falls-risk-assessment",
