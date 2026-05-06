@@ -25,8 +25,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Solutions",
       "headline": "Able Rehab",
       "subtitle": "Utilizing the GripAble sensor for neurorehabilitation. Train the hand and wrist, motivate patients with engaging activities, and track progress with objective data.",
@@ -35,7 +33,9 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "See How It Works",
-      "secondaryCtaLink": "#movements"
+      "secondaryCtaLink": "#movements",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "metricsBlock",
@@ -44,19 +44,19 @@
       "metrics": [
         {
           "name": "Grip / Release",
-          "description": "Opening and closing the hand against resistance. Rebuilds the fundamental power grip needed for everyday tasks like holding a cup, turning a key, or shaking hands."
+          "whatItMeasures": "Opening and closing the hand against resistance. Rebuilds the fundamental power grip needed for everyday tasks like holding a cup, turning a key, or shaking hands."
         },
         {
           "name": "Pronation / Supination",
-          "description": "Rotating the forearm palm-up and palm-down. Restores the control needed to turn a doorknob, accept change, or pour from a jug."
+          "whatItMeasures": "Rotating the forearm palm-up and palm-down. Restores the control needed to turn a doorknob, accept change, or pour from a jug."
         },
         {
           "name": "Wrist Radial / Ulnar Deviation",
-          "description": "Tilting the wrist side to side toward the thumb and little finger. Trains the lateral control required for writing, brushing teeth, and using utensils."
+          "whatItMeasures": "Tilting the wrist side to side toward the thumb and little finger. Trains the lateral control required for writing, brushing teeth, and using utensils."
         },
         {
           "name": "Wrist Extension / Flexion",
-          "description": "Bending the wrist up and down. Recovers the range of motion that underpins typing, lifting, and almost every functional reach."
+          "whatItMeasures": "Bending the wrist up and down. Recovers the range of motion that underpins typing, lifting, and almost every functional reach."
         }
       ]
     },
@@ -133,14 +133,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Rehab in your clinic.",
-      "body": "20 minutes with a clinician who has used Able Rehab in practice — book a walkthrough today.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "See Able Assess",
-      "secondaryCtaLink": "/solutions/able-assess"
+      "secondaryCtaLink": "/solutions/able-assess",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "20 minutes with a clinician who has used Able Rehab in practice — book a walkthrough today."
     }
   ],
   "tags": [

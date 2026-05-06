@@ -26,15 +26,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Careers",
       "headline": "Build the future of falls prevention.",
       "subtitle": "Our mission is to eliminate preventable falls. We work with clinical teams, care operators and technologists to build screening tools that protect older adults. Join us.",
       "backgroundImage": "/images/photos/clinical/arms-raised-celebration.jpg",
       "backgroundImageAlt": "Patient celebrating a successful therapy milestone",
       "primaryCtaText": "Get in Touch",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "valueProps",
@@ -91,11 +91,11 @@
       "_template": "ctaBanner",
       "scheme": "blue",
       "heading": "Ready to join us?",
-      "body": "Explore open roles or send us your CV to start the conversation.",
       "primaryCtaText": "Get in Touch",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Send Us Your CV",
-      "secondaryCtaLink": "mailto:hello@able-care.co"
+      "secondaryCtaLink": "mailto:hello@able-care.co",
+      "bodyText": "Explore open roles or send us your CV to start the conversation."
     }
   ]
 }

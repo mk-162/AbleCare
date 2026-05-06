@@ -10,8 +10,6 @@
   "blocks": [
     {
       "_template": "hero",
-      "colorScheme": "light",
-      "waveStyle": "ribbon",
       "backgroundImage": "/images/photos/studio/gentleman-sensor-studio.jpg",
       "backgroundImageAlt": "Patient using GripAble grip strength sensor",
       "eyebrow": "2026 Buyers Guide",
@@ -20,7 +18,9 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "light",
+      "wave": "ribbon"
     },
     {
       "_template": "featureComparison",
@@ -135,37 +135,37 @@
     {
       "_template": "caseStudyCards",
       "heading": "Real results from real operators",
-      "cards": [
+      "caseStudies": [
         {
           "title": "Multi-branch Home Care Operator",
-          "segment": "Home Care",
-          "outcome": "Caught decline six weeks earlier than their previous process. Reduced hospitalizations across 12 branches.",
-          "href": "/resources/case-studies"
+          "summary": "Caught decline six weeks earlier than their previous process. Reduced hospitalizations across 12 branches.",
+          "sector": "Home Care",
+          "link": "/resources/case-studies"
         },
         {
           "title": "US CCRC Community",
-          "segment": "Senior Living",
-          "outcome": "Reduced resident falls by 25% in the first year. Protected occupancy and reduced liability exposure.",
-          "href": "/resources/case-studies"
+          "summary": "Reduced resident falls by 25% in the first year. Protected occupancy and reduced liability exposure.",
+          "sector": "Senior Living",
+          "link": "/resources/case-studies"
         },
         {
           "title": "UK Clinical Research Team",
-          "segment": "Clinicians",
-          "outcome": "Standardized grip strength capture across three trial sites. Improved endpoint signal for GLP-1 muscle loss monitoring.",
-          "href": "/resources/case-studies"
+          "summary": "Standardized grip strength capture across three trial sites. Improved endpoint signal for GLP-1 muscle loss monitoring.",
+          "sector": "Clinicians",
+          "link": "/resources/case-studies"
         }
       ]
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See how Able Assess compares in your setting.",
-      "body": "20 minutes with a clinician who has run it in the field.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "20 minutes with a clinician who has run it in the field."
     }
   ],
   "tags": [

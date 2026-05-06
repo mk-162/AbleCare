@@ -28,15 +28,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Clinical Leaders",
       "headline": "Evidence-based protocols. Peer-reviewed outcomes. Safe delegation.",
       "subtitle": "Standardized clinical frameworks built on research, not habit. Equip your team to deliver consistent outcomes.",
       "backgroundImage": "/images/photos/clinical/clinician-guiding-patient.jpg",
       "backgroundImageAlt": "Clinician guiding a patient through an assessment",
       "primaryCtaText": "Talk to the Clinical Team",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "richText",
@@ -73,7 +73,8 @@
       "testimonials": [
         {
           "quote": "Clinical leadership testimonial coming soon.",
-          "attribution": "Director of Nursing, Multi-Site Care Provider"
+          "role": "Director of Nursing",
+          "organization": "Multi-Site Care Provider"
         }
       ]
     },
@@ -81,7 +82,7 @@
       "_template": "faqAccordion",
       "heading": "Questions from clinical leaders",
       "scheme": "light",
-      "items": [
+      "faqs": [
         {
           "question": "What evidence supports the four screening metrics?",
           "answer": "Each metric is backed by peer-reviewed research. Grip strength is supported by the PURE study (Lancet, 2015). Sit-to-stand, gait speed, and timed up-and-go are validated markers of functional capacity and fall risk across multiple clinical populations."
@@ -99,10 +100,10 @@
     {
       "_template": "ctaBanner",
       "heading": "Lead clinical excellence through evidence and data.",
-      "body": "30 minutes with a clinician who has run it in the field.",
       "scheme": "blue",
       "primaryCtaText": "Talk to the Clinical Team",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "bodyText": "30 minutes with a clinician who has run it in the field."
     }
   ]
 }

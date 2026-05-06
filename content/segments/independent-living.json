@@ -26,8 +26,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/clinical/arms-raised-celebration.jpg",
       "backgroundImageAlt": "Resident celebrating progress during a wellness session",
       "eyebrow": "Independent Living",
@@ -36,7 +34,9 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the IL Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "richText",
@@ -100,10 +100,10 @@
     {
       "_template": "imageFeature",
       "heading": "Technology that residents want to use",
-      "body": "Able Assess was designed for engagement, not compliance. Residents view their own progress, set goals and take ownership of their wellness journey. Staff report higher participation in fitness programming after deployment.",
-      "imageSide": "right",
       "imageAlt": "Resident and therapist laughing during a wellness screening session",
-      "imageSrc": "/images/photos/clinical/patient-therapist-laughing.jpg"
+      "imagePosition": "right",
+      "image": "/images/photos/clinical/patient-therapist-laughing.jpg",
+      "description": "Able Assess was designed for engagement, not compliance. Residents view their own progress, set goals and take ownership of their wellness journey. Staff report higher participation in fitness programming after deployment."
     },
     {
       "_template": "roiCalculatorPromo",
@@ -114,22 +114,23 @@
     },
     {
       "_template": "testimonialCarousel",
-      "colorScheme": "aqua",
       "testimonials": [
         {
           "quote": "Residents can see their own progress on the screen. It turned a clinical test into a conversation about staying strong.",
-          "attribution": "Wellness Director, US community"
+          "role": "Wellness Director",
+          "organization": "US community"
         },
         {
           "quote": "We run a quarterly wellness day now. Residents look forward to it. Families love the data. It has become a differentiator for our community.",
-          "attribution": "Executive Director, IL community"
+          "role": "Executive Director",
+          "organization": "IL community"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "statsBar",
       "heading": "The numbers that matter to IL operators",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "4",
@@ -147,14 +148,15 @@
           "value": "25%",
           "label": "Average fall reduction"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "faqAccordion",
       "scheme": "light",
       "heading": "Common questions from IL operators",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "Our residents are active and independent. Do they really need falls screening?",
           "answer": "Active residents are exactly the right population for screening. Able Assess identifies early, subclinical decline before it leads to a fall. Catching changes in grip strength or gait speed early is what keeps residents independent for longer."
@@ -179,15 +181,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in an IL wellness workflow.",
-      "body": "20 minutes with a clinician who has deployed it in independent living communities.",
       "scheme": "blue",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "wave": "ribbon",
+      "bodyText": "20 minutes with a clinician who has deployed it in independent living communities."
     },
     {
       "_template": "leadMagnetPromo",

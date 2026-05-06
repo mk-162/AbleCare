@@ -26,8 +26,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/heroes/devices-hero-new-min.png",
       "backgroundImageAlt": "Able Assess product and tablet",
       "eyebrow": "Resources",
@@ -36,7 +34,9 @@
       "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Back to Resources",
-      "secondaryCtaLink": "/resources"
+      "secondaryCtaLink": "/resources",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "richText",
@@ -84,7 +84,7 @@
           "body": "The GripAble Sensor is registered with the US Food and Drug Administration (FDA) as a Class II 510(k)-exempt medical device (Product Code: ISD) while the Able Assess software meets all four criteria for Non-Device Clinical Decision Software (CDS).",
           "link": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfrl/rl.cfm?lid=985822&lpcd=ISD",
           "linkText": "Visit our FDA listing",
-          "logos": [ 
+          "logos": [
             "/images/badges/fda-trimmed.svg"
           ]
         }
@@ -92,13 +92,13 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "For other integration requirements, feel free to reach out",
       "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Back to Resources",
-      "secondaryCtaLink": "/resources"
+      "secondaryCtaLink": "/resources",
+      "scheme": "blue",
+      "wave": "ribbon"
     }
   ],
   "tags": [

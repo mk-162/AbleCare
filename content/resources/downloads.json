@@ -31,8 +31,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Resources",
       "headline": "Downloads.",
       "subtitle": "The Able Assess user guide, peer-reviewed clinical summaries and the mobile apps for iOS and Android. Everything you need to get started with Able Care, in one place.",
@@ -41,7 +39,9 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Contact the Team",
-      "secondaryCtaLink": "/contact"
+      "secondaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "richText",
@@ -57,14 +57,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Need something we haven't listed?",
-      "body": "The team can share protocol templates, ROI models, integration specs and anything else you need to evaluate Able Assess for your setting.",
       "primaryCtaText": "Contact Us",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Book a Demo",
-      "secondaryCtaLink": "/demo"
+      "secondaryCtaLink": "/demo",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "The team can share protocol templates, ROI models, integration specs and anything else you need to evaluate Able Assess for your setting."
     }
   ]
 }

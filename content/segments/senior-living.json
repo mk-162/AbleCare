@@ -22,15 +22,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/product/elderly-man-holding-gripable-resized.jpg",
       "backgroundImageAlt": "Older man at a senior living community using Able Assess",
       "eyebrow": "Senior Living",
       "headline": "Protect residents. Reduce staff turnover. Avoid falls-related liability.",
       "subtitle": "Objective falls screening across the entire continuum of senior living.",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "metricsBlock",
@@ -39,15 +39,15 @@
       "metrics": [
         {
           "name": "Resident Retention",
-          "description": "Identify resident fall risk before an injury, implementing clinical referrals and simple solutions to prevent falls."
+          "whatItMeasures": "Identify resident fall risk before an injury, implementing clinical referrals and simple solutions to prevent falls."
         },
         {
           "name": "Liability Mitigation",
-          "description": "Create a clear record of assessment and action to prevent falls for each resident, protecting your community from falls-related liability."
+          "whatItMeasures": "Create a clear record of assessment and action to prevent falls for each resident, protecting your community from falls-related liability."
         },
         {
           "name": "Differentiation",
-          "description": "Give your residents and their loved ones a clear, tangible understanding of their risk profile."
+          "whatItMeasures": "Give your residents and their loved ones a clear, tangible understanding of their risk profile."
         }
       ]
     },
@@ -84,26 +84,25 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Full body strength proxy. Predicts frailty, mortality and functional decline."
+          "whatItMeasures": "Full body strength proxy. Predicts frailty, mortality and functional decline."
         },
         {
           "name": "Sit-to-stand",
-          "description": "A 30-second assessment of lower-limb strength."
+          "whatItMeasures": "A 30-second assessment of lower-limb strength."
         },
         {
           "name": "Gait speed",
-          "description": "A measure of gait over about 13 feet."
+          "whatItMeasures": "A measure of gait over about 13 feet."
         },
         {
           "name": "Timed Up and Go",
-          "description": "An assessment of balance and global falls risk."
+          "whatItMeasures": "An assessment of balance and global falls risk."
         }
       ]
     },
     {
       "_template": "statsBar",
       "heading": "The numbers that matter to senior living",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "25%",
@@ -121,28 +120,31 @@
           "value": "0",
           "label": "Clinical certifications required to run it"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "testimonialCarousel",
-      "colorScheme": "aqua",
       "testimonials": [
         {
           "quote": "It paid for itself in the first quarter.",
-          "attribution": "Operations Lead, UK CCRC"
+          "role": "Operations Lead",
+          "organization": "UK CCRC"
         },
         {
           "quote": "Residents can see their own progress. That changes the conversation with families entirely.",
-          "attribution": "Wellness Director, US senior living community"
+          "role": "Wellness Director",
+          "organization": "US senior living community"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "faqAccordion",
       "scheme": "grey",
       "heading": "Common questions from senior living operators",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "What hardware do we need?",
           "answer": "The sensor, pouch and measuring tape are all provided as part of the kit. It pairs via Bluetooth with any smartphone or tablet. No additional infrastructure required."
@@ -172,26 +174,26 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in Action.",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "ribbon"
     },
     {
       "_template": "segmentRouter",
       "heading": "Explore other settings",
-      "tiles": [
+      "segments": [
         {
-          "label": "Home Care",
-          "benefit": "Standardize screening across every branch.",
-          "href": "/home-care",
+          "title": "Home Care",
+          "description": "Standardize screening across every branch.",
+          "link": "/home-care",
           "ctaText": "Explore"
         },
         {
-          "label": "Pharma & CROs",
-          "benefit": "Decentralized functional endpoints.",
-          "href": "/pharma",
+          "title": "Pharma & CROs",
+          "description": "Decentralized functional endpoints.",
+          "link": "/pharma",
           "ctaText": "Explore"
         }
       ]

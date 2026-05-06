@@ -33,8 +33,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
       "backgroundImageAlt": "Older woman using GripAble sensor at home during care visit",
       "eyebrow": "PE-Backed Home Care",
@@ -43,7 +41,9 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the HHVBP Guide",
-      "secondaryCtaLink": "/resources/hhvbp-guide"
+      "secondaryCtaLink": "/resources/hhvbp-guide",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "trustBar",
@@ -144,27 +144,28 @@
       "testimonials": [
         {
           "quote": "We caught decline six weeks earlier than we would have with our old paper process. The data gave us something to show the family and the payer.",
-          "attribution": "Clinical Director, US home care agency"
+          "role": "Clinical Director",
+          "organization": "US home care agency"
         },
         {
           "quote": "It paid for itself in the first quarter. The real win was the consistency: every branch running the same protocol.",
-          "attribution": "Operations Lead, PE-backed home care franchise"
+          "role": "Operations Lead",
+          "organization": "PE-backed home care franchise"
         }
       ]
     },
     {
       "_template": "imageFeature",
       "heading": "Built for non-clinical staff",
-      "body": "Your caregivers are not clinicians, and they do not need to be. Able Assess was designed so any staff member can deliver a clinical-grade screening with zero training overhead. The sensor guides them through every step. Results are instant. No interpretation required.",
-      "imageSrc": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg",
       "imageAlt": "Care manager and client using GripAble sensor and tablet app",
-      "imageSide": "right",
       "primaryCtaText": "See how it works",
-      "primaryCtaLink": "/solutions/able-assess"
+      "primaryCtaLink": "/solutions/able-assess",
+      "imagePosition": "right",
+      "image": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg",
+      "description": "Your caregivers are not clinicians, and they do not need to be. Able Assess was designed so any staff member can deliver a clinical-grade screening with zero training overhead. The sensor guides them through every step. Results are instant. No interpretation required."
     },
     {
       "_template": "statsBar",
-      "colorScheme": "blue",
       "stats": [
         {
           "value": "4",
@@ -182,13 +183,14 @@
           "value": "25%",
           "label": "average fall reduction"
         }
-      ]
+      ],
+      "scheme": "blue"
     },
     {
       "_template": "faqAccordion",
       "heading": "Questions from franchise operators",
       "scheme": "light",
-      "items": [
+      "faqs": [
         {
           "question": "How quickly can we roll out across 50+ branches?",
           "answer": "Most franchise operators deploy across their full network in 30 days. We ship sensors direct to each branch, and staff are proficient in under 15 minutes with the guided workflow. No site visits required for initial deployment."
@@ -218,12 +220,12 @@
     {
       "_template": "ctaBanner",
       "heading": "See Able Assess in a franchise home care workflow",
-      "body": "30 minutes with the clinical team. Tailored to multi-site home care operations. Focused on your workflow.",
       "scheme": "blue",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the HHVBP Guide",
-      "secondaryCtaLink": "/resources/hhvbp-guide"
+      "secondaryCtaLink": "/resources/hhvbp-guide",
+      "bodyText": "30 minutes with the clinical team. Tailored to multi-site home care operations. Focused on your workflow."
     }
   ]
 }

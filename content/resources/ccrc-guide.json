@@ -32,13 +32,13 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
       "headline": "Falls prevention for CCRCs and life plan communities.",
       "subtitle": "CCRCs face unique challenges across independent living, assisted living, and skilled nursing settings. This guide provides a framework for coordinated falls prevention across all care levels.",
       "backgroundImage": "/images/photos/clinical/therapist-gentleman-bed.jpg",
       "backgroundImageAlt": "Therapist assessing a patient at their bedside",
       "primaryCtaText": "Request the Guide",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "scheme": "blue"
     },
     {
       "_template": "richText",
@@ -56,9 +56,9 @@
       "_template": "ctaBanner",
       "scheme": "blue",
       "heading": "Get the CCRC Falls Prevention Guide",
-      "body": "Request the full guide with setting-specific protocols, compliance checklists, and implementation plans.",
       "primaryCtaText": "Request the Guide",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "bodyText": "Request the full guide with setting-specific protocols, compliance checklists, and implementation plans."
     }
   ]
 }

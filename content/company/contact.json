@@ -14,10 +14,10 @@
       "_template": "imageFeature",
       "scheme": "aqua",
       "heading": "Objective screening, built for your setting",
-      "body": "Able Assess captures four clinically validated metrics in under five minutes. Grip strength, sit-to-stand, gait speed and Timed Up and Go — usable by non-clinical staff, defensible to payers and regulators.",
-      "imageSide": "right",
       "imageAlt": "GripAble sensor — the clinical-grade grip strength device used by Able Assess",
-      "imageSrc": "/images/product/gripable-sensor-cutout-min.png"
+      "imagePosition": "right",
+      "image": "/images/product/gripable-sensor-cutout-min.png",
+      "description": "Able Assess captures four clinically validated metrics in under five minutes. Grip strength, sit-to-stand, gait speed and Timed Up and Go — usable by non-clinical staff, defensible to payers and regulators."
     },
     {
       "_template": "faqAccordion",

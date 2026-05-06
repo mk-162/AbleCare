@@ -31,15 +31,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Solutions",
       "headline": "Grip strength and falls risk screening without the clinic visit.",
       "subtitle": "Bring clinical-grade functional assessment into home care and community settings. Regular objective measurement without the cost and complexity of in-person visits.",
       "backgroundImage": "/images/photos/clinical/therapist-gentleman-desk.jpg",
       "backgroundImageAlt": "Therapist reviewing assessment data with a patient at a desk",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "valueProps",
@@ -107,7 +107,7 @@
       "_template": "faqAccordion",
       "scheme": "light",
       "heading": "Questions about remote monitoring",
-      "items": [
+      "faqs": [
         {
           "question": "Can older adults use remote assessment?",
           "answer": "Yes. The device and app are designed for simplicity. Large buttons, audio feedback and a guided workflow make it accessible for older adults. The system has been tested with people aged 75 to 95."
@@ -134,9 +134,9 @@
       "_template": "ctaBanner",
       "scheme": "blue",
       "heading": "Start remote monitoring today",
-      "body": "See how Able Assess brings clinical-grade functional assessment into home care and community settings.",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "bodyText": "See how Able Assess brings clinical-grade functional assessment into home care and community settings."
     }
   ]
 }

@@ -32,15 +32,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
       "backgroundImageAlt": "Older woman using GripAble sensor at home during care visit",
       "eyebrow": "Independent Multi-Site Home Care",
       "headline": "Win more referrals with objective falls screening.",
       "subtitle": "The differentiator for independent multi-site home care. Clinical credibility that shows up in every referral conversation. Non-clinical staff can run it in under five minutes.",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "trustBar",
@@ -131,12 +131,12 @@
     {
       "_template": "imageFeature",
       "heading": "Clinical credibility without clinical overhead",
-      "body": "Your caregivers do not need clinical qualifications to run Able Assess. The sensor guides each step. Results are scored automatically against normative data. You get clinical-grade screening without hiring additional clinicians or increasing training budgets.",
-      "imageSrc": "/images/features/holding-hands-solid-bg-min.jpg",
       "imageAlt": "Caregiver supporting client during a screening session",
-      "imageSide": "right",
       "primaryCtaText": "See how it works",
-      "primaryCtaLink": "/solutions/able-assess"
+      "primaryCtaLink": "/solutions/able-assess",
+      "imagePosition": "right",
+      "image": "/images/features/holding-hands-solid-bg-min.jpg",
+      "description": "Your caregivers do not need clinical qualifications to run Able Assess. The sensor guides each step. Results are scored automatically against normative data. You get clinical-grade screening without hiring additional clinicians or increasing training budgets."
     },
     {
       "_template": "roiCalculatorPromo",
@@ -151,17 +151,18 @@
       "testimonials": [
         {
           "quote": "We caught decline six weeks earlier than we would have with our old paper process. The data gave us something to show the family and the payer.",
-          "attribution": "Clinical Director, US home care agency"
+          "role": "Clinical Director",
+          "organization": "US home care agency"
         },
         {
           "quote": "The screening data changed how referral sources see us. We went from being one option to being the preferred option.",
-          "attribution": "Owner, independent multi-site home care agency"
+          "role": "Owner",
+          "organization": "independent multi-site home care agency"
         }
       ]
     },
     {
       "_template": "statsBar",
-      "colorScheme": "blue",
       "stats": [
         {
           "value": "4",
@@ -179,13 +180,14 @@
           "value": "25%",
           "label": "average fall reduction"
         }
-      ]
+      ],
+      "scheme": "blue"
     },
     {
       "_template": "faqAccordion",
       "heading": "Questions from independent agencies",
       "scheme": "light",
-      "items": [
+      "faqs": [
         {
           "question": "We only have three to five locations. Is this built for agencies our size?",
           "answer": "Yes. Able Assess scales from a single branch upward. Most independent agencies see value immediately because the referral differentiation applies regardless of network size."
@@ -215,10 +217,10 @@
     {
       "_template": "ctaBanner",
       "heading": "See Able Assess in an independent home care workflow",
-      "body": "30 minutes with the clinical team. Tailored to multi-site independent agencies. Focused on referral differentiation.",
       "scheme": "blue",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "bodyText": "30 minutes with the clinical team. Tailored to multi-site independent agencies. Focused on referral differentiation."
     }
   ]
 }

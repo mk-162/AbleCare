@@ -30,8 +30,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Walkthrough",
       "headline": "Falls Risk Screening Results in Able Assess",
       "subtitle": "Clear, objective outcomes the moment screening ends. At risk or not at risk, every result is communicated in seconds.",
@@ -40,7 +38,9 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "See the Tests Walkthrough",
-      "secondaryCtaLink": "/falls-risk-tests"
+      "secondaryCtaLink": "/falls-risk-tests",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "richText",
@@ -50,14 +50,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in your workflow.",
       "bodyText": "A 20-minute demo with a clinician who has run it in the field.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "ribbon"
     }
   ]
 }

@@ -30,15 +30,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Product",
       "headline": "Able Assess in five minutes.",
       "subtitle": "From unboxing to sharing results, every step is designed for simplicity. No specialist training, no complex setup, no clinical background required.",
       "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
       "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "processSteps",
@@ -75,10 +75,10 @@
     {
       "_template": "imageFeature",
       "heading": "Built for any care setting",
-      "body": "The sensor is portable, drop-proof and connects to any tablet. Whether you are screening in a clinic, a care home or a person's living room, the workflow stays the same. No bulky equipment, no calibration, no specialist environment.",
-      "imageSrc": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg",
       "imageAlt": "Care worker and client using the GripAble sensor and tablet app together",
-      "imageSide": "right"
+      "imagePosition": "right",
+      "image": "/images/product/two-people-using-gripable-and-the-app-resized-v2-min.jpg",
+      "description": "The sensor is portable, drop-proof and connects to any tablet. Whether you are screening in a clinic, a care home or a person's living room, the workflow stays the same. No bulky equipment, no calibration, no specialist environment."
     },
     {
       "_template": "richText",
@@ -88,7 +88,6 @@
     },
     {
       "_template": "statsBar",
-      "colorScheme": "blue",
       "stats": [
         {
           "value": "5 min",
@@ -106,13 +105,14 @@
           "value": "0",
           "label": "specialist training required"
         }
-      ]
+      ],
+      "scheme": "blue"
     },
     {
       "_template": "faqAccordion",
       "scheme": "light",
       "heading": "Common questions about the workflow",
-      "items": [
+      "faqs": [
         {
           "question": "What equipment do I need?",
           "answer": "One GripAble sensor, one tablet and the Able Assess app. No specialized equipment or clinical infrastructure is required."
@@ -135,11 +135,11 @@
       "_template": "ctaBanner",
       "scheme": "blue",
       "heading": "See Able Assess in your workflow",
-      "body": "30 minutes with the clinical team. We will walk through the full five-step process using your care setting as the example.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Watch the Walkthrough Video",
-      "secondaryCtaLink": "/resources/walkthrough"
+      "secondaryCtaLink": "/resources/walkthrough",
+      "bodyText": "30 minutes with the clinical team. We will walk through the full five-step process using your care setting as the example."
     },
     {
       "_template": "leadMagnetPromo",

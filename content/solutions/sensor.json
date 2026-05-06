@@ -132,14 +132,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See the GripAble sensor in your workflow.",
-      "body": "20 minutes with a clinician who has run it across grip strength, fall risk screening, and neuro-rehab.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "20 minutes with a clinician who has run it across grip strength, fall risk screening, and neuro-rehab."
     }
   ],
   "tags": [

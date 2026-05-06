@@ -22,8 +22,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "light",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/clinical/patient-thumbs-up.jpg",
       "backgroundImageAlt": "Patient giving thumbs up during functional health assessment",
       "eyebrow": "About Able Care",
@@ -32,7 +30,9 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Meet the Team",
-      "secondaryCtaLink": "#team"
+      "secondaryCtaLink": "#team",
+      "scheme": "light",
+      "wave": "crest"
     },
     {
       "_template": "timeline",
@@ -126,7 +126,6 @@
     {
       "_template": "statsBar",
       "heading": "By the numbers",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "4",
@@ -144,7 +143,8 @@
           "value": "1,000+",
           "label": "Assessments delivered"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "partnerLogoCarousel",
@@ -153,14 +153,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in your workflow.",
-      "body": "20 minutes with a clinician who has run it in the field.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Browse the Research Library",
-      "secondaryCtaLink": "/resources/research-library"
+      "secondaryCtaLink": "/resources/research-library",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "20 minutes with a clinician who has run it in the field."
     }
   ]
 }

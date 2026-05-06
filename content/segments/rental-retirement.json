@@ -26,8 +26,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/heroes/hero-image-gray-hair-min.jpg",
       "backgroundImageAlt": "Older adult smiling confidently in a retirement community setting",
       "eyebrow": "Rental Retirement Communities",
@@ -36,7 +34,9 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the Portfolio Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "richText",
@@ -100,10 +100,10 @@
     {
       "_template": "imageFeature",
       "heading": "Standardized across your portfolio",
-      "body": "Every campus uses the same hardware, the same metrics and the same workflow. Corporate can compare fall risk data across communities, identify underperforming campuses and measure the impact of interventions at scale.",
-      "imageSide": "right",
       "imageAlt": "GripAble sensor alongside tablets used for standardized falls screening",
-      "imageSrc": "/images/product/gripable-sensor-with-tablets-1054x722-min.png"
+      "imagePosition": "right",
+      "image": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
+      "description": "Every campus uses the same hardware, the same metrics and the same workflow. Corporate can compare fall risk data across communities, identify underperforming campuses and measure the impact of interventions at scale."
     },
     {
       "_template": "roiCalculatorPromo",
@@ -114,22 +114,23 @@
     },
     {
       "_template": "testimonialCarousel",
-      "colorScheme": "aqua",
       "testimonials": [
         {
           "quote": "We saw fewer falls and shorter vacancy periods within the first two quarters. The financial case was straightforward.",
-          "attribution": "Operations Lead, rental retirement portfolio"
+          "role": "Operations Lead",
+          "organization": "rental retirement portfolio"
         },
         {
           "quote": "For the first time, we can compare fall risk data across every community in the region. That changed how we allocate resources.",
-          "attribution": "VP Operations, multi-campus operator"
+          "role": "VP Operations",
+          "organization": "multi-campus operator"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "statsBar",
       "heading": "The numbers that matter to rental operators",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "4",
@@ -147,14 +148,15 @@
           "value": "25%",
           "label": "Average fall reduction"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "faqAccordion",
       "scheme": "light",
       "heading": "Common questions from rental operators",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "We have 10 or more campuses. Can you deploy across all of them?",
           "answer": "Yes. The hardware is a single Bluetooth sensor and any tablet per community. Most portfolios are fully deployed within 30 days. We provide a dedicated onboarding contact for multi-campus rollouts."
@@ -183,15 +185,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in a multi-campus rental workflow.",
-      "body": "20 minutes with a clinician who has deployed it across rental portfolios.",
       "scheme": "blue",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "wave": "ribbon",
+      "bodyText": "20 minutes with a clinician who has deployed it across rental portfolios."
     }
   ],
   "tags": [
