@@ -150,7 +150,10 @@ const interpPos = (pos: PosMap, f: number): { x: number; y: number } | null => {
   if (pos[f]) return pos[f];
   const ks = Object.keys(pos).map(Number).sort((a, b) => a - b);
   if (ks.length === 0) return null;
-  if (f < ks[0] || f > ks[ks.length - 1]) return null;
+  // Clamp to the nearest endpoint when the current frame is outside the
+  // feature's calibrated range — keeps every line visible at every frame.
+  if (f < ks[0]) return pos[ks[0]];
+  if (f > ks[ks.length - 1]) return pos[ks[ks.length - 1]];
   let lo = ks[0], hi = ks[ks.length - 1];
   for (const k of ks) { if (k <= f) lo = k; }
   for (let i = ks.length - 1; i >= 0; i--) { if (ks[i] >= f) { hi = ks[i]; break; } }
@@ -364,8 +367,8 @@ function DeviceStage({
         }}
       >
         {FEATURES.map((F) => {
-          // In click-mode, only the clicked feature's line is shown.
-          if (clicked != null && clicked !== F.n) return null;
+          // Always render every feature's line. interpPos clamps to the
+          // nearest endpoint when out of range, so there's always an anchor.
           const p = interpPos(F.pos, frameInt);
           if (!p) return null;
           const isActive = active === F.n;
@@ -399,7 +402,7 @@ function DeviceStage({
           the device-side tick only appears when the feature anchor is visible
           for the current frame. In click-mode, only the clicked feature shows. */}
       {FEATURES.map((F) => {
-        if (clicked != null && clicked !== F.n) return null;
+        // Always render every feature's badge + tick.
         const p = interpPos(F.pos, frameInt);
         const isActive = active === F.n;
         const goesLeft = LEFT_FEATURES.includes(F.n);
