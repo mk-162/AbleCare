@@ -43,14 +43,19 @@ export function SegmentCards({ scheme = "light", heading, centered, cards }: Seg
                 {card.logos && card.logos.length > 0 && (
                   <div className="flex justify-center items-center gap-4 mt-6">
                     {card.logos.map((logo, j) => (
-                      <img key={j} src={logo} alt="" className="h-16 w-auto object-contain" />
+                      <img key={j} src={logo} alt={card.title} className="h-16 w-auto object-contain" />
                     ))}
                   </div>
                 )}
               </div>
             );
+            const opensInNewTab = !!card.link && (/^https?:\/\//.test(card.link) || card.link.endsWith(".pdf"));
             return card.link ? (
-              <Link key={i} href={card.link}>{content}</Link>
+              opensInNewTab ? (
+                <a key={i} href={card.link} target="_blank" rel="noopener noreferrer">{content}</a>
+              ) : (
+                <Link key={i} href={card.link}>{content}</Link>
+              )
             ) : (
               <div key={i}>{content}</div>
             );
