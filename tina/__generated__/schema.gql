@@ -468,11 +468,14 @@ type PagesBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type PagesBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [PagesBlocksSegmentCardsCards]
 }
 
@@ -894,11 +897,14 @@ input PagesBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input PagesBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: PagesBlocksSegmentCardsCardsFilter
 }
 
@@ -1332,11 +1338,14 @@ type SolutionsBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type SolutionsBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [SolutionsBlocksSegmentCardsCards]
 }
 
@@ -1729,11 +1738,14 @@ input SolutionsBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input SolutionsBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: SolutionsBlocksSegmentCardsCardsFilter
 }
 
@@ -2167,11 +2179,14 @@ type SegmentsBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type SegmentsBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [SegmentsBlocksSegmentCardsCards]
 }
 
@@ -2564,11 +2579,14 @@ input SegmentsBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input SegmentsBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: SegmentsBlocksSegmentCardsCardsFilter
 }
 
@@ -3002,11 +3020,14 @@ type CompareBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type CompareBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [CompareBlocksSegmentCardsCards]
 }
 
@@ -3399,11 +3420,14 @@ input CompareBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input CompareBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: CompareBlocksSegmentCardsCardsFilter
 }
 
@@ -3837,11 +3861,14 @@ type LearnBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type LearnBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [LearnBlocksSegmentCardsCards]
 }
 
@@ -4248,11 +4275,14 @@ input LearnBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input LearnBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: LearnBlocksSegmentCardsCardsFilter
 }
 
@@ -4694,11 +4724,14 @@ type ResourcesBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type ResourcesBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [ResourcesBlocksSegmentCardsCards]
 }
 
@@ -5091,11 +5124,14 @@ input ResourcesBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input ResourcesBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: ResourcesBlocksSegmentCardsCardsFilter
 }
 
@@ -5529,11 +5565,14 @@ type CompanyBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type CompanyBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [CompanyBlocksSegmentCardsCards]
 }
 
@@ -5926,11 +5965,14 @@ input CompanyBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input CompanyBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: CompanyBlocksSegmentCardsCardsFilter
 }
 
@@ -6629,11 +6671,14 @@ input PagesBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input PagesBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [PagesBlocksSegmentCardsCardsMutation]
 }
 
@@ -7056,11 +7101,14 @@ input SolutionsBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input SolutionsBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [SolutionsBlocksSegmentCardsCardsMutation]
 }
 
@@ -7483,11 +7531,14 @@ input SegmentsBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input SegmentsBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [SegmentsBlocksSegmentCardsCardsMutation]
 }
 
@@ -7910,11 +7961,14 @@ input CompareBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input CompareBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [CompareBlocksSegmentCardsCardsMutation]
 }
 
@@ -8337,11 +8391,14 @@ input LearnBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input LearnBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [LearnBlocksSegmentCardsCardsMutation]
 }
 
@@ -8772,11 +8829,14 @@ input ResourcesBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input ResourcesBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [ResourcesBlocksSegmentCardsCardsMutation]
 }
 
@@ -9199,11 +9259,14 @@ input CompanyBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input CompanyBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [CompanyBlocksSegmentCardsCardsMutation]
 }
 

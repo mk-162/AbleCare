@@ -771,6 +771,7 @@ const segmentCardsBlock = {
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
     { type: "string" as const, name: "heading", label: "Section Heading" },
+    { type: "boolean" as const, name: "centered", label: "Center Card Content" },
     {
       type: "object" as const,
       name: "cards",
@@ -782,6 +783,8 @@ const segmentCardsBlock = {
         { type: "string" as const, name: "body", label: "Body", ui: { component: "textarea" } },
         { type: "string" as const, name: "icon", label: "Icon Hint" },
         { type: "string" as const, name: "link", label: "Link URL" },
+        { type: "string" as const, name: "linkText", label: "Link Text" },
+        { type: "string" as const, name: "logos", label: "Logos", list: true },
       ],
     },
   ],

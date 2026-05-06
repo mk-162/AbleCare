@@ -736,6 +736,7 @@ var segmentCardsBlock = {
   fields: [
     { type: "string", name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
     { type: "string", name: "heading", label: "Section Heading" },
+    { type: "boolean", name: "centered", label: "Center Card Content" },
     {
       type: "object",
       name: "cards",
@@ -746,7 +747,9 @@ var segmentCardsBlock = {
         { type: "string", name: "title", label: "Title", required: true },
         { type: "string", name: "body", label: "Body", ui: { component: "textarea" } },
         { type: "string", name: "icon", label: "Icon Hint" },
-        { type: "string", name: "link", label: "Link URL" }
+        { type: "string", name: "link", label: "Link URL" },
+        { type: "string", name: "linkText", label: "Link Text" },
+        { type: "string", name: "logos", label: "Logos", list: true }
       ]
     }
   ]

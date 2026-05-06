@@ -304,12 +304,15 @@ fragment PagesParts on Pages {
     ... on PagesBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on PagesBlocksValueProps {
@@ -646,12 +649,15 @@ fragment SolutionsParts on Solutions {
     ... on SolutionsBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on SolutionsBlocksValueProps {
@@ -988,12 +994,15 @@ fragment SegmentsParts on Segments {
     ... on SegmentsBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on SegmentsBlocksValueProps {
@@ -1330,12 +1339,15 @@ fragment CompareParts on Compare {
     ... on CompareBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on CompareBlocksValueProps {
@@ -1687,12 +1699,15 @@ fragment LearnParts on Learn {
     ... on LearnBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on LearnBlocksValueProps {
@@ -2022,12 +2037,15 @@ fragment ResourcesParts on Resources {
     ... on ResourcesBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on ResourcesBlocksValueProps {
@@ -2364,12 +2382,15 @@ fragment CompanyParts on Company {
     ... on CompanyBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on CompanyBlocksValueProps {
