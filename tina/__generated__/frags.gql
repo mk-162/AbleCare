@@ -333,6 +333,11 @@ fragment PagesParts on Pages {
         body
       }
     }
+    ... on PagesBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
+    }
   }
   title
   description
@@ -677,6 +682,11 @@ fragment SolutionsParts on Solutions {
         year
         body
       }
+    }
+    ... on SolutionsBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
   title
@@ -1023,6 +1033,11 @@ fragment SegmentsParts on Segments {
         body
       }
     }
+    ... on SegmentsBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
+    }
   }
   title
   description
@@ -1367,6 +1382,11 @@ fragment CompareParts on Compare {
         year
         body
       }
+    }
+    ... on CompareBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
   title
@@ -1728,6 +1748,11 @@ fragment LearnParts on Learn {
         body
       }
     }
+    ... on LearnBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
+    }
   }
 }
 
@@ -2065,6 +2090,11 @@ fragment ResourcesParts on Resources {
         year
         body
       }
+    }
+    ... on ResourcesBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
   title
@@ -2410,6 +2440,11 @@ fragment CompanyParts on Company {
         year
         body
       }
+    }
+    ... on CompanyBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
   title

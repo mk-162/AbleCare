@@ -501,7 +501,13 @@ type PagesBlocksTimeline {
   entries: [PagesBlocksTimelineEntries]
 }
 
-union PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSupportForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline
+type PagesBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSupportForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline | PagesBlocksSpinningSensor
 
 type Pages implements Node & Document {
   blocks: [PagesBlocks]
@@ -930,6 +936,12 @@ input PagesBlocksTimelineFilter {
   entries: PagesBlocksTimelineEntriesFilter
 }
 
+input PagesBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
+}
+
 input PagesBlocksFilter {
   hero: PagesBlocksHeroFilter
   trustBar: PagesBlocksTrustBarFilter
@@ -963,6 +975,7 @@ input PagesBlocksFilter {
   segmentCards: PagesBlocksSegmentCardsFilter
   valueProps: PagesBlocksValuePropsFilter
   timeline: PagesBlocksTimelineFilter
+  spinningSensor: PagesBlocksSpinningSensorFilter
 }
 
 input PagesFilter {
@@ -1371,7 +1384,13 @@ type SolutionsBlocksTimeline {
   entries: [SolutionsBlocksTimelineEntries]
 }
 
-union SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSupportForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline
+type SolutionsBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSupportForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline | SolutionsBlocksSpinningSensor
 
 type Solutions implements Node & Document {
   blocks: [SolutionsBlocks]
@@ -1771,6 +1790,12 @@ input SolutionsBlocksTimelineFilter {
   entries: SolutionsBlocksTimelineEntriesFilter
 }
 
+input SolutionsBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
+}
+
 input SolutionsBlocksFilter {
   hero: SolutionsBlocksHeroFilter
   trustBar: SolutionsBlocksTrustBarFilter
@@ -1804,6 +1829,7 @@ input SolutionsBlocksFilter {
   segmentCards: SolutionsBlocksSegmentCardsFilter
   valueProps: SolutionsBlocksValuePropsFilter
   timeline: SolutionsBlocksTimelineFilter
+  spinningSensor: SolutionsBlocksSpinningSensorFilter
 }
 
 input SolutionsFilter {
@@ -2212,7 +2238,13 @@ type SegmentsBlocksTimeline {
   entries: [SegmentsBlocksTimelineEntries]
 }
 
-union SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSupportForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline
+type SegmentsBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSupportForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline | SegmentsBlocksSpinningSensor
 
 type Segments implements Node & Document {
   blocks: [SegmentsBlocks]
@@ -2612,6 +2644,12 @@ input SegmentsBlocksTimelineFilter {
   entries: SegmentsBlocksTimelineEntriesFilter
 }
 
+input SegmentsBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
+}
+
 input SegmentsBlocksFilter {
   hero: SegmentsBlocksHeroFilter
   trustBar: SegmentsBlocksTrustBarFilter
@@ -2645,6 +2683,7 @@ input SegmentsBlocksFilter {
   segmentCards: SegmentsBlocksSegmentCardsFilter
   valueProps: SegmentsBlocksValuePropsFilter
   timeline: SegmentsBlocksTimelineFilter
+  spinningSensor: SegmentsBlocksSpinningSensorFilter
 }
 
 input SegmentsFilter {
@@ -3053,7 +3092,13 @@ type CompareBlocksTimeline {
   entries: [CompareBlocksTimelineEntries]
 }
 
-union CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSupportForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline
+type CompareBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSupportForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline | CompareBlocksSpinningSensor
 
 type Compare implements Node & Document {
   blocks: [CompareBlocks]
@@ -3453,6 +3498,12 @@ input CompareBlocksTimelineFilter {
   entries: CompareBlocksTimelineEntriesFilter
 }
 
+input CompareBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
+}
+
 input CompareBlocksFilter {
   hero: CompareBlocksHeroFilter
   trustBar: CompareBlocksTrustBarFilter
@@ -3486,6 +3537,7 @@ input CompareBlocksFilter {
   segmentCards: CompareBlocksSegmentCardsFilter
   valueProps: CompareBlocksValuePropsFilter
   timeline: CompareBlocksTimelineFilter
+  spinningSensor: CompareBlocksSpinningSensorFilter
 }
 
 input CompareFilter {
@@ -3894,7 +3946,13 @@ type LearnBlocksTimeline {
   entries: [LearnBlocksTimelineEntries]
 }
 
-union LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSupportForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline
+type LearnBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSupportForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline | LearnBlocksSpinningSensor
 
 type Learn implements Node & Document {
   title: String!
@@ -4308,6 +4366,12 @@ input LearnBlocksTimelineFilter {
   entries: LearnBlocksTimelineEntriesFilter
 }
 
+input LearnBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
+}
+
 input LearnBlocksFilter {
   hero: LearnBlocksHeroFilter
   trustBar: LearnBlocksTrustBarFilter
@@ -4341,6 +4405,7 @@ input LearnBlocksFilter {
   segmentCards: LearnBlocksSegmentCardsFilter
   valueProps: LearnBlocksValuePropsFilter
   timeline: LearnBlocksTimelineFilter
+  spinningSensor: LearnBlocksSpinningSensorFilter
 }
 
 input LearnFilter {
@@ -4757,7 +4822,13 @@ type ResourcesBlocksTimeline {
   entries: [ResourcesBlocksTimelineEntries]
 }
 
-union ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSupportForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline
+type ResourcesBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSupportForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline | ResourcesBlocksSpinningSensor
 
 type Resources implements Node & Document {
   blocks: [ResourcesBlocks]
@@ -5157,6 +5228,12 @@ input ResourcesBlocksTimelineFilter {
   entries: ResourcesBlocksTimelineEntriesFilter
 }
 
+input ResourcesBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
+}
+
 input ResourcesBlocksFilter {
   hero: ResourcesBlocksHeroFilter
   trustBar: ResourcesBlocksTrustBarFilter
@@ -5190,6 +5267,7 @@ input ResourcesBlocksFilter {
   segmentCards: ResourcesBlocksSegmentCardsFilter
   valueProps: ResourcesBlocksValuePropsFilter
   timeline: ResourcesBlocksTimelineFilter
+  spinningSensor: ResourcesBlocksSpinningSensorFilter
 }
 
 input ResourcesFilter {
@@ -5598,7 +5676,13 @@ type CompanyBlocksTimeline {
   entries: [CompanyBlocksTimelineEntries]
 }
 
-union CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSupportForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline
+type CompanyBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSupportForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline | CompanyBlocksSpinningSensor
 
 type Company implements Node & Document {
   blocks: [CompanyBlocks]
@@ -5998,6 +6082,12 @@ input CompanyBlocksTimelineFilter {
   entries: CompanyBlocksTimelineEntriesFilter
 }
 
+input CompanyBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
+}
+
 input CompanyBlocksFilter {
   hero: CompanyBlocksHeroFilter
   trustBar: CompanyBlocksTrustBarFilter
@@ -6031,6 +6121,7 @@ input CompanyBlocksFilter {
   segmentCards: CompanyBlocksSegmentCardsFilter
   valueProps: CompanyBlocksValuePropsFilter
   timeline: CompanyBlocksTimelineFilter
+  spinningSensor: CompanyBlocksSpinningSensorFilter
 }
 
 input CompanyFilter {
@@ -6704,6 +6795,12 @@ input PagesBlocksTimelineMutation {
   entries: [PagesBlocksTimelineEntriesMutation]
 }
 
+input PagesBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
 input PagesBlocksMutation {
   hero: PagesBlocksHeroMutation
   trustBar: PagesBlocksTrustBarMutation
@@ -6737,6 +6834,7 @@ input PagesBlocksMutation {
   segmentCards: PagesBlocksSegmentCardsMutation
   valueProps: PagesBlocksValuePropsMutation
   timeline: PagesBlocksTimelineMutation
+  spinningSensor: PagesBlocksSpinningSensorMutation
 }
 
 input PagesMutation {
@@ -7134,6 +7232,12 @@ input SolutionsBlocksTimelineMutation {
   entries: [SolutionsBlocksTimelineEntriesMutation]
 }
 
+input SolutionsBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
 input SolutionsBlocksMutation {
   hero: SolutionsBlocksHeroMutation
   trustBar: SolutionsBlocksTrustBarMutation
@@ -7167,6 +7271,7 @@ input SolutionsBlocksMutation {
   segmentCards: SolutionsBlocksSegmentCardsMutation
   valueProps: SolutionsBlocksValuePropsMutation
   timeline: SolutionsBlocksTimelineMutation
+  spinningSensor: SolutionsBlocksSpinningSensorMutation
 }
 
 input SolutionsMutation {
@@ -7564,6 +7669,12 @@ input SegmentsBlocksTimelineMutation {
   entries: [SegmentsBlocksTimelineEntriesMutation]
 }
 
+input SegmentsBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
 input SegmentsBlocksMutation {
   hero: SegmentsBlocksHeroMutation
   trustBar: SegmentsBlocksTrustBarMutation
@@ -7597,6 +7708,7 @@ input SegmentsBlocksMutation {
   segmentCards: SegmentsBlocksSegmentCardsMutation
   valueProps: SegmentsBlocksValuePropsMutation
   timeline: SegmentsBlocksTimelineMutation
+  spinningSensor: SegmentsBlocksSpinningSensorMutation
 }
 
 input SegmentsMutation {
@@ -7994,6 +8106,12 @@ input CompareBlocksTimelineMutation {
   entries: [CompareBlocksTimelineEntriesMutation]
 }
 
+input CompareBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
 input CompareBlocksMutation {
   hero: CompareBlocksHeroMutation
   trustBar: CompareBlocksTrustBarMutation
@@ -8027,6 +8145,7 @@ input CompareBlocksMutation {
   segmentCards: CompareBlocksSegmentCardsMutation
   valueProps: CompareBlocksValuePropsMutation
   timeline: CompareBlocksTimelineMutation
+  spinningSensor: CompareBlocksSpinningSensorMutation
 }
 
 input CompareMutation {
@@ -8424,6 +8543,12 @@ input LearnBlocksTimelineMutation {
   entries: [LearnBlocksTimelineEntriesMutation]
 }
 
+input LearnBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
 input LearnBlocksMutation {
   hero: LearnBlocksHeroMutation
   trustBar: LearnBlocksTrustBarMutation
@@ -8457,6 +8582,7 @@ input LearnBlocksMutation {
   segmentCards: LearnBlocksSegmentCardsMutation
   valueProps: LearnBlocksValuePropsMutation
   timeline: LearnBlocksTimelineMutation
+  spinningSensor: LearnBlocksSpinningSensorMutation
 }
 
 input LearnMutation {
@@ -8862,6 +8988,12 @@ input ResourcesBlocksTimelineMutation {
   entries: [ResourcesBlocksTimelineEntriesMutation]
 }
 
+input ResourcesBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
 input ResourcesBlocksMutation {
   hero: ResourcesBlocksHeroMutation
   trustBar: ResourcesBlocksTrustBarMutation
@@ -8895,6 +9027,7 @@ input ResourcesBlocksMutation {
   segmentCards: ResourcesBlocksSegmentCardsMutation
   valueProps: ResourcesBlocksValuePropsMutation
   timeline: ResourcesBlocksTimelineMutation
+  spinningSensor: ResourcesBlocksSpinningSensorMutation
 }
 
 input ResourcesMutation {
@@ -9292,6 +9425,12 @@ input CompanyBlocksTimelineMutation {
   entries: [CompanyBlocksTimelineEntriesMutation]
 }
 
+input CompanyBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
 input CompanyBlocksMutation {
   hero: CompanyBlocksHeroMutation
   trustBar: CompanyBlocksTrustBarMutation
@@ -9325,6 +9464,7 @@ input CompanyBlocksMutation {
   segmentCards: CompanyBlocksSegmentCardsMutation
   valueProps: CompanyBlocksValuePropsMutation
   timeline: CompanyBlocksTimelineMutation
+  spinningSensor: CompanyBlocksSpinningSensorMutation
 }
 
 input CompanyMutation {

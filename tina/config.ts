@@ -861,6 +861,21 @@ const breadcrumbBlock = {
   ],
 };
 
+const spinningSensorBlock: any = {
+  name: "spinningSensor",
+  label: "Spinning Sensor",
+  ui: {
+    itemProps: (item: { heading?: string }) => ({
+      label: item?.heading ? `Spinning Sensor: ${item.heading}` : "Spinning Sensor",
+    }),
+  },
+  fields: [
+    { type: "string" as const, name: "eyebrow", label: "Eyebrow", description: "Small uppercase label above the heading.", ui: { defaultValue: "ABOUT GRIPABLE" } },
+    { type: "string" as const, name: "heading", label: "Heading", ui: { defaultValue: "GripAble sensor features." } },
+    { type: "string" as const, name: "description", label: "Description (desktop only)", ui: { component: "textarea", defaultValue: "Designed with precision. Built for real-world care." } },
+  ],
+};
+
 // ─── Shared SEO Fields ────────────────────────────────────────────────────────
 
 const seoFields = [
@@ -914,6 +929,7 @@ const allBlocks = [
   segmentCardsBlock,
   valuePropsBlock,
   timelineBlock,
+  spinningSensorBlock,
 ];
 
 const blockPageFields: any[] = [
