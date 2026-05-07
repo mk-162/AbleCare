@@ -28,8 +28,8 @@
       "subtitle": "Clinical-grade grip strength measurement for clinicians, researchers and population health teams. Built from the ground up for data-driven healthcare.",
       "primaryCtaText": "Schedule a Demo",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "View the Clinical Evidence",
-      "secondaryCtaLink": "/resources/evidence",
+      "secondaryCtaText": "",
+      "secondaryCtaLink": "",
       "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
       "backgroundImageAlt": "Clinician holding the GripAble digital dynamometer",
       "_template": "hero"
