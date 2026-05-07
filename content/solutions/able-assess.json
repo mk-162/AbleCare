@@ -133,8 +133,8 @@
       "heading": "See Able Assess in your workflow.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide",
+      "secondaryCtaText": "",
+      "secondaryCtaLink": "",
       "_template": "ctaBanner"
     },
     {
