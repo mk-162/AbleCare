@@ -125,9 +125,12 @@ const F_KEYS: Record<number, Feature> = {
 
 const FEATURES = Object.values(F_KEYS);
 
-/* Cards 1-4 down the left rail, 5-8 down the right rail, in numbered order. */
+/* Cards 1-4 down the left rail; right rail goes 5, 6, 8, 7 so the two
+   "big" cards with legends (4 Battery LED, 7 Connection LED) both sit
+   at the bottom of their rails — keeps the expanded info flowing
+   downward off-screen rather than pushing other cards around. */
 const LEFT_FEATURES = [1, 2, 3, 4];
-const RIGHT_FEATURES = [5, 6, 7, 8];
+const RIGHT_FEATURES = [5, 6, 8, 7];
 
 /* Vertical offset (in % of stage height) applied to the floating badge —
    lets us spread crowded hotspots without moving the anchor point on the
@@ -164,27 +167,34 @@ const interpPos = (pos: PosMap, f: number): { x: number; y: number } | null => {
 
 /* ─── LED Legend ─────────────────────────────────────────────────────────────── */
 function LedLegend({
-  legend, align = "right",
+  legend, align = "right", active = true,
 }: {
   legend: NonNullable<Feature["legend"]>;
   align?: "left" | "right";
+  active?: boolean;
 }) {
   // On left-rail cards the parent text-aligns right and the badge sits on
   // the right edge — so we mirror the legend rows too: dot on the right,
   // key + value flow toward it.
   const reverse = align === "left";
+  // Legend is rendered on every card regardless of active state so the
+  // card heights stay constant — that kills the expand/collapse jump.
+  // We use slightly muted colours when not active so the "active" card
+  // still reads as the focused one.
+  const keyColor   = active ? "#191919" : "rgba(255,255,255,0.92)";
+  const valueColor = active ? "rgba(25,25,25,0.7)" : "rgba(255,255,255,0.65)";
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 6, marginTop: 12 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 4, marginTop: 8 }}>
       {legend.items.map((it, i) => (
         <div key={i} style={{
           display: "flex",
           alignItems: "center",
-          gap: 8,
-          fontSize: 12.5,
+          gap: 7,
+          fontSize: 11.5,
           flexDirection: reverse ? "row-reverse" : "row",
         }}>
           <span style={{
-            width: 10, height: 10, borderRadius: 9999, background: it.dot, flexShrink: 0,
+            width: 9, height: 9, borderRadius: 9999, background: it.dot, flexShrink: 0,
             boxShadow: it.dot.startsWith("rgba") ? "inset 0 0 0 1px rgba(0,0,0,0.15)" : "0 0 0 2px rgba(255,255,255,0.6)",
             animation: it.pulse ? "gr-pulse 1.4s ease-in-out infinite" : "none",
           }} />
@@ -192,12 +202,12 @@ function LedLegend({
               value text to wrap. flexShrink:0 prevents long values from
               squeezing the key. */}
           <span style={{
-            fontWeight: 600, color: "#191919",
-            minWidth: 102, flexShrink: 0,
+            fontWeight: 600, color: keyColor,
+            minWidth: 92, flexShrink: 0,
             textAlign: reverse ? "left" : "right",
           }}>{it.k}</span>
           <span style={{
-            color: "rgba(25,25,25,0.7)",
+            color: valueColor,
             flex: 1,
             textAlign: reverse ? "right" : "left",
           }}>{it.v}</span>
@@ -267,10 +277,10 @@ function FeatureCard({
             color: active ? "rgba(25,25,25,0.72)" : "rgba(255,255,255,0.78)",
             lineHeight: 1.5, fontWeight: 400,
           }}>{feature.desc}</div>
-          {feature.legend && active && (
-            <div style={{ animation: "gr-fadein 320ms ease-out" }}>
-              <LedLegend legend={feature.legend} align={align} />
-            </div>
+          {/* Legend always rendered (when present) so card heights stay
+              constant and we don't get the expand/collapse jump. */}
+          {feature.legend && (
+            <LedLegend legend={feature.legend} align={align} active={active} />
           )}
         </div>
       </div>
@@ -491,10 +501,11 @@ function DeviceStage({
                 position: "absolute",
                 left: `${badgeCx}%`,
                 top: `${badgeY}%`,
-                // Active badge scales 3× and bounces in with a back-easing
+                // Active badge scales up and bounces in with a back-easing
                 // curve, so the rotation makes it crystal-clear which
-                // feature is being pointed at.
-                transform: `translate(-50%, -50%) scale(${isActive ? 3 : 1})`,
+                // feature is being pointed at — but not so big it dwarfs
+                // its neighbours or bleeds far past the rail.
+                transform: `translate(-50%, -50%) scale(${isActive ? 2.2 : 1})`,
                 width: "clamp(22px, 4.6%, 30px)",
                 aspectRatio: "1 / 1",
                 padding: 0, border: "none",
