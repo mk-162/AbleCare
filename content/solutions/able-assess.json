@@ -118,28 +118,6 @@
       "_template": "trustBar"
     },
     {
-      "heading": "Built on the evidence",
-      "stats": [
-        {
-          "value": "4",
-          "label": "Validated metrics"
-        },
-        {
-          "value": "< 5 min",
-          "label": "Per assessment"
-        },
-        {
-          "value": "12",
-          "label": "Peer-reviewed studies"
-        },
-        {
-          "value": "1,000+",
-          "label": "Assessments delivered"
-        }
-      ],
-      "_template": "statsBar"
-    },
-    {
       "scheme": "grey",
       "heading": "Common questions about Able Assess",
       "emitSchema": true,
