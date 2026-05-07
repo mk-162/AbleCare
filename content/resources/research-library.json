@@ -1,7 +1,5 @@
 {
-  "title": "Research Library",
   "slug": "research-library",
-  "description": "Peer-reviewed research linking grip strength, functional health and multifactorial screening to falls, frailty, mortality and clinical outcomes. The evidence base behind Able Assess.",
   "seo": {
     "title": "Research Library | Able Care",
     "description": "Peer-reviewed research linking grip strength and functional health to falls, frailty, mortality and clinical outcomes. Browse the evidence base behind Able Assess.",
@@ -9,7 +7,6 @@
   },
   "blocks": [
     {
-      "_template": "breadcrumb",
       "items": [
         {
           "label": "Home",
@@ -23,30 +20,30 @@
           "label": "Research Library",
           "href": "/resources/research-library"
         }
-      ]
+      ],
+      "_template": "breadcrumb"
     },
     {
-      "_template": "hero",
       "scheme": "light",
       "wave": "ribbon",
-      "backgroundImage": "/images/photos/clinical/therapist-younger-woman.jpg",
-      "backgroundImageAlt": "Therapist conducting evidence-based assessment",
       "eyebrow": "Research Library",
       "headline": "Every claim backed by the evidence.",
       "subtitle": "Browse the peer-reviewed research behind Able Assess. Our own publications on the GripAble sensor, plus the wider literature on grip strength and falls prevention, all in one place.",
       "primaryCtaText": "Talk to the Clinical Team",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Download the Research Summary",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaText": "",
+      "secondaryCtaLink": "",
+      "backgroundImage": "/images/photos/clinical/therapist-younger-woman.jpg",
+      "backgroundImageAlt": "Therapist conducting evidence-based assessment",
+      "_template": "hero"
     },
     {
-      "_template": "prose",
       "scheme": "light",
       "heading": "How this library is organized",
-      "body": "The library is grouped into three sections. <strong>Our Publications</strong> are peer-reviewed studies on the GripAble sensor that underpins Able Assess — reliability, precision, inter-instrument agreement with Jamar and normative reference values. <strong>Papers on Grip Strength</strong> covers the wider literature establishing grip strength as a vital-sign-grade biomarker of ageing, cardiovascular disease, cancer, respiratory disease and all-cause mortality. <strong>Papers on Falls Prevention</strong> gathers the guideline-level evidence (World Guidelines 2022, NICE NG249 2025, Cochrane) alongside the functional-health and readmission studies that make the operational case for objective, multifactorial screening."
+      "body": "The library is grouped into three sections. <strong>Our Publications</strong> are peer-reviewed studies on the GripAble sensor that underpins Able Assess — reliability, precision, inter-instrument agreement with Jamar and normative reference values. <strong>Papers on Grip Strength</strong> covers the wider literature establishing grip strength as a vital-sign-grade biomarker of ageing, cardiovascular disease, cancer, respiratory disease and all-cause mortality. <strong>Papers on Falls Prevention</strong> gathers the guideline-level evidence (World Guidelines 2022, NICE NG249 2025, Cochrane) alongside the functional-health and readmission studies that make the operational case for objective, multifactorial screening.",
+      "_template": "prose"
     },
     {
-      "_template": "evidenceBlock",
       "scheme": "aqua",
       "heading": "Our Publications",
       "pulledStat": "GripAble has excellent inter-instrument reliability with Jamar, the incumbent gold standard.",
@@ -101,10 +98,10 @@
           "finding": "GripAble is a highly robust, accurate, reliable grip strength dynamometer for clinical and research use.",
           "link": "https://journals.sagepub.com/doi/10.1177/20556683221078455"
         }
-      ]
+      ],
+      "_template": "evidenceBlock"
     },
     {
-      "_template": "evidenceBlock",
       "scheme": "light",
       "heading": "Papers on Grip Strength",
       "pulledStat": "Grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
@@ -145,10 +142,10 @@
           "finding": "Comprehensive meta-analysis confirming grip strength predicts cardiovascular disease, cancer, respiratory disease and all-cause mortality.",
           "link": "https://www.sciencedirect.com/science/article/pii/S2095254620300752"
         }
-      ]
+      ],
+      "_template": "evidenceBlock"
     },
     {
-      "_template": "evidenceBlock",
       "scheme": "grey",
       "heading": "Papers on Falls Prevention",
       "pulledStat": "Risk-stratified, multifactorial falls interventions reduce fall incidence by 25–35%.",
@@ -223,10 +220,10 @@
           "finding": "Prevention programs give a 0.04 QALY health benefit, demonstrating cost-effectiveness of functional health interventions.",
           "link": "https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(22)00030-5/fulltext"
         }
-      ]
+      ],
+      "_template": "evidenceBlock"
     },
     {
-      "_template": "ctaBanner",
       "scheme": "blue",
       "wave": "ribbon",
       "heading": "Talk to the clinical team about the evidence.",
@@ -234,17 +231,19 @@
       "primaryCtaText": "Talk to the Clinical Team",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "_template": "ctaBanner"
     },
     {
-      "_template": "leadMagnetPromo",
-      "eyebrow": "Free Whitepaper",
       "heading": "Grip Strength: The Essential Biomarker for Longevity",
       "promoBody": "Download the full clinical summary — peer-reviewed evidence linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment.",
       "ctaText": "Download the PDF",
-      "ctaLink": "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf"
+      "ctaLink": "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf",
+      "_template": "leadMagnetPromo"
     }
   ],
+  "title": "Research Library",
+  "description": "Peer-reviewed research linking grip strength, functional health and multifactorial screening to falls, frailty, mortality and clinical outcomes. The evidence base behind Able Assess.",
   "tags": [
     "grip-strength",
     "falls-risk-assessment",
