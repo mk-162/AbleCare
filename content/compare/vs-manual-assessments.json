@@ -10,8 +10,6 @@
   "blocks": [
     {
       "_template": "hero",
-      "colorScheme": "light",
-      "waveStyle": "ribbon",
       "backgroundImage": "/images/photos/clinical/hands-fitting-sensor.jpg",
       "backgroundImageAlt": "Hands fitting digital sensor versus manual assessment",
       "eyebrow": "Comparison",
@@ -20,7 +18,9 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Comparison PDF",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "light",
+      "wave": "ribbon"
     },
     {
       "_template": "featureComparison",
@@ -116,14 +116,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See the difference in your workflow.",
-      "body": "A 20-minute demo with a clinician who has run both approaches.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "A 20-minute demo with a clinician who has run both approaches."
     }
   ],
   "tags": [

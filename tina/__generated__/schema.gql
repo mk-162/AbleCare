@@ -468,11 +468,14 @@ type PagesBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type PagesBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [PagesBlocksSegmentCardsCards]
 }
 
@@ -498,7 +501,13 @@ type PagesBlocksTimeline {
   entries: [PagesBlocksTimelineEntries]
 }
 
-union PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSupportForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline
+type PagesBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSupportForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline | PagesBlocksSpinningSensor
 
 type Pages implements Node & Document {
   blocks: [PagesBlocks]
@@ -894,11 +903,14 @@ input PagesBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input PagesBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: PagesBlocksSegmentCardsCardsFilter
 }
 
@@ -922,6 +934,12 @@ input PagesBlocksTimelineFilter {
   scheme: StringFilter
   heading: StringFilter
   entries: PagesBlocksTimelineEntriesFilter
+}
+
+input PagesBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
 }
 
 input PagesBlocksFilter {
@@ -957,6 +975,7 @@ input PagesBlocksFilter {
   segmentCards: PagesBlocksSegmentCardsFilter
   valueProps: PagesBlocksValuePropsFilter
   timeline: PagesBlocksTimelineFilter
+  spinningSensor: PagesBlocksSpinningSensorFilter
 }
 
 input PagesFilter {
@@ -1332,11 +1351,14 @@ type SolutionsBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type SolutionsBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [SolutionsBlocksSegmentCardsCards]
 }
 
@@ -1362,7 +1384,13 @@ type SolutionsBlocksTimeline {
   entries: [SolutionsBlocksTimelineEntries]
 }
 
-union SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSupportForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline
+type SolutionsBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSupportForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline | SolutionsBlocksSpinningSensor
 
 type Solutions implements Node & Document {
   blocks: [SolutionsBlocks]
@@ -1729,11 +1757,14 @@ input SolutionsBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input SolutionsBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: SolutionsBlocksSegmentCardsCardsFilter
 }
 
@@ -1757,6 +1788,12 @@ input SolutionsBlocksTimelineFilter {
   scheme: StringFilter
   heading: StringFilter
   entries: SolutionsBlocksTimelineEntriesFilter
+}
+
+input SolutionsBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
 }
 
 input SolutionsBlocksFilter {
@@ -1792,6 +1829,7 @@ input SolutionsBlocksFilter {
   segmentCards: SolutionsBlocksSegmentCardsFilter
   valueProps: SolutionsBlocksValuePropsFilter
   timeline: SolutionsBlocksTimelineFilter
+  spinningSensor: SolutionsBlocksSpinningSensorFilter
 }
 
 input SolutionsFilter {
@@ -2167,11 +2205,14 @@ type SegmentsBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type SegmentsBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [SegmentsBlocksSegmentCardsCards]
 }
 
@@ -2197,7 +2238,13 @@ type SegmentsBlocksTimeline {
   entries: [SegmentsBlocksTimelineEntries]
 }
 
-union SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSupportForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline
+type SegmentsBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSupportForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline | SegmentsBlocksSpinningSensor
 
 type Segments implements Node & Document {
   blocks: [SegmentsBlocks]
@@ -2564,11 +2611,14 @@ input SegmentsBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input SegmentsBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: SegmentsBlocksSegmentCardsCardsFilter
 }
 
@@ -2592,6 +2642,12 @@ input SegmentsBlocksTimelineFilter {
   scheme: StringFilter
   heading: StringFilter
   entries: SegmentsBlocksTimelineEntriesFilter
+}
+
+input SegmentsBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
 }
 
 input SegmentsBlocksFilter {
@@ -2627,6 +2683,7 @@ input SegmentsBlocksFilter {
   segmentCards: SegmentsBlocksSegmentCardsFilter
   valueProps: SegmentsBlocksValuePropsFilter
   timeline: SegmentsBlocksTimelineFilter
+  spinningSensor: SegmentsBlocksSpinningSensorFilter
 }
 
 input SegmentsFilter {
@@ -3002,11 +3059,14 @@ type CompareBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type CompareBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [CompareBlocksSegmentCardsCards]
 }
 
@@ -3032,7 +3092,13 @@ type CompareBlocksTimeline {
   entries: [CompareBlocksTimelineEntries]
 }
 
-union CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSupportForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline
+type CompareBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSupportForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline | CompareBlocksSpinningSensor
 
 type Compare implements Node & Document {
   blocks: [CompareBlocks]
@@ -3399,11 +3465,14 @@ input CompareBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input CompareBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: CompareBlocksSegmentCardsCardsFilter
 }
 
@@ -3427,6 +3496,12 @@ input CompareBlocksTimelineFilter {
   scheme: StringFilter
   heading: StringFilter
   entries: CompareBlocksTimelineEntriesFilter
+}
+
+input CompareBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
 }
 
 input CompareBlocksFilter {
@@ -3462,6 +3537,7 @@ input CompareBlocksFilter {
   segmentCards: CompareBlocksSegmentCardsFilter
   valueProps: CompareBlocksValuePropsFilter
   timeline: CompareBlocksTimelineFilter
+  spinningSensor: CompareBlocksSpinningSensorFilter
 }
 
 input CompareFilter {
@@ -3837,11 +3913,14 @@ type LearnBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type LearnBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [LearnBlocksSegmentCardsCards]
 }
 
@@ -3867,7 +3946,13 @@ type LearnBlocksTimeline {
   entries: [LearnBlocksTimelineEntries]
 }
 
-union LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSupportForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline
+type LearnBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSupportForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline | LearnBlocksSpinningSensor
 
 type Learn implements Node & Document {
   title: String!
@@ -4248,11 +4333,14 @@ input LearnBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input LearnBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: LearnBlocksSegmentCardsCardsFilter
 }
 
@@ -4276,6 +4364,12 @@ input LearnBlocksTimelineFilter {
   scheme: StringFilter
   heading: StringFilter
   entries: LearnBlocksTimelineEntriesFilter
+}
+
+input LearnBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
 }
 
 input LearnBlocksFilter {
@@ -4311,6 +4405,7 @@ input LearnBlocksFilter {
   segmentCards: LearnBlocksSegmentCardsFilter
   valueProps: LearnBlocksValuePropsFilter
   timeline: LearnBlocksTimelineFilter
+  spinningSensor: LearnBlocksSpinningSensorFilter
 }
 
 input LearnFilter {
@@ -4694,11 +4789,14 @@ type ResourcesBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type ResourcesBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [ResourcesBlocksSegmentCardsCards]
 }
 
@@ -4724,7 +4822,13 @@ type ResourcesBlocksTimeline {
   entries: [ResourcesBlocksTimelineEntries]
 }
 
-union ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSupportForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline
+type ResourcesBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSupportForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline | ResourcesBlocksSpinningSensor
 
 type Resources implements Node & Document {
   blocks: [ResourcesBlocks]
@@ -5091,11 +5195,14 @@ input ResourcesBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input ResourcesBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: ResourcesBlocksSegmentCardsCardsFilter
 }
 
@@ -5119,6 +5226,12 @@ input ResourcesBlocksTimelineFilter {
   scheme: StringFilter
   heading: StringFilter
   entries: ResourcesBlocksTimelineEntriesFilter
+}
+
+input ResourcesBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
 }
 
 input ResourcesBlocksFilter {
@@ -5154,6 +5267,7 @@ input ResourcesBlocksFilter {
   segmentCards: ResourcesBlocksSegmentCardsFilter
   valueProps: ResourcesBlocksValuePropsFilter
   timeline: ResourcesBlocksTimelineFilter
+  spinningSensor: ResourcesBlocksSpinningSensorFilter
 }
 
 input ResourcesFilter {
@@ -5529,11 +5643,14 @@ type CompanyBlocksSegmentCardsCards {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 type CompanyBlocksSegmentCards {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [CompanyBlocksSegmentCardsCards]
 }
 
@@ -5559,7 +5676,13 @@ type CompanyBlocksTimeline {
   entries: [CompanyBlocksTimelineEntries]
 }
 
-union CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSupportForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline
+type CompanyBlocksSpinningSensor {
+  eyebrow: String
+  heading: String
+  description: String
+}
+
+union CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSupportForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline | CompanyBlocksSpinningSensor
 
 type Company implements Node & Document {
   blocks: [CompanyBlocks]
@@ -5926,11 +6049,14 @@ input CompanyBlocksSegmentCardsCardsFilter {
   body: StringFilter
   icon: StringFilter
   link: StringFilter
+  linkText: StringFilter
+  logos: StringFilter
 }
 
 input CompanyBlocksSegmentCardsFilter {
   scheme: StringFilter
   heading: StringFilter
+  centered: BooleanFilter
   cards: CompanyBlocksSegmentCardsCardsFilter
 }
 
@@ -5954,6 +6080,12 @@ input CompanyBlocksTimelineFilter {
   scheme: StringFilter
   heading: StringFilter
   entries: CompanyBlocksTimelineEntriesFilter
+}
+
+input CompanyBlocksSpinningSensorFilter {
+  eyebrow: StringFilter
+  heading: StringFilter
+  description: StringFilter
 }
 
 input CompanyBlocksFilter {
@@ -5989,6 +6121,7 @@ input CompanyBlocksFilter {
   segmentCards: CompanyBlocksSegmentCardsFilter
   valueProps: CompanyBlocksValuePropsFilter
   timeline: CompanyBlocksTimelineFilter
+  spinningSensor: CompanyBlocksSpinningSensorFilter
 }
 
 input CompanyFilter {
@@ -6629,11 +6762,14 @@ input PagesBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input PagesBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [PagesBlocksSegmentCardsCardsMutation]
 }
 
@@ -6657,6 +6793,12 @@ input PagesBlocksTimelineMutation {
   scheme: String
   heading: String
   entries: [PagesBlocksTimelineEntriesMutation]
+}
+
+input PagesBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
 }
 
 input PagesBlocksMutation {
@@ -6692,6 +6834,7 @@ input PagesBlocksMutation {
   segmentCards: PagesBlocksSegmentCardsMutation
   valueProps: PagesBlocksValuePropsMutation
   timeline: PagesBlocksTimelineMutation
+  spinningSensor: PagesBlocksSpinningSensorMutation
 }
 
 input PagesMutation {
@@ -7056,11 +7199,14 @@ input SolutionsBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input SolutionsBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [SolutionsBlocksSegmentCardsCardsMutation]
 }
 
@@ -7084,6 +7230,12 @@ input SolutionsBlocksTimelineMutation {
   scheme: String
   heading: String
   entries: [SolutionsBlocksTimelineEntriesMutation]
+}
+
+input SolutionsBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
 }
 
 input SolutionsBlocksMutation {
@@ -7119,6 +7271,7 @@ input SolutionsBlocksMutation {
   segmentCards: SolutionsBlocksSegmentCardsMutation
   valueProps: SolutionsBlocksValuePropsMutation
   timeline: SolutionsBlocksTimelineMutation
+  spinningSensor: SolutionsBlocksSpinningSensorMutation
 }
 
 input SolutionsMutation {
@@ -7483,11 +7636,14 @@ input SegmentsBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input SegmentsBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [SegmentsBlocksSegmentCardsCardsMutation]
 }
 
@@ -7511,6 +7667,12 @@ input SegmentsBlocksTimelineMutation {
   scheme: String
   heading: String
   entries: [SegmentsBlocksTimelineEntriesMutation]
+}
+
+input SegmentsBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
 }
 
 input SegmentsBlocksMutation {
@@ -7546,6 +7708,7 @@ input SegmentsBlocksMutation {
   segmentCards: SegmentsBlocksSegmentCardsMutation
   valueProps: SegmentsBlocksValuePropsMutation
   timeline: SegmentsBlocksTimelineMutation
+  spinningSensor: SegmentsBlocksSpinningSensorMutation
 }
 
 input SegmentsMutation {
@@ -7910,11 +8073,14 @@ input CompareBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input CompareBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [CompareBlocksSegmentCardsCardsMutation]
 }
 
@@ -7938,6 +8104,12 @@ input CompareBlocksTimelineMutation {
   scheme: String
   heading: String
   entries: [CompareBlocksTimelineEntriesMutation]
+}
+
+input CompareBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
 }
 
 input CompareBlocksMutation {
@@ -7973,6 +8145,7 @@ input CompareBlocksMutation {
   segmentCards: CompareBlocksSegmentCardsMutation
   valueProps: CompareBlocksValuePropsMutation
   timeline: CompareBlocksTimelineMutation
+  spinningSensor: CompareBlocksSpinningSensorMutation
 }
 
 input CompareMutation {
@@ -8337,11 +8510,14 @@ input LearnBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input LearnBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [LearnBlocksSegmentCardsCardsMutation]
 }
 
@@ -8365,6 +8541,12 @@ input LearnBlocksTimelineMutation {
   scheme: String
   heading: String
   entries: [LearnBlocksTimelineEntriesMutation]
+}
+
+input LearnBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
 }
 
 input LearnBlocksMutation {
@@ -8400,6 +8582,7 @@ input LearnBlocksMutation {
   segmentCards: LearnBlocksSegmentCardsMutation
   valueProps: LearnBlocksValuePropsMutation
   timeline: LearnBlocksTimelineMutation
+  spinningSensor: LearnBlocksSpinningSensorMutation
 }
 
 input LearnMutation {
@@ -8772,11 +8955,14 @@ input ResourcesBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input ResourcesBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [ResourcesBlocksSegmentCardsCardsMutation]
 }
 
@@ -8800,6 +8986,12 @@ input ResourcesBlocksTimelineMutation {
   scheme: String
   heading: String
   entries: [ResourcesBlocksTimelineEntriesMutation]
+}
+
+input ResourcesBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
 }
 
 input ResourcesBlocksMutation {
@@ -8835,6 +9027,7 @@ input ResourcesBlocksMutation {
   segmentCards: ResourcesBlocksSegmentCardsMutation
   valueProps: ResourcesBlocksValuePropsMutation
   timeline: ResourcesBlocksTimelineMutation
+  spinningSensor: ResourcesBlocksSpinningSensorMutation
 }
 
 input ResourcesMutation {
@@ -9199,11 +9392,14 @@ input CompanyBlocksSegmentCardsCardsMutation {
   body: String
   icon: String
   link: String
+  linkText: String
+  logos: [String]
 }
 
 input CompanyBlocksSegmentCardsMutation {
   scheme: String
   heading: String
+  centered: Boolean
   cards: [CompanyBlocksSegmentCardsCardsMutation]
 }
 
@@ -9227,6 +9423,12 @@ input CompanyBlocksTimelineMutation {
   scheme: String
   heading: String
   entries: [CompanyBlocksTimelineEntriesMutation]
+}
+
+input CompanyBlocksSpinningSensorMutation {
+  eyebrow: String
+  heading: String
+  description: String
 }
 
 input CompanyBlocksMutation {
@@ -9262,6 +9464,7 @@ input CompanyBlocksMutation {
   segmentCards: CompanyBlocksSegmentCardsMutation
   valueProps: CompanyBlocksValuePropsMutation
   timeline: CompanyBlocksTimelineMutation
+  spinningSensor: CompanyBlocksSpinningSensorMutation
 }
 
 input CompanyMutation {

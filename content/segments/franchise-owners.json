@@ -28,15 +28,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Franchise Owners",
       "headline": "Run your branch like a business.",
       "subtitle": "Real-time insight into your branch performance. Train staff in 15 minutes. Differentiate through clinical excellence and patient outcomes.",
       "backgroundImage": "/images/photos/clinical/patient-therapist-smiling.jpg",
       "backgroundImageAlt": "Therapist and patient smiling during an assessment session",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "richText",
@@ -73,7 +73,8 @@
       "testimonials": [
         {
           "quote": "Franchise owner testimonial coming soon.",
-          "attribution": "Franchise Owner, Home Care Network"
+          "role": "Franchise Owner",
+          "organization": "Home Care Network"
         }
       ]
     },
@@ -81,7 +82,7 @@
       "_template": "faqAccordion",
       "heading": "Questions from franchise owners",
       "scheme": "light",
-      "items": [
+      "faqs": [
         {
           "question": "How does this affect my branch P&L?",
           "answer": "One prevented hospitalization per quarter typically covers the program cost. Beyond direct savings, objective screening data strengthens referral relationships and supports client retention, both of which improve revenue."
@@ -99,10 +100,10 @@
     {
       "_template": "ctaBanner",
       "heading": "Own your branch's success. With real data and clear tools.",
-      "body": "30 minutes with the team. Tailored to franchise branch operations.",
       "scheme": "blue",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "bodyText": "30 minutes with the team. Tailored to franchise branch operations."
     }
   ]
 }

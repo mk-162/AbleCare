@@ -26,8 +26,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "light",
-      "waveStyle": "ribbon",
       "backgroundImage": "/images/photos/clinical/therapist-younger-woman.jpg",
       "backgroundImageAlt": "Therapist conducting clinical assessment with patient",
       "eyebrow": "Clinical Evidence",
@@ -36,7 +34,9 @@
       "primaryCtaText": "Talk to the Clinical Team",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Research Summary",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "light",
+      "wave": "ribbon"
     },
     {
       "_template": "evidenceBlock",
@@ -116,32 +116,32 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Upper-body strength proxy. Predicts all-cause mortality, frailty and hospitalization risk."
+          "whatItMeasures": "Upper-body strength proxy. Predicts all-cause mortality, frailty and hospitalization risk."
         },
         {
           "name": "Sit-to-stand",
-          "description": "Lower-limb power and balance. A key indicator of fall likelihood and functional decline."
+          "whatItMeasures": "Lower-limb power and balance. A key indicator of fall likelihood and functional decline."
         },
         {
           "name": "Gait speed",
-          "description": "The 'sixth vital sign' for older adults. Linked to rehospitalization, disability and mortality."
+          "whatItMeasures": "The 'sixth vital sign' for older adults. Linked to rehospitalization, disability and mortality."
         },
         {
           "name": "Timed Up and Go",
-          "description": "Falls risk assessment in under a minute. Validated across home, community and clinical settings."
+          "whatItMeasures": "Falls risk assessment in under a minute. Validated across home, community and clinical settings."
         }
       ]
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Talk to the clinical team about the evidence.",
-      "body": "Our clinical team can walk you through the research and how it applies to your setting.",
       "primaryCtaText": "Talk to the Clinical Team",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "Our clinical team can walk you through the research and how it applies to your setting."
     },
     {
       "_template": "leadMagnetPromo",

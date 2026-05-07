@@ -1,4 +1,5 @@
 {
+  "title": "Falls Prevention for Senior Living",
   "slug": "senior-living",
   "seo": {
     "title": "Falls Prevention for Senior Living & CCRCs | Able Care",
@@ -7,6 +8,7 @@
   },
   "blocks": [
     {
+      "_template": "breadcrumb",
       "items": [
         {
           "label": "Home",
@@ -16,36 +18,41 @@
           "label": "Senior Living",
           "href": "/senior-living"
         }
-      ],
-      "_template": "breadcrumb"
+      ]
     },
     {
+      "_template": "hero",
+      "backgroundImage": "/images/product/elderly-man-holding-gripable-resized.jpg",
+      "backgroundImageAlt": "Older man at a senior living community using Able Assess",
       "eyebrow": "Senior Living",
-      "headline": "Protect residents. Reduce staff turnover. Mitigate falls-related liability.",
+      "headline": "Protect residents. Reduce staff turnover. Avoid falls-related liability.",
       "subtitle": "Objective falls screening across the entire continuum of senior living.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
-      "backgroundImage": "/images/product/elderly-man-holding-gripable-resized.jpg",
-      "backgroundImageAlt": "Older man at a senior living community using Able Assess",
-      "_template": "hero"
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
+      "_template": "metricsBlock",
       "scheme": "light",
       "heading": "What Able Assess Offers Senior Living",
       "metrics": [
         {
-          "name": "Resident Retention"
+          "name": "Resident Retention",
+          "whatItMeasures": "Identify resident fall risk before an injury, implementing clinical referrals and simple solutions to prevent falls."
         },
         {
-          "name": "Liability Mitigation"
+          "name": "Liability Mitigation",
+          "whatItMeasures": "Create a clear record of assessment and action to prevent falls for each resident, protecting your community from falls-related liability."
         },
         {
-          "name": "Differentiation"
+          "name": "Differentiation",
+          "whatItMeasures": "Give your residents and their loved ones a clear, tangible understanding of their risk profile."
         }
-      ],
-      "_template": "metricsBlock"
+      ]
     },
     {
+      "_template": "processSteps",
       "scheme": "grey",
       "heading": "How it works in senior living",
       "steps": [
@@ -69,28 +76,32 @@
           "title": "Track",
           "description": "Longitudinal trends give residents objective milestones and give operators population-level insight into fall risk."
         }
-      ],
-      "_template": "processSteps"
+      ]
     },
     {
+      "_template": "metricsBlock",
       "heading": "Four metrics, one picture of function",
       "metrics": [
         {
-          "name": "Grip strength"
+          "name": "Grip strength",
+          "whatItMeasures": "Full body strength proxy. Predicts frailty, mortality and functional decline."
         },
         {
-          "name": "Sit-to-stand"
+          "name": "Sit-to-stand",
+          "whatItMeasures": "A 30-second assessment of lower-limb strength."
         },
         {
-          "name": "Gait speed"
+          "name": "Gait speed",
+          "whatItMeasures": "A measure of gait over about 13 feet."
         },
         {
-          "name": "Timed Up and Go"
+          "name": "Timed Up and Go",
+          "whatItMeasures": "An assessment of balance and global falls risk."
         }
-      ],
-      "_template": "metricsBlock"
+      ]
     },
     {
+      "_template": "statsBar",
       "heading": "The numbers that matter to senior living",
       "stats": [
         {
@@ -110,42 +121,84 @@
           "label": "Clinical certifications required to run it"
         }
       ],
-      "_template": "statsBar"
+      "scheme": "aqua"
     },
     {
+      "_template": "testimonialCarousel",
       "testimonials": [
         {
-          "quote": "It paid for itself in the first quarter."
+          "quote": "It paid for itself in the first quarter.",
+          "role": "Operations Lead",
+          "organization": "UK CCRC"
         },
         {
-          "quote": "Residents can see their own progress. That changes the conversation with families entirely."
+          "quote": "Residents can see their own progress. That changes the conversation with families entirely.",
+          "role": "Wellness Director",
+          "organization": "US senior living community"
         }
       ],
-      "_template": "testimonialCarousel"
+      "scheme": "aqua"
     },
     {
+      "_template": "faqAccordion",
       "scheme": "grey",
       "heading": "Common questions from senior living operators",
       "emitSchema": true,
-      "_template": "faqAccordion"
+      "faqs": [
+        {
+          "question": "What hardware do we need?",
+          "answer": "The sensor, pouch and measuring tape are all provided as part of the kit. It pairs via Bluetooth with any smartphone or tablet. No additional infrastructure required."
+        },
+        {
+          "question": "Can non-clinical staff run the assessment?",
+          "answer": "Yes, Able Assess was built for clinical and non-clinical staff. Wellness directors, care aides and activities coordinators can all run the protocol with no training course."
+        },
+        {
+          "question": "How does it help with occupancy?",
+          "answer": "Falls are a leading cause of resident turnover. Objective screening has been shown to reduce falls by 25%, which protects length of stay and occupancy rates."
+        },
+        {
+          "question": "Can residents see their own data?",
+          "answer": "Yes. Residents get objective milestones they can track over time, which motivates participation in wellness programs and builds trust in the care plan."
+        },
+        {
+          "question": "How does it reduce liability?",
+          "answer": "A standardized, documented screening protocol creates a defensible record of proactive falls risk management for every resident."
+        }
+      ]
     },
     {
+      "_template": "partnerLogoCarousel",
       "heading": "Trusted by Leading Organizations",
-      "scheme": "white",
-      "_template": "partnerLogoCarousel"
+      "scheme": "white"
     },
     {
+      "_template": "ctaBanner",
       "heading": "See Able Assess in Action.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
-      "_template": "ctaBanner"
+      "scheme": "blue",
+      "wave": "ribbon"
     },
     {
+      "_template": "segmentRouter",
       "heading": "Explore other settings",
-      "_template": "segmentRouter"
+      "segments": [
+        {
+          "title": "Home Care",
+          "description": "Standardize screening across every branch.",
+          "link": "/home-care",
+          "ctaText": "Explore"
+        },
+        {
+          "title": "Pharma & CROs",
+          "description": "Decentralized functional endpoints.",
+          "link": "/pharma",
+          "ctaText": "Explore"
+        }
+      ]
     }
   ],
-  "title": "Falls Prevention for Senior Living",
   "tags": [
     "senior-living",
     "falls-prevention",

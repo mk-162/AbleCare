@@ -28,15 +28,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "PE Operators",
       "headline": "Standardize your care portfolio. Unlock EBITDA growth across 8+ locations.",
       "subtitle": "Portfolio-level visibility across clinical outcomes, financial performance, and operational metrics. Due diligence in days, not weeks.",
       "backgroundImage": "/images/photos/studio/gentleman-sensor-studio.jpg",
       "backgroundImageAlt": "Gentleman using the GripAble sensor in a studio portrait",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "richText",
@@ -73,7 +73,7 @@
       "testimonials": [
         {
           "quote": "Portfolio standardization quote coming soon.",
-          "attribution": "PE Operating Partner"
+          "name": "PE Operating Partner"
         }
       ]
     },
@@ -81,7 +81,7 @@
       "_template": "faqAccordion",
       "heading": "Questions from PE operators",
       "scheme": "light",
-      "items": [
+      "faqs": [
         {
           "question": "How long does implementation take across a portfolio of 8+ sites?",
           "answer": "Most operators deploy across their full portfolio in 30 days. Sensors ship direct to each site. Staff training takes under 15 minutes per person. No site visits are required for initial rollout."
@@ -99,10 +99,10 @@
     {
       "_template": "ctaBanner",
       "heading": "Ready to standardize and unlock portfolio EBITDA?",
-      "body": "30 minutes with the team. Tailored to multi-site PE-backed operations.",
       "scheme": "blue",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "bodyText": "30 minutes with the team. Tailored to multi-site PE-backed operations."
     }
   ]
 }

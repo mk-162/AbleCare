@@ -433,6 +433,16 @@ export const blockSamples: BlockSample[] = [
     },
   },
   {
+    name: "spinningSensor",
+    label: "Spinning Sensor",
+    block: {
+      _template: "spinningSensor",
+      eyebrow: "ABOUT GRIPABLE",
+      heading: "GripAble sensor features.",
+      description: "Designed with precision. Built for real-world care.",
+    },
+  },
+  {
     name: "breadcrumb",
     label: "Breadcrumb",
     block: {

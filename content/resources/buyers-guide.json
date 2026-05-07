@@ -26,8 +26,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/studio/woman-reading-brochure.jpg",
       "backgroundImageAlt": "Woman reading Able Care product brochure",
       "eyebrow": "Free Guide",
@@ -36,7 +34,9 @@
       "primaryCtaText": "Download the Guide",
       "primaryCtaLink": "/downloads/Falls-Prevention-Buyers-Guide.pdf",
       "secondaryCtaText": "Book a Demo",
-      "secondaryCtaLink": "/contact"
+      "secondaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "leadMagnetPromo",
@@ -75,14 +75,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Ready to evaluate Able Assess for your organization?",
-      "body": "Download the guide or book a 20-minute demo with our clinical team.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Guide",
-      "secondaryCtaLink": "/downloads/Falls-Prevention-Buyers-Guide.pdf"
+      "secondaryCtaLink": "/downloads/Falls-Prevention-Buyers-Guide.pdf",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "Download the guide or book a 20-minute demo with our clinical team."
     }
   ],
   "tags": [

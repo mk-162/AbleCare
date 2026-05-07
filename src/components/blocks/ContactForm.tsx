@@ -156,6 +156,21 @@ export function ContactForm({
                 </div>
 
                 <div className="space-y-2">
+                  <label htmlFor="demoInterest" className="text-sm font-medium leading-none">I would like to see a demo of</label>
+                  <select
+                    id="demoInterest"
+                    name="demoInterest"
+                    defaultValue=""
+                    className="flex h-10 w-full rounded-md border border-black/10 bg-ac-grey/30 px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ac-aqua focus-visible:ring-offset-2"
+                  >
+                    <option value="" disabled>Select a product</option>
+                    <option value="Able Assess Falls">Able Assess Falls</option>
+                    <option value="Able Assess Grip Strength">Able Assess Grip Strength</option>
+                    <option value="Able Rehab">Able Rehab</option>
+                  </select>
+                </div>
+
+                <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium leading-none">How can we help?</label>
                   <textarea
                     id="message"

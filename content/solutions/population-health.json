@@ -25,8 +25,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/clinical/therapist-gentleman-desk.jpg",
       "backgroundImageAlt": "Therapist reviewing population health data at desk",
       "eyebrow": "Population Health",
@@ -35,12 +33,13 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "statsBar",
       "heading": "Population health at a glance",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "25%",
@@ -58,50 +57,51 @@
           "value": "1",
           "label": "Standardized protocol, every site"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "imageFeature",
       "heading": "From individual screening to population insight",
-      "body": "Every Able Assess screening feeds a population-level dashboard. Operators can see risk distribution across branches, track trends over time and identify cohorts that need intervention before outcomes deteriorate. The same data that protects individual residents protects HHVBP, Five-Star and VBP performance at scale.",
-      "imageSide": "left",
       "imageAlt": "Therapist and patient reviewing Able Assess screening results together",
-      "imageSrc": "/images/photos/clinical/therapist-patient-tablet.jpg"
+      "imagePosition": "left",
+      "image": "/images/photos/clinical/therapist-patient-tablet.jpg",
+      "description": "Every Able Assess screening feeds a population-level dashboard. Operators can see risk distribution across branches, track trends over time and identify cohorts that need intervention before outcomes deteriorate. The same data that protects individual residents protects HHVBP, Five-Star and VBP performance at scale."
     },
     {
       "_template": "caseStudyCards",
       "heading": "Population health in practice",
-      "cards": [
+      "caseStudies": [
         {
           "title": "12-branch Home Care Operator",
-          "segment": "Home Care",
-          "outcome": "Deployed Able Assess across all branches in 30 days. Identified three high-risk cohorts in the first month. Reduced hospitalizations by protecting HHVBP outcomes.",
-          "href": "/resources/case-studies"
+          "summary": "Deployed Able Assess across all branches in 30 days. Identified three high-risk cohorts in the first month. Reduced hospitalizations by protecting HHVBP outcomes.",
+          "sector": "Home Care",
+          "link": "/resources/case-studies"
         },
         {
           "title": "CCRC with 400+ Residents",
-          "segment": "Senior Living",
-          "outcome": "Screened entire IL and AL population in two weeks. Stratified risk across four care levels. Reduced resident turnover from falls within the first quarter.",
-          "href": "/resources/case-studies"
+          "summary": "Screened entire IL and AL population in two weeks. Stratified risk across four care levels. Reduced resident turnover from falls within the first quarter.",
+          "sector": "Senior Living",
+          "link": "/resources/case-studies"
         },
         {
           "title": "NHS Integrated Care Board",
-          "segment": "Health System",
-          "outcome": "Piloted population-level grip strength screening across three community sites. Data fed directly into falls prevention commissioning decisions.",
-          "href": "/resources/case-studies"
+          "summary": "Piloted population-level grip strength screening across three community sites. Data fed directly into falls prevention commissioning decisions.",
+          "sector": "Health System",
+          "link": "/resources/case-studies"
         }
       ]
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See your population's risk in one dashboard.",
-      "body": "A 20-minute demo with a clinician who has deployed population-level screening.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "A 20-minute demo with a clinician who has deployed population-level screening."
     }
   ],
   "tags": [

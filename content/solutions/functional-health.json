@@ -32,8 +32,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Solutions",
       "headline": "Functional health measurement that goes beyond balance and gait.",
       "subtitle": "Grip strength, physical performance, muscle quality and metabolic reserve. Four dimensions of function measured objectively, tracked over time and linked to clinical outcomes.",
@@ -42,7 +40,9 @@
       "primaryCtaText": "Talk to the Research Team",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "View the Clinical Evidence",
-      "secondaryCtaLink": "/resources/evidence"
+      "secondaryCtaLink": "/resources/evidence",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "metricsBlock",
@@ -50,19 +50,19 @@
       "metrics": [
         {
           "name": "Grip Strength (kg)",
-          "description": "Predicts mortality, cardiovascular risk, cancer outcomes and frailty. The single strongest functional predictor of adverse health events in older adults."
+          "whatItMeasures": "Predicts mortality, cardiovascular risk, cancer outcomes and frailty. The single strongest functional predictor of adverse health events in older adults."
         },
         {
           "name": "Gait Speed (m/s)",
-          "description": "Indicator of balance, fall risk, mobility decline and overall health status. Often described as the sixth vital sign."
+          "whatItMeasures": "Indicator of balance, fall risk, mobility decline and overall health status. Often described as the sixth vital sign."
         },
         {
           "name": "Physical Performance (SPPB or TUG)",
-          "description": "Composite measure of lower limb strength and functional mobility. Captures transfer ability, standing balance and walking capacity in a single score."
+          "whatItMeasures": "Composite measure of lower limb strength and functional mobility. Captures transfer ability, standing balance and walking capacity in a single score."
         },
         {
           "name": "Body Composition",
-          "description": "Muscle mass, fat mass and body composition for monitoring treatment side effects and detecting sarcopenic obesity."
+          "whatItMeasures": "Muscle mass, fat mass and body composition for monitoring treatment side effects and detecting sarcopenic obesity."
         }
       ]
     },
@@ -75,16 +75,16 @@
     {
       "_template": "imageFeature",
       "heading": "Measure what matters for prevention",
-      "body": "Objective measurement enables early detection. Functional decline is often invisible until a crisis event. Regular assessment with validated instruments catches the trajectory before it reaches a clinical threshold, giving care teams time to intervene.",
-      "imageSrc": "/images/product/gripable-in-hand-trimmed-min.png",
       "imageAlt": "Clinician holding the GripAble digital dynamometer sensor",
-      "imageSide": "left"
+      "imagePosition": "left",
+      "image": "/images/product/gripable-in-hand-trimmed-min.png",
+      "description": "Objective measurement enables early detection. Functional decline is often invisible until a crisis event. Regular assessment with validated instruments catches the trajectory before it reaches a clinical threshold, giving care teams time to intervene."
     },
     {
       "_template": "faqAccordion",
       "scheme": "light",
       "heading": "Questions about functional health assessment",
-      "items": [
+      "faqs": [
         {
           "question": "Is grip strength alone sufficient?",
           "answer": "Grip strength is the strongest single predictor, but adding gait speed or SPPB improves diagnostic discrimination. Able Assess captures all measures in a single workflow so you are not relying on one metric alone."
@@ -111,9 +111,9 @@
       "_template": "ctaBanner",
       "scheme": "blue",
       "heading": "Functional health assessment for your setting",
-      "body": "Whether you are running a frailty clinic, an oncology pre-habilitation program or a longevity service, we can show you how Able Assess fits.",
       "primaryCtaText": "Talk to the Research Team",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "bodyText": "Whether you are running a frailty clinic, an oncology pre-habilitation program or a longevity service, we can show you how Able Assess fits."
     }
   ]
 }

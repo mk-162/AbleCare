@@ -32,13 +32,13 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
       "headline": "Protect your HHVBP score with standardized falls screening.",
       "subtitle": "HHVBP includes falls prevention in its quality metrics. This guide explains the requirements and shows how Able Assess supports compliance across your home care agency.",
       "backgroundImage": "/images/photos/clinical/clinician-guiding-patient.jpg",
       "backgroundImageAlt": "Clinician guiding a patient through an assessment",
       "primaryCtaText": "Request the Guide",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "scheme": "blue"
     },
     {
       "_template": "richText",
@@ -56,9 +56,9 @@
       "_template": "ctaBanner",
       "scheme": "blue",
       "heading": "Get the HHVBP Compliance Guide",
-      "body": "Request the full guide with compliance checklists, training templates, and implementation timelines.",
       "primaryCtaText": "Request the Guide",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "bodyText": "Request the full guide with compliance checklists, training templates, and implementation timelines."
     }
   ]
 }

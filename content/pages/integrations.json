@@ -25,15 +25,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Product",
       "headline": "Seamless Integration with Your Existing Systems.",
       "subtitle": "FHIR-compliant APIs, OASIS data export, and direct EHR integration.",
       "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
       "backgroundImageAlt": "GripAble sensor in use",
       "primaryCtaText": "Book a Technical Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "richText",
@@ -46,7 +46,7 @@
       "scheme": "grey",
       "heading": "Integration questions",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "Does Able Assess integrate with my specific EHR?",
           "answer": "We currently support PointClickCare, MatrixCare and Epic with built-in connectors. FHIR and HL7v2 APIs allow integration with most modern EHR platforms. If your system is not listed, contact our integration team to discuss a custom connection."
@@ -67,12 +67,12 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See the integration in action.",
-      "body": "Our technical team can walk you through the API, data formats and EHR connector setup.",
       "primaryCtaText": "Book a Technical Demo",
-      "primaryCtaLink": "/demo"
+      "primaryCtaLink": "/demo",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "Our technical team can walk you through the API, data formats and EHR connector setup."
     }
   ],
   "tags": [

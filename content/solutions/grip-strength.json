@@ -1,4 +1,5 @@
 {
+  "title": "Grip Strength Testing Platform",
   "slug": "grip-strength",
   "seo": {
     "title": "Grip Strength Testing Platform | Able Assess | Digital Dynamometer",
@@ -7,6 +8,7 @@
   },
   "blocks": [
     {
+      "_template": "breadcrumb",
       "items": [
         {
           "label": "Home",
@@ -19,47 +21,53 @@
           "label": "Able Assess - Grip Strength",
           "href": "/solutions/grip-strength"
         }
-      ],
-      "_template": "breadcrumb"
+      ]
     },
     {
+      "_template": "hero",
+      "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
+      "backgroundImageAlt": "Clinician holding the GripAble digital dynamometer",
       "eyebrow": "Solutions",
       "headline": "Unlocking grip strength for application in data-driven healthcare.",
       "subtitle": "Clinical-grade grip strength measurement for clinicians, researchers and population health teams. Built from the ground up for data-driven healthcare.",
       "primaryCtaText": "Schedule a Demo",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "",
-      "secondaryCtaLink": "",
-      "backgroundImage": "/images/product/gripable-in-hand-trimmed-min.png",
-      "backgroundImageAlt": "Clinician holding the GripAble digital dynamometer",
-      "_template": "hero"
+      "secondaryCtaText": "View the Clinical Evidence",
+      "secondaryCtaLink": "/resources/evidence",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
+      "_template": "metricsBlock",
       "scheme": "grey",
       "heading": "Measurement built for clinical confidence",
       "metrics": [
         {
-          "name": "Up-to-date population norms"
+          "name": "Up-to-date population norms",
+          "whatItMeasures": "Gathered recently in the US and the UK, allowing for comparison to present-day populations."
         },
         {
-          "name": "Proven in Peer-Reviewed Research"
+          "name": "Proven in Peer-Reviewed Research",
+          "whatItMeasures": "Best-in-class sensitivity, accuracy, and robustness."
         },
         {
-          "name": "Fully standardized protocol"
+          "name": "Fully standardized protocol",
+          "whatItMeasures": "Guided on-screen instructions ensure consistent positioning, timing and repetition across every assessment."
         },
         {
-          "name": "Real-time data capture"
+          "name": "Real-time data capture",
+          "whatItMeasures": "Results are recorded digitally at the point of assessment, eliminating transcription errors and manual data entry."
         }
-      ],
-      "_template": "metricsBlock"
+      ]
     },
     {
+      "_template": "richText",
       "scheme": "light",
       "heading": "Grip strength predicts health outcomes better than you might expect",
-      "body": "<h3>Cardiovascular risk</h3><p>The Lancet PURE study (2015) followed 139,691 adults across 17 countries and found that each 5 kg reduction in grip strength was associated with a 17% increase in cardiovascular mortality. Per 3.5 kg of decline, all-cause mortality risk rose by 16%. Grip strength outperformed systolic blood pressure as a predictor of death from any cause.</p><h3>Cancer risk</h3><p>Low grip strength is associated with increased cancer mortality. Research indicates a 10% increase in cancer-related death risk for women and a 6% increase for men per unit decline in grip strength. These associations hold after adjusting for age, BMI and physical activity levels.</p><h3>Frailty and falls</h3><p>Grip strength is one of the five Fried frailty criteria and a core component of sarcopenia diagnosis under the EWGSOP2 definition. Low grip strength is independently associated with increased falls risk, reduced mobility and loss of independence in older adults.</p><h3>Population health applications</h3><p>At scale, grip strength data enables population-level risk stratification. Public health teams can identify cohorts at elevated risk of functional decline, target preventive interventions and track the effectiveness of programs over time. Standardized digital capture makes this feasible across distributed care settings.</p>",
-      "_template": "richText"
+      "body": "<h3>Cardiovascular risk</h3><p>The Lancet PURE study (2015) followed 139,691 adults across 17 countries and found that each 5 kg reduction in grip strength was associated with a 17% increase in cardiovascular mortality. Per 3.5 kg of decline, all-cause mortality risk rose by 16%. Grip strength outperformed systolic blood pressure as a predictor of death from any cause.</p><h3>Cancer risk</h3><p>Low grip strength is associated with increased cancer mortality. Research indicates a 10% increase in cancer-related death risk for women and a 6% increase for men per unit decline in grip strength. These associations hold after adjusting for age, BMI and physical activity levels.</p><h3>Frailty and falls</h3><p>Grip strength is one of the five Fried frailty criteria and a core component of sarcopenia diagnosis under the EWGSOP2 definition. Low grip strength is independently associated with increased falls risk, reduced mobility and loss of independence in older adults.</p><h3>Population health applications</h3><p>At scale, grip strength data enables population-level risk stratification. Public health teams can identify cohorts at elevated risk of functional decline, target preventive interventions and track the effectiveness of programs over time. Standardized digital capture makes this feasible across distributed care settings.</p>"
     },
     {
+      "_template": "processSteps",
       "scheme": "aqua",
       "heading": "Simple process. Actionable insight.",
       "steps": [
@@ -83,32 +91,56 @@
           "title": "Track",
           "description": "Monitor grip strength trends over time. Detect decline early and measure the impact of interventions."
         }
-      ],
-      "_template": "processSteps"
+      ]
     },
     {
+      "_template": "faqAccordion",
       "scheme": "grey",
       "heading": "Common questions about grip strength testing",
       "emitSchema": true,
-      "_template": "faqAccordion"
+      "faqs": [
+        {
+          "question": "How does digital dynamometry compare to manual testing with a Jamar?",
+          "answer": "The GripAble sensor correlates to within 2% of the Jamar dynamometer, the traditional gold standard. The key advantage of digital capture is that results are recorded automatically, eliminating transcription errors, observer bias and the need for manual data entry. Protocol standardization is also enforced by the guided on-screen instructions."
+        },
+        {
+          "question": "What normative data does the platform use?",
+          "answer": "Able Assess references published normative datasets stratified by age, sex and hand dominance. Results are compared automatically so clinicians can see where an individual sits relative to their peer group without manual lookup."
+        },
+        {
+          "question": "Who should be assessed for grip strength?",
+          "answer": "Clinical guidelines recommend grip strength screening for adults over 65, individuals at risk of sarcopenia or frailty, post-operative patients, and anyone undergoing functional health assessment. Population health teams may screen broader cohorts for risk stratification."
+        },
+        {
+          "question": "Is grip strength reliable as an indicator on its own?",
+          "answer": "Grip strength is one of the strongest single predictors of adverse health outcomes in older adults. It is most powerful when combined with other functional measures such as gait speed and sit-to-stand, which is why Able Assess captures all four metrics in a single workflow."
+        },
+        {
+          "question": "Can grip strength be measured in remote or home care settings?",
+          "answer": "Yes. The GripAble sensor is portable and connects to any tablet via Bluetooth. Assessments can be conducted in clinics, homes, care facilities or community settings. Results sync to the cloud and are available to the care team immediately."
+        }
+      ]
     },
     {
+      "_template": "ctaBanner",
       "heading": "Talk to the Clinical Team.",
       "primaryCtaText": "Schedule a Demo",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "",
-      "secondaryCtaLink": "",
-      "_template": "ctaBanner"
+      "secondaryCtaText": "View the Clinical Evidence",
+      "secondaryCtaLink": "/resources/evidence",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "See how digital grip strength measurement fits your clinical or research workflow."
     },
     {
+      "_template": "leadMagnetPromo",
+      "eyebrow": "Free Whitepaper",
       "heading": "Grip Strength: The Essential Biomarker for Longevity",
       "promoBody": "Download the full clinical summary — peer-reviewed evidence linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment.",
       "ctaText": "Download the PDF",
-      "ctaLink": "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf",
-      "_template": "leadMagnetPromo"
+      "ctaLink": "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf"
     }
   ],
-  "title": "Grip Strength Testing Platform",
   "tags": [
     "grip-strength",
     "solutions",

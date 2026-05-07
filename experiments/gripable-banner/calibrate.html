@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GripAble Hotspot Calibrator</title>
+<style>
+  :root {
+    --blue: #1432ff;
+    --aqua: #00ffd2;
+    --bg: #fafafa;
+    --ink: #111;
+    --mute: #666;
+    --line: #e5e5e5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 14px/1.4 -apple-system, "Segoe UI", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+  }
+  .num { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .app {
+    display: grid;
+    grid-template-columns: 640px 1fr;
+    gap: 24px;
+    padding: 20px;
+    align-items: start;
+  }
+  /* Left — stage */
+  .stage-wrap { display: flex; flex-direction: column; gap: 12px; }
+  .stage {
+    position: relative;
+    width: 600px;
+    height: 779px;
+    background: #fff;
+    border: 1px solid var(--line);
+    cursor: crosshair;
+    user-select: none;
+  }
+  .stage img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    -webkit-user-drag: none;
+  }
+  .stage svg.lines {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+  }
+  .side-label {
+    position: absolute;
+    transform: translateY(-50%);
+    background: rgba(20,50,255,0.92);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .side-label.dim { background: rgba(0,0,0,0.4); }
+  .dot {
+    position: absolute;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    line-height: 1;
+  }
+  .dot.active   { background: var(--blue); width: 22px; height: 22px; font-size: 13px; }
+  .dot.other    { background: rgba(0,0,0,0.7); }
+  .dot.preview  { background: var(--blue); opacity: 0.7; }
+  .dot.key      { background: var(--blue); width: 22px; height: 22px; font-size: 13px; outline: 3px solid #fff; box-shadow: 0 0 0 4px var(--blue), 0 1px 4px rgba(0,0,0,0.5); }
+
+  .frame-bar {
+    width: 600px;
+    display: flex; gap: 8px; align-items: center;
+  }
+  .frame-bar input[type=range] { flex: 1; }
+  .frame-bar .label { width: 90px; font-weight: 600; }
+  .strip {
+    display: flex;
+    width: 600px;
+    height: 28px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+  .strip .cell {
+    flex: 1; border-right: 1px solid #f0f0f0; cursor: pointer;
+    position: relative;
+    font-size: 9px;
+    color: var(--mute);
+    text-align: center;
+    line-height: 28px;
+  }
+  .strip .cell:last-child { border-right: 0; }
+  .strip .cell.has-key { background: rgba(20,50,255,0.18); color: var(--blue); font-weight: 700; }
+  .strip .cell.current { outline: 2px solid var(--blue); outline-offset: -2px; z-index: 1; }
+  .strip .cell.hidden-frame { background: rgba(0,0,0,0.06); }
+
+  /* Right — controls */
+  .panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .panel h3 {
+    margin: 0 0 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--mute);
+  }
+  .features { display: flex; flex-direction: column; gap: 4px; }
+  .feature-btn {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    background: #fff;
+    cursor: pointer;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    border-radius: 4px;
+  }
+  .feature-btn .badge {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--blue); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 12px; flex-shrink: 0;
+  }
+  .feature-btn.active { border-color: var(--blue); background: rgba(20,50,255,0.06); }
+  .feature-btn .count { margin-left: auto; font-size: 11px; color: var(--mute); }
+  .feature-btn .count.has { color: var(--blue); font-weight: 700; }
+
+  .row { display: flex; gap: 8px; align-items: center; margin: 6px 0; }
+  .row label { width: 110px; font-size: 12px; color: var(--mute); }
+  .row input[type=range] { flex: 1; }
+  .val { width: 50px; text-align: right; font-weight: 600; }
+
+  button.btn {
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+    cursor: pointer;
+    font: inherit;
+    border-radius: 4px;
+  }
+  button.btn:hover { border-color: var(--blue); }
+  button.btn.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+  button.btn.danger { color: #c00; }
+
+  textarea.export {
+    width: 100%;
+    height: 260px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    border: 1px solid var(--line);
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .hint { color: var(--mute); font-size: 12px; }
+  .help kbd {
+    font-family: ui-monospace, monospace;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-size: 11px;
+  }
+  .keypad-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <!-- LEFT: stage -->
+  <div class="stage-wrap">
+    <div id="status" style="font-weight:600">Loading…</div>
+    <div class="stage" id="stage">
+      <img id="frame" alt="">
+      <svg class="lines" id="linesSvg" viewBox="0 0 600 779" preserveAspectRatio="none"></svg>
+    </div>
+    <div class="frame-bar">
+      <span class="label">Frame <span id="frameNum" class="num">1</span>/21</span>
+      <input id="frameSlider" type="range" min="0" max="20" value="0">
+      <button class="btn" id="prevFrame">←</button>
+      <button class="btn" id="nextFrame">→</button>
+    </div>
+    <div class="frame-bar" style="gap:14px">
+      <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mute)">
+        <input type="checkbox" id="showLines" checked> Lead-lines
+      </label>
+      <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mute)">
+        <input type="checkbox" id="showOthers" checked> Other features
+      </label>
+      <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mute)">
+        <input type="checkbox" id="showLabels" checked> Labels
+      </label>
+    </div>
+    <div class="strip" id="strip"></div>
+    <div class="hint help">
+      <kbd>←</kbd>/<kbd>→</kbd> change frame &nbsp;
+      <kbd>↑</kbd>/<kbd>↓</kbd> change feature &nbsp;
+      <kbd>click</kbd> set keyframe at current frame &nbsp;
+      <kbd>Del</kbd> remove keyframe at current frame
+    </div>
+  </div>
+
+  <!-- RIGHT: panels -->
+  <div>
+    <div class="panel">
+      <h3>Feature</h3>
+      <div id="featureList" class="features"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Visibility curve</h3>
+      <div class="row">
+        <label>Peak frame</label>
+        <input id="peak" type="range" min="0" max="20" value="0">
+        <span id="peakVal" class="val num">0</span>
+      </div>
+      <div class="row">
+        <label>Half-width</label>
+        <input id="halfWidth" type="range" min="1" max="20" value="5">
+        <span id="halfWidthVal" class="val num">5</span>
+      </div>
+      <div class="hint">vis = max(0, 1 - |frame − peak| / halfWidth)</div>
+    </div>
+
+    <div class="panel">
+      <h3>Keyframes for this feature</h3>
+      <div id="keyList" class="num" style="font-size:12px"></div>
+      <div class="keypad-row">
+        <button class="btn" id="markHidden">Mark frame hidden</button>
+        <button class="btn danger" id="clearKey">Remove keyframe at current frame</button>
+        <button class="btn danger" id="clearFeature">Reset this feature</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>Export</h3>
+      <div class="keypad-row">
+        <button class="btn primary" id="doExport">Generate JSON</button>
+        <button class="btn" id="copyJson">Copy</button>
+        <button class="btn" id="downloadJson">Download .json</button>
+        <button class="btn" id="doImport">Import from box</button>
+        <button class="btn danger" id="resetAll">Reset all</button>
+      </div>
+      <textarea id="exportText" class="export" placeholder='Generate JSON to export, OR paste a calibration payload here and click "Import from box".'></textarea>
+    </div>
+  </div>
+</div>
+
+<script>
+const FRAME_COUNT = 21;
+const FEATURES = [
+  { n: 1, label: "Locking Button" },
+  { n: 2, label: "Strap Hooks" },
+  { n: 3, label: "Grip Plate" },
+  { n: 4, label: "Battery LED" },
+  { n: 5, label: "Lanyard Hook" },
+  { n: 6, label: "Charging Port" },
+  { n: 7, label: "Connection LED" },
+];
+const STORAGE_KEY = "gripable_calibration_v1";
+
+// Default visibility curve config per feature (rough starting points; user adjusts)
+const DEFAULT_VIS = {
+  1: { peak: 1,  halfWidth: 4 },
+  2: { peak: 4,  halfWidth: 5 },
+  3: { peak: 3,  halfWidth: 6 },
+  4: { peak: 5,  halfWidth: 5 },
+  5: { peak: 0,  halfWidth: 4 },
+  6: { peak: 14, halfWidth: 5 },
+  7: { peak: 11, halfWidth: 6 },
+};
+
+// state shape:
+//   data[n] = { keys: { 0: {x,y}, 5: {x,y}, ... }, hidden: { 14: true, ... }, peak, halfWidth }
+let data = loadOrInit();
+let currentFeature = 1;
+let currentFrame = 0;
+
+function loadOrInit() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch (e) {}
+  const fresh = {};
+  for (const f of FEATURES) {
+    fresh[f.n] = {
+      keys: {},
+      hidden: {},
+      peak: DEFAULT_VIS[f.n].peak,
+      halfWidth: DEFAULT_VIS[f.n].halfWidth,
+    };
+  }
+  return fresh;
+}
+function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
+
+/* ─────────── Interpolation (mirrors gripable-rotate.jsx::interpKey) ─────────── */
+function interpPos(keys, f) {
+  const ks = Object.keys(keys).map(Number).sort((a, b) => a - b);
+  if (ks.length === 0) return null;
+  if (keys[f] !== undefined) return keys[f];
+  if (f <= ks[0]) return keys[ks[0]];
+  if (f >= ks[ks.length - 1]) return keys[ks[ks.length - 1]];
+  let lo = ks[0], hi = ks[ks.length - 1];
+  for (const k of ks) { if (k <= f) lo = k; }
+  for (let i = ks.length - 1; i >= 0; i--) { if (ks[i] >= f) hi = ks[i]; }
+  if (lo === hi) return keys[lo];
+  const t = (f - lo) / (hi - lo);
+  const a = keys[lo], b = keys[hi];
+  return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t };
+}
+function visAt(F, f) {
+  if (F.hidden[f]) return 0;
+  const d = Math.abs(f - F.peak);
+  if (d > F.halfWidth) return 0;
+  return Math.max(0, 1 - d / F.halfWidth);
+}
+
+/* ─────────── DOM ─────────── */
+const $ = id => document.getElementById(id);
+const stage = $("stage");
+const frameImg = $("frame");
+const frameSlider = $("frameSlider");
+const frameNum = $("frameNum");
+const status = $("status");
+const featureList = $("featureList");
+const keyList = $("keyList");
+const peakSlider = $("peak");
+const peakVal = $("peakVal");
+const hwSlider = $("halfWidth");
+const hwVal = $("halfWidthVal");
+const strip = $("strip");
+const exportText = $("exportText");
+const showLines = $("showLines");
+const showOthers = $("showOthers");
+const showLabels = $("showLabels");
+const linesSvg = $("linesSvg");
+
+// Same side assignments as gripable-rotate.jsx so the lines mirror production layout.
+const SIDE = { 1: "left", 2: "right", 3: "right", 4: "right", 5: "right", 6: "left", 7: "left" };
+// Vertical anchor on the side rail (in 600x779 image coords) per feature.
+const RAIL_Y = { 1: 90, 6: 380, 7: 670, 2: 90, 3: 280, 4: 480, 5: 680 };
+const RAIL_X_LEFT = 30, RAIL_X_RIGHT = 570;
+
+function frameSrc(i) {
+  return `assets/rotate/${String(i + 1).padStart(2, "0")}.png`;
+}
+
+function renderFeatureList() {
+  featureList.innerHTML = "";
+  for (const f of FEATURES) {
+    const btn = document.createElement("button");
+    const keyCount = Object.keys(data[f.n].keys).length;
+    btn.className = "feature-btn" + (f.n === currentFeature ? " active" : "");
+    btn.innerHTML = `
+      <span class="badge">${f.n}</span>
+      <span>${f.label}</span>
+      <span class="count ${keyCount ? "has" : ""}">${keyCount} key${keyCount === 1 ? "" : "s"}</span>
+    `;
+    btn.onclick = () => { currentFeature = f.n; renderAll(); };
+    featureList.appendChild(btn);
+  }
+}
+
+function renderStrip() {
+  strip.innerHTML = "";
+  const F = data[currentFeature];
+  for (let i = 0; i < FRAME_COUNT; i++) {
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    if (F.keys[i] !== undefined) cell.classList.add("has-key");
+    if (F.hidden[i]) cell.classList.add("hidden-frame");
+    if (i === currentFrame) cell.classList.add("current");
+    cell.textContent = String(i + 1);
+    cell.onclick = () => { currentFrame = i; renderStage(); };
+    strip.appendChild(cell);
+  }
+}
+
+function renderKeyList() {
+  const F = data[currentFeature];
+  const ks = Object.keys(F.keys).map(Number).sort((a, b) => a - b);
+  if (ks.length === 0) {
+    keyList.textContent = "No keyframes yet — click on the device to add one.";
+    return;
+  }
+  keyList.innerHTML = ks.map(k => {
+    const p = F.keys[k];
+    return `<div>frame ${String(k + 1).padStart(2, " ")}: x=${Math.round(p.x)} y=${Math.round(p.y)}</div>`;
+  }).join("");
+}
+
+function renderStage() {
+  frameImg.src = frameSrc(currentFrame);
+  frameNum.textContent = currentFrame + 1;
+  frameSlider.value = currentFrame;
+
+  // Clear old dots & labels & lines
+  stage.querySelectorAll(".dot, .side-label").forEach(d => d.remove());
+  linesSvg.innerHTML = "";
+
+  const linesOn = showLines.checked;
+  const othersOn = showOthers.checked;
+  const labelsOn = showLabels.checked;
+
+  // Helper: draw a curved lead-line + side label for a feature.
+  const drawLine = (n, p, v, isActive) => {
+    if (!linesOn || v < 0.05) return;
+    const side = SIDE[n] || "right";
+    const railX = side === "left" ? RAIL_X_LEFT : RAIL_X_RIGHT;
+    const railY = RAIL_Y[n] || p.y;
+    const dx = (railX - p.x) * 0.5;
+    const d = `M ${p.x},${p.y} C ${p.x + dx},${p.y} ${railX - dx},${railY} ${railX},${railY}`;
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", d);
+    path.setAttribute("fill", "none");
+    path.setAttribute("stroke", isActive ? "#1432ff" : "rgba(0,0,0,0.25)");
+    path.setAttribute("stroke-width", isActive ? "2" : "1");
+    path.setAttribute("stroke-linecap", "round");
+    path.setAttribute("opacity", String(isActive ? Math.max(0.5, v) : v * 0.6));
+    linesSvg.appendChild(path);
+
+    if (labelsOn) {
+      const label = document.createElement("div");
+      label.className = "side-label" + (isActive ? "" : " dim");
+      const F = FEATURES.find(f => f.n === n);
+      label.textContent = `${n}. ${F.label}`;
+      // position label on the rail in stage coords (px)
+      label.style.top = (railY / 779 * 100) + "%";
+      if (side === "left") {
+        label.style.left = "4px";
+      } else {
+        label.style.right = "4px";
+      }
+      label.style.opacity = String(isActive ? 1 : 0.55);
+      stage.appendChild(label);
+    }
+  };
+
+  // Other features (solid dark dots, full opacity, numbered)
+  if (othersOn) {
+    for (const f of FEATURES) {
+      if (f.n === currentFeature) continue;
+      const F = data[f.n];
+      const p = interpPos(F.keys, currentFrame);
+      if (!p) continue;
+      drawLine(f.n, p, 1, false);
+      const dot = document.createElement("div");
+      dot.className = "dot other";
+      dot.style.left = p.x + "px";
+      dot.style.top = p.y + "px";
+      dot.textContent = f.n;
+      stage.appendChild(dot);
+    }
+  }
+
+  // Current feature: interpolated preview + actual keyframe (if exists)
+  const F = data[currentFeature];
+  const p = interpPos(F.keys, currentFrame);
+  if (p) {
+    drawLine(currentFeature, p, 1, true);
+    const isKey = F.keys[currentFrame] !== undefined;
+    const dot = document.createElement("div");
+    dot.className = "dot " + (isKey ? "key" : "preview");
+    dot.style.left = p.x + "px";
+    dot.style.top = p.y + "px";
+    dot.textContent = currentFeature;
+    stage.appendChild(dot);
+  }
+
+  // Status line
+  const F2 = data[currentFeature];
+  const v = visAt(F2, currentFrame);
+  const featureLabel = FEATURES.find(f => f.n === currentFeature).label;
+  const isKey = F2.keys[currentFrame] !== undefined;
+  const isHidden = !!F2.hidden[currentFrame];
+  status.textContent =
+    `Feature ${currentFeature}: ${featureLabel} — Frame ${currentFrame + 1}/21` +
+    `  •  vis=${v.toFixed(2)}` +
+    (isKey ? "  •  KEY" : "") +
+    (isHidden ? "  •  HIDDEN" : "");
+}
+
+function renderVisCurveControls() {
+  const F = data[currentFeature];
+  peakSlider.value = F.peak;
+  peakVal.textContent = F.peak + 1;       // display 1-based
+  hwSlider.value = F.halfWidth;
+  hwVal.textContent = F.halfWidth;
+}
+
+function renderAll() {
+  renderFeatureList();
+  renderStrip();
+  renderKeyList();
+  renderVisCurveControls();
+  renderStage();
+}
+
+/* ─────────── Stage interactions ─────────── */
+stage.addEventListener("click", (e) => {
+  const rect = stage.getBoundingClientRect();
+  const x = (e.clientX - rect.left) * (600 / rect.width);
+  const y = (e.clientY - rect.top)  * (779 / rect.height);
+  const F = data[currentFeature];
+  F.keys[currentFrame] = { x: Math.round(x), y: Math.round(y) };
+  delete F.hidden[currentFrame];   // a click implies visible
+  save();
+  renderAll();
+});
+
+/* ─────────── Controls ─────────── */
+frameSlider.oninput = () => { currentFrame = +frameSlider.value; renderStage(); renderStrip(); };
+showLines.onchange = renderStage;
+showOthers.onchange = renderStage;
+showLabels.onchange = renderStage;
+$("prevFrame").onclick = () => { currentFrame = (currentFrame - 1 + FRAME_COUNT) % FRAME_COUNT; renderAll(); };
+$("nextFrame").onclick = () => { currentFrame = (currentFrame + 1) % FRAME_COUNT; renderAll(); };
+
+peakSlider.oninput = () => {
+  data[currentFeature].peak = +peakSlider.value;
+  peakVal.textContent = (+peakSlider.value) + 1;
+  save();
+  renderStage();
+};
+hwSlider.oninput = () => {
+  data[currentFeature].halfWidth = +hwSlider.value;
+  hwVal.textContent = hwSlider.value;
+  save();
+  renderStage();
+};
+
+$("markHidden").onclick = () => {
+  const F = data[currentFeature];
+  F.hidden[currentFrame] = true;
+  delete F.keys[currentFrame];
+  save();
+  renderAll();
+};
+$("clearKey").onclick = () => {
+  const F = data[currentFeature];
+  delete F.keys[currentFrame];
+  delete F.hidden[currentFrame];
+  save();
+  renderAll();
+};
+$("clearFeature").onclick = () => {
+  if (!confirm(`Reset feature ${currentFeature}?`)) return;
+  data[currentFeature] = {
+    keys: {},
+    hidden: {},
+    peak: DEFAULT_VIS[currentFeature].peak,
+    halfWidth: DEFAULT_VIS[currentFeature].halfWidth,
+  };
+  save();
+  renderAll();
+};
+$("resetAll").onclick = () => {
+  if (!confirm("Reset ALL calibration data?")) return;
+  localStorage.removeItem(STORAGE_KEY);
+  data = loadOrInit();
+  renderAll();
+};
+
+/* ─────────── Export ─────────── */
+function buildExport() {
+  // Output exactly the shape gripable-rotate.jsx expects in F_KEYS:
+  //   F_KEYS[n].pos      = { frameIdx: {x,y}, ... }    (sparse keyframes — interpKey handles the rest)
+  //   F_KEYS[n].visKeys  = { 0: vis, 1: vis, ... 20: vis }   (full per-frame visibility from the curve)
+  //   F_KEYS[n].bestFrame = peak
+  const out = {};
+  for (const f of FEATURES) {
+    const F = data[f.n];
+    const pos = {};
+    const ks = Object.keys(F.keys).map(Number).sort((a, b) => a - b);
+    for (const k of ks) pos[k] = { x: Math.round(F.keys[k].x), y: Math.round(F.keys[k].y) };
+    const visKeys = {};
+    for (let i = 0; i < FRAME_COUNT; i++) {
+      visKeys[i] = +visAt(F, i).toFixed(2);
+    }
+    out[f.n] = { bestFrame: F.peak, pos, visKeys, _peak: F.peak, _halfWidth: F.halfWidth };
+  }
+  return out;
+}
+function formatExport(out) {
+  // Pretty-print as JS-ish so it can be pasted directly.
+  const lines = ["// paste these into F_KEYS in gripable-rotate.jsx", "const CALIBRATED = {"];
+  for (const f of FEATURES) {
+    const o = out[f.n];
+    lines.push(`  ${f.n}: { // ${f.label}`);
+    lines.push(`    bestFrame: ${o.bestFrame},`);
+    lines.push(`    // visCurve(${o._peak}, ${o._halfWidth})`);
+    const posStr = Object.keys(o.pos).sort((a, b) => +a - +b)
+      .map(k => `${k}: { x: ${o.pos[k].x}, y: ${o.pos[k].y} }`).join(", ");
+    lines.push(`    pos: { ${posStr} },`);
+    const visStr = Object.keys(o.visKeys).sort((a, b) => +a - +b)
+      .map(k => `${k}: ${o.visKeys[k]}`).join(", ");
+    lines.push(`    visKeys: { ${visStr} },`);
+    lines.push(`  },`);
+  }
+  lines.push("};");
+  return lines.join("\n");
+}
+$("doExport").onclick = () => { exportText.value = formatExport(buildExport()); };
+$("copyJson").onclick = async () => {
+  if (!exportText.value) exportText.value = formatExport(buildExport());
+  await navigator.clipboard.writeText(exportText.value);
+  $("copyJson").textContent = "Copied!";
+  setTimeout(() => $("copyJson").textContent = "Copy", 1200);
+};
+$("doImport").onclick = () => {
+  const txt = exportText.value.trim();
+  if (!txt) { alert("Paste calibration JSON in the box first."); return; }
+  let payload;
+  try {
+    // Accept either raw JSON or the JS-ish "const CALIBRATED = {...};" format we export.
+    const stripped = txt.replace(/^[^{]*?(\{[\s\S]*\})[^}]*$/, "$1");
+    payload = (new Function("return " + stripped))();
+  } catch (e) { alert("Couldn't parse JSON: " + e.message); return; }
+  for (const f of FEATURES) {
+    const o = payload[f.n];
+    if (!o) continue;
+    data[f.n] = {
+      keys: {},
+      hidden: {},
+      peak: o._peak ?? o.bestFrame ?? DEFAULT_VIS[f.n].peak,
+      halfWidth: o._halfWidth ?? DEFAULT_VIS[f.n].halfWidth,
+    };
+    if (o.pos) {
+      for (const k of Object.keys(o.pos)) {
+        const p = o.pos[k];
+        if (p && typeof p.x === "number" && typeof p.y === "number") {
+          data[f.n].keys[+k] = { x: Math.round(p.x), y: Math.round(p.y) };
+        }
+      }
+    }
+    if (o.hidden) {
+      for (const k of Object.keys(o.hidden)) data[f.n].hidden[+k] = true;
+    }
+  }
+  save();
+  renderAll();
+  alert("Imported.");
+};
+$("downloadJson").onclick = () => {
+  const out = buildExport();
+  const blob = new Blob([JSON.stringify(out, null, 2)], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "gripable-calibration.json";
+  a.click();
+};
+
+/* ─────────── Keyboard ─────────── */
+document.addEventListener("keydown", (e) => {
+  if (e.target.tagName === "TEXTAREA" || e.target.tagName === "INPUT") return;
+  if (e.key === "ArrowRight") { currentFrame = (currentFrame + 1) % FRAME_COUNT; renderAll(); e.preventDefault(); }
+  else if (e.key === "ArrowLeft") { currentFrame = (currentFrame - 1 + FRAME_COUNT) % FRAME_COUNT; renderAll(); e.preventDefault(); }
+  else if (e.key === "ArrowDown") {
+    const idx = FEATURES.findIndex(f => f.n === currentFeature);
+    currentFeature = FEATURES[(idx + 1) % FEATURES.length].n; renderAll(); e.preventDefault();
+  }
+  else if (e.key === "ArrowUp") {
+    const idx = FEATURES.findIndex(f => f.n === currentFeature);
+    currentFeature = FEATURES[(idx - 1 + FEATURES.length) % FEATURES.length].n; renderAll(); e.preventDefault();
+  }
+  else if (e.key === "Delete" || e.key === "Backspace") {
+    const F = data[currentFeature];
+    delete F.keys[currentFrame];
+    delete F.hidden[currentFrame];
+    save(); renderAll(); e.preventDefault();
+  }
+});
+
+renderAll();
+</script>
+</body>
+</html>

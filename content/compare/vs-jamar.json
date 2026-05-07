@@ -12,7 +12,6 @@
     {
       "_template": "hero",
       "scheme": "light",
-      "waveStyle": "ribbon",
       "backgroundImage": "/images/photos/clinical/sensor-closeup-hand.jpg",
       "backgroundImageAlt": "Close-up of GripAble digital grip strength measurement",
       "eyebrow": "Comparison",
@@ -21,7 +20,8 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Comparison PDF",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "wave": "ribbon"
     },
     {
       "_template": "featureComparison",
@@ -118,13 +118,13 @@
     {
       "_template": "ctaBanner",
       "scheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See digital grip strength in action.",
-      "body": "A 20-minute demo comparing analogue and digital grip measurement, side by side.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "wave": "ribbon",
+      "bodyText": "A 20-minute demo comparing analogue and digital grip measurement, side by side."
     }
   ],
   "tags": [

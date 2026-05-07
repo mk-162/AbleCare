@@ -25,15 +25,15 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "eyebrow": "Evidence",
       "headline": "Clinical Evidence for Able Assess.",
       "subtitle": "Peer-reviewed validation data. Coming soon.",
       "backgroundImage": "/images/photos/clinical/sensor-closeup-hand.jpg",
       "backgroundImageAlt": "Close-up of the GripAble sensor in a patient's hand",
       "primaryCtaText": "Contact the Clinical Team",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "richText",
@@ -43,12 +43,12 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Need validation data now?",
-      "body": "Our clinical team can share study data, regulatory documentation and technical specifications directly.",
       "primaryCtaText": "Contact the Clinical Team",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "Our clinical team can share study data, regulatory documentation and technical specifications directly."
     }
   ],
   "tags": [

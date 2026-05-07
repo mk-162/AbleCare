@@ -26,17 +26,16 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "light",
-      "waveStyle": "ribbon",
       "backgroundImage": "/images/photos/clinical/patient-home-grippable-exercise.jpg",
       "backgroundImageAlt": "Patient independently using Able Assess",
       "eyebrow": "Customer Voices",
       "headline": "What our customers say.",
-      "subtitle": "Hear directly from the home care operators, senior living teams and clinicians using Able Assess in the field."
+      "subtitle": "Hear directly from the home care operators, senior living teams and clinicians using Able Assess in the field.",
+      "scheme": "light",
+      "wave": "ribbon"
     },
     {
       "_template": "testimonialCarousel",
-      "colorScheme": "aqua",
       "testimonials": [
         {
           "quote": "I really like that it is a preventative tool, not a reactive tool. If we use it out of the gate with customers we really can prevent falls.",
@@ -58,20 +57,42 @@
           "role": "Therapy Manager",
           "organization": "Skilled Nursing Facility"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "partnerLogoCarousel",
       "heading": "Where Able Assess is in use",
       "scheme": "white",
       "logos": [
-        { "src": "/images/logos/cypress-homecare-solutions.png", "alt": "Cypress Homecare Solutions" },
-        { "src": "/images/logos/right-at-home.png", "alt": "Right at Home" },
-        { "src": "/images/logos/caring-hands-caregivers.png", "alt": "Caring Hands Caregivers" },
-        { "src": "/images/logos/shore-homecare-services.png", "alt": "Shore Homecare Services" },
-        { "src": "/images/logos/eskaton.png", "alt": "Eskaton" },
-        { "src": "/images/logos/consonus.png", "alt": "Consonus" },
-        { "src": "/images/logos/us-physical-therapy.png", "alt": "US Physical Therapy" }
+        {
+          "src": "/images/logos/cypress-homecare-solutions.png",
+          "alt": "Cypress Homecare Solutions"
+        },
+        {
+          "src": "/images/logos/right-at-home.png",
+          "alt": "Right at Home"
+        },
+        {
+          "src": "/images/logos/caring-hands-caregivers.png",
+          "alt": "Caring Hands Caregivers"
+        },
+        {
+          "src": "/images/logos/shore-homecare-services.png",
+          "alt": "Shore Homecare Services"
+        },
+        {
+          "src": "/images/logos/eskaton.png",
+          "alt": "Eskaton"
+        },
+        {
+          "src": "/images/logos/consonus.png",
+          "alt": "Consonus"
+        },
+        {
+          "src": "/images/logos/us-physical-therapy.png",
+          "alt": "US Physical Therapy"
+        }
       ]
     }
   ],

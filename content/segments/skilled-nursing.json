@@ -22,8 +22,6 @@
     },
     {
       "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
       "backgroundImage": "/images/photos/clinical/therapist-gentleman-bed.jpg",
       "backgroundImageAlt": "Therapist conducting bedside assessment with patient",
       "eyebrow": "Skilled Nursing Facilities",
@@ -32,7 +30,9 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the SNF Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "crest"
     },
     {
       "_template": "metricsBlock",
@@ -40,19 +40,19 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "description": "Upper-body strength proxy. Low grip strength predicts falls, rehospitalization and functional decline in SNF residents."
+          "whatItMeasures": "Upper-body strength proxy. Low grip strength predicts falls, rehospitalization and functional decline in SNF residents."
         },
         {
           "name": "Sit-to-stand",
-          "description": "Lower-limb power and balance. A key predictor of discharge readiness and safe transfer ability."
+          "whatItMeasures": "Lower-limb power and balance. A key predictor of discharge readiness and safe transfer ability."
         },
         {
           "name": "Gait speed",
-          "description": "The 'sixth vital sign.' Linked to rehospitalization risk, length of stay and VBP outcomes."
+          "whatItMeasures": "The 'sixth vital sign.' Linked to rehospitalization risk, length of stay and VBP outcomes."
         },
         {
           "name": "Timed Up and Go",
-          "description": "Falls risk assessment in under a minute. Validated in skilled nursing and rehabilitation settings."
+          "whatItMeasures": "Falls risk assessment in under a minute. Validated in skilled nursing and rehabilitation settings."
         }
       ]
     },
@@ -85,23 +85,25 @@
     },
     {
       "_template": "testimonialCarousel",
-      "colorScheme": "aqua",
       "testimonials": [
         {
           "quote": "We caught decline six weeks earlier than we would have with our old process.",
-          "attribution": "Clinical Director, US skilled nursing facility"
+          "role": "Clinical Director",
+          "organization": "US skilled nursing facility"
         },
         {
           "quote": "The objective data gave us something defensible to show surveyors. That alone was worth the investment.",
-          "attribution": "Director of Nursing, multi-site SNF operator"
+          "role": "Director of Nursing",
+          "organization": "multi-site SNF operator"
         }
-      ]
+      ],
+      "scheme": "aqua"
     },
     {
       "_template": "faqAccordion",
       "heading": "Common questions from skilled nursing operators",
       "emitSchema": true,
-      "items": [
+      "faqs": [
         {
           "question": "How does Able Assess help protect Five-Star ratings?",
           "answer": "Falls outcomes feed quality measures that directly impact Five-Star ratings. Objective screening identifies at-risk residents earlier, enabling timely intervention before falls occur and protecting your quality scores."
@@ -130,14 +132,14 @@
     },
     {
       "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in your skilled nursing workflow.",
-      "body": "20 minutes with a clinician who has deployed it in SNF settings.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "20 minutes with a clinician who has deployed it in SNF settings."
     },
     {
       "_template": "leadMagnetPromo",

@@ -304,12 +304,15 @@ fragment PagesParts on Pages {
     ... on PagesBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on PagesBlocksValueProps {
@@ -329,6 +332,11 @@ fragment PagesParts on Pages {
         year
         body
       }
+    }
+    ... on PagesBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
   title
@@ -646,12 +654,15 @@ fragment SolutionsParts on Solutions {
     ... on SolutionsBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on SolutionsBlocksValueProps {
@@ -671,6 +682,11 @@ fragment SolutionsParts on Solutions {
         year
         body
       }
+    }
+    ... on SolutionsBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
   title
@@ -988,12 +1004,15 @@ fragment SegmentsParts on Segments {
     ... on SegmentsBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on SegmentsBlocksValueProps {
@@ -1013,6 +1032,11 @@ fragment SegmentsParts on Segments {
         year
         body
       }
+    }
+    ... on SegmentsBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
   title
@@ -1330,12 +1354,15 @@ fragment CompareParts on Compare {
     ... on CompareBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on CompareBlocksValueProps {
@@ -1355,6 +1382,11 @@ fragment CompareParts on Compare {
         year
         body
       }
+    }
+    ... on CompareBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
   title
@@ -1687,12 +1719,15 @@ fragment LearnParts on Learn {
     ... on LearnBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on LearnBlocksValueProps {
@@ -1712,6 +1747,11 @@ fragment LearnParts on Learn {
         year
         body
       }
+    }
+    ... on LearnBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
 }
@@ -2022,12 +2062,15 @@ fragment ResourcesParts on Resources {
     ... on ResourcesBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on ResourcesBlocksValueProps {
@@ -2047,6 +2090,11 @@ fragment ResourcesParts on Resources {
         year
         body
       }
+    }
+    ... on ResourcesBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
   title
@@ -2364,12 +2412,15 @@ fragment CompanyParts on Company {
     ... on CompanyBlocksSegmentCards {
       scheme
       heading
+      centered
       cards {
         __typename
         title
         body
         icon
         link
+        linkText
+        logos
       }
     }
     ... on CompanyBlocksValueProps {
@@ -2389,6 +2440,11 @@ fragment CompanyParts on Company {
         year
         body
       }
+    }
+    ... on CompanyBlocksSpinningSensor {
+      eyebrow
+      heading
+      description
     }
   }
   title

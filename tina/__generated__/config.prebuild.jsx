@@ -736,6 +736,7 @@ var segmentCardsBlock = {
   fields: [
     { type: "string", name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
     { type: "string", name: "heading", label: "Section Heading" },
+    { type: "boolean", name: "centered", label: "Center Card Content" },
     {
       type: "object",
       name: "cards",
@@ -746,7 +747,9 @@ var segmentCardsBlock = {
         { type: "string", name: "title", label: "Title", required: true },
         { type: "string", name: "body", label: "Body", ui: { component: "textarea" } },
         { type: "string", name: "icon", label: "Icon Hint" },
-        { type: "string", name: "link", label: "Link URL" }
+        { type: "string", name: "link", label: "Link URL" },
+        { type: "string", name: "linkText", label: "Link Text" },
+        { type: "string", name: "logos", label: "Logos", list: true }
       ]
     }
   ]
@@ -819,6 +822,20 @@ var breadcrumbBlock = {
     }
   ]
 };
+var spinningSensorBlock = {
+  name: "spinningSensor",
+  label: "Spinning Sensor",
+  ui: {
+    itemProps: (item) => ({
+      label: item?.heading ? `Spinning Sensor: ${item.heading}` : "Spinning Sensor"
+    })
+  },
+  fields: [
+    { type: "string", name: "eyebrow", label: "Eyebrow", description: "Small uppercase label above the heading.", ui: { defaultValue: "ABOUT GRIPABLE" } },
+    { type: "string", name: "heading", label: "Heading", ui: { defaultValue: "GripAble sensor features." } },
+    { type: "string", name: "description", label: "Description (desktop only)", ui: { component: "textarea", defaultValue: "Designed with precision. Built for real-world care." } }
+  ]
+};
 var seoFields = [
   { type: "string", name: "title", label: "Page Title", isTitle: true, required: true, description: "Browser tab + Google title. Aim for ~60 chars." },
   { type: "string", name: "description", label: "Meta Description", ui: { component: "textarea" }, description: "Google snippet. 140-160 chars." },
@@ -866,7 +883,8 @@ var allBlocks = [
   supportFormBlock,
   segmentCardsBlock,
   valuePropsBlock,
-  timelineBlock
+  timelineBlock,
+  spinningSensorBlock
 ];
 var blockPageFields = [
   {

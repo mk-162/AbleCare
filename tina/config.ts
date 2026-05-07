@@ -771,6 +771,7 @@ const segmentCardsBlock = {
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
     { type: "string" as const, name: "heading", label: "Section Heading" },
+    { type: "boolean" as const, name: "centered", label: "Center Card Content" },
     {
       type: "object" as const,
       name: "cards",
@@ -782,6 +783,8 @@ const segmentCardsBlock = {
         { type: "string" as const, name: "body", label: "Body", ui: { component: "textarea" } },
         { type: "string" as const, name: "icon", label: "Icon Hint" },
         { type: "string" as const, name: "link", label: "Link URL" },
+        { type: "string" as const, name: "linkText", label: "Link Text" },
+        { type: "string" as const, name: "logos", label: "Logos", list: true },
       ],
     },
   ],
@@ -858,6 +861,21 @@ const breadcrumbBlock = {
   ],
 };
 
+const spinningSensorBlock: any = {
+  name: "spinningSensor",
+  label: "Spinning Sensor",
+  ui: {
+    itemProps: (item: { heading?: string }) => ({
+      label: item?.heading ? `Spinning Sensor: ${item.heading}` : "Spinning Sensor",
+    }),
+  },
+  fields: [
+    { type: "string" as const, name: "eyebrow", label: "Eyebrow", description: "Small uppercase label above the heading.", ui: { defaultValue: "ABOUT GRIPABLE" } },
+    { type: "string" as const, name: "heading", label: "Heading", ui: { defaultValue: "GripAble sensor features." } },
+    { type: "string" as const, name: "description", label: "Description (desktop only)", ui: { component: "textarea", defaultValue: "Designed with precision. Built for real-world care." } },
+  ],
+};
+
 // ─── Shared SEO Fields ────────────────────────────────────────────────────────
 
 const seoFields = [
@@ -911,6 +929,7 @@ const allBlocks = [
   segmentCardsBlock,
   valuePropsBlock,
   timelineBlock,
+  spinningSensorBlock,
 ];
 
 const blockPageFields: any[] = [
