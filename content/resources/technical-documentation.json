@@ -79,8 +79,8 @@
       "heading": "Need a specific document or staging access?",
       "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Back to Resources",
-      "secondaryCtaLink": "/resources",
+      "secondaryCtaText": "",
+      "secondaryCtaLink": "",
       "_template": "ctaBanner"
     }
   ],
