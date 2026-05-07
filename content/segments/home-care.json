@@ -1,5 +1,4 @@
 {
-  "title": "Standardized Falls Screening for Home Care Agencies",
   "slug": "home-care",
   "seo": {
     "title": "Falls Prevention for Home Care Agencies | Able Care",
@@ -8,7 +7,6 @@
   },
   "blocks": [
     {
-      "_template": "breadcrumb",
       "items": [
         {
           "label": "Home",
@@ -18,48 +16,43 @@
           "label": "Home Care",
           "href": "/home-care"
         }
-      ]
+      ],
+      "_template": "breadcrumb"
     },
     {
-      "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
-      "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
-      "backgroundImageAlt": "Older woman using the Able Assess sensor at home",
       "eyebrow": "Home Care",
       "headline": "Standardized falls screening for home care agencies.",
       "subtitle": "Reduce client falls. Standardize care across branches and caregivers. Improve customer conversion.",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
+      "backgroundImageAlt": "Older woman using the Able Assess sensor at home",
+      "_template": "hero"
     },
     {
-      "_template": "metricsBlock",
       "scheme": "light",
       "heading": "What Able Assess Offers Home Care",
       "metrics": [
         {
-          "name": "Client acquisition",
-          "description": "Utilize Able Assess during prospecting to give customers a tangible understanding of their risk profile and support needs. Offer inbound leads a free falls screening at initial assessment."
+          "name": "Client acquisition"
         },
         {
-          "name": "Client retention",
-          "description": "Falls are a leading cause of injury and death among home care customers. Help your clients stay healthy and safe at home by implementing better falls risk screening."
+          "name": "Client retention"
         },
         {
-          "name": "Differentiation",
-          "description": "Position your agency as tech-forward and clinically informed, without stepping outside a non-medical scope. Few competitors can match this story."
+          "name": "Differentiation"
         }
-      ]
+      ],
+      "_template": "metricsBlock"
     },
     {
-      "_template": "processSteps",
       "scheme": "grey",
       "heading": "How it works in home care",
       "steps": [
         {
           "number": 1,
           "title": "Capture",
-          "subtitle": "On any phone or tablet",
+          "subtitle": "",
           "description": "A caregiver runs a five-minute assessment during a routine visit or introductory meeting."
         },
         {
@@ -77,34 +70,29 @@
           "title": "Track",
           "description": "Longitudinal trends surface decline early, helping reduce hospitalizations and keep clients independent for longer."
         }
-      ]
+      ],
+      "_template": "processSteps"
     },
     {
-      "_template": "metricsBlock",
       "heading": "Four metrics, one picture of function",
       "metrics": [
         {
-          "name": "Grip strength",
-          "description": "Full body strength proxy. Predicts all-cause mortality and hospitalization risk."
+          "name": "Grip strength"
         },
         {
-          "name": "Sit-to-stand",
-          "description": "Lower-limb power and balance. A key indicator of fall likelihood."
+          "name": "Sit-to-stand"
         },
         {
-          "name": "Gait speed",
-          "description": "Walking speed over a standardized 4-meter distance. Linked to rehospitalization rates."
+          "name": "Gait speed"
         },
         {
-          "name": "Timed Up and Go",
-          "description": "Falls risk in under a minute. Validated across home and clinical settings."
+          "name": "Timed Up and Go"
         }
-      ]
+      ],
+      "_template": "metricsBlock"
     },
     {
-      "_template": "statsBar",
       "heading": "The numbers that matter to home care",
-      "colorScheme": "aqua",
       "stats": [
         {
           "value": "25%",
@@ -122,82 +110,43 @@
           "value": "0",
           "label": "Clinical certifications required to run it"
         }
-      ]
+      ],
+      "_template": "statsBar"
     },
     {
-      "_template": "testimonialCarousel",
-      "colorScheme": "aqua",
       "testimonials": [
         {
-          "quote": "We caught decline six weeks earlier than we would have with our old process.",
-          "attribution": "Clinical Director, US home care agency"
+          "quote": "We caught decline six weeks earlier than we would have with our old process."
         },
         {
-          "quote": "It paid for itself in the first quarter.",
-          "attribution": "Operations Lead, multi-branch home care operator"
+          "quote": "It paid for itself in the first quarter."
         }
-      ]
+      ],
+      "_template": "testimonialCarousel"
     },
     {
-      "_template": "faqAccordion",
       "scheme": "grey",
       "heading": "Common questions from home care operators",
       "emitSchema": true,
-      "items": [
-        {
-          "question": "What hardware do we need?",
-          "answer": "The sensor, pouch and measuring tape are all provided as part of the kit. Everything pairs via Bluetooth with any smartphone or tablet. No additional infrastructure required."
-        },
-        {
-          "question": "Can non-clinical staff run the assessment?",
-          "answer": "Yes. Able Assess was built for non-clinical staff. The protocol guides them through every step. No training course required."
-        },
-        {
-          "question": "What devices does it work on?",
-          "answer": "Any smartphone or tablet — iOS or Android. Caregivers can run it on the phone they already carry."
-        },
-        {
-          "question": "How does it integrate with our existing systems?",
-          "answer": "Able Assess is integration ready with EHRs and other risk monitoring platforms. The clinical team can walk you through the setup during a demo."
-        },
-        {
-          "question": "Where is the data stored?",
-          "answer": "ISO 27001 certified, HIPAA aligned, GDPR compliant. Data residency options available for US and UK."
-        }
-      ]
+      "_template": "faqAccordion"
     },
     {
-      "_template": "partnerLogoCarousel",
       "heading": "Trusted by Leading Organizations",
-      "scheme": "white"
+      "scheme": "white",
+      "_template": "partnerLogoCarousel"
     },
     {
-      "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "See Able Assess in Action.",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/contact"
+      "primaryCtaLink": "/contact",
+      "_template": "ctaBanner"
     },
     {
-      "_template": "segmentRouter",
       "heading": "Explore other settings",
-      "tiles": [
-        {
-          "label": "Senior Living",
-          "benefit": "Protect residents, occupancy and NOI.",
-          "href": "/senior-living",
-          "ctaText": "Explore"
-        },
-        {
-          "label": "Pharma & CROs",
-          "benefit": "Decentralized functional endpoints.",
-          "href": "/pharma",
-          "ctaText": "Explore"
-        }
-      ]
+      "_template": "segmentRouter"
     }
   ],
+  "title": "Standardized Falls Screening for Home Care Agencies",
   "tags": [
     "home-care",
     "falls-prevention",
