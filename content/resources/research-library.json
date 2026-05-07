@@ -40,7 +40,7 @@
     {
       "scheme": "light",
       "heading": "How this library is organized",
-      "body": "The library is grouped into three sections. <strong>Our Publications</strong> are peer-reviewed studies on the GripAble sensor that underpins Able Assess — reliability, precision, inter-instrument agreement with Jamar and normative reference values. <strong>Papers on Grip Strength</strong> covers the wider literature establishing grip strength as a vital-sign-grade biomarker of ageing, cardiovascular disease, cancer, respiratory disease and all-cause mortality. <strong>Papers on Falls Prevention</strong> gathers the guideline-level evidence (World Guidelines 2022, NICE NG249 2025, Cochrane) alongside the functional-health and readmission studies that make the operational case for objective, multifactorial screening.",
+      "body": "The library is grouped into three sections. <strong>Our Publications</strong> are peer-reviewed studies on the GripAble sensor that underpins Able Assess — reliability, precision, inter-instrument agreement with Jamar and normative reference values. \n<strong>Papers on Grip Strength</strong> covers the wider literature establishing grip strength as a vital-sign-grade biomarker of ageing, cardiovascular disease, cancer, respiratory disease and all-cause mortality. \n<strong>Papers on Falls Prevention</strong> gathers the guideline-level evidence (World Guidelines 2022, NICE NG249 2025, Cochrane) alongside the functional-health and readmission studies that make the operational case for objective, multifactorial screening.",
       "_template": "prose"
     },
     {
