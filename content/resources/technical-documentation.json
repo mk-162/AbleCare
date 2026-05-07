@@ -1,5 +1,4 @@
 {
-  "title": "Technical Documentation",
   "slug": "technical-documentation",
   "seo": {
     "title": "Technical Documentation | Able Care",
@@ -8,7 +7,6 @@
   },
   "blocks": [
     {
-      "_template": "breadcrumb",
       "items": [
         {
           "label": "Home",
@@ -22,42 +20,40 @@
           "label": "Technical Documentation",
           "href": "/resources/technical-documentation"
         }
-      ]
+      ],
+      "_template": "breadcrumb"
     },
     {
-      "_template": "hero",
-      "colorScheme": "blue",
-      "waveStyle": "crest",
-      "backgroundImage": "/images/heroes/devices-hero-new-min.png",
-      "backgroundImageAlt": "Able Assess product and tablet",
       "eyebrow": "Resources",
       "headline": "Technical Documentation",
       "subtitle": "Integration guides, webhook specifications, user guides, change management and the compliance background that underpins Able Assess. Download what you need, or ask the team for anything else.",
       "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Back to Resources",
-      "secondaryCtaLink": "/resources"
+      "secondaryCtaText": "",
+      "secondaryCtaLink": "",
+      "backgroundImage": "/images/heroes/devices-hero-new-min.png",
+      "backgroundImageAlt": "Able Assess product and tablet",
+      "_template": "hero"
     },
     {
-      "_template": "richText",
       "scheme": "light",
       "heading": "Integration documents",
-      "body": "<p>The Able Platform exposes organization-scoped REST APIs and webhooks so partner systems can ingest clinically validated grip and gait measurement data in real time, in batches or on demand. The two documents below describe the end-to-end integration pattern and the webhook event contract in full.</p><h3><a href=\"/downloads/Able-Platform-Partner-Integration.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Able Platform: Partner Integration</a></h3><p>The reference guide for technical teams connecting a partner system to the Able Platform. Covers the domain model (Organizations, Facilities, Individuals, Providers, Operators, Measurements), multi-tenant data isolation, authentication with API tokens, supervised and unsupervised operation modes, individual-matching strategies (External Reference vs. Internal ID), and the real-time, webhook and batch synchronization approaches available.</p><p><a href=\"/downloads/Able-Platform-Partner-Integration.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Download the PDF</a></p><h3><a href=\"/downloads/Able-Platform-Webhook-Integration.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Able Platform: Webhook Integration</a></h3><p>The webhook specification for partner receivers. Describes the <code>measurement.recorded</code> and <code>screening.recorded</code> events, the payload schema for Screenings, Measurements and Values, transport and security requirements (HTTPS, TLS 1.2+, X-API-Key or Authorization headers), idempotence using the event <code>id</code>, the retry and exponential backoff policy, the backfill process for historical data and the staging environment for developer testing.</p><p><a href=\"/downloads/Able-Platform-Webhook-Integration.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Download the PDF</a></p><p>Need an OpenAPI spec, a sample payload, a staging account or something more specific to your architecture? <a href=\"/contact\">Get in touch with the Able Care team</a> and we will send it straight over.</p>"
+      "body": "<p>The Able Platform exposes organization-scoped REST APIs and webhooks so partner systems can ingest clinically validated grip and gait measurement data in real time, in batches or on demand. The two documents below describe the end-to-end integration pattern and the webhook event contract in full.</p><h3><a href=\"/downloads/Able-Platform-Partner-Integration.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Able Platform: Partner Integration</a></h3><p>The reference guide for technical teams connecting a partner system to the Able Platform. Covers the domain model (Organizations, Facilities, Individuals, Providers, Operators, Measurements), multi-tenant data isolation, authentication with API tokens, supervised and unsupervised operation modes, individual-matching strategies (External Reference vs. Internal ID), and the real-time, webhook and batch synchronization approaches available.</p><p><a href=\"/downloads/Able-Platform-Partner-Integration.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Download the PDF</a></p><h3><a href=\"/downloads/Able-Platform-Webhook-Integration.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Able Platform: Webhook Integration</a></h3><p>The webhook specification for partner receivers. Describes the <code>measurement.recorded</code> and <code>screening.recorded</code> events, the payload schema for Screenings, Measurements and Values, transport and security requirements (HTTPS, TLS 1.2+, X-API-Key or Authorization headers), idempotence using the event <code>id</code>, the retry and exponential backoff policy, the backfill process for historical data and the staging environment for developer testing.</p><p><a href=\"/downloads/Able-Platform-Webhook-Integration.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Download the PDF</a></p><p>Need an OpenAPI spec, a sample payload, a staging account or something more specific to your architecture? <a href=\"/contact\">Get in touch with the Able Care team</a> and we will send it straight over.</p>",
+      "_template": "richText"
     },
     {
-      "_template": "richText",
       "scheme": "grey",
       "heading": "App updates and change management",
-      "body": "<p>The Able Platform uses calendar-based versioning (for example <code>2025-09-09</code>). Each webhook payload carries a <code>version</code> field so partner systems can branch parsing logic when supporting multiple versions in parallel. Point releases (<code>2025-09-09.1</code>, <code>2025-09-09.2</code>) indicate non-breaking updates on top of that baseline.</p><h3>Non-breaking changes</h3><p>New optional fields on existing objects, new event types, new enum values, stricter validation that remains backward compatible and documentation clarifications are released without a deprecation window. Registered technical contacts receive an email notification, and receivers that ignore unknown fields need take no action.</p><h3>Breaking changes</h3><p>Field removal or renaming, changes to field types or semantics, removal of supported event types and changes to delivery guarantees are communicated at least 30 days in advance via email and release notes. Partners are expected to migrate their receiver to the new schema version before the deprecation date; the <code>version</code> field in the payload lets receivers run old and new schemas side-by-side during migration.</p><h3>Mobile and portal releases</h3><p>Able Mobile App releases for iOS and Android follow the native app-store review process. Able Portal and Able Admin are updated continuously; non-breaking UI and workflow improvements ship without downtime, and any change affecting an operator's workflow is flagged in-app and summarized in the release email to registered operators.</p><p>To be added to the technical release-notes list, email <a href=\"mailto:support@able-care.co\">support@able-care.co</a> with the contacts you want notified.</p>"
+      "body": "<p>The Able Platform uses calendar-based versioning (for example <code>2025-09-09</code>). Each webhook payload carries a <code>version</code> field so partner systems can branch parsing logic when supporting multiple versions in parallel. Point releases (<code>2025-09-09.1</code>, <code>2025-09-09.2</code>) indicate non-breaking updates on top of that baseline.</p><h3>Non-breaking changes</h3><p>New optional fields on existing objects, new event types, new enum values, stricter validation that remains backward compatible and documentation clarifications are released without a deprecation window. Registered technical contacts receive an email notification, and receivers that ignore unknown fields need take no action.</p><h3>Breaking changes</h3><p>Field removal or renaming, changes to field types or semantics, removal of supported event types and changes to delivery guarantees are communicated at least 30 days in advance via email and release notes. Partners are expected to migrate their receiver to the new schema version before the deprecation date; the <code>version</code> field in the payload lets receivers run old and new schemas side-by-side during migration.</p><h3>Mobile and portal releases</h3><p>Able Mobile App releases for iOS and Android follow the native app-store review process. Able Portal and Able Admin are updated continuously; non-breaking UI and workflow improvements ship without downtime, and any change affecting an operator's workflow is flagged in-app and summarized in the release email to registered operators.</p><p>To be added to the technical release-notes list, email <a href=\"mailto:support@able-care.co\">support@able-care.co</a> with the contacts you want notified.</p>",
+      "_template": "richText"
     },
     {
-      "_template": "richText",
       "scheme": "light",
       "heading": "Able Assess user guide",
-      "body": "<h3><a href=\"/downloads/Able-Assess-User-Guide-V1.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Able Assess User Guide (v1.1)</a></h3><p>The complete operator manual for Able Assess. Covers sensor setup, the five-minute screening workflow, interpreting results and sharing data with care teams. Written for any member of staff running assessments at the bedside, in the clinic or in a resident's living room.</p><p><a href=\"/downloads/Able-Assess-User-Guide-V1.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the PDF</a></p>"
+      "body": "<h3><a href=\"/downloads/Able-Assess-User-Guide-V1.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Able Assess User Guide (v1.1)</a></h3><p>The complete operator manual for Able Assess. Covers sensor setup, the five-minute screening workflow, interpreting results and sharing data with care teams. Written for any member of staff running assessments at the bedside, in the clinic or in a resident's living room.</p><p><a href=\"/downloads/Able-Assess-User-Guide-V1.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the PDF</a></p>",
+      "_template": "richText"
     },
     {
-      "_template": "segmentCards",
       "scheme": "grey",
       "heading": "Data protection, security and regulatory background",
       "cards": [
@@ -76,20 +72,19 @@
           "body": "Able Assess is registered with the US Food and Drug Administration as a Class I medical device under a 510(k)-exempt classification. This section explains the FDA listing pathway, what 510(k) exemption means for Class I devices, how it differs from 510(k) clearance, and how to verify a medical device's FDA status.",
           "link": "/contact"
         }
-      ]
+      ],
+      "_template": "segmentCards"
     },
     {
-      "_template": "ctaBanner",
-      "colorScheme": "blue",
-      "waveStyle": "ribbon",
       "heading": "Need a specific document or staging access?",
-      "body": "Tell us what your team is evaluating — OpenAPI specs, DPAs, security whitepapers, pen test summaries, a staging webhook account — and we will send the most relevant technical materials straight over.",
       "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Back to Resources",
-      "secondaryCtaLink": "/resources"
+      "secondaryCtaLink": "/resources",
+      "_template": "ctaBanner"
     }
   ],
+  "title": "Technical Documentation",
   "tags": [
     "technical-documentation",
     "integrations",
