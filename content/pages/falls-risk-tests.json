@@ -43,6 +43,68 @@
       "wave": "crest"
     },
     {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "We keep everybody Able",
+      "body": "<p>Able Care makes falls risk screening fast, accurate, standardized, and low cost. We help seniors stay on their feet, safe, and functionally Able.</p>"
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "grey",
+      "heading": "Together we will enhance",
+      "items": [
+        {
+          "title": "Patient outcomes",
+          "body": "Catch decline before it becomes a fall. Earlier intervention, fewer hospitalizations, more time at home."
+        },
+        {
+          "title": "Quality of care",
+          "body": "One protocol, one workflow, every site. The same five-minute screening across every branch, community, and clinical site."
+        },
+        {
+          "title": "Staff education and compliance",
+          "body": "Standardized training. Clear instructions on screen. Defensible documentation in every record."
+        },
+        {
+          "title": "Referrals and revenue",
+          "body": "Objective triggers for PT referral. HHVBP and Five-Star outcomes protected. Census velocity maintained."
+        }
+      ]
+    },
+    {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "The problem: falls in America",
+      "body": "<p>Falls are the leading cause of injury and death for adults aged 65 and over. One in four Medicare beneficiaries falls every year, and the cost is roughly $50 billion annually. Falls screenings are now being promoted via the SAFE Act, MIPS, and HHVBP to drive healthcare cost savings, with screening volumes projected to grow about 3x in the next one to two years.</p><p>Yet of the 56 million Medicare beneficiaries in the US, fewer than 10% receive an evidence-based falls risk screening each year. The gap between what should happen and what does happen is the problem Able Care exists to solve.</p>"
+    },
+    {
+      "_template": "statsBar",
+      "scheme": "blue",
+      "heading": "The problem in numbers",
+      "stats": [
+        {
+          "value": "1 in 4",
+          "label": "Medicare beneficiaries fall each year",
+          "sublabel": "CDC, 2024"
+        },
+        {
+          "value": "$50B",
+          "label": "Annual cost of falls in the US",
+          "sublabel": "Direct medical expenditure"
+        },
+        {
+          "value": "56M",
+          "label": "Medicare beneficiaries",
+          "sublabel": "Fewer than 10% screened annually"
+        },
+        {
+          "value": "3x",
+          "label": "Projected screening volume growth",
+          "sublabel": "Over the next 1–2 years"
+        }
+      ]
+    },
+    {
       "_template": "trustBar",
       "scheme": "light",
       "items": [
@@ -102,6 +164,35 @@
       "eyebrow": "About GripAble",
       "heading": "The sensor at the center of every test.",
       "description": "Designed for precision. Built for real-world care. The same sensor measures grip force in the hand and movement in the fanny pack, with no calibration between tests."
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "grey",
+      "imagePosition": "right",
+      "image": "/images/decks/falls-prevention/hand-holding-sensor.jpg",
+      "imageAlt": "Hand gripping the GripAble sensor with the wrist lanyard attached",
+      "imageFit": "contain",
+      "headline": "Grip strength: the new vital sign for seniors",
+      "description": "Grip strength is quick, non-invasive, and informative. It correlates with whole-body function and is one of the most predictive single measurements in geriatric medicine. We start with grip strength because it tells you more, faster, than any other functional test.",
+      "bulletPoints": [
+        {
+          "text": "Muscle mass"
+        },
+        {
+          "text": "Bone density"
+        },
+        {
+          "text": "Balance"
+        },
+        {
+          "text": "Biological resilience"
+        },
+        {
+          "text": "Functional health status and ability"
+        }
+      ],
+      "ctaText": "See the evidence",
+      "ctaLink": "/resources/research-library"
     },
     {
       "_template": "segmentCards",
@@ -175,6 +266,42 @@
       "ctaLink": "/low-and-at-risk"
     },
     {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "STEADI data points",
+      "body": "<p>And with the same sensor, measure balance and gait. Able Assess is the first sensor in the world capable of doing all four integral objective measurements of falls risk screening in under five minutes.</p>"
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "light",
+      "imagePosition": "right",
+      "image": "/images/decks/falls-prevention/test-gait-speed.jpg",
+      "imageAlt": "Illustration of an older adult walking with the sensor in the fanny pack, showing the four-meter gait path",
+      "imageFit": "contain",
+      "headline": "Gait speed: the four-meter gait speed test",
+      "description": "The participant walks a measured four-meter path at their normal pace. The sensor in the fanny pack captures tempo and stride. Gait speed is widely referred to as the 'sixth vital sign' for older adults, linked to mortality, hospitalization, and functional decline."
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "grey",
+      "imagePosition": "left",
+      "image": "/images/decks/falls-prevention/test-timed-up-go.jpg",
+      "imageAlt": "Illustration of a participant standing up, walking three meters, turning, and returning to the chair",
+      "imageFit": "contain",
+      "headline": "Balance: the Timed Up & Go test",
+      "description": "The participant stands from a chair, walks three meters, turns, walks back, and sits down. The app times the full sequence. Older adults who take more than 12 seconds to complete a TUG are at elevated risk of falling."
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "light",
+      "imagePosition": "right",
+      "image": "/images/decks/falls-prevention/test-chair-stand.jpg",
+      "imageAlt": "Illustration of an older adult next to a chair preparing to perform the chair stand test",
+      "imageFit": "contain",
+      "headline": "Lower-limb strength: the chair stand test",
+      "description": "The participant rises from a seated position to standing as many times as possible in 30 seconds. The sensor in the fanny pack tracks repetitions automatically. The CDC publishes age- and sex-banded thresholds for falls risk."
+    },
+    {
       "_template": "imageFeature",
       "scheme": "light",
       "imagePosition": "right",
@@ -195,6 +322,78 @@
         },
         {
           "text": "FHIR R4, OASIS-E, and HL7v2 integration ready"
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "grey",
+      "imagePosition": "left",
+      "image": "/images/decks/falls-prevention/platform-app.jpg",
+      "imageAlt": "Able Assess app on iPhone showing the welcome screen with the GripAble sensor and a Go to tests button",
+      "imageFit": "contain",
+      "headline": "Simple app: four tests, one sensor",
+      "description": "Clear, uniform instructions across every clinical and non-clinical staff member. Nurses, therapists, assistants, and front-office staff run the same screening the same way, every time. Lightweight, portable, and built for the bedside, the kitchen table, or the resident's living room.",
+      "bulletPoints": [
+        {
+          "text": "Objective data reporting for grip strength, TUG, chair stand, and gait"
+        },
+        {
+          "text": "Step-by-step on-screen instructions"
+        },
+        {
+          "text": "Runs on any iOS or Android tablet or phone"
+        },
+        {
+          "text": "Fifteen minutes of training, no clinical certification"
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "light",
+      "imagePosition": "right",
+      "image": "/images/decks/falls-prevention/platform-referral-report.jpg",
+      "imageAlt": "Able Care falls risk profile showing test results, normative ranges, and interpretations on a single page",
+      "imageFit": "contain",
+      "headline": "Referral report: defensible documentation, on demand",
+      "description": "One-click report generation from the app or the portal. Every assessment captured, scored against age-banded norms, and presented with plain-language interpretations. Ready to share with the family, the PT, or the medical record. Co-branding available.",
+      "bulletPoints": [
+        {
+          "text": "Quick report generation from app or portal"
+        },
+        {
+          "text": "Defensible documentation for PT referral"
+        },
+        {
+          "text": "Co-branding opportunities for partners and payers"
+        },
+        {
+          "text": "Export as PDF, secure share link, or push to EHR"
+        }
+      ]
+    },
+    {
+      "_template": "imageFeature",
+      "scheme": "grey",
+      "imagePosition": "left",
+      "image": "/images/decks/falls-prevention/platform-web-portal.jpg",
+      "imageAlt": "Able Care web portal showing a list of patients with their date of birth and last assessment",
+      "imageFit": "contain",
+      "headline": "Web portal: see your population, target intervention",
+      "description": "Visualize data across populations and groups, identify high and low performing staff, and integrate outcomes into the EMR. The portal is where the screening turns into a program.",
+      "bulletPoints": [
+        {
+          "text": "Visualize data across populations and groups to target intervention"
+        },
+        {
+          "text": "Identify high and low performing staff for additional support"
+        },
+        {
+          "text": "Integrate outcomes to the EMR"
+        },
+        {
+          "text": "Filter by branch, region, risk band, or date"
         }
       ]
     },
@@ -266,6 +465,39 @@
           "year": "2015",
           "finding": "Functional impairment at discharge was independently associated with a 42% increased risk of 30-day hospital readmission.",
           "link": "https://pubmed.ncbi.nlm.nih.gov/25642907/"
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "scheme": "light",
+      "heading": "Our track record",
+      "stats": [
+        {
+          "value": "20",
+          "label": "Peer-reviewed papers",
+          "sublabel": "Validating GripAble for accuracy, sensitivity, and robustness"
+        },
+        {
+          "value": "2",
+          "label": "Nationwide normative datasets",
+          "sublabel": "UK published, USA publication pending"
+        },
+        {
+          "value": "35,000+",
+          "label": "Grip strengths captured"
+        },
+        {
+          "value": "8,000+",
+          "label": "Complex patients screened"
+        },
+        {
+          "value": "440",
+          "label": "Locations"
+        },
+        {
+          "value": "22",
+          "label": "Countries"
         }
       ]
     },
