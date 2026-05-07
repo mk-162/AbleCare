@@ -1,8 +1,8 @@
 {
   "title": "Walkthrough: Able Assess Falls Risk Tests",
   "seo": {
-    "title": "Walkthrough: Able Assess Falls Risk Tests | Able Care",
-    "description": "Watch how Able Assess captures four validated falls risk assessments — grip strength, Timed Up & Go, gait speed and chair stand — in five minutes.",
+    "title": "How Able Assess Works: Four Falls Risk Tests in Five Minutes | Able Care",
+    "description": "See how Able Assess runs four validated falls risk tests in one five-minute screening any staff member can deliver. Grip strength, Timed Up & Go, gait speed, chair stand.",
     "ogImage": "/images/og-falls-prevention.png"
   },
   "tags": [
@@ -30,14 +30,14 @@
     },
     {
       "_template": "hero",
-      "eyebrow": "Walkthrough",
-      "headline": "Able Assess Falls Risk Tests",
-      "subtitle": "Four validated falls risk assessments. Five minutes. One workflow.",
+      "eyebrow": "How Able Assess works",
+      "headline": "Four falls risk tests. One five-minute screening.",
+      "subtitle": "Run by any staff member. Validated against CDC STEADI and the 2022 World Guidelines for Falls Prevention. No clinical certification required.",
       "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
       "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor",
-      "primaryCtaText": "Book a Demo",
+      "primaryCtaText": "Book a 20-minute demo",
       "primaryCtaLink": "/demo",
-      "secondaryCtaText": "See the Results Walkthrough",
+      "secondaryCtaText": "See sample results",
       "secondaryCtaLink": "/low-and-at-risk",
       "scheme": "blue",
       "wave": "crest"
@@ -46,7 +46,83 @@
       "_template": "richText",
       "scheme": "light",
       "heading": "Four key falls risk assessments in five minutes",
-      "body": "<p>We&rsquo;ve designed the first sensor in the world to measure four key falls risk assessments in five minutes:</p><ul><li>Single Maximum Grip Strength</li><li>Timed Up &amp; Go Test</li><li>Gait Speed</li><li>Chair Stand Test</li></ul><p>This video showcases how to complete all four falls risk assessments in Able Assess:</p><figure style=\"margin: 2rem auto; text-align: center;\"><video controls playsinline preload=\"metadata\" style=\"max-height: min(70vh, 560px); max-width: 100%; width: auto; height: auto; border-radius: 12px; background: #000;\" src=\"/videos/falls-risk-assessment-walkthrough.mp4\"></video></figure>"
+      "body": "<p>One sensor, one app, one workflow. The same five-minute screening covers all four measurements the 2022 World Guidelines call for:</p><ul><li>Single Maximum Grip Strength</li><li>Timed Up &amp; Go Test</li><li>Four-Meter Gait Speed</li><li>30-Second Chair Stand Test</li></ul><p>Two minutes of footage shows what an actual screening looks like, from app open to participant report.</p><figure style=\"margin: 2rem auto; text-align: center;\"><video controls playsinline preload=\"metadata\" style=\"max-height: min(70vh, 560px); max-width: 100%; width: auto; height: auto; border-radius: 12px; background: #000;\" src=\"/videos/falls-risk-assessment-walkthrough.mp4\"></video></figure>"
+    },
+    {
+      "_template": "segmentCards",
+      "scheme": "grey",
+      "heading": "What you get",
+      "cards": [
+        {
+          "title": "The kit",
+          "body": "A GripAble sensor, a measuring tape, and the blue fanny pack that holds the sensor during the gait, balance, and chair-stand tests. Ships ready to use."
+        },
+        {
+          "title": "The Able Assess app",
+          "body": "Walks any staff member through every test, step by step. Fifteen minutes of training, no clinical certification needed."
+        },
+        {
+          "title": "The Able Assess portal",
+          "body": "See risk stratification across your population, and track changes for any individual over time. Export reports for care plans, family meetings, or audits."
+        }
+      ]
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "light",
+      "heading": "How a screening works",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Open the app",
+          "description": "Pick the participant. The app walks you through the four tests in order. Every prompt is on screen. No script to memorize."
+        },
+        {
+          "number": 2,
+          "title": "Run the four tests",
+          "description": "For grip strength, the participant squeezes the sensor when the app says go. For gait speed, lower-limb strength, and balance, you measure the distance the app shows you, slip the sensor into the fanny pack, and follow the on-screen instructions to guide the participant."
+        },
+        {
+          "number": 3,
+          "title": "See results immediately",
+          "description": "The app stratifies each participant into low, intermediate, or high falls risk against age-banded norms. Print a participant-friendly paper report on the spot if needed."
+        },
+        {
+          "number": 4,
+          "title": "Track changes over time",
+          "description": "Every screening syncs to the Able Assess portal. Pull individual trends for care planning, or population reports for compliance, board, and operator reviews."
+        }
+      ]
+    },
+    {
+      "_template": "richText",
+      "scheme": "grey",
+      "heading": "Why these four tests",
+      "body": "<p>These four measurements together stratify risk more accurately than any single one. Grip strength is a peripheral marker of muscle mass, bone density, and biological resilience. Timed Up &amp; Go captures dynamic balance. Four-meter gait speed measures functional locomotion. The 30-second chair stand isolates lower-limb strength. Captured together, they produce the multifactorial picture the 2022 World Guidelines for Falls Prevention call for, in five minutes instead of forty-five.</p>"
+    },
+    {
+      "_template": "trustBar",
+      "scheme": "light",
+      "items": [
+        {
+          "text": "CDC STEADI aligned"
+        },
+        {
+          "text": "2022 World Guidelines"
+        },
+        {
+          "text": "FDA listed"
+        },
+        {
+          "text": "CE marked"
+        },
+        {
+          "text": "ISO 13485"
+        },
+        {
+          "text": "HIPAA aligned"
+        }
+      ]
     },
     {
       "_template": "ctaBanner",
