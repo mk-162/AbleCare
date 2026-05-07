@@ -96,8 +96,8 @@
       "heading": "Talk to the Clinical Team.",
       "primaryCtaText": "Schedule a Demo",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "View the Clinical Evidence",
-      "secondaryCtaLink": "/resources/evidence",
+      "secondaryCtaText": "",
+      "secondaryCtaLink": "",
       "_template": "ctaBanner"
     },
     {
