@@ -87,36 +87,10 @@
       ]
     },
     {
-      "_template": "imageFeature",
-      "scheme": "light",
-      "imagePosition": "right",
-      "headline": "GripAble Sensor Features",
-      "description": "Everything you need for clinical-grade hand-strength measurement, in a single rugged, pocket-sized device.",
-      "image": "/images/product/gripable-sensor-cutout-min.png",
-      "imageAlt": "The GripAble sensor with annotated features",
-      "bulletPoints": [
-        {
-          "text": "Locking Button — used to switch grip modes. Squeeze and hold the GripAble, then push down the lock button."
-        },
-        {
-          "text": "Strap Hooks — six attachment points for silicon straps."
-        },
-        {
-          "text": "Grip Plate — use your fingers to squeeze the plate."
-        },
-        {
-          "text": "Battery LED — indicator for battery status (see table below)."
-        },
-        {
-          "text": "Lanyard Hook — attachment point for wrist lanyard."
-        },
-        {
-          "text": "Charging Port — magnetic connector for charging."
-        },
-        {
-          "text": "Connection LED — indicator for app pairing status (see table below)."
-        }
-      ]
+      "_template": "spinningSensor",
+      "eyebrow": "ABOUT GRIPABLE",
+      "heading": "GripAble Sensor Features",
+      "description": "Everything you need for clinical-grade hand-strength measurement, in a single rugged, pocket-sized device."
     },
     {
       "_template": "richText",
