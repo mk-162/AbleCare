@@ -99,7 +99,7 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide",
+      "secondaryCtaLink": "",
       "_template": "ctaBanner"
     }
   ],
