@@ -92,7 +92,7 @@
       "_template": "spinningSensor"
     },
     {
-      "scheme": "blue",
+      "scheme": "light",
       "wave": "ribbon",
       "heading": "See the GripAble sensor in your workflow.",
       "bodyText": "",
