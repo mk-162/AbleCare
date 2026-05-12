@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CountrySwitcher } from "@/components/ui/CountrySwitcher";
+import { GeoMismatchBanner } from "@/components/ui/GeoMismatchBanner";
 
 /* ─── Navigation data matching Site Navigation spec ─── */
 
@@ -98,6 +100,7 @@ export function SiteHeader() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
+      <GeoMismatchBanner />
       <header
         className={`transition-all duration-300 ${
           isScrolled
@@ -276,6 +279,11 @@ export function SiteHeader() {
                 Book a demo
               </Button>
             </Link>
+
+            {/* Country switcher (US <-> UK) — right of both CTAs */}
+            <div className="ml-2">
+              <CountrySwitcher />
+            </div>
           </nav>
 
           {/* ── Mobile Toggle ── */}
@@ -332,6 +340,9 @@ export function SiteHeader() {
                   Book a demo
                 </Button>
               </Link>
+              <div className="flex justify-center pt-1">
+                <CountrySwitcher />
+              </div>
             </div>
           </nav>
         )}
