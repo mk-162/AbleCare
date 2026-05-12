@@ -50,7 +50,9 @@ export function SiteFooter() {
               Resources
             </h4>
             <ul className="space-y-4">
+              <li><Link href="/resources" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">All Resources</Link></li>
               <li><Link href="/blog" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Blogs</Link></li>
+              <li><Link href="/resources/user-guide" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">User Guide</Link></li>
               <li><Link href="/resources/research-library" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Research Library</Link></li>
               <li><Link href="/resources/technical-documentation" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Technical Documentation</Link></li>
               <li><Link href="/resources/case-studies" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Case Studies</Link></li>
