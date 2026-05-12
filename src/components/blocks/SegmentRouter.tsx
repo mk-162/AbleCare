@@ -20,7 +20,6 @@ export function SegmentRouter({ scheme = "light", heading, subheading, segments 
   const defaultSegments: Array<{ title: string; description?: string; ctaText?: string; link: string }> = [
     { title: "Home Care", description: "Empower care workers to spot decline before a fall occurs.", link: "/home-care" },
     { title: "Senior Living", description: "Manage population risk proactively across your facilities.", link: "/senior-living" },
-    { title: "Clinicians", description: "Capture clinical-grade functional data in any setting.", link: "/clinicians" },
     { title: "Pharma & CROs", description: "Deploy decentralized functional endpoints for clinical trials.", link: "/pharma" },
   ];
   const items = segments && segments.length > 0 ? segments : defaultSegments;

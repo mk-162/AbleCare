@@ -18,7 +18,7 @@
           "label": "Solutions"
         },
         {
-          "label": "Able Assess",
+          "label": "Able Assess - Fall Prevention",
           "href": "/solutions/able-assess"
         }
       ]
@@ -167,7 +167,7 @@
         },
         {
           "question": "How does it integrate with existing systems?",
-          "answer": "Able Assess is integration-ready with EHR and wellness platforms. The clinical team can walk you through the setup during a demo."
+          "answer": "We offer APIs for integration and are actively pursuing integration with leading EHR platforms."
         },
         {
           "question": "Is the data secure?",

@@ -30,6 +30,8 @@
     },
     {
       "_template": "hero",
+      "colorScheme": "blue",
+      "waveStyle": "crest",
       "eyebrow": "Walkthrough",
       "headline": "Able Assess Falls Risk Tests",
       "subtitle": "Four validated falls risk assessments. Five minutes. One workflow.",
@@ -38,9 +40,7 @@
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "See the Results Walkthrough",
-      "secondaryCtaLink": "/low-and-at-risk",
-      "scheme": "blue",
-      "wave": "crest"
+      "secondaryCtaLink": "/low-and-at-risk"
     },
     {
       "_template": "richText",
@@ -50,14 +50,14 @@
     },
     {
       "_template": "ctaBanner",
+      "colorScheme": "blue",
+      "waveStyle": "ribbon",
       "heading": "See Able Assess in your workflow.",
       "bodyText": "A 20-minute demo with a clinician who has run it in the field.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide",
-      "scheme": "blue",
-      "wave": "ribbon"
+      "secondaryCtaLink": "/resources/buyers-guide"
     }
   ]
 }

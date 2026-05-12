@@ -24,7 +24,7 @@ const solutionsMenu: { platform: NavItem[]; capabilities: NavItem[] } = {
 
 const segmentItems: NavItem[] = [
   { label: "Home Care", href: "/home-care", desc: "Reduce client falls and protect retention across every branch." },
-  { label: "Senior Living", href: "/senior-living", desc: "Protect residents, occupancy and NOI." },
+  { label: "Senior Living", href: "/senior-living", desc: "Protect occupancy, reduce staff burden, and mitigate falls-related liability." },
   { label: "CRO/Pharma", href: "/pharma", desc: "Digital endpoints for clinical trials." },
 ];
 

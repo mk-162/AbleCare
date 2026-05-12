@@ -559,7 +559,17 @@ function DeviceStage({
 }
 
 /* ─── Main component ─────────────────────────────────────────────────────────── */
-export function GripableRotate() {
+interface GripableRotateProps {
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+}
+
+export function GripableRotate({
+  eyebrow = "ABOUT GRIPABLE",
+  heading = "GripAble sensor features.",
+  description = "Designed with precision. Built for real-world care.",
+}: GripableRotateProps = {}) {
   const containerRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
   const [containerW, setContainerW] = useState(1200);
@@ -801,22 +811,24 @@ export function GripableRotate() {
           fontSize: 11, fontWeight: 700, textTransform: "uppercase",
           letterSpacing: "0.25em", color: "#00FFD2", marginBottom: 12,
         }}>
-          ABOUT GRIPABLE
+          {eyebrow}
         </div>
         <h2 style={{
           fontSize: isMobile ? 28 : isTablet ? 36 : 44,
           fontWeight: 700, lineHeight: 1.08, margin: 0,
           color: "#fff", letterSpacing: "-0.015em",
         }}>
-          GripAble sensor features.
+          {heading}
         </h2>
-        <p style={{
-          fontSize: isMobile ? 14 : 16,
-          color: "rgba(255,255,255,0.78)",
-          margin: "10px 0 0", fontWeight: 300,
-        }}>
-          Designed with precision. Built for real-world care.
-        </p>
+        {description && (
+          <p style={{
+            fontSize: isMobile ? 14 : 16,
+            color: "rgba(255,255,255,0.78)",
+            margin: "10px 0 0", fontWeight: 300,
+          }}>
+            {description}
+          </p>
+        )}
       </header>
 
       {/* ─── DESKTOP LAYOUT ───────────────────────────────────────────────── */}

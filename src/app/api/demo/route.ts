@@ -28,6 +28,8 @@ type DemoLead = {
   lastName?: string;
   email?: string;
   company?: string;
+  referralCode?: string;
+  demoInterest?: string; // product the lead asked to see (Able Assess Falls / Grip Strength / Rehab)
   message?: string;
   source?: string; // page that submitted (e.g. "/demo" or "/contact")
 };
@@ -67,6 +69,8 @@ function renderEmail(lead: DemoLead): { html: string; text: string } {
         ${row("Name", fullName)}
         ${row("Email", lead.email)}
         ${row("Company", lead.company)}
+        ${row("Demo interest", lead.demoInterest)}
+        ${row("Referral code", lead.referralCode)}
         ${row("Message", lead.message)}
       </table>
     </div>
@@ -75,10 +79,12 @@ function renderEmail(lead: DemoLead): { html: string; text: string } {
   const lines: string[] = [
     `New ${lead.source === "/contact" ? "contact" : "demo"} request`,
     "",
-    `Source:  ${lead.source || "/demo"}`,
-    `Name:    ${fullName}`,
-    `Email:   ${lead.email ?? ""}`,
-    `Company: ${lead.company ?? ""}`,
+    `Source:   ${lead.source || "/demo"}`,
+    `Name:     ${fullName}`,
+    `Email:    ${lead.email ?? ""}`,
+    `Company:  ${lead.company ?? ""}`,
+    `Interest: ${lead.demoInterest ?? ""}`,
+    `Referral: ${lead.referralCode ?? ""}`,
     "",
     "MESSAGE",
     lead.message || "(none)",
