@@ -256,6 +256,44 @@ function renderOrderEmail(
   return { html, text, subject };
 }
 
+function renderCustomerAutoReply(
+  lead: OrderRequest,
+  documentType: "estimate" | "invoice",
+): { subject: string; html: string; text: string } {
+  const docLabel = documentType === "estimate" ? "estimate" : "invoice";
+  const firstName =
+    (lead.billIndividual?.trim() || lead.billCustomer?.trim() || "there").split(/\s+/)[0] ?? "there";
+
+  const subject = `Thanks — we've received your Able Care ${docLabel} request`;
+
+  const html = `
+    <div style="font-family:'DM Sans',Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#191919;">
+      <p style="font-size:16px;margin:0 0 16px;line-height:1.5;">Hi ${escapeHtml(firstName)},</p>
+      <p style="font-size:16px;margin:0 0 16px;line-height:1.5;">
+        Thank you for submitting a request for an ${docLabel}. Our team will be getting back to you shortly.
+      </p>
+      <p style="font-size:14px;color:#666;margin:24px 0 0;line-height:1.5;">
+        If your inquiry is urgent, you can reach us directly at
+        <a href="mailto:hello@able-care.co" style="color:#1432FF;text-decoration:none;">hello@able-care.co</a>
+        or +1 406 318 9624.
+      </p>
+      <p style="font-size:14px;color:#666;margin:16px 0 0;">— The Able Care team</p>
+    </div>
+  `;
+
+  const text = [
+    `Hi ${firstName},`,
+    "",
+    `Thank you for submitting a request for an ${docLabel}. Our team will be getting back to you shortly.`,
+    "",
+    "If your inquiry is urgent, you can reach us directly at hello@able-care.co or +1 406 318 9624.",
+    "",
+    "— The Able Care team",
+  ].join("\n");
+
+  return { subject, html, text };
+}
+
 /* ─── Handler ───────────────────────────────────────────────────────────── */
 
 export async function POST(request: NextRequest) {
@@ -338,6 +376,28 @@ export async function POST(request: NextRequest) {
       { error: "Could not send email. Please try again." },
       { status: 502 }
     );
+  }
+
+  // Best-effort customer auto-reply. We've already captured the lead via the
+  // team email above, so a Resend hiccup here must not fail the customer's
+  // submission — just log it.
+  if (replyTo) {
+    try {
+      const autoReply = renderCustomerAutoReply(payload, documentType);
+      const { error } = await resend.emails.send({
+        from: fromEmail,
+        to: replyTo,
+        replyTo: toEmail,
+        subject: autoReply.subject,
+        html: autoReply.html,
+        text: autoReply.text,
+      });
+      if (error) {
+        console.error("[order] auto-reply error", error);
+      }
+    } catch (err) {
+      console.error("[order] auto-reply exception", err);
+    }
   }
 
   return NextResponse.json({ ok: true });

@@ -17,7 +17,6 @@ import { Button } from "@/components/ui/button";
 const SENSOR_PRICE = 199;
 const ANNUAL_SUB_PRICE = 499;
 const SHIPPING_COST = 39.95;
-const PER_SENSOR_TOTAL = SENSOR_PRICE + ANNUAL_SUB_PRICE;
 
 const FREE_SENSOR_REFERRAL_CODES = ["SGFreeSensor", "LLFreeSensor"] as const;
 const FREE_SENSOR_CODES_NORMALIZED = new Set(
@@ -356,7 +355,15 @@ function UnifiedOrderForm() {
             sensorFree={sensorFree}
           />
 
-          <PriceTable totals={totals} sensorFree={sensorFree} />
+          {sensorFree ? (
+            <PriceTable totals={totals} sensorFree={sensorFree} />
+          ) : (
+            <PricingHiddenNote />
+          )}
+
+          <p className="text-xs text-ac-black/60 italic">
+            Price also includes applicable state tax which will be reflected on estimate/invoice.
+          </p>
         </fieldset>
 
         <fieldset className="space-y-3">
@@ -409,6 +416,15 @@ function UnifiedOrderForm() {
         </Button>
       </form>
     </motion.div>
+  );
+}
+
+function PricingHiddenNote() {
+  return (
+    <div className="rounded-2xl border border-ac-grey bg-ac-grey/20 p-4 md:p-5 text-sm text-ac-black/70 font-light">
+      We&rsquo;ll confirm your pricing in the formal estimate or invoice once we receive your
+      request.
+    </div>
   );
 }
 
@@ -568,10 +584,6 @@ function PriceTable({
           </tr>
         </tfoot>
       </table>
-      <p className="text-xs text-ac-black/60 px-4 py-3 bg-white border-t border-ac-grey">
-        Per sensor: {formatCurrency(PER_SENSOR_TOTAL)} (hardware + 1-year subscription). Shipping is
-        a flat {formatCurrency(SHIPPING_COST)} regardless of quantity.
-      </p>
     </div>
   );
 }
