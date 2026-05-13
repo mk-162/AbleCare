@@ -53,12 +53,6 @@
     {
       "_template": "richText",
       "scheme": "light",
-      "heading": "App updates and change management",
-      "body": "<p>The Able Platform uses calendar-based versioning (for example <code>2025-09-09</code>). Each webhook payload carries a <code>version</code> field so partner systems can branch parsing logic when supporting multiple versions in parallel. Point releases (<code>2025-09-09.1</code>, <code>2025-09-09.2</code>) indicate non-breaking updates on top of that baseline.</p><h3>Non-breaking changes</h3><p>New optional fields on existing objects, new event types, new enum values, stricter validation that remains backward compatible and documentation clarifications are released without a deprecation window. Registered technical contacts receive an email notification, and receivers that ignore unknown fields need take no action.</p><h3>Breaking changes</h3><p>Field removal or renaming, changes to field types or semantics, removal of supported event types and changes to delivery guarantees are communicated at least 30 days in advance via email and release notes. Partners are expected to migrate their receiver to the new schema version before the deprecation date; the <code>version</code> field in the payload lets receivers run old and new schemas side-by-side during migration.</p><h3>Mobile and portal releases</h3><p>Able Mobile App releases for iOS and Android follow the native app-store review process. Able Portal and Able Admin are updated continuously; non-breaking UI and workflow improvements ship without downtime, and any change affecting an operator's workflow is flagged in-app and summarized in the release email to registered operators.</p><p>To be added to the technical release-notes list, email <a href=\"mailto:support@able-care.co\">support@able-care.co</a> with the contacts you want notified.</p>"
-    },
-    {
-      "_template": "richText",
-      "scheme": "light",
       "heading": "Able Assess User Guide",
       "body": "<p>The complete operator manual for Able Assess. Covers sensor setup, the five-minute screening workflow, interpreting results and sharing data with care teams. Written for any member of staff running assessments at the bedside, in the clinic or in a resident's living room.</p><p><a href=\"/downloads/Able-Assess-User-Guide-V1.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the Able Assess User Guide</a></p>"
     },
