@@ -88,6 +88,30 @@
       ]
     },
     {
+      "_template": "imageFeature",
+      "scheme": "light",
+      "headline": "Everything in the Able Assess kit",
+      "description": "Each kit ships in a compact, padded carry pouch — small enough for a shoulder bag, sturdy enough for the back of a vehicle between visits. Inside you'll find everything you need to run a standardized falls-risk screening.",
+      "bulletPoints": [
+        {
+          "text": "GripAble sensor — the wireless strength-testing device that powers the assessment."
+        },
+        {
+          "text": "Able Care tape measure — for setting the 3-meter walk used in the gait-speed and Timed Up & Go tests."
+        },
+        {
+          "text": "Able Care keyring — a quick visual marker so the kit doesn't get lost in a shared workspace."
+        },
+        {
+          "text": "Padded carry pouch — protective storage with an adjustable strap, so the kit travels with you."
+        }
+      ],
+      "image": "/images/product/full-kit.png",
+      "imageAlt": "The Able Assess kit — padded carry pouch, GripAble sensor, Able Care keyring, and Able Care tape measure",
+      "imagePosition": "right",
+      "imageFit": "contain"
+    },
+    {
       "_template": "segmentCards",
       "scheme": "grey",
       "heading": "See Able Assess in action",
