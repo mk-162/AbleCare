@@ -5,22 +5,28 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
+  BadgeCheck,
+  Cpu,
   FileText,
   Receipt,
-  Truck,
-  Cpu,
   ShoppingCart,
-  Tag,
+  Truck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const SENSOR_PRICE = 199;
-const ANNUAL_SUB_RRP = 499;
-const ANNUAL_SUB_PRICE = 360;
-const ANNUAL_SUB_SAVINGS = ANNUAL_SUB_RRP - ANNUAL_SUB_PRICE;
+const ANNUAL_SUB_PRICE = 499;
 const SHIPPING_COST = 39.95;
 const PER_SENSOR_TOTAL = SENSOR_PRICE + ANNUAL_SUB_PRICE;
-const PER_SENSOR_RRP = SENSOR_PRICE + ANNUAL_SUB_RRP;
+
+const FREE_SENSOR_REFERRAL_CODES = ["SGFreeSensor", "LLFreeSensor"] as const;
+const FREE_SENSOR_CODES_NORMALIZED = new Set(
+  FREE_SENSOR_REFERRAL_CODES.map((code) => code.toLowerCase()),
+);
+
+function isFreeSensorCode(code: string): boolean {
+  return FREE_SENSOR_CODES_NORMALIZED.has(code.trim().toLowerCase());
+}
 
 const CONTACT_EMAIL = "hello@able-care.co";
 const CONTACT_PHONE = "+1 406 318 9624";
@@ -51,7 +57,7 @@ export function OrderForm() {
             </h1>
             <p className="text-sm md:text-base font-light text-white/85 leading-relaxed">
               Tell us how many sensors you need and we&rsquo;ll email a formal estimate or
-              invoice &mdash; show pricing applied. Our team will follow up to confirm and ship.
+              invoice. Our team will follow up to confirm and ship.
             </p>
           </div>
         </div>
@@ -92,29 +98,29 @@ function UnifiedOrderForm() {
   const [sensorCountInput, setSensorCountInput] = useState<string>("1");
   const [sameAsBilling, setSameAsBilling] = useState(true);
   const [documentType, setDocumentType] = useState<DocumentType>("estimate");
+  const [referralCode, setReferralCode] = useState<string>("");
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+  const sensorFree = isFreeSensorCode(referralCode);
+  const sensorUnitPrice = sensorFree ? 0 : SENSOR_PRICE;
+
   const totals = useMemo(() => {
     const qty = Math.max(0, Math.floor(Number(sensorCountInput) || 0));
-    const sensorsLine = SENSOR_PRICE * qty;
+    const sensorListLine = SENSOR_PRICE * qty;
+    const sensorsLine = sensorUnitPrice * qty;
     const subscriptionLine = ANNUAL_SUB_PRICE * qty;
-    const subscriptionRrpLine = ANNUAL_SUB_RRP * qty;
     const shipping = qty > 0 ? SHIPPING_COST : 0;
     const total = sensorsLine + subscriptionLine + shipping;
-    const totalAtRrp = sensorsLine + subscriptionRrpLine + shipping;
-    const savings = totalAtRrp - total;
     return {
       qty,
+      sensorListLine,
       sensorsLine,
       subscriptionLine,
-      subscriptionRrpLine,
       shipping,
       total,
-      totalAtRrp,
-      savings,
     };
-  }, [sensorCountInput]);
+  }, [sensorCountInput, sensorUnitPrice]);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -179,8 +185,8 @@ function UnifiedOrderForm() {
         Tell us where to ship and what to send.
       </h2>
       <p className="text-sm text-ac-black/60 font-light mb-8">
-        Pricing below reflects our current show price. Submit the form and we&rsquo;ll email a
-        formal estimate or invoice &mdash; whichever you choose &mdash; to confirm.
+        Submit the form and we&rsquo;ll email a formal estimate or invoice &mdash; whichever you
+        choose &mdash; to confirm. Have a referral code? Enter it below.
       </p>
 
       <form className="space-y-10" onSubmit={handleSubmit}>
@@ -321,8 +327,6 @@ function UnifiedOrderForm() {
             Sensors &amp; Total
           </legend>
 
-          <ShowPriceCallout savings={totals.savings} qty={totals.qty} />
-
           <div className="space-y-2">
             <label htmlFor="invoiceSensorCount" className="block text-sm font-bold text-ac-black">
               Number of sensors
@@ -346,7 +350,13 @@ function UnifiedOrderForm() {
             />
           </div>
 
-          <PriceTable totals={totals} />
+          <ReferralCodeField
+            value={referralCode}
+            onChange={setReferralCode}
+            sensorFree={sensorFree}
+          />
+
+          <PriceTable totals={totals} sensorFree={sensorFree} />
         </fieldset>
 
         <fieldset className="space-y-3">
@@ -357,8 +367,7 @@ function UnifiedOrderForm() {
             What should we email you?
           </legend>
           <p className="text-sm text-ac-black/60 font-light -mt-2 mb-2">
-            Pricing above is your show price. Choose how you&rsquo;d like us to confirm it in
-            writing.
+            Choose how you&rsquo;d like us to confirm your order in writing.
           </p>
 
           <div className="grid md:grid-cols-2 gap-3">
@@ -403,55 +412,59 @@ function UnifiedOrderForm() {
   );
 }
 
-function ShowPriceCallout({ savings, qty }: { savings: number; qty: number }) {
+function ReferralCodeField({
+  value,
+  onChange,
+  sensorFree,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  sensorFree: boolean;
+}) {
   return (
-    <div className="rounded-2xl border border-ac-blue/20 bg-ac-blue/5 p-4 md:p-5">
-      <div className="flex items-start gap-3">
-        <span className="inline-flex items-center justify-center w-9 h-9 shrink-0 rounded-full bg-ac-blue text-white">
-          <Tag className="w-4 h-4" />
-        </span>
-        <div className="flex-1">
-          <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-ac-blue mb-1">
-            Show price applied
-          </div>
-          <p className="text-sm md:text-base text-ac-black font-medium leading-snug">
-            {"Annual subscription is "}
-            <span className="text-ac-black/60 line-through">{formatCurrency(ANNUAL_SUB_RRP)}</span>
-            {" "}
-            <span className="font-bold">{formatCurrency(ANNUAL_SUB_PRICE)}</span>
-            {" per sensor — you save "}
-            <span className="font-bold text-ac-blue">{formatCurrency(ANNUAL_SUB_SAVINGS)}</span>
-            {" per sensor."}
-            {qty > 1 && (
-              <>
-                {" That’s "}
-                <span className="font-bold text-ac-blue">{formatCurrency(savings)}</span>
-                {" off this order."}
-              </>
-            )}
-          </p>
+    <div className="space-y-2">
+      <label htmlFor="referralCode" className="block text-sm font-bold text-ac-black">
+        Referral code{" "}
+        <span className="text-ac-black/50 font-normal">(optional)</span>
+      </label>
+      <input
+        id="referralCode"
+        name="referralCode"
+        type="text"
+        autoComplete="off"
+        autoCapitalize="off"
+        autoCorrect="off"
+        spellCheck={false}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder="Enter a referral code if you have one"
+        className="flex h-12 w-full sm:max-w-md rounded-xl border border-black/10 bg-ac-grey/30 px-4 text-base text-ac-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ac-aqua focus-visible:ring-offset-2"
+      />
+      {sensorFree && (
+        <div className="inline-flex items-center gap-2 text-sm font-semibold text-ac-blue">
+          <BadgeCheck className="w-4 h-4" />
+          Referral applied &mdash; sensor hardware is free.
         </div>
-      </div>
+      )}
     </div>
   );
 }
 
 function PriceTable({
   totals,
+  sensorFree,
 }: {
   totals: {
     qty: number;
+    sensorListLine: number;
     sensorsLine: number;
     subscriptionLine: number;
-    subscriptionRrpLine: number;
     shipping: number;
     total: number;
-    totalAtRrp: number;
-    savings: number;
   };
+  sensorFree: boolean;
 }) {
-  const { qty, sensorsLine, subscriptionLine, subscriptionRrpLine, shipping, total, savings } =
-    totals;
+  const { qty, sensorListLine, sensorsLine, subscriptionLine, shipping, total } = totals;
 
   return (
     <div className="rounded-2xl border border-ac-grey overflow-hidden">
@@ -475,13 +488,36 @@ function PriceTable({
             </td>
             <td className="px-4 py-3 align-top text-ac-black/70 hidden sm:table-cell">
               Hardware sensor for falls screening
+              {sensorFree && (
+                <span className="block text-xs text-ac-blue font-semibold mt-0.5">
+                  Free with referral code
+                </span>
+              )}
             </td>
             <td className="px-4 py-3 align-top text-right tabular-nums">{qty}</td>
             <td className="px-4 py-3 align-top text-right tabular-nums">
-              {formatCurrency(SENSOR_PRICE)}
+              {sensorFree ? (
+                <>
+                  <span className="block text-xs text-ac-black/50 line-through">
+                    {formatCurrency(SENSOR_PRICE)}
+                  </span>
+                  <span className="block">{formatCurrency(0)}</span>
+                </>
+              ) : (
+                formatCurrency(SENSOR_PRICE)
+              )}
             </td>
             <td className="px-4 py-3 align-top text-right tabular-nums font-semibold">
-              {formatCurrency(sensorsLine)}
+              {sensorFree ? (
+                <>
+                  <span className="block text-xs text-ac-black/50 line-through font-normal">
+                    {formatCurrency(sensorListLine)}
+                  </span>
+                  <span className="block">{formatCurrency(sensorsLine)}</span>
+                </>
+              ) : (
+                formatCurrency(sensorsLine)
+              )}
             </td>
           </tr>
           <tr>
@@ -493,22 +529,13 @@ function PriceTable({
             </td>
             <td className="px-4 py-3 align-top text-ac-black/70 hidden sm:table-cell">
               Annual subscription &mdash; 1 year
-              <span className="block text-xs text-ac-blue font-semibold mt-0.5">
-                Show price (RRP {formatCurrency(ANNUAL_SUB_RRP)})
-              </span>
             </td>
             <td className="px-4 py-3 align-top text-right tabular-nums">{qty}</td>
             <td className="px-4 py-3 align-top text-right tabular-nums">
-              <span className="block text-xs text-ac-black/50 line-through">
-                {formatCurrency(ANNUAL_SUB_RRP)}
-              </span>
-              <span className="block">{formatCurrency(ANNUAL_SUB_PRICE)}</span>
+              {formatCurrency(ANNUAL_SUB_PRICE)}
             </td>
             <td className="px-4 py-3 align-top text-right tabular-nums font-semibold">
-              <span className="block text-xs text-ac-black/50 line-through font-normal">
-                {formatCurrency(subscriptionRrpLine)}
-              </span>
-              <span className="block">{formatCurrency(subscriptionLine)}</span>
+              {formatCurrency(subscriptionLine)}
             </td>
           </tr>
           <tr>
@@ -531,16 +558,6 @@ function PriceTable({
           </tr>
         </tbody>
         <tfoot className="bg-ac-blue/5">
-          {qty > 0 && savings > 0 && (
-            <tr>
-              <td colSpan={4} className="px-4 py-2 text-right text-sm text-ac-blue font-semibold">
-                Show price savings
-              </td>
-              <td className="px-4 py-2 text-right text-sm text-ac-blue font-semibold tabular-nums">
-                &minus;{formatCurrency(savings)}
-              </td>
-            </tr>
-          )}
           <tr>
             <td colSpan={4} className="px-4 py-4 text-right font-bold text-ac-black">
               Total Due
@@ -552,9 +569,8 @@ function PriceTable({
         </tfoot>
       </table>
       <p className="text-xs text-ac-black/60 px-4 py-3 bg-white border-t border-ac-grey">
-        Per sensor at show price: {formatCurrency(PER_SENSOR_TOTAL)} (hardware + 1-year
-        subscription) &mdash; RRP would be {formatCurrency(PER_SENSOR_RRP)}. Shipping is a flat{" "}
-        {formatCurrency(SHIPPING_COST)} regardless of quantity.
+        Per sensor: {formatCurrency(PER_SENSOR_TOTAL)} (hardware + 1-year subscription). Shipping is
+        a flat {formatCurrency(SHIPPING_COST)} regardless of quantity.
       </p>
     </div>
   );

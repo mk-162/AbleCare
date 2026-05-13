@@ -7,9 +7,18 @@ export const dynamic = "force-dynamic";
 /* ─── Pricing constants (mirror OrderForm.tsx) ──────────────────────────── */
 
 const SENSOR_PRICE = 199;
-const ANNUAL_SUB_PRICE = 360;
-const ANNUAL_SUB_RRP = 499;
+const ANNUAL_SUB_PRICE = 499;
 const SHIPPING_COST = 39.95;
+
+const FREE_SENSOR_REFERRAL_CODES = ["SGFreeSensor", "LLFreeSensor"] as const;
+const FREE_SENSOR_CODES_NORMALIZED = new Set(
+  FREE_SENSOR_REFERRAL_CODES.map((code) => code.toLowerCase()),
+);
+
+function isFreeSensorCode(code: string | undefined): boolean {
+  if (!code) return false;
+  return FREE_SENSOR_CODES_NORMALIZED.has(code.trim().toLowerCase());
+}
 
 /* ─── Rate limiting ─────────────────────────────────────────────────────── */
 
@@ -43,6 +52,7 @@ type OrderRequest = {
   shipPhone?: string;
   shipEmail?: string;
   sensorCount?: string;
+  referralCode?: string;
 };
 
 const ORDER_REQUIRED: Array<keyof OrderRequest> = [
@@ -81,13 +91,25 @@ function formatCurrency(value: number): string {
   }).format(Math.max(0, value));
 }
 
-function computeInvoiceTotals(sensorCountRaw?: string) {
+function computeInvoiceTotals(sensorCountRaw?: string, referralCode?: string) {
   const qty = Math.max(0, Math.floor(Number(sensorCountRaw) || 0));
-  const sensorsLine = SENSOR_PRICE * qty;
+  const sensorFree = isFreeSensorCode(referralCode);
+  const sensorUnitPrice = sensorFree ? 0 : SENSOR_PRICE;
+  const sensorListLine = SENSOR_PRICE * qty;
+  const sensorsLine = sensorUnitPrice * qty;
   const subscriptionLine = ANNUAL_SUB_PRICE * qty;
   const shipping = qty > 0 ? SHIPPING_COST : 0;
   const total = sensorsLine + subscriptionLine + shipping;
-  return { qty, sensorsLine, subscriptionLine, shipping, total };
+  return {
+    qty,
+    sensorFree,
+    sensorUnitPrice,
+    sensorListLine,
+    sensorsLine,
+    subscriptionLine,
+    shipping,
+    total,
+  };
 }
 
 /* ─── Email rendering ───────────────────────────────────────────────────── */
@@ -96,13 +118,26 @@ function renderOrderEmail(
   lead: OrderRequest,
   documentType: "estimate" | "invoice"
 ): { html: string; text: string; subject: string } {
-  const totals = computeInvoiceTotals(lead.sensorCount);
+  const totals = computeInvoiceTotals(lead.sensorCount, lead.referralCode);
   const sameAsBilling = !lead.shipAddress;
   const docLabel = documentType === "estimate" ? "estimate" : "invoice";
   const headline = documentType === "estimate" ? "estimate request" : "invoice request";
-  const subscriptionLineLabel = `Able Assess Data Sub (1 year, show price — RRP ${formatCurrency(
-    ANNUAL_SUB_RRP
-  )})`;
+  const referralRaw = lead.referralCode?.trim() ?? "";
+  const referralValid = totals.sensorFree;
+
+  const sensorPriceHtml = totals.sensorFree
+    ? `<span style="color:#999;text-decoration:line-through;">${formatCurrency(
+        SENSOR_PRICE,
+      )}</span> ${formatCurrency(0)}`
+    : formatCurrency(SENSOR_PRICE);
+  const sensorAmountHtml = totals.sensorFree
+    ? `<span style="color:#999;text-decoration:line-through;">${formatCurrency(
+        totals.sensorListLine,
+      )}</span> ${formatCurrency(totals.sensorsLine)}`
+    : formatCurrency(totals.sensorsLine);
+  const sensorLineLabel = totals.sensorFree
+    ? "Able Assess Sensor (free with referral code)"
+    : "Able Assess Sensor";
 
   const lineItemsHtml = `
     <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px;">
@@ -116,13 +151,13 @@ function renderOrderEmail(
       </thead>
       <tbody>
         <tr>
-          <td style="padding:8px;border-bottom:1px solid #f0f0f0;">Able Assess Sensor</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0;">${sensorLineLabel}</td>
           <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${totals.qty}</td>
-          <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${formatCurrency(SENSOR_PRICE)}</td>
-          <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${formatCurrency(totals.sensorsLine)}</td>
+          <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${sensorPriceHtml}</td>
+          <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${sensorAmountHtml}</td>
         </tr>
         <tr>
-          <td style="padding:8px;border-bottom:1px solid #f0f0f0;">${subscriptionLineLabel}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0;">Able Assess Data Sub (1 year)</td>
           <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${totals.qty}</td>
           <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${formatCurrency(ANNUAL_SUB_PRICE)}</td>
           <td style="padding:8px;text-align:right;border-bottom:1px solid #f0f0f0;">${formatCurrency(totals.subscriptionLine)}</td>
@@ -143,6 +178,12 @@ function renderOrderEmail(
     </table>
   `;
 
+  const referralDisplay = referralRaw
+    ? referralValid
+      ? `${referralRaw} (valid — sensor hardware free)`
+      : `${referralRaw} (not recognized)`
+    : "";
+
   const html = `
     <div style="font-family:'DM Sans',Arial,sans-serif;max-width:680px;margin:0 auto;padding:24px;color:#191919;">
       <h1 style="font-size:22px;margin:0 0 4px;">New order — ${headline}</h1>
@@ -155,6 +196,7 @@ function renderOrderEmail(
         ${row("Address", lead.billAddress)}
         ${row("Phone", lead.billPhone)}
         ${row("Email", lead.billEmail)}
+        ${row("Referral code", referralDisplay)}
       </table>
 
       <h2 style="font-size:14px;text-transform:uppercase;letter-spacing:0.1em;color:#1432FF;margin:24px 0 8px;">Ship to</h2>
@@ -175,6 +217,10 @@ function renderOrderEmail(
     </div>
   `;
 
+  const sensorTextLine = totals.sensorFree
+    ? `Sensors x${totals.qty} @ ${formatCurrency(SENSOR_PRICE)} → free with referral = ${formatCurrency(totals.sensorsLine)}`
+    : `Sensors x${totals.qty} @ ${formatCurrency(SENSOR_PRICE)} = ${formatCurrency(totals.sensorsLine)}`;
+
   const text = [
     `New order — ${headline}`,
     "",
@@ -184,6 +230,7 @@ function renderOrderEmail(
     `Address:      ${lead.billAddress ?? ""}`,
     `Phone:        ${lead.billPhone ?? ""}`,
     `Email:        ${lead.billEmail ?? ""}`,
+    `Referral:     ${referralDisplay || "(none)"}`,
     "",
     "SHIP TO",
     sameAsBilling
@@ -197,14 +244,15 @@ function renderOrderEmail(
         ].join("\n"),
     "",
     "ORDER",
-    `Sensors x${totals.qty} @ ${formatCurrency(SENSOR_PRICE)} = ${formatCurrency(totals.sensorsLine)}`,
+    sensorTextLine,
     `Data Sub x${totals.qty} @ ${formatCurrency(ANNUAL_SUB_PRICE)} = ${formatCurrency(totals.subscriptionLine)}`,
     `Shipping = ${formatCurrency(totals.shipping)}`,
     `TOTAL DUE: ${formatCurrency(totals.total)}`,
   ].join("\n");
 
   const subjectName = lead.billCustomer?.trim() || lead.billIndividual?.trim() || "lead";
-  const subject = `Able Care order — ${headline} from ${subjectName} (${formatCurrency(totals.total)})`;
+  const referralSubjectTag = referralValid ? ` [referral: ${referralRaw}]` : "";
+  const subject = `Able Care order — ${headline} from ${subjectName} (${formatCurrency(totals.total)})${referralSubjectTag}`;
   return { html, text, subject };
 }
 
