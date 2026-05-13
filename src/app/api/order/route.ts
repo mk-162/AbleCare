@@ -43,12 +43,20 @@ type OrderRequest = {
   documentType?: "estimate" | "invoice";
   billCustomer?: string;
   billIndividual?: string;
-  billAddress?: string;
+  billStreet1?: string;
+  billStreet2?: string;
+  billCity?: string;
+  billState?: string;
+  billZip?: string;
   billPhone?: string;
   billEmail?: string;
   shipCustomer?: string;
   shipIndividual?: string;
-  shipAddress?: string;
+  shipStreet1?: string;
+  shipStreet2?: string;
+  shipCity?: string;
+  shipState?: string;
+  shipZip?: string;
   shipPhone?: string;
   shipEmail?: string;
   sensorCount?: string;
@@ -58,11 +66,51 @@ type OrderRequest = {
 const ORDER_REQUIRED: Array<keyof OrderRequest> = [
   "billCustomer",
   "billIndividual",
-  "billAddress",
+  "billStreet1",
+  "billCity",
+  "billState",
+  "billZip",
   "billPhone",
   "billEmail",
   "sensorCount",
 ];
+
+const SHIP_REQUIRED_IF_PRESENT: Array<keyof OrderRequest> = [
+  "shipCustomer",
+  "shipIndividual",
+  "shipStreet1",
+  "shipCity",
+  "shipState",
+  "shipZip",
+  "shipPhone",
+  "shipEmail",
+];
+
+const ZIP_PATTERN = /^\d{5}(-\d{4})?$/;
+
+function formatAddress(parts: {
+  street1?: string;
+  street2?: string;
+  city?: string;
+  state?: string;
+  zip?: string;
+}): string {
+  const street1 = parts.street1?.trim();
+  const street2 = parts.street2?.trim();
+  const city = parts.city?.trim();
+  const state = parts.state?.trim();
+  const zip = parts.zip?.trim();
+
+  const lines: string[] = [];
+  if (street1) lines.push(street1);
+  if (street2) lines.push(street2);
+
+  const cityState = city && state ? `${city}, ${state}` : city || state || "";
+  const cityStateZip = [cityState, zip].filter(Boolean).join(" ");
+  if (cityStateZip) lines.push(cityStateZip);
+
+  return lines.join("\n");
+}
 
 /* ─── Helpers ───────────────────────────────────────────────────────────── */
 
@@ -119,7 +167,21 @@ function renderOrderEmail(
   documentType: "estimate" | "invoice"
 ): { html: string; text: string; subject: string } {
   const totals = computeInvoiceTotals(lead.sensorCount, lead.referralCode);
-  const sameAsBilling = !lead.shipAddress;
+  const sameAsBilling = !lead.shipStreet1;
+  const billAddressDisplay = formatAddress({
+    street1: lead.billStreet1,
+    street2: lead.billStreet2,
+    city: lead.billCity,
+    state: lead.billState,
+    zip: lead.billZip,
+  });
+  const shipAddressDisplay = formatAddress({
+    street1: lead.shipStreet1,
+    street2: lead.shipStreet2,
+    city: lead.shipCity,
+    state: lead.shipState,
+    zip: lead.shipZip,
+  });
   const docLabel = documentType === "estimate" ? "estimate" : "invoice";
   const headline = documentType === "estimate" ? "estimate request" : "invoice request";
   const referralRaw = lead.referralCode?.trim() ?? "";
@@ -193,7 +255,7 @@ function renderOrderEmail(
       <table style="width:100%;border-collapse:collapse;font-size:14px;">
         ${row("Organization", lead.billCustomer)}
         ${row("Contact", lead.billIndividual)}
-        ${row("Address", lead.billAddress)}
+        ${row("Address", billAddressDisplay)}
         ${row("Phone", lead.billPhone)}
         ${row("Email", lead.billEmail)}
         ${row("Referral code", referralDisplay)}
@@ -206,7 +268,7 @@ function renderOrderEmail(
           : `<table style="width:100%;border-collapse:collapse;font-size:14px;">
               ${row("Organization", lead.shipCustomer)}
               ${row("Contact", lead.shipIndividual)}
-              ${row("Address", lead.shipAddress)}
+              ${row("Address", shipAddressDisplay)}
               ${row("Phone", lead.shipPhone)}
               ${row("Email", lead.shipEmail)}
             </table>`
@@ -227,7 +289,11 @@ function renderOrderEmail(
     "BILL TO",
     `Organization: ${lead.billCustomer ?? ""}`,
     `Contact:      ${lead.billIndividual ?? ""}`,
-    `Address:      ${lead.billAddress ?? ""}`,
+    `Address:`,
+    billAddressDisplay
+      .split("\n")
+      .map((line) => `  ${line}`)
+      .join("\n"),
     `Phone:        ${lead.billPhone ?? ""}`,
     `Email:        ${lead.billEmail ?? ""}`,
     `Referral:     ${referralDisplay || "(none)"}`,
@@ -238,7 +304,11 @@ function renderOrderEmail(
       : [
           `Organization: ${lead.shipCustomer ?? ""}`,
           `Contact:      ${lead.shipIndividual ?? ""}`,
-          `Address:      ${lead.shipAddress ?? ""}`,
+          `Address:`,
+          shipAddressDisplay
+            .split("\n")
+            .map((line) => `  ${line}`)
+            .join("\n"),
           `Phone:        ${lead.shipPhone ?? ""}`,
           `Email:        ${lead.shipEmail ?? ""}`,
         ].join("\n"),
@@ -254,6 +324,44 @@ function renderOrderEmail(
   const referralSubjectTag = referralValid ? ` [referral: ${referralRaw}]` : "";
   const subject = `Able Care order — ${headline} from ${subjectName} (${formatCurrency(totals.total)})${referralSubjectTag}`;
   return { html, text, subject };
+}
+
+function renderCustomerAutoReply(
+  lead: OrderRequest,
+  documentType: "estimate" | "invoice",
+): { subject: string; html: string; text: string } {
+  const docLabel = documentType === "estimate" ? "estimate" : "invoice";
+  const firstName =
+    (lead.billIndividual?.trim() || lead.billCustomer?.trim() || "there").split(/\s+/)[0] ?? "there";
+
+  const subject = `Thanks — we've received your Able Care ${docLabel} request`;
+
+  const html = `
+    <div style="font-family:'DM Sans',Arial,sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#191919;">
+      <p style="font-size:16px;margin:0 0 16px;line-height:1.5;">Hi ${escapeHtml(firstName)},</p>
+      <p style="font-size:16px;margin:0 0 16px;line-height:1.5;">
+        Thank you for submitting a request for an ${docLabel}. Our team will be getting back to you shortly.
+      </p>
+      <p style="font-size:14px;color:#666;margin:24px 0 0;line-height:1.5;">
+        If your inquiry is urgent, you can reach us directly at
+        <a href="mailto:hello@able-care.co" style="color:#1432FF;text-decoration:none;">hello@able-care.co</a>
+        or +1 406 318 9624.
+      </p>
+      <p style="font-size:14px;color:#666;margin:16px 0 0;">— The Able Care team</p>
+    </div>
+  `;
+
+  const text = [
+    `Hi ${firstName},`,
+    "",
+    `Thank you for submitting a request for an ${docLabel}. Our team will be getting back to you shortly.`,
+    "",
+    "If your inquiry is urgent, you can reach us directly at hello@able-care.co or +1 406 318 9624.",
+    "",
+    "— The Able Care team",
+  ].join("\n");
+
+  return { subject, html, text };
 }
 
 /* ─── Handler ───────────────────────────────────────────────────────────── */
@@ -304,6 +412,36 @@ export async function POST(request: NextRequest) {
       );
     }
   }
+  if (payload.billZip && !ZIP_PATTERN.test(String(payload.billZip).trim())) {
+    return NextResponse.json(
+      { error: "Billing ZIP code must be 5 digits (optionally with -4)." },
+      { status: 400 }
+    );
+  }
+
+  // If any ship-to field came through, treat the customer as supplying a
+  // distinct ship address and require the full set.
+  const anyShipFieldPresent = SHIP_REQUIRED_IF_PRESENT.some((key) => {
+    const value = payload[key];
+    return typeof value === "string" && value.trim().length > 0;
+  });
+  if (anyShipFieldPresent) {
+    for (const field of SHIP_REQUIRED_IF_PRESENT) {
+      if (!payload[field] || !String(payload[field]).trim()) {
+        return NextResponse.json(
+          { error: `Missing required field: ${field}` },
+          { status: 400 }
+        );
+      }
+    }
+    if (payload.shipZip && !ZIP_PATTERN.test(String(payload.shipZip).trim())) {
+      return NextResponse.json(
+        { error: "Shipping ZIP code must be 5 digits (optionally with -4)." },
+        { status: 400 }
+      );
+    }
+  }
+
   const parsedQty = Number(payload.sensorCount);
   if (!Number.isInteger(parsedQty) || parsedQty < 1) {
     return NextResponse.json(
@@ -338,6 +476,28 @@ export async function POST(request: NextRequest) {
       { error: "Could not send email. Please try again." },
       { status: 502 }
     );
+  }
+
+  // Best-effort customer auto-reply. We've already captured the lead via the
+  // team email above, so a Resend hiccup here must not fail the customer's
+  // submission — just log it.
+  if (replyTo) {
+    try {
+      const autoReply = renderCustomerAutoReply(payload, documentType);
+      const { error } = await resend.emails.send({
+        from: fromEmail,
+        to: replyTo,
+        replyTo: toEmail,
+        subject: autoReply.subject,
+        html: autoReply.html,
+        text: autoReply.text,
+      });
+      if (error) {
+        console.error("[order] auto-reply error", error);
+      }
+    } catch (err) {
+      console.error("[order] auto-reply exception", err);
+    }
   }
 
   return NextResponse.json({ ok: true });

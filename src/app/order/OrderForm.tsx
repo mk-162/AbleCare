@@ -31,6 +31,60 @@ function isFreeSensorCode(code: string): boolean {
 const CONTACT_EMAIL = "hello@able-care.co";
 const CONTACT_PHONE = "+1 406 318 9624";
 
+const US_STATES: Array<readonly [code: string, name: string]> = [
+  ["AL", "Alabama"],
+  ["AK", "Alaska"],
+  ["AZ", "Arizona"],
+  ["AR", "Arkansas"],
+  ["CA", "California"],
+  ["CO", "Colorado"],
+  ["CT", "Connecticut"],
+  ["DE", "Delaware"],
+  ["DC", "District of Columbia"],
+  ["FL", "Florida"],
+  ["GA", "Georgia"],
+  ["HI", "Hawaii"],
+  ["ID", "Idaho"],
+  ["IL", "Illinois"],
+  ["IN", "Indiana"],
+  ["IA", "Iowa"],
+  ["KS", "Kansas"],
+  ["KY", "Kentucky"],
+  ["LA", "Louisiana"],
+  ["ME", "Maine"],
+  ["MD", "Maryland"],
+  ["MA", "Massachusetts"],
+  ["MI", "Michigan"],
+  ["MN", "Minnesota"],
+  ["MS", "Mississippi"],
+  ["MO", "Missouri"],
+  ["MT", "Montana"],
+  ["NE", "Nebraska"],
+  ["NV", "Nevada"],
+  ["NH", "New Hampshire"],
+  ["NJ", "New Jersey"],
+  ["NM", "New Mexico"],
+  ["NY", "New York"],
+  ["NC", "North Carolina"],
+  ["ND", "North Dakota"],
+  ["OH", "Ohio"],
+  ["OK", "Oklahoma"],
+  ["OR", "Oregon"],
+  ["PA", "Pennsylvania"],
+  ["RI", "Rhode Island"],
+  ["SC", "South Carolina"],
+  ["SD", "South Dakota"],
+  ["TN", "Tennessee"],
+  ["TX", "Texas"],
+  ["UT", "Utah"],
+  ["VT", "Vermont"],
+  ["VA", "Virginia"],
+  ["WA", "Washington"],
+  ["WV", "West Virginia"],
+  ["WI", "Wisconsin"],
+  ["WY", "Wyoming"],
+];
+
 type DocumentType = "estimate" | "invoice";
 
 function formatCurrency(value: number): string {
@@ -214,20 +268,7 @@ function UnifiedOrderForm() {
             placeholder="Jane Doe"
             required
           />
-          <div className="space-y-2">
-            <label htmlFor="billAddress" className="block text-sm font-bold text-ac-black">
-              Mailing Address
-              <span className="text-ac-blue ml-1">*</span>
-            </label>
-            <textarea
-              id="billAddress"
-              name="billAddress"
-              rows={3}
-              required
-              placeholder={"Street\nCity, State ZIP"}
-              className="flex w-full rounded-xl border border-black/10 bg-ac-grey/30 px-4 py-3 text-base text-ac-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ac-aqua focus-visible:ring-offset-2 resize-y"
-            />
-          </div>
+          <AddressFields prefix="bill" />
           <div className="grid md:grid-cols-2 gap-6">
             <Field
               id="billPhone"
@@ -283,20 +324,7 @@ function UnifiedOrderForm() {
                 placeholder="Jane Doe"
                 required
               />
-              <div className="space-y-2">
-                <label htmlFor="shipAddress" className="block text-sm font-bold text-ac-black">
-                  Mailing Address
-                  <span className="text-ac-blue ml-1">*</span>
-                </label>
-                <textarea
-                  id="shipAddress"
-                  name="shipAddress"
-                  rows={3}
-                  required
-                  placeholder={"Street\nCity, State ZIP"}
-                  className="flex w-full rounded-xl border border-black/10 bg-ac-grey/30 px-4 py-3 text-base text-ac-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ac-aqua focus-visible:ring-offset-2 resize-y"
-                />
-              </div>
+              <AddressFields prefix="ship" />
               <div className="grid md:grid-cols-2 gap-6">
                 <Field
                   id="shipPhone"
@@ -357,6 +385,10 @@ function UnifiedOrderForm() {
           />
 
           <PriceTable totals={totals} sensorFree={sensorFree} />
+
+          <p className="text-xs text-ac-black/60 italic">
+            Price also includes applicable state tax which will be reflected on estimate/invoice.
+          </p>
         </fieldset>
 
         <fieldset className="space-y-3">
@@ -644,6 +676,77 @@ function Field({ id, name, label, type = "text", placeholder, required }: FieldP
         required={required}
         className="flex h-12 w-full rounded-xl border border-black/10 bg-ac-grey/30 px-4 text-base text-ac-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ac-aqua focus-visible:ring-offset-2"
       />
+    </div>
+  );
+}
+
+function AddressFields({ prefix }: { prefix: "bill" | "ship" }) {
+  const inputClass =
+    "flex h-12 w-full rounded-xl border border-black/10 bg-ac-grey/30 px-4 text-base text-ac-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ac-aqua focus-visible:ring-offset-2";
+
+  return (
+    <div className="space-y-4">
+      <Field
+        id={`${prefix}Street1`}
+        name={`${prefix}Street1`}
+        label="Street Address"
+        placeholder="123 Main St"
+        required
+      />
+      <Field
+        id={`${prefix}Street2`}
+        name={`${prefix}Street2`}
+        label="Apt / Suite (optional)"
+        placeholder="Suite 200"
+      />
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_180px_140px] gap-4">
+        <Field
+          id={`${prefix}City`}
+          name={`${prefix}City`}
+          label="City"
+          placeholder="Bozeman"
+          required
+        />
+        <div className="space-y-2">
+          <label htmlFor={`${prefix}State`} className="block text-sm font-bold text-ac-black">
+            State<span className="text-ac-blue ml-1">*</span>
+          </label>
+          <select
+            id={`${prefix}State`}
+            name={`${prefix}State`}
+            required
+            defaultValue=""
+            className={inputClass}
+          >
+            <option value="" disabled>
+              Select…
+            </option>
+            {US_STATES.map(([code, name]) => (
+              <option key={code} value={code}>
+                {name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="space-y-2">
+          <label htmlFor={`${prefix}Zip`} className="block text-sm font-bold text-ac-black">
+            ZIP Code<span className="text-ac-blue ml-1">*</span>
+          </label>
+          <input
+            id={`${prefix}Zip`}
+            name={`${prefix}Zip`}
+            type="text"
+            inputMode="numeric"
+            autoComplete="postal-code"
+            required
+            placeholder="59715"
+            pattern="\d{5}(-\d{4})?"
+            maxLength={10}
+            title="Enter a 5-digit ZIP code (optionally with +4)."
+            className={inputClass}
+          />
+        </div>
+      </div>
     </div>
   );
 }
