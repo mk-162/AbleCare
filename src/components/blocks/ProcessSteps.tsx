@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 interface ProcessStepsProps {
   scheme?: string;
   heading?: string;
+  eyebrow?: string;
   steps?: Array<{
     number?: number;
     title: string;
@@ -15,7 +16,8 @@ interface ProcessStepsProps {
   ctaLink?: string;
 }
 
-export function ProcessSteps({ scheme = "light", heading, steps, ctaText, ctaLink }: ProcessStepsProps) {
+export function ProcessSteps({ scheme = "light", heading, eyebrow, steps, ctaText, ctaLink }: ProcessStepsProps) {
+  const eyebrowText = (eyebrow ?? "How it works").trim();
   const isBlue = scheme === "blue";
   const bgClass = isBlue ? "bg-ac-blue" : scheme === "aqua" ? "bg-ac-aqua" : scheme === "grey" ? "bg-ac-grey" : "bg-white";
   const textClass = isBlue ? "text-white" : "text-ac-black";
@@ -37,9 +39,11 @@ export function ProcessSteps({ scheme = "light", heading, steps, ctaText, ctaLin
     <section id="how-it-works" className={`relative py-20 md:py-32 ${bgClass} ${textClass}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <div className={`text-xs font-bold uppercase tracking-[0.25em] mb-4 ${isBlue ? "text-ac-aqua" : "text-ac-blue"}`}>
-            How it works
-          </div>
+          {eyebrowText && (
+            <div className={`text-xs font-bold uppercase tracking-[0.25em] mb-4 ${isBlue ? "text-ac-aqua" : "text-ac-blue"}`}>
+              {eyebrowText}
+            </div>
+          )}
           <h2 className={`text-3xl md:text-4xl font-bold ${textClass}`}>
             {heading || "Assessment in four simple steps"}
           </h2>

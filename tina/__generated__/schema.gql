@@ -157,6 +157,7 @@ type PagesBlocksStatsBarStats {
 
 type PagesBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [PagesBlocksStatsBarStats]
 }
@@ -199,6 +200,7 @@ type PagesBlocksProcessStepsSteps {
 
 type PagesBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [PagesBlocksProcessStepsSteps]
   ctaText: String
@@ -212,6 +214,7 @@ type PagesBlocksMetricsBlockMetrics {
 
 type PagesBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [PagesBlocksMetricsBlockMetrics]
 }
@@ -258,6 +261,7 @@ type PagesBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [PagesBlocksTestimonialCarouselTestimonials]
 }
@@ -420,6 +424,7 @@ type PagesBlocksRoiCalculatorPromo {
 
 type PagesBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -577,6 +582,7 @@ input PagesBlocksStatsBarStatsFilter {
 
 input PagesBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: PagesBlocksStatsBarStatsFilter
 }
@@ -629,6 +635,7 @@ input PagesBlocksProcessStepsStepsFilter {
 
 input PagesBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: PagesBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -642,6 +649,7 @@ input PagesBlocksMetricsBlockMetricsFilter {
 
 input PagesBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: PagesBlocksMetricsBlockMetricsFilter
 }
@@ -688,6 +696,7 @@ input PagesBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: PagesBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -855,6 +864,7 @@ input PagesBlocksRoiCalculatorPromoFilter {
 
 input PagesBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -1040,6 +1050,7 @@ type SolutionsBlocksStatsBarStats {
 
 type SolutionsBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [SolutionsBlocksStatsBarStats]
 }
@@ -1082,6 +1093,7 @@ type SolutionsBlocksProcessStepsSteps {
 
 type SolutionsBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [SolutionsBlocksProcessStepsSteps]
   ctaText: String
@@ -1095,6 +1107,7 @@ type SolutionsBlocksMetricsBlockMetrics {
 
 type SolutionsBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [SolutionsBlocksMetricsBlockMetrics]
 }
@@ -1141,6 +1154,7 @@ type SolutionsBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [SolutionsBlocksTestimonialCarouselTestimonials]
 }
@@ -1303,6 +1317,7 @@ type SolutionsBlocksRoiCalculatorPromo {
 
 type SolutionsBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -1446,6 +1461,7 @@ input SolutionsBlocksStatsBarStatsFilter {
 
 input SolutionsBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: SolutionsBlocksStatsBarStatsFilter
 }
@@ -1488,6 +1504,7 @@ input SolutionsBlocksProcessStepsStepsFilter {
 
 input SolutionsBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: SolutionsBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -1501,6 +1518,7 @@ input SolutionsBlocksMetricsBlockMetricsFilter {
 
 input SolutionsBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: SolutionsBlocksMetricsBlockMetricsFilter
 }
@@ -1547,6 +1565,7 @@ input SolutionsBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: SolutionsBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -1709,6 +1728,7 @@ input SolutionsBlocksRoiCalculatorPromoFilter {
 
 input SolutionsBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -1894,6 +1914,7 @@ type SegmentsBlocksStatsBarStats {
 
 type SegmentsBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [SegmentsBlocksStatsBarStats]
 }
@@ -1936,6 +1957,7 @@ type SegmentsBlocksProcessStepsSteps {
 
 type SegmentsBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [SegmentsBlocksProcessStepsSteps]
   ctaText: String
@@ -1949,6 +1971,7 @@ type SegmentsBlocksMetricsBlockMetrics {
 
 type SegmentsBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [SegmentsBlocksMetricsBlockMetrics]
 }
@@ -1995,6 +2018,7 @@ type SegmentsBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [SegmentsBlocksTestimonialCarouselTestimonials]
 }
@@ -2157,6 +2181,7 @@ type SegmentsBlocksRoiCalculatorPromo {
 
 type SegmentsBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -2300,6 +2325,7 @@ input SegmentsBlocksStatsBarStatsFilter {
 
 input SegmentsBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: SegmentsBlocksStatsBarStatsFilter
 }
@@ -2342,6 +2368,7 @@ input SegmentsBlocksProcessStepsStepsFilter {
 
 input SegmentsBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: SegmentsBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -2355,6 +2382,7 @@ input SegmentsBlocksMetricsBlockMetricsFilter {
 
 input SegmentsBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: SegmentsBlocksMetricsBlockMetricsFilter
 }
@@ -2401,6 +2429,7 @@ input SegmentsBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: SegmentsBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -2563,6 +2592,7 @@ input SegmentsBlocksRoiCalculatorPromoFilter {
 
 input SegmentsBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -2748,6 +2778,7 @@ type CompareBlocksStatsBarStats {
 
 type CompareBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [CompareBlocksStatsBarStats]
 }
@@ -2790,6 +2821,7 @@ type CompareBlocksProcessStepsSteps {
 
 type CompareBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [CompareBlocksProcessStepsSteps]
   ctaText: String
@@ -2803,6 +2835,7 @@ type CompareBlocksMetricsBlockMetrics {
 
 type CompareBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [CompareBlocksMetricsBlockMetrics]
 }
@@ -2849,6 +2882,7 @@ type CompareBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [CompareBlocksTestimonialCarouselTestimonials]
 }
@@ -3011,6 +3045,7 @@ type CompareBlocksRoiCalculatorPromo {
 
 type CompareBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -3154,6 +3189,7 @@ input CompareBlocksStatsBarStatsFilter {
 
 input CompareBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: CompareBlocksStatsBarStatsFilter
 }
@@ -3196,6 +3232,7 @@ input CompareBlocksProcessStepsStepsFilter {
 
 input CompareBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: CompareBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -3209,6 +3246,7 @@ input CompareBlocksMetricsBlockMetricsFilter {
 
 input CompareBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: CompareBlocksMetricsBlockMetricsFilter
 }
@@ -3255,6 +3293,7 @@ input CompareBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: CompareBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -3417,6 +3456,7 @@ input CompareBlocksRoiCalculatorPromoFilter {
 
 input CompareBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -3602,6 +3642,7 @@ type LearnBlocksStatsBarStats {
 
 type LearnBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [LearnBlocksStatsBarStats]
 }
@@ -3644,6 +3685,7 @@ type LearnBlocksProcessStepsSteps {
 
 type LearnBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [LearnBlocksProcessStepsSteps]
   ctaText: String
@@ -3657,6 +3699,7 @@ type LearnBlocksMetricsBlockMetrics {
 
 type LearnBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [LearnBlocksMetricsBlockMetrics]
 }
@@ -3703,6 +3746,7 @@ type LearnBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [LearnBlocksTestimonialCarouselTestimonials]
 }
@@ -3865,6 +3909,7 @@ type LearnBlocksRoiCalculatorPromo {
 
 type LearnBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -4022,6 +4067,7 @@ input LearnBlocksStatsBarStatsFilter {
 
 input LearnBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: LearnBlocksStatsBarStatsFilter
 }
@@ -4064,6 +4110,7 @@ input LearnBlocksProcessStepsStepsFilter {
 
 input LearnBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: LearnBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -4077,6 +4124,7 @@ input LearnBlocksMetricsBlockMetricsFilter {
 
 input LearnBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: LearnBlocksMetricsBlockMetricsFilter
 }
@@ -4123,6 +4171,7 @@ input LearnBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: LearnBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -4285,6 +4334,7 @@ input LearnBlocksRoiCalculatorPromoFilter {
 
 input LearnBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -4478,6 +4528,7 @@ type ResourcesBlocksStatsBarStats {
 
 type ResourcesBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [ResourcesBlocksStatsBarStats]
 }
@@ -4520,6 +4571,7 @@ type ResourcesBlocksProcessStepsSteps {
 
 type ResourcesBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [ResourcesBlocksProcessStepsSteps]
   ctaText: String
@@ -4533,6 +4585,7 @@ type ResourcesBlocksMetricsBlockMetrics {
 
 type ResourcesBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [ResourcesBlocksMetricsBlockMetrics]
 }
@@ -4579,6 +4632,7 @@ type ResourcesBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [ResourcesBlocksTestimonialCarouselTestimonials]
 }
@@ -4741,6 +4795,7 @@ type ResourcesBlocksRoiCalculatorPromo {
 
 type ResourcesBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -4884,6 +4939,7 @@ input ResourcesBlocksStatsBarStatsFilter {
 
 input ResourcesBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: ResourcesBlocksStatsBarStatsFilter
 }
@@ -4926,6 +4982,7 @@ input ResourcesBlocksProcessStepsStepsFilter {
 
 input ResourcesBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: ResourcesBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -4939,6 +4996,7 @@ input ResourcesBlocksMetricsBlockMetricsFilter {
 
 input ResourcesBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: ResourcesBlocksMetricsBlockMetricsFilter
 }
@@ -4985,6 +5043,7 @@ input ResourcesBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: ResourcesBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -5147,6 +5206,7 @@ input ResourcesBlocksRoiCalculatorPromoFilter {
 
 input ResourcesBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -5332,6 +5392,7 @@ type CompanyBlocksStatsBarStats {
 
 type CompanyBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [CompanyBlocksStatsBarStats]
 }
@@ -5374,6 +5435,7 @@ type CompanyBlocksProcessStepsSteps {
 
 type CompanyBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [CompanyBlocksProcessStepsSteps]
   ctaText: String
@@ -5387,6 +5449,7 @@ type CompanyBlocksMetricsBlockMetrics {
 
 type CompanyBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [CompanyBlocksMetricsBlockMetrics]
 }
@@ -5433,6 +5496,7 @@ type CompanyBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [CompanyBlocksTestimonialCarouselTestimonials]
 }
@@ -5595,6 +5659,7 @@ type CompanyBlocksRoiCalculatorPromo {
 
 type CompanyBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -5738,6 +5803,7 @@ input CompanyBlocksStatsBarStatsFilter {
 
 input CompanyBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: CompanyBlocksStatsBarStatsFilter
 }
@@ -5780,6 +5846,7 @@ input CompanyBlocksProcessStepsStepsFilter {
 
 input CompanyBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: CompanyBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -5793,6 +5860,7 @@ input CompanyBlocksMetricsBlockMetricsFilter {
 
 input CompanyBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: CompanyBlocksMetricsBlockMetricsFilter
 }
@@ -5839,6 +5907,7 @@ input CompanyBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: CompanyBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -6001,6 +6070,7 @@ input CompanyBlocksRoiCalculatorPromoFilter {
 
 input CompanyBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -6451,6 +6521,7 @@ input PagesBlocksStatsBarStatsMutation {
 
 input PagesBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [PagesBlocksStatsBarStatsMutation]
 }
@@ -6493,6 +6564,7 @@ input PagesBlocksProcessStepsStepsMutation {
 
 input PagesBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [PagesBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -6506,6 +6578,7 @@ input PagesBlocksMetricsBlockMetricsMutation {
 
 input PagesBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [PagesBlocksMetricsBlockMetricsMutation]
 }
@@ -6552,6 +6625,7 @@ input PagesBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [PagesBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -6714,6 +6788,7 @@ input PagesBlocksRoiCalculatorPromoMutation {
 
 input PagesBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -6888,6 +6963,7 @@ input SolutionsBlocksStatsBarStatsMutation {
 
 input SolutionsBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [SolutionsBlocksStatsBarStatsMutation]
 }
@@ -6930,6 +7006,7 @@ input SolutionsBlocksProcessStepsStepsMutation {
 
 input SolutionsBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [SolutionsBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -6943,6 +7020,7 @@ input SolutionsBlocksMetricsBlockMetricsMutation {
 
 input SolutionsBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [SolutionsBlocksMetricsBlockMetricsMutation]
 }
@@ -6989,6 +7067,7 @@ input SolutionsBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [SolutionsBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -7151,6 +7230,7 @@ input SolutionsBlocksRoiCalculatorPromoMutation {
 
 input SolutionsBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -7325,6 +7405,7 @@ input SegmentsBlocksStatsBarStatsMutation {
 
 input SegmentsBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [SegmentsBlocksStatsBarStatsMutation]
 }
@@ -7367,6 +7448,7 @@ input SegmentsBlocksProcessStepsStepsMutation {
 
 input SegmentsBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [SegmentsBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -7380,6 +7462,7 @@ input SegmentsBlocksMetricsBlockMetricsMutation {
 
 input SegmentsBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [SegmentsBlocksMetricsBlockMetricsMutation]
 }
@@ -7426,6 +7509,7 @@ input SegmentsBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [SegmentsBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -7588,6 +7672,7 @@ input SegmentsBlocksRoiCalculatorPromoMutation {
 
 input SegmentsBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -7762,6 +7847,7 @@ input CompareBlocksStatsBarStatsMutation {
 
 input CompareBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [CompareBlocksStatsBarStatsMutation]
 }
@@ -7804,6 +7890,7 @@ input CompareBlocksProcessStepsStepsMutation {
 
 input CompareBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [CompareBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -7817,6 +7904,7 @@ input CompareBlocksMetricsBlockMetricsMutation {
 
 input CompareBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [CompareBlocksMetricsBlockMetricsMutation]
 }
@@ -7863,6 +7951,7 @@ input CompareBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [CompareBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -8025,6 +8114,7 @@ input CompareBlocksRoiCalculatorPromoMutation {
 
 input CompareBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -8199,6 +8289,7 @@ input LearnBlocksStatsBarStatsMutation {
 
 input LearnBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [LearnBlocksStatsBarStatsMutation]
 }
@@ -8241,6 +8332,7 @@ input LearnBlocksProcessStepsStepsMutation {
 
 input LearnBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [LearnBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -8254,6 +8346,7 @@ input LearnBlocksMetricsBlockMetricsMutation {
 
 input LearnBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [LearnBlocksMetricsBlockMetricsMutation]
 }
@@ -8300,6 +8393,7 @@ input LearnBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [LearnBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -8462,6 +8556,7 @@ input LearnBlocksRoiCalculatorPromoMutation {
 
 input LearnBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -8644,6 +8739,7 @@ input ResourcesBlocksStatsBarStatsMutation {
 
 input ResourcesBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [ResourcesBlocksStatsBarStatsMutation]
 }
@@ -8686,6 +8782,7 @@ input ResourcesBlocksProcessStepsStepsMutation {
 
 input ResourcesBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [ResourcesBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -8699,6 +8796,7 @@ input ResourcesBlocksMetricsBlockMetricsMutation {
 
 input ResourcesBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [ResourcesBlocksMetricsBlockMetricsMutation]
 }
@@ -8745,6 +8843,7 @@ input ResourcesBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [ResourcesBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -8907,6 +9006,7 @@ input ResourcesBlocksRoiCalculatorPromoMutation {
 
 input ResourcesBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -9081,6 +9181,7 @@ input CompanyBlocksStatsBarStatsMutation {
 
 input CompanyBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [CompanyBlocksStatsBarStatsMutation]
 }
@@ -9123,6 +9224,7 @@ input CompanyBlocksProcessStepsStepsMutation {
 
 input CompanyBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [CompanyBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -9136,6 +9238,7 @@ input CompanyBlocksMetricsBlockMetricsMutation {
 
 input CompanyBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [CompanyBlocksMetricsBlockMetricsMutation]
 }
@@ -9182,6 +9285,7 @@ input CompanyBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [CompanyBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -9344,6 +9448,7 @@ input CompanyBlocksRoiCalculatorPromoMutation {
 
 input CompanyBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
