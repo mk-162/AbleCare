@@ -387,7 +387,8 @@ function UnifiedOrderForm() {
           <PriceTable totals={totals} sensorFree={sensorFree} />
 
           <p className="text-xs text-ac-black/60 italic">
-            Price also includes applicable state tax which will be reflected on estimate/invoice.
+            Prices shown exclude applicable taxes. Any state and local taxes will be calculated
+            and added on your formal estimate or invoice.
           </p>
         </fieldset>
 
@@ -409,7 +410,7 @@ function UnifiedOrderForm() {
               onChange={setDocumentType}
               icon={<FileText className="w-5 h-5" />}
               title="Send me a formal estimate"
-              description="A signed, dated estimate emailed to you for approval — no obligation to buy yet."
+              description="A signed, dated estimate — including applicable taxes — emailed to you for approval. No obligation to buy yet."
             />
             <DocumentTypeOption
               value="invoice"
@@ -417,7 +418,7 @@ function UnifiedOrderForm() {
               onChange={setDocumentType}
               icon={<Receipt className="w-5 h-5" />}
               title="I’m ready — send me an invoice"
-              description="An invoice for the total above, ready to pay so we can ship."
+              description="A payable invoice for your order — taxes added — so we can ship right away."
             />
           </div>
         </fieldset>
@@ -592,7 +593,10 @@ function PriceTable({
         <tfoot className="bg-ac-blue/5">
           <tr>
             <td colSpan={4} className="px-4 py-4 text-right font-bold text-ac-black">
-              Total Due
+              Subtotal
+              <span className="block text-xs font-normal text-ac-black/60">
+                Excludes applicable taxes
+              </span>
             </td>
             <td className="px-4 py-4 text-right font-bold text-ac-blue tabular-nums text-lg">
               {formatCurrency(total)}
