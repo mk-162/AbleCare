@@ -88,7 +88,6 @@ const statsBarBlock = {
   },
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
-    { type: "string" as const, name: "eyebrow", label: "Eyebrow (small caps label above heading)", description: "Leave blank to use the default ('About Able Assess'). Set to a single space to hide entirely." },
     { type: "string" as const, name: "heading", label: "Section Heading" },
     {
       type: "object" as const,
@@ -172,7 +171,6 @@ const processStepsBlock = {
   },
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
-    { type: "string" as const, name: "eyebrow", label: "Eyebrow (small caps label above heading)", description: "Leave blank to use the default ('How it works'). Set to a single space to hide entirely." },
     { type: "string" as const, name: "heading", label: "Section Heading" },
     {
       type: "object" as const,
@@ -202,7 +200,6 @@ const metricsBlockBlock = {
   },
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
-    { type: "string" as const, name: "eyebrow", label: "Eyebrow (small caps label above heading)", description: "Leave blank to use the default ('What we measure'). Set to a single space to hide entirely." },
     { type: "string" as const, name: "heading", label: "Section Heading" },
     {
       type: "object" as const,
@@ -301,7 +298,6 @@ const testimonialCarouselBlock = {
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "aqua" } },
     { type: "string" as const, name: "wave", label: "Wave Style", options: ["ribbon", "crest", "fold", "pulse", "arc", "none"], ui: { defaultValue: "fold" } },
     { type: "string" as const, name: "waveFill", label: "Wave Fill (colour of section above)", options: ["light", "grey", "blue", "aqua"], description: "Set this to the colour scheme of the previous section to avoid a white gap." },
-    { type: "string" as const, name: "eyebrow", label: "Eyebrow (small caps label above heading)", description: "Leave blank to use the default ('What they say'). Set to a single space to hide entirely." },
     { type: "string" as const, name: "heading", label: "Section Heading" },
     {
       type: "object" as const,
@@ -698,7 +694,6 @@ const leadMagnetPromoBlock = {
   },
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
-    { type: "string" as const, name: "eyebrow", label: "Eyebrow (small caps label above heading)", description: "Leave blank to use the default ('Free Guide'). Set to a single space to hide entirely." },
     { type: "string" as const, name: "heading", label: "Heading" },
     { type: "string" as const, name: "promoBody", label: "Body", ui: { component: "textarea" } },
     { type: "string" as const, name: "ctaText", label: "CTA Text" },
