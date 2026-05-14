@@ -32,7 +32,6 @@ fragment PagesParts on Pages {
     }
     ... on PagesBlocksStatsBar {
       scheme
-      eyebrow
       heading
       stats {
         __typename
@@ -68,7 +67,6 @@ fragment PagesParts on Pages {
     }
     ... on PagesBlocksProcessSteps {
       scheme
-      eyebrow
       heading
       steps {
         __typename
@@ -82,7 +80,6 @@ fragment PagesParts on Pages {
     }
     ... on PagesBlocksMetricsBlock {
       scheme
-      eyebrow
       heading
       metrics {
         __typename
@@ -120,7 +117,6 @@ fragment PagesParts on Pages {
       scheme
       wave
       waveFill
-      eyebrow
       heading
       testimonials {
         __typename
@@ -269,7 +265,6 @@ fragment PagesParts on Pages {
     }
     ... on PagesBlocksLeadMagnetPromo {
       scheme
-      eyebrow
       heading
       promoBody
       ctaText
@@ -387,7 +382,6 @@ fragment SolutionsParts on Solutions {
     }
     ... on SolutionsBlocksStatsBar {
       scheme
-      eyebrow
       heading
       stats {
         __typename
@@ -423,7 +417,6 @@ fragment SolutionsParts on Solutions {
     }
     ... on SolutionsBlocksProcessSteps {
       scheme
-      eyebrow
       heading
       steps {
         __typename
@@ -437,7 +430,6 @@ fragment SolutionsParts on Solutions {
     }
     ... on SolutionsBlocksMetricsBlock {
       scheme
-      eyebrow
       heading
       metrics {
         __typename
@@ -475,7 +467,6 @@ fragment SolutionsParts on Solutions {
       scheme
       wave
       waveFill
-      eyebrow
       heading
       testimonials {
         __typename
@@ -624,7 +615,6 @@ fragment SolutionsParts on Solutions {
     }
     ... on SolutionsBlocksLeadMagnetPromo {
       scheme
-      eyebrow
       heading
       promoBody
       ctaText
@@ -742,7 +732,6 @@ fragment SegmentsParts on Segments {
     }
     ... on SegmentsBlocksStatsBar {
       scheme
-      eyebrow
       heading
       stats {
         __typename
@@ -778,7 +767,6 @@ fragment SegmentsParts on Segments {
     }
     ... on SegmentsBlocksProcessSteps {
       scheme
-      eyebrow
       heading
       steps {
         __typename
@@ -792,7 +780,6 @@ fragment SegmentsParts on Segments {
     }
     ... on SegmentsBlocksMetricsBlock {
       scheme
-      eyebrow
       heading
       metrics {
         __typename
@@ -830,7 +817,6 @@ fragment SegmentsParts on Segments {
       scheme
       wave
       waveFill
-      eyebrow
       heading
       testimonials {
         __typename
@@ -979,7 +965,6 @@ fragment SegmentsParts on Segments {
     }
     ... on SegmentsBlocksLeadMagnetPromo {
       scheme
-      eyebrow
       heading
       promoBody
       ctaText
@@ -1097,7 +1082,6 @@ fragment CompareParts on Compare {
     }
     ... on CompareBlocksStatsBar {
       scheme
-      eyebrow
       heading
       stats {
         __typename
@@ -1133,7 +1117,6 @@ fragment CompareParts on Compare {
     }
     ... on CompareBlocksProcessSteps {
       scheme
-      eyebrow
       heading
       steps {
         __typename
@@ -1147,7 +1130,6 @@ fragment CompareParts on Compare {
     }
     ... on CompareBlocksMetricsBlock {
       scheme
-      eyebrow
       heading
       metrics {
         __typename
@@ -1185,7 +1167,6 @@ fragment CompareParts on Compare {
       scheme
       wave
       waveFill
-      eyebrow
       heading
       testimonials {
         __typename
@@ -1334,7 +1315,6 @@ fragment CompareParts on Compare {
     }
     ... on CompareBlocksLeadMagnetPromo {
       scheme
-      eyebrow
       heading
       promoBody
       ctaText
@@ -1467,7 +1447,6 @@ fragment LearnParts on Learn {
     }
     ... on LearnBlocksStatsBar {
       scheme
-      eyebrow
       heading
       stats {
         __typename
@@ -1503,7 +1482,6 @@ fragment LearnParts on Learn {
     }
     ... on LearnBlocksProcessSteps {
       scheme
-      eyebrow
       heading
       steps {
         __typename
@@ -1517,7 +1495,6 @@ fragment LearnParts on Learn {
     }
     ... on LearnBlocksMetricsBlock {
       scheme
-      eyebrow
       heading
       metrics {
         __typename
@@ -1555,7 +1532,6 @@ fragment LearnParts on Learn {
       scheme
       wave
       waveFill
-      eyebrow
       heading
       testimonials {
         __typename
@@ -1704,7 +1680,6 @@ fragment LearnParts on Learn {
     }
     ... on LearnBlocksLeadMagnetPromo {
       scheme
-      eyebrow
       heading
       promoBody
       ctaText
@@ -1815,7 +1790,6 @@ fragment ResourcesParts on Resources {
     }
     ... on ResourcesBlocksStatsBar {
       scheme
-      eyebrow
       heading
       stats {
         __typename
@@ -1851,7 +1825,6 @@ fragment ResourcesParts on Resources {
     }
     ... on ResourcesBlocksProcessSteps {
       scheme
-      eyebrow
       heading
       steps {
         __typename
@@ -1865,7 +1838,6 @@ fragment ResourcesParts on Resources {
     }
     ... on ResourcesBlocksMetricsBlock {
       scheme
-      eyebrow
       heading
       metrics {
         __typename
@@ -1903,7 +1875,6 @@ fragment ResourcesParts on Resources {
       scheme
       wave
       waveFill
-      eyebrow
       heading
       testimonials {
         __typename
@@ -2052,7 +2023,6 @@ fragment ResourcesParts on Resources {
     }
     ... on ResourcesBlocksLeadMagnetPromo {
       scheme
-      eyebrow
       heading
       promoBody
       ctaText
@@ -2170,7 +2140,6 @@ fragment CompanyParts on Company {
     }
     ... on CompanyBlocksStatsBar {
       scheme
-      eyebrow
       heading
       stats {
         __typename
@@ -2206,7 +2175,6 @@ fragment CompanyParts on Company {
     }
     ... on CompanyBlocksProcessSteps {
       scheme
-      eyebrow
       heading
       steps {
         __typename
@@ -2220,7 +2188,6 @@ fragment CompanyParts on Company {
     }
     ... on CompanyBlocksMetricsBlock {
       scheme
-      eyebrow
       heading
       metrics {
         __typename
@@ -2258,7 +2225,6 @@ fragment CompanyParts on Company {
       scheme
       wave
       waveFill
-      eyebrow
       heading
       testimonials {
         __typename
@@ -2407,7 +2373,6 @@ fragment CompanyParts on Company {
     }
     ... on CompanyBlocksLeadMagnetPromo {
       scheme
-      eyebrow
       heading
       promoBody
       ctaText

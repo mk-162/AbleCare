@@ -27,9 +27,8 @@ export function LeadMagnetPromo({
   promoBody: body = "A 24-page comprehensive resource for evaluating, procuring, and implementing objective functional measurement in community care.",
   ctaText = "Download the guide",
   ctaLink = "/resources/buyers-guide",
-  eyebrow,
+  eyebrow = "Free Guide",
 }: LeadMagnetPromoProps) {
-  const eyebrowText = (eyebrow ?? "Free Guide").trim();
   const isFile = ctaLink ? isStaticFile(ctaLink) : false;
   const button = (
     <Button size="lg" className="w-full sm:w-auto bg-ac-blue hover:bg-ac-blue/90 text-white rounded-full font-bold px-8">
@@ -41,9 +40,7 @@ export function LeadMagnetPromo({
       <div className="container mx-auto px-4 md:px-6">
         <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-black/5 flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center">
-            {eyebrowText && (
-              <div className="text-sm font-bold uppercase tracking-widest text-ac-blue mb-4">{eyebrowText}</div>
-            )}
+            <div className="text-sm font-bold uppercase tracking-widest text-ac-blue mb-4">{eyebrow}</div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{heading}</h2>
             <p className="text-ac-black/70 font-light mb-8 text-lg">{body}</p>
             {ctaText && ctaLink && (

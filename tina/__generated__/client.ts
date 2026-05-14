@@ -1,5 +1,5 @@
 import { createClient } from "tinacms/dist/client";
 import { queries } from "./types";
-export const client = createClient({ cacheDir: 'C:/Users/matty/AbleCare/AbleCare-Repo/tina/__generated__/.cache/1778754663237', url: 'http://localhost:4001/graphql', token: 'undefined', queries,  });
+export const client = createClient({ url: 'http://localhost:3001/graphql', token: 'dbf4c8db5f424d68b1abc0fa344d3c415740798e', queries,  });
 export default client;
   
