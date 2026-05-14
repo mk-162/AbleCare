@@ -233,7 +233,7 @@ function renderOrderEmail(
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="3" style="padding:10px;text-align:right;font-weight:700;background:#eef0ff;">Total Due</td>
+          <td colspan="3" style="padding:10px;text-align:right;font-weight:700;background:#eef0ff;">Subtotal <span style="font-weight:400;color:#666;font-size:11px;">(excludes applicable taxes)</span></td>
           <td style="padding:10px;text-align:right;font-weight:700;color:#1432FF;background:#eef0ff;">${formatCurrency(totals.total)}</td>
         </tr>
       </tfoot>
@@ -317,7 +317,7 @@ function renderOrderEmail(
     sensorTextLine,
     `Data Sub x${totals.qty} @ ${formatCurrency(ANNUAL_SUB_PRICE)} = ${formatCurrency(totals.subscriptionLine)}`,
     `Shipping = ${formatCurrency(totals.shipping)}`,
-    `TOTAL DUE: ${formatCurrency(totals.total)}`,
+    `SUBTOTAL: ${formatCurrency(totals.total)} (excludes applicable taxes)`,
   ].join("\n");
 
   const subjectName = lead.billCustomer?.trim() || lead.billIndividual?.trim() || "lead";
