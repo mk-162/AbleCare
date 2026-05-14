@@ -25,8 +25,7 @@
         "children": [
           { "label": "Blog", "href": "/blog", "desc": "Insights on falls prevention and functional assessment." },
           { "label": "Case Studies", "href": "/resources/case-studies", "desc": "Real results from real organizations." },
-          { "label": "Clinical Evidence", "href": "/resources/evidence", "desc": "Peer-reviewed research backing our approach." },
-          { "label": "Buyers Guide", "href": "/resources/buyers-guide", "desc": "Everything you need to brief procurement." }
+          { "label": "Clinical Evidence", "href": "/resources/evidence", "desc": "Peer-reviewed research backing our approach." }
         ]
       },
       { "label": "About", "href": "/about" },
@@ -50,8 +49,7 @@
         "links": [
           { "label": "Blog", "href": "/blog" },
           { "label": "Case Studies", "href": "/resources/case-studies" },
-          { "label": "Clinical Evidence", "href": "/resources/evidence" },
-          { "label": "Buyers Guide", "href": "/resources/buyers-guide" }
+          { "label": "Clinical Evidence", "href": "/resources/evidence" }
         ]
       },
       {

@@ -34,7 +34,6 @@ const resourcesMenu = {
   tools: [
     { label: "Technical Documentation", href: "/resources/technical-documentation", desc: "Integration documents and other technical documentation relating to our product." },
     { label: "Case Studies and Customer Testimonials", href: "/resources/case-studies", desc: "What our customers are saying about us." },
-    { label: "Buyers Guide", href: "/resources/buyers-guide", desc: "Everything you need to brief procurement." },
   ],
 };
 
