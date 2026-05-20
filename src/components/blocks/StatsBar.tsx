@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 interface StatsBarProps {
   scheme?: string;
   heading?: string;
+  eyebrow?: string;
   stats?: Array<{ value: string; label: string; sublabel?: string }>;
 }
 
@@ -20,8 +21,9 @@ function StatValue({ value }: { value: string }) {
   );
 }
 
-export function StatsBar({ scheme = "light", heading, stats }: StatsBarProps) {
+export function StatsBar({ scheme = "light", heading, eyebrow, stats }: StatsBarProps) {
   const isBlue = scheme === "blue";
+  const eyebrowText = (eyebrow ?? "About Able Assess").trim();
   const bgClass = isBlue ? "bg-ac-blue" : scheme === "aqua" ? "bg-ac-aqua" : scheme === "grey" ? "bg-ac-grey" : "bg-white";
   const labelClass = isBlue ? "text-ac-aqua" : "text-ac-blue";
   const valueClass = isBlue ? "text-white" : "text-ac-black";
@@ -42,9 +44,11 @@ export function StatsBar({ scheme = "light", heading, stats }: StatsBarProps) {
       <div className="container mx-auto px-4 md:px-6">
         {heading && (
           <div className="text-center mb-14">
-            <div className={`text-xs font-bold uppercase tracking-[0.25em] mb-4 ${labelClass}`}>
-              About Able Assess
-            </div>
+            {eyebrowText && (
+              <div className={`text-xs font-bold uppercase tracking-[0.25em] mb-4 ${labelClass}`}>
+                {eyebrowText}
+              </div>
+            )}
             <h2 className={`text-3xl md:text-4xl font-bold ${valueClass}`}>{heading}</h2>
           </div>
         )}
