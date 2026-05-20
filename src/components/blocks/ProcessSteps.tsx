@@ -10,6 +10,7 @@ interface ProcessStepsProps {
     title: string;
     subtitle?: string;
     description?: string;
+    image?: string;
   }>;
   ctaText?: string;
   ctaLink?: string;
@@ -44,8 +45,17 @@ export function ProcessSteps({ scheme = "light", heading, steps, ctaText, ctaLin
             {heading || "Assessment in four simple steps"}
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 relative">
-          <div className={`hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px ${lineClass} z-0`} />
+        <div
+          className={`grid grid-cols-1 gap-10 relative ${
+            items.length === 2 ? "md:grid-cols-2"
+            : items.length === 3 ? "md:grid-cols-3"
+            : items.length === 5 ? "md:grid-cols-5"
+            : "md:grid-cols-4"
+          }`}
+        >
+          {items.length > 1 && (
+            <div className={`hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px ${lineClass} z-0`} />
+          )}
           {items.map((step, i) => (
             <motion.div
               key={i}
@@ -55,6 +65,11 @@ export function ProcessSteps({ scheme = "light", heading, steps, ctaText, ctaLin
               transition={{ duration: 0.5, delay: i * 0.12 }}
               className="relative z-10 flex flex-col items-center text-center"
             >
+              {step.image && (
+                <div className="w-full max-w-[280px] aspect-[4/3] rounded-2xl overflow-hidden bg-ac-grey/40 mb-6 shadow-md">
+                  <img src={step.image} alt={step.title} className="w-full h-full object-cover" />
+                </div>
+              )}
               <div className={`relative z-10 w-20 h-20 rounded-full border-2 flex items-center justify-center text-2xl font-bold mb-6 transition-transform hover:scale-105 ${circleClass}`}>
                 {String(step.number || i + 1).padStart(2, "0")}
               </div>

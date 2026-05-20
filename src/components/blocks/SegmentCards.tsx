@@ -11,6 +11,7 @@ interface SegmentCardsProps {
   cards?: Array<{
     title: string;
     body?: string;
+    image?: string;
     icon?: string;
     link?: string;
     linkText?: string;
@@ -30,7 +31,13 @@ export function SegmentCards({ scheme = "light", heading, centered, cards }: Seg
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, i) => {
             const content = (
-              <div className="group h-full p-8 rounded-2xl bg-white border border-black/5 hover:border-ac-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col">
+              <div className="group h-full rounded-2xl bg-white border border-black/5 hover:border-ac-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden">
+                {card.image && (
+                  <div className="relative w-full aspect-[4/3] bg-ac-grey/40 overflow-hidden">
+                    <img src={card.image} alt={card.title} className="absolute inset-0 w-full h-full object-cover" />
+                  </div>
+                )}
+                <div className="p-8 flex flex-col flex-grow">
                 <h3 className={`text-xl font-bold text-ac-black mb-3${centered ? " text-center" : ""}`}>{card.title}</h3>
                 {card.body && (
                   <p className="text-ac-black/70 font-light text-sm leading-relaxed mb-6 flex-grow">{card.body}</p>
@@ -47,6 +54,7 @@ export function SegmentCards({ scheme = "light", heading, centered, cards }: Seg
                     ))}
                   </div>
                 )}
+                </div>
               </div>
             );
             const opensInNewTab = !!card.link && (/^https?:\/\//.test(card.link) || card.link.endsWith(".pdf"));
