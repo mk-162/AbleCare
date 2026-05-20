@@ -40,10 +40,11 @@
       "scheme": "blue"
     },
     {
-      "_template": "richText",
+      "_template": "videoSection",
       "scheme": "light",
       "heading": "Video walkthrough",
-      "body": "<p>Video embed will be added here. The full walkthrough covers the complete Able Assess experience in under four minutes.</p><ul><li>Sensor unboxing and charging (30 seconds)</li><li>Staff training overview (30 seconds)</li><li>Live screening demonstration (90 seconds)</li><li>Results review and interpretation (30 seconds)</li><li>Sharing results with care teams (30 seconds)</li></ul>"
+      "videoUrl": "https://www.youtube.com/watch?v=4055O-JrnBU",
+      "caption": "Full Able Assess training walkthrough — sensor setup, screening workflow, and results review."
     },
     {
       "_template": "processSteps",
