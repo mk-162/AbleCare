@@ -694,6 +694,7 @@ const leadMagnetPromoBlock = {
   },
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
+    { type: "string" as const, name: "eyebrow", label: "Eyebrow", description: "Small uppercase label above the heading. Leave blank to use the component default (\"Free Guide\")." },
     { type: "string" as const, name: "heading", label: "Heading" },
     { type: "string" as const, name: "promoBody", label: "Body", ui: { component: "textarea" } },
     { type: "string" as const, name: "ctaText", label: "CTA Text" },
@@ -963,6 +964,12 @@ const articleFields: any[] = [
   { type: "number" as const, name: "readTime", label: "Read Time (minutes)" },
   { type: "image" as const, name: "image", label: "Featured Image" },
   { type: "boolean" as const, name: "featured", label: "Featured" },
+  {
+    type: "string" as const,
+    name: "downloadPdf",
+    label: "Downloadable PDF (path under /downloads/, e.g. /downloads/Dynamometry-Guide.pdf)",
+  },
+  { type: "string" as const, name: "downloadPdfLabel", label: "Download Button Label (optional, defaults to \"Download PDF\")" },
   { type: "string" as const, name: "description", label: "Meta Description" },
   { type: "string" as const, name: "primaryKeyword", label: "Primary Keyword" },
   { type: "string" as const, name: "keywords", label: "SEO Keywords", list: true },

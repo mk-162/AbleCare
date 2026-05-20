@@ -7,6 +7,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { getCategories, slugifyCategory } from "@/lib/blog";
 import { ArticleFooterCta } from "@/components/blocks/ArticleFooterCta";
 import { ArticleBody } from "@/components/blocks/ArticleBody";
+import { ArticleDownloadButton } from "@/components/blocks/ArticleDownloadButton";
 import { resolveBlocks } from "@/lib/resolve-blocks";
 import { fetchPage, extractPageData } from "@/lib/tina-client";
 import { notFound } from "next/navigation";
@@ -178,6 +179,13 @@ export default async function BlogArticlePage({
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12">
           {/* Main content — rich-text body. Blocks render full-width below. */}
           <div className="flex-1 min-w-0 max-w-3xl">
+            {data.downloadPdf && (
+              <ArticleDownloadButton
+                href={data.downloadPdf}
+                label={data.downloadPdfLabel}
+              />
+            )}
+
             {hasBody && (
               <ArticleBody
                 query={query}
