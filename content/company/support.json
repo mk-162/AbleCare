@@ -22,6 +22,12 @@
       "supportEmail": "hello@able-care.co"
     },
     {
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "Try the manuals first",
+      "body": "<p>Many common questions are answered in the Able Assess manuals. If you'd rather look something up than wait for a reply, start here.</p><p><a href=\"/downloads/Able-Assess-Quick-Start-V1.10.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the Quick Start Guide (v1.10.1)</a> — a short overview for first-time users.</p><p><a href=\"/downloads/Able-Assess-User-Guide-V1.10.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the User Guide (v1.10.1)</a> — the complete operator manual covering every screen and feature.</p>"
+    },
+    {
       "_template": "faqAccordion",
       "scheme": "grey",
       "heading": "Common support questions",
