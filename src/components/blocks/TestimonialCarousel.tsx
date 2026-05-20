@@ -12,6 +12,7 @@ interface TestimonialCarouselProps {
   wave?: string;
   waveFill?: string;
   heading?: string;
+  eyebrow?: string;
   testimonials?: Array<{
     quote: string;
     name?: string;
@@ -23,7 +24,8 @@ interface TestimonialCarouselProps {
   }>;
 }
 
-export function TestimonialCarousel({ scheme = "aqua", wave = "fold", waveFill, heading, testimonials }: TestimonialCarouselProps) {
+export function TestimonialCarousel({ scheme = "aqua", wave = "fold", waveFill, heading, eyebrow, testimonials }: TestimonialCarouselProps) {
+  const eyebrowText = (eyebrow ?? "What they say").trim();
   const defaultTestimonials: Array<{ quote: string; name?: string; role?: string; organization?: string; attribution?: string; photo?: string }> = [
     {
       quote: "We caught decline six weeks earlier than we would have with our old process. The data gave us the confidence to act — and the resident avoided a hospitalization.",
@@ -51,7 +53,9 @@ export function TestimonialCarousel({ scheme = "aqua", wave = "fold", waveFill, 
 
       <div className="container mx-auto px-4 md:px-6 pt-8">
         <div className="text-center mb-14">
-          <div className="text-xs font-bold uppercase tracking-[0.25em] text-ac-blue mb-4">What they say</div>
+          {eyebrowText && (
+            <div className="text-xs font-bold uppercase tracking-[0.25em] text-ac-blue mb-4">{eyebrowText}</div>
+          )}
           <h2 className="text-3xl md:text-4xl font-bold text-ac-black">{heading || "From the people using it"}</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

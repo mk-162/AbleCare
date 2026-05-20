@@ -6,13 +6,15 @@ import { motion } from "framer-motion";
 interface MetricsBlockProps {
   scheme?: string;
   heading?: string;
+  eyebrow?: string;
   metrics?: Array<{
     name: string;
     whatItMeasures?: string;
   }>;
 }
 
-export function MetricsBlock({ scheme = "light", heading, metrics }: MetricsBlockProps) {
+export function MetricsBlock({ scheme = "light", heading, eyebrow, metrics }: MetricsBlockProps) {
+  const eyebrowText = (eyebrow ?? "What we measure").trim();
   const defaultMetrics: Array<{ name: string; whatItMeasures?: string }> = [
     { name: "Grip Strength", whatItMeasures: "A powerful biomarker of overall vitality. Predicts all-cause mortality more reliably than systolic blood pressure." },
     { name: "Sit-to-Stand", whatItMeasures: "Lower-limb power and balance. Five repetitions tell you more about fall risk than a lengthy clinical interview." },
@@ -25,7 +27,9 @@ export function MetricsBlock({ scheme = "light", heading, metrics }: MetricsBloc
     <section className={`relative py-24 md:py-32 overflow-hidden ${getSchemeClasses((scheme as any) || "light")}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-16">
-          <div className="text-xs font-bold uppercase tracking-[0.2em] text-ac-blue mb-4">What we measure</div>
+          {eyebrowText && (
+            <div className="text-xs font-bold uppercase tracking-[0.2em] text-ac-blue mb-4">{eyebrowText}</div>
+          )}
           <h2 className="text-3xl md:text-5xl font-bold leading-tight max-w-2xl">
             {heading || "Four metrics. One complete picture of function."}
           </h2>
