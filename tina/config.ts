@@ -694,6 +694,7 @@ const leadMagnetPromoBlock = {
   },
   fields: [
     { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
+    { type: "string" as const, name: "eyebrow", label: "Eyebrow", description: "Small uppercase label above the heading. Leave blank to use the component default (\"Free Guide\")." },
     { type: "string" as const, name: "heading", label: "Heading" },
     { type: "string" as const, name: "promoBody", label: "Body", ui: { component: "textarea" } },
     { type: "string" as const, name: "ctaText", label: "CTA Text" },
