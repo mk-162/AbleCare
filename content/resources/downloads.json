@@ -3,7 +3,7 @@
   "slug": "downloads",
   "seo": {
     "title": "Downloads | Able Care",
-    "description": "Download the Able Assess user guide, the grip strength whitepaper and the Able Assess mobile apps for iOS and Android.",
+    "description": "Download the Able Assess Quick Start Guide and full User Guide, peer-reviewed clinical summaries and the Able Assess mobile apps for iOS and Android.",
     "ogImage": "/images/og-downloads.png"
   },
   "tags": [
@@ -33,7 +33,7 @@
       "_template": "hero",
       "eyebrow": "Resources",
       "headline": "Downloads.",
-      "subtitle": "The Able Assess user guide, peer-reviewed clinical summaries and the mobile apps for iOS and Android. Everything you need to get started with Able Care, in one place.",
+      "subtitle": "The Able Assess Quick Start and User Guide, peer-reviewed clinical summaries and the mobile apps for iOS and Android. Everything you need to get started with Able Care, in one place.",
       "backgroundImage": "/images/photos/studio/woman-reading-brochure.jpg",
       "backgroundImageAlt": "Older adult reading the Able Care brochure",
       "primaryCtaText": "Book a Demo",
@@ -46,8 +46,8 @@
     {
       "_template": "richText",
       "scheme": "light",
-      "heading": "Documents",
-      "body": "<h3><a href=\"/downloads/Able-Assess-User-Guide-V1.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Able Assess User Guide (v1.1)</a></h3><p>The complete operator manual for Able Assess. Covers sensor setup, the five-minute screening workflow, interpreting results and sharing data with care teams. Written for any member of staff running assessments at the bedside, in the clinic or in a resident's living room.</p><p><a href=\"/downloads/Able-Assess-User-Guide-V1.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the PDF</a></p><h3><a href=\"/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Grip Strength: The Essential Biomarker for Longevity</a></h3><p>A peer-reviewed clinical summary linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment. Useful for clinicians, researchers and wellness teams.</p><p><a href=\"/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the PDF</a></p>"
+      "heading": "Able Assess guides",
+      "body": "<h3><a href=\"/downloads/Able-Assess-Quick-Start-V1.10.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Able Assess Quick Start Guide (v1.10.1)</a></h3><p>A short overview for first-time users. Covers sensor pairing, the five-minute screening workflow and running your first assessment. Designed to get any team member up and running in under ten minutes.</p><p><a href=\"/downloads/Able-Assess-Quick-Start-V1.10.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the Quick Start Guide</a></p><h3><a href=\"/downloads/Able-Assess-User-Guide-V1.10.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Able Assess User Guide (v1.10.1)</a></h3><p>The complete operator manual. Walks through every screen and feature in the Able Assess app: sensor setup, the four-metric workflow, interpreting results and sharing data with care teams. Written for any member of staff running assessments at the bedside, in the clinic or in a resident's living room.</p><p><a href=\"/downloads/Able-Assess-User-Guide-V1.10.1.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the User Guide</a></p><h3><a href=\"/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Grip Strength: The Essential Biomarker for Longevity</a></h3><p>A peer-reviewed clinical summary linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment. Useful for clinicians, researchers and wellness teams.</p><p><a href=\"/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Open the PDF</a></p>"
     },
     {
       "_template": "richText",
