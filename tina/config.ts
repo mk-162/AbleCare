@@ -963,6 +963,12 @@ const articleFields: any[] = [
   { type: "number" as const, name: "readTime", label: "Read Time (minutes)" },
   { type: "image" as const, name: "image", label: "Featured Image" },
   { type: "boolean" as const, name: "featured", label: "Featured" },
+  {
+    type: "string" as const,
+    name: "downloadPdf",
+    label: "Downloadable PDF (path under /downloads/, e.g. /downloads/Dynamometry-Guide.pdf)",
+  },
+  { type: "string" as const, name: "downloadPdfLabel", label: "Download Button Label (optional, defaults to \"Download PDF\")" },
   { type: "string" as const, name: "description", label: "Meta Description" },
   { type: "string" as const, name: "primaryKeyword", label: "Primary Keyword" },
   { type: "string" as const, name: "keywords", label: "SEO Keywords", list: true },
