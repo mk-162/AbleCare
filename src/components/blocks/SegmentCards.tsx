@@ -33,8 +33,8 @@ export function SegmentCards({ scheme = "light", heading, centered, cards }: Seg
             const content = (
               <div className="group h-full rounded-2xl bg-white border border-black/5 hover:border-ac-blue/30 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden">
                 {card.image && (
-                  <div className="relative w-full aspect-[4/3] bg-ac-grey/40 overflow-hidden">
-                    <img src={card.image} alt={card.title} className="absolute inset-0 w-full h-full object-cover" />
+                  <div className="relative w-full aspect-[4/3] bg-white overflow-hidden">
+                    <img src={card.image} alt={card.title} className="absolute inset-0 w-full h-full object-contain" />
                   </div>
                 )}
                 <div className="p-8 flex flex-col flex-grow">
