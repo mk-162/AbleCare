@@ -43,24 +43,22 @@ export function MetricsBlock({ scheme = "light", heading, eyebrow, metrics }: Me
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative p-8 bg-white rounded-2xl border border-black/5 shadow-sm hover:shadow-md hover:border-ac-blue/20 transition-all group"
+              className="relative bg-white rounded-2xl border border-black/5 shadow-sm hover:shadow-md hover:border-ac-blue/20 transition-all overflow-hidden group"
             >
-              <div className="text-5xl font-bold text-ac-blue/10 group-hover:text-ac-blue/20 transition-colors absolute top-6 right-6 leading-none select-none">
-                {String(i + 1).padStart(2, "0")}
-              </div>
-              <div className="flex flex-col sm:flex-row gap-6">
-                {metric.image && (
-                  <div className="shrink-0 w-full sm:w-28 md:w-32 aspect-[9/19] rounded-xl overflow-hidden bg-ac-grey/30">
-                    <img src={metric.image} alt={metric.name} className="w-full h-full object-cover" />
-                  </div>
-                )}
-                <div className="flex-1 min-w-0">
-                  <div className="w-10 h-1 bg-ac-blue rounded-full mb-5" />
-                  <h3 className="text-xl font-bold mb-3 text-ac-black">{metric.name}</h3>
-                  <p className="text-ac-black/65 font-light text-sm leading-relaxed">
-                    {metric.whatItMeasures}
-                  </p>
+              {metric.image && (
+                <div className="w-full aspect-[14/15] bg-ac-grey/30 overflow-hidden">
+                  <img src={metric.image} alt={metric.name} className="w-full h-full object-cover" />
                 </div>
+              )}
+              <div className="relative p-8">
+                <div className="text-5xl font-bold text-ac-blue/10 group-hover:text-ac-blue/20 transition-colors absolute top-6 right-6 leading-none select-none">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <div className="w-10 h-1 bg-ac-blue rounded-full mb-5" />
+                <h3 className="text-xl font-bold mb-3 text-ac-black">{metric.name}</h3>
+                <p className="text-ac-black/65 font-light text-sm leading-relaxed">
+                  {metric.whatItMeasures}
+                </p>
               </div>
             </motion.div>
           ))}
