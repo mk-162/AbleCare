@@ -27,8 +27,8 @@
       "eyebrow": "How Able Assess works",
       "headline": "Four falls risk tests. One five-minute screening.",
       "subtitle": "Run by any staff member. Validated against CDC STEADI and the 2022 World Guidelines for Falls Prevention. No clinical certification required.",
-      "backgroundImage": "/images/product/gripable-sensor-with-tablets-1054x722-min.png",
-      "backgroundImageAlt": "Able Assess running on a tablet next to the GripAble sensor",
+      "backgroundImage": "/images/decks/falls-prevention/hero-therapist-with-gentleman.jpg",
+      "backgroundImageAlt": "A therapist running an Able Assess screening with an older gentleman in his home",
       "primaryCtaText": "Book a 20-minute demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "See sample results",
@@ -47,12 +47,12 @@
         {
           "title": "The Able Assess app",
           "body": "Walks any staff member through every test, step by step. Fifteen minutes of training, no clinical certification needed.",
-          "image": "/images/decks/falls-prevention/platform-app.jpg"
+          "image": "/images/decks/falls-prevention/platform-app.png"
         },
         {
           "title": "The Able Assess portal",
           "body": "See risk stratification across your population, and track changes for any individual over time. Export reports for care plans, family meetings, or audits.",
-          "image": "/images/decks/falls-prevention/platform-web-portal.jpg"
+          "image": "/images/decks/falls-prevention/platform-web-portal-laptop.png"
         }
       ]
     },
@@ -63,19 +63,23 @@
       "metrics": [
         {
           "name": "Single Maximum Grip Strength",
-          "whatItMeasures": "Peripheral marker of muscle mass, bone density, and biological resilience. The Lancet (2015) showed grip strength predicts all-cause mortality more reliably than systolic blood pressure."
+          "whatItMeasures": "Peripheral marker of muscle mass, bone density, and biological resilience. The Lancet (2015) showed grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
+          "image": "/images/decks/falls-prevention/test-01-grip-strength.png"
         },
         {
           "name": "Timed Up & Go (TUG)",
-          "whatItMeasures": "Dynamic balance and functional mobility. One of the most widely validated falls risk tests in the literature, captured in under a minute."
+          "whatItMeasures": "Dynamic balance and functional mobility. One of the most widely validated falls risk tests in the literature, captured in under a minute.",
+          "image": "/images/decks/falls-prevention/test-02-tug.png"
         },
         {
           "name": "Four-Meter Gait Speed",
-          "whatItMeasures": "The 'sixth vital sign' for older adults. Linked to mortality, hospitalization, and functional decline. Distance is set with the included measuring tape."
+          "whatItMeasures": "The 'sixth vital sign' for older adults. Linked to mortality, hospitalization, and functional decline. Distance is set with the included measuring tape.",
+          "image": "/images/decks/falls-prevention/test-03-gait-speed.png"
         },
         {
           "name": "30-Second Chair Stand",
-          "whatItMeasures": "Lower-limb strength and endurance. A direct indicator of fall likelihood and a leading marker of functional decline."
+          "whatItMeasures": "Lower-limb strength and endurance. A direct indicator of fall likelihood and a leading marker of functional decline.",
+          "image": "/images/decks/falls-prevention/test-04-chair-stand.png"
         }
       ]
     },
@@ -88,19 +92,19 @@
           "number": 1,
           "title": "Measure Grip Strength",
           "description": "The participant squeezes the GripAble sensor when prompted. The app records the maximum reading and stratifies it against age-banded norms.",
-          "image": "/images/decks/falls-prevention/hand-holding-sensor.jpg"
+          "image": "/images/decks/falls-prevention/step-01-grip-in-use.jpg"
         },
         {
           "number": 2,
           "title": "Lower-limb assessments",
           "description": "Slip the sensor into the fanny pack. The app walks you through the Timed Up & Go, four-meter gait speed, and 30-second chair stand — all using the same sensor.",
-          "image": "/images/decks/falls-prevention/test-chair-stand.jpg"
+          "image": "/images/decks/falls-prevention/step-02-lower-limb.jpg"
         },
         {
           "number": 3,
           "title": "View outcomes",
           "description": "The app stratifies the participant into low, intermediate, or high falls risk. Results sync to the Able Assess portal for trend tracking and reporting.",
-          "image": "/images/decks/falls-prevention/platform-referral-report.jpg"
+          "image": "/images/decks/falls-prevention/step-03-sample-report.png"
         }
       ]
     },
@@ -112,8 +116,7 @@
         {
           "title": "Direct",
           "body": "Co-branded communications help seniors understand recommendations from the CDC STEADI protocol — and the services available in their community.",
-          "image": "/images/photos/clinical/clinician-guiding-patient.jpg",
-          "linkText": "TODO: swap this stand-in image for the 'AA. Next Steps – Segment Generic' export from Google Drive"
+          "image": "/images/photos/clinical/therapist-woman-highfive.jpg"
         },
         {
           "title": "Report",

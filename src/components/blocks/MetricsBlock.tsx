@@ -10,12 +10,13 @@ interface MetricsBlockProps {
   metrics?: Array<{
     name: string;
     whatItMeasures?: string;
+    image?: string;
   }>;
 }
 
 export function MetricsBlock({ scheme = "light", heading, eyebrow, metrics }: MetricsBlockProps) {
   const eyebrowText = (eyebrow ?? "What we measure").trim();
-  const defaultMetrics: Array<{ name: string; whatItMeasures?: string }> = [
+  const defaultMetrics: Array<{ name: string; whatItMeasures?: string; image?: string }> = [
     { name: "Grip Strength", whatItMeasures: "A powerful biomarker of overall vitality. Predicts all-cause mortality more reliably than systolic blood pressure." },
     { name: "Sit-to-Stand", whatItMeasures: "Lower-limb power and balance. Five repetitions tell you more about fall risk than a lengthy clinical interview." },
     { name: "Gait Speed", whatItMeasures: "The 'sixth vital sign' for older adults. Slowing gait predicts cognitive decline, hospitalization, and mortality." },
@@ -47,11 +48,20 @@ export function MetricsBlock({ scheme = "light", heading, eyebrow, metrics }: Me
               <div className="text-5xl font-bold text-ac-blue/10 group-hover:text-ac-blue/20 transition-colors absolute top-6 right-6 leading-none select-none">
                 {String(i + 1).padStart(2, "0")}
               </div>
-              <div className="w-10 h-1 bg-ac-blue rounded-full mb-5" />
-              <h3 className="text-xl font-bold mb-3 text-ac-black">{metric.name}</h3>
-              <p className="text-ac-black/65 font-light text-sm leading-relaxed">
-                {metric.whatItMeasures}
-              </p>
+              <div className="flex flex-col sm:flex-row gap-6">
+                {metric.image && (
+                  <div className="shrink-0 w-full sm:w-28 md:w-32 aspect-[9/19] rounded-xl overflow-hidden bg-ac-grey/30">
+                    <img src={metric.image} alt={metric.name} className="w-full h-full object-cover" />
+                  </div>
+                )}
+                <div className="flex-1 min-w-0">
+                  <div className="w-10 h-1 bg-ac-blue rounded-full mb-5" />
+                  <h3 className="text-xl font-bold mb-3 text-ac-black">{metric.name}</h3>
+                  <p className="text-ac-black/65 font-light text-sm leading-relaxed">
+                    {metric.whatItMeasures}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
