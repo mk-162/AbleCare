@@ -11,18 +11,30 @@ interface EditorialPageClientProps {
   data: any;
 }
 
-export function EditorialPageClient({ query, variables, data: initialData }: EditorialPageClientProps) {
-  const tinaResult = useTina({ query: query || "", variables, data: initialData });
-  const data = tinaResult.data;
+// Filesystem-fallback path in tina-client.ts returns query="" because there is
+// no GraphQL query to subscribe to. Forwarding that empty string to useTina
+// causes the admin iframe to post an empty query to TinaCloud, which the
+// GraphQL parser rejects with "Syntax Error: Unexpected <EOF>" — surfacing as
+// the "Unexpected error querying content" modal in the visual editor. Render
+// the static data directly in that case; live preview is only meaningful when
+// a real query is present anyway.
+export function EditorialPageClient(props: EditorialPageClientProps) {
+  if (!props.query) return <EditorialPageView data={props.data} />;
+  return <EditorialPageLive {...props} />;
+}
 
-  // Navigate the data object to find the first collection result
+function EditorialPageLive({ query, variables, data: initialData }: EditorialPageClientProps) {
+  const { data } = useTina({ query, variables, data: initialData });
+  return <EditorialPageView data={data} />;
+}
+
+function EditorialPageView({ data }: { data: any }) {
   const collectionKey = Object.keys(data).find(
     (k) => k !== "__typename" && data[k]
   );
   const page = collectionKey ? data[collectionKey] : null;
   const blocks = page?.blocks || [];
 
-  // Markdown utility pages have a body field instead of blocks
   if (blocks.length === 0 && page?.body) {
     return (
       <article className="pt-32 pb-20">
