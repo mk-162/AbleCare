@@ -66,6 +66,7 @@ export function SiteFooter() {
               <li><Link href="/about" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">About Able Care</Link></li>
               <li><Link href="/contact" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Contact Us</Link></li>
               <li><Link href="/support" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Support</Link></li>
+              <li><Link href="/compliance" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Compliance</Link></li>
             </ul>
           </div>
 
@@ -172,7 +173,6 @@ export function SiteFooter() {
             <Link href="/privacy" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Terms &amp; Conditions</Link>
             <Link href="/terms-of-sale" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Terms of Sale</Link>
-            <Link href="/compliance" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Compliance</Link>
           </div>
         </div>
       </div>
