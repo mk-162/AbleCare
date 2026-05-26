@@ -19,7 +19,7 @@ interface PdfDocumentCardsProps {
   eyebrow?: string;
   heading?: string;
   subtitle?: string;
-  columns?: 2 | 3;
+  columnCount?: 2 | 3;
   items?: PdfDocumentItem[];
 }
 
@@ -67,12 +67,12 @@ export function PdfDocumentCards({
   eyebrow,
   heading,
   subtitle,
-  columns = 2,
+  columnCount = 2,
   items,
 }: PdfDocumentCardsProps) {
   if (!items || items.length === 0) return null;
 
-  const gridCols = columns === 3
+  const gridCols = columnCount === 3
     ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     : "grid-cols-1 md:grid-cols-2";
 
