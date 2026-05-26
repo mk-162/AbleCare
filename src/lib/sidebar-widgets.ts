@@ -37,7 +37,7 @@ const DEFAULTS: SidebarWidgets = {
         variant: "whitepaper",
       },
       {
-        title: "Book a 30-Minute Demo",
+        title: "Book a Demo",
         description:
           "See Able Assess in action, tailored to your care setting. No slides, no fluff.",
         ctaText: "Book a Demo",

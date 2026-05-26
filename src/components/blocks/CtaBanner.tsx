@@ -26,7 +26,7 @@ export function CtaBanner({
   scheme = "blue",
   wave = "ribbon",
   heading = "See Able Assess in your workflow.",
-  bodyText = "A 20-minute demo with a clinician who has run it in the field.",
+  bodyText = "Book a walkthrough with a clinician who has run it in the field.",
   primaryCtaText = "Book a demo",
   primaryCtaLink = "/contact",
   secondaryCtaText,
