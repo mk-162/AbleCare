@@ -57,8 +57,13 @@ export function ScrollToTop() {
       if (url.pathname !== window.location.pathname) return;
       window.scrollTo(0, 0);
     }
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
+    // Use the capture phase so this runs before Next.js's <Link> onClick
+    // bubbles and calls preventDefault — otherwise event.defaultPrevented is
+    // already true by the time the listener fires and we skip the scroll
+    // reset (the original bug: clicking the footer Compliance link while
+    // already on /compliance left you stuck at the bottom of the page).
+    document.addEventListener("click", handleClick, true);
+    return () => document.removeEventListener("click", handleClick, true);
   }, []);
 
   return null;
