@@ -253,10 +253,6 @@
         {
           "question": "Where is patient data stored?",
           "answer": "Able Care is ISO 27001 certified, HIPAA aligned and GDPR compliant. Data is encrypted at rest and in transit. Residency options are available for US and UK deployments."
-        },
-        {
-          "question": "How is Able Assess different from paper-based assessments like the Morse Fall Scale?",
-          "answer": "Paper assessments are subjective, slow and difficult to standardize across staff. Able Assess captures four objective, peer-reviewed metrics in under five minutes, scores automatically against normative data, and delivers a risk report to the care team. No subjective scoring. No inter-rater variability."
         }
       ],
       "_template": "faqAccordion"

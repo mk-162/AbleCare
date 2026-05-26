@@ -204,7 +204,7 @@ export const blockSamples: BlockSample[] = [
       wave: "ribbon",
       waveFill: "light",
       heading: "See Able Assess in your workflow.",
-      bodyText: "Book a 20-minute demo with a clinician who has run it in the field.",
+      bodyText: "Book a demo with a clinician who has run it in the field.",
       primaryCtaText: "Book a demo",
       primaryCtaLink: "/demo",
     },

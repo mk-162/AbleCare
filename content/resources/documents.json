@@ -1,0 +1,126 @@
+{
+  "title": "Documents",
+  "slug": "documents",
+  "seo": {
+    "title": "Documents | User Guides & Technical Documentation | Able Care",
+    "description": "Quick start, the Able Assess user guide, integration documents, webhook specifications and the GripAble SDK reference. Download the PDFs or get in touch for anything else.",
+    "ogImage": "/images/og-default.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Documents",
+          "href": "/resources/documents"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "backgroundImage": "/images/heroes/devices-hero-new-min.png",
+      "backgroundImageAlt": "Able Assess product and tablet",
+      "eyebrow": "Resources",
+      "headline": "Documents",
+      "subtitle": "Everything you need to run Able Assess and integrate the Able Platform. User guides for clinical teams, technical references for engineering teams.",
+      "primaryCtaText": "Contact the Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Back to Resources",
+      "secondaryCtaLink": "/resources",
+      "scheme": "blue",
+      "wave": "crest"
+    },
+    {
+      "_template": "pdfDocumentCards",
+      "scheme": "light",
+      "eyebrow": "For care teams",
+      "heading": "User Guides",
+      "subtitle": "Get up and running with Able Assess. The Quick Start gets a new user from unboxing to first screening in minutes; the full User Guide is the complete operator manual for day-to-day use.",
+      "columnCount": 2,
+      "items": [
+        {
+          "title": "Able Assess Quick Start Guide",
+          "description": "A short visual walkthrough for first-time users. Unbox the sensor, install the app, run your first five-minute screening and review results.",
+          "category": "Quick Start",
+          "ctaText": "Open the Quick Start",
+          "ctaLink": "/downloads/Able-Assess-Quick-Start-V1.10.1.pdf",
+          "pdfLabel": "PDF · v1.10.1",
+          "accent": "aqua"
+        },
+        {
+          "title": "Able Assess User Guide",
+          "description": "The complete operator manual for Able Assess. Covers sensor setup, the five-minute screening workflow, interpreting results and sharing data with care teams. Written for any member of staff running assessments at the bedside, in the clinic or in a resident's living room.",
+          "category": "User Guide",
+          "ctaText": "Open the User Guide",
+          "ctaLink": "/downloads/Able-Assess-User-Guide-V1.10.1.pdf",
+          "pdfLabel": "PDF · v1.10.1",
+          "accent": "blue"
+        }
+      ]
+    },
+    {
+      "_template": "pdfDocumentCards",
+      "scheme": "grey",
+      "eyebrow": "For engineering teams",
+      "heading": "Technical Documentation",
+      "subtitle": "Integration references for connecting partner systems to the Able Platform and embedding the GripAble sensor in your own applications. OpenAPI specs available on request.",
+      "columnCount": 3,
+      "items": [
+        {
+          "title": "Able Connect: Partner Integration",
+          "description": "Reference guide for technical teams connecting a partner system to the Able Platform. Covers domain data, access control, API token authentication, operation modes, integration architecture and user management.",
+          "category": "Integration",
+          "ctaText": "Open the Integration Guide",
+          "ctaLink": "/downloads/Able-Connect-Partner-Integration-20260505.pdf",
+          "pdfLabel": "PDF · May 2026",
+          "accent": "indigo"
+        },
+        {
+          "title": "Able Connect: Webhook Integration",
+          "description": "Webhook specification: registration process, event types and payload schemas, delivery requirements, backfill for historical data and the developer testing flow.",
+          "category": "Webhooks",
+          "ctaText": "Open the Webhook Spec",
+          "ctaLink": "/downloads/Able-Connect-Webhook-Integration-20260505.pdf",
+          "pdfLabel": "PDF · May 2026",
+          "accent": "indigo"
+        },
+        {
+          "title": "GripAble SDK Reference",
+          "description": "Native plugins for integrating the GripAble BLE sensor into Android and iOS apps. Covers GripableSDK, GripableDevice, GripCalibrationManager, FirmwareUpdateManager and our clinically validated app flow designs.",
+          "category": "SDK",
+          "ctaText": "Open the SDK Docs",
+          "ctaLink": "https://gripable-sdk.able-care.co/",
+          "pdfLabel": "Web · External",
+          "accent": "graphite"
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "Need something else? We are happy to help.",
+      "bodyText": "Compliance information lives on the <a href=\"/compliance\">compliance page</a>. For OpenAPI specs, custom integration requirements or anything else, the team is one short message away.",
+      "primaryCtaText": "Contact the Team",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Back to Resources",
+      "secondaryCtaLink": "/resources",
+      "scheme": "blue",
+      "wave": "ribbon"
+    }
+  ],
+  "tags": [
+    "documents",
+    "user-guide",
+    "technical-documentation",
+    "integrations",
+    "webhooks",
+    "resources"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "title": "Contact | Able Care",
   "slug": "contact",
-  "description": "Book a 30-minute demo with the Able Care clinical team. Segment-tailored. See the workflow. Get your questions answered.",
+  "description": "Book a demo with the Able Care clinical team. Segment-tailored. See the workflow. Get your questions answered.",
   "blocks": [
     {
       "_template": "contactForm",
@@ -27,7 +27,7 @@
       "faqs": [
         {
           "question": "How long is the demo?",
-          "answer": "30 minutes. We tailor the demo to your setting (home care, senior living, clinical or research) so you see exactly how Able Assess fits your workflow."
+          "answer": "We tailor the demo to your setting (home care, senior living, clinical or research) so you see exactly how Able Assess fits your workflow."
         },
         {
           "question": "Who should attend?",

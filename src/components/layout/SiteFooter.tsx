@@ -52,7 +52,7 @@ export function SiteFooter() {
             <ul className="space-y-4">
               <li><Link href="/blog" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Blogs</Link></li>
               <li><Link href="/resources/research-library" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Research Library</Link></li>
-              <li><Link href="/resources/technical-documentation" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Technical Documentation</Link></li>
+              <li><Link href="/resources/documents" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Documents</Link></li>
               <li><Link href="/resources/case-studies" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Case Studies</Link></li>
             </ul>
           </div>
@@ -66,6 +66,7 @@ export function SiteFooter() {
               <li><Link href="/about" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">About Able Care</Link></li>
               <li><Link href="/contact" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Contact Us</Link></li>
               <li><Link href="/support" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Support</Link></li>
+              <li><Link href="/compliance" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Compliance</Link></li>
             </ul>
           </div>
 

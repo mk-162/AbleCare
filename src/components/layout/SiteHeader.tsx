@@ -32,7 +32,7 @@ const resourcesMenu = {
     { label: "Research Library", href: "/resources/research-library", desc: "A searchable library of the academic papers we are excited about." },
   ],
   tools: [
-    { label: "Technical Documentation", href: "/resources/technical-documentation", desc: "Integration documents and other technical documentation relating to our product." },
+    { label: "Documents", href: "/resources/documents", desc: "User guides, integration documents and technical references for the Able Platform." },
     { label: "Case Studies and Customer Testimonials", href: "/resources/case-studies", desc: "What our customers are saying about us." },
   ],
 };

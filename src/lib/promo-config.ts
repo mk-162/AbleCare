@@ -83,7 +83,7 @@ const FALLBACK_PROMO: PromoRule = {
   matchTags: [],
   badge: "Featured",
   heading: "See Able Assess in action",
-  body: "A 20-minute demo with a clinician who has run it in the field. No slides, no fluff.",
+  body: "Book a walkthrough with a clinician who has run it in the field. No slides, no fluff.",
   ctaText: "Book a demo",
   ctaLink: "/demo",
   variant: "landing",

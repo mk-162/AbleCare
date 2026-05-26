@@ -1,212 +1,176 @@
 {
+  "title": "Able Assess",
   "slug": "able-assess",
   "seo": {
-    "title": "Able Assess — Four Falls Risk Metrics in Five Minutes | Able Care",
-    "description": "Able Assess captures grip strength, sit-to-stand, gait speed and timed up-and-go in a single workflow that any member of staff can run. Under five minutes.",
-    "ogImage": "/images/og-able-assess.png"
+    "title": "Able Assess — Four Falls Risk Tests in Five Minutes | Able Care",
+    "description": "Four validated falls risk assessments in five minutes — grip strength, lower-limb function and balance — captured by any staff member.",
+    "ogImage": "/images/og-falls-prevention.png"
   },
+  "tags": [
+    "able-assess",
+    "falls-prevention",
+    "falls-risk-assessment",
+    "walkthrough"
+  ],
   "blocks": [
     {
+      "_template": "breadcrumb",
       "items": [
-        {
-          "label": "Home",
-          "href": "/"
-        },
-        {
-          "label": "Solutions"
-        },
-        {
-          "label": "Able Assess - Fall Prevention",
-          "href": "/solutions/able-assess"
-        }
-      ],
-      "_template": "breadcrumb"
+        { "label": "Home", "href": "/" },
+        { "label": "Solutions" },
+        { "label": "Able Assess", "href": "/solutions/able-assess" }
+      ]
     },
     {
+      "_template": "hero",
       "scheme": "blue",
       "wave": "crest",
-      "waveFill": "#DCDCDC",
-      "eyebrow": "Able Assess",
-      "headline": "Four metrics. Five minutes. One complete picture.",
-      "subtitle": "Able Assess captures grip strength, sit-to-stand, gait speed and timed up-and-go in a single workflow that any member of staff can run.",
-      "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Watch the Walkthrough",
-      "secondaryCtaLink": "/resources/walkthrough",
-      "backgroundImage": "/images/photos/clinical/sensor-closeup-hand.jpg",
-      "backgroundImageAlt": "Close-up of patient using GripAble sensor",
-      "_template": "hero"
+      "eyebrow": "How Able Assess works",
+      "headline": "Four falls risk tests. One five-minute screening.",
+      "subtitle": "Run by any staff member. Validated against CDC STEADI and the 2022 World Guidelines for Falls Prevention. No clinical certification required.",
+      "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
+      "backgroundImageAlt": "A clinician guiding an older woman through a GripAble grip-strength test with results on a tablet beside them",
+      "primaryCtaText": "Book a demo",
+      "primaryCtaLink": "/demo"
     },
     {
+      "_template": "segmentCards",
       "scheme": "grey",
-      "heading": "Four metrics, one picture of function",
+      "heading": "What you get",
+      "cards": [
+        {
+          "title": "The kit",
+          "body": "A GripAble sensor, a measuring tape, and the blue fanny pack that holds the sensor during the gait, balance, and chair-stand tests. Ships ready to use.",
+          "image": "/images/decks/falls-prevention/the-kit.jpg"
+        },
+        {
+          "title": "The Able Assess app",
+          "body": "Walks any staff member through every test, step by step. Fifteen minutes of training, no clinical certification needed.",
+          "image": "/images/decks/falls-prevention/platform-app.png"
+        },
+        {
+          "title": "The Able Assess portal",
+          "body": "See risk stratification across your population, and track changes for any individual over time. Export reports for care plans, family meetings, or audits.",
+          "image": "/images/decks/falls-prevention/platform-web-portal-laptop.png"
+        }
+      ]
+    },
+    {
+      "_template": "metricsBlock",
+      "scheme": "light",
+      "heading": "What it measures",
       "metrics": [
         {
-          "name": "Grip strength",
-          "whatItMeasures": "Full-body strength proxy. Predicts all-cause mortality, frailty and sarcopenia."
+          "name": "Single Maximum Grip Strength",
+          "whatItMeasures": "Peripheral marker of muscle mass, bone density, and biological resilience. The Lancet (2015) showed grip strength predicts all-cause mortality more reliably than systolic blood pressure.",
+          "image": "/images/decks/falls-prevention/test-01-grip-strength.png"
         },
         {
-          "name": "Sit-to-stand",
-          "whatItMeasures": "A 30-second assessment of lower-limb strength."
+          "name": "Timed Up & Go (TUG)",
+          "whatItMeasures": "Dynamic balance and functional mobility. One of the most widely validated falls risk tests in the literature, captured in under a minute.",
+          "image": "/images/decks/falls-prevention/test-02-tug.png"
         },
         {
-          "name": "Gait speed",
-          "whatItMeasures": "A measure of gait over about 13 feet."
+          "name": "Four-Meter Gait Speed",
+          "whatItMeasures": "The 'sixth vital sign' for older adults. Linked to mortality, hospitalization, and functional decline. Distance is set with the included measuring tape.",
+          "image": "/images/decks/falls-prevention/test-03-gait-speed.png"
         },
         {
-          "name": "Timed Up and Go",
-          "whatItMeasures": "An assessment of balance and global falls risk."
+          "name": "30-Second Chair Stand",
+          "whatItMeasures": "Lower-limb strength and endurance. A direct indicator of fall likelihood and a leading marker of functional decline.",
+          "image": "/images/decks/falls-prevention/test-04-chair-stand.png"
         }
-      ],
-      "_template": "metricsBlock"
+      ]
     },
     {
-      "heading": "The Able Assess workflow",
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "The Assessment Process",
       "steps": [
         {
           "number": 1,
-          "title": "Capture",
-          "description": "Five-minute assessment on any tablet. The GripAble sensor connects via Bluetooth. The workflow guides the operator through every step."
+          "title": "Measure Grip Strength",
+          "description": "The participant squeezes the GripAble sensor when prompted. The app records the maximum reading and stratifies it against age-banded norms.",
+          "image": "/images/decks/falls-prevention/step-01-grip-in-use.jpg"
         },
         {
           "number": 2,
-          "title": "Score",
-          "description": "Instant risk banding against normative data. No manual scoring. No subjective interpretation."
+          "title": "Lower-limb assessments",
+          "description": "Slip the sensor into the fanny pack. The app walks you through the Timed Up & Go, four-meter gait speed, and 30-second chair stand — all using the same sensor.",
+          "image": "/images/decks/falls-prevention/step-02-lower-limb.jpg"
         },
         {
           "number": 3,
-          "title": "Act",
-          "description": "Report generated for referrals to preventative care. Risk stratification that justifies level-of-care decisions to payers and families."
-        },
-        {
-          "number": 4,
-          "title": "Track",
-          "description": "Longitudinal trends surface decline early. Objective milestones residents and clients can see and understand."
+          "title": "View outcomes",
+          "description": "The app stratifies the participant into low, intermediate, or high falls risk. Results sync to the Able Assess portal for trend tracking and reporting.",
+          "image": "/images/decks/falls-prevention/step-03-sample-report.png"
         }
-      ],
-      "_template": "processSteps"
+      ]
     },
     {
-      "scheme": "grey",
-      "heading": "See Able Assess in action",
+      "_template": "segmentCards",
+      "scheme": "light",
+      "heading": "So what?",
       "cards": [
         {
-          "title": "Falls Risk Tests",
-          "body": "Walkthrough: four validated falls risk assessments captured in five minutes — grip strength, Timed Up & Go, gait speed and chair stand.",
-          "link": "/falls-risk-tests"
+          "title": "Direct",
+          "body": "Co-branded communications help seniors understand recommendations from the CDC STEADI protocol — and the services available in their community.",
+          "image": "/images/photos/clinical/therapist-woman-highfive.jpg"
         },
         {
-          "title": "Falls Risk Screening Results",
-          "body": "Walkthrough: how the platform clearly communicates at-risk and not-at-risk outcomes to support timely decisions.",
-          "link": "/low-and-at-risk"
+          "title": "Report",
+          "body": "The assessment report is defensible documentation for a referral to physical therapy or other preventative care, as directed by a primary care physician.",
+          "image": "/images/decks/falls-prevention/platform-referral-report.jpg"
+        },
+        {
+          "title": "Monitor",
+          "body": "View screening data over time in the Able Assess portal to understand improvement or decline at the individual and population level.",
+          "image": "/images/decks/falls-prevention/platform-web-portal.jpg"
         }
-      ],
-      "_template": "segmentCards"
+      ]
     },
     {
-      "items": [
-        {
-          "text": "FDA listed"
-        },
-        {
-          "text": "CE marked"
-        },
-        {
-          "text": "ISO 27001"
-        },
-        {
-          "text": "HIPAA aligned"
-        },
-        {
-          "text": "NICE 2025 aligned"
-        }
-      ],
-      "_template": "trustBar"
-    },
-    {
-      "scheme": "aqua",
-      "heading": "Built on the evidence",
-      "stats": [
-        {
-          "value": "4",
-          "label": "Validated metrics"
-        },
-        {
-          "value": "< 5 min",
-          "label": "Per assessment"
-        },
-        {
-          "value": "12",
-          "label": "Peer-reviewed studies"
-        },
-        {
-          "value": "1,000+",
-          "label": "Assessments delivered"
-        }
-      ],
-      "_template": "statsBar"
-    },
-    {
+      "_template": "segmentRouter",
       "scheme": "grey",
-      "heading": "Common questions about Able Assess",
-      "emitSchema": true,
-      "faqs": [
+      "heading": "Want to understand how it works in your setting?",
+      "subheading": "Able Assess adapts to your environment. Pick your setting to see the segment-specific case.",
+      "segments": [
         {
-          "question": "What hardware is required?",
-          "answer": "A GripAble sensor (included) and any tablet or phone. The sensor connects via Bluetooth. No additional infrastructure is required."
+          "title": "Home Care",
+          "description": "Reduce client falls, standardize across non-clinical caregivers, and protect HHVBP performance.",
+          "ctaText": "Explore",
+          "link": "/home-care"
         },
         {
-          "question": "How long does the assessment take?",
-          "answer": "Under five minutes per person. The workflow guides the operator through grip strength, sit-to-stand, gait speed and timed up-and-go in sequence."
+          "title": "Senior Living",
+          "description": "Protect residents and occupancy. Objective screening across IL, AL, SNF, and CCRC.",
+          "ctaText": "Explore",
+          "link": "/senior-living"
         },
         {
-          "question": "Can non-clinical staff run it?",
-          "answer": "Yes. Able Assess was designed so that any member of staff can run the assessment with minimal training. No clinical certification required."
-        },
-        {
-          "question": "How does it integrate with existing systems?",
-          "answer": "We offer APIs for integration and are actively pursuing integration with leading EHR platforms."
-        },
-        {
-          "question": "Is the data secure?",
-          "answer": "ISO 27001 certified. HIPAA aligned. GDPR compliant. Data residency options available for US and UK."
-        },
-        {
-          "question": "What is the GripAble sensor?",
-          "answer": "GripAble is an FDA-listed, CE-marked digital grip strength sensor commercialized out of Imperial College London neuroscience research. It captures all four measures objectively and syncs them to the app via bluetooth."
+          "title": "Pharma & CROs",
+          "description": "Grip strength as a clinical trial endpoint. Remote, objective, defensible.",
+          "ctaText": "Explore",
+          "link": "/pharma"
         }
-      ],
-      "_template": "faqAccordion"
+      ]
     },
     {
-      "heading": "Trusted by Leading Organizations",
-      "scheme": "white",
-      "_template": "partnerLogoCarousel"
+      "_template": "richText",
+      "scheme": "light",
+      "heading": "See it in action",
+      "body": "<p>Three short clips, captured from a real screening. The full walkthrough on the left shows how staff run the assessment. The two results screens on the right show how Able Assess presents the outcome — clearly flagging an at-risk participant, and reassuring a not-at-risk one — the moment screening ends.</p><div style=\"margin-top: 3rem; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding: 0 1.5rem;\"><div style=\"max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; align-items: start; justify-items: center;\"><figure style=\"margin: 0; text-align: center; max-width: 300px; display: flex; flex-direction: column; align-items: center;\"><figcaption style=\"font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #1432FF; margin-bottom: 0.75rem;\">Full walkthrough</figcaption><video controls playsinline preload=\"metadata\" style=\"width: 100%; height: auto; border-radius: 16px; background: transparent;\" src=\"/videos/falls-risk-assessment-walkthrough.mp4\"></video><p style=\"margin-top: 0.75rem; font-size: 0.875rem; color: rgba(0,0,0,0.6); font-weight: 300;\">End-to-end demo, app open to participant report.</p></figure><figure style=\"margin: 0; text-align: center; max-width: 300px; display: flex; flex-direction: column; align-items: center;\"><figcaption style=\"font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D92D20; margin-bottom: 0.75rem;\">At-risk result</figcaption><video controls playsinline preload=\"metadata\" style=\"width: 100%; height: auto; border-radius: 16px; background: transparent;\" src=\"/videos/at-risk-results-screen.mp4\"></video><p style=\"margin-top: 0.75rem; font-size: 0.875rem; color: rgba(0,0,0,0.6); font-weight: 300;\">How the app flags a participant who needs follow-up.</p></figure><figure style=\"margin: 0; text-align: center; max-width: 300px; display: flex; flex-direction: column; align-items: center;\"><figcaption style=\"font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #00B27A; margin-bottom: 0.75rem;\">Not-at-risk result</figcaption><video controls playsinline preload=\"metadata\" style=\"width: 100%; height: auto; border-radius: 16px; background: transparent;\" src=\"/videos/low-risk-results-screen.mp4\"></video><p style=\"margin-top: 0.75rem; font-size: 0.875rem; color: rgba(0,0,0,0.6); font-weight: 300;\">How the app reassures a participant whose screening is clear.</p></figure></div></div>"
     },
     {
+      "_template": "ctaBanner",
       "scheme": "blue",
       "wave": "ribbon",
       "heading": "See Able Assess in your workflow.",
-      "bodyText": "20 minutes with a clinician who has run it in the field.",
+      "bodyText": "Book a walkthrough with a clinician who has run it in the field.",
       "primaryCtaText": "Book a Demo",
-      "primaryCtaLink": "/contact",
-      "secondaryCtaText": "",
-      "secondaryCtaLink": "",
-      "_template": "ctaBanner"
-    },
-    {
-      "heading": "Able Assess User Guide",
-      "promoBody": "The complete operator manual for Able Assess. Covers sensor setup, the screening workflow, interpreting results and sharing data with care teams.",
-      "ctaText": "Open the user guide",
-      "ctaLink": "/downloads/Able-Assess-User-Guide-V1.1.pdf",
-      "_template": "leadMagnetPromo"
+      "primaryCtaLink": "/demo",
+      "secondaryCtaText": "Download the Buyers Guide",
+      "secondaryCtaLink": "/resources/buyers-guide"
     }
-  ],
-  "title": "Able Assess",
-  "tags": [
-    "able-assess",
-    "falls-risk-assessment",
-    "functional-assessments",
-    "grip-strength"
   ]
 }

@@ -14,12 +14,8 @@
           "href": "/"
         },
         {
-          "label": "Evidence",
-          "href": "/evidence"
-        },
-        {
           "label": "Compliance",
-          "href": "/evidence/compliance"
+          "href": "/compliance"
         }
       ]
     },
@@ -60,6 +56,40 @@
         },
         {
           "text": "NICE 2025 Aligned"
+        }
+      ]
+    },
+    {
+      "_template": "segmentCards",
+      "scheme": "grey",
+      "heading": "At a glance",
+      "centered": true,
+      "cards": [
+        {
+          "title": "HIPAA and GDPR Compliant",
+          "body": "HIPAA (Health Insurance Portability and Accountability Act) protects sensitive patient health information in the US. GDPR (General Data Protection Regulation) governs the collection and processing of personal data in the UK and EU. The Able Platform meets all HIPAA and GDPR requirements.",
+          "logos": [
+            "/images/badges/hipaa-trimmed.svg",
+            "/images/badges/gdpr-trimmed-min.png"
+          ]
+        },
+        {
+          "title": "ISO 27001 Certified",
+          "body": "ISO 27001 is the international standard for implementing Information Security Management Systems (ISMS). GripAble LTD has been certified against ISO 27001 by the British Standards Institution (BSI).",
+          "link": "/downloads/Gripable-ISO27001-cert-IS821952-001.pdf",
+          "linkText": "Download our ISO 27001 certificate",
+          "logos": [
+            "/images/badges/iso-iec-27001-mark-of-trust.png"
+          ]
+        },
+        {
+          "title": "FDA Registered",
+          "body": "The GripAble Sensor is registered with the US Food and Drug Administration (FDA) as a Class II 510(k)-exempt medical device (Product Code: ISD) while the Able Assess software meets all four criteria for Non-Device Clinical Decision Software (CDS).",
+          "link": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfrl/rl.cfm?lid=985822&lpcd=ISD",
+          "linkText": "Visit our FDA listing",
+          "logos": [
+            "/images/badges/fda-trimmed.svg"
+          ]
         }
       ]
     },

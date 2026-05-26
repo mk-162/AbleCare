@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const slugMapPages = [
     "home-care", "senior-living", "skilled-nursing", "pharma",
     "about", "meet-the-team", "contact", "demo", "customers", "partners", "news",
-    "privacy", "terms", "cookies", "security", "faqs", "careers",
+    "privacy", "terms", "cookies", "security", "faqs", "careers", "compliance",
   ].map((slug) => ({
     url: `${BASE_URL}/${slug}`,
     lastModified: now,
@@ -66,15 +66,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const productSlugs = getJsonSlugs("content/pages").filter((s) => ["how-it-works", "integrations", "security"].includes(s));
   const productPages = productSlugs.map((slug) => ({
     url: `${BASE_URL}/product/${slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  // Evidence pages
-  const evidenceSlugs = getJsonSlugs("content/pages").filter((s) => ["compliance"].includes(s));
-  const evidencePages = evidenceSlugs.map((slug) => ({
-    url: `${BASE_URL}/evidence/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -122,7 +113,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...homeCareSubPages,
     ...seniorLivingSubPages,
     ...productPages,
-    ...evidencePages,
     ...solutionPages,
     ...blogPages,
     ...resourcePages,

@@ -79,6 +79,7 @@ var statsBarBlock = {
   },
   fields: [
     { type: "string", name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
+    { type: "string", name: "eyebrow", label: "Eyebrow (small caps label above heading)", description: "Leave blank to use the default ('About Able Assess'). Set to a single space to hide entirely." },
     { type: "string", name: "heading", label: "Section Heading" },
     {
       type: "object",
@@ -159,6 +160,7 @@ var processStepsBlock = {
   },
   fields: [
     { type: "string", name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
+    { type: "string", name: "eyebrow", label: "Eyebrow (small caps label above heading)", description: "Leave blank to use the default ('How it works'). Set to a single space to hide entirely." },
     { type: "string", name: "heading", label: "Section Heading" },
     {
       type: "object",
@@ -170,7 +172,8 @@ var processStepsBlock = {
         { type: "number", name: "number", label: "Step Number", required: true },
         { type: "string", name: "title", label: "Title", required: true },
         { type: "string", name: "subtitle", label: "Subtitle (optional, shown under title)" },
-        { type: "string", name: "description", label: "Description", ui: { component: "textarea" } }
+        { type: "string", name: "description", label: "Description", ui: { component: "textarea" } },
+        { type: "image", name: "image", label: "Step Image (optional, shown above the number circle)" }
       ]
     },
     { type: "string", name: "ctaText", label: "CTA Text" },
@@ -187,6 +190,7 @@ var metricsBlockBlock = {
   },
   fields: [
     { type: "string", name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "light" } },
+    { type: "string", name: "eyebrow", label: "Eyebrow (small caps label above heading)", description: "Leave blank to use the default ('What we measure'). Set to a single space to hide entirely." },
     { type: "string", name: "heading", label: "Section Heading" },
     {
       type: "object",
@@ -196,7 +200,8 @@ var metricsBlockBlock = {
       ui: { itemProps: (item) => ({ label: item.name || "Metric" }) },
       fields: [
         { type: "string", name: "name", label: "Metric Name", required: true },
-        { type: "string", name: "whatItMeasures", label: "What It Measures", ui: { component: "textarea" } }
+        { type: "string", name: "whatItMeasures", label: "What It Measures", ui: { component: "textarea" } },
+        { type: "image", name: "image", label: "Metric Image (optional, shown above the metric name)" }
       ]
     }
   ]
@@ -282,6 +287,7 @@ var testimonialCarouselBlock = {
     { type: "string", name: "scheme", label: "Colour Scheme", options: ["blue", "light", "aqua", "grey"], ui: { defaultValue: "aqua" } },
     { type: "string", name: "wave", label: "Wave Style", options: ["ribbon", "crest", "fold", "pulse", "arc", "none"], ui: { defaultValue: "fold" } },
     { type: "string", name: "waveFill", label: "Wave Fill (colour of section above)", options: ["light", "grey", "blue", "aqua"], description: "Set this to the colour scheme of the previous section to avoid a white gap." },
+    { type: "string", name: "eyebrow", label: "Eyebrow (small caps label above heading)", description: "Leave blank to use the default ('What they say'). Set to a single space to hide entirely." },
     { type: "string", name: "heading", label: "Section Heading" },
     {
       type: "object",
@@ -663,6 +669,7 @@ var leadMagnetPromoBlock = {
   },
   fields: [
     { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"] },
+    { type: "string", name: "eyebrow", label: "Eyebrow", description: 'Small uppercase label above the heading. Leave blank to use the component default ("Free Guide").' },
     { type: "string", name: "heading", label: "Heading" },
     { type: "string", name: "promoBody", label: "Body", ui: { component: "textarea" } },
     { type: "string", name: "ctaText", label: "CTA Text" },
@@ -749,7 +756,8 @@ var segmentCardsBlock = {
         { type: "string", name: "icon", label: "Icon Hint" },
         { type: "string", name: "link", label: "Link URL" },
         { type: "string", name: "linkText", label: "Link Text" },
-        { type: "string", name: "logos", label: "Logos", list: true }
+        { type: "string", name: "logos", label: "Logos", list: true },
+        { type: "image", name: "image", label: "Card Image (optional, shown at top of card)" }
       ]
     }
   ]
@@ -836,6 +844,38 @@ var spinningSensorBlock = {
     { type: "string", name: "description", label: "Description (desktop only)", ui: { component: "textarea", defaultValue: "Designed with precision. Built for real-world care." } }
   ]
 };
+var pdfDocumentCardsBlock = {
+  name: "pdfDocumentCards",
+  label: "PDF Document Cards",
+  ui: {
+    itemProps: (item) => ({
+      label: item?.heading ? `PDF Cards: ${item.heading}` : `PDF Cards (${item?.items?.length ?? 0})`
+    })
+  },
+  fields: [
+    { type: "string", name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"], ui: { defaultValue: "light" } },
+    { type: "string", name: "eyebrow", label: "Eyebrow" },
+    { type: "string", name: "heading", label: "Section Heading" },
+    { type: "string", name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
+    { type: "number", name: "columns", label: "Columns (2 or 3)", description: "2 columns for prominent guides, 3 for denser doc grids.", ui: { defaultValue: 2 } },
+    {
+      type: "object",
+      name: "items",
+      label: "Documents",
+      list: true,
+      ui: { itemProps: (item) => ({ label: item?.title || "Document" }) },
+      fields: [
+        { type: "string", name: "title", label: "Title", required: true },
+        { type: "string", name: "description", label: "Description", ui: { component: "textarea" } },
+        { type: "string", name: "category", label: "Eyebrow chip (e.g. 'User Guide', 'Integration')" },
+        { type: "string", name: "ctaText", label: "CTA Text", description: "Defaults to 'Open PDF'." },
+        { type: "string", name: "ctaLink", label: "CTA Link (PDF path or URL)", required: true },
+        { type: "string", name: "pdfLabel", label: "PDF Meta Label (e.g. 'PDF \xB7 24 pages')" },
+        { type: "string", name: "accent", label: "Accent Colour", options: ["blue", "aqua", "indigo", "graphite"], ui: { defaultValue: "blue" } }
+      ]
+    }
+  ]
+};
 var seoFields = [
   { type: "string", name: "title", label: "Page Title", isTitle: true, required: true, description: "Browser tab + Google title. Aim for ~60 chars." },
   { type: "string", name: "description", label: "Meta Description", ui: { component: "textarea" }, description: "Google snippet. 140-160 chars." },
@@ -884,7 +924,8 @@ var allBlocks = [
   segmentCardsBlock,
   valuePropsBlock,
   timelineBlock,
-  spinningSensorBlock
+  spinningSensorBlock,
+  pdfDocumentCardsBlock
 ];
 var blockPageFields = [
   {
@@ -914,6 +955,12 @@ var articleFields = [
   { type: "number", name: "readTime", label: "Read Time (minutes)" },
   { type: "image", name: "image", label: "Featured Image" },
   { type: "boolean", name: "featured", label: "Featured" },
+  {
+    type: "string",
+    name: "downloadPdf",
+    label: "Downloadable PDF (path under /downloads/, e.g. /downloads/Dynamometry-Guide.pdf)"
+  },
+  { type: "string", name: "downloadPdfLabel", label: 'Download Button Label (optional, defaults to "Download PDF")' },
   { type: "string", name: "description", label: "Meta Description" },
   { type: "string", name: "primaryKeyword", label: "Primary Keyword" },
   { type: "string", name: "keywords", label: "SEO Keywords", list: true },

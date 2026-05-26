@@ -27,6 +27,22 @@ const nextConfig: NextConfig = {
       { source: "/author/dr-paul-rinne/", destination: "/meet-the-team", permanent: true },
       { source: "/author/uwp-group", destination: "/about", permanent: true },
       { source: "/author/uwp-group/", destination: "/about", permanent: true },
+
+      // Compliance moved from evidence section to top-level
+      { source: "/evidence/compliance", destination: "/compliance", permanent: true },
+      { source: "/evidence/compliance/", destination: "/compliance", permanent: true },
+
+      // Technical Documentation renamed to Documents
+      { source: "/resources/technical-documentation", destination: "/resources/documents", permanent: true },
+      { source: "/resources/technical-documentation/", destination: "/resources/documents", permanent: true },
+
+      // Falls Risk Tests page merged into Able Assess solution page
+      { source: "/falls-risk-tests", destination: "/solutions/able-assess", permanent: true },
+      { source: "/falls-risk-tests/", destination: "/solutions/able-assess", permanent: true },
+
+      // Low-and-at-risk results page videos now live on the Able Assess solution page
+      { source: "/low-and-at-risk", destination: "/solutions/able-assess", permanent: true },
+      { source: "/low-and-at-risk/", destination: "/solutions/able-assess", permanent: true },
     ];
   },
 };

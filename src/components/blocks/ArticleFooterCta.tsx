@@ -9,7 +9,7 @@ interface ArticleFooterCtaProps {
 
 export function ArticleFooterCta({
   heading = "See how Able Assess fits your workflow.",
-  bodyText = "A 20-minute demo with a clinician who has run it in the field.",
+  bodyText = "Book a walkthrough with a clinician who has run it in the field.",
   primaryCtaText = "Book a demo",
   primaryCtaLink = "/demo/",
 }: ArticleFooterCtaProps) {

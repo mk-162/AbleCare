@@ -32,6 +32,7 @@ fragment PagesParts on Pages {
     }
     ... on PagesBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -67,6 +68,7 @@ fragment PagesParts on Pages {
     }
     ... on PagesBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -74,17 +76,20 @@ fragment PagesParts on Pages {
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on PagesBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on PagesBlocksFeatureComparison {
@@ -117,6 +122,7 @@ fragment PagesParts on Pages {
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -265,6 +271,7 @@ fragment PagesParts on Pages {
     }
     ... on PagesBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -313,6 +320,7 @@ fragment PagesParts on Pages {
         link
         linkText
         logos
+        image
       }
     }
     ... on PagesBlocksValueProps {
@@ -337,6 +345,23 @@ fragment PagesParts on Pages {
       eyebrow
       heading
       description
+    }
+    ... on PagesBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columns
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title
@@ -382,6 +407,7 @@ fragment SolutionsParts on Solutions {
     }
     ... on SolutionsBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -417,6 +443,7 @@ fragment SolutionsParts on Solutions {
     }
     ... on SolutionsBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -424,17 +451,20 @@ fragment SolutionsParts on Solutions {
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on SolutionsBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on SolutionsBlocksFeatureComparison {
@@ -467,6 +497,7 @@ fragment SolutionsParts on Solutions {
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -615,6 +646,7 @@ fragment SolutionsParts on Solutions {
     }
     ... on SolutionsBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -663,6 +695,7 @@ fragment SolutionsParts on Solutions {
         link
         linkText
         logos
+        image
       }
     }
     ... on SolutionsBlocksValueProps {
@@ -687,6 +720,23 @@ fragment SolutionsParts on Solutions {
       eyebrow
       heading
       description
+    }
+    ... on SolutionsBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columns
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title
@@ -732,6 +782,7 @@ fragment SegmentsParts on Segments {
     }
     ... on SegmentsBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -767,6 +818,7 @@ fragment SegmentsParts on Segments {
     }
     ... on SegmentsBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -774,17 +826,20 @@ fragment SegmentsParts on Segments {
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on SegmentsBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on SegmentsBlocksFeatureComparison {
@@ -817,6 +872,7 @@ fragment SegmentsParts on Segments {
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -965,6 +1021,7 @@ fragment SegmentsParts on Segments {
     }
     ... on SegmentsBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -1013,6 +1070,7 @@ fragment SegmentsParts on Segments {
         link
         linkText
         logos
+        image
       }
     }
     ... on SegmentsBlocksValueProps {
@@ -1037,6 +1095,23 @@ fragment SegmentsParts on Segments {
       eyebrow
       heading
       description
+    }
+    ... on SegmentsBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columns
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title
@@ -1082,6 +1157,7 @@ fragment CompareParts on Compare {
     }
     ... on CompareBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -1117,6 +1193,7 @@ fragment CompareParts on Compare {
     }
     ... on CompareBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -1124,17 +1201,20 @@ fragment CompareParts on Compare {
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on CompareBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on CompareBlocksFeatureComparison {
@@ -1167,6 +1247,7 @@ fragment CompareParts on Compare {
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -1315,6 +1396,7 @@ fragment CompareParts on Compare {
     }
     ... on CompareBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -1363,6 +1445,7 @@ fragment CompareParts on Compare {
         link
         linkText
         logos
+        image
       }
     }
     ... on CompareBlocksValueProps {
@@ -1388,6 +1471,23 @@ fragment CompareParts on Compare {
       heading
       description
     }
+    ... on CompareBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columns
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
+    }
   }
   title
   description
@@ -1412,6 +1512,8 @@ fragment LearnParts on Learn {
   readTime
   image
   featured
+  downloadPdf
+  downloadPdfLabel
   description
   primaryKeyword
   keywords
@@ -1447,6 +1549,7 @@ fragment LearnParts on Learn {
     }
     ... on LearnBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -1482,6 +1585,7 @@ fragment LearnParts on Learn {
     }
     ... on LearnBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -1489,17 +1593,20 @@ fragment LearnParts on Learn {
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on LearnBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on LearnBlocksFeatureComparison {
@@ -1532,6 +1639,7 @@ fragment LearnParts on Learn {
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -1680,6 +1788,7 @@ fragment LearnParts on Learn {
     }
     ... on LearnBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -1728,6 +1837,7 @@ fragment LearnParts on Learn {
         link
         linkText
         logos
+        image
       }
     }
     ... on LearnBlocksValueProps {
@@ -1752,6 +1862,23 @@ fragment LearnParts on Learn {
       eyebrow
       heading
       description
+    }
+    ... on LearnBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columns
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
 }
@@ -1790,6 +1917,7 @@ fragment ResourcesParts on Resources {
     }
     ... on ResourcesBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -1825,6 +1953,7 @@ fragment ResourcesParts on Resources {
     }
     ... on ResourcesBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -1832,17 +1961,20 @@ fragment ResourcesParts on Resources {
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on ResourcesBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on ResourcesBlocksFeatureComparison {
@@ -1875,6 +2007,7 @@ fragment ResourcesParts on Resources {
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -2023,6 +2156,7 @@ fragment ResourcesParts on Resources {
     }
     ... on ResourcesBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -2071,6 +2205,7 @@ fragment ResourcesParts on Resources {
         link
         linkText
         logos
+        image
       }
     }
     ... on ResourcesBlocksValueProps {
@@ -2095,6 +2230,23 @@ fragment ResourcesParts on Resources {
       eyebrow
       heading
       description
+    }
+    ... on ResourcesBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columns
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title
@@ -2140,6 +2292,7 @@ fragment CompanyParts on Company {
     }
     ... on CompanyBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -2175,6 +2328,7 @@ fragment CompanyParts on Company {
     }
     ... on CompanyBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -2182,17 +2336,20 @@ fragment CompanyParts on Company {
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on CompanyBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on CompanyBlocksFeatureComparison {
@@ -2225,6 +2382,7 @@ fragment CompanyParts on Company {
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -2373,6 +2531,7 @@ fragment CompanyParts on Company {
     }
     ... on CompanyBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -2421,6 +2580,7 @@ fragment CompanyParts on Company {
         link
         linkText
         logos
+        image
       }
     }
     ... on CompanyBlocksValueProps {
@@ -2445,6 +2605,23 @@ fragment CompanyParts on Company {
       eyebrow
       heading
       description
+    }
+    ... on CompanyBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columns
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title

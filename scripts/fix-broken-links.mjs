@@ -60,8 +60,6 @@ const INTERNAL_PREFIXES = [
   "/cookies",
   "/security",
   "/faqs",
-  "/falls-risk-tests",
-  "/low-and-at-risk",
   "/meet-the-team",
   "/compare",
   "/evidence",
