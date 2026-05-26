@@ -22,7 +22,11 @@ const solutionsMenu: { platform: NavItem[]; capabilities: NavItem[] } = {
 
 const segmentItems: NavItem[] = [
   { label: "Home Care", href: "/home-care", desc: "Reduce client falls and protect retention across every branch." },
+  { label: "Home Health Agencies", href: "/home-health-agencies", desc: "Grow the caseload and strengthen Care Compare ratings." },
   { label: "Senior Living", href: "/senior-living", desc: "Protect occupancy, reduce staff burden, and mitigate falls-related liability." },
+  { label: "Skilled Nursing Facilities", href: "/skilled-nursing", desc: "Protect Five-Star ratings and defend VBP performance." },
+  { label: "Hospital Systems", href: "/hospital-systems", desc: "Falls prevention from outpatient baseline through discharge planning." },
+  { label: "Area Agencies on Aging", href: "/area-agencies-on-aging", desc: "Prove program impact and defend grant funding." },
   { label: "CRO/Pharma", href: "/pharma", desc: "Digital endpoints for clinical trials." },
 ];
 

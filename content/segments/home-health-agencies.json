@@ -1,0 +1,226 @@
+{
+  "title": "Falls Prevention for Home Health Agencies",
+  "slug": "home-health-agencies",
+  "seo": {
+    "title": "Falls Prevention for Home Health Agencies | Able Care",
+    "description": "Standardized falls screening for home health agencies. Strengthen Care Compare ratings, grow your caseload through community screening, and standardize care across every site.",
+    "ogImage": "/images/og-home-health-agencies.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Home Health Agencies",
+          "href": "/home-health-agencies"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "backgroundImage": "/images/photos/clinical/clinician-guiding-patient.jpg",
+      "backgroundImageAlt": "Home health clinician guiding a patient through Able Assess in the home",
+      "eyebrow": "Home Health Agencies",
+      "headline": "Standardized falls screening for home health agencies.",
+      "subtitle": "Grow your caseload through community screening. Standardize assessment across every clinician and site. Strengthen the Star Ratings that drive your Medicare reimbursement and referrals.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "crest"
+    },
+    {
+      "_template": "metricsBlock",
+      "scheme": "light",
+      "heading": "What Able Assess Offers Home Health Agencies",
+      "metrics": [
+        {
+          "name": "Customer acquisition",
+          "whatItMeasures": "Host falls-risk screening events at senior living communities and senior centers. Regularly screen residents at partner communities to identify new patients for your caseload."
+        },
+        {
+          "name": "Referral relationships",
+          "whatItMeasures": "Develop deeper ties with referral partners — medical groups, hospitals and senior living communities — by offering them a consistent objective screen they can lean on."
+        },
+        {
+          "name": "Care standardization & quality",
+          "whatItMeasures": "Run a consistent assessment protocol across every clinician and branch. The data ladders into the Star Ratings published on Care Compare."
+        }
+      ]
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "How it works in home health",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Capture",
+          "description": "A clinician runs a five-minute assessment at the start of an episode of care, or at a community screening event."
+        },
+        {
+          "number": 2,
+          "title": "Score",
+          "description": "Grip strength, sit-to-stand, gait speed and timed up-and-go are compared against normative data instantly."
+        },
+        {
+          "number": 3,
+          "title": "Act",
+          "description": "The risk report is immediately available to inform the OASIS evaluation, refer the patient on, or shape the plan of care."
+        },
+        {
+          "number": 4,
+          "title": "Track",
+          "description": "Re-screen at the end of each episode. Objective evidence of improvement supports Star Ratings and the conversations with referral partners."
+        }
+      ]
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Four metrics, one picture of function",
+      "metrics": [
+        {
+          "name": "Grip strength",
+          "whatItMeasures": "Full body strength proxy. Can be taken on virtually any patient — even those too acute for CST, TUG or 4MGS."
+        },
+        {
+          "name": "Sit-to-stand",
+          "whatItMeasures": "Lower-limb power and balance. A key indicator of fall likelihood in the home setting."
+        },
+        {
+          "name": "Gait speed",
+          "whatItMeasures": "Walking speed over a standardized 4-meter distance. Linked to rehospitalization rates."
+        },
+        {
+          "name": "Timed Up and Go",
+          "whatItMeasures": "Falls risk in under a minute. Validated across home and clinical settings."
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "heading": "The numbers that matter to home health",
+      "stats": [
+        {
+          "value": "~$5M",
+          "label": "Revenue uplift from a 3.5 → 4 Star Rating shift at a midsized HHA"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per assessment"
+        },
+        {
+          "value": "4",
+          "label": "Validated metrics per screening"
+        },
+        {
+          "value": "0",
+          "label": "Clinical certifications required to run it"
+        }
+      ],
+      "scheme": "aqua"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "testimonials": [
+        {
+          "quote": "The simplicity of this product is what makes it valuable. Anybody can use it, and we can trust that the data is accurate with every assessment.",
+          "role": "Business Development Executive",
+          "organization": "US home health agency"
+        },
+        {
+          "quote": "Community screening events have become our most reliable source of new referrals.",
+          "role": "Director of Business Development",
+          "organization": "multi-site home health agency"
+        }
+      ],
+      "scheme": "aqua"
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "grey",
+      "heading": "Common questions from home health operators",
+      "emitSchema": true,
+      "faqs": [
+        {
+          "question": "How does Able Assess support our Star Ratings?",
+          "answer": "Star Ratings are heavily influenced by falls outcomes and improvement on functional measures. Objective screening at the start and end of each episode of care evidences improvement, supports OASIS Section GG documentation, and ladders directly into the quality measures published on Care Compare."
+        },
+        {
+          "question": "How does it help us grow the caseload?",
+          "answer": "Two repeatable plays: host falls-risk screening events at senior living communities and senior centers, and regularly screen residents at partner senior living communities. Both surface patients who could benefit from home health and create a warm referral path."
+        },
+        {
+          "question": "Can non-clinical staff run the assessment?",
+          "answer": "Yes. Able Assess was built for any staff member — sales, BD, intake or clinical. The protocol guides them through every step. No clinical certification required."
+        },
+        {
+          "question": "How does it fit with OASIS?",
+          "answer": "Able Assess is integration-ready with the main HHA platforms and EHRs. The objective scores complement OASIS Section GG and give your clinicians a defensible record of falls-risk assessment."
+        },
+        {
+          "question": "What hardware do we need?",
+          "answer": "The sensor, pouch and measuring tape come as a kit. Everything pairs via Bluetooth with any iOS or Android smartphone or tablet. No additional infrastructure required."
+        },
+        {
+          "question": "What does it cost?",
+          "answer": "Unlimited tests, unlimited users — no per-patient or per-test charge. We offer first-year discounts, monthly pricing to fit operational budgets, and volume discounts for multi-site customers. Book a demo to discuss your specific scenario."
+        }
+      ]
+    },
+    {
+      "_template": "partnerLogoCarousel",
+      "heading": "Trusted by Leading Organizations",
+      "scheme": "white"
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "See Able Assess in your home health workflow.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "Book a walkthrough with a clinician who has deployed it across multi-site home health agencies."
+    },
+    {
+      "_template": "segmentRouter",
+      "heading": "Explore other settings",
+      "segments": [
+        {
+          "title": "Home Care",
+          "description": "Standardize screening across every branch and caregiver.",
+          "link": "/home-care",
+          "ctaText": "Explore"
+        },
+        {
+          "title": "Hospital Systems",
+          "description": "Build referral relationships with the hospitals that send you patients.",
+          "link": "/hospital-systems",
+          "ctaText": "Explore"
+        },
+        {
+          "title": "Skilled Nursing",
+          "description": "Protect Five-Star ratings and defend VBP performance.",
+          "link": "/skilled-nursing",
+          "ctaText": "Explore"
+        },
+        {
+          "title": "Senior Living",
+          "description": "Protect residents and occupancy across the continuum.",
+          "link": "/senior-living",
+          "ctaText": "Explore"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "home-health-agencies",
+    "falls-prevention",
+    "five-star",
+    "oasis",
+    "able-assess"
+  ]
+}

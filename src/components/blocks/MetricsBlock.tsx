@@ -35,7 +35,7 @@ export function MetricsBlock({ scheme = "light", heading, eyebrow, metrics }: Me
             {heading || "Four metrics. One complete picture of function."}
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {items.map((metric, i) => (
             <motion.div
               key={i}
@@ -43,36 +43,22 @@ export function MetricsBlock({ scheme = "light", heading, eyebrow, metrics }: Me
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative bg-white rounded-2xl border border-black/5 shadow-sm hover:shadow-md hover:border-ac-blue/20 transition-all p-8 group"
+              className="relative bg-white rounded-2xl border border-black/5 shadow-sm hover:shadow-md hover:border-ac-blue/20 transition-all p-6 group"
             >
-              <div className="text-5xl font-bold text-ac-blue/10 group-hover:text-ac-blue/20 transition-colors absolute top-6 right-6 leading-none select-none">
+              <div className="text-4xl font-bold text-ac-blue/10 group-hover:text-ac-blue/20 transition-colors absolute top-4 right-5 leading-none select-none">
                 {String(i + 1).padStart(2, "0")}
               </div>
               {metric.image && (
-                <div className="flex justify-center mb-6 py-4 select-none">
-                  <div className="relative w-32 rotate-[30deg] transition-transform duration-500 group-hover:rotate-0">
-                    {/* phone shell */}
-                    <div className="bg-ac-black rounded-[2rem] p-1.5 shadow-2xl">
-                      {/* screen */}
-                      <div className="relative bg-white rounded-[1.65rem] overflow-hidden aspect-[9/19]">
-                        {/* notch */}
-                        <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-14 h-4 bg-ac-black rounded-full z-10" />
-                        {/* screen content — contain so the whole illustration fits */}
-                        <img
-                          src={metric.image}
-                          alt={metric.name}
-                          className="absolute inset-0 w-full h-full object-contain p-1.5"
-                        />
-                      </div>
-                    </div>
-                  </div>
+                <div className="flex justify-center mb-4 select-none">
+                  <img
+                    src={metric.image}
+                    alt={metric.name}
+                    className="h-20 w-auto object-contain"
+                  />
                 </div>
               )}
-              <div className="w-10 h-1 bg-ac-blue rounded-full mb-5" />
-              <h3 className="text-xl font-bold mb-3 text-ac-black">{metric.name}</h3>
-              <p className="text-ac-black/65 font-light text-sm leading-relaxed">
-                {metric.whatItMeasures}
-              </p>
+              <div className="w-10 h-1 bg-ac-blue rounded-full mb-4" />
+              <h3 className="text-lg font-bold text-ac-black">{metric.name}</h3>
             </motion.div>
           ))}
         </div>

@@ -13,8 +13,12 @@
       {
         "label": "Who We Help",
         "children": [
-          { "label": "Home Care", "href": "/home-care", "desc": "Reduce hospitalizations and hit HHVBP targets." },
-          { "label": "Senior Living", "href": "/senior-living", "desc": "Protect residents and your CCRC reputation." },
+          { "label": "Home Care", "href": "/home-care", "desc": "Reduce client falls and protect retention across every branch." },
+          { "label": "Home Health Agencies", "href": "/home-health-agencies", "desc": "Grow the caseload and strengthen Care Compare ratings." },
+          { "label": "Senior Living", "href": "/senior-living", "desc": "Protect occupancy, reduce staff burden, and mitigate falls-related liability." },
+          { "label": "Skilled Nursing Facilities", "href": "/skilled-nursing", "desc": "Protect Five-Star ratings and defend VBP performance." },
+          { "label": "Hospital Systems", "href": "/hospital-systems", "desc": "Falls prevention from outpatient baseline through discharge planning." },
+          { "label": "Area Agencies on Aging", "href": "/area-agencies-on-aging", "desc": "Prove program impact and defend grant funding." },
           { "label": "CRO/Pharma", "href": "/pharma", "desc": "Digital endpoints for clinical trials." }
         ]
       },
@@ -34,10 +38,14 @@
   "footer": {
     "columns": [
       {
-        "title": "Solutions",
+        "title": "Who We Help",
         "links": [
           { "label": "Home Care", "href": "/home-care" },
+          { "label": "Home Health Agencies", "href": "/home-health-agencies" },
           { "label": "Senior Living", "href": "/senior-living" },
+          { "label": "Skilled Nursing Facilities", "href": "/skilled-nursing" },
+          { "label": "Hospital Systems", "href": "/hospital-systems" },
+          { "label": "Area Agencies on Aging", "href": "/area-agencies-on-aging" },
           { "label": "Clinicians", "href": "/clinicians" },
           { "label": "Pharma & CROs", "href": "/pharma" }
         ]
