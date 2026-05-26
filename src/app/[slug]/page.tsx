@@ -8,8 +8,11 @@ export const revalidate = 60;
 // Map of slug -> Tina collection + filename
 const SLUG_MAP: Record<string, { collection: string; filename: string }> = {
   "home-care": { collection: "segments", filename: "home-care" },
+  "home-health-agencies": { collection: "segments", filename: "home-health-agencies" },
   "senior-living": { collection: "segments", filename: "senior-living" },
   "skilled-nursing": { collection: "segments", filename: "skilled-nursing" },
+  "hospital-systems": { collection: "segments", filename: "hospital-systems" },
+  "area-agencies-on-aging": { collection: "segments", filename: "area-agencies-on-aging" },
   "pharma": { collection: "segments", filename: "pharma" },
   "clinicians": { collection: "segments", filename: "clinicians" },
   "about": { collection: "company", filename: "about" },

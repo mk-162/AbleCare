@@ -191,6 +191,30 @@
           "ctaText": "Explore"
         },
         {
+          "title": "Home Health Agencies",
+          "description": "Grow the caseload and strengthen Care Compare ratings.",
+          "link": "/home-health-agencies",
+          "ctaText": "Explore"
+        },
+        {
+          "title": "Skilled Nursing",
+          "description": "Protect Five-Star ratings and defend VBP performance.",
+          "link": "/skilled-nursing",
+          "ctaText": "Explore"
+        },
+        {
+          "title": "Hospital Systems",
+          "description": "Standardize screening from outpatient through discharge.",
+          "link": "/hospital-systems",
+          "ctaText": "Explore"
+        },
+        {
+          "title": "Area Agencies on Aging",
+          "description": "Prove program impact and defend grant funding.",
+          "link": "/area-agencies-on-aging",
+          "ctaText": "Explore"
+        },
+        {
           "title": "Pharma & CROs",
           "description": "Decentralized functional endpoints.",
           "link": "/pharma",

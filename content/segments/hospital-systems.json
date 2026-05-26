@@ -1,0 +1,224 @@
+{
+  "title": "Falls Prevention for Hospital Systems",
+  "slug": "hospital-systems",
+  "seo": {
+    "title": "Falls Prevention for Hospital Systems | Able Care",
+    "description": "Objective falls screening across the hospital care continuum. Capture a baseline in primary care and orthopedics, inform discharge planning, and reduce falls — and the quality penalties they trigger.",
+    "ogImage": "/images/og-hospital-systems.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Hospital Systems",
+          "href": "/hospital-systems"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
+      "backgroundImageAlt": "Clinician reviewing Able Assess results with a patient on a tablet in a hospital setting",
+      "eyebrow": "Hospital Systems",
+      "headline": "Falls prevention across the hospital care continuum.",
+      "subtitle": "A baseline reading on senior patients before they reach acute care. Better-informed discharge planning. Reduced falls across primary care, orthopedics, inpatient and post-acute settings — lifting quality ratings and the reimbursement they unlock.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "crest"
+    },
+    {
+      "_template": "metricsBlock",
+      "scheme": "light",
+      "heading": "What Able Assess Offers Hospital Systems",
+      "metrics": [
+        {
+          "name": "Outpatient baseline",
+          "whatItMeasures": "Capture an objective falls-risk baseline at the Annual Wellness Visit or orthopedic outpatient appointment — before a fall sends the patient into acute care."
+        },
+        {
+          "name": "Acute care planning",
+          "whatItMeasures": "Equip inpatient teams with objective functional data to inform discharge: home, post-acute setting, or home with home care to prevent a post-discharge fall."
+        },
+        {
+          "name": "Post-acute discharge confidence",
+          "whatItMeasures": "Decide which post-acute location each patient should be discharged to — informed by the same standardized screen the SNF, IRF or HHA will use on intake."
+        }
+      ]
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "grey",
+      "heading": "How it works across the care continuum",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Capture",
+          "description": "PCP or orthopedic outpatient staff run a five-minute objective screen — covering Medicare Advantage requirements for PT referral and informing surgical candidacy."
+        },
+        {
+          "number": 2,
+          "title": "Inform",
+          "description": "When the patient reaches inpatient care, the baseline informs the team's understanding of impairment — especially powerful when pre-intake data is on record."
+        },
+        {
+          "number": 3,
+          "title": "Plan",
+          "description": "Use the data to plan discharge: home, post-acute setting, or home with supplementary home care."
+        },
+        {
+          "number": 4,
+          "title": "Track",
+          "description": "Re-screen across the continuum. Falls outcomes ladder into the quality ratings that drive CMS reimbursement."
+        }
+      ]
+    },
+    {
+      "_template": "metricsBlock",
+      "heading": "Four metrics, one picture of function",
+      "metrics": [
+        {
+          "name": "Grip strength",
+          "whatItMeasures": "Full body strength proxy. Can be captured on virtually any patient — from healthy outpatients to acute inpatients."
+        },
+        {
+          "name": "Sit-to-stand",
+          "whatItMeasures": "Lower-limb power and balance. Informs surgical candidacy, prehab decisions and discharge readiness."
+        },
+        {
+          "name": "Gait speed",
+          "whatItMeasures": "The 'sixth vital sign.' Linked to rehospitalization risk, length of stay and value-based care outcomes."
+        },
+        {
+          "name": "Timed Up and Go",
+          "whatItMeasures": "Falls risk in under a minute. Validated across outpatient, inpatient and post-acute settings."
+        }
+      ]
+    },
+    {
+      "_template": "statsBar",
+      "heading": "The numbers that matter to hospital systems",
+      "stats": [
+        {
+          "value": "1,000–5,000",
+          "label": "Bed midmarket systems we're built for"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per assessment"
+        },
+        {
+          "value": "4",
+          "label": "Validated metrics per screening"
+        },
+        {
+          "value": "0",
+          "label": "Clinical certifications required to run it"
+        }
+      ],
+      "scheme": "aqua"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "testimonials": [
+        {
+          "quote": "Having a pre-intake baseline changed how our acute teams think about discharge. We catch the patients we used to send home and then readmit.",
+          "role": "Chief Medical Officer",
+          "organization": "US hospital system"
+        },
+        {
+          "quote": "Grip strength was the one measure our nurses could capture on the most impaired patients. That alone made the data usable across the whole continuum.",
+          "role": "Director of Quality",
+          "organization": "midmarket health system"
+        }
+      ],
+      "scheme": "aqua"
+    },
+    {
+      "_template": "faqAccordion",
+      "scheme": "grey",
+      "heading": "Common questions from hospital systems",
+      "emitSchema": true,
+      "faqs": [
+        {
+          "question": "Where do we deploy this across the system?",
+          "answer": "We focus on three use modes: an outpatient baseline in Primary Care and Orthopedics, acute care planning for inpatients, and discharge decisions for patients going into post-acute care (SNF, IRF, HHA or home care). Many systems start with one and expand."
+        },
+        {
+          "question": "Our clinical staff don't have time for another tool.",
+          "answer": "Able Assess can be run by any staff — including assistants and front-desk staff. The five-minute protocol fits within an Annual Wellness Visit, an outpatient appointment or a nursing intake. Adoption works best when mandated from the top down."
+        },
+        {
+          "question": "What about patients who are too acute or impaired?",
+          "answer": "Grip strength can be taken on virtually anyone — seated or supine if needed — making it a powerful indicator across the entire care continuum, from healthy outpatients to acute inpatients."
+        },
+        {
+          "question": "How does it support our Annual Wellness Visit workflow?",
+          "answer": "Objective falls screening isn't part of the AWV by default, so PCPs rely on patient self-report. Many Medicare Advantage plans won't allow PT referrals without a self-report or objective screen on record. Able Assess provides the objective screen — and the referral pathway that follows."
+        },
+        {
+          "question": "How does it integrate with our EHR?",
+          "answer": "Able Assess is integration-ready with the major EHR platforms. The clinical team can walk you through the setup during a demo."
+        },
+        {
+          "question": "Can we run a pilot?",
+          "answer": "Yes. Our current hospital strategy centers on partnered pilots — tracking the impact of an Able Assess rollout on falls reduction. Book a demo to scope a pilot for your system."
+        }
+      ]
+    },
+    {
+      "_template": "partnerLogoCarousel",
+      "heading": "Trusted by Leading Organizations",
+      "scheme": "white"
+    },
+    {
+      "_template": "ctaBanner",
+      "heading": "See Able Assess across your care continuum.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "bodyText": "Book a walkthrough with a clinician who has piloted Able Assess inside hospital systems."
+    },
+    {
+      "_template": "segmentRouter",
+      "heading": "Explore other settings",
+      "segments": [
+        {
+          "title": "Skilled Nursing",
+          "description": "Protect Five-Star ratings and defend VBP performance.",
+          "link": "/skilled-nursing",
+          "ctaText": "Explore"
+        },
+        {
+          "title": "Home Health Agencies",
+          "description": "Standardize care and strengthen Care Compare ratings.",
+          "link": "/home-health-agencies",
+          "ctaText": "Explore"
+        },
+        {
+          "title": "Home Care",
+          "description": "Standardize screening across every branch and caregiver.",
+          "link": "/home-care",
+          "ctaText": "Explore"
+        },
+        {
+          "title": "Senior Living",
+          "description": "Protect residents and occupancy across the continuum.",
+          "link": "/senior-living",
+          "ctaText": "Explore"
+        }
+      ]
+    }
+  ],
+  "tags": [
+    "hospital-systems",
+    "falls-prevention",
+    "able-assess"
+  ]
+}

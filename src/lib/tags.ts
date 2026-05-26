@@ -55,8 +55,11 @@ export const TOPIC_TAGS = [
 
 export const SEGMENT_TAGS = [
   "home-care",
+  "home-health-agencies",
   "senior-living",
   "skilled-nursing",
+  "hospital-systems",
+  "area-agencies-on-aging",
   "clinicians",
   "pharma",
   "families",

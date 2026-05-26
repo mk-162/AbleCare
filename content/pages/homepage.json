@@ -55,10 +55,34 @@
           "link": "/home-care"
         },
         {
+          "title": "Home Health Agencies",
+          "description": "Grow the caseload through community screening and strengthen the Care Compare ratings that drive Medicare reimbursement.",
+          "ctaText": "Explore",
+          "link": "/home-health-agencies"
+        },
+        {
           "title": "Senior Living",
           "description": "Protect residents, reduce staff turnover, and avoid falls-related liability. Objective screening of residents across all levels of care.",
           "ctaText": "Explore",
           "link": "/senior-living"
+        },
+        {
+          "title": "Skilled Nursing Facilities",
+          "description": "Protect Five-Star ratings, defend VBP performance, and build the case load with one standardized screen.",
+          "ctaText": "Explore",
+          "link": "/skilled-nursing"
+        },
+        {
+          "title": "Hospital Systems",
+          "description": "A baseline reading in primary care and orthopedics. Better-informed acute care planning and post-acute discharge decisions.",
+          "ctaText": "Explore",
+          "link": "/hospital-systems"
+        },
+        {
+          "title": "Area Agencies on Aging",
+          "description": "Prove the impact of Matter of Balance, Otago and other evidence-based programs. Identify beneficiary needs. Defend grant funding.",
+          "ctaText": "Explore",
+          "link": "/area-agencies-on-aging"
         },
         {
           "title": "Pharma & CROs",
