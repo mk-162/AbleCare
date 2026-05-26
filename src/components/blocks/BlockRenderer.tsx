@@ -31,6 +31,7 @@ import { ValueProps } from "./ValueProps";
 import { RelatedPages } from "./RelatedPages";
 import { Timeline } from "./Timeline";
 import { GripableRotate } from "./GripableRotate";
+import { PdfDocumentCards } from "./PdfDocumentCards";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { resolveBlockScheme } from "@/lib/resolve-scheme";
 
@@ -288,6 +289,8 @@ export function BlockRenderer({ blocks, pageTags, pageSlug }: BlockRendererProps
             return <Timeline key={i} {...block} />;
           case "spinningSensor":
             return <GripableRotate key={i} {...block} />;
+          case "pdfDocumentCards":
+            return <PdfDocumentCards key={i} {...block} />;
           case "relatedPages":
             return <RelatedPages key={i} items={block._resolvedItems} pageTags={pageTags} heading={block.heading} scheme={block.scheme} />;
           case "breadcrumb": {

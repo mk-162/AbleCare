@@ -5,11 +5,9 @@
       {
         "label": "Solutions",
         "children": [
-          { "label": "Able Assess - Falls Prevention Application", "href": "/solutions/able-assess", "desc": "Four metrics. Five minutes. One complete picture." },
+          { "label": "Able Assess - Falls Prevention Application", "href": "/solutions/able-assess", "desc": "Four falls risk tests in one five-minute screening." },
           { "label": "Able Strength", "href": "/solutions/able-strength", "desc": "Self-serve grip strength for patients at home." },
-          { "label": "Population Health", "href": "/solutions/population-health", "desc": "Track risk across your entire census." },
-          { "label": "Falls Risk Tests", "href": "/falls-risk-tests", "desc": "Walkthrough: four falls risk assessments in five minutes." },
-          { "label": "Falls Risk Screening Results", "href": "/low-and-at-risk", "desc": "Walkthrough: how at-risk and not-at-risk results are presented." }
+          { "label": "Population Health", "href": "/solutions/population-health", "desc": "Track risk across your entire census." }
         ]
       },
       {

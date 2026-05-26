@@ -884,6 +884,41 @@ const spinningSensorBlock: any = {
   ],
 };
 
+const pdfDocumentCardsBlock = {
+  name: "pdfDocumentCards",
+  label: "PDF Document Cards",
+  ui: {
+    itemProps: (item: { heading?: string; items?: unknown[] }) => ({
+      label: item?.heading
+        ? `PDF Cards: ${item.heading}`
+        : `PDF Cards (${item?.items?.length ?? 0})`,
+    }),
+  },
+  fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"], ui: { defaultValue: "light" } },
+    { type: "string" as const, name: "eyebrow", label: "Eyebrow" },
+    { type: "string" as const, name: "heading", label: "Section Heading" },
+    { type: "string" as const, name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
+    { type: "number" as const, name: "columns", label: "Columns (2 or 3)", description: "2 columns for prominent guides, 3 for denser doc grids.", ui: { defaultValue: 2 } },
+    {
+      type: "object" as const,
+      name: "items",
+      label: "Documents",
+      list: true,
+      ui: { itemProps: (item: { title?: string }) => ({ label: item?.title || "Document" }) },
+      fields: [
+        { type: "string" as const, name: "title", label: "Title", required: true },
+        { type: "string" as const, name: "description", label: "Description", ui: { component: "textarea" } },
+        { type: "string" as const, name: "category", label: "Eyebrow chip (e.g. 'User Guide', 'Integration')" },
+        { type: "string" as const, name: "ctaText", label: "CTA Text", description: "Defaults to 'Open PDF'." },
+        { type: "string" as const, name: "ctaLink", label: "CTA Link (PDF path or URL)", required: true },
+        { type: "string" as const, name: "pdfLabel", label: "PDF Meta Label (e.g. 'PDF · 24 pages')" },
+        { type: "string" as const, name: "accent", label: "Accent Colour", options: ["blue", "aqua", "indigo", "graphite"], ui: { defaultValue: "blue" } },
+      ],
+    },
+  ],
+};
+
 // ─── Shared SEO Fields ────────────────────────────────────────────────────────
 
 const seoFields = [
@@ -938,6 +973,7 @@ const allBlocks = [
   valuePropsBlock,
   timelineBlock,
   spinningSensorBlock,
+  pdfDocumentCardsBlock,
 ];
 
 const blockPageFields: any[] = [

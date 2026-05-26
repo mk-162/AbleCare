@@ -16,7 +16,7 @@ const SEED_ROUTES = [
   "/resources", "/resources/buyers-guide", "/resources/case-studies",
   "/resources/research-library", "/resources/evidence", "/resources/walkthrough",
   "/resources/downloads", "/resources/guides", "/resources/roi-calculator",
-  "/resources/technical-documentation", "/resources/webinars", "/resources/1-pagers",
+  "/resources/documents", "/resources/webinars", "/resources/1-pagers",
   "/resources/ccrc-guide", "/resources/hhvbp-guide",
   "/blog", "/knowledge-base", "/knowledge-base/buyers-guides",
   "/knowledge-base/research-summaries", "/knowledge-base/white-papers",
