@@ -899,7 +899,7 @@ const pdfDocumentCardsBlock = {
     { type: "string" as const, name: "eyebrow", label: "Eyebrow" },
     { type: "string" as const, name: "heading", label: "Section Heading" },
     { type: "string" as const, name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
-    { type: "number" as const, name: "columns", label: "Columns (2 or 3)", description: "2 columns for prominent guides, 3 for denser doc grids.", ui: { defaultValue: 2 } },
+    { type: "number" as const, name: "columnCount", label: "Columns (2 or 3)", description: "2 columns for prominent guides, 3 for denser doc grids.", ui: { defaultValue: 2 } },
     {
       type: "object" as const,
       name: "items",
