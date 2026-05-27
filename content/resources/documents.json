@@ -44,7 +44,7 @@
       "eyebrow": "For care teams",
       "heading": "User Guides",
       "subtitle": "Get up and running with Able Assess. The Quick Start gets a new user from unboxing to first screening in minutes; the full User Guide is the complete operator manual for day-to-day use.",
-      "columnCount": 2,
+      "columns": 2,
       "items": [
         {
           "title": "Able Assess Quick Start Guide",
@@ -72,7 +72,7 @@
       "eyebrow": "For engineering teams",
       "heading": "Technical Documentation",
       "subtitle": "Integration references for connecting partner systems to the Able Platform and embedding the GripAble sensor in your own applications. OpenAPI specs available on request.",
-      "columnCount": 3,
+      "columns": 3,
       "items": [
         {
           "title": "Able Connect: Partner Integration",
