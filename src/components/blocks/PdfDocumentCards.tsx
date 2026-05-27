@@ -19,7 +19,7 @@ interface PdfDocumentCardsProps {
   eyebrow?: string;
   heading?: string;
   subtitle?: string;
-  columnCount?: 2 | 3;
+  columns?: 2 | 3;
   items?: PdfDocumentItem[];
 }
 
