@@ -157,6 +157,7 @@ type PagesBlocksStatsBarStats {
 
 type PagesBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [PagesBlocksStatsBarStats]
 }
@@ -195,10 +196,12 @@ type PagesBlocksProcessStepsSteps {
   title: String!
   subtitle: String
   description: String
+  image: String
 }
 
 type PagesBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [PagesBlocksProcessStepsSteps]
   ctaText: String
@@ -208,10 +211,12 @@ type PagesBlocksProcessSteps {
 type PagesBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
+  image: String
 }
 
 type PagesBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [PagesBlocksMetricsBlockMetrics]
 }
@@ -258,6 +263,7 @@ type PagesBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [PagesBlocksTestimonialCarouselTestimonials]
 }
@@ -420,6 +426,7 @@ type PagesBlocksRoiCalculatorPromo {
 
 type PagesBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -470,6 +477,7 @@ type PagesBlocksSegmentCardsCards {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 type PagesBlocksSegmentCards {
@@ -507,7 +515,26 @@ type PagesBlocksSpinningSensor {
   description: String
 }
 
-union PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSupportForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline | PagesBlocksSpinningSensor
+type PagesBlocksPdfDocumentCardsItems {
+  title: String!
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String!
+  pdfLabel: String
+  accent: String
+}
+
+type PagesBlocksPdfDocumentCards {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [PagesBlocksPdfDocumentCardsItems]
+}
+
+union PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSupportForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline | PagesBlocksSpinningSensor | PagesBlocksPdfDocumentCards
 
 type Pages implements Node & Document {
   blocks: [PagesBlocks]
@@ -577,6 +604,7 @@ input PagesBlocksStatsBarStatsFilter {
 
 input PagesBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: PagesBlocksStatsBarStatsFilter
 }
@@ -625,10 +653,12 @@ input PagesBlocksProcessStepsStepsFilter {
   title: StringFilter
   subtitle: StringFilter
   description: StringFilter
+  image: ImageFilter
 }
 
 input PagesBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: PagesBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -638,10 +668,12 @@ input PagesBlocksProcessStepsFilter {
 input PagesBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
+  image: ImageFilter
 }
 
 input PagesBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: PagesBlocksMetricsBlockMetricsFilter
 }
@@ -688,6 +720,7 @@ input PagesBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: PagesBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -855,6 +888,7 @@ input PagesBlocksRoiCalculatorPromoFilter {
 
 input PagesBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -905,6 +939,7 @@ input PagesBlocksSegmentCardsCardsFilter {
   link: StringFilter
   linkText: StringFilter
   logos: StringFilter
+  image: ImageFilter
 }
 
 input PagesBlocksSegmentCardsFilter {
@@ -942,6 +977,25 @@ input PagesBlocksSpinningSensorFilter {
   description: StringFilter
 }
 
+input PagesBlocksPdfDocumentCardsItemsFilter {
+  title: StringFilter
+  description: StringFilter
+  category: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  pdfLabel: StringFilter
+  accent: StringFilter
+}
+
+input PagesBlocksPdfDocumentCardsFilter {
+  scheme: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  subtitle: StringFilter
+  columnCount: NumberFilter
+  items: PagesBlocksPdfDocumentCardsItemsFilter
+}
+
 input PagesBlocksFilter {
   hero: PagesBlocksHeroFilter
   trustBar: PagesBlocksTrustBarFilter
@@ -976,6 +1030,7 @@ input PagesBlocksFilter {
   valueProps: PagesBlocksValuePropsFilter
   timeline: PagesBlocksTimelineFilter
   spinningSensor: PagesBlocksSpinningSensorFilter
+  pdfDocumentCards: PagesBlocksPdfDocumentCardsFilter
 }
 
 input PagesFilter {
@@ -1040,6 +1095,7 @@ type SolutionsBlocksStatsBarStats {
 
 type SolutionsBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [SolutionsBlocksStatsBarStats]
 }
@@ -1078,10 +1134,12 @@ type SolutionsBlocksProcessStepsSteps {
   title: String!
   subtitle: String
   description: String
+  image: String
 }
 
 type SolutionsBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [SolutionsBlocksProcessStepsSteps]
   ctaText: String
@@ -1091,10 +1149,12 @@ type SolutionsBlocksProcessSteps {
 type SolutionsBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
+  image: String
 }
 
 type SolutionsBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [SolutionsBlocksMetricsBlockMetrics]
 }
@@ -1141,6 +1201,7 @@ type SolutionsBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [SolutionsBlocksTestimonialCarouselTestimonials]
 }
@@ -1303,6 +1364,7 @@ type SolutionsBlocksRoiCalculatorPromo {
 
 type SolutionsBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -1353,6 +1415,7 @@ type SolutionsBlocksSegmentCardsCards {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 type SolutionsBlocksSegmentCards {
@@ -1390,7 +1453,26 @@ type SolutionsBlocksSpinningSensor {
   description: String
 }
 
-union SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSupportForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline | SolutionsBlocksSpinningSensor
+type SolutionsBlocksPdfDocumentCardsItems {
+  title: String!
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String!
+  pdfLabel: String
+  accent: String
+}
+
+type SolutionsBlocksPdfDocumentCards {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [SolutionsBlocksPdfDocumentCardsItems]
+}
+
+union SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSupportForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline | SolutionsBlocksSpinningSensor | SolutionsBlocksPdfDocumentCards
 
 type Solutions implements Node & Document {
   blocks: [SolutionsBlocks]
@@ -1446,6 +1528,7 @@ input SolutionsBlocksStatsBarStatsFilter {
 
 input SolutionsBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: SolutionsBlocksStatsBarStatsFilter
 }
@@ -1484,10 +1567,12 @@ input SolutionsBlocksProcessStepsStepsFilter {
   title: StringFilter
   subtitle: StringFilter
   description: StringFilter
+  image: ImageFilter
 }
 
 input SolutionsBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: SolutionsBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -1497,10 +1582,12 @@ input SolutionsBlocksProcessStepsFilter {
 input SolutionsBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
+  image: ImageFilter
 }
 
 input SolutionsBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: SolutionsBlocksMetricsBlockMetricsFilter
 }
@@ -1547,6 +1634,7 @@ input SolutionsBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: SolutionsBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -1709,6 +1797,7 @@ input SolutionsBlocksRoiCalculatorPromoFilter {
 
 input SolutionsBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -1759,6 +1848,7 @@ input SolutionsBlocksSegmentCardsCardsFilter {
   link: StringFilter
   linkText: StringFilter
   logos: StringFilter
+  image: ImageFilter
 }
 
 input SolutionsBlocksSegmentCardsFilter {
@@ -1796,6 +1886,25 @@ input SolutionsBlocksSpinningSensorFilter {
   description: StringFilter
 }
 
+input SolutionsBlocksPdfDocumentCardsItemsFilter {
+  title: StringFilter
+  description: StringFilter
+  category: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  pdfLabel: StringFilter
+  accent: StringFilter
+}
+
+input SolutionsBlocksPdfDocumentCardsFilter {
+  scheme: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  subtitle: StringFilter
+  columnCount: NumberFilter
+  items: SolutionsBlocksPdfDocumentCardsItemsFilter
+}
+
 input SolutionsBlocksFilter {
   hero: SolutionsBlocksHeroFilter
   trustBar: SolutionsBlocksTrustBarFilter
@@ -1830,6 +1939,7 @@ input SolutionsBlocksFilter {
   valueProps: SolutionsBlocksValuePropsFilter
   timeline: SolutionsBlocksTimelineFilter
   spinningSensor: SolutionsBlocksSpinningSensorFilter
+  pdfDocumentCards: SolutionsBlocksPdfDocumentCardsFilter
 }
 
 input SolutionsFilter {
@@ -1894,6 +2004,7 @@ type SegmentsBlocksStatsBarStats {
 
 type SegmentsBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [SegmentsBlocksStatsBarStats]
 }
@@ -1932,10 +2043,12 @@ type SegmentsBlocksProcessStepsSteps {
   title: String!
   subtitle: String
   description: String
+  image: String
 }
 
 type SegmentsBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [SegmentsBlocksProcessStepsSteps]
   ctaText: String
@@ -1945,10 +2058,12 @@ type SegmentsBlocksProcessSteps {
 type SegmentsBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
+  image: String
 }
 
 type SegmentsBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [SegmentsBlocksMetricsBlockMetrics]
 }
@@ -1995,6 +2110,7 @@ type SegmentsBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [SegmentsBlocksTestimonialCarouselTestimonials]
 }
@@ -2157,6 +2273,7 @@ type SegmentsBlocksRoiCalculatorPromo {
 
 type SegmentsBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -2207,6 +2324,7 @@ type SegmentsBlocksSegmentCardsCards {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 type SegmentsBlocksSegmentCards {
@@ -2244,7 +2362,26 @@ type SegmentsBlocksSpinningSensor {
   description: String
 }
 
-union SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSupportForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline | SegmentsBlocksSpinningSensor
+type SegmentsBlocksPdfDocumentCardsItems {
+  title: String!
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String!
+  pdfLabel: String
+  accent: String
+}
+
+type SegmentsBlocksPdfDocumentCards {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [SegmentsBlocksPdfDocumentCardsItems]
+}
+
+union SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSupportForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline | SegmentsBlocksSpinningSensor | SegmentsBlocksPdfDocumentCards
 
 type Segments implements Node & Document {
   blocks: [SegmentsBlocks]
@@ -2300,6 +2437,7 @@ input SegmentsBlocksStatsBarStatsFilter {
 
 input SegmentsBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: SegmentsBlocksStatsBarStatsFilter
 }
@@ -2338,10 +2476,12 @@ input SegmentsBlocksProcessStepsStepsFilter {
   title: StringFilter
   subtitle: StringFilter
   description: StringFilter
+  image: ImageFilter
 }
 
 input SegmentsBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: SegmentsBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -2351,10 +2491,12 @@ input SegmentsBlocksProcessStepsFilter {
 input SegmentsBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
+  image: ImageFilter
 }
 
 input SegmentsBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: SegmentsBlocksMetricsBlockMetricsFilter
 }
@@ -2401,6 +2543,7 @@ input SegmentsBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: SegmentsBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -2563,6 +2706,7 @@ input SegmentsBlocksRoiCalculatorPromoFilter {
 
 input SegmentsBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -2613,6 +2757,7 @@ input SegmentsBlocksSegmentCardsCardsFilter {
   link: StringFilter
   linkText: StringFilter
   logos: StringFilter
+  image: ImageFilter
 }
 
 input SegmentsBlocksSegmentCardsFilter {
@@ -2650,6 +2795,25 @@ input SegmentsBlocksSpinningSensorFilter {
   description: StringFilter
 }
 
+input SegmentsBlocksPdfDocumentCardsItemsFilter {
+  title: StringFilter
+  description: StringFilter
+  category: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  pdfLabel: StringFilter
+  accent: StringFilter
+}
+
+input SegmentsBlocksPdfDocumentCardsFilter {
+  scheme: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  subtitle: StringFilter
+  columnCount: NumberFilter
+  items: SegmentsBlocksPdfDocumentCardsItemsFilter
+}
+
 input SegmentsBlocksFilter {
   hero: SegmentsBlocksHeroFilter
   trustBar: SegmentsBlocksTrustBarFilter
@@ -2684,6 +2848,7 @@ input SegmentsBlocksFilter {
   valueProps: SegmentsBlocksValuePropsFilter
   timeline: SegmentsBlocksTimelineFilter
   spinningSensor: SegmentsBlocksSpinningSensorFilter
+  pdfDocumentCards: SegmentsBlocksPdfDocumentCardsFilter
 }
 
 input SegmentsFilter {
@@ -2748,6 +2913,7 @@ type CompareBlocksStatsBarStats {
 
 type CompareBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [CompareBlocksStatsBarStats]
 }
@@ -2786,10 +2952,12 @@ type CompareBlocksProcessStepsSteps {
   title: String!
   subtitle: String
   description: String
+  image: String
 }
 
 type CompareBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [CompareBlocksProcessStepsSteps]
   ctaText: String
@@ -2799,10 +2967,12 @@ type CompareBlocksProcessSteps {
 type CompareBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
+  image: String
 }
 
 type CompareBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [CompareBlocksMetricsBlockMetrics]
 }
@@ -2849,6 +3019,7 @@ type CompareBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [CompareBlocksTestimonialCarouselTestimonials]
 }
@@ -3011,6 +3182,7 @@ type CompareBlocksRoiCalculatorPromo {
 
 type CompareBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -3061,6 +3233,7 @@ type CompareBlocksSegmentCardsCards {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 type CompareBlocksSegmentCards {
@@ -3098,7 +3271,26 @@ type CompareBlocksSpinningSensor {
   description: String
 }
 
-union CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSupportForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline | CompareBlocksSpinningSensor
+type CompareBlocksPdfDocumentCardsItems {
+  title: String!
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String!
+  pdfLabel: String
+  accent: String
+}
+
+type CompareBlocksPdfDocumentCards {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [CompareBlocksPdfDocumentCardsItems]
+}
+
+union CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSupportForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline | CompareBlocksSpinningSensor | CompareBlocksPdfDocumentCards
 
 type Compare implements Node & Document {
   blocks: [CompareBlocks]
@@ -3154,6 +3346,7 @@ input CompareBlocksStatsBarStatsFilter {
 
 input CompareBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: CompareBlocksStatsBarStatsFilter
 }
@@ -3192,10 +3385,12 @@ input CompareBlocksProcessStepsStepsFilter {
   title: StringFilter
   subtitle: StringFilter
   description: StringFilter
+  image: ImageFilter
 }
 
 input CompareBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: CompareBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -3205,10 +3400,12 @@ input CompareBlocksProcessStepsFilter {
 input CompareBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
+  image: ImageFilter
 }
 
 input CompareBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: CompareBlocksMetricsBlockMetricsFilter
 }
@@ -3255,6 +3452,7 @@ input CompareBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: CompareBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -3417,6 +3615,7 @@ input CompareBlocksRoiCalculatorPromoFilter {
 
 input CompareBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -3467,6 +3666,7 @@ input CompareBlocksSegmentCardsCardsFilter {
   link: StringFilter
   linkText: StringFilter
   logos: StringFilter
+  image: ImageFilter
 }
 
 input CompareBlocksSegmentCardsFilter {
@@ -3504,6 +3704,25 @@ input CompareBlocksSpinningSensorFilter {
   description: StringFilter
 }
 
+input CompareBlocksPdfDocumentCardsItemsFilter {
+  title: StringFilter
+  description: StringFilter
+  category: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  pdfLabel: StringFilter
+  accent: StringFilter
+}
+
+input CompareBlocksPdfDocumentCardsFilter {
+  scheme: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  subtitle: StringFilter
+  columnCount: NumberFilter
+  items: CompareBlocksPdfDocumentCardsItemsFilter
+}
+
 input CompareBlocksFilter {
   hero: CompareBlocksHeroFilter
   trustBar: CompareBlocksTrustBarFilter
@@ -3538,6 +3757,7 @@ input CompareBlocksFilter {
   valueProps: CompareBlocksValuePropsFilter
   timeline: CompareBlocksTimelineFilter
   spinningSensor: CompareBlocksSpinningSensorFilter
+  pdfDocumentCards: CompareBlocksPdfDocumentCardsFilter
 }
 
 input CompareFilter {
@@ -3602,6 +3822,7 @@ type LearnBlocksStatsBarStats {
 
 type LearnBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [LearnBlocksStatsBarStats]
 }
@@ -3640,10 +3861,12 @@ type LearnBlocksProcessStepsSteps {
   title: String!
   subtitle: String
   description: String
+  image: String
 }
 
 type LearnBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [LearnBlocksProcessStepsSteps]
   ctaText: String
@@ -3653,10 +3876,12 @@ type LearnBlocksProcessSteps {
 type LearnBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
+  image: String
 }
 
 type LearnBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [LearnBlocksMetricsBlockMetrics]
 }
@@ -3703,6 +3928,7 @@ type LearnBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [LearnBlocksTestimonialCarouselTestimonials]
 }
@@ -3865,6 +4091,7 @@ type LearnBlocksRoiCalculatorPromo {
 
 type LearnBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -3915,6 +4142,7 @@ type LearnBlocksSegmentCardsCards {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 type LearnBlocksSegmentCards {
@@ -3952,7 +4180,26 @@ type LearnBlocksSpinningSensor {
   description: String
 }
 
-union LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSupportForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline | LearnBlocksSpinningSensor
+type LearnBlocksPdfDocumentCardsItems {
+  title: String!
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String!
+  pdfLabel: String
+  accent: String
+}
+
+type LearnBlocksPdfDocumentCards {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [LearnBlocksPdfDocumentCardsItems]
+}
+
+union LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSupportForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline | LearnBlocksSpinningSensor | LearnBlocksPdfDocumentCards
 
 type Learn implements Node & Document {
   title: String!
@@ -3967,6 +4214,8 @@ type Learn implements Node & Document {
   readTime: Float
   image: String
   featured: Boolean
+  downloadPdf: String
+  downloadPdfLabel: String
   description: String
   primaryKeyword: String
   keywords: [String]
@@ -4022,6 +4271,7 @@ input LearnBlocksStatsBarStatsFilter {
 
 input LearnBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: LearnBlocksStatsBarStatsFilter
 }
@@ -4060,10 +4310,12 @@ input LearnBlocksProcessStepsStepsFilter {
   title: StringFilter
   subtitle: StringFilter
   description: StringFilter
+  image: ImageFilter
 }
 
 input LearnBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: LearnBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -4073,10 +4325,12 @@ input LearnBlocksProcessStepsFilter {
 input LearnBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
+  image: ImageFilter
 }
 
 input LearnBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: LearnBlocksMetricsBlockMetricsFilter
 }
@@ -4123,6 +4377,7 @@ input LearnBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: LearnBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -4285,6 +4540,7 @@ input LearnBlocksRoiCalculatorPromoFilter {
 
 input LearnBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -4335,6 +4591,7 @@ input LearnBlocksSegmentCardsCardsFilter {
   link: StringFilter
   linkText: StringFilter
   logos: StringFilter
+  image: ImageFilter
 }
 
 input LearnBlocksSegmentCardsFilter {
@@ -4372,6 +4629,25 @@ input LearnBlocksSpinningSensorFilter {
   description: StringFilter
 }
 
+input LearnBlocksPdfDocumentCardsItemsFilter {
+  title: StringFilter
+  description: StringFilter
+  category: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  pdfLabel: StringFilter
+  accent: StringFilter
+}
+
+input LearnBlocksPdfDocumentCardsFilter {
+  scheme: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  subtitle: StringFilter
+  columnCount: NumberFilter
+  items: LearnBlocksPdfDocumentCardsItemsFilter
+}
+
 input LearnBlocksFilter {
   hero: LearnBlocksHeroFilter
   trustBar: LearnBlocksTrustBarFilter
@@ -4406,6 +4682,7 @@ input LearnBlocksFilter {
   valueProps: LearnBlocksValuePropsFilter
   timeline: LearnBlocksTimelineFilter
   spinningSensor: LearnBlocksSpinningSensorFilter
+  pdfDocumentCards: LearnBlocksPdfDocumentCardsFilter
 }
 
 input LearnFilter {
@@ -4421,6 +4698,8 @@ input LearnFilter {
   readTime: NumberFilter
   image: ImageFilter
   featured: BooleanFilter
+  downloadPdf: StringFilter
+  downloadPdfLabel: StringFilter
   description: StringFilter
   primaryKeyword: StringFilter
   keywords: StringFilter
@@ -4478,6 +4757,7 @@ type ResourcesBlocksStatsBarStats {
 
 type ResourcesBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [ResourcesBlocksStatsBarStats]
 }
@@ -4516,10 +4796,12 @@ type ResourcesBlocksProcessStepsSteps {
   title: String!
   subtitle: String
   description: String
+  image: String
 }
 
 type ResourcesBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [ResourcesBlocksProcessStepsSteps]
   ctaText: String
@@ -4529,10 +4811,12 @@ type ResourcesBlocksProcessSteps {
 type ResourcesBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
+  image: String
 }
 
 type ResourcesBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [ResourcesBlocksMetricsBlockMetrics]
 }
@@ -4579,6 +4863,7 @@ type ResourcesBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [ResourcesBlocksTestimonialCarouselTestimonials]
 }
@@ -4741,6 +5026,7 @@ type ResourcesBlocksRoiCalculatorPromo {
 
 type ResourcesBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -4791,6 +5077,7 @@ type ResourcesBlocksSegmentCardsCards {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 type ResourcesBlocksSegmentCards {
@@ -4828,7 +5115,26 @@ type ResourcesBlocksSpinningSensor {
   description: String
 }
 
-union ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSupportForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline | ResourcesBlocksSpinningSensor
+type ResourcesBlocksPdfDocumentCardsItems {
+  title: String!
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String!
+  pdfLabel: String
+  accent: String
+}
+
+type ResourcesBlocksPdfDocumentCards {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [ResourcesBlocksPdfDocumentCardsItems]
+}
+
+union ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSupportForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline | ResourcesBlocksSpinningSensor | ResourcesBlocksPdfDocumentCards
 
 type Resources implements Node & Document {
   blocks: [ResourcesBlocks]
@@ -4884,6 +5190,7 @@ input ResourcesBlocksStatsBarStatsFilter {
 
 input ResourcesBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: ResourcesBlocksStatsBarStatsFilter
 }
@@ -4922,10 +5229,12 @@ input ResourcesBlocksProcessStepsStepsFilter {
   title: StringFilter
   subtitle: StringFilter
   description: StringFilter
+  image: ImageFilter
 }
 
 input ResourcesBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: ResourcesBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -4935,10 +5244,12 @@ input ResourcesBlocksProcessStepsFilter {
 input ResourcesBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
+  image: ImageFilter
 }
 
 input ResourcesBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: ResourcesBlocksMetricsBlockMetricsFilter
 }
@@ -4985,6 +5296,7 @@ input ResourcesBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: ResourcesBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -5147,6 +5459,7 @@ input ResourcesBlocksRoiCalculatorPromoFilter {
 
 input ResourcesBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -5197,6 +5510,7 @@ input ResourcesBlocksSegmentCardsCardsFilter {
   link: StringFilter
   linkText: StringFilter
   logos: StringFilter
+  image: ImageFilter
 }
 
 input ResourcesBlocksSegmentCardsFilter {
@@ -5234,6 +5548,25 @@ input ResourcesBlocksSpinningSensorFilter {
   description: StringFilter
 }
 
+input ResourcesBlocksPdfDocumentCardsItemsFilter {
+  title: StringFilter
+  description: StringFilter
+  category: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  pdfLabel: StringFilter
+  accent: StringFilter
+}
+
+input ResourcesBlocksPdfDocumentCardsFilter {
+  scheme: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  subtitle: StringFilter
+  columnCount: NumberFilter
+  items: ResourcesBlocksPdfDocumentCardsItemsFilter
+}
+
 input ResourcesBlocksFilter {
   hero: ResourcesBlocksHeroFilter
   trustBar: ResourcesBlocksTrustBarFilter
@@ -5268,6 +5601,7 @@ input ResourcesBlocksFilter {
   valueProps: ResourcesBlocksValuePropsFilter
   timeline: ResourcesBlocksTimelineFilter
   spinningSensor: ResourcesBlocksSpinningSensorFilter
+  pdfDocumentCards: ResourcesBlocksPdfDocumentCardsFilter
 }
 
 input ResourcesFilter {
@@ -5332,6 +5666,7 @@ type CompanyBlocksStatsBarStats {
 
 type CompanyBlocksStatsBar {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [CompanyBlocksStatsBarStats]
 }
@@ -5370,10 +5705,12 @@ type CompanyBlocksProcessStepsSteps {
   title: String!
   subtitle: String
   description: String
+  image: String
 }
 
 type CompanyBlocksProcessSteps {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [CompanyBlocksProcessStepsSteps]
   ctaText: String
@@ -5383,10 +5720,12 @@ type CompanyBlocksProcessSteps {
 type CompanyBlocksMetricsBlockMetrics {
   name: String!
   whatItMeasures: String
+  image: String
 }
 
 type CompanyBlocksMetricsBlock {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [CompanyBlocksMetricsBlockMetrics]
 }
@@ -5433,6 +5772,7 @@ type CompanyBlocksTestimonialCarousel {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [CompanyBlocksTestimonialCarouselTestimonials]
 }
@@ -5595,6 +5935,7 @@ type CompanyBlocksRoiCalculatorPromo {
 
 type CompanyBlocksLeadMagnetPromo {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -5645,6 +5986,7 @@ type CompanyBlocksSegmentCardsCards {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 type CompanyBlocksSegmentCards {
@@ -5682,7 +6024,26 @@ type CompanyBlocksSpinningSensor {
   description: String
 }
 
-union CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSupportForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline | CompanyBlocksSpinningSensor
+type CompanyBlocksPdfDocumentCardsItems {
+  title: String!
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String!
+  pdfLabel: String
+  accent: String
+}
+
+type CompanyBlocksPdfDocumentCards {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [CompanyBlocksPdfDocumentCardsItems]
+}
+
+union CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSupportForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline | CompanyBlocksSpinningSensor | CompanyBlocksPdfDocumentCards
 
 type Company implements Node & Document {
   blocks: [CompanyBlocks]
@@ -5738,6 +6099,7 @@ input CompanyBlocksStatsBarStatsFilter {
 
 input CompanyBlocksStatsBarFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   stats: CompanyBlocksStatsBarStatsFilter
 }
@@ -5776,10 +6138,12 @@ input CompanyBlocksProcessStepsStepsFilter {
   title: StringFilter
   subtitle: StringFilter
   description: StringFilter
+  image: ImageFilter
 }
 
 input CompanyBlocksProcessStepsFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   steps: CompanyBlocksProcessStepsStepsFilter
   ctaText: StringFilter
@@ -5789,10 +6153,12 @@ input CompanyBlocksProcessStepsFilter {
 input CompanyBlocksMetricsBlockMetricsFilter {
   name: StringFilter
   whatItMeasures: StringFilter
+  image: ImageFilter
 }
 
 input CompanyBlocksMetricsBlockFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   metrics: CompanyBlocksMetricsBlockMetricsFilter
 }
@@ -5839,6 +6205,7 @@ input CompanyBlocksTestimonialCarouselFilter {
   scheme: StringFilter
   wave: StringFilter
   waveFill: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   testimonials: CompanyBlocksTestimonialCarouselTestimonialsFilter
 }
@@ -6001,6 +6368,7 @@ input CompanyBlocksRoiCalculatorPromoFilter {
 
 input CompanyBlocksLeadMagnetPromoFilter {
   scheme: StringFilter
+  eyebrow: StringFilter
   heading: StringFilter
   promoBody: StringFilter
   ctaText: StringFilter
@@ -6051,6 +6419,7 @@ input CompanyBlocksSegmentCardsCardsFilter {
   link: StringFilter
   linkText: StringFilter
   logos: StringFilter
+  image: ImageFilter
 }
 
 input CompanyBlocksSegmentCardsFilter {
@@ -6088,6 +6457,25 @@ input CompanyBlocksSpinningSensorFilter {
   description: StringFilter
 }
 
+input CompanyBlocksPdfDocumentCardsItemsFilter {
+  title: StringFilter
+  description: StringFilter
+  category: StringFilter
+  ctaText: StringFilter
+  ctaLink: StringFilter
+  pdfLabel: StringFilter
+  accent: StringFilter
+}
+
+input CompanyBlocksPdfDocumentCardsFilter {
+  scheme: StringFilter
+  eyebrow: StringFilter
+  heading: StringFilter
+  subtitle: StringFilter
+  columnCount: NumberFilter
+  items: CompanyBlocksPdfDocumentCardsItemsFilter
+}
+
 input CompanyBlocksFilter {
   hero: CompanyBlocksHeroFilter
   trustBar: CompanyBlocksTrustBarFilter
@@ -6122,6 +6510,7 @@ input CompanyBlocksFilter {
   valueProps: CompanyBlocksValuePropsFilter
   timeline: CompanyBlocksTimelineFilter
   spinningSensor: CompanyBlocksSpinningSensorFilter
+  pdfDocumentCards: CompanyBlocksPdfDocumentCardsFilter
 }
 
 input CompanyFilter {
@@ -6451,6 +6840,7 @@ input PagesBlocksStatsBarStatsMutation {
 
 input PagesBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [PagesBlocksStatsBarStatsMutation]
 }
@@ -6489,10 +6879,12 @@ input PagesBlocksProcessStepsStepsMutation {
   title: String
   subtitle: String
   description: String
+  image: String
 }
 
 input PagesBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [PagesBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -6502,10 +6894,12 @@ input PagesBlocksProcessStepsMutation {
 input PagesBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
+  image: String
 }
 
 input PagesBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [PagesBlocksMetricsBlockMetricsMutation]
 }
@@ -6552,6 +6946,7 @@ input PagesBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [PagesBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -6714,6 +7109,7 @@ input PagesBlocksRoiCalculatorPromoMutation {
 
 input PagesBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -6764,6 +7160,7 @@ input PagesBlocksSegmentCardsCardsMutation {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 input PagesBlocksSegmentCardsMutation {
@@ -6801,6 +7198,25 @@ input PagesBlocksSpinningSensorMutation {
   description: String
 }
 
+input PagesBlocksPdfDocumentCardsItemsMutation {
+  title: String
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String
+  pdfLabel: String
+  accent: String
+}
+
+input PagesBlocksPdfDocumentCardsMutation {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [PagesBlocksPdfDocumentCardsItemsMutation]
+}
+
 input PagesBlocksMutation {
   hero: PagesBlocksHeroMutation
   trustBar: PagesBlocksTrustBarMutation
@@ -6835,6 +7251,7 @@ input PagesBlocksMutation {
   valueProps: PagesBlocksValuePropsMutation
   timeline: PagesBlocksTimelineMutation
   spinningSensor: PagesBlocksSpinningSensorMutation
+  pdfDocumentCards: PagesBlocksPdfDocumentCardsMutation
 }
 
 input PagesMutation {
@@ -6888,6 +7305,7 @@ input SolutionsBlocksStatsBarStatsMutation {
 
 input SolutionsBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [SolutionsBlocksStatsBarStatsMutation]
 }
@@ -6926,10 +7344,12 @@ input SolutionsBlocksProcessStepsStepsMutation {
   title: String
   subtitle: String
   description: String
+  image: String
 }
 
 input SolutionsBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [SolutionsBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -6939,10 +7359,12 @@ input SolutionsBlocksProcessStepsMutation {
 input SolutionsBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
+  image: String
 }
 
 input SolutionsBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [SolutionsBlocksMetricsBlockMetricsMutation]
 }
@@ -6989,6 +7411,7 @@ input SolutionsBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [SolutionsBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -7151,6 +7574,7 @@ input SolutionsBlocksRoiCalculatorPromoMutation {
 
 input SolutionsBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -7201,6 +7625,7 @@ input SolutionsBlocksSegmentCardsCardsMutation {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 input SolutionsBlocksSegmentCardsMutation {
@@ -7238,6 +7663,25 @@ input SolutionsBlocksSpinningSensorMutation {
   description: String
 }
 
+input SolutionsBlocksPdfDocumentCardsItemsMutation {
+  title: String
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String
+  pdfLabel: String
+  accent: String
+}
+
+input SolutionsBlocksPdfDocumentCardsMutation {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [SolutionsBlocksPdfDocumentCardsItemsMutation]
+}
+
 input SolutionsBlocksMutation {
   hero: SolutionsBlocksHeroMutation
   trustBar: SolutionsBlocksTrustBarMutation
@@ -7272,6 +7716,7 @@ input SolutionsBlocksMutation {
   valueProps: SolutionsBlocksValuePropsMutation
   timeline: SolutionsBlocksTimelineMutation
   spinningSensor: SolutionsBlocksSpinningSensorMutation
+  pdfDocumentCards: SolutionsBlocksPdfDocumentCardsMutation
 }
 
 input SolutionsMutation {
@@ -7325,6 +7770,7 @@ input SegmentsBlocksStatsBarStatsMutation {
 
 input SegmentsBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [SegmentsBlocksStatsBarStatsMutation]
 }
@@ -7363,10 +7809,12 @@ input SegmentsBlocksProcessStepsStepsMutation {
   title: String
   subtitle: String
   description: String
+  image: String
 }
 
 input SegmentsBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [SegmentsBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -7376,10 +7824,12 @@ input SegmentsBlocksProcessStepsMutation {
 input SegmentsBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
+  image: String
 }
 
 input SegmentsBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [SegmentsBlocksMetricsBlockMetricsMutation]
 }
@@ -7426,6 +7876,7 @@ input SegmentsBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [SegmentsBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -7588,6 +8039,7 @@ input SegmentsBlocksRoiCalculatorPromoMutation {
 
 input SegmentsBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -7638,6 +8090,7 @@ input SegmentsBlocksSegmentCardsCardsMutation {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 input SegmentsBlocksSegmentCardsMutation {
@@ -7675,6 +8128,25 @@ input SegmentsBlocksSpinningSensorMutation {
   description: String
 }
 
+input SegmentsBlocksPdfDocumentCardsItemsMutation {
+  title: String
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String
+  pdfLabel: String
+  accent: String
+}
+
+input SegmentsBlocksPdfDocumentCardsMutation {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [SegmentsBlocksPdfDocumentCardsItemsMutation]
+}
+
 input SegmentsBlocksMutation {
   hero: SegmentsBlocksHeroMutation
   trustBar: SegmentsBlocksTrustBarMutation
@@ -7709,6 +8181,7 @@ input SegmentsBlocksMutation {
   valueProps: SegmentsBlocksValuePropsMutation
   timeline: SegmentsBlocksTimelineMutation
   spinningSensor: SegmentsBlocksSpinningSensorMutation
+  pdfDocumentCards: SegmentsBlocksPdfDocumentCardsMutation
 }
 
 input SegmentsMutation {
@@ -7762,6 +8235,7 @@ input CompareBlocksStatsBarStatsMutation {
 
 input CompareBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [CompareBlocksStatsBarStatsMutation]
 }
@@ -7800,10 +8274,12 @@ input CompareBlocksProcessStepsStepsMutation {
   title: String
   subtitle: String
   description: String
+  image: String
 }
 
 input CompareBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [CompareBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -7813,10 +8289,12 @@ input CompareBlocksProcessStepsMutation {
 input CompareBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
+  image: String
 }
 
 input CompareBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [CompareBlocksMetricsBlockMetricsMutation]
 }
@@ -7863,6 +8341,7 @@ input CompareBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [CompareBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -8025,6 +8504,7 @@ input CompareBlocksRoiCalculatorPromoMutation {
 
 input CompareBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -8075,6 +8555,7 @@ input CompareBlocksSegmentCardsCardsMutation {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 input CompareBlocksSegmentCardsMutation {
@@ -8112,6 +8593,25 @@ input CompareBlocksSpinningSensorMutation {
   description: String
 }
 
+input CompareBlocksPdfDocumentCardsItemsMutation {
+  title: String
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String
+  pdfLabel: String
+  accent: String
+}
+
+input CompareBlocksPdfDocumentCardsMutation {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [CompareBlocksPdfDocumentCardsItemsMutation]
+}
+
 input CompareBlocksMutation {
   hero: CompareBlocksHeroMutation
   trustBar: CompareBlocksTrustBarMutation
@@ -8146,6 +8646,7 @@ input CompareBlocksMutation {
   valueProps: CompareBlocksValuePropsMutation
   timeline: CompareBlocksTimelineMutation
   spinningSensor: CompareBlocksSpinningSensorMutation
+  pdfDocumentCards: CompareBlocksPdfDocumentCardsMutation
 }
 
 input CompareMutation {
@@ -8199,6 +8700,7 @@ input LearnBlocksStatsBarStatsMutation {
 
 input LearnBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [LearnBlocksStatsBarStatsMutation]
 }
@@ -8237,10 +8739,12 @@ input LearnBlocksProcessStepsStepsMutation {
   title: String
   subtitle: String
   description: String
+  image: String
 }
 
 input LearnBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [LearnBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -8250,10 +8754,12 @@ input LearnBlocksProcessStepsMutation {
 input LearnBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
+  image: String
 }
 
 input LearnBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [LearnBlocksMetricsBlockMetricsMutation]
 }
@@ -8300,6 +8806,7 @@ input LearnBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [LearnBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -8462,6 +8969,7 @@ input LearnBlocksRoiCalculatorPromoMutation {
 
 input LearnBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -8512,6 +9020,7 @@ input LearnBlocksSegmentCardsCardsMutation {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 input LearnBlocksSegmentCardsMutation {
@@ -8549,6 +9058,25 @@ input LearnBlocksSpinningSensorMutation {
   description: String
 }
 
+input LearnBlocksPdfDocumentCardsItemsMutation {
+  title: String
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String
+  pdfLabel: String
+  accent: String
+}
+
+input LearnBlocksPdfDocumentCardsMutation {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [LearnBlocksPdfDocumentCardsItemsMutation]
+}
+
 input LearnBlocksMutation {
   hero: LearnBlocksHeroMutation
   trustBar: LearnBlocksTrustBarMutation
@@ -8583,6 +9111,7 @@ input LearnBlocksMutation {
   valueProps: LearnBlocksValuePropsMutation
   timeline: LearnBlocksTimelineMutation
   spinningSensor: LearnBlocksSpinningSensorMutation
+  pdfDocumentCards: LearnBlocksPdfDocumentCardsMutation
 }
 
 input LearnMutation {
@@ -8598,6 +9127,8 @@ input LearnMutation {
   readTime: Float
   image: String
   featured: Boolean
+  downloadPdf: String
+  downloadPdfLabel: String
   description: String
   primaryKeyword: String
   keywords: [String]
@@ -8644,6 +9175,7 @@ input ResourcesBlocksStatsBarStatsMutation {
 
 input ResourcesBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [ResourcesBlocksStatsBarStatsMutation]
 }
@@ -8682,10 +9214,12 @@ input ResourcesBlocksProcessStepsStepsMutation {
   title: String
   subtitle: String
   description: String
+  image: String
 }
 
 input ResourcesBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [ResourcesBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -8695,10 +9229,12 @@ input ResourcesBlocksProcessStepsMutation {
 input ResourcesBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
+  image: String
 }
 
 input ResourcesBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [ResourcesBlocksMetricsBlockMetricsMutation]
 }
@@ -8745,6 +9281,7 @@ input ResourcesBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [ResourcesBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -8907,6 +9444,7 @@ input ResourcesBlocksRoiCalculatorPromoMutation {
 
 input ResourcesBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -8957,6 +9495,7 @@ input ResourcesBlocksSegmentCardsCardsMutation {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 input ResourcesBlocksSegmentCardsMutation {
@@ -8994,6 +9533,25 @@ input ResourcesBlocksSpinningSensorMutation {
   description: String
 }
 
+input ResourcesBlocksPdfDocumentCardsItemsMutation {
+  title: String
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String
+  pdfLabel: String
+  accent: String
+}
+
+input ResourcesBlocksPdfDocumentCardsMutation {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [ResourcesBlocksPdfDocumentCardsItemsMutation]
+}
+
 input ResourcesBlocksMutation {
   hero: ResourcesBlocksHeroMutation
   trustBar: ResourcesBlocksTrustBarMutation
@@ -9028,6 +9586,7 @@ input ResourcesBlocksMutation {
   valueProps: ResourcesBlocksValuePropsMutation
   timeline: ResourcesBlocksTimelineMutation
   spinningSensor: ResourcesBlocksSpinningSensorMutation
+  pdfDocumentCards: ResourcesBlocksPdfDocumentCardsMutation
 }
 
 input ResourcesMutation {
@@ -9081,6 +9640,7 @@ input CompanyBlocksStatsBarStatsMutation {
 
 input CompanyBlocksStatsBarMutation {
   scheme: String
+  eyebrow: String
   heading: String
   stats: [CompanyBlocksStatsBarStatsMutation]
 }
@@ -9119,10 +9679,12 @@ input CompanyBlocksProcessStepsStepsMutation {
   title: String
   subtitle: String
   description: String
+  image: String
 }
 
 input CompanyBlocksProcessStepsMutation {
   scheme: String
+  eyebrow: String
   heading: String
   steps: [CompanyBlocksProcessStepsStepsMutation]
   ctaText: String
@@ -9132,10 +9694,12 @@ input CompanyBlocksProcessStepsMutation {
 input CompanyBlocksMetricsBlockMetricsMutation {
   name: String
   whatItMeasures: String
+  image: String
 }
 
 input CompanyBlocksMetricsBlockMutation {
   scheme: String
+  eyebrow: String
   heading: String
   metrics: [CompanyBlocksMetricsBlockMetricsMutation]
 }
@@ -9182,6 +9746,7 @@ input CompanyBlocksTestimonialCarouselMutation {
   scheme: String
   wave: String
   waveFill: String
+  eyebrow: String
   heading: String
   testimonials: [CompanyBlocksTestimonialCarouselTestimonialsMutation]
 }
@@ -9344,6 +9909,7 @@ input CompanyBlocksRoiCalculatorPromoMutation {
 
 input CompanyBlocksLeadMagnetPromoMutation {
   scheme: String
+  eyebrow: String
   heading: String
   promoBody: String
   ctaText: String
@@ -9394,6 +9960,7 @@ input CompanyBlocksSegmentCardsCardsMutation {
   link: String
   linkText: String
   logos: [String]
+  image: String
 }
 
 input CompanyBlocksSegmentCardsMutation {
@@ -9431,6 +9998,25 @@ input CompanyBlocksSpinningSensorMutation {
   description: String
 }
 
+input CompanyBlocksPdfDocumentCardsItemsMutation {
+  title: String
+  description: String
+  category: String
+  ctaText: String
+  ctaLink: String
+  pdfLabel: String
+  accent: String
+}
+
+input CompanyBlocksPdfDocumentCardsMutation {
+  scheme: String
+  eyebrow: String
+  heading: String
+  subtitle: String
+  columnCount: Float
+  items: [CompanyBlocksPdfDocumentCardsItemsMutation]
+}
+
 input CompanyBlocksMutation {
   hero: CompanyBlocksHeroMutation
   trustBar: CompanyBlocksTrustBarMutation
@@ -9465,6 +10051,7 @@ input CompanyBlocksMutation {
   valueProps: CompanyBlocksValuePropsMutation
   timeline: CompanyBlocksTimelineMutation
   spinningSensor: CompanyBlocksSpinningSensorMutation
+  pdfDocumentCards: CompanyBlocksPdfDocumentCardsMutation
 }
 
 input CompanyMutation {

@@ -375,7 +375,7 @@ var ctaBannerBlock = {
       scheme: "blue",
       wave: "ribbon",
       heading: "See Able Assess in your workflow.",
-      bodyText: "A 20-minute demo with a clinician who has run it in the field.",
+      bodyText: "Book a walkthrough with a clinician who has run it in the field.",
       primaryCtaText: "Book a demo",
       primaryCtaLink: "/demo/"
     }
@@ -857,7 +857,7 @@ var pdfDocumentCardsBlock = {
     { type: "string", name: "eyebrow", label: "Eyebrow" },
     { type: "string", name: "heading", label: "Section Heading" },
     { type: "string", name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
-    { type: "number", name: "columns", label: "Columns (2 or 3)", description: "2 columns for prominent guides, 3 for denser doc grids.", ui: { defaultValue: 2 } },
+    { type: "number", name: "columnCount", label: "Columns (2 or 3)", description: "2 columns for prominent guides, 3 for denser doc grids.", ui: { defaultValue: 2 } },
     {
       type: "object",
       name: "items",

@@ -391,6 +391,7 @@ export type PagesBlocksStatsBarStats = {
 export type PagesBlocksStatsBar = {
   __typename?: 'PagesBlocksStatsBar';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   stats?: Maybe<Array<Maybe<PagesBlocksStatsBarStats>>>;
 };
@@ -434,11 +435,13 @@ export type PagesBlocksProcessStepsSteps = {
   title: Scalars['String']['output'];
   subtitle?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type PagesBlocksProcessSteps = {
   __typename?: 'PagesBlocksProcessSteps';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   steps?: Maybe<Array<Maybe<PagesBlocksProcessStepsSteps>>>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -449,11 +452,13 @@ export type PagesBlocksMetricsBlockMetrics = {
   __typename?: 'PagesBlocksMetricsBlockMetrics';
   name: Scalars['String']['output'];
   whatItMeasures?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type PagesBlocksMetricsBlock = {
   __typename?: 'PagesBlocksMetricsBlock';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   metrics?: Maybe<Array<Maybe<PagesBlocksMetricsBlockMetrics>>>;
 };
@@ -506,6 +511,7 @@ export type PagesBlocksTestimonialCarousel = {
   scheme?: Maybe<Scalars['String']['output']>;
   wave?: Maybe<Scalars['String']['output']>;
   waveFill?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   testimonials?: Maybe<Array<Maybe<PagesBlocksTestimonialCarouselTestimonials>>>;
 };
@@ -689,6 +695,7 @@ export type PagesBlocksRoiCalculatorPromo = {
 export type PagesBlocksLeadMagnetPromo = {
   __typename?: 'PagesBlocksLeadMagnetPromo';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   promoBody?: Maybe<Scalars['String']['output']>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -746,6 +753,7 @@ export type PagesBlocksSegmentCardsCards = {
   link?: Maybe<Scalars['String']['output']>;
   linkText?: Maybe<Scalars['String']['output']>;
   logos?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type PagesBlocksSegmentCards = {
@@ -789,7 +797,28 @@ export type PagesBlocksSpinningSensor = {
   description?: Maybe<Scalars['String']['output']>;
 };
 
-export type PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSupportForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline | PagesBlocksSpinningSensor;
+export type PagesBlocksPdfDocumentCardsItems = {
+  __typename?: 'PagesBlocksPdfDocumentCardsItems';
+  title: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  category?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  ctaLink: Scalars['String']['output'];
+  pdfLabel?: Maybe<Scalars['String']['output']>;
+  accent?: Maybe<Scalars['String']['output']>;
+};
+
+export type PagesBlocksPdfDocumentCards = {
+  __typename?: 'PagesBlocksPdfDocumentCards';
+  scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  columnCount?: Maybe<Scalars['Float']['output']>;
+  items?: Maybe<Array<Maybe<PagesBlocksPdfDocumentCardsItems>>>;
+};
+
+export type PagesBlocks = PagesBlocksHero | PagesBlocksTrustBar | PagesBlocksStatsBar | PagesBlocksSegmentRouter | PagesBlocksSolutionCards | PagesBlocksProcessSteps | PagesBlocksMetricsBlock | PagesBlocksFeatureComparison | PagesBlocksEvidenceBlock | PagesBlocksTestimonialCarousel | PagesBlocksCaseStudyCards | PagesBlocksFaqAccordion | PagesBlocksCtaBanner | PagesBlocksCtaInline | PagesBlocksImageFeature | PagesBlocksVideoSection | PagesBlocksTeamGrid | PagesBlocksTeamShowcase | PagesBlocksTrustCertBlock | PagesBlocksAlertBanner | PagesBlocksProse | PagesBlocksRichText | PagesBlocksRelatedPages | PagesBlocksRoiCalculatorPromo | PagesBlocksLeadMagnetPromo | PagesBlocksBreadcrumb | PagesBlocksPartnerLogoCarousel | PagesBlocksContactForm | PagesBlocksSupportForm | PagesBlocksSegmentCards | PagesBlocksValueProps | PagesBlocksTimeline | PagesBlocksSpinningSensor | PagesBlocksPdfDocumentCards;
 
 export type Pages = Node & Document & {
   __typename?: 'Pages';
@@ -860,6 +889,7 @@ export type PagesBlocksStatsBarStatsFilter = {
 
 export type PagesBlocksStatsBarFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   stats?: InputMaybe<PagesBlocksStatsBarStatsFilter>;
 };
@@ -908,10 +938,12 @@ export type PagesBlocksProcessStepsStepsFilter = {
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type PagesBlocksProcessStepsFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   steps?: InputMaybe<PagesBlocksProcessStepsStepsFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -921,10 +953,12 @@ export type PagesBlocksProcessStepsFilter = {
 export type PagesBlocksMetricsBlockMetricsFilter = {
   name?: InputMaybe<StringFilter>;
   whatItMeasures?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type PagesBlocksMetricsBlockFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   metrics?: InputMaybe<PagesBlocksMetricsBlockMetricsFilter>;
 };
@@ -971,6 +1005,7 @@ export type PagesBlocksTestimonialCarouselFilter = {
   scheme?: InputMaybe<StringFilter>;
   wave?: InputMaybe<StringFilter>;
   waveFill?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   testimonials?: InputMaybe<PagesBlocksTestimonialCarouselTestimonialsFilter>;
 };
@@ -1138,6 +1173,7 @@ export type PagesBlocksRoiCalculatorPromoFilter = {
 
 export type PagesBlocksLeadMagnetPromoFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   promoBody?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -1188,6 +1224,7 @@ export type PagesBlocksSegmentCardsCardsFilter = {
   link?: InputMaybe<StringFilter>;
   linkText?: InputMaybe<StringFilter>;
   logos?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type PagesBlocksSegmentCardsFilter = {
@@ -1225,6 +1262,25 @@ export type PagesBlocksSpinningSensorFilter = {
   description?: InputMaybe<StringFilter>;
 };
 
+export type PagesBlocksPdfDocumentCardsItemsFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+  pdfLabel?: InputMaybe<StringFilter>;
+  accent?: InputMaybe<StringFilter>;
+};
+
+export type PagesBlocksPdfDocumentCardsFilter = {
+  scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
+  heading?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  columnCount?: InputMaybe<NumberFilter>;
+  items?: InputMaybe<PagesBlocksPdfDocumentCardsItemsFilter>;
+};
+
 export type PagesBlocksFilter = {
   hero?: InputMaybe<PagesBlocksHeroFilter>;
   trustBar?: InputMaybe<PagesBlocksTrustBarFilter>;
@@ -1259,6 +1315,7 @@ export type PagesBlocksFilter = {
   valueProps?: InputMaybe<PagesBlocksValuePropsFilter>;
   timeline?: InputMaybe<PagesBlocksTimelineFilter>;
   spinningSensor?: InputMaybe<PagesBlocksSpinningSensorFilter>;
+  pdfDocumentCards?: InputMaybe<PagesBlocksPdfDocumentCardsFilter>;
 };
 
 export type PagesFilter = {
@@ -1331,6 +1388,7 @@ export type SolutionsBlocksStatsBarStats = {
 export type SolutionsBlocksStatsBar = {
   __typename?: 'SolutionsBlocksStatsBar';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   stats?: Maybe<Array<Maybe<SolutionsBlocksStatsBarStats>>>;
 };
@@ -1374,11 +1432,13 @@ export type SolutionsBlocksProcessStepsSteps = {
   title: Scalars['String']['output'];
   subtitle?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type SolutionsBlocksProcessSteps = {
   __typename?: 'SolutionsBlocksProcessSteps';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   steps?: Maybe<Array<Maybe<SolutionsBlocksProcessStepsSteps>>>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -1389,11 +1449,13 @@ export type SolutionsBlocksMetricsBlockMetrics = {
   __typename?: 'SolutionsBlocksMetricsBlockMetrics';
   name: Scalars['String']['output'];
   whatItMeasures?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type SolutionsBlocksMetricsBlock = {
   __typename?: 'SolutionsBlocksMetricsBlock';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   metrics?: Maybe<Array<Maybe<SolutionsBlocksMetricsBlockMetrics>>>;
 };
@@ -1446,6 +1508,7 @@ export type SolutionsBlocksTestimonialCarousel = {
   scheme?: Maybe<Scalars['String']['output']>;
   wave?: Maybe<Scalars['String']['output']>;
   waveFill?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   testimonials?: Maybe<Array<Maybe<SolutionsBlocksTestimonialCarouselTestimonials>>>;
 };
@@ -1629,6 +1692,7 @@ export type SolutionsBlocksRoiCalculatorPromo = {
 export type SolutionsBlocksLeadMagnetPromo = {
   __typename?: 'SolutionsBlocksLeadMagnetPromo';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   promoBody?: Maybe<Scalars['String']['output']>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -1686,6 +1750,7 @@ export type SolutionsBlocksSegmentCardsCards = {
   link?: Maybe<Scalars['String']['output']>;
   linkText?: Maybe<Scalars['String']['output']>;
   logos?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type SolutionsBlocksSegmentCards = {
@@ -1729,7 +1794,28 @@ export type SolutionsBlocksSpinningSensor = {
   description?: Maybe<Scalars['String']['output']>;
 };
 
-export type SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSupportForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline | SolutionsBlocksSpinningSensor;
+export type SolutionsBlocksPdfDocumentCardsItems = {
+  __typename?: 'SolutionsBlocksPdfDocumentCardsItems';
+  title: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  category?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  ctaLink: Scalars['String']['output'];
+  pdfLabel?: Maybe<Scalars['String']['output']>;
+  accent?: Maybe<Scalars['String']['output']>;
+};
+
+export type SolutionsBlocksPdfDocumentCards = {
+  __typename?: 'SolutionsBlocksPdfDocumentCards';
+  scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  columnCount?: Maybe<Scalars['Float']['output']>;
+  items?: Maybe<Array<Maybe<SolutionsBlocksPdfDocumentCardsItems>>>;
+};
+
+export type SolutionsBlocks = SolutionsBlocksHero | SolutionsBlocksTrustBar | SolutionsBlocksStatsBar | SolutionsBlocksSegmentRouter | SolutionsBlocksSolutionCards | SolutionsBlocksProcessSteps | SolutionsBlocksMetricsBlock | SolutionsBlocksFeatureComparison | SolutionsBlocksEvidenceBlock | SolutionsBlocksTestimonialCarousel | SolutionsBlocksCaseStudyCards | SolutionsBlocksFaqAccordion | SolutionsBlocksCtaBanner | SolutionsBlocksCtaInline | SolutionsBlocksImageFeature | SolutionsBlocksVideoSection | SolutionsBlocksTeamGrid | SolutionsBlocksTeamShowcase | SolutionsBlocksTrustCertBlock | SolutionsBlocksAlertBanner | SolutionsBlocksProse | SolutionsBlocksRichText | SolutionsBlocksRelatedPages | SolutionsBlocksRoiCalculatorPromo | SolutionsBlocksLeadMagnetPromo | SolutionsBlocksBreadcrumb | SolutionsBlocksPartnerLogoCarousel | SolutionsBlocksContactForm | SolutionsBlocksSupportForm | SolutionsBlocksSegmentCards | SolutionsBlocksValueProps | SolutionsBlocksTimeline | SolutionsBlocksSpinningSensor | SolutionsBlocksPdfDocumentCards;
 
 export type Solutions = Node & Document & {
   __typename?: 'Solutions';
@@ -1786,6 +1872,7 @@ export type SolutionsBlocksStatsBarStatsFilter = {
 
 export type SolutionsBlocksStatsBarFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   stats?: InputMaybe<SolutionsBlocksStatsBarStatsFilter>;
 };
@@ -1824,10 +1911,12 @@ export type SolutionsBlocksProcessStepsStepsFilter = {
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type SolutionsBlocksProcessStepsFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   steps?: InputMaybe<SolutionsBlocksProcessStepsStepsFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -1837,10 +1926,12 @@ export type SolutionsBlocksProcessStepsFilter = {
 export type SolutionsBlocksMetricsBlockMetricsFilter = {
   name?: InputMaybe<StringFilter>;
   whatItMeasures?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type SolutionsBlocksMetricsBlockFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   metrics?: InputMaybe<SolutionsBlocksMetricsBlockMetricsFilter>;
 };
@@ -1887,6 +1978,7 @@ export type SolutionsBlocksTestimonialCarouselFilter = {
   scheme?: InputMaybe<StringFilter>;
   wave?: InputMaybe<StringFilter>;
   waveFill?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   testimonials?: InputMaybe<SolutionsBlocksTestimonialCarouselTestimonialsFilter>;
 };
@@ -2049,6 +2141,7 @@ export type SolutionsBlocksRoiCalculatorPromoFilter = {
 
 export type SolutionsBlocksLeadMagnetPromoFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   promoBody?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -2099,6 +2192,7 @@ export type SolutionsBlocksSegmentCardsCardsFilter = {
   link?: InputMaybe<StringFilter>;
   linkText?: InputMaybe<StringFilter>;
   logos?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type SolutionsBlocksSegmentCardsFilter = {
@@ -2136,6 +2230,25 @@ export type SolutionsBlocksSpinningSensorFilter = {
   description?: InputMaybe<StringFilter>;
 };
 
+export type SolutionsBlocksPdfDocumentCardsItemsFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+  pdfLabel?: InputMaybe<StringFilter>;
+  accent?: InputMaybe<StringFilter>;
+};
+
+export type SolutionsBlocksPdfDocumentCardsFilter = {
+  scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
+  heading?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  columnCount?: InputMaybe<NumberFilter>;
+  items?: InputMaybe<SolutionsBlocksPdfDocumentCardsItemsFilter>;
+};
+
 export type SolutionsBlocksFilter = {
   hero?: InputMaybe<SolutionsBlocksHeroFilter>;
   trustBar?: InputMaybe<SolutionsBlocksTrustBarFilter>;
@@ -2170,6 +2283,7 @@ export type SolutionsBlocksFilter = {
   valueProps?: InputMaybe<SolutionsBlocksValuePropsFilter>;
   timeline?: InputMaybe<SolutionsBlocksTimelineFilter>;
   spinningSensor?: InputMaybe<SolutionsBlocksSpinningSensorFilter>;
+  pdfDocumentCards?: InputMaybe<SolutionsBlocksPdfDocumentCardsFilter>;
 };
 
 export type SolutionsFilter = {
@@ -2242,6 +2356,7 @@ export type SegmentsBlocksStatsBarStats = {
 export type SegmentsBlocksStatsBar = {
   __typename?: 'SegmentsBlocksStatsBar';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   stats?: Maybe<Array<Maybe<SegmentsBlocksStatsBarStats>>>;
 };
@@ -2285,11 +2400,13 @@ export type SegmentsBlocksProcessStepsSteps = {
   title: Scalars['String']['output'];
   subtitle?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type SegmentsBlocksProcessSteps = {
   __typename?: 'SegmentsBlocksProcessSteps';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   steps?: Maybe<Array<Maybe<SegmentsBlocksProcessStepsSteps>>>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -2300,11 +2417,13 @@ export type SegmentsBlocksMetricsBlockMetrics = {
   __typename?: 'SegmentsBlocksMetricsBlockMetrics';
   name: Scalars['String']['output'];
   whatItMeasures?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type SegmentsBlocksMetricsBlock = {
   __typename?: 'SegmentsBlocksMetricsBlock';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   metrics?: Maybe<Array<Maybe<SegmentsBlocksMetricsBlockMetrics>>>;
 };
@@ -2357,6 +2476,7 @@ export type SegmentsBlocksTestimonialCarousel = {
   scheme?: Maybe<Scalars['String']['output']>;
   wave?: Maybe<Scalars['String']['output']>;
   waveFill?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   testimonials?: Maybe<Array<Maybe<SegmentsBlocksTestimonialCarouselTestimonials>>>;
 };
@@ -2540,6 +2660,7 @@ export type SegmentsBlocksRoiCalculatorPromo = {
 export type SegmentsBlocksLeadMagnetPromo = {
   __typename?: 'SegmentsBlocksLeadMagnetPromo';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   promoBody?: Maybe<Scalars['String']['output']>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -2597,6 +2718,7 @@ export type SegmentsBlocksSegmentCardsCards = {
   link?: Maybe<Scalars['String']['output']>;
   linkText?: Maybe<Scalars['String']['output']>;
   logos?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type SegmentsBlocksSegmentCards = {
@@ -2640,7 +2762,28 @@ export type SegmentsBlocksSpinningSensor = {
   description?: Maybe<Scalars['String']['output']>;
 };
 
-export type SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSupportForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline | SegmentsBlocksSpinningSensor;
+export type SegmentsBlocksPdfDocumentCardsItems = {
+  __typename?: 'SegmentsBlocksPdfDocumentCardsItems';
+  title: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  category?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  ctaLink: Scalars['String']['output'];
+  pdfLabel?: Maybe<Scalars['String']['output']>;
+  accent?: Maybe<Scalars['String']['output']>;
+};
+
+export type SegmentsBlocksPdfDocumentCards = {
+  __typename?: 'SegmentsBlocksPdfDocumentCards';
+  scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  columnCount?: Maybe<Scalars['Float']['output']>;
+  items?: Maybe<Array<Maybe<SegmentsBlocksPdfDocumentCardsItems>>>;
+};
+
+export type SegmentsBlocks = SegmentsBlocksHero | SegmentsBlocksTrustBar | SegmentsBlocksStatsBar | SegmentsBlocksSegmentRouter | SegmentsBlocksSolutionCards | SegmentsBlocksProcessSteps | SegmentsBlocksMetricsBlock | SegmentsBlocksFeatureComparison | SegmentsBlocksEvidenceBlock | SegmentsBlocksTestimonialCarousel | SegmentsBlocksCaseStudyCards | SegmentsBlocksFaqAccordion | SegmentsBlocksCtaBanner | SegmentsBlocksCtaInline | SegmentsBlocksImageFeature | SegmentsBlocksVideoSection | SegmentsBlocksTeamGrid | SegmentsBlocksTeamShowcase | SegmentsBlocksTrustCertBlock | SegmentsBlocksAlertBanner | SegmentsBlocksProse | SegmentsBlocksRichText | SegmentsBlocksRelatedPages | SegmentsBlocksRoiCalculatorPromo | SegmentsBlocksLeadMagnetPromo | SegmentsBlocksBreadcrumb | SegmentsBlocksPartnerLogoCarousel | SegmentsBlocksContactForm | SegmentsBlocksSupportForm | SegmentsBlocksSegmentCards | SegmentsBlocksValueProps | SegmentsBlocksTimeline | SegmentsBlocksSpinningSensor | SegmentsBlocksPdfDocumentCards;
 
 export type Segments = Node & Document & {
   __typename?: 'Segments';
@@ -2697,6 +2840,7 @@ export type SegmentsBlocksStatsBarStatsFilter = {
 
 export type SegmentsBlocksStatsBarFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   stats?: InputMaybe<SegmentsBlocksStatsBarStatsFilter>;
 };
@@ -2735,10 +2879,12 @@ export type SegmentsBlocksProcessStepsStepsFilter = {
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type SegmentsBlocksProcessStepsFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   steps?: InputMaybe<SegmentsBlocksProcessStepsStepsFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -2748,10 +2894,12 @@ export type SegmentsBlocksProcessStepsFilter = {
 export type SegmentsBlocksMetricsBlockMetricsFilter = {
   name?: InputMaybe<StringFilter>;
   whatItMeasures?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type SegmentsBlocksMetricsBlockFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   metrics?: InputMaybe<SegmentsBlocksMetricsBlockMetricsFilter>;
 };
@@ -2798,6 +2946,7 @@ export type SegmentsBlocksTestimonialCarouselFilter = {
   scheme?: InputMaybe<StringFilter>;
   wave?: InputMaybe<StringFilter>;
   waveFill?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   testimonials?: InputMaybe<SegmentsBlocksTestimonialCarouselTestimonialsFilter>;
 };
@@ -2960,6 +3109,7 @@ export type SegmentsBlocksRoiCalculatorPromoFilter = {
 
 export type SegmentsBlocksLeadMagnetPromoFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   promoBody?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -3010,6 +3160,7 @@ export type SegmentsBlocksSegmentCardsCardsFilter = {
   link?: InputMaybe<StringFilter>;
   linkText?: InputMaybe<StringFilter>;
   logos?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type SegmentsBlocksSegmentCardsFilter = {
@@ -3047,6 +3198,25 @@ export type SegmentsBlocksSpinningSensorFilter = {
   description?: InputMaybe<StringFilter>;
 };
 
+export type SegmentsBlocksPdfDocumentCardsItemsFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+  pdfLabel?: InputMaybe<StringFilter>;
+  accent?: InputMaybe<StringFilter>;
+};
+
+export type SegmentsBlocksPdfDocumentCardsFilter = {
+  scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
+  heading?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  columnCount?: InputMaybe<NumberFilter>;
+  items?: InputMaybe<SegmentsBlocksPdfDocumentCardsItemsFilter>;
+};
+
 export type SegmentsBlocksFilter = {
   hero?: InputMaybe<SegmentsBlocksHeroFilter>;
   trustBar?: InputMaybe<SegmentsBlocksTrustBarFilter>;
@@ -3081,6 +3251,7 @@ export type SegmentsBlocksFilter = {
   valueProps?: InputMaybe<SegmentsBlocksValuePropsFilter>;
   timeline?: InputMaybe<SegmentsBlocksTimelineFilter>;
   spinningSensor?: InputMaybe<SegmentsBlocksSpinningSensorFilter>;
+  pdfDocumentCards?: InputMaybe<SegmentsBlocksPdfDocumentCardsFilter>;
 };
 
 export type SegmentsFilter = {
@@ -3153,6 +3324,7 @@ export type CompareBlocksStatsBarStats = {
 export type CompareBlocksStatsBar = {
   __typename?: 'CompareBlocksStatsBar';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   stats?: Maybe<Array<Maybe<CompareBlocksStatsBarStats>>>;
 };
@@ -3196,11 +3368,13 @@ export type CompareBlocksProcessStepsSteps = {
   title: Scalars['String']['output'];
   subtitle?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type CompareBlocksProcessSteps = {
   __typename?: 'CompareBlocksProcessSteps';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   steps?: Maybe<Array<Maybe<CompareBlocksProcessStepsSteps>>>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -3211,11 +3385,13 @@ export type CompareBlocksMetricsBlockMetrics = {
   __typename?: 'CompareBlocksMetricsBlockMetrics';
   name: Scalars['String']['output'];
   whatItMeasures?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type CompareBlocksMetricsBlock = {
   __typename?: 'CompareBlocksMetricsBlock';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   metrics?: Maybe<Array<Maybe<CompareBlocksMetricsBlockMetrics>>>;
 };
@@ -3268,6 +3444,7 @@ export type CompareBlocksTestimonialCarousel = {
   scheme?: Maybe<Scalars['String']['output']>;
   wave?: Maybe<Scalars['String']['output']>;
   waveFill?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   testimonials?: Maybe<Array<Maybe<CompareBlocksTestimonialCarouselTestimonials>>>;
 };
@@ -3451,6 +3628,7 @@ export type CompareBlocksRoiCalculatorPromo = {
 export type CompareBlocksLeadMagnetPromo = {
   __typename?: 'CompareBlocksLeadMagnetPromo';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   promoBody?: Maybe<Scalars['String']['output']>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -3508,6 +3686,7 @@ export type CompareBlocksSegmentCardsCards = {
   link?: Maybe<Scalars['String']['output']>;
   linkText?: Maybe<Scalars['String']['output']>;
   logos?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type CompareBlocksSegmentCards = {
@@ -3551,7 +3730,28 @@ export type CompareBlocksSpinningSensor = {
   description?: Maybe<Scalars['String']['output']>;
 };
 
-export type CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSupportForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline | CompareBlocksSpinningSensor;
+export type CompareBlocksPdfDocumentCardsItems = {
+  __typename?: 'CompareBlocksPdfDocumentCardsItems';
+  title: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  category?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  ctaLink: Scalars['String']['output'];
+  pdfLabel?: Maybe<Scalars['String']['output']>;
+  accent?: Maybe<Scalars['String']['output']>;
+};
+
+export type CompareBlocksPdfDocumentCards = {
+  __typename?: 'CompareBlocksPdfDocumentCards';
+  scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  columnCount?: Maybe<Scalars['Float']['output']>;
+  items?: Maybe<Array<Maybe<CompareBlocksPdfDocumentCardsItems>>>;
+};
+
+export type CompareBlocks = CompareBlocksHero | CompareBlocksTrustBar | CompareBlocksStatsBar | CompareBlocksSegmentRouter | CompareBlocksSolutionCards | CompareBlocksProcessSteps | CompareBlocksMetricsBlock | CompareBlocksFeatureComparison | CompareBlocksEvidenceBlock | CompareBlocksTestimonialCarousel | CompareBlocksCaseStudyCards | CompareBlocksFaqAccordion | CompareBlocksCtaBanner | CompareBlocksCtaInline | CompareBlocksImageFeature | CompareBlocksVideoSection | CompareBlocksTeamGrid | CompareBlocksTeamShowcase | CompareBlocksTrustCertBlock | CompareBlocksAlertBanner | CompareBlocksProse | CompareBlocksRichText | CompareBlocksRelatedPages | CompareBlocksRoiCalculatorPromo | CompareBlocksLeadMagnetPromo | CompareBlocksBreadcrumb | CompareBlocksPartnerLogoCarousel | CompareBlocksContactForm | CompareBlocksSupportForm | CompareBlocksSegmentCards | CompareBlocksValueProps | CompareBlocksTimeline | CompareBlocksSpinningSensor | CompareBlocksPdfDocumentCards;
 
 export type Compare = Node & Document & {
   __typename?: 'Compare';
@@ -3608,6 +3808,7 @@ export type CompareBlocksStatsBarStatsFilter = {
 
 export type CompareBlocksStatsBarFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   stats?: InputMaybe<CompareBlocksStatsBarStatsFilter>;
 };
@@ -3646,10 +3847,12 @@ export type CompareBlocksProcessStepsStepsFilter = {
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type CompareBlocksProcessStepsFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   steps?: InputMaybe<CompareBlocksProcessStepsStepsFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -3659,10 +3862,12 @@ export type CompareBlocksProcessStepsFilter = {
 export type CompareBlocksMetricsBlockMetricsFilter = {
   name?: InputMaybe<StringFilter>;
   whatItMeasures?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type CompareBlocksMetricsBlockFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   metrics?: InputMaybe<CompareBlocksMetricsBlockMetricsFilter>;
 };
@@ -3709,6 +3914,7 @@ export type CompareBlocksTestimonialCarouselFilter = {
   scheme?: InputMaybe<StringFilter>;
   wave?: InputMaybe<StringFilter>;
   waveFill?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   testimonials?: InputMaybe<CompareBlocksTestimonialCarouselTestimonialsFilter>;
 };
@@ -3871,6 +4077,7 @@ export type CompareBlocksRoiCalculatorPromoFilter = {
 
 export type CompareBlocksLeadMagnetPromoFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   promoBody?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -3921,6 +4128,7 @@ export type CompareBlocksSegmentCardsCardsFilter = {
   link?: InputMaybe<StringFilter>;
   linkText?: InputMaybe<StringFilter>;
   logos?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type CompareBlocksSegmentCardsFilter = {
@@ -3958,6 +4166,25 @@ export type CompareBlocksSpinningSensorFilter = {
   description?: InputMaybe<StringFilter>;
 };
 
+export type CompareBlocksPdfDocumentCardsItemsFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+  pdfLabel?: InputMaybe<StringFilter>;
+  accent?: InputMaybe<StringFilter>;
+};
+
+export type CompareBlocksPdfDocumentCardsFilter = {
+  scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
+  heading?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  columnCount?: InputMaybe<NumberFilter>;
+  items?: InputMaybe<CompareBlocksPdfDocumentCardsItemsFilter>;
+};
+
 export type CompareBlocksFilter = {
   hero?: InputMaybe<CompareBlocksHeroFilter>;
   trustBar?: InputMaybe<CompareBlocksTrustBarFilter>;
@@ -3992,6 +4219,7 @@ export type CompareBlocksFilter = {
   valueProps?: InputMaybe<CompareBlocksValuePropsFilter>;
   timeline?: InputMaybe<CompareBlocksTimelineFilter>;
   spinningSensor?: InputMaybe<CompareBlocksSpinningSensorFilter>;
+  pdfDocumentCards?: InputMaybe<CompareBlocksPdfDocumentCardsFilter>;
 };
 
 export type CompareFilter = {
@@ -4064,6 +4292,7 @@ export type LearnBlocksStatsBarStats = {
 export type LearnBlocksStatsBar = {
   __typename?: 'LearnBlocksStatsBar';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   stats?: Maybe<Array<Maybe<LearnBlocksStatsBarStats>>>;
 };
@@ -4107,11 +4336,13 @@ export type LearnBlocksProcessStepsSteps = {
   title: Scalars['String']['output'];
   subtitle?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type LearnBlocksProcessSteps = {
   __typename?: 'LearnBlocksProcessSteps';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   steps?: Maybe<Array<Maybe<LearnBlocksProcessStepsSteps>>>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -4122,11 +4353,13 @@ export type LearnBlocksMetricsBlockMetrics = {
   __typename?: 'LearnBlocksMetricsBlockMetrics';
   name: Scalars['String']['output'];
   whatItMeasures?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type LearnBlocksMetricsBlock = {
   __typename?: 'LearnBlocksMetricsBlock';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   metrics?: Maybe<Array<Maybe<LearnBlocksMetricsBlockMetrics>>>;
 };
@@ -4179,6 +4412,7 @@ export type LearnBlocksTestimonialCarousel = {
   scheme?: Maybe<Scalars['String']['output']>;
   wave?: Maybe<Scalars['String']['output']>;
   waveFill?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   testimonials?: Maybe<Array<Maybe<LearnBlocksTestimonialCarouselTestimonials>>>;
 };
@@ -4362,6 +4596,7 @@ export type LearnBlocksRoiCalculatorPromo = {
 export type LearnBlocksLeadMagnetPromo = {
   __typename?: 'LearnBlocksLeadMagnetPromo';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   promoBody?: Maybe<Scalars['String']['output']>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -4419,6 +4654,7 @@ export type LearnBlocksSegmentCardsCards = {
   link?: Maybe<Scalars['String']['output']>;
   linkText?: Maybe<Scalars['String']['output']>;
   logos?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type LearnBlocksSegmentCards = {
@@ -4462,7 +4698,28 @@ export type LearnBlocksSpinningSensor = {
   description?: Maybe<Scalars['String']['output']>;
 };
 
-export type LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSupportForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline | LearnBlocksSpinningSensor;
+export type LearnBlocksPdfDocumentCardsItems = {
+  __typename?: 'LearnBlocksPdfDocumentCardsItems';
+  title: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  category?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  ctaLink: Scalars['String']['output'];
+  pdfLabel?: Maybe<Scalars['String']['output']>;
+  accent?: Maybe<Scalars['String']['output']>;
+};
+
+export type LearnBlocksPdfDocumentCards = {
+  __typename?: 'LearnBlocksPdfDocumentCards';
+  scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  columnCount?: Maybe<Scalars['Float']['output']>;
+  items?: Maybe<Array<Maybe<LearnBlocksPdfDocumentCardsItems>>>;
+};
+
+export type LearnBlocks = LearnBlocksHero | LearnBlocksTrustBar | LearnBlocksStatsBar | LearnBlocksSegmentRouter | LearnBlocksSolutionCards | LearnBlocksProcessSteps | LearnBlocksMetricsBlock | LearnBlocksFeatureComparison | LearnBlocksEvidenceBlock | LearnBlocksTestimonialCarousel | LearnBlocksCaseStudyCards | LearnBlocksFaqAccordion | LearnBlocksCtaBanner | LearnBlocksCtaInline | LearnBlocksImageFeature | LearnBlocksVideoSection | LearnBlocksTeamGrid | LearnBlocksTeamShowcase | LearnBlocksTrustCertBlock | LearnBlocksAlertBanner | LearnBlocksProse | LearnBlocksRichText | LearnBlocksRelatedPages | LearnBlocksRoiCalculatorPromo | LearnBlocksLeadMagnetPromo | LearnBlocksBreadcrumb | LearnBlocksPartnerLogoCarousel | LearnBlocksContactForm | LearnBlocksSupportForm | LearnBlocksSegmentCards | LearnBlocksValueProps | LearnBlocksTimeline | LearnBlocksSpinningSensor | LearnBlocksPdfDocumentCards;
 
 export type Learn = Node & Document & {
   __typename?: 'Learn';
@@ -4478,6 +4735,8 @@ export type Learn = Node & Document & {
   readTime?: Maybe<Scalars['Float']['output']>;
   image?: Maybe<Scalars['String']['output']>;
   featured?: Maybe<Scalars['Boolean']['output']>;
+  downloadPdf?: Maybe<Scalars['String']['output']>;
+  downloadPdfLabel?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
   primaryKeyword?: Maybe<Scalars['String']['output']>;
   keywords?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
@@ -4533,6 +4792,7 @@ export type LearnBlocksStatsBarStatsFilter = {
 
 export type LearnBlocksStatsBarFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   stats?: InputMaybe<LearnBlocksStatsBarStatsFilter>;
 };
@@ -4571,10 +4831,12 @@ export type LearnBlocksProcessStepsStepsFilter = {
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type LearnBlocksProcessStepsFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   steps?: InputMaybe<LearnBlocksProcessStepsStepsFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -4584,10 +4846,12 @@ export type LearnBlocksProcessStepsFilter = {
 export type LearnBlocksMetricsBlockMetricsFilter = {
   name?: InputMaybe<StringFilter>;
   whatItMeasures?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type LearnBlocksMetricsBlockFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   metrics?: InputMaybe<LearnBlocksMetricsBlockMetricsFilter>;
 };
@@ -4634,6 +4898,7 @@ export type LearnBlocksTestimonialCarouselFilter = {
   scheme?: InputMaybe<StringFilter>;
   wave?: InputMaybe<StringFilter>;
   waveFill?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   testimonials?: InputMaybe<LearnBlocksTestimonialCarouselTestimonialsFilter>;
 };
@@ -4796,6 +5061,7 @@ export type LearnBlocksRoiCalculatorPromoFilter = {
 
 export type LearnBlocksLeadMagnetPromoFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   promoBody?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -4846,6 +5112,7 @@ export type LearnBlocksSegmentCardsCardsFilter = {
   link?: InputMaybe<StringFilter>;
   linkText?: InputMaybe<StringFilter>;
   logos?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type LearnBlocksSegmentCardsFilter = {
@@ -4883,6 +5150,25 @@ export type LearnBlocksSpinningSensorFilter = {
   description?: InputMaybe<StringFilter>;
 };
 
+export type LearnBlocksPdfDocumentCardsItemsFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+  pdfLabel?: InputMaybe<StringFilter>;
+  accent?: InputMaybe<StringFilter>;
+};
+
+export type LearnBlocksPdfDocumentCardsFilter = {
+  scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
+  heading?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  columnCount?: InputMaybe<NumberFilter>;
+  items?: InputMaybe<LearnBlocksPdfDocumentCardsItemsFilter>;
+};
+
 export type LearnBlocksFilter = {
   hero?: InputMaybe<LearnBlocksHeroFilter>;
   trustBar?: InputMaybe<LearnBlocksTrustBarFilter>;
@@ -4917,6 +5203,7 @@ export type LearnBlocksFilter = {
   valueProps?: InputMaybe<LearnBlocksValuePropsFilter>;
   timeline?: InputMaybe<LearnBlocksTimelineFilter>;
   spinningSensor?: InputMaybe<LearnBlocksSpinningSensorFilter>;
+  pdfDocumentCards?: InputMaybe<LearnBlocksPdfDocumentCardsFilter>;
 };
 
 export type LearnFilter = {
@@ -4932,6 +5219,8 @@ export type LearnFilter = {
   readTime?: InputMaybe<NumberFilter>;
   image?: InputMaybe<ImageFilter>;
   featured?: InputMaybe<BooleanFilter>;
+  downloadPdf?: InputMaybe<StringFilter>;
+  downloadPdfLabel?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
   primaryKeyword?: InputMaybe<StringFilter>;
   keywords?: InputMaybe<StringFilter>;
@@ -4997,6 +5286,7 @@ export type ResourcesBlocksStatsBarStats = {
 export type ResourcesBlocksStatsBar = {
   __typename?: 'ResourcesBlocksStatsBar';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   stats?: Maybe<Array<Maybe<ResourcesBlocksStatsBarStats>>>;
 };
@@ -5040,11 +5330,13 @@ export type ResourcesBlocksProcessStepsSteps = {
   title: Scalars['String']['output'];
   subtitle?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type ResourcesBlocksProcessSteps = {
   __typename?: 'ResourcesBlocksProcessSteps';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   steps?: Maybe<Array<Maybe<ResourcesBlocksProcessStepsSteps>>>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -5055,11 +5347,13 @@ export type ResourcesBlocksMetricsBlockMetrics = {
   __typename?: 'ResourcesBlocksMetricsBlockMetrics';
   name: Scalars['String']['output'];
   whatItMeasures?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type ResourcesBlocksMetricsBlock = {
   __typename?: 'ResourcesBlocksMetricsBlock';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   metrics?: Maybe<Array<Maybe<ResourcesBlocksMetricsBlockMetrics>>>;
 };
@@ -5112,6 +5406,7 @@ export type ResourcesBlocksTestimonialCarousel = {
   scheme?: Maybe<Scalars['String']['output']>;
   wave?: Maybe<Scalars['String']['output']>;
   waveFill?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   testimonials?: Maybe<Array<Maybe<ResourcesBlocksTestimonialCarouselTestimonials>>>;
 };
@@ -5295,6 +5590,7 @@ export type ResourcesBlocksRoiCalculatorPromo = {
 export type ResourcesBlocksLeadMagnetPromo = {
   __typename?: 'ResourcesBlocksLeadMagnetPromo';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   promoBody?: Maybe<Scalars['String']['output']>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -5352,6 +5648,7 @@ export type ResourcesBlocksSegmentCardsCards = {
   link?: Maybe<Scalars['String']['output']>;
   linkText?: Maybe<Scalars['String']['output']>;
   logos?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type ResourcesBlocksSegmentCards = {
@@ -5395,7 +5692,28 @@ export type ResourcesBlocksSpinningSensor = {
   description?: Maybe<Scalars['String']['output']>;
 };
 
-export type ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSupportForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline | ResourcesBlocksSpinningSensor;
+export type ResourcesBlocksPdfDocumentCardsItems = {
+  __typename?: 'ResourcesBlocksPdfDocumentCardsItems';
+  title: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  category?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  ctaLink: Scalars['String']['output'];
+  pdfLabel?: Maybe<Scalars['String']['output']>;
+  accent?: Maybe<Scalars['String']['output']>;
+};
+
+export type ResourcesBlocksPdfDocumentCards = {
+  __typename?: 'ResourcesBlocksPdfDocumentCards';
+  scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  columnCount?: Maybe<Scalars['Float']['output']>;
+  items?: Maybe<Array<Maybe<ResourcesBlocksPdfDocumentCardsItems>>>;
+};
+
+export type ResourcesBlocks = ResourcesBlocksHero | ResourcesBlocksTrustBar | ResourcesBlocksStatsBar | ResourcesBlocksSegmentRouter | ResourcesBlocksSolutionCards | ResourcesBlocksProcessSteps | ResourcesBlocksMetricsBlock | ResourcesBlocksFeatureComparison | ResourcesBlocksEvidenceBlock | ResourcesBlocksTestimonialCarousel | ResourcesBlocksCaseStudyCards | ResourcesBlocksFaqAccordion | ResourcesBlocksCtaBanner | ResourcesBlocksCtaInline | ResourcesBlocksImageFeature | ResourcesBlocksVideoSection | ResourcesBlocksTeamGrid | ResourcesBlocksTeamShowcase | ResourcesBlocksTrustCertBlock | ResourcesBlocksAlertBanner | ResourcesBlocksProse | ResourcesBlocksRichText | ResourcesBlocksRelatedPages | ResourcesBlocksRoiCalculatorPromo | ResourcesBlocksLeadMagnetPromo | ResourcesBlocksBreadcrumb | ResourcesBlocksPartnerLogoCarousel | ResourcesBlocksContactForm | ResourcesBlocksSupportForm | ResourcesBlocksSegmentCards | ResourcesBlocksValueProps | ResourcesBlocksTimeline | ResourcesBlocksSpinningSensor | ResourcesBlocksPdfDocumentCards;
 
 export type Resources = Node & Document & {
   __typename?: 'Resources';
@@ -5452,6 +5770,7 @@ export type ResourcesBlocksStatsBarStatsFilter = {
 
 export type ResourcesBlocksStatsBarFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   stats?: InputMaybe<ResourcesBlocksStatsBarStatsFilter>;
 };
@@ -5490,10 +5809,12 @@ export type ResourcesBlocksProcessStepsStepsFilter = {
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type ResourcesBlocksProcessStepsFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   steps?: InputMaybe<ResourcesBlocksProcessStepsStepsFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -5503,10 +5824,12 @@ export type ResourcesBlocksProcessStepsFilter = {
 export type ResourcesBlocksMetricsBlockMetricsFilter = {
   name?: InputMaybe<StringFilter>;
   whatItMeasures?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type ResourcesBlocksMetricsBlockFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   metrics?: InputMaybe<ResourcesBlocksMetricsBlockMetricsFilter>;
 };
@@ -5553,6 +5876,7 @@ export type ResourcesBlocksTestimonialCarouselFilter = {
   scheme?: InputMaybe<StringFilter>;
   wave?: InputMaybe<StringFilter>;
   waveFill?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   testimonials?: InputMaybe<ResourcesBlocksTestimonialCarouselTestimonialsFilter>;
 };
@@ -5715,6 +6039,7 @@ export type ResourcesBlocksRoiCalculatorPromoFilter = {
 
 export type ResourcesBlocksLeadMagnetPromoFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   promoBody?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -5765,6 +6090,7 @@ export type ResourcesBlocksSegmentCardsCardsFilter = {
   link?: InputMaybe<StringFilter>;
   linkText?: InputMaybe<StringFilter>;
   logos?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type ResourcesBlocksSegmentCardsFilter = {
@@ -5802,6 +6128,25 @@ export type ResourcesBlocksSpinningSensorFilter = {
   description?: InputMaybe<StringFilter>;
 };
 
+export type ResourcesBlocksPdfDocumentCardsItemsFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+  pdfLabel?: InputMaybe<StringFilter>;
+  accent?: InputMaybe<StringFilter>;
+};
+
+export type ResourcesBlocksPdfDocumentCardsFilter = {
+  scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
+  heading?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  columnCount?: InputMaybe<NumberFilter>;
+  items?: InputMaybe<ResourcesBlocksPdfDocumentCardsItemsFilter>;
+};
+
 export type ResourcesBlocksFilter = {
   hero?: InputMaybe<ResourcesBlocksHeroFilter>;
   trustBar?: InputMaybe<ResourcesBlocksTrustBarFilter>;
@@ -5836,6 +6181,7 @@ export type ResourcesBlocksFilter = {
   valueProps?: InputMaybe<ResourcesBlocksValuePropsFilter>;
   timeline?: InputMaybe<ResourcesBlocksTimelineFilter>;
   spinningSensor?: InputMaybe<ResourcesBlocksSpinningSensorFilter>;
+  pdfDocumentCards?: InputMaybe<ResourcesBlocksPdfDocumentCardsFilter>;
 };
 
 export type ResourcesFilter = {
@@ -5908,6 +6254,7 @@ export type CompanyBlocksStatsBarStats = {
 export type CompanyBlocksStatsBar = {
   __typename?: 'CompanyBlocksStatsBar';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   stats?: Maybe<Array<Maybe<CompanyBlocksStatsBarStats>>>;
 };
@@ -5951,11 +6298,13 @@ export type CompanyBlocksProcessStepsSteps = {
   title: Scalars['String']['output'];
   subtitle?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type CompanyBlocksProcessSteps = {
   __typename?: 'CompanyBlocksProcessSteps';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   steps?: Maybe<Array<Maybe<CompanyBlocksProcessStepsSteps>>>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -5966,11 +6315,13 @@ export type CompanyBlocksMetricsBlockMetrics = {
   __typename?: 'CompanyBlocksMetricsBlockMetrics';
   name: Scalars['String']['output'];
   whatItMeasures?: Maybe<Scalars['String']['output']>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type CompanyBlocksMetricsBlock = {
   __typename?: 'CompanyBlocksMetricsBlock';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   metrics?: Maybe<Array<Maybe<CompanyBlocksMetricsBlockMetrics>>>;
 };
@@ -6023,6 +6374,7 @@ export type CompanyBlocksTestimonialCarousel = {
   scheme?: Maybe<Scalars['String']['output']>;
   wave?: Maybe<Scalars['String']['output']>;
   waveFill?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   testimonials?: Maybe<Array<Maybe<CompanyBlocksTestimonialCarouselTestimonials>>>;
 };
@@ -6206,6 +6558,7 @@ export type CompanyBlocksRoiCalculatorPromo = {
 export type CompanyBlocksLeadMagnetPromo = {
   __typename?: 'CompanyBlocksLeadMagnetPromo';
   scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
   heading?: Maybe<Scalars['String']['output']>;
   promoBody?: Maybe<Scalars['String']['output']>;
   ctaText?: Maybe<Scalars['String']['output']>;
@@ -6263,6 +6616,7 @@ export type CompanyBlocksSegmentCardsCards = {
   link?: Maybe<Scalars['String']['output']>;
   linkText?: Maybe<Scalars['String']['output']>;
   logos?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  image?: Maybe<Scalars['String']['output']>;
 };
 
 export type CompanyBlocksSegmentCards = {
@@ -6306,7 +6660,28 @@ export type CompanyBlocksSpinningSensor = {
   description?: Maybe<Scalars['String']['output']>;
 };
 
-export type CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSupportForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline | CompanyBlocksSpinningSensor;
+export type CompanyBlocksPdfDocumentCardsItems = {
+  __typename?: 'CompanyBlocksPdfDocumentCardsItems';
+  title: Scalars['String']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  category?: Maybe<Scalars['String']['output']>;
+  ctaText?: Maybe<Scalars['String']['output']>;
+  ctaLink: Scalars['String']['output'];
+  pdfLabel?: Maybe<Scalars['String']['output']>;
+  accent?: Maybe<Scalars['String']['output']>;
+};
+
+export type CompanyBlocksPdfDocumentCards = {
+  __typename?: 'CompanyBlocksPdfDocumentCards';
+  scheme?: Maybe<Scalars['String']['output']>;
+  eyebrow?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  subtitle?: Maybe<Scalars['String']['output']>;
+  columnCount?: Maybe<Scalars['Float']['output']>;
+  items?: Maybe<Array<Maybe<CompanyBlocksPdfDocumentCardsItems>>>;
+};
+
+export type CompanyBlocks = CompanyBlocksHero | CompanyBlocksTrustBar | CompanyBlocksStatsBar | CompanyBlocksSegmentRouter | CompanyBlocksSolutionCards | CompanyBlocksProcessSteps | CompanyBlocksMetricsBlock | CompanyBlocksFeatureComparison | CompanyBlocksEvidenceBlock | CompanyBlocksTestimonialCarousel | CompanyBlocksCaseStudyCards | CompanyBlocksFaqAccordion | CompanyBlocksCtaBanner | CompanyBlocksCtaInline | CompanyBlocksImageFeature | CompanyBlocksVideoSection | CompanyBlocksTeamGrid | CompanyBlocksTeamShowcase | CompanyBlocksTrustCertBlock | CompanyBlocksAlertBanner | CompanyBlocksProse | CompanyBlocksRichText | CompanyBlocksRelatedPages | CompanyBlocksRoiCalculatorPromo | CompanyBlocksLeadMagnetPromo | CompanyBlocksBreadcrumb | CompanyBlocksPartnerLogoCarousel | CompanyBlocksContactForm | CompanyBlocksSupportForm | CompanyBlocksSegmentCards | CompanyBlocksValueProps | CompanyBlocksTimeline | CompanyBlocksSpinningSensor | CompanyBlocksPdfDocumentCards;
 
 export type Company = Node & Document & {
   __typename?: 'Company';
@@ -6363,6 +6738,7 @@ export type CompanyBlocksStatsBarStatsFilter = {
 
 export type CompanyBlocksStatsBarFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   stats?: InputMaybe<CompanyBlocksStatsBarStatsFilter>;
 };
@@ -6401,10 +6777,12 @@ export type CompanyBlocksProcessStepsStepsFilter = {
   title?: InputMaybe<StringFilter>;
   subtitle?: InputMaybe<StringFilter>;
   description?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type CompanyBlocksProcessStepsFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   steps?: InputMaybe<CompanyBlocksProcessStepsStepsFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -6414,10 +6792,12 @@ export type CompanyBlocksProcessStepsFilter = {
 export type CompanyBlocksMetricsBlockMetricsFilter = {
   name?: InputMaybe<StringFilter>;
   whatItMeasures?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type CompanyBlocksMetricsBlockFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   metrics?: InputMaybe<CompanyBlocksMetricsBlockMetricsFilter>;
 };
@@ -6464,6 +6844,7 @@ export type CompanyBlocksTestimonialCarouselFilter = {
   scheme?: InputMaybe<StringFilter>;
   wave?: InputMaybe<StringFilter>;
   waveFill?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   testimonials?: InputMaybe<CompanyBlocksTestimonialCarouselTestimonialsFilter>;
 };
@@ -6626,6 +7007,7 @@ export type CompanyBlocksRoiCalculatorPromoFilter = {
 
 export type CompanyBlocksLeadMagnetPromoFilter = {
   scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
   heading?: InputMaybe<StringFilter>;
   promoBody?: InputMaybe<StringFilter>;
   ctaText?: InputMaybe<StringFilter>;
@@ -6676,6 +7058,7 @@ export type CompanyBlocksSegmentCardsCardsFilter = {
   link?: InputMaybe<StringFilter>;
   linkText?: InputMaybe<StringFilter>;
   logos?: InputMaybe<StringFilter>;
+  image?: InputMaybe<ImageFilter>;
 };
 
 export type CompanyBlocksSegmentCardsFilter = {
@@ -6713,6 +7096,25 @@ export type CompanyBlocksSpinningSensorFilter = {
   description?: InputMaybe<StringFilter>;
 };
 
+export type CompanyBlocksPdfDocumentCardsItemsFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  category?: InputMaybe<StringFilter>;
+  ctaText?: InputMaybe<StringFilter>;
+  ctaLink?: InputMaybe<StringFilter>;
+  pdfLabel?: InputMaybe<StringFilter>;
+  accent?: InputMaybe<StringFilter>;
+};
+
+export type CompanyBlocksPdfDocumentCardsFilter = {
+  scheme?: InputMaybe<StringFilter>;
+  eyebrow?: InputMaybe<StringFilter>;
+  heading?: InputMaybe<StringFilter>;
+  subtitle?: InputMaybe<StringFilter>;
+  columnCount?: InputMaybe<NumberFilter>;
+  items?: InputMaybe<CompanyBlocksPdfDocumentCardsItemsFilter>;
+};
+
 export type CompanyBlocksFilter = {
   hero?: InputMaybe<CompanyBlocksHeroFilter>;
   trustBar?: InputMaybe<CompanyBlocksTrustBarFilter>;
@@ -6747,6 +7149,7 @@ export type CompanyBlocksFilter = {
   valueProps?: InputMaybe<CompanyBlocksValuePropsFilter>;
   timeline?: InputMaybe<CompanyBlocksTimelineFilter>;
   spinningSensor?: InputMaybe<CompanyBlocksSpinningSensorFilter>;
+  pdfDocumentCards?: InputMaybe<CompanyBlocksPdfDocumentCardsFilter>;
 };
 
 export type CompanyFilter = {
@@ -7265,6 +7668,7 @@ export type PagesBlocksStatsBarStatsMutation = {
 
 export type PagesBlocksStatsBarMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   stats?: InputMaybe<Array<InputMaybe<PagesBlocksStatsBarStatsMutation>>>;
 };
@@ -7303,10 +7707,12 @@ export type PagesBlocksProcessStepsStepsMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type PagesBlocksProcessStepsMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   steps?: InputMaybe<Array<InputMaybe<PagesBlocksProcessStepsStepsMutation>>>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -7316,10 +7722,12 @@ export type PagesBlocksProcessStepsMutation = {
 export type PagesBlocksMetricsBlockMetricsMutation = {
   name?: InputMaybe<Scalars['String']['input']>;
   whatItMeasures?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type PagesBlocksMetricsBlockMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   metrics?: InputMaybe<Array<InputMaybe<PagesBlocksMetricsBlockMetricsMutation>>>;
 };
@@ -7366,6 +7774,7 @@ export type PagesBlocksTestimonialCarouselMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
   wave?: InputMaybe<Scalars['String']['input']>;
   waveFill?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   testimonials?: InputMaybe<Array<InputMaybe<PagesBlocksTestimonialCarouselTestimonialsMutation>>>;
 };
@@ -7528,6 +7937,7 @@ export type PagesBlocksRoiCalculatorPromoMutation = {
 
 export type PagesBlocksLeadMagnetPromoMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   promoBody?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -7578,6 +7988,7 @@ export type PagesBlocksSegmentCardsCardsMutation = {
   link?: InputMaybe<Scalars['String']['input']>;
   linkText?: InputMaybe<Scalars['String']['input']>;
   logos?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type PagesBlocksSegmentCardsMutation = {
@@ -7615,6 +8026,25 @@ export type PagesBlocksSpinningSensorMutation = {
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type PagesBlocksPdfDocumentCardsItemsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+  pdfLabel?: InputMaybe<Scalars['String']['input']>;
+  accent?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PagesBlocksPdfDocumentCardsMutation = {
+  scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  columnCount?: InputMaybe<Scalars['Float']['input']>;
+  items?: InputMaybe<Array<InputMaybe<PagesBlocksPdfDocumentCardsItemsMutation>>>;
+};
+
 export type PagesBlocksMutation = {
   hero?: InputMaybe<PagesBlocksHeroMutation>;
   trustBar?: InputMaybe<PagesBlocksTrustBarMutation>;
@@ -7649,6 +8079,7 @@ export type PagesBlocksMutation = {
   valueProps?: InputMaybe<PagesBlocksValuePropsMutation>;
   timeline?: InputMaybe<PagesBlocksTimelineMutation>;
   spinningSensor?: InputMaybe<PagesBlocksSpinningSensorMutation>;
+  pdfDocumentCards?: InputMaybe<PagesBlocksPdfDocumentCardsMutation>;
 };
 
 export type PagesMutation = {
@@ -7702,6 +8133,7 @@ export type SolutionsBlocksStatsBarStatsMutation = {
 
 export type SolutionsBlocksStatsBarMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   stats?: InputMaybe<Array<InputMaybe<SolutionsBlocksStatsBarStatsMutation>>>;
 };
@@ -7740,10 +8172,12 @@ export type SolutionsBlocksProcessStepsStepsMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type SolutionsBlocksProcessStepsMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   steps?: InputMaybe<Array<InputMaybe<SolutionsBlocksProcessStepsStepsMutation>>>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -7753,10 +8187,12 @@ export type SolutionsBlocksProcessStepsMutation = {
 export type SolutionsBlocksMetricsBlockMetricsMutation = {
   name?: InputMaybe<Scalars['String']['input']>;
   whatItMeasures?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type SolutionsBlocksMetricsBlockMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   metrics?: InputMaybe<Array<InputMaybe<SolutionsBlocksMetricsBlockMetricsMutation>>>;
 };
@@ -7803,6 +8239,7 @@ export type SolutionsBlocksTestimonialCarouselMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
   wave?: InputMaybe<Scalars['String']['input']>;
   waveFill?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   testimonials?: InputMaybe<Array<InputMaybe<SolutionsBlocksTestimonialCarouselTestimonialsMutation>>>;
 };
@@ -7965,6 +8402,7 @@ export type SolutionsBlocksRoiCalculatorPromoMutation = {
 
 export type SolutionsBlocksLeadMagnetPromoMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   promoBody?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -8015,6 +8453,7 @@ export type SolutionsBlocksSegmentCardsCardsMutation = {
   link?: InputMaybe<Scalars['String']['input']>;
   linkText?: InputMaybe<Scalars['String']['input']>;
   logos?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type SolutionsBlocksSegmentCardsMutation = {
@@ -8052,6 +8491,25 @@ export type SolutionsBlocksSpinningSensorMutation = {
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type SolutionsBlocksPdfDocumentCardsItemsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+  pdfLabel?: InputMaybe<Scalars['String']['input']>;
+  accent?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type SolutionsBlocksPdfDocumentCardsMutation = {
+  scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  columnCount?: InputMaybe<Scalars['Float']['input']>;
+  items?: InputMaybe<Array<InputMaybe<SolutionsBlocksPdfDocumentCardsItemsMutation>>>;
+};
+
 export type SolutionsBlocksMutation = {
   hero?: InputMaybe<SolutionsBlocksHeroMutation>;
   trustBar?: InputMaybe<SolutionsBlocksTrustBarMutation>;
@@ -8086,6 +8544,7 @@ export type SolutionsBlocksMutation = {
   valueProps?: InputMaybe<SolutionsBlocksValuePropsMutation>;
   timeline?: InputMaybe<SolutionsBlocksTimelineMutation>;
   spinningSensor?: InputMaybe<SolutionsBlocksSpinningSensorMutation>;
+  pdfDocumentCards?: InputMaybe<SolutionsBlocksPdfDocumentCardsMutation>;
 };
 
 export type SolutionsMutation = {
@@ -8139,6 +8598,7 @@ export type SegmentsBlocksStatsBarStatsMutation = {
 
 export type SegmentsBlocksStatsBarMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   stats?: InputMaybe<Array<InputMaybe<SegmentsBlocksStatsBarStatsMutation>>>;
 };
@@ -8177,10 +8637,12 @@ export type SegmentsBlocksProcessStepsStepsMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type SegmentsBlocksProcessStepsMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   steps?: InputMaybe<Array<InputMaybe<SegmentsBlocksProcessStepsStepsMutation>>>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -8190,10 +8652,12 @@ export type SegmentsBlocksProcessStepsMutation = {
 export type SegmentsBlocksMetricsBlockMetricsMutation = {
   name?: InputMaybe<Scalars['String']['input']>;
   whatItMeasures?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type SegmentsBlocksMetricsBlockMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   metrics?: InputMaybe<Array<InputMaybe<SegmentsBlocksMetricsBlockMetricsMutation>>>;
 };
@@ -8240,6 +8704,7 @@ export type SegmentsBlocksTestimonialCarouselMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
   wave?: InputMaybe<Scalars['String']['input']>;
   waveFill?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   testimonials?: InputMaybe<Array<InputMaybe<SegmentsBlocksTestimonialCarouselTestimonialsMutation>>>;
 };
@@ -8402,6 +8867,7 @@ export type SegmentsBlocksRoiCalculatorPromoMutation = {
 
 export type SegmentsBlocksLeadMagnetPromoMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   promoBody?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -8452,6 +8918,7 @@ export type SegmentsBlocksSegmentCardsCardsMutation = {
   link?: InputMaybe<Scalars['String']['input']>;
   linkText?: InputMaybe<Scalars['String']['input']>;
   logos?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type SegmentsBlocksSegmentCardsMutation = {
@@ -8489,6 +8956,25 @@ export type SegmentsBlocksSpinningSensorMutation = {
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type SegmentsBlocksPdfDocumentCardsItemsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+  pdfLabel?: InputMaybe<Scalars['String']['input']>;
+  accent?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type SegmentsBlocksPdfDocumentCardsMutation = {
+  scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  columnCount?: InputMaybe<Scalars['Float']['input']>;
+  items?: InputMaybe<Array<InputMaybe<SegmentsBlocksPdfDocumentCardsItemsMutation>>>;
+};
+
 export type SegmentsBlocksMutation = {
   hero?: InputMaybe<SegmentsBlocksHeroMutation>;
   trustBar?: InputMaybe<SegmentsBlocksTrustBarMutation>;
@@ -8523,6 +9009,7 @@ export type SegmentsBlocksMutation = {
   valueProps?: InputMaybe<SegmentsBlocksValuePropsMutation>;
   timeline?: InputMaybe<SegmentsBlocksTimelineMutation>;
   spinningSensor?: InputMaybe<SegmentsBlocksSpinningSensorMutation>;
+  pdfDocumentCards?: InputMaybe<SegmentsBlocksPdfDocumentCardsMutation>;
 };
 
 export type SegmentsMutation = {
@@ -8576,6 +9063,7 @@ export type CompareBlocksStatsBarStatsMutation = {
 
 export type CompareBlocksStatsBarMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   stats?: InputMaybe<Array<InputMaybe<CompareBlocksStatsBarStatsMutation>>>;
 };
@@ -8614,10 +9102,12 @@ export type CompareBlocksProcessStepsStepsMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CompareBlocksProcessStepsMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   steps?: InputMaybe<Array<InputMaybe<CompareBlocksProcessStepsStepsMutation>>>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -8627,10 +9117,12 @@ export type CompareBlocksProcessStepsMutation = {
 export type CompareBlocksMetricsBlockMetricsMutation = {
   name?: InputMaybe<Scalars['String']['input']>;
   whatItMeasures?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CompareBlocksMetricsBlockMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   metrics?: InputMaybe<Array<InputMaybe<CompareBlocksMetricsBlockMetricsMutation>>>;
 };
@@ -8677,6 +9169,7 @@ export type CompareBlocksTestimonialCarouselMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
   wave?: InputMaybe<Scalars['String']['input']>;
   waveFill?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   testimonials?: InputMaybe<Array<InputMaybe<CompareBlocksTestimonialCarouselTestimonialsMutation>>>;
 };
@@ -8839,6 +9332,7 @@ export type CompareBlocksRoiCalculatorPromoMutation = {
 
 export type CompareBlocksLeadMagnetPromoMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   promoBody?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -8889,6 +9383,7 @@ export type CompareBlocksSegmentCardsCardsMutation = {
   link?: InputMaybe<Scalars['String']['input']>;
   linkText?: InputMaybe<Scalars['String']['input']>;
   logos?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CompareBlocksSegmentCardsMutation = {
@@ -8926,6 +9421,25 @@ export type CompareBlocksSpinningSensorMutation = {
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type CompareBlocksPdfDocumentCardsItemsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+  pdfLabel?: InputMaybe<Scalars['String']['input']>;
+  accent?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CompareBlocksPdfDocumentCardsMutation = {
+  scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  columnCount?: InputMaybe<Scalars['Float']['input']>;
+  items?: InputMaybe<Array<InputMaybe<CompareBlocksPdfDocumentCardsItemsMutation>>>;
+};
+
 export type CompareBlocksMutation = {
   hero?: InputMaybe<CompareBlocksHeroMutation>;
   trustBar?: InputMaybe<CompareBlocksTrustBarMutation>;
@@ -8960,6 +9474,7 @@ export type CompareBlocksMutation = {
   valueProps?: InputMaybe<CompareBlocksValuePropsMutation>;
   timeline?: InputMaybe<CompareBlocksTimelineMutation>;
   spinningSensor?: InputMaybe<CompareBlocksSpinningSensorMutation>;
+  pdfDocumentCards?: InputMaybe<CompareBlocksPdfDocumentCardsMutation>;
 };
 
 export type CompareMutation = {
@@ -9013,6 +9528,7 @@ export type LearnBlocksStatsBarStatsMutation = {
 
 export type LearnBlocksStatsBarMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   stats?: InputMaybe<Array<InputMaybe<LearnBlocksStatsBarStatsMutation>>>;
 };
@@ -9051,10 +9567,12 @@ export type LearnBlocksProcessStepsStepsMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type LearnBlocksProcessStepsMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   steps?: InputMaybe<Array<InputMaybe<LearnBlocksProcessStepsStepsMutation>>>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -9064,10 +9582,12 @@ export type LearnBlocksProcessStepsMutation = {
 export type LearnBlocksMetricsBlockMetricsMutation = {
   name?: InputMaybe<Scalars['String']['input']>;
   whatItMeasures?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type LearnBlocksMetricsBlockMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   metrics?: InputMaybe<Array<InputMaybe<LearnBlocksMetricsBlockMetricsMutation>>>;
 };
@@ -9114,6 +9634,7 @@ export type LearnBlocksTestimonialCarouselMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
   wave?: InputMaybe<Scalars['String']['input']>;
   waveFill?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   testimonials?: InputMaybe<Array<InputMaybe<LearnBlocksTestimonialCarouselTestimonialsMutation>>>;
 };
@@ -9276,6 +9797,7 @@ export type LearnBlocksRoiCalculatorPromoMutation = {
 
 export type LearnBlocksLeadMagnetPromoMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   promoBody?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -9326,6 +9848,7 @@ export type LearnBlocksSegmentCardsCardsMutation = {
   link?: InputMaybe<Scalars['String']['input']>;
   linkText?: InputMaybe<Scalars['String']['input']>;
   logos?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type LearnBlocksSegmentCardsMutation = {
@@ -9363,6 +9886,25 @@ export type LearnBlocksSpinningSensorMutation = {
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type LearnBlocksPdfDocumentCardsItemsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+  pdfLabel?: InputMaybe<Scalars['String']['input']>;
+  accent?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LearnBlocksPdfDocumentCardsMutation = {
+  scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  columnCount?: InputMaybe<Scalars['Float']['input']>;
+  items?: InputMaybe<Array<InputMaybe<LearnBlocksPdfDocumentCardsItemsMutation>>>;
+};
+
 export type LearnBlocksMutation = {
   hero?: InputMaybe<LearnBlocksHeroMutation>;
   trustBar?: InputMaybe<LearnBlocksTrustBarMutation>;
@@ -9397,6 +9939,7 @@ export type LearnBlocksMutation = {
   valueProps?: InputMaybe<LearnBlocksValuePropsMutation>;
   timeline?: InputMaybe<LearnBlocksTimelineMutation>;
   spinningSensor?: InputMaybe<LearnBlocksSpinningSensorMutation>;
+  pdfDocumentCards?: InputMaybe<LearnBlocksPdfDocumentCardsMutation>;
 };
 
 export type LearnMutation = {
@@ -9412,6 +9955,8 @@ export type LearnMutation = {
   readTime?: InputMaybe<Scalars['Float']['input']>;
   image?: InputMaybe<Scalars['String']['input']>;
   featured?: InputMaybe<Scalars['Boolean']['input']>;
+  downloadPdf?: InputMaybe<Scalars['String']['input']>;
+  downloadPdfLabel?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   primaryKeyword?: InputMaybe<Scalars['String']['input']>;
   keywords?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -9458,6 +10003,7 @@ export type ResourcesBlocksStatsBarStatsMutation = {
 
 export type ResourcesBlocksStatsBarMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   stats?: InputMaybe<Array<InputMaybe<ResourcesBlocksStatsBarStatsMutation>>>;
 };
@@ -9496,10 +10042,12 @@ export type ResourcesBlocksProcessStepsStepsMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type ResourcesBlocksProcessStepsMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   steps?: InputMaybe<Array<InputMaybe<ResourcesBlocksProcessStepsStepsMutation>>>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -9509,10 +10057,12 @@ export type ResourcesBlocksProcessStepsMutation = {
 export type ResourcesBlocksMetricsBlockMetricsMutation = {
   name?: InputMaybe<Scalars['String']['input']>;
   whatItMeasures?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type ResourcesBlocksMetricsBlockMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   metrics?: InputMaybe<Array<InputMaybe<ResourcesBlocksMetricsBlockMetricsMutation>>>;
 };
@@ -9559,6 +10109,7 @@ export type ResourcesBlocksTestimonialCarouselMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
   wave?: InputMaybe<Scalars['String']['input']>;
   waveFill?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   testimonials?: InputMaybe<Array<InputMaybe<ResourcesBlocksTestimonialCarouselTestimonialsMutation>>>;
 };
@@ -9721,6 +10272,7 @@ export type ResourcesBlocksRoiCalculatorPromoMutation = {
 
 export type ResourcesBlocksLeadMagnetPromoMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   promoBody?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -9771,6 +10323,7 @@ export type ResourcesBlocksSegmentCardsCardsMutation = {
   link?: InputMaybe<Scalars['String']['input']>;
   linkText?: InputMaybe<Scalars['String']['input']>;
   logos?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type ResourcesBlocksSegmentCardsMutation = {
@@ -9808,6 +10361,25 @@ export type ResourcesBlocksSpinningSensorMutation = {
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type ResourcesBlocksPdfDocumentCardsItemsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+  pdfLabel?: InputMaybe<Scalars['String']['input']>;
+  accent?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ResourcesBlocksPdfDocumentCardsMutation = {
+  scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  columnCount?: InputMaybe<Scalars['Float']['input']>;
+  items?: InputMaybe<Array<InputMaybe<ResourcesBlocksPdfDocumentCardsItemsMutation>>>;
+};
+
 export type ResourcesBlocksMutation = {
   hero?: InputMaybe<ResourcesBlocksHeroMutation>;
   trustBar?: InputMaybe<ResourcesBlocksTrustBarMutation>;
@@ -9842,6 +10414,7 @@ export type ResourcesBlocksMutation = {
   valueProps?: InputMaybe<ResourcesBlocksValuePropsMutation>;
   timeline?: InputMaybe<ResourcesBlocksTimelineMutation>;
   spinningSensor?: InputMaybe<ResourcesBlocksSpinningSensorMutation>;
+  pdfDocumentCards?: InputMaybe<ResourcesBlocksPdfDocumentCardsMutation>;
 };
 
 export type ResourcesMutation = {
@@ -9895,6 +10468,7 @@ export type CompanyBlocksStatsBarStatsMutation = {
 
 export type CompanyBlocksStatsBarMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   stats?: InputMaybe<Array<InputMaybe<CompanyBlocksStatsBarStatsMutation>>>;
 };
@@ -9933,10 +10507,12 @@ export type CompanyBlocksProcessStepsStepsMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   subtitle?: InputMaybe<Scalars['String']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CompanyBlocksProcessStepsMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   steps?: InputMaybe<Array<InputMaybe<CompanyBlocksProcessStepsStepsMutation>>>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -9946,10 +10522,12 @@ export type CompanyBlocksProcessStepsMutation = {
 export type CompanyBlocksMetricsBlockMetricsMutation = {
   name?: InputMaybe<Scalars['String']['input']>;
   whatItMeasures?: InputMaybe<Scalars['String']['input']>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CompanyBlocksMetricsBlockMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   metrics?: InputMaybe<Array<InputMaybe<CompanyBlocksMetricsBlockMetricsMutation>>>;
 };
@@ -9996,6 +10574,7 @@ export type CompanyBlocksTestimonialCarouselMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
   wave?: InputMaybe<Scalars['String']['input']>;
   waveFill?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   testimonials?: InputMaybe<Array<InputMaybe<CompanyBlocksTestimonialCarouselTestimonialsMutation>>>;
 };
@@ -10158,6 +10737,7 @@ export type CompanyBlocksRoiCalculatorPromoMutation = {
 
 export type CompanyBlocksLeadMagnetPromoMutation = {
   scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
   heading?: InputMaybe<Scalars['String']['input']>;
   promoBody?: InputMaybe<Scalars['String']['input']>;
   ctaText?: InputMaybe<Scalars['String']['input']>;
@@ -10208,6 +10788,7 @@ export type CompanyBlocksSegmentCardsCardsMutation = {
   link?: InputMaybe<Scalars['String']['input']>;
   linkText?: InputMaybe<Scalars['String']['input']>;
   logos?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  image?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type CompanyBlocksSegmentCardsMutation = {
@@ -10245,6 +10826,25 @@ export type CompanyBlocksSpinningSensorMutation = {
   description?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type CompanyBlocksPdfDocumentCardsItemsMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  category?: InputMaybe<Scalars['String']['input']>;
+  ctaText?: InputMaybe<Scalars['String']['input']>;
+  ctaLink?: InputMaybe<Scalars['String']['input']>;
+  pdfLabel?: InputMaybe<Scalars['String']['input']>;
+  accent?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type CompanyBlocksPdfDocumentCardsMutation = {
+  scheme?: InputMaybe<Scalars['String']['input']>;
+  eyebrow?: InputMaybe<Scalars['String']['input']>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  subtitle?: InputMaybe<Scalars['String']['input']>;
+  columnCount?: InputMaybe<Scalars['Float']['input']>;
+  items?: InputMaybe<Array<InputMaybe<CompanyBlocksPdfDocumentCardsItemsMutation>>>;
+};
+
 export type CompanyBlocksMutation = {
   hero?: InputMaybe<CompanyBlocksHeroMutation>;
   trustBar?: InputMaybe<CompanyBlocksTrustBarMutation>;
@@ -10279,6 +10879,7 @@ export type CompanyBlocksMutation = {
   valueProps?: InputMaybe<CompanyBlocksValuePropsMutation>;
   timeline?: InputMaybe<CompanyBlocksTimelineMutation>;
   spinningSensor?: InputMaybe<CompanyBlocksSpinningSensorMutation>;
+  pdfDocumentCards?: InputMaybe<CompanyBlocksPdfDocumentCardsMutation>;
 };
 
 export type CompanyMutation = {
@@ -10367,19 +10968,19 @@ export type SidebarWidgetsMutation = {
   blogSidebar?: InputMaybe<SidebarWidgetsBlogSidebarMutation>;
 };
 
-export type PagesPartsFragment = { __typename: 'Pages', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'PagesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'PagesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'PagesBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'PagesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'PagesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'PagesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'PagesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'PagesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'PagesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'PagesBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'PagesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'PagesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'PagesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'PagesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'PagesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'PagesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'PagesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'PagesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'PagesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'PagesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'PagesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'PagesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'PagesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'PagesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'PagesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'PagesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'PagesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'PagesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'PagesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'PagesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'PagesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'PagesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'PagesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'PagesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null };
+export type PagesPartsFragment = { __typename: 'Pages', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'PagesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'PagesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'PagesBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'PagesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'PagesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'PagesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'PagesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'PagesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'PagesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'PagesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'PagesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'PagesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'PagesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'PagesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'PagesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'PagesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'PagesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'PagesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'PagesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'PagesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'PagesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'PagesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'PagesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'PagesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'PagesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'PagesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'PagesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'PagesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'PagesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'PagesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'PagesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'PagesBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'PagesBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null };
 
-export type SolutionsPartsFragment = { __typename: 'Solutions', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'SolutionsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SolutionsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SolutionsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SolutionsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SolutionsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SolutionsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SolutionsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'SolutionsBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SolutionsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SolutionsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SolutionsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SolutionsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SolutionsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SolutionsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SolutionsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SolutionsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SolutionsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SolutionsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SolutionsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SolutionsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SolutionsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SolutionsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SolutionsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SolutionsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SolutionsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SolutionsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'SolutionsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SolutionsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SolutionsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null };
+export type SolutionsPartsFragment = { __typename: 'Solutions', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'SolutionsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SolutionsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SolutionsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SolutionsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SolutionsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SolutionsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SolutionsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SolutionsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SolutionsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SolutionsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SolutionsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SolutionsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SolutionsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SolutionsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SolutionsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SolutionsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SolutionsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SolutionsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SolutionsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SolutionsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SolutionsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SolutionsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SolutionsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SolutionsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SolutionsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SolutionsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SolutionsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'SolutionsBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'SolutionsBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null };
 
-export type SegmentsPartsFragment = { __typename: 'Segments', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'SegmentsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SegmentsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SegmentsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SegmentsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SegmentsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SegmentsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SegmentsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'SegmentsBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SegmentsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SegmentsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SegmentsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SegmentsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SegmentsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SegmentsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SegmentsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SegmentsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SegmentsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SegmentsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SegmentsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SegmentsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SegmentsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SegmentsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SegmentsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SegmentsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SegmentsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SegmentsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'SegmentsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SegmentsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SegmentsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null };
+export type SegmentsPartsFragment = { __typename: 'Segments', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'SegmentsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SegmentsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SegmentsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SegmentsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SegmentsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SegmentsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SegmentsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SegmentsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SegmentsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SegmentsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SegmentsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SegmentsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SegmentsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SegmentsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SegmentsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SegmentsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SegmentsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SegmentsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SegmentsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SegmentsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SegmentsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SegmentsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SegmentsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SegmentsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SegmentsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SegmentsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SegmentsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'SegmentsBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'SegmentsBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null };
 
-export type ComparePartsFragment = { __typename: 'Compare', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'CompareBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompareBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompareBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompareBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompareBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompareBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompareBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompareBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompareBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'CompareBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompareBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'CompareBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompareBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompareBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompareBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompareBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompareBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompareBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompareBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompareBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompareBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompareBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompareBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompareBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompareBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompareBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompareBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompareBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompareBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompareBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompareBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'CompareBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompareBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompareBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null };
+export type ComparePartsFragment = { __typename: 'Compare', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'CompareBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompareBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompareBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompareBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompareBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompareBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompareBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompareBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompareBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompareBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompareBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompareBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompareBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompareBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompareBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompareBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompareBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompareBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompareBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompareBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompareBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompareBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompareBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompareBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompareBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompareBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompareBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompareBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompareBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompareBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompareBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'CompareBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'CompareBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null };
 
-export type LearnPartsFragment = { __typename: 'Learn', title: string, excerpt?: string | null, body?: any | null, category?: string | null, tags?: Array<string | null> | null, author?: string | null, authorRole?: string | null, reviewer?: string | null, publishedDate?: string | null, readTime?: number | null, image?: string | null, featured?: boolean | null, description?: string | null, primaryKeyword?: string | null, keywords?: Array<string | null> | null, blocks?: Array<{ __typename: 'LearnBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'LearnBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'LearnBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'LearnBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'LearnBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'LearnBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'LearnBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'LearnBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'LearnBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'LearnBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'LearnBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'LearnBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'LearnBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'LearnBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'LearnBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'LearnBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'LearnBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'LearnBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'LearnBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'LearnBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'LearnBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'LearnBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'LearnBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'LearnBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'LearnBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'LearnBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'LearnBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'LearnBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'LearnBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'LearnBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'LearnBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'LearnBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'LearnBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'LearnBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null };
+export type LearnPartsFragment = { __typename: 'Learn', title: string, excerpt?: string | null, body?: any | null, category?: string | null, tags?: Array<string | null> | null, author?: string | null, authorRole?: string | null, reviewer?: string | null, publishedDate?: string | null, readTime?: number | null, image?: string | null, featured?: boolean | null, downloadPdf?: string | null, downloadPdfLabel?: string | null, description?: string | null, primaryKeyword?: string | null, keywords?: Array<string | null> | null, blocks?: Array<{ __typename: 'LearnBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'LearnBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'LearnBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'LearnBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'LearnBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'LearnBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'LearnBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'LearnBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'LearnBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'LearnBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'LearnBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'LearnBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'LearnBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'LearnBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'LearnBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'LearnBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'LearnBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'LearnBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'LearnBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'LearnBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'LearnBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'LearnBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'LearnBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'LearnBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'LearnBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'LearnBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'LearnBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'LearnBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'LearnBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'LearnBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'LearnBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'LearnBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'LearnBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null };
 
-export type ResourcesPartsFragment = { __typename: 'Resources', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'ResourcesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'ResourcesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'ResourcesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'ResourcesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'ResourcesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'ResourcesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'ResourcesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'ResourcesBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'ResourcesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'ResourcesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'ResourcesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'ResourcesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'ResourcesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'ResourcesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'ResourcesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'ResourcesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'ResourcesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'ResourcesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'ResourcesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'ResourcesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'ResourcesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'ResourcesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'ResourcesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'ResourcesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'ResourcesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'ResourcesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'ResourcesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'ResourcesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'ResourcesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null };
+export type ResourcesPartsFragment = { __typename: 'Resources', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'ResourcesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'ResourcesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'ResourcesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'ResourcesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'ResourcesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'ResourcesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'ResourcesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'ResourcesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'ResourcesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'ResourcesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'ResourcesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'ResourcesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'ResourcesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'ResourcesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'ResourcesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'ResourcesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'ResourcesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'ResourcesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'ResourcesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'ResourcesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'ResourcesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'ResourcesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'ResourcesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'ResourcesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'ResourcesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'ResourcesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'ResourcesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'ResourcesBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'ResourcesBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null };
 
-export type CompanyPartsFragment = { __typename: 'Company', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'CompanyBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompanyBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompanyBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompanyBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompanyBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompanyBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompanyBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompanyBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompanyBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'CompanyBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompanyBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'CompanyBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompanyBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompanyBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompanyBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompanyBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompanyBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompanyBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompanyBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompanyBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompanyBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompanyBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompanyBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompanyBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompanyBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompanyBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompanyBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompanyBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompanyBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompanyBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompanyBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'CompanyBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompanyBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompanyBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null };
+export type CompanyPartsFragment = { __typename: 'Company', title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, blocks?: Array<{ __typename: 'CompanyBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompanyBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompanyBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompanyBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompanyBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompanyBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompanyBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompanyBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompanyBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompanyBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompanyBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompanyBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompanyBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompanyBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompanyBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompanyBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompanyBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompanyBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompanyBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompanyBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompanyBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompanyBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompanyBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompanyBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompanyBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompanyBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompanyBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompanyBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompanyBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompanyBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompanyBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'CompanyBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'CompanyBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null };
 
 export type UtilityPartsFragment = { __typename: 'Utility', title: string, description?: string | null, body?: any | null, keywords?: Array<string | null> | null };
 
@@ -10394,7 +10995,7 @@ export type PagesQueryVariables = Exact<{
 }>;
 
 
-export type PagesQuery = { __typename?: 'Query', pages: { __typename: 'Pages', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PagesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'PagesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'PagesBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'PagesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'PagesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'PagesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'PagesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'PagesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'PagesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'PagesBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'PagesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'PagesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'PagesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'PagesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'PagesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'PagesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'PagesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'PagesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'PagesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'PagesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'PagesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'PagesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'PagesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'PagesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'PagesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'PagesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'PagesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'PagesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'PagesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'PagesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'PagesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'PagesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'PagesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'PagesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } };
+export type PagesQuery = { __typename?: 'Query', pages: { __typename: 'Pages', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PagesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'PagesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'PagesBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'PagesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'PagesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'PagesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'PagesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'PagesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'PagesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'PagesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'PagesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'PagesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'PagesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'PagesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'PagesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'PagesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'PagesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'PagesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'PagesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'PagesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'PagesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'PagesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'PagesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'PagesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'PagesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'PagesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'PagesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'PagesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'PagesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'PagesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'PagesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'PagesBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'PagesBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } };
 
 export type PagesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -10406,14 +11007,14 @@ export type PagesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename: 'Pages', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PagesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'PagesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'PagesBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'PagesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'PagesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'PagesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'PagesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'PagesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'PagesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'PagesBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'PagesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'PagesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'PagesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'PagesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'PagesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'PagesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'PagesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'PagesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'PagesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'PagesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'PagesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'PagesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'PagesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'PagesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'PagesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'PagesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'PagesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'PagesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'PagesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'PagesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'PagesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'PagesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'PagesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'PagesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename: 'Pages', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'PagesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'PagesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'PagesBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'PagesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'PagesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'PagesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'PagesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'PagesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'PagesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'PagesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'PagesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'PagesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'PagesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'PagesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'PagesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'PagesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'PagesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'PagesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'PagesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'PagesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'PagesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'PagesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'PagesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'PagesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'PagesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'PagesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'PagesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'PagesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'PagesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'PagesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'PagesBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'PagesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'PagesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'PagesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'PagesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'PagesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'PagesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'PagesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'PagesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'PagesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'PagesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'PagesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'PagesBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'PagesBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } | null } | null> | null } };
 
 export type SolutionsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type SolutionsQuery = { __typename?: 'Query', solutions: { __typename: 'Solutions', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'SolutionsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SolutionsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SolutionsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SolutionsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SolutionsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SolutionsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SolutionsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'SolutionsBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SolutionsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SolutionsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SolutionsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SolutionsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SolutionsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SolutionsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SolutionsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SolutionsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SolutionsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SolutionsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SolutionsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SolutionsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SolutionsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SolutionsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SolutionsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SolutionsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SolutionsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SolutionsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'SolutionsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SolutionsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SolutionsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } };
+export type SolutionsQuery = { __typename?: 'Query', solutions: { __typename: 'Solutions', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'SolutionsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SolutionsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SolutionsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SolutionsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SolutionsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SolutionsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SolutionsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SolutionsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SolutionsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SolutionsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SolutionsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SolutionsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SolutionsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SolutionsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SolutionsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SolutionsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SolutionsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SolutionsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SolutionsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SolutionsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SolutionsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SolutionsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SolutionsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SolutionsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SolutionsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SolutionsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SolutionsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'SolutionsBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'SolutionsBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } };
 
 export type SolutionsConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -10425,14 +11026,14 @@ export type SolutionsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type SolutionsConnectionQuery = { __typename?: 'Query', solutionsConnection: { __typename?: 'SolutionsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'SolutionsConnectionEdges', cursor: string, node?: { __typename: 'Solutions', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'SolutionsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SolutionsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SolutionsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SolutionsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SolutionsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SolutionsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SolutionsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'SolutionsBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SolutionsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SolutionsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SolutionsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SolutionsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SolutionsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SolutionsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SolutionsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SolutionsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SolutionsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SolutionsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SolutionsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SolutionsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SolutionsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SolutionsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SolutionsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SolutionsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SolutionsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SolutionsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'SolutionsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SolutionsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SolutionsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+export type SolutionsConnectionQuery = { __typename?: 'Query', solutionsConnection: { __typename?: 'SolutionsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'SolutionsConnectionEdges', cursor: string, node?: { __typename: 'Solutions', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'SolutionsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SolutionsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SolutionsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SolutionsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SolutionsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SolutionsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SolutionsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SolutionsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SolutionsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SolutionsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SolutionsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SolutionsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SolutionsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SolutionsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SolutionsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SolutionsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SolutionsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SolutionsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SolutionsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SolutionsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SolutionsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SolutionsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SolutionsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SolutionsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SolutionsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SolutionsBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SolutionsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SolutionsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SolutionsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SolutionsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SolutionsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SolutionsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SolutionsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'SolutionsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SolutionsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SolutionsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SolutionsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'SolutionsBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'SolutionsBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } | null } | null> | null } };
 
 export type SegmentsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type SegmentsQuery = { __typename?: 'Query', segments: { __typename: 'Segments', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'SegmentsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SegmentsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SegmentsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SegmentsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SegmentsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SegmentsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SegmentsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'SegmentsBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SegmentsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SegmentsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SegmentsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SegmentsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SegmentsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SegmentsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SegmentsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SegmentsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SegmentsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SegmentsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SegmentsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SegmentsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SegmentsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SegmentsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SegmentsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SegmentsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SegmentsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SegmentsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'SegmentsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SegmentsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SegmentsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } };
+export type SegmentsQuery = { __typename?: 'Query', segments: { __typename: 'Segments', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'SegmentsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SegmentsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SegmentsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SegmentsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SegmentsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SegmentsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SegmentsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SegmentsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SegmentsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SegmentsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SegmentsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SegmentsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SegmentsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SegmentsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SegmentsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SegmentsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SegmentsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SegmentsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SegmentsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SegmentsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SegmentsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SegmentsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SegmentsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SegmentsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SegmentsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SegmentsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SegmentsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'SegmentsBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'SegmentsBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } };
 
 export type SegmentsConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -10444,14 +11045,14 @@ export type SegmentsConnectionQueryVariables = Exact<{
 }>;
 
 
-export type SegmentsConnectionQuery = { __typename?: 'Query', segmentsConnection: { __typename?: 'SegmentsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'SegmentsConnectionEdges', cursor: string, node?: { __typename: 'Segments', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'SegmentsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SegmentsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SegmentsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SegmentsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SegmentsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SegmentsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SegmentsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'SegmentsBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SegmentsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SegmentsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SegmentsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SegmentsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SegmentsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SegmentsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SegmentsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SegmentsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SegmentsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SegmentsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SegmentsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SegmentsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SegmentsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SegmentsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SegmentsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SegmentsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SegmentsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SegmentsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'SegmentsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SegmentsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SegmentsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+export type SegmentsConnectionQuery = { __typename?: 'Query', segmentsConnection: { __typename?: 'SegmentsConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'SegmentsConnectionEdges', cursor: string, node?: { __typename: 'Segments', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'SegmentsBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'SegmentsBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'SegmentsBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'SegmentsBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'SegmentsBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'SegmentsBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'SegmentsBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'SegmentsBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'SegmentsBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'SegmentsBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'SegmentsBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'SegmentsBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'SegmentsBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'SegmentsBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'SegmentsBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'SegmentsBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'SegmentsBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'SegmentsBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'SegmentsBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'SegmentsBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'SegmentsBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'SegmentsBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'SegmentsBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'SegmentsBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'SegmentsBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'SegmentsBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'SegmentsBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'SegmentsBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'SegmentsBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'SegmentsBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'SegmentsBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'SegmentsBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'SegmentsBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'SegmentsBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'SegmentsBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'SegmentsBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'SegmentsBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'SegmentsBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'SegmentsBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } | null } | null> | null } };
 
 export type CompareQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type CompareQuery = { __typename?: 'Query', compare: { __typename: 'Compare', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'CompareBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompareBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompareBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompareBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompareBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompareBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompareBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompareBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompareBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'CompareBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompareBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'CompareBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompareBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompareBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompareBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompareBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompareBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompareBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompareBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompareBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompareBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompareBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompareBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompareBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompareBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompareBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompareBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompareBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompareBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompareBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompareBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'CompareBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompareBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompareBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } };
+export type CompareQuery = { __typename?: 'Query', compare: { __typename: 'Compare', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'CompareBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompareBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompareBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompareBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompareBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompareBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompareBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompareBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompareBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompareBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompareBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompareBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompareBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompareBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompareBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompareBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompareBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompareBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompareBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompareBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompareBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompareBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompareBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompareBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompareBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompareBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompareBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompareBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompareBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompareBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompareBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'CompareBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'CompareBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } };
 
 export type CompareConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -10463,14 +11064,14 @@ export type CompareConnectionQueryVariables = Exact<{
 }>;
 
 
-export type CompareConnectionQuery = { __typename?: 'Query', compareConnection: { __typename?: 'CompareConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'CompareConnectionEdges', cursor: string, node?: { __typename: 'Compare', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'CompareBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompareBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompareBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompareBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompareBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompareBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompareBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompareBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompareBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'CompareBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompareBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'CompareBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompareBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompareBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompareBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompareBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompareBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompareBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompareBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompareBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompareBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompareBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompareBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompareBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompareBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompareBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompareBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompareBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompareBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompareBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompareBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'CompareBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompareBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompareBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+export type CompareConnectionQuery = { __typename?: 'Query', compareConnection: { __typename?: 'CompareConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'CompareConnectionEdges', cursor: string, node?: { __typename: 'Compare', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'CompareBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompareBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompareBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompareBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompareBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompareBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompareBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompareBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompareBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompareBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompareBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompareBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompareBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompareBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompareBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompareBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompareBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompareBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompareBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompareBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompareBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompareBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompareBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompareBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompareBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompareBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompareBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompareBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompareBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompareBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompareBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompareBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompareBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompareBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompareBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompareBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompareBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompareBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'CompareBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompareBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompareBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompareBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'CompareBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'CompareBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } | null } | null> | null } };
 
 export type LearnQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type LearnQuery = { __typename?: 'Query', learn: { __typename: 'Learn', id: string, title: string, excerpt?: string | null, body?: any | null, category?: string | null, tags?: Array<string | null> | null, author?: string | null, authorRole?: string | null, reviewer?: string | null, publishedDate?: string | null, readTime?: number | null, image?: string | null, featured?: boolean | null, description?: string | null, primaryKeyword?: string | null, keywords?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'LearnBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'LearnBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'LearnBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'LearnBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'LearnBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'LearnBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'LearnBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'LearnBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'LearnBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'LearnBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'LearnBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'LearnBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'LearnBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'LearnBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'LearnBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'LearnBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'LearnBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'LearnBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'LearnBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'LearnBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'LearnBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'LearnBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'LearnBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'LearnBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'LearnBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'LearnBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'LearnBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'LearnBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'LearnBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'LearnBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'LearnBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'LearnBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'LearnBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'LearnBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } };
+export type LearnQuery = { __typename?: 'Query', learn: { __typename: 'Learn', id: string, title: string, excerpt?: string | null, body?: any | null, category?: string | null, tags?: Array<string | null> | null, author?: string | null, authorRole?: string | null, reviewer?: string | null, publishedDate?: string | null, readTime?: number | null, image?: string | null, featured?: boolean | null, downloadPdf?: string | null, downloadPdfLabel?: string | null, description?: string | null, primaryKeyword?: string | null, keywords?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'LearnBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'LearnBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'LearnBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'LearnBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'LearnBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'LearnBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'LearnBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'LearnBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'LearnBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'LearnBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'LearnBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'LearnBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'LearnBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'LearnBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'LearnBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'LearnBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'LearnBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'LearnBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'LearnBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'LearnBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'LearnBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'LearnBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'LearnBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'LearnBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'LearnBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'LearnBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'LearnBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'LearnBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'LearnBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'LearnBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'LearnBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'LearnBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'LearnBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } };
 
 export type LearnConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -10482,14 +11083,14 @@ export type LearnConnectionQueryVariables = Exact<{
 }>;
 
 
-export type LearnConnectionQuery = { __typename?: 'Query', learnConnection: { __typename?: 'LearnConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'LearnConnectionEdges', cursor: string, node?: { __typename: 'Learn', id: string, title: string, excerpt?: string | null, body?: any | null, category?: string | null, tags?: Array<string | null> | null, author?: string | null, authorRole?: string | null, reviewer?: string | null, publishedDate?: string | null, readTime?: number | null, image?: string | null, featured?: boolean | null, description?: string | null, primaryKeyword?: string | null, keywords?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'LearnBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'LearnBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'LearnBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'LearnBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'LearnBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'LearnBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'LearnBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'LearnBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'LearnBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'LearnBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'LearnBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'LearnBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'LearnBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'LearnBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'LearnBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'LearnBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'LearnBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'LearnBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'LearnBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'LearnBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'LearnBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'LearnBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'LearnBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'LearnBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'LearnBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'LearnBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'LearnBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'LearnBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'LearnBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'LearnBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'LearnBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'LearnBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'LearnBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'LearnBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+export type LearnConnectionQuery = { __typename?: 'Query', learnConnection: { __typename?: 'LearnConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'LearnConnectionEdges', cursor: string, node?: { __typename: 'Learn', id: string, title: string, excerpt?: string | null, body?: any | null, category?: string | null, tags?: Array<string | null> | null, author?: string | null, authorRole?: string | null, reviewer?: string | null, publishedDate?: string | null, readTime?: number | null, image?: string | null, featured?: boolean | null, downloadPdf?: string | null, downloadPdfLabel?: string | null, description?: string | null, primaryKeyword?: string | null, keywords?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'LearnBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'LearnBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'LearnBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'LearnBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'LearnBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'LearnBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'LearnBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'LearnBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'LearnBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'LearnBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'LearnBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'LearnBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'LearnBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'LearnBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'LearnBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'LearnBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'LearnBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'LearnBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'LearnBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'LearnBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'LearnBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'LearnBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'LearnBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'LearnBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'LearnBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'LearnBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'LearnBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'LearnBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'LearnBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'LearnBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'LearnBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'LearnBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'LearnBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'LearnBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'LearnBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'LearnBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'LearnBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'LearnBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'LearnBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'LearnBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'LearnBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'LearnBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'LearnBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'LearnBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } | null } | null> | null } };
 
 export type ResourcesQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type ResourcesQuery = { __typename?: 'Query', resources: { __typename: 'Resources', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'ResourcesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'ResourcesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'ResourcesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'ResourcesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'ResourcesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'ResourcesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'ResourcesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'ResourcesBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'ResourcesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'ResourcesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'ResourcesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'ResourcesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'ResourcesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'ResourcesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'ResourcesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'ResourcesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'ResourcesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'ResourcesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'ResourcesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'ResourcesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'ResourcesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'ResourcesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'ResourcesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'ResourcesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'ResourcesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'ResourcesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'ResourcesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'ResourcesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'ResourcesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } };
+export type ResourcesQuery = { __typename?: 'Query', resources: { __typename: 'Resources', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'ResourcesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'ResourcesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'ResourcesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'ResourcesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'ResourcesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'ResourcesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'ResourcesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'ResourcesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'ResourcesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'ResourcesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'ResourcesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'ResourcesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'ResourcesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'ResourcesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'ResourcesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'ResourcesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'ResourcesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'ResourcesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'ResourcesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'ResourcesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'ResourcesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'ResourcesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'ResourcesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'ResourcesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'ResourcesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'ResourcesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'ResourcesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'ResourcesBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'ResourcesBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } };
 
 export type ResourcesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -10501,14 +11102,14 @@ export type ResourcesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ResourcesConnectionQuery = { __typename?: 'Query', resourcesConnection: { __typename?: 'ResourcesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ResourcesConnectionEdges', cursor: string, node?: { __typename: 'Resources', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'ResourcesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'ResourcesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'ResourcesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'ResourcesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'ResourcesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'ResourcesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'ResourcesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'ResourcesBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'ResourcesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'ResourcesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'ResourcesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'ResourcesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'ResourcesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'ResourcesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'ResourcesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'ResourcesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'ResourcesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'ResourcesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'ResourcesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'ResourcesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'ResourcesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'ResourcesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'ResourcesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'ResourcesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'ResourcesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'ResourcesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'ResourcesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'ResourcesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'ResourcesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+export type ResourcesConnectionQuery = { __typename?: 'Query', resourcesConnection: { __typename?: 'ResourcesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ResourcesConnectionEdges', cursor: string, node?: { __typename: 'Resources', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'ResourcesBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'ResourcesBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'ResourcesBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'ResourcesBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'ResourcesBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'ResourcesBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'ResourcesBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'ResourcesBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'ResourcesBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'ResourcesBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'ResourcesBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'ResourcesBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'ResourcesBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'ResourcesBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'ResourcesBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'ResourcesBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'ResourcesBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'ResourcesBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'ResourcesBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'ResourcesBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'ResourcesBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'ResourcesBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'ResourcesBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'ResourcesBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'ResourcesBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'ResourcesBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'ResourcesBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'ResourcesBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'ResourcesBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'ResourcesBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'ResourcesBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'ResourcesBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'ResourcesBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'ResourcesBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'ResourcesBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'ResourcesBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'ResourcesBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'ResourcesBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'ResourcesBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } | null } | null> | null } };
 
 export type CompanyQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type CompanyQuery = { __typename?: 'Query', company: { __typename: 'Company', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'CompanyBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompanyBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompanyBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompanyBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompanyBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompanyBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompanyBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompanyBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompanyBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'CompanyBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompanyBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'CompanyBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompanyBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompanyBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompanyBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompanyBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompanyBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompanyBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompanyBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompanyBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompanyBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompanyBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompanyBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompanyBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompanyBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompanyBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompanyBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompanyBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompanyBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompanyBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompanyBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'CompanyBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompanyBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompanyBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } };
+export type CompanyQuery = { __typename?: 'Query', company: { __typename: 'Company', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'CompanyBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompanyBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompanyBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompanyBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompanyBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompanyBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompanyBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompanyBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompanyBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompanyBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompanyBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompanyBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompanyBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompanyBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompanyBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompanyBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompanyBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompanyBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompanyBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompanyBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompanyBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompanyBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompanyBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompanyBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompanyBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompanyBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompanyBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompanyBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompanyBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompanyBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompanyBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'CompanyBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'CompanyBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } };
 
 export type CompanyConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -10520,7 +11121,7 @@ export type CompanyConnectionQueryVariables = Exact<{
 }>;
 
 
-export type CompanyConnectionQuery = { __typename?: 'Query', companyConnection: { __typename?: 'CompanyConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'CompanyConnectionEdges', cursor: string, node?: { __typename: 'Company', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'CompanyBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompanyBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompanyBlocksStatsBar', scheme?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompanyBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompanyBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompanyBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompanyBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompanyBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksProcessSteps', scheme?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompanyBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null } | null> | null } | { __typename: 'CompanyBlocksMetricsBlock', scheme?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompanyBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null } | null> | null } | { __typename: 'CompanyBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompanyBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompanyBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompanyBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompanyBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompanyBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompanyBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompanyBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompanyBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompanyBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompanyBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompanyBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompanyBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompanyBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompanyBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompanyBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksLeadMagnetPromo', scheme?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompanyBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompanyBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompanyBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompanyBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null } | null> | null } | { __typename: 'CompanyBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompanyBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompanyBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | null> | null } | null } | null> | null } };
+export type CompanyConnectionQuery = { __typename?: 'Query', companyConnection: { __typename?: 'CompanyConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'CompanyConnectionEdges', cursor: string, node?: { __typename: 'Company', id: string, title: string, description?: string | null, url?: string | null, keywords?: Array<string | null> | null, primaryKeyword?: string | null, h1?: string | null, tags?: Array<string | null> | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, blocks?: Array<{ __typename: 'CompanyBlocksHero', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, headline?: string | null, subtitle?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null, backgroundImage?: string | null, backgroundImageAlt?: string | null, videoIframe?: string | null, breadcrumb?: Array<{ __typename: 'CompanyBlocksHeroBreadcrumb', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustBar', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksTrustBarItems', text: string, logo?: string | null } | null> | null } | { __typename: 'CompanyBlocksStatsBar', scheme?: string | null, eyebrow?: string | null, heading?: string | null, stats?: Array<{ __typename: 'CompanyBlocksStatsBarStats', value: string, label: string, sublabel?: string | null } | null> | null } | { __typename: 'CompanyBlocksSegmentRouter', scheme?: string | null, heading?: string | null, subheading?: string | null, segments?: Array<{ __typename: 'CompanyBlocksSegmentRouterSegments', title: string, description?: string | null, ctaText?: string | null, link: string } | null> | null } | { __typename: 'CompanyBlocksSolutionCards', scheme?: string | null, heading?: string | null, subheading?: string | null, cards?: Array<{ __typename: 'CompanyBlocksSolutionCardsCards', title: string, description?: string | null, link?: string | null, iconHint?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksProcessSteps', scheme?: string | null, eyebrow?: string | null, heading?: string | null, ctaText?: string | null, ctaLink?: string | null, steps?: Array<{ __typename: 'CompanyBlocksProcessStepsSteps', number: number, title: string, subtitle?: string | null, description?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksMetricsBlock', scheme?: string | null, eyebrow?: string | null, heading?: string | null, metrics?: Array<{ __typename: 'CompanyBlocksMetricsBlockMetrics', name: string, whatItMeasures?: string | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksFeatureComparison', scheme?: string | null, heading?: string | null, tldr?: string | null, columns?: Array<string | null> | null, rows?: Array<{ __typename: 'CompanyBlocksFeatureComparisonRows', feature: string, values?: Array<string | null> | null } | null> | null } | { __typename: 'CompanyBlocksEvidenceBlock', scheme?: string | null, heading?: string | null, pulledStat?: string | null, pulledStatSource?: string | null, citations?: Array<{ __typename: 'CompanyBlocksEvidenceBlockCitations', title: string, authors?: string | null, journal?: string | null, year?: string | null, finding?: string | null, link?: string | null } | null> | null } | { __typename: 'CompanyBlocksTestimonialCarousel', scheme?: string | null, wave?: string | null, waveFill?: string | null, eyebrow?: string | null, heading?: string | null, testimonials?: Array<{ __typename: 'CompanyBlocksTestimonialCarouselTestimonials', quote: string, name?: string | null, role?: string | null, organization?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksCaseStudyCards', scheme?: string | null, heading?: string | null, caseStudies?: Array<{ __typename: 'CompanyBlocksCaseStudyCardsCaseStudies', title: string, metric?: string | null, metricLabel?: string | null, summary?: string | null, sector?: string | null, link?: string | null, thumbnail?: string | null } | null> | null } | { __typename: 'CompanyBlocksFaqAccordion', scheme?: string | null, heading?: string | null, emitSchema?: boolean | null, faqs?: Array<{ __typename: 'CompanyBlocksFaqAccordionFaqs', question: string, answer: string } | null> | null } | { __typename: 'CompanyBlocksCtaBanner', scheme?: string | null, wave?: string | null, waveFill?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksCtaInline', scheme?: string | null, heading?: string | null, bodyText?: string | null, primaryCtaText?: string | null, primaryCtaLink?: string | null, secondaryCtaText?: string | null, secondaryCtaLink?: string | null } | { __typename: 'CompanyBlocksImageFeature', scheme?: string | null, imagePosition?: string | null, image?: string | null, videoSrc?: string | null, imageAlt?: string | null, imageFit?: string | null, headline?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, bulletPoints?: Array<{ __typename: 'CompanyBlocksImageFeatureBulletPoints', text: string } | null> | null } | { __typename: 'CompanyBlocksVideoSection', scheme?: string | null, heading?: string | null, videoUrl?: string | null, caption?: string | null, thumbnail?: string | null } | { __typename: 'CompanyBlocksTeamGrid', scheme?: string | null, heading?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamGridTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null } | null> | null } | { __typename: 'CompanyBlocksTeamShowcase', scheme?: string | null, heading?: string | null, subtitle?: string | null, layout?: string | null, team?: Array<{ __typename: 'CompanyBlocksTeamShowcaseTeam', name: string, role: string, credentials?: string | null, bio?: string | null, photo?: string | null, linkedin?: string | null, tier?: string | null } | null> | null } | { __typename: 'CompanyBlocksTrustCertBlock', scheme?: string | null, badges?: Array<{ __typename: 'CompanyBlocksTrustCertBlockBadges', label: string, icon?: string | null } | null> | null } | { __typename: 'CompanyBlocksAlertBanner', scheme?: string | null, type?: string | null, text: string, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksProse', scheme?: string | null, align?: string | null, eyebrow?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRichText', scheme?: string | null, heading?: string | null, body?: string | null } | { __typename: 'CompanyBlocksRelatedPages', scheme?: string | null, heading?: string | null, limit?: number | null, filterTags?: Array<string | null> | null } | { __typename: 'CompanyBlocksRoiCalculatorPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null } | { __typename: 'CompanyBlocksLeadMagnetPromo', scheme?: string | null, eyebrow?: string | null, heading?: string | null, promoBody?: string | null, ctaText?: string | null, ctaLink?: string | null, coverImage?: string | null } | { __typename: 'CompanyBlocksBreadcrumb', scheme?: string | null, items?: Array<{ __typename: 'CompanyBlocksBreadcrumbItems', label: string, href?: string | null } | null> | null } | { __typename: 'CompanyBlocksPartnerLogoCarousel', heading?: string | null, subheading?: string | null, scheme?: string | null, logos?: Array<{ __typename: 'CompanyBlocksPartnerLogoCarouselLogos', src: string, alt: string } | null> | null } | { __typename: 'CompanyBlocksContactForm', scheme?: string | null, heading?: string | null, subtitle?: string | null, salesEmail?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSupportForm', heading?: string | null, subtitle?: string | null, supportEmail?: string | null } | { __typename: 'CompanyBlocksSegmentCards', scheme?: string | null, heading?: string | null, centered?: boolean | null, cards?: Array<{ __typename: 'CompanyBlocksSegmentCardsCards', title: string, body?: string | null, icon?: string | null, link?: string | null, linkText?: string | null, logos?: Array<string | null> | null, image?: string | null } | null> | null } | { __typename: 'CompanyBlocksValueProps', scheme?: string | null, heading?: string | null, items?: Array<{ __typename: 'CompanyBlocksValuePropsItems', title: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksTimeline', scheme?: string | null, heading?: string | null, entries?: Array<{ __typename: 'CompanyBlocksTimelineEntries', year: string, body?: string | null } | null> | null } | { __typename: 'CompanyBlocksSpinningSensor', eyebrow?: string | null, heading?: string | null, description?: string | null } | { __typename: 'CompanyBlocksPdfDocumentCards', scheme?: string | null, eyebrow?: string | null, heading?: string | null, subtitle?: string | null, columnCount?: number | null, items?: Array<{ __typename: 'CompanyBlocksPdfDocumentCardsItems', title: string, description?: string | null, category?: string | null, ctaText?: string | null, ctaLink: string, pdfLabel?: string | null, accent?: string | null } | null> | null } | null> | null } | null } | null> | null } };
 
 export type UtilityQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -10633,6 +11234,7 @@ export const PagesPartsFragmentDoc = gql`
     }
     ... on PagesBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -10668,6 +11270,7 @@ export const PagesPartsFragmentDoc = gql`
     }
     ... on PagesBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -10675,17 +11278,20 @@ export const PagesPartsFragmentDoc = gql`
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on PagesBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on PagesBlocksFeatureComparison {
@@ -10718,6 +11324,7 @@ export const PagesPartsFragmentDoc = gql`
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -10866,6 +11473,7 @@ export const PagesPartsFragmentDoc = gql`
     }
     ... on PagesBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -10914,6 +11522,7 @@ export const PagesPartsFragmentDoc = gql`
         link
         linkText
         logos
+        image
       }
     }
     ... on PagesBlocksValueProps {
@@ -10938,6 +11547,23 @@ export const PagesPartsFragmentDoc = gql`
       eyebrow
       heading
       description
+    }
+    ... on PagesBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columnCount
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title
@@ -10984,6 +11610,7 @@ export const SolutionsPartsFragmentDoc = gql`
     }
     ... on SolutionsBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -11019,6 +11646,7 @@ export const SolutionsPartsFragmentDoc = gql`
     }
     ... on SolutionsBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -11026,17 +11654,20 @@ export const SolutionsPartsFragmentDoc = gql`
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on SolutionsBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on SolutionsBlocksFeatureComparison {
@@ -11069,6 +11700,7 @@ export const SolutionsPartsFragmentDoc = gql`
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -11217,6 +11849,7 @@ export const SolutionsPartsFragmentDoc = gql`
     }
     ... on SolutionsBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -11265,6 +11898,7 @@ export const SolutionsPartsFragmentDoc = gql`
         link
         linkText
         logos
+        image
       }
     }
     ... on SolutionsBlocksValueProps {
@@ -11289,6 +11923,23 @@ export const SolutionsPartsFragmentDoc = gql`
       eyebrow
       heading
       description
+    }
+    ... on SolutionsBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columnCount
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title
@@ -11335,6 +11986,7 @@ export const SegmentsPartsFragmentDoc = gql`
     }
     ... on SegmentsBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -11370,6 +12022,7 @@ export const SegmentsPartsFragmentDoc = gql`
     }
     ... on SegmentsBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -11377,17 +12030,20 @@ export const SegmentsPartsFragmentDoc = gql`
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on SegmentsBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on SegmentsBlocksFeatureComparison {
@@ -11420,6 +12076,7 @@ export const SegmentsPartsFragmentDoc = gql`
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -11568,6 +12225,7 @@ export const SegmentsPartsFragmentDoc = gql`
     }
     ... on SegmentsBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -11616,6 +12274,7 @@ export const SegmentsPartsFragmentDoc = gql`
         link
         linkText
         logos
+        image
       }
     }
     ... on SegmentsBlocksValueProps {
@@ -11640,6 +12299,23 @@ export const SegmentsPartsFragmentDoc = gql`
       eyebrow
       heading
       description
+    }
+    ... on SegmentsBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columnCount
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title
@@ -11686,6 +12362,7 @@ export const ComparePartsFragmentDoc = gql`
     }
     ... on CompareBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -11721,6 +12398,7 @@ export const ComparePartsFragmentDoc = gql`
     }
     ... on CompareBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -11728,17 +12406,20 @@ export const ComparePartsFragmentDoc = gql`
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on CompareBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on CompareBlocksFeatureComparison {
@@ -11771,6 +12452,7 @@ export const ComparePartsFragmentDoc = gql`
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -11919,6 +12601,7 @@ export const ComparePartsFragmentDoc = gql`
     }
     ... on CompareBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -11967,6 +12650,7 @@ export const ComparePartsFragmentDoc = gql`
         link
         linkText
         logos
+        image
       }
     }
     ... on CompareBlocksValueProps {
@@ -11991,6 +12675,23 @@ export const ComparePartsFragmentDoc = gql`
       eyebrow
       heading
       description
+    }
+    ... on CompareBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columnCount
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title
@@ -12017,6 +12718,8 @@ export const LearnPartsFragmentDoc = gql`
   readTime
   image
   featured
+  downloadPdf
+  downloadPdfLabel
   description
   primaryKeyword
   keywords
@@ -12052,6 +12755,7 @@ export const LearnPartsFragmentDoc = gql`
     }
     ... on LearnBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -12087,6 +12791,7 @@ export const LearnPartsFragmentDoc = gql`
     }
     ... on LearnBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -12094,17 +12799,20 @@ export const LearnPartsFragmentDoc = gql`
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on LearnBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on LearnBlocksFeatureComparison {
@@ -12137,6 +12845,7 @@ export const LearnPartsFragmentDoc = gql`
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -12285,6 +12994,7 @@ export const LearnPartsFragmentDoc = gql`
     }
     ... on LearnBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -12333,6 +13043,7 @@ export const LearnPartsFragmentDoc = gql`
         link
         linkText
         logos
+        image
       }
     }
     ... on LearnBlocksValueProps {
@@ -12357,6 +13068,23 @@ export const LearnPartsFragmentDoc = gql`
       eyebrow
       heading
       description
+    }
+    ... on LearnBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columnCount
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
 }
@@ -12396,6 +13124,7 @@ export const ResourcesPartsFragmentDoc = gql`
     }
     ... on ResourcesBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -12431,6 +13160,7 @@ export const ResourcesPartsFragmentDoc = gql`
     }
     ... on ResourcesBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -12438,17 +13168,20 @@ export const ResourcesPartsFragmentDoc = gql`
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on ResourcesBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on ResourcesBlocksFeatureComparison {
@@ -12481,6 +13214,7 @@ export const ResourcesPartsFragmentDoc = gql`
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -12629,6 +13363,7 @@ export const ResourcesPartsFragmentDoc = gql`
     }
     ... on ResourcesBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -12677,6 +13412,7 @@ export const ResourcesPartsFragmentDoc = gql`
         link
         linkText
         logos
+        image
       }
     }
     ... on ResourcesBlocksValueProps {
@@ -12701,6 +13437,23 @@ export const ResourcesPartsFragmentDoc = gql`
       eyebrow
       heading
       description
+    }
+    ... on ResourcesBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columnCount
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title
@@ -12747,6 +13500,7 @@ export const CompanyPartsFragmentDoc = gql`
     }
     ... on CompanyBlocksStatsBar {
       scheme
+      eyebrow
       heading
       stats {
         __typename
@@ -12782,6 +13536,7 @@ export const CompanyPartsFragmentDoc = gql`
     }
     ... on CompanyBlocksProcessSteps {
       scheme
+      eyebrow
       heading
       steps {
         __typename
@@ -12789,17 +13544,20 @@ export const CompanyPartsFragmentDoc = gql`
         title
         subtitle
         description
+        image
       }
       ctaText
       ctaLink
     }
     ... on CompanyBlocksMetricsBlock {
       scheme
+      eyebrow
       heading
       metrics {
         __typename
         name
         whatItMeasures
+        image
       }
     }
     ... on CompanyBlocksFeatureComparison {
@@ -12832,6 +13590,7 @@ export const CompanyPartsFragmentDoc = gql`
       scheme
       wave
       waveFill
+      eyebrow
       heading
       testimonials {
         __typename
@@ -12980,6 +13739,7 @@ export const CompanyPartsFragmentDoc = gql`
     }
     ... on CompanyBlocksLeadMagnetPromo {
       scheme
+      eyebrow
       heading
       promoBody
       ctaText
@@ -13028,6 +13788,7 @@ export const CompanyPartsFragmentDoc = gql`
         link
         linkText
         logos
+        image
       }
     }
     ... on CompanyBlocksValueProps {
@@ -13052,6 +13813,23 @@ export const CompanyPartsFragmentDoc = gql`
       eyebrow
       heading
       description
+    }
+    ... on CompanyBlocksPdfDocumentCards {
+      scheme
+      eyebrow
+      heading
+      subtitle
+      columnCount
+      items {
+        __typename
+        title
+        description
+        category
+        ctaText
+        ctaLink
+        pdfLabel
+        accent
+      }
     }
   }
   title
@@ -13880,7 +14658,7 @@ export const ExperimentalGetTinaClient = () =>
   getSdk(
     generateRequester(
       createClient({
-        url: "http://localhost:3001/graphql",
+        url: "http://localhost:4001/graphql",
         queries,
       })
     )
