@@ -1,0 +1,36 @@
+name: Tina lock check
+
+# Guards against a stale committed tina/tina-lock.json.
+#
+# Tina Cloud reads the committed tina-lock.json from the repo as its schema
+# (it does NOT run `tinacms build` server-side). If tina/config.ts changes
+# without regenerating the committed lock, Tina Cloud indexes content against
+# an outdated schema and branch indexing fails ("Unable to seed <doc>.json"),
+# even though local `tinacms audit` passes. This check regenerates the schema
+# and fails if the committed lock is out of date.
+#
+# Runs on PRs (blocks merge if made a required check) and on direct pushes to
+# main/dev — the latter catches edits made through the GitHub web UI, which is
+# how the lock went stale in the first place.
+
+on:
+  pull_request:
+  push:
+    branches: [main, dev]
+
+jobs:
+  tina-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Regenerate Tina schema and verify committed lock is in sync
+        run: npm run tina:lock:check

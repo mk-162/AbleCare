@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "tinacms dev -c \"next dev --port 3001\"",
     "build": "tinacms build --skip-cloud-checks && next build",
-    "start": "next start"
+    "start": "next start",
+    "tina:schema": "tinacms build --local --skip-cloud-checks --skip-indexing --skip-search-index",
+    "tina:lock": "npm run tina:schema && node scripts/check-tina-lock.mjs --write",
+    "tina:lock:check": "npm run tina:schema && node scripts/check-tina-lock.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
