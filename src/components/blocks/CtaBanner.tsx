@@ -71,9 +71,10 @@ export function CtaBanner({
               {heading}
             </h2>
             {bodyText && (
-              <p className={`text-lg font-light mb-10 ${isBlue ? "text-white/80" : "text-ac-black/70"}`}>
-                {bodyText}
-              </p>
+              <p
+                className={`text-lg font-light mb-10 [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-2 ${isBlue ? "text-white/80 [&_a]:text-white" : "text-ac-black/70 [&_a]:text-ac-blue"}`}
+                dangerouslySetInnerHTML={{ __html: bodyText }}
+              />
             )}
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               {primaryCtaText && primaryCtaLink && (
