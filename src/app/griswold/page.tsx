@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { GriswoldForm } from "./GriswoldForm";
 
 export const metadata: Metadata = {
-  title: "Griswold Strength Score | Conference Pricing",
+  title: "Griswold Strength Score | Franchise Pricing",
   description:
-    "Special Annual Conference pricing on Able Assess for Griswold franchises. Request a price estimate or invoice through May 7, 2026.",
+    "Preferential Able Assess pricing for Griswold franchises. Request a price estimate or invoice.",
   robots: {
     index: false,
     follow: false,

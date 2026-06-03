@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  CalendarDays,
   Tag,
   Mail,
   Phone,
@@ -15,7 +14,6 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const DEADLINE_LABEL = "May 7, 2026";
 const CONTACT_EMAIL = "hello@able-care.co";
 const CONTACT_PHONE = "+1 406 318 9624";
 const CONTACT_PHONE_HREF = "+14063189624";
@@ -44,15 +42,15 @@ function Hero() {
             transition={{ duration: 0.5 }}
           >
             <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-ac-aqua mb-4">
-              <CalendarDays className="w-3.5 h-3.5" />
-              Griswold Annual Conference 2026
+              <Tag className="w-3.5 h-3.5" />
+              Griswold Franchise Pricing
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-5 leading-[1.1]">
               Subscription discount for Griswold franchises.
             </h1>
             <p className="text-base md:text-lg font-light text-white/85 leading-relaxed mb-6">
-              Add the Griswold Strength Score to your Care Assured offering at a conference-only
-              rate on Able Assess subscriptions. Valid through {DEADLINE_LABEL}.
+              Add the Griswold Strength Score to your Care Assured offering at a preferential
+              rate on Able Assess subscriptions.
             </p>
 
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 mb-6 border border-white/20">
@@ -64,17 +62,13 @@ function Hero() {
                   <dt className="text-white/70 font-light">RRP</dt>
                   <dd className="font-semibold text-white/70 line-through">$499</dd>
                 </div>
-                <div className="flex items-center justify-between">
-                  <dt className="text-white/70 font-light">Griswold preferential pricing</dt>
-                  <dd className="font-semibold text-white/70 line-through">$399</dd>
-                </div>
                 <div className="flex items-center justify-between border-t border-white/15 pt-2">
-                  <dt className="font-semibold">Conference launch price</dt>
-                  <dd className="font-bold text-ac-aqua text-lg">$360</dd>
+                  <dt className="font-semibold">Griswold price</dt>
+                  <dd className="font-bold text-ac-aqua text-lg">$399</dd>
                 </div>
               </dl>
               <p className="text-xs text-white/65 font-light mt-3">
-                Per sensor, per year. Valid until {DEADLINE_LABEL}.
+                Per sensor, per year &mdash; $100 off RRP.
               </p>
             </div>
 
@@ -311,7 +305,7 @@ function LeadForm() {
         </Button>
 
         <p className="text-xs text-ac-black/55 text-center font-light">
-          Discount valid through {DEADLINE_LABEL}. No card required.
+          No card required.
         </p>
       </form>
     </div>
@@ -335,7 +329,7 @@ function Details() {
               <li className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-5 h-5 text-ac-blue shrink-0 mt-0.5" />
                 <span>
-                  <strong className="text-ac-black">Conference discount</strong> applies to the
+                  <strong className="text-ac-black">Griswold discount</strong> applies to the
                   annual Able Assess data subscription.
                 </span>
               </li>
@@ -399,7 +393,7 @@ function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-ac-blue mb-3">
-            Conference pricing ends {DEADLINE_LABEL}
+            Griswold franchise pricing
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-ac-black mb-3">
             Prefer to talk first?
@@ -409,7 +403,7 @@ function Footer() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-stretch sm:items-center">
             <a
-              href={`mailto:${CONTACT_EMAIL}?subject=Griswold%20Conference%20Discount`}
+              href={`mailto:${CONTACT_EMAIL}?subject=Griswold%20Able%20Assess%20Pricing`}
               className="inline-flex items-center justify-center gap-2 px-6 h-12 rounded-full bg-ac-blue text-white font-bold hover:bg-ac-blue/90 transition-colors"
             >
               <Mail className="w-4 h-4" />
