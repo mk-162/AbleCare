@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { ArrowRight, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ContactFormProps {
@@ -100,6 +102,19 @@ export function ContactForm({
 
           <div className="w-full lg:w-1/2">
             <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-black/5">
+              {pathname === "/contact" && (
+                <Link
+                  href="/faqs"
+                  className="group mb-6 flex items-center gap-3 rounded-xl border border-ac-blue/15 bg-ac-blue/5 px-4 py-3 transition-colors hover:bg-ac-blue/10"
+                >
+                  <HelpCircle className="h-5 w-5 shrink-0 text-ac-blue" />
+                  <span className="flex-1 text-sm font-light text-ac-black/80">
+                    Have a question? You may find your answer in our{" "}
+                    <span className="font-bold text-ac-blue">FAQs</span>.
+                  </span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-ac-blue transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              )}
               <h2 className="text-2xl font-bold mb-6">Book a demo</h2>
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-4">

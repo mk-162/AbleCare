@@ -45,6 +45,7 @@ const companyItems = [
   { label: "About Able Care", href: "/about", desc: "The story behind Able Care." },
   { label: "Contact Us", href: "/contact", desc: "Get in touch with us." },
   { label: "Support", href: "/support", desc: "Help with your GripAble device or Able Assess software." },
+  { label: "FAQs", href: "/faqs", desc: "Answers to common questions about Able Assess." },
 ];
 
 type MenuKey = "solutions" | "segments" | "resources" | "company";
@@ -244,7 +245,7 @@ export function SiteHeader() {
               {openMenu === "company" && (
                 <div className="absolute top-full right-0 w-[520px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="row-span-5">
+                    <div className="row-span-4">
                       <Link
                         href="/about"
                         className="relative flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity overflow-hidden"
