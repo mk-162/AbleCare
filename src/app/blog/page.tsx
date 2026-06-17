@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { BlogSidebar } from "@/components/blocks/BlogSidebar";
+import { ArticleCard } from "@/components/blocks/ArticleCard";
 import { SearchBox } from "@/components/search/SearchBox";
 import { getArticles, getCategories, slugifyCategory } from "@/lib/blog";
 import { getSearchDocs } from "@/lib/search-index";
@@ -152,48 +153,11 @@ export default async function BlogIndexPage({
                 </Link>
               )}
 
-              {/* Article grid */}
+              {/* Article list */}
               {rest.length > 0 && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-8">
                   {rest.map((article) => (
-                    <Link key={article.slug} href={`/blog/${article.slug}`}>
-                      <article className="bg-white rounded-2xl overflow-hidden border border-black/5 shadow-sm hover:shadow-lg hover:border-ac-blue/20 transition-all duration-300 h-full flex flex-col group">
-                        <div className="h-44 relative overflow-hidden">
-                          {article.image ? (
-                            <img
-                              src={article.image}
-                              alt={article.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                          ) : (
-                            <div className="w-full h-full bg-gradient-to-br from-ac-blue/10 to-ac-aqua/10" />
-                          )}
-                        </div>
-                        <div className="p-6 flex-grow flex flex-col">
-                          {article.category && (
-                            <span className="text-[10px] font-bold uppercase tracking-widest text-ac-blue mb-3">
-                              {article.category}
-                            </span>
-                          )}
-                          <h3 className="text-lg font-bold text-ac-black mb-3 group-hover:text-ac-blue transition-colors leading-snug">
-                            {article.title}
-                          </h3>
-                          {article.excerpt && (
-                            <p className="text-sm text-ac-black/60 font-light flex-grow mb-4 line-clamp-3">
-                              {article.excerpt}
-                            </p>
-                          )}
-                          <div className="flex items-center gap-3 text-xs text-ac-black/40 pt-4 border-t border-black/5">
-                            {article.publishedDate && (
-                              <span>{article.publishedDate}</span>
-                            )}
-                            {article.readTime > 0 && (
-                              <span>{article.readTime} min read</span>
-                            )}
-                          </div>
-                        </div>
-                      </article>
-                    </Link>
+                    <ArticleCard key={article.slug} article={article} />
                   ))}
                 </div>
               )}
