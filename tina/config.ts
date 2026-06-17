@@ -919,6 +919,39 @@ const pdfDocumentCardsBlock = {
   ],
 };
 
+const appDownloadCardsBlock = {
+  name: "appDownloadCards",
+  label: "App Download Cards",
+  ui: {
+    itemProps: (item: { heading?: string; apps?: unknown[] }) => ({
+      label: item?.heading
+        ? `App Downloads: ${item.heading}`
+        : `App Downloads (${item?.apps?.length ?? 0})`,
+    }),
+  },
+  fields: [
+    { type: "string" as const, name: "scheme", label: "Colour Scheme", options: ["light", "grey", "blue", "aqua"], ui: { defaultValue: "light" } },
+    { type: "string" as const, name: "eyebrow", label: "Eyebrow" },
+    { type: "string" as const, name: "heading", label: "Section Heading" },
+    { type: "string" as const, name: "subtitle", label: "Subtitle", ui: { component: "textarea" } },
+    {
+      type: "object" as const,
+      name: "apps",
+      label: "Apps",
+      list: true,
+      ui: { itemProps: (item: { name?: string }) => ({ label: item?.name || "App" }) },
+      fields: [
+        { type: "string" as const, name: "name", label: "App Name", required: true },
+        { type: "string" as const, name: "category", label: "Eyebrow chip (e.g. 'Screening', 'Rehab')" },
+        { type: "string" as const, name: "description", label: "Description", ui: { component: "textarea" } },
+        { type: "string" as const, name: "appStoreUrl", label: "Apple App Store URL" },
+        { type: "string" as const, name: "googlePlayUrl", label: "Google Play URL" },
+        { type: "string" as const, name: "accent", label: "Accent Colour", options: ["blue", "aqua", "indigo", "graphite"], ui: { defaultValue: "blue" } },
+      ],
+    },
+  ],
+};
+
 // ─── Shared SEO Fields ────────────────────────────────────────────────────────
 
 const seoFields = [
@@ -974,6 +1007,7 @@ const allBlocks = [
   timelineBlock,
   spinningSensorBlock,
   pdfDocumentCardsBlock,
+  appDownloadCardsBlock,
 ];
 
 const blockPageFields: any[] = [

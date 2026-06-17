@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CountrySwitcher } from "@/components/ui/CountrySwitcher";
+import { GeoMismatchBanner } from "@/components/ui/GeoMismatchBanner";
 
 /* ─── Navigation data matching Site Navigation spec ─── */
 
@@ -36,7 +38,7 @@ const resourcesMenu = {
     { label: "Research Library", href: "/resources/research-library", desc: "A searchable library of the academic papers we are excited about." },
   ],
   tools: [
-    { label: "Documents", href: "/resources/documents", desc: "User guides, integration documents and technical references for the Able Platform." },
+    { label: "Documents and Apps", href: "/resources/documents", desc: "User guides, integration documents and technical references for the Able Platform." },
     { label: "Case Studies and Customer Testimonials", href: "/resources/case-studies", desc: "What our customers are saying about us." },
   ],
 };
@@ -45,6 +47,7 @@ const companyItems = [
   { label: "About Able Care", href: "/about", desc: "The story behind Able Care." },
   { label: "Contact Us", href: "/contact", desc: "Get in touch with us." },
   { label: "Support", href: "/support", desc: "Help with your GripAble device or Able Assess software." },
+  { label: "FAQs", href: "/faqs", desc: "Answers to common questions about Able Assess." },
 ];
 
 type MenuKey = "solutions" | "segments" | "resources" | "company";
@@ -101,6 +104,7 @@ export function SiteHeader() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
+      <GeoMismatchBanner />
       <header
         className={`transition-all duration-300 ${
           isScrolled
@@ -244,7 +248,7 @@ export function SiteHeader() {
               {openMenu === "company" && (
                 <div className="absolute top-full right-0 w-[520px] bg-white shadow-xl rounded-xl border border-black/5 p-4 mt-1">
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="row-span-5">
+                    <div className="row-span-4">
                       <Link
                         href="/about"
                         className="relative flex h-full w-full flex-col justify-end rounded-xl bg-gradient-to-br from-ac-blue to-ac-aqua p-6 hover:opacity-95 transition-opacity overflow-hidden"
@@ -279,6 +283,11 @@ export function SiteHeader() {
                 Book a demo
               </Button>
             </Link>
+
+            {/* Country switcher (US <-> UK) — right of both CTAs */}
+            <div className="ml-2">
+              <CountrySwitcher />
+            </div>
           </nav>
 
           {/* ── Mobile Toggle ── */}
@@ -335,6 +344,9 @@ export function SiteHeader() {
                   Book a demo
                 </Button>
               </Link>
+              <div className="flex justify-center pt-1">
+                <CountrySwitcher />
+              </div>
             </div>
           </nav>
         )}

@@ -104,6 +104,31 @@
       ]
     },
     {
+      "_template": "appDownloadCards",
+      "scheme": "light",
+      "eyebrow": "Mobile apps",
+      "heading": "Get the apps",
+      "subtitle": "Run the five-minute screening on any iPad or Android tablet and pair the GripAble sensor over Bluetooth. Download Able Assess for clinical screening, or the GripAble app for guided rehab — free on the App Store and Google Play.",
+      "apps": [
+        {
+          "name": "Able Assess",
+          "category": "Screening",
+          "description": "The clinical screening app. Run the full Able Assess workflow — grip strength and the four-metric falls-risk screen — then sync results to the Able Platform. For iPad, iPhone and Android tablets.",
+          "appStoreUrl": "https://apps.apple.com/us/app/able-assess/id6612033581",
+          "googlePlayUrl": "https://play.google.com/store/apps/details?id=com.gripable.ableassess&gl=US",
+          "accent": "blue"
+        },
+        {
+          "name": "GripAble",
+          "category": "Rehab",
+          "description": "The upper-limb rehab companion. Turn the GripAble sensor into guided, gamified exercise for stroke and neuro recovery — at the bedside, in the clinic or at home. For iOS and Android.",
+          "appStoreUrl": "https://apps.apple.com/us/app/gripable/id6444156378",
+          "googlePlayUrl": "https://play.google.com/store/apps/details?id=com.gripable.patientapp.public&gl=US",
+          "accent": "aqua"
+        }
+      ]
+    },
+    {
       "_template": "ctaBanner",
       "heading": "Need something else? We are happy to help.",
       "bodyText": "Compliance information lives on the <a href=\"/compliance\">compliance page</a>. For OpenAPI specs, custom integration requirements or anything else, the team is one short message away.",
