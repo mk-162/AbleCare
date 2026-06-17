@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getSchemeClasses } from "@/lib/color-schemes";
+import { usePathname } from "next/navigation";
 
 interface CaseStudyCardsProps {
   scheme?: string;
@@ -19,6 +20,10 @@ interface CaseStudyCardsProps {
 }
 
 export function CaseStudyCards({ scheme = "light", heading, caseStudies }: CaseStudyCardsProps) {
+  const pathname = usePathname();
+  // Homepage cards link to sector pages (not studies), so use a neutral CTA there.
+  // Other pages (best-2026, falls-prevention) link to real studies/research — keep "Read study".
+  const isHomepage = pathname === "/";
   const defaultCases: Array<{ title: string; metric?: string; metricLabel?: string; summary?: string; sector?: string; link?: string; thumbnail?: string }> = [
     { title: "Reducing falls by 32% in community settings", sector: "Home Care", metric: "32%", metricLabel: "Reduction in falls", link: "/resources/case-studies" },
     { title: "Standardizing assessments across 40 facilities", sector: "Senior Living", metric: "100%", metricLabel: "Compliance rate", link: "/resources/case-studies" },
@@ -57,7 +62,7 @@ export function CaseStudyCards({ scheme = "light", heading, caseStudies }: CaseS
                       {c.sector && <div className="text-xs font-bold uppercase tracking-widest text-ac-blue mb-3">{c.sector}</div>}
                       <h3 className="text-xl font-bold text-ac-black mb-6">{c.title}</h3>
                       <div className="mt-auto flex items-center text-sm font-medium text-ac-black/60 group-hover:text-ac-blue transition-colors">
-                        Read study <ArrowRight className="ml-2 w-4 h-4" />
+                        {isHomepage ? "Learn more" : "Read study"} <ArrowRight className="ml-2 w-4 h-4" />
                       </div>
                     </div>
                   </Link>
