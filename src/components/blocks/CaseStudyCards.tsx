@@ -21,8 +21,8 @@ interface CaseStudyCardsProps {
 
 export function CaseStudyCards({ scheme = "light", heading, caseStudies }: CaseStudyCardsProps) {
   const pathname = usePathname();
-  // Homepage cards link to sector pages (not studies), so use a neutral CTA there.
-  // Other pages (best-2026, falls-prevention) link to real studies/research — keep "Read study".
+  // CTA is page-based: "Learn more" on the homepage (its cards link to sector pages),
+  // "Read study" on the other pages that render this block (best-2026, falls-prevention).
   const isHomepage = pathname === "/";
   const defaultCases: Array<{ title: string; metric?: string; metricLabel?: string; summary?: string; sector?: string; link?: string; thumbnail?: string }> = [
     { title: "Reducing falls by 32% in community settings", sector: "Home Care", metric: "32%", metricLabel: "Reduction in falls", link: "/resources/case-studies" },
