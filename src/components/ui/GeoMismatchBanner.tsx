@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/site-config";
 
@@ -16,6 +16,7 @@ const DISMISSED_KEY = "geo-banner-dismissed";
  */
 export function GeoMismatchBanner() {
   const [visible, setVisible] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Already dismissed?
@@ -35,6 +36,26 @@ export function GeoMismatchBanner() {
     }
   }, []);
 
+  // The banner lives inside the fixed header stack, so while it's shown it makes
+  // that stack taller. Offset the page body by the banner's height to keep the
+  // first content (e.g. the breadcrumb) clear of it. ResizeObserver keeps the
+  // offset correct if the banner wraps/resizes; cleared when hidden or dismissed.
+  useEffect(() => {
+    if (!visible) return;
+    const el = bannerRef.current;
+    if (!el) return;
+    const applyOffset = () => {
+      document.body.style.paddingTop = `${el.offsetHeight}px`;
+    };
+    applyOffset();
+    const ro = new ResizeObserver(applyOffset);
+    ro.observe(el);
+    return () => {
+      ro.disconnect();
+      document.body.style.paddingTop = "";
+    };
+  }, [visible]);
+
   function handleDismiss() {
     try {
       localStorage.setItem(DISMISSED_KEY, "yes");
@@ -47,7 +68,7 @@ export function GeoMismatchBanner() {
   if (!visible) return null;
 
   return (
-    <div className="bg-ac-blue text-white py-2.5 px-4 relative">
+    <div ref={bannerRef} className="bg-ac-blue text-white py-2.5 px-4 relative">
       <div className="container mx-auto flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm font-medium pr-8">
         <span>
           Looks like you&rsquo;re in {SITE_CONFIG.otherLabel}. We have a site tailored to you.
