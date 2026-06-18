@@ -59,7 +59,6 @@ const INTERNAL_PREFIXES = [
   "/terms-of-sale",
   "/cookies",
   "/security",
-  "/faqs",
   "/meet-the-team",
   "/compare",
   "/evidence",

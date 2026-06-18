@@ -66,7 +66,6 @@ export function SiteFooter() {
               <li><Link href="/about" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">About Able Care</Link></li>
               <li><Link href="/contact" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Contact Us</Link></li>
               <li><Link href="/support" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Support</Link></li>
-              <li><Link href="/faqs" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">FAQs</Link></li>
               <li><Link href="/compliance" className="text-ac-grey/70 hover:text-ac-aqua text-sm font-light transition-colors">Compliance</Link></li>
             </ul>
           </div>
