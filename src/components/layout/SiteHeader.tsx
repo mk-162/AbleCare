@@ -47,7 +47,6 @@ const companyItems = [
   { label: "About Able Care", href: "/about", desc: "The story behind Able Care." },
   { label: "Contact Us", href: "/contact", desc: "Get in touch with us." },
   { label: "Support", href: "/support", desc: "Help with your GripAble device or Able Assess software." },
-  { label: "FAQs", href: "/faqs", desc: "Answers to common questions about Able Assess." },
 ];
 
 type MenuKey = "solutions" | "segments" | "resources" | "company";

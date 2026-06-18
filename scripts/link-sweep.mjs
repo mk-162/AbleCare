@@ -9,7 +9,7 @@ const BASE = process.env.BASE || "http://localhost:3000";
 const SEED_ROUTES = [
   "/", "/home-care", "/senior-living", "/skilled-nursing", "/pharma",
   "/about", "/meet-the-team", "/contact", "/demo", "/customers", "/partners", "/news",
-  "/privacy", "/terms", "/cookies", "/security", "/faqs", "/careers",
+  "/privacy", "/terms", "/cookies", "/security", "/careers",
   "/solutions/able-assess", "/solutions/able-strength", "/solutions/falls-prevention",
   "/solutions/functional-health", "/solutions/grip-strength", "/solutions/population-health",
   "/solutions/remote-monitoring", "/solutions/sensor",

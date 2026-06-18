@@ -29,7 +29,6 @@ const SLUG_MAP: Record<string, { collection: string; filename: string }> = {
   "cookies": { collection: "utility", filename: "cookies" },
   "security": { collection: "utility", filename: "security" },
   "thank-you": { collection: "utility", filename: "thank-you" },
-  "faqs": { collection: "pages", filename: "faqs" },
   "careers": { collection: "company", filename: "careers" },
   "compliance": { collection: "pages", filename: "compliance" },
 };
