@@ -12,12 +12,14 @@ import type { NextRequest } from "next/server";
  * tells crawlers the pages are gone for good). `/robots.txt` is overridden to
  * `Disallow: /` so well-behaved crawlers stay away entirely.
  *
- * Ships ON by default, so merging this is enough to take the site down — no
- * dashboard step required.
+ * ON in production by default (the public site stays down). OFF on Vercel
+ * Preview/Development deployments so the team can review and fix content before
+ * going live; fail-safe to DOWN if VERCEL_ENV is unset. An explicit
+ * MAINTENANCE_MODE env var overrides either way.
  *
- *   • To bring the site back WITHOUT a code change: set the `MAINTENANCE_MODE`
- *     environment variable to `off` (or `0` / `false`) in Vercel → Settings →
- *     Environment Variables (Production), then redeploy.
+ *   • To bring PRODUCTION back WITHOUT a code change: set `MAINTENANCE_MODE` to
+ *     `off` (or `0` / `false`) in Vercel → Settings → Environment Variables
+ *     (Production), then redeploy.
  *   • To remove the kill-switch permanently once resolved: revert this commit.
  *
  * The TinaCMS editor at `/admin` stays reachable so content can be corrected
@@ -31,12 +33,16 @@ import type { NextRequest } from "next/server";
  * asset or metadata responses — to keep those CDN-cacheable.
  */
 
-// Treat these as "off"; anything else (including unset) leaves maintenance ON.
+// An explicit MAINTENANCE_MODE always wins ("off"/"0"/"false"/"no" → off, anything
+// else → on). With no override, maintenance is ON in production but OFF on Vercel
+// Preview/Development deployments so the team can review and fix content. Fail-safe:
+// any other case (including an unset VERCEL_ENV) stays DOWN.
 const MAINTENANCE_OFF_VALUES = new Set(["0", "false", "off", "no"]);
+const PREVIEWABLE_ENVS = new Set(["preview", "development"]);
 const maintenanceOverride = process.env.MAINTENANCE_MODE?.trim().toLowerCase();
 const MAINTENANCE_ACTIVE = maintenanceOverride
   ? !MAINTENANCE_OFF_VALUES.has(maintenanceOverride)
-  : true;
+  : !PREVIEWABLE_ENVS.has(process.env.VERCEL_ENV ?? "");
 
 // Paths that must keep working even during maintenance (content editing).
 const MAINTENANCE_ALLOWLIST = ["/admin"];
