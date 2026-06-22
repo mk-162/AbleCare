@@ -94,7 +94,7 @@
         },
         {
           "title": "GripAble SDK Reference",
-          "description": "Native plugins for integrating the GripAble BLE sensor into Android and iOS apps. Covers GripableSDK, GripableDevice, GripCalibrationManager, FirmwareUpdateManager and our clinically validated app flow designs.",
+          "description": "Native plugins for integrating the GripAble BLE sensor into Android and iOS apps. Covers GripableSDK, GripableDevice, GripCalibrationManager, FirmwareUpdateManager and our evidence-based app flow designs.",
           "category": "SDK",
           "ctaText": "Open the SDK Docs",
           "ctaLink": "https://gripable-sdk.able-care.co/",

@@ -3,7 +3,7 @@
   "slug": "able-rehab",
   "seo": {
     "title": "Able Rehab — Neurorehabilitation with the GripAble Sensor | Able Care",
-    "description": "Able Rehab uses the GripAble sensor to train the four core movements of the hand and wrist with engaging activities, goal tracking, and clinically validated grip tests.",
+    "description": "Able Rehab uses the GripAble sensor to train the four core movements of the hand and wrist with engaging activities, goal tracking, and grip tests with published normative data.",
     "ogImage": "/images/og-able-rehab.png"
   },
   "blocks": [
@@ -114,10 +114,10 @@
       "_template": "imageFeature",
       "scheme": "grey",
       "headline": "Hand function tests",
-      "description": "Clinically validated grip strength testing built into the same workflow as therapy — so assessment, training, and reporting all live in one place.",
+      "description": "Grip strength testing benchmarked against published clinical norms, built into the same workflow as therapy — so assessment, training, and reporting all live in one place.",
       "bulletPoints": [
         {
-          "text": "Clinically proven grip strength test with published clinical norms"
+          "text": "objective grip strength test with published normative data"
         },
         {
           "text": "Test grip in multiple ways: single maximum grip, rapid exchange, and endurance"
