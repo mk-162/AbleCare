@@ -4,7 +4,7 @@
   "description": "Live and on-demand webinars from the Able Care clinical and product team. Falls prevention, grip strength, regulatory alignment and operational rollout.",
   "seo": {
     "title": "Webinars | Able Care",
-    "description": "Live and on-demand webinars covering falls prevention, grip strength, HHVBP, NICE 2025 and operational rollout. Presented by the Able Care clinical team.",
+    "description": "Live and on-demand webinars covering falls prevention, grip strength, HHVBP, CDC STEADI and operational rollout. Presented by the Able Care clinical team.",
     "ogImage": "/images/og-webinars.png"
   },
   "blocks": [
@@ -43,7 +43,7 @@
       "_template": "richText",
       "scheme": "aqua",
       "heading": "Upcoming and on-demand webinars",
-      "body": "The Able Care clinical and product team runs regular webinars for operators, clinicians and researchers. Each session is designed to be practical: real evidence, real workflows, real questions.\n\nTopics include falls prevention best practice, grip strength in clinical and research settings, HHVBP and VBP alignment, NICE 2025 compliance, rolling out standardized screening across multi-site operations, and product walkthroughs of Able Assess.\n\nAll sessions are recorded. Register for an upcoming webinar or browse the on-demand library below."
+      "body": "The Able Care clinical and product team runs regular webinars for operators, clinicians and researchers. Each session is designed to be practical: real evidence, real workflows, real questions.\n\nTopics include falls prevention best practice, grip strength in clinical and research settings, HHVBP and VBP alignment, CDC STEADI compliance, rolling out standardized screening across multi-site operations, and product walkthroughs of Able Assess.\n\nAll sessions are recorded. Register for an upcoming webinar or browse the on-demand library below."
     },
     {
       "_template": "ctaBanner",
