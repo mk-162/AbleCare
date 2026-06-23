@@ -57,10 +57,10 @@
           "link": "https://www.researchsquare.com/article/rs-6801648/v1"
         },
         {
-          "title": "GripAble has excellent test-retest reliability with Jamar",
+          "title": "Establishing the reliability and validity for GripAble: A handheld sensor-based dynamometry device",
           "journal": "Hand Therapy",
           "year": "2025",
-          "finding": "GripAble demonstrates excellent test-retest reliability compared to the Jamar dynamometer.",
+          "finding": "GripAble has excellent test-retest reliability with Jamar.",
           "link": "https://journals.sagepub.com/doi/10.1177/17589983251322537"
         },
         {
@@ -152,7 +152,7 @@
       "pulledStatSource": "Cochrane Review, 2023",
       "citations": [
         {
-          "title": "World Guidelines on Falls Prevention and Management in Older Adults (Montero-Odasso et al.)",
+          "title": "World guidelines for falls prevention and management for older adults: a global initiative",
           "journal": "Age and Ageing",
           "year": "2022",
           "finding": "International consensus guideline setting the 3-tier falls risk stratification approach and Grade 1A evidence for gait speed as a screening tool.",
@@ -186,7 +186,7 @@
           "finding": "Multifactorial assessment combining strength, balance and gait measures identified significantly more at-risk older adults than any single screening tool."
         },
         {
-          "title": "Functional Status and Readmissions",
+          "title": "Functional Impairment and Hospital Readmission in Medicare Seniors",
           "journal": "JAMA Internal Medicine",
           "year": "2015",
           "finding": "Functionally impaired patients face up to 42% higher readmission risk.",

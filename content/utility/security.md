@@ -41,4 +41,4 @@ Protecting patient data is at the core of everything we build. Able Care impleme
 
 ## Reporting Security Issues
 
-If you discover a security vulnerability, please report it to security@able-care.co. We take all reports seriously and will respond within 24 hours.
+If you discover a security vulnerability, please report it to dpo@able-care.co. We take all reports seriously and will respond within 24 hours.

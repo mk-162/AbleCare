@@ -32,9 +32,9 @@
           "sublabel": "Usable by non-clinical staff"
         },
         {
-          "value": ">32k",
+          "value": ">50k",
           "label": "Assessments delivered",
-          "sublabel": "Across home care, senior living and clinical sites"
+          "sublabel": "Across both Able Assess and Able Rehab solutions"
         },
         {
           "value": "12",
@@ -217,11 +217,25 @@
           "link": "https://jhpn.biomedcentral.com/articles/10.1186/s41043-024-00500-y"
         },
         {
-          "title": "Functionally impaired patients face up to 42% higher readmission risk",
-          "journal": "JAMA Internal Medicine",
-          "year": "2015",
-          "finding": "Functional impairment at discharge was independently associated with a 42% increased risk of 30-day hospital readmission.",
-          "link": "https://pubmed.ncbi.nlm.nih.gov/25642907/"
+          "title": "STEADI: CDC's approach to make older adult fall prevention part of every primary care practice",
+          "journal": "",
+          "year": "2017",
+          "finding": "The CDC's STEADI initiative integrates fall-risk screening, assessment and tailored intervention into routine primary care for older adults.",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/29203005/"
+        },
+        {
+          "title": "World guidelines for falls prevention and management for older adults: a global initiative",
+          "journal": "Age and Ageing",
+          "year": "2022",
+          "finding": "A global, multidisciplinary initiative establishing consensus recommendations for the assessment, prevention and management of falls in older adults.",
+          "link": "https://academic.oup.com/ageing/article/51/9/afac205/6730755"
+        },
+        {
+          "title": "Assessment and prevention of falls in older people and in people 50 and over at higher risk—summary of updated NICE guidance",
+          "journal": "BMJ",
+          "year": "2026",
+          "finding": "Summary of updated NICE guidance on assessing and preventing falls in older people and in those aged 50 and over at higher risk.",
+          "link": "https://www.bmj.com/content/392/bmj.s223"
         }
       ],
       "_template": "evidenceBlock"
