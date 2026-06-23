@@ -77,11 +77,7 @@
         {
           "title": "FDA registration & listing (Class 2 exempt)",
           "body": "The GripAble Sensor is registered with the US Food and Drug Administration (FDA) as a Class 2 exempt medical device (Product Codes: LBB / ISD) while the Able Assess software meets all four criteria for Non-Device Clinical Decision Software (CDS).",
-          "link": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfrl/rl.cfm?lid=985822&lpcd=ISD",
-          "linkText": "Visit our FDA listing",
-          "logos": [
-            "/images/badges/fda-trimmed.svg"
-          ]
+          "logos": []
         }
       ]
     },
