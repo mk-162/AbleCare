@@ -4,7 +4,7 @@
   "description": "Live and on-demand webinars from the Able Care clinical and product team. Falls prevention, grip strength, regulatory alignment and operational rollout.",
   "seo": {
     "title": "Webinars | Able Care",
-    "description": "Live and on-demand webinars covering falls prevention, grip strength, HHVBP, NICE 2025 and operational rollout. Presented by the Able Care clinical team.",
+    "description": "Live and on-demand webinars covering falls prevention, grip strength, HHVBP, NICE 2025 and operational rollout. Presented by the Able Care team.",
     "ogImage": "/images/og-webinars.png"
   },
   "blocks": [
@@ -32,7 +32,7 @@
       "backgroundImage": "/images/photos/clinical/therapist-gentleman-desk.jpg",
       "backgroundImageAlt": "Therapist demonstrating assessment at desk",
       "eyebrow": "Webinars",
-      "headline": "Learn from the clinical team.",
+      "headline": "Learn from the team.",
       "subtitle": "Live and on-demand sessions covering falls prevention evidence, operational rollout, regulatory alignment and product walkthroughs. Practical, evidence-based, no sales pitch.",
       "primaryCtaText": "Register for the Next Webinar",
       "primaryCtaLink": "#upcoming",
@@ -50,10 +50,10 @@
       "scheme": "blue",
       "wave": "ribbon",
       "heading": "Want a session tailored to your team?",
-      "bodyText": "The clinical team can run a private webinar for your organization covering the evidence, the workflow and the rollout plan for your setting.",
+      "bodyText": "The team can run a private webinar for your organization covering the evidence, the workflow and the rollout plan for your setting.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
-      "secondaryCtaText": "Talk to the Clinical Team",
+      "secondaryCtaText": "Talk to the Team",
       "secondaryCtaLink": "/contact"
     }
   ],

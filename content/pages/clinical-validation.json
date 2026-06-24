@@ -30,7 +30,7 @@
       "subtitle": "Peer-reviewed validation data. Coming soon.",
       "backgroundImage": "/images/photos/clinical/sensor-closeup-hand.jpg",
       "backgroundImageAlt": "Close-up of the GripAble sensor in a patient's hand",
-      "primaryCtaText": "Contact the Clinical Team",
+      "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
       "scheme": "blue",
       "wave": "crest"
@@ -39,16 +39,16 @@
       "_template": "richText",
       "scheme": "light",
       "heading": "Validation data in preparation",
-      "body": "<p>We are compiling peer-reviewed clinical validation data for Able Assess, including test-retest reliability, concurrent validity against gold-standard instruments, and clinical trial outcomes.</p><p>This page will be updated with full study summaries, statistical reporting and links to published papers. If you require validation data ahead of publication, our clinical team can provide it directly.</p>"
+      "body": "<p>We are compiling peer-reviewed clinical validation data for Able Assess, including test-retest reliability, concurrent validity against gold-standard instruments, and clinical trial outcomes.</p><p>This page will be updated with full study summaries, statistical reporting and links to published papers. If you require validation data ahead of publication, our team can provide it directly.</p>"
     },
     {
       "_template": "ctaBanner",
       "heading": "Need validation data now?",
-      "primaryCtaText": "Contact the Clinical Team",
+      "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
       "scheme": "blue",
       "wave": "ribbon",
-      "bodyText": "Our clinical team can share study data, regulatory documentation and technical specifications directly."
+      "bodyText": "Our team can share study data, regulatory documentation and technical specifications directly."
     }
   ],
   "tags": [

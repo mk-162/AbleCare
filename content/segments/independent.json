@@ -210,7 +210,7 @@
         },
         {
           "question": "What does it cost for a small agency?",
-          "answer": "Pricing scales with the number of locations and client volume. One prevented hospitalization or one new referral per quarter typically covers the program cost. The clinical team can walk you through the numbers during a demo."
+          "answer": "Pricing scales with the number of locations and client volume. One prevented hospitalization or one new referral per quarter typically covers the program cost. The team can walk you through the numbers during a demo."
         }
       ]
     },
@@ -220,7 +220,7 @@
       "scheme": "blue",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
-      "bodyText": "30 minutes with the clinical team. Tailored to multi-site independent agencies. Focused on referral differentiation."
+      "bodyText": "30 minutes with the team. Tailored to multi-site independent agencies. Focused on referral differentiation."
     }
   ]
 }

@@ -31,7 +31,7 @@
       "eyebrow": "Clinical Evidence",
       "headline": "The science behind Able Assess.",
       "subtitle": "Peer-reviewed research linking grip strength and functional health to falls, frailty, mortality and clinical outcomes. Every claim on this site is grounded in the evidence below.",
-      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaText": "Talk to the Team",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Research Summary",
       "secondaryCtaLink": "/resources/buyers-guide",
@@ -134,14 +134,14 @@
     },
     {
       "_template": "ctaBanner",
-      "heading": "Talk to the clinical team about the evidence.",
-      "primaryCtaText": "Talk to the Clinical Team",
+      "heading": "Talk to the team about the evidence.",
+      "primaryCtaText": "Talk to the Team",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Download the Buyers Guide",
       "secondaryCtaLink": "/resources/buyers-guide",
       "scheme": "blue",
       "wave": "ribbon",
-      "bodyText": "Our clinical team can walk you through the research and how it applies to your setting."
+      "bodyText": "Our research team can walk you through the research and how it applies to your setting."
     },
     {
       "_template": "leadMagnetPromo",

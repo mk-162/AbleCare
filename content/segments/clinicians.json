@@ -27,7 +27,7 @@
       "eyebrow": "Clinicians",
       "headline": "Multifactorial, evidence-based falls risk screening.",
       "subtitle": "Peer-reviewed protocols. Standardized capture. Built for clinical and research teams.",
-      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaText": "Talk to the Team",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Browse the Research",
       "secondaryCtaLink": "/resources/research-library",
@@ -218,7 +218,7 @@
         },
         {
           "question": "Does it integrate with EHR systems?",
-          "answer": "Yes. Able Assess is integration-ready with EHR, OASIS and clinical platforms. The clinical team can walk you through the setup during a demo."
+          "answer": "Yes. Able Assess is integration-ready with EHR, OASIS and clinical platforms. The team can walk you through the setup during a demo."
         },
         {
           "question": "Can non-clinical staff run the assessment?",
@@ -233,7 +233,7 @@
     {
       "_template": "ctaBanner",
       "heading": "See Able Assess in your clinical workflow.",
-      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaText": "Talk to the Team",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "Browse the Research Library",
       "secondaryCtaLink": "/resources/research-library",
