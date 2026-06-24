@@ -99,19 +99,23 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "whatItMeasures": "Full body strength proxy."
+          "whatItMeasures": "Full body strength proxy.",
+          "image": "/images/decks/falls-prevention/test-01-grip-strength.png"
         },
         {
           "name": "Sit-to-stand",
-          "whatItMeasures": "Lower-limb power and balance. 30-second timed test."
+          "whatItMeasures": "Lower-limb power and balance. 30-second timed test.",
+          "image": "/images/decks/falls-prevention/test-04-chair-stand.png"
         },
         {
           "name": "Gait speed",
-          "whatItMeasures": "Walking speed over a standardized 4-meter distance."
+          "whatItMeasures": "Walking speed over a standardized 4-meter distance.",
+          "image": "/images/decks/falls-prevention/test-03-gait-speed.png"
         },
         {
           "name": "Timed Up and Go",
-          "whatItMeasures": "Time to rise from a chair, walk three meters, turn, walk back and sit down."
+          "whatItMeasures": "Time to rise from a chair, walk three meters, turn, walk back and sit down.",
+          "image": "/images/decks/falls-prevention/test-02-tug.png"
         }
       ],
       "_template": "metricsBlock"
@@ -218,7 +222,7 @@
         },
         {
           "title": "STEADI: CDC's approach to make older adult fall prevention part of every primary care practice",
-          "journal": "",
+          "journal": "J. Safety Research",
           "year": "2017",
           "finding": "The CDC's STEADI initiative integrates fall-risk screening, assessment and tailored intervention into routine primary care for older adults.",
           "link": "https://pubmed.ncbi.nlm.nih.gov/29203005/"
@@ -231,7 +235,7 @@
           "link": "https://academic.oup.com/ageing/article/51/9/afac205/6730755"
         },
         {
-          "title": "Assessment and prevention of falls in older people and in people 50 and over at higher risk—summary of updated NICE guidance",
+          "title": "Assessment and prevention of falls in older people and in people 50 and over at higher risk - summary of updated NICE guidance",
           "journal": "BMJ",
           "year": "2026",
           "finding": "Summary of updated NICE guidance on assessing and preventing falls in older people and in those aged 50 and over at higher risk.",

@@ -26,7 +26,7 @@
       "subtitle": "Able Assess meets stringent regulatory and data protection requirements across the US and UK.",
       "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
       "backgroundImageAlt": "Therapist reviewing Able Assess results with a patient on a tablet",
-      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaText": "Talk to the Team",
       "primaryCtaLink": "/contact",
       "scheme": "blue",
       "wave": "crest"
@@ -90,7 +90,7 @@
     {
       "_template": "ctaBanner",
       "heading": "Questions about compliance?",
-      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaText": "Talk to the Team",
       "primaryCtaLink": "/contact",
       "scheme": "blue",
       "wave": "ribbon",

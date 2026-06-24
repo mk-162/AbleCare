@@ -74,7 +74,7 @@
         {
           "number": 1,
           "title": "Capture",
-          "description": "30 second assessment. Standardized positioning and instructions to ensure accuracy across assessments and raters."
+          "description": "Standardized positioning and instructions to ensure accuracy across assessments and raters."
         },
         {
           "number": 2,
@@ -101,7 +101,7 @@
       "faqs": [
         {
           "question": "How does digital dynamometry compare to manual testing with a Jamar?",
-          "answer": "The GripAble sensor correlates to within 2% of the Jamar dynamometer, the traditional gold standard. The key advantage of digital capture is that results are recorded automatically, eliminating transcription errors, observer bias and the need for manual data entry. Protocol standardization is also enforced by the guided on-screen instructions."
+          "answer": "GripAble shows excellent agreement with the Jamar, the traditional gold standard, while being more accurate, more sensitive to small changes, and more robust through drops and long-term use. The two devices don't produce identical absolute readings: because of differences in grip shape and biomechanics, GripAble registers a consistent, predictable proportion of the Jamar for the same person, rather than any measurement error, so it is an equally valid and reliable tool. Digital capture then adds practical advantages: results are recorded automatically, reducing transcription errors, observer bias and manual data entry, while guided on-screen instructions enforce a standardized protocol. For the full device comparison, see our [hand dynamometry guide](/blog/hand-dynamometer-guide)."
         },
         {
           "question": "What normative data does the platform use?",
@@ -109,7 +109,7 @@
         },
         {
           "question": "Who should be assessed for grip strength?",
-          "answer": "Clinical guidelines recommend grip strength screening for adults over 65, individuals at risk of sarcopenia or frailty, post-operative patients, and anyone undergoing functional health assessment. Population health teams may screen broader cohorts for risk stratification."
+          "answer": "Clinical guidelines recommend grip strength screening for adults over 65, individuals at risk of sarcopenia or frailty, post-operative patients, and anyone undergoing functional health assessment. Population health teams may screen broader cohorts for risk stratification. Beyond these groups, we believe grip strength should be measured in everyone as a routine vital sign, much as a doctor captures blood pressure, given its value as a simple, non-invasive marker of overall health."
         },
         {
           "question": "Is grip strength reliable as an indicator on its own?",
@@ -123,7 +123,7 @@
     },
     {
       "_template": "ctaBanner",
-      "heading": "Talk to the Clinical Team.",
+      "heading": "Talk to the Team.",
       "primaryCtaText": "Schedule a Demo",
       "primaryCtaLink": "/contact",
       "secondaryCtaText": "View the Clinical Evidence",
@@ -136,7 +136,7 @@
       "_template": "leadMagnetPromo",
       "eyebrow": "Free Whitepaper",
       "heading": "Grip Strength: The Essential Biomarker for Longevity",
-      "promoBody": "Download the full clinical summary — peer-reviewed evidence linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment.",
+      "promoBody": "Download the full clinical summary - peer-reviewed evidence linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment.",
       "ctaText": "Download the PDF",
       "ctaLink": "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf"
     }

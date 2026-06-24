@@ -69,6 +69,43 @@
     {
       "_template": "pdfDocumentCards",
       "scheme": "grey",
+      "eyebrow": "For rehab teams",
+      "heading": "Able Rehab Guides",
+      "subtitle": "Get up and running with Able Rehab and the GripAble sensor. Quick start and full user guide for rehab teams, plus the GripAble device instructions for use.",
+      "columnCount": 3,
+      "items": [
+        {
+          "title": "Able Rehab Quick Start Guide",
+          "description": "A short visual walkthrough for first-time Able Rehab users. Set up the GripAble sensor, install the app and start a guided session.",
+          "category": "Quick Start",
+          "ctaText": "Open the Quick Start",
+          "ctaLink": "/downloads/Able-Rehab-Quick-Start-Guide.pdf",
+          "pdfLabel": "PDF",
+          "accent": "aqua"
+        },
+        {
+          "title": "Able Rehab User Guide",
+          "description": "The complete operator manual for Able Rehab. Covers sensor setup, the guided activities, goal setting, progress tracking and reporting.",
+          "category": "User Guide",
+          "ctaText": "Open the User Guide",
+          "ctaLink": "/downloads/Able-Rehab-User-Guide.pdf",
+          "pdfLabel": "PDF",
+          "accent": "blue"
+        },
+        {
+          "title": "GripAble Instructions for Use",
+          "description": "The official Instructions for Use (IFU) for the GripAble sensor. Device description, intended use, safety information, care and maintenance.",
+          "category": "Device IFU",
+          "ctaText": "Open the IFU",
+          "ctaLink": "/downloads/GripAble-Instructions-for-Use.pdf",
+          "pdfLabel": "PDF",
+          "accent": "indigo"
+        }
+      ]
+    },
+    {
+      "_template": "pdfDocumentCards",
+      "scheme": "grey",
       "eyebrow": "For engineering teams",
       "heading": "Technical Documentation",
       "subtitle": "Integration references for connecting partner systems to the Able Platform and embedding the GripAble sensor in your own applications. OpenAPI specs available on request.",
@@ -108,12 +145,12 @@
       "scheme": "light",
       "eyebrow": "Mobile apps",
       "heading": "Get the apps",
-      "subtitle": "Run the five-minute screening on any iPad or Android tablet and pair the GripAble sensor over Bluetooth. Download Able Assess for clinical screening, or the GripAble app for guided rehab — free on the App Store and Google Play.",
+      "subtitle": "Run the five-minute screening on any iPad or Android tablet and pair the GripAble sensor over Bluetooth. Download Able Assess for clinical screening, or the GripAble app for guided rehab - free on the App Store and Google Play.",
       "apps": [
         {
           "name": "Able Assess",
           "category": "Screening",
-          "description": "The clinical screening app. Run the full Able Assess workflow — grip strength and the four-metric falls-risk screen — then sync results to the Able Platform. For iPad, iPhone and Android tablets.",
+          "description": "The clinical screening app. Run the full Able Assess workflow - grip strength and the four-metric falls-risk screen - then sync results to the Able Platform. For iPad, iPhone and Android tablets.",
           "appStoreUrl": "https://apps.apple.com/us/app/able-assess/id6612033581",
           "googlePlayUrl": "https://play.google.com/store/apps/details?id=com.gripable.ableassess&gl=US",
           "accent": "blue"
@@ -121,7 +158,7 @@
         {
           "name": "GripAble",
           "category": "Rehab",
-          "description": "The upper-limb rehab companion. Turn the GripAble sensor into guided, gamified exercise for stroke and neuro recovery — at the bedside, in the clinic or at home. For iOS and Android.",
+          "description": "The upper-limb rehab companion. Turn the GripAble sensor into guided, gamified exercise for stroke and neuro recovery - at the bedside, in the clinic or at home. For iOS and Android.",
           "appStoreUrl": "https://apps.apple.com/us/app/gripable/id6444156378",
           "googlePlayUrl": "https://play.google.com/store/apps/details?id=com.gripable.patientapp.public&gl=US",
           "accent": "aqua"

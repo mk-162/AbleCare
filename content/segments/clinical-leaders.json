@@ -33,7 +33,7 @@
       "subtitle": "Standardized clinical frameworks built on research, not habit. Equip your team to deliver consistent outcomes.",
       "backgroundImage": "/images/photos/clinical/clinician-guiding-patient.jpg",
       "backgroundImageAlt": "Clinician guiding a patient through an assessment",
-      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaText": "Talk to the Team",
       "primaryCtaLink": "/contact",
       "scheme": "blue",
       "wave": "crest"
@@ -101,7 +101,7 @@
       "_template": "ctaBanner",
       "heading": "Lead clinical excellence through evidence and data.",
       "scheme": "blue",
-      "primaryCtaText": "Talk to the Clinical Team",
+      "primaryCtaText": "Talk to the Team",
       "primaryCtaLink": "/contact",
       "bodyText": "Book a walkthrough with a clinician who has run it in the field."
     }

@@ -3,7 +3,7 @@
   "slug": "skilled-nursing",
   "seo": {
     "title": "Falls Prevention for Skilled Nursing | Able Care",
-    "description": "Standardized falls screening for skilled nursing facilities. Protect Five-Star ratings, defend against CMS audits, and build the case load — all in under five minutes per patient.",
+    "description": "Standardized falls screening for skilled nursing facilities. Protect Five-Star ratings, defend against CMS audits, and build the case load - all in under five minutes per patient.",
     "ogImage": "/images/og-skilled-nursing.png"
   },
   "blocks": [
@@ -26,7 +26,7 @@
       "backgroundImageAlt": "Therapist conducting a bedside Able Assess screening with an SNF patient",
       "eyebrow": "Skilled Nursing Facilities",
       "headline": "Standardized falls screening for skilled nursing.",
-      "subtitle": "Protect Five-Star ratings. Defend against CMS audits. Build the case load. One standardized screen across every site and every patient — usable by any member of staff.",
+      "subtitle": "Protect Five-Star ratings. Defend against CMS audits. Build the case load. One standardized screen across every site and every patient - usable by any member of staff.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
       "scheme": "blue",
@@ -39,11 +39,11 @@
       "metrics": [
         {
           "name": "Standardization & quality",
-          "whatItMeasures": "One standard assessment for every patient, across every staff member and every site. Defensible documentation that falls risk was considered and addressed — critical if the SNF is audited."
+          "whatItMeasures": "One standard assessment for every patient, across every staff member and every site. Defensible documentation that falls risk was considered and addressed - critical if the SNF is audited."
         },
         {
           "name": "Build the case load",
-          "whatItMeasures": "Inside a CCRC, screen non-SNF residents to identify candidates for Part B PT. In a standalone SNF, screen patients without a full evaluation — opening the door to more patients on service."
+          "whatItMeasures": "Inside a CCRC, screen non-SNF residents to identify candidates for Part B PT. In a standalone SNF, screen patients without a full evaluation - opening the door to more patients on service."
         },
         {
           "name": "Five-Star and VBP protection",
@@ -84,7 +84,7 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "whatItMeasures": "Full body strength proxy. Can be captured even when a patient can't complete CST, TUG or 4MGS — every patient gets a score."
+          "whatItMeasures": "Full body strength proxy. Can be captured even when a patient can't complete CST, TUG or 4MGS - every patient gets a score."
         },
         {
           "name": "Sit-to-stand",
@@ -147,19 +147,19 @@
       "faqs": [
         {
           "question": "How does Able Assess help protect Five-Star ratings?",
-          "answer": "Falls outcomes feed the Care Compare quality measures that directly impact Five-Star ratings — and new CMS regulation has increased penalties for falls. Objective screening identifies at-risk residents earlier, enabling timely intervention before falls occur and protecting your quality scores."
+          "answer": "Falls outcomes feed the Care Compare quality measures that directly impact Five-Star ratings - and new CMS regulation has increased penalties for falls. Objective screening identifies at-risk residents earlier, enabling timely intervention before falls occur and protecting your quality scores."
         },
         {
           "question": "Can non-clinical staff run the screening?",
-          "answer": "Yes. Able Assess can be used by any staff — clinical training isn't required. The workflow guides them through every step."
+          "answer": "Yes. Able Assess can be used by any staff - clinical training isn't required. The workflow guides them through every step."
         },
         {
           "question": "How does it support a CMS audit?",
-          "answer": "Able Assess creates a defensible paper trail showing that falls risk was considered and addressed for every patient — critical if the SNF is audited."
+          "answer": "Able Assess creates a defensible paper trail showing that falls risk was considered and addressed for every patient - critical if the SNF is audited."
         },
         {
           "question": "How does it work inside a CCRC?",
-          "answer": "Use Able Assess to screen non-SNF residents (IL/AL) and identify those who could benefit from Part B PT — getting more patients onto the case load."
+          "answer": "Use Able Assess to screen non-SNF residents (IL/AL) and identify those who could benefit from Part B PT - getting more patients onto the case load."
         },
         {
           "question": "What about patients who cannot stand or walk on admission?",
@@ -167,7 +167,7 @@
         },
         {
           "question": "What does it cost?",
-          "answer": "Unlimited tests, unlimited users — no per-patient or per-test charge. Volume discounts available for larger or multi-site customers. Book a demo to discuss your scenario."
+          "answer": "Unlimited tests, unlimited users - no per-patient or per-test charge. Volume discounts available for larger or multi-site customers. Book a demo to discuss your scenario."
         }
       ]
     },

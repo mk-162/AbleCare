@@ -53,7 +53,7 @@ export function MetricsBlock({ scheme = "light", heading, eyebrow, metrics }: Me
                   <img
                     src={metric.image}
                     alt={metric.name}
-                    className="h-20 w-auto object-contain"
+                    className="h-36 w-auto object-contain"
                   />
                 </div>
               )}

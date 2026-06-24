@@ -7,6 +7,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import MarkdownIt from "markdown-it";
+
+const md = new MarkdownIt({ linkify: true, breaks: false });
 
 interface FaqAccordionProps {
   scheme?: string;
@@ -31,7 +34,7 @@ export function FaqAccordion({ scheme = "light", heading, emitSchema, faqs }: Fa
     mainEntity: items.map(f => ({
       "@type": "Question",
       name: f.question,
-      acceptedAnswer: { "@type": "Answer", text: f.answer },
+      acceptedAnswer: { "@type": "Answer", text: f.answer.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") },
     })),
   } : null;
 
@@ -50,8 +53,8 @@ export function FaqAccordion({ scheme = "light", heading, emitSchema, faqs }: Fa
               <AccordionTrigger className="text-left text-lg font-bold py-6 hover:no-underline hover:text-ac-blue transition-colors">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-ac-black/70 font-light text-base leading-relaxed pb-6">
-                {faq.answer}
+              <AccordionContent className="text-ac-black/70 font-light text-base leading-relaxed pb-6 [&_a]:text-ac-blue [&_a]:underline [&_a]:underline-offset-4">
+                <span dangerouslySetInnerHTML={{ __html: md.renderInline(faq.answer) }} />
               </AccordionContent>
             </AccordionItem>
           ))}

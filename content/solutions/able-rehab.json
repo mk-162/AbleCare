@@ -2,7 +2,7 @@
   "title": "Able Rehab",
   "slug": "able-rehab",
   "seo": {
-    "title": "Able Rehab — Neurorehabilitation with the GripAble Sensor | Able Care",
+    "title": "Able Rehab - Neurorehabilitation with the GripAble Sensor | Able Care",
     "description": "Able Rehab uses the GripAble sensor to train the four core movements of the hand and wrist with engaging activities, goal tracking, and grip tests with published normative data.",
     "ogImage": "/images/og-able-rehab.png"
   },
@@ -73,20 +73,20 @@
           "text": "Multiple difficulty levels to grade each patient"
         },
         {
-          "text": "Assess each individual's ability, then set the activities to match — and adjust as they progress"
+          "text": "Assess each individual's ability, then set the activities to match - and adjust as they progress"
         }
       ],
       "imagePosition": "right",
-      "imageAlt": "Circus Escape — an engaging Able Rehab activity that trains hand and wrist movements",
+      "imageAlt": "Circus Escape - an engaging Able Rehab activity that trains hand and wrist movements",
       "videoSrc": "/videos/circus-escape-activity.mp4"
     },
     {
       "_template": "imageFeature",
       "scheme": "grey",
       "headline": "An activity for every movement",
-      "description": "Different activities target different movements. Pufferfish trains wrist flexion; other games train grip, pronation, supination, and ulnar/radial deviation — so clinicians can match the activity to each patient's clinical goal.",
+      "description": "Different activities target different movements. Pufferfish trains wrist flexion; other games train grip, pronation, supination, and ulnar/radial deviation - so clinicians can match the activity to each patient's clinical goal.",
       "imagePosition": "left",
-      "imageAlt": "Pufferfish — an Able Rehab activity that trains wrist flexion",
+      "imageAlt": "Pufferfish - an Able Rehab activity that trains wrist flexion",
       "videoSrc": "/videos/pufferfish-flexion-activity.mp4"
     },
     {
@@ -114,7 +114,7 @@
       "_template": "imageFeature",
       "scheme": "grey",
       "headline": "Hand function tests",
-      "description": "Grip strength testing benchmarked against published clinical norms, built into the same workflow as therapy — so assessment, training, and reporting all live in one place.",
+      "description": "Grip strength testing benchmarked against published clinical norms, built into the same workflow as therapy - so assessment, training, and reporting all live in one place.",
       "bulletPoints": [
         {
           "text": "objective grip strength test with published normative data"
@@ -133,14 +133,14 @@
     },
     {
       "_template": "ctaBanner",
-      "heading": "See Able Rehab in your clinic.",
+      "heading": "See Able Rehab in your clinic or home.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "See Able Assess",
-      "secondaryCtaLink": "/solutions/able-assess",
+      "secondaryCtaText": "",
+      "secondaryCtaLink": "",
       "scheme": "blue",
       "wave": "ribbon",
-      "bodyText": "Book a walkthrough with a clinician who has used Able Rehab in practice."
+      "bodyText": "Book a walkthrough with the team."
     }
   ],
   "tags": [
