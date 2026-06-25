@@ -1,7 +1,7 @@
 {
   "title": "Contact | Able Care",
   "slug": "contact",
-  "description": "Book a demo with the Able Care clinical team. Segment-tailored. See the workflow. Get your questions answered.",
+  "description": "Book a demo with the Able Care team. Segment-tailored. See the workflow. Get your questions answered.",
   "blocks": [
     {
       "_template": "contactForm",

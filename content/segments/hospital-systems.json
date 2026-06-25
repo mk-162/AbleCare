@@ -105,8 +105,8 @@
       "heading": "The numbers that matter to hospital systems",
       "stats": [
         {
-          "value": "1,000–5,000",
-          "label": "Bed midmarket systems we're built for"
+          "value": "1,000 – 5,000",
+          "label": "Beds, midmarket systems we're built for"
         },
         {
           "value": "< 5 min",
@@ -163,7 +163,7 @@
         },
         {
           "question": "How does it integrate with our EHR?",
-          "answer": "Able Assess is integration-ready with the major EHR platforms. The clinical team can walk you through the setup during a demo."
+          "answer": "Able Assess is integration-ready with the major EHR platforms. The team can walk you through the setup during a demo."
         },
         {
           "question": "Can we run a pilot?",

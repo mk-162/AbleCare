@@ -105,8 +105,9 @@
       "heading": "The numbers that matter to community programs",
       "stats": [
         {
-          "value": "25%",
-          "label": "Reduction in falls with objective screening"
+          "value": "~23%",
+          "label": "Fewer falls in prevention programmes that start with objective screening",
+          "sublabel": "Cochrane review (2018) of community-dwelling older adults: rate ratio 0.77, low-certainty evidence. Reflects screening plus tailored interventions, not screening alone."
         },
         {
           "value": "< 5 min",
