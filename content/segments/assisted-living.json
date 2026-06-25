@@ -143,11 +143,6 @@
         {
           "value": "15 min",
           "label": "Staff training time"
-        },
-        {
-          "value": "12",
-          "label": "Peer-reviewed studies",
-          "sublabel": "behind the four-metric method"
         }
       ],
       "scheme": "aqua"

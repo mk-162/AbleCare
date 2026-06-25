@@ -143,11 +143,6 @@
         {
           "value": "30 days",
           "label": "Portfolio deployment"
-        },
-        {
-          "value": "12",
-          "label": "Peer-reviewed studies",
-          "sublabel": "behind the four-metric method"
         }
       ],
       "scheme": "aqua"

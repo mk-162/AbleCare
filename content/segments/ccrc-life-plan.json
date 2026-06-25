@@ -143,11 +143,6 @@
         {
           "value": "300–800",
           "label": "Residents per campus"
-        },
-        {
-          "value": "12",
-          "label": "Peer-reviewed studies",
-          "sublabel": "behind the four-metric method"
         }
       ],
       "scheme": "aqua"
