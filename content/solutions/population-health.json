@@ -42,10 +42,6 @@
       "heading": "Population health at a glance",
       "stats": [
         {
-          "value": "25%",
-          "label": "Reduction in falls with objective screening"
-        },
-        {
           "value": "4",
           "label": "Validated metrics per screening"
         },

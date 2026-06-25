@@ -108,7 +108,7 @@
     {
       "_template": "roiCalculatorPromo",
       "heading": "Model the impact of fewer falls",
-      "promoBody": "Falls in assisted living drive hospitalization, liability claims and early move-outs. See what a 25% reduction could mean for your community.",
+      "promoBody": "Falls in assisted living drive hospitalization, liability claims and early move-outs. See what fewer falls could mean for your community.",
       "ctaText": "Run the numbers",
       "ctaHref": "/resources/roi-calculator"
     },
@@ -143,10 +143,6 @@
         {
           "value": "15 min",
           "label": "Staff training time"
-        },
-        {
-          "value": "25%",
-          "label": "Average fall reduction"
         }
       ],
       "scheme": "aqua"

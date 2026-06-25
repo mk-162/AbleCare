@@ -143,10 +143,6 @@
         {
           "value": "15 min",
           "label": "Staff training time"
-        },
-        {
-          "value": "25%",
-          "label": "Average fall reduction"
         }
       ],
       "scheme": "aqua"

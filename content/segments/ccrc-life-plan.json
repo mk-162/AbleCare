@@ -143,10 +143,6 @@
         {
           "value": "300–800",
           "label": "Residents per campus"
-        },
-        {
-          "value": "25%",
-          "label": "Average fall reduction"
         }
       ],
       "scheme": "aqua"

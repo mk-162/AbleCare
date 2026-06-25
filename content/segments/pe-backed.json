@@ -178,10 +178,6 @@
         {
           "value": "15 min",
           "label": "staff training"
-        },
-        {
-          "value": "25%",
-          "label": "average fall reduction"
         }
       ],
       "scheme": "blue"

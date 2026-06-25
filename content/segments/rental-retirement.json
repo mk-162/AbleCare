@@ -108,7 +108,7 @@
     {
       "_template": "roiCalculatorPromo",
       "heading": "What is one empty unit costing you per month?",
-      "promoBody": "Falls-related turnover is one of the largest controllable costs in a rental portfolio. Model the impact of a 25% reduction in falls across your communities.",
+      "promoBody": "Falls-related turnover is one of the largest controllable costs in a rental portfolio. Model the impact of fewer falls across your communities.",
       "ctaText": "Run the numbers",
       "ctaHref": "/resources/roi-calculator"
     },
@@ -143,10 +143,6 @@
         {
           "value": "30 days",
           "label": "Portfolio deployment"
-        },
-        {
-          "value": "25%",
-          "label": "Average fall reduction"
         }
       ],
       "scheme": "aqua"
