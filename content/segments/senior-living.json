@@ -115,6 +115,11 @@
         {
           "value": "0",
           "label": "Clinical certifications required to run it"
+        },
+        {
+          "value": "12",
+          "label": "Peer-reviewed studies",
+          "sublabel": "behind the four-metric method"
         }
       ],
       "scheme": "aqua"
