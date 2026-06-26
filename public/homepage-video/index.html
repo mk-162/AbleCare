@@ -75,35 +75,38 @@
 const STAGE_W = 1080;
 const STAGE_H = 1080;
 const AUDIO_SRC = 'assets/voiceover.mp3';
-const FALLBACK_DURATION = 59.5;
+const FALLBACK_DURATION = 57.6;
 
-// Stylised caption segments — synced to tightened scene timings
+// Stylised caption segments — synced to the voiceover (assets/voiceover.mp3).
+// Times are in audio seconds; scenes share this timeline (timeOffset default 0).
 const CAPTIONS = [
-  { start: 0.2,  end: 6.0,  text: 'Strong. Steady. Independent.' },
-  { start: 6.4,  end: 8.8,  text: '1 in 4 adults over 65 falls each year.' },
-  { start: 9.0,  end: 14.4, text: 'Most risk is missed until after the first fall.' },
-  { start: 14.9, end: 19.3, text: 'Able Care — built to measure it.' },
-  { start: 19.8, end: 24.6, text: '15 years of research · Imperial College London' },
-  { start: 24.8, end: 28.2, text: '10× more accurate than legacy tools' },
-  { start: 28.8, end: 34.8, text: 'Grip strength is a powerful biomarker.' },
-  { start: 35.0, end: 37.8, text: 'An early warning before a fall.' },
-  { start: 38.4, end: 42.8, text: 'Four validated measurements.' },
-  { start: 43.0, end: 48.2, text: 'One screening. Five minutes.' },
-  { start: 48.8, end: 52.4, text: 'Results that let your team act early.' },
-  { start: 52.9, end: 56.0, text: 'FDA · HIPAA · CDC STEADI aligned' },
-  { start: 56.4, end: 59.4, text: 'Enabling intelligent health.' },
+  { start: 0.2,  end: 3.6,  text: 'Strong. Steady. Independent.' },
+  { start: 3.8,  end: 6.9,  text: '1 in 4 adults over 65 falls each year.' },
+  { start: 7.0,  end: 11.4, text: 'Most risk is missed until after the first fall.' },
+  { start: 11.6, end: 14.4, text: 'Able Care — built to measure it.' },
+  { start: 14.6, end: 19.6, text: '15 years of research · Imperial College London' },
+  { start: 20.0, end: 23.7, text: '10× more accurate than legacy tools' },
+  { start: 24.0, end: 30.9, text: 'Grip strength is a powerful biomarker.' },
+  { start: 31.1, end: 34.4, text: 'An early warning before a fall.' },
+  { start: 34.5, end: 40.6, text: 'Four validated measurements.' },
+  { start: 41.0, end: 45.4, text: 'One screening. Five minutes.' },
+  { start: 45.6, end: 49.2, text: 'Results that let your team act early.' },
+  { start: 49.5, end: 55.1, text: 'FDA · HIPAA · CDC STEADI aligned' },
+  { start: 55.4, end: 57.5, text: 'Enabling intelligent health.' },
 ];
 
 // ── Editable defaults ────────────────────────────────────────────────────
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "loop": false,
   "muted": true,
-  "timeOffset": 1.2,
+  "timeOffset": 0,
   "showCaptions": false,
   "startMuted": true
 }/*EDITMODE-END*/;
 
-const TWEAK_STORAGE_KEY = 'ac-homepage-tweaks';
+// Bumped to -v2 so any locally-saved tweaks from the old (59.5s) cut are
+// discarded — the new voiceover is timed against timeOffset 0.
+const TWEAK_STORAGE_KEY = 'ac-homepage-tweaks-v2';
 const loadSavedTweaks = () => {
   try {
     const saved = localStorage.getItem(TWEAK_STORAGE_KEY);
@@ -477,10 +480,17 @@ function App() {
         flexShrink: 0,
         position: 'relative',
         overflow: 'hidden',
-        background: '#DCDCDC',
+        background: '#1432FF',
         boxShadow: '0 20px 80px rgba(0,0,0,0.6)',
         cursor: 'pointer',
       }}>
+        {/* Permanent brand backdrop — sits behind every scene so a transition
+            crossfade can never reveal the bare stage. (Fixes the gray flash.) */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'linear-gradient(145deg, #0b1fd4 0%, #1432FF 45%, #0a2bc9 100%)',
+        }}/>
+
         {(() => { const vt = ended ? -0.01 : time + (tweaks.timeOffset || 0); return (<>
           {S.Scene1 && <S.Scene1 t={vt}/>}
           {S.Scene2 && <S.Scene2 t={vt}/>}
