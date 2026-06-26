@@ -16,6 +16,7 @@ interface SegmentCardsProps {
     link?: string;
     linkText?: string;
     logos?: string[];
+    footnote?: string;
   }>;
 }
 
@@ -53,6 +54,9 @@ export function SegmentCards({ scheme = "light", heading, centered, cards }: Seg
                       <img key={j} src={logo} alt={card.title} className="h-16 w-auto object-contain" />
                     ))}
                   </div>
+                )}
+                {card.footnote && (
+                  <p className="text-[11px] text-ac-black/40 font-light leading-snug mt-4">{card.footnote}</p>
                 )}
                 </div>
               </div>

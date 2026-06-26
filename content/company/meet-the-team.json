@@ -8,7 +8,7 @@
       "scheme": "light",
       "wave": "crest",
       "backgroundImage": "/images/photos/team-founders.png",
-      "backgroundImageAlt": "Able Care founding team — Dr Paul Rinne, Dr Mike Mace, and Danielle Richards",
+      "backgroundImageAlt": "Able Care founding team - Dr Paul Rinne, Dr Mike Mace, and Danielle Richards",
       "eyebrow": "Our people",
       "headline": "Built by clinicians. Scaled by engineers.",
       "subtitle": "Able Care was founded at Imperial College London by researchers who saw the gap between what clinical science knows about falls and what frontline care teams can actually measure."
@@ -17,7 +17,7 @@
       "_template": "teamShowcase",
       "scheme": "aqua",
       "heading": "The people behind Able Care",
-      "subtitle": "A multidisciplinary team spanning clinical science, biomedical engineering, and health technology — united by a shared mission to keep people strong, steady, and independent for life.",
+      "subtitle": "A multidisciplinary team spanning clinical science, biomedical engineering, and health technology - united by a shared mission to keep people strong, steady, and independent for life.",
       "layout": "featured",
       "team": [
         {

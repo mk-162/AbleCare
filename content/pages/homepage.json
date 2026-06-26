@@ -32,9 +32,9 @@
           "sublabel": "Usable by non-clinical staff"
         },
         {
-          "value": "32,000+",
+          "value": ">50k",
           "label": "Assessments delivered",
-          "sublabel": "Across home care, senior living and clinical sites"
+          "sublabel": "Across both Able Assess and Able Rehab solutions"
         },
         {
           "value": "12",
@@ -99,19 +99,23 @@
       "metrics": [
         {
           "name": "Grip strength",
-          "whatItMeasures": "Full body strength proxy."
+          "whatItMeasures": "Full body strength proxy.",
+          "image": "/images/decks/falls-prevention/test-01-grip-strength.png"
         },
         {
           "name": "Sit-to-stand",
-          "whatItMeasures": "Lower-limb power and balance. 30-second timed test."
+          "whatItMeasures": "Lower-limb power and balance. 30-second timed test.",
+          "image": "/images/decks/falls-prevention/test-04-chair-stand.png"
         },
         {
           "name": "Gait speed",
-          "whatItMeasures": "Walking speed over a standardized 4-meter distance."
+          "whatItMeasures": "Walking speed over a standardized 4-meter distance.",
+          "image": "/images/decks/falls-prevention/test-03-gait-speed.png"
         },
         {
           "name": "Timed Up and Go",
-          "whatItMeasures": "Time to rise from a chair, walk three meters, turn, walk back and sit down."
+          "whatItMeasures": "Time to rise from a chair, walk three meters, turn, walk back and sit down.",
+          "image": "/images/decks/falls-prevention/test-02-tug.png"
         }
       ],
       "_template": "metricsBlock"
@@ -217,11 +221,25 @@
           "link": "https://jhpn.biomedcentral.com/articles/10.1186/s41043-024-00500-y"
         },
         {
-          "title": "Functionally impaired patients face up to 42% higher readmission risk",
-          "journal": "JAMA Internal Medicine",
-          "year": "2015",
-          "finding": "Functional impairment at discharge was independently associated with a 42% increased risk of 30-day hospital readmission.",
-          "link": "https://pubmed.ncbi.nlm.nih.gov/25642907/"
+          "title": "STEADI: CDC's approach to make older adult fall prevention part of every primary care practice",
+          "journal": "J. Safety Research",
+          "year": "2017",
+          "finding": "The CDC's STEADI initiative integrates fall-risk screening, assessment and tailored intervention into routine primary care for older adults.",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/29203005/"
+        },
+        {
+          "title": "World guidelines for falls prevention and management for older adults: a global initiative",
+          "journal": "Age and Ageing",
+          "year": "2022",
+          "finding": "A global, multidisciplinary initiative establishing consensus recommendations for the assessment, prevention and management of falls in older adults.",
+          "link": "https://academic.oup.com/ageing/article/51/9/afac205/6730755"
+        },
+        {
+          "title": "Assessment and prevention of falls in older people and in people 50 and over at higher risk - summary of updated NICE guidance",
+          "journal": "BMJ",
+          "year": "2026",
+          "finding": "Summary of updated NICE guidance on assessing and preventing falls in older people and in those aged 50 and over at higher risk.",
+          "link": "https://www.bmj.com/content/392/bmj.s223"
         }
       ],
       "_template": "evidenceBlock"
@@ -232,16 +250,16 @@
       "caseStudies": [
         {
           "title": "Home care: earlier intervention, fewer hospitalizations",
-          "metric": "25%",
-          "metricLabel": "reduction in falls-related hospitalizations",
+          "metric": "23%",
+          "metricLabel": "fewer falls in prevention programs that start with objective screening",
           "summary": "A PE-backed home care operator rolled out Able Assess across 12 branches. Non-clinical staff ran screenings in under five minutes, flagging at-risk clients six weeks earlier than their previous paper-based process.",
           "sector": "Home Care",
           "link": "/home-care"
         },
         {
           "title": "Senior living: protecting occupancy through prevention",
-          "metric": "32%",
-          "metricLabel": "fewer falls per resident per year",
+          "metric": "< 5 min",
+          "metricLabel": "Per resident assessment",
           "summary": "A CCRC with 200 IL and AL units adopted Able Assess as part of their quarterly wellness program. Resident engagement increased and fall-related move-outs dropped.",
           "sector": "Senior Living",
           "link": "/senior-living"
@@ -272,7 +290,7 @@
         },
         {
           "question": "Does Able Assess integrate with our EHR or care management system?",
-          "answer": "Yes. Able Assess is integration ready with EHRs and other risk monitoring platforms. The clinical team can walk you through the integration during a demo."
+          "answer": "Yes. Able Assess is integration ready with EHRs and other risk monitoring platforms. The team can walk you through the integration during a demo."
         },
         {
           "question": "Where is patient data stored?",
@@ -283,12 +301,6 @@
     },
     {
       "items": [
-        {
-          "text": "FDA Listed"
-        },
-        {
-          "text": "CE Marked"
-        },
         {
           "text": "ISO 27001"
         },

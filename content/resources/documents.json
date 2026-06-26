@@ -1,5 +1,4 @@
 {
-  "title": "Documents",
   "slug": "documents",
   "seo": {
     "title": "Documents | User Guides & Technical Documentation | Able Care",
@@ -8,7 +7,6 @@
   },
   "blocks": [
     {
-      "_template": "breadcrumb",
       "items": [
         {
           "label": "Home",
@@ -22,29 +20,29 @@
           "label": "Documents",
           "href": "/resources/documents"
         }
-      ]
+      ],
+      "_template": "breadcrumb"
     },
     {
-      "_template": "hero",
-      "backgroundImage": "/images/heroes/devices-hero-new-min.png",
-      "backgroundImageAlt": "Able Assess product and tablet",
+      "scheme": "blue",
+      "wave": "crest",
       "eyebrow": "Resources",
       "headline": "Documents",
       "subtitle": "Everything you need to run Able Assess and integrate the Able Platform. User guides for clinical teams, technical references for engineering teams.",
       "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Back to Resources",
-      "secondaryCtaLink": "/resources",
-      "scheme": "blue",
-      "wave": "crest"
+      "secondaryCtaText": "Research Library",
+      "secondaryCtaLink": "/resources/research-library",
+      "backgroundImage": "/images/heroes/devices-hero-new-min.png",
+      "backgroundImageAlt": "Able Assess product and tablet",
+      "_template": "hero"
     },
     {
-      "_template": "pdfDocumentCards",
       "scheme": "light",
       "eyebrow": "For care teams",
       "heading": "User Guides",
       "subtitle": "Get up and running with Able Assess. The Quick Start gets a new user from unboxing to first screening in minutes; the full User Guide is the complete operator manual for day-to-day use.",
-      "columnCount": 2,
+      "columnCount": 3,
       "items": [
         {
           "title": "Able Assess Quick Start Guide",
@@ -52,7 +50,7 @@
           "category": "Quick Start",
           "ctaText": "Open the Quick Start",
           "ctaLink": "/downloads/Able-Assess-Quick-Start-V1.10.1.pdf",
-          "pdfLabel": "PDF · v1.10.1",
+          "pdfLabel": "PDF",
           "accent": "aqua"
         },
         {
@@ -61,13 +59,59 @@
           "category": "User Guide",
           "ctaText": "Open the User Guide",
           "ctaLink": "/downloads/Able-Assess-User-Guide-V1.10.1.pdf",
-          "pdfLabel": "PDF · v1.10.1",
+          "pdfLabel": "PDF",
           "accent": "blue"
+        },
+        {
+          "title": "GripAble Instructions for Use",
+          "description": "The official Instructions for Use (IFU) for the GripAble sensor. Device description, intended use, safety information, care and maintenance.",
+          "category": "Device IFU",
+          "ctaText": "Open the IFU",
+          "ctaLink": "/downloads/GripAble-Instructions-for-Use.pdf",
+          "pdfLabel": "PDF",
+          "accent": "indigo"
         }
-      ]
+      ],
+      "_template": "pdfDocumentCards"
     },
     {
-      "_template": "pdfDocumentCards",
+      "scheme": "grey",
+      "eyebrow": "For rehab teams",
+      "heading": "Able Rehab Guides",
+      "subtitle": "Get up and running with Able Rehab and the GripAble sensor. Quick start and full user guide for rehab teams, plus the GripAble device instructions for use.",
+      "columnCount": 3,
+      "items": [
+        {
+          "title": "Able Rehab Quick Start Guide",
+          "description": "A short visual walkthrough for first-time Able Rehab users. Set up the GripAble sensor, install the app and start a guided session.",
+          "category": "Quick Start",
+          "ctaText": "Open the Quick Start",
+          "ctaLink": "/downloads/Able-Rehab-Quick-Start-Guide.pdf",
+          "pdfLabel": "PDF",
+          "accent": "aqua"
+        },
+        {
+          "title": "Able Rehab User Guide",
+          "description": "The complete operator manual for Able Rehab. Covers sensor setup, the guided activities, goal setting, progress tracking and reporting.",
+          "category": "User Guide",
+          "ctaText": "Open the User Guide",
+          "ctaLink": "/downloads/Able-Rehab-User-Guide.pdf",
+          "pdfLabel": "PDF",
+          "accent": "blue"
+        },
+        {
+          "title": "GripAble Instructions for Use",
+          "description": "The official Instructions for Use (IFU) for the GripAble sensor. Device description, intended use, safety information, care and maintenance.",
+          "category": "Device IFU",
+          "ctaText": "Open the IFU",
+          "ctaLink": "/downloads/GripAble-Instructions-for-Use.pdf",
+          "pdfLabel": "PDF",
+          "accent": "indigo"
+        }
+      ],
+      "_template": "pdfDocumentCards"
+    },
+    {
       "scheme": "grey",
       "eyebrow": "For engineering teams",
       "heading": "Technical Documentation",
@@ -94,26 +138,26 @@
         },
         {
           "title": "GripAble SDK Reference",
-          "description": "Native plugins for integrating the GripAble BLE sensor into Android and iOS apps. Covers GripableSDK, GripableDevice, GripCalibrationManager, FirmwareUpdateManager and our clinically validated app flow designs.",
+          "description": "Native plugins for integrating the GripAble BLE sensor into Android and iOS apps. Covers GripableSDK, GripableDevice, GripCalibrationManager, FirmwareUpdateManager and our evidence-based app flow designs.",
           "category": "SDK",
           "ctaText": "Open the SDK Docs",
           "ctaLink": "https://gripable-sdk.able-care.co/",
           "pdfLabel": "Web · External",
           "accent": "graphite"
         }
-      ]
+      ],
+      "_template": "pdfDocumentCards"
     },
     {
-      "_template": "appDownloadCards",
       "scheme": "light",
       "eyebrow": "Mobile apps",
       "heading": "Get the apps",
-      "subtitle": "Run the five-minute screening on any iPad or Android tablet and pair the GripAble sensor over Bluetooth. Download Able Assess for clinical screening, or the GripAble app for guided rehab — free on the App Store and Google Play.",
+      "subtitle": "Run the five-minute screening on any iPad or Android tablet and pair the GripAble sensor over Bluetooth. Download Able Assess for clinical screening, or the GripAble app for guided rehab - free on the App Store and Google Play.",
       "apps": [
         {
           "name": "Able Assess",
           "category": "Screening",
-          "description": "The clinical screening app. Run the full Able Assess workflow — grip strength and the four-metric falls-risk screen — then sync results to the Able Platform. For iPad, iPhone and Android tablets.",
+          "description": "The clinical screening app. Run the full Able Assess workflow - grip strength and the four-metric falls-risk screen - then sync results to the Able Platform. For iPad, iPhone and Android tablets.",
           "appStoreUrl": "https://apps.apple.com/us/app/able-assess/id6612033581",
           "googlePlayUrl": "https://play.google.com/store/apps/details?id=com.gripable.ableassess&gl=US",
           "accent": "blue"
@@ -121,25 +165,27 @@
         {
           "name": "GripAble",
           "category": "Rehab",
-          "description": "The upper-limb rehab companion. Turn the GripAble sensor into guided, gamified exercise for stroke and neuro recovery — at the bedside, in the clinic or at home. For iOS and Android.",
+          "description": "The upper-limb rehab companion. Turn the GripAble sensor into guided, gamified exercise for stroke and neuro recovery - at the bedside, in the clinic or at home. For iOS and Android.",
           "appStoreUrl": "https://apps.apple.com/us/app/gripable/id6444156378",
           "googlePlayUrl": "https://play.google.com/store/apps/details?id=com.gripable.patientapp.public&gl=US",
           "accent": "aqua"
         }
-      ]
+      ],
+      "_template": "appDownloadCards"
     },
     {
-      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
       "heading": "Need something else? We are happy to help.",
       "bodyText": "Compliance information lives on the <a href=\"/compliance\">compliance page</a>. For OpenAPI specs, custom integration requirements or anything else, the team is one short message away.",
       "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Back to Resources",
-      "secondaryCtaLink": "/resources",
-      "scheme": "blue",
-      "wave": "ribbon"
+      "secondaryCtaText": "Research Library",
+      "secondaryCtaLink": "/resources/research-library",
+      "_template": "ctaBanner"
     }
   ],
+  "title": "Documents",
   "tags": [
     "documents",
     "user-guide",

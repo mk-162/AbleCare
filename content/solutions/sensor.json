@@ -1,7 +1,7 @@
 {
   "slug": "sensor",
   "seo": {
-    "title": "The GripAble Sensor — One Sensor, Three Use Cases | Able Care",
+    "title": "The GripAble Sensor - One Sensor, Three Use Cases | Able Care",
     "description": "Clinical-grade hand-strength sensor developed at Imperial College London. Powers grip strength testing, fall risk screening, and neuro-rehabilitation in one device.",
     "ogImage": "/images/og-default.png"
   },
@@ -43,7 +43,7 @@
         {
           "title": "Fall Risk Screening",
           "body": "Utilizes the GripAble sensor, the Able Assess app, the carry pouch, and a measuring tape.",
-          "link": "/solutions/falls-prevention"
+          "link": "/solutions/able-assess"
         },
         {
           "title": "Neuro-Rehabilitation",

@@ -27,7 +27,7 @@ With your consent, we may use marketing cookies to deliver relevant advertisemen
 
 ### Visitor Identification Cookies
 
-With your consent, we use ZoomInfo WebSights — a B2B visitor identification service operated by ZoomInfo Technologies LLC — to identify the organizations interacting with our website. ZoomInfo uses cookies, scripts loaded from `js.zi-scripts.com` and related domains, IP address lookup, and similar technologies to associate website visits with the businesses they originate from.
+With your consent, we use ZoomInfo WebSights - a B2B visitor identification service operated by ZoomInfo Technologies LLC - to identify the organizations interacting with our website. ZoomInfo uses cookies, scripts loaded from `js.zi-scripts.com` and related domains, IP address lookup, and similar technologies to associate website visits with the businesses they originate from.
 
 ZoomInfo collects information including your IP address, the pages you view, the time and duration of your visit, referring URLs, your browser and device characteristics, and inferred organizational affiliation. We use this information for marketing analytics, to prioritize sales outreach, and to improve the relevance of the content we provide.
 

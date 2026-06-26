@@ -19,7 +19,7 @@
     "gtmId": ""
   },
   "alertBanner": {
-    "enabled": true,
+    "enabled": false,
     "type": "info",
     "text": "NICE 2025 falls guidance released.",
     "ctaText": "Read our response",

@@ -38,8 +38,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const slugMapPages = [
     "home-care", "home-health-agencies", "senior-living", "skilled-nursing",
     "hospital-systems", "area-agencies-on-aging", "pharma",
-    "about", "meet-the-team", "contact", "demo", "customers", "partners", "news",
-    "privacy", "terms", "cookies", "security", "careers", "compliance",
+    "about", "contact", "demo",
+    "privacy", "terms", "cookies", "security", "compliance",
   ].map((slug) => ({
     url: `${BASE_URL}/${slug}`,
     lastModified: now,
@@ -47,21 +47,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Home care sub-segment pages
-  const homeCareSubPages = ["pe-backed", "independent"].map((slug) => ({
-    url: `${BASE_URL}/home-care/${slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  // Senior living sub-segment pages
-  const seniorLivingSubPages = ["ccrc-life-plan", "independent-living", "assisted-living", "rental-retirement"].map((slug) => ({
-    url: `${BASE_URL}/senior-living/${slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
+  // Home care / senior living sub-segment pages were removed in the 2026-06-19
+  // governance cleanup (unlinked pages); intentionally empty now.
+  const homeCareSubPages: MetadataRoute.Sitemap = [];
+  const seniorLivingSubPages: MetadataRoute.Sitemap = [];
 
   // Product pages
   const productSlugs = getJsonSlugs("content/pages").filter((s) => ["how-it-works", "integrations", "security"].includes(s));
