@@ -232,7 +232,7 @@
       "caseStudies": [
         {
           "title": "Home care: earlier intervention, fewer hospitalizations",
-          "metric": "25%",
+          "metric": "23%",
           "metricLabel": "reduction in falls-related hospitalizations",
           "summary": "A PE-backed home care operator rolled out Able Assess across 12 branches. Non-clinical staff ran screenings in under five minutes, flagging at-risk clients six weeks earlier than their previous paper-based process.",
           "sector": "Home Care",
@@ -240,8 +240,8 @@
         },
         {
           "title": "Senior living: protecting occupancy through prevention",
-          "metric": "32%",
-          "metricLabel": "fewer falls per resident per year",
+          "metric": "< 5 min",
+          "metricLabel": "Per resident assessment",
           "summary": "A CCRC with 200 IL and AL units adopted Able Assess as part of their quarterly wellness program. Resident engagement increased and fall-related move-outs dropped.",
           "sector": "Senior Living",
           "link": "/senior-living"
