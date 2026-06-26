@@ -31,7 +31,7 @@
       "subtitle": "Everything you need to run Able Assess and integrate the Able Platform. User guides for clinical teams, technical references for engineering teams.",
       "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Research",
+      "secondaryCtaText": "Research Library",
       "secondaryCtaLink": "/resources/research-library",
       "backgroundImage": "/images/heroes/devices-hero-new-min.png",
       "backgroundImageAlt": "Able Assess product and tablet",
@@ -180,8 +180,8 @@
       "bodyText": "Compliance information lives on the <a href=\"/compliance\">compliance page</a>. For OpenAPI specs, custom integration requirements or anything else, the team is one short message away.",
       "primaryCtaText": "Contact the Team",
       "primaryCtaLink": "/contact",
-      "secondaryCtaText": "Back to Resources",
-      "secondaryCtaLink": "/resources",
+      "secondaryCtaText": "Research Library",
+      "secondaryCtaLink": "/resources/research-library",
       "_template": "ctaBanner"
     }
   ],
