@@ -39,7 +39,7 @@
       "metrics": [
         {
           "name": "Program outcomes evidence",
-          "whatItMeasures": "Screen participants at the start and end of evidence-based programs to provide objective documentation of impact — defensible when reporting back to funders."
+          "whatItMeasures": "Screen participants at the start and end of evidence-based programs to provide objective documentation of impact - defensible when reporting back to funders."
         },
         {
           "name": "Beneficiary needs identification",
@@ -88,7 +88,7 @@
         },
         {
           "name": "Sit-to-stand",
-          "whatItMeasures": "Lower-limb power and balance — a measure many evidence-based programs already track."
+          "whatItMeasures": "Lower-limb power and balance - a measure many evidence-based programs already track."
         },
         {
           "name": "Gait speed",
@@ -128,7 +128,7 @@
       "_template": "testimonialCarousel",
       "testimonials": [
         {
-          "quote": "We can finally show our funders that the programs they pay for are working — with numbers, not anecdotes.",
+          "quote": "We can finally show our funders that the programs they pay for are working - with numbers, not anecdotes.",
           "role": "Program Director",
           "organization": "US Area Agency on Aging"
         },
@@ -152,15 +152,15 @@
         },
         {
           "question": "Can non-clinical staff run the assessment?",
-          "answer": "Yes. Able Assess was built for non-clinical staff — program coordinators, wellness coordinators and volunteers can all run the protocol. No clinical certification required."
+          "answer": "Yes. Able Assess was built for non-clinical staff - program coordinators, wellness coordinators and volunteers can all run the protocol. No clinical certification required."
         },
         {
           "question": "We're worried about budget. How does this protect grant funding?",
-          "answer": "Able Assess helps you prove the benefit of your programs objectively — which protects current grant funding and strengthens applications for new funding. The data is exactly what funders are increasingly asking for."
+          "answer": "Able Assess helps you prove the benefit of your programs objectively - which protects current grant funding and strengthens applications for new funding. The data is exactly what funders are increasingly asking for."
         },
         {
           "question": "How does it help us identify beneficiaries who need more support?",
-          "answer": "A standardized screen flags participants at elevated falls risk. Staff can then refer them to physical therapy or other support services — fulfilling the AAA mandate to help beneficiaries access their health insurance benefits."
+          "answer": "A standardized screen flags participants at elevated falls risk. Staff can then refer them to physical therapy or other support services - fulfilling the AAA mandate to help beneficiaries access their health insurance benefits."
         },
         {
           "question": "What hardware do we need?",

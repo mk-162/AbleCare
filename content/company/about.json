@@ -2,8 +2,8 @@
   "title": "About Able Care",
   "slug": "about",
   "seo": {
-    "title": "About Able Care — Science-Led, Impact-Driven | Able Care",
-    "description": "Able Care is the falls prevention platform commercialized out of Imperial College London neuroscience research. FDA listed. CE marked. ISO 27001 certified.",
+    "title": "About Able Care - Science-Led, Impact-Driven | Able Care",
+    "description": "Able Care is the falls prevention platform commercialized out of Imperial College London neuroscience research. FDA-listed (Class 2 exempt). ISO 27001 certified.",
     "ogImage": "/images/og-about.png"
   },
   "blocks": [
@@ -33,37 +33,6 @@
       "secondaryCtaLink": "#team",
       "scheme": "light",
       "wave": "crest"
-    },
-    {
-      "_template": "timeline",
-      "scheme": "light",
-      "heading": "Our journey",
-      "entries": [
-        {
-          "year": "2019",
-          "body": "Our two founders, Dr. Mike Mace and Dr. Paul Rinne, meet at Imperial College in London while completing their PhDs. They connect over a shared frustration: that functional health technology was stuck in the analog era — subjective, inconsistent, and disconnected from care workflows. They work together to begin designing the first iterations of a better technology for rehabilitation."
-        },
-        {
-          "year": "2020",
-          "body": "The first iteration of their idea goes to market. GripAble is a handheld sensor that measures grip strength and wrist range of motion. It connects to an app that allows patients to carry out upper limb neurorehabilitation by playing gamified activities."
-        },
-        {
-          "year": "2021",
-          "body": "GripAble is spun out of Imperial College London."
-        },
-        {
-          "year": "2022",
-          "body": "GripAble becomes the most widely distributed digital rehabilitation in the UK."
-        },
-        {
-          "year": "2023",
-          "body": "GripAble begins its expansion into the United States."
-        },
-        {
-          "year": "2024",
-          "body": "The team sets up a new brand — Able Care — to roll out new digital functional health products. It introduces Able Assess, a product that utilizes the same GripAble sensor to measure fall risk of individuals over 65."
-        }
-      ]
     },
     {
       "_template": "teamGrid",
@@ -98,14 +67,6 @@
       "heading": "Certifications and regulatory posture",
       "badges": [
         {
-          "label": "FDA listed",
-          "icon": "fda"
-        },
-        {
-          "label": "CE marked",
-          "icon": "ce"
-        },
-        {
           "label": "ISO 27001",
           "icon": "iso"
         },
@@ -118,7 +79,7 @@
           "icon": "gdpr"
         },
         {
-          "label": "NICE 2025 aligned",
+          "label": "CDC STEADI aligned",
           "icon": "nice"
         }
       ]
@@ -129,19 +90,23 @@
       "stats": [
         {
           "value": "4",
-          "label": "Validated metrics"
+          "label": "Validated metrics",
+          "sublabel": "Grip strength, sit-to-stand, gait speed, TUG"
         },
         {
           "value": "< 5 min",
-          "label": "Per assessment"
+          "label": "Per assessment",
+          "sublabel": "Usable by non-clinical staff"
+        },
+        {
+          "value": ">50k",
+          "label": "Assessments delivered",
+          "sublabel": "Across both Able Assess and Able Rehab solutions"
         },
         {
           "value": "12",
-          "label": "Peer-reviewed studies"
-        },
-        {
-          "value": "1,000+",
-          "label": "Assessments delivered"
+          "label": "Peer-reviewed studies",
+          "sublabel": "Backing the Able Assess protocol"
         }
       ],
       "scheme": "aqua"

@@ -791,6 +791,7 @@ const segmentCardsBlock = {
         { type: "string" as const, name: "icon", label: "Icon Hint" },
         { type: "string" as const, name: "link", label: "Link URL" },
         { type: "string" as const, name: "linkText", label: "Link Text" },
+        { type: "string" as const, name: "footnote", label: "Footnote (small print)", ui: { component: "textarea" } },
         { type: "string" as const, name: "logos", label: "Logos", list: true },
         { type: "image" as const, name: "image", label: "Card Image (optional, shown at top of card)" },
       ],

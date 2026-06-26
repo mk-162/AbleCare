@@ -10,9 +10,8 @@ Protecting patient data is at the core of everything we build. Able Care impleme
 - **ISO 27001** certified information security management
 - **HIPAA** aligned data handling and breach notification procedures
 - **GDPR** compliant data processing and storage
-- **SOC 2 Type II** audited infrastructure
-- **FDA Listed** as a medical device (Class I)
-- **CE Marked** for European regulatory compliance
+- **Registered and listed with the U.S. FDA** as Class 2 exempt
+- **Utilises an FCC-authorised wireless module** (Contains FCC ID: SH6MDBT50Q)
 
 ## Data Encryption
 
@@ -36,10 +35,10 @@ Protecting patient data is at the core of everything we build. Able Care impleme
 
 ## Vulnerability Management
 
-- Regular penetration testing by independent security firms
+- Continuous security validation by independent security firms
 - Automated vulnerability scanning
 - Responsible disclosure program
 
 ## Reporting Security Issues
 
-If you discover a security vulnerability, please report it to security@able-care.co. We take all reports seriously and will respond within 24 hours.
+If you discover a security vulnerability, please report it to dpo@able-care.co. We take all reports seriously and will respond within 24 hours.

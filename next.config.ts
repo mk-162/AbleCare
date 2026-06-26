@@ -45,8 +45,7 @@ const nextConfig: NextConfig = {
       ["/resources/roi-calculator", "/resources"],
       ["/resources/walkthrough", "/resources/documents"],
       ["/resources/webinars", "/resources"],
-      // Company pages (About / Contact / Support remain in nav)
-      ["/meet-the-team", "/about"],
+      // Company pages (About / Contact / Support / Meet the Team remain in nav)
       ["/customers", "/about"],
       ["/partners", "/about"],
       ["/news", "/about"],

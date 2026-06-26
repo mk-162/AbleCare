@@ -40,7 +40,7 @@
     {
       "scheme": "light",
       "heading": "How this library is organized",
-      "body": "The library is grouped into three sections. <strong>Our Publications</strong> are peer-reviewed studies on the GripAble sensor that underpins Able Assess — reliability, precision, inter-instrument agreement with Jamar and normative reference values. \n<strong>Papers on Grip Strength</strong> covers the wider literature establishing grip strength as a vital-sign-grade biomarker of ageing, cardiovascular disease, cancer, respiratory disease and all-cause mortality. \n<strong>Papers on Falls Prevention</strong> gathers the guideline-level evidence (World Guidelines 2022, NICE NG249 2025, Cochrane) alongside the functional-health and readmission studies that make the operational case for objective, multifactorial screening.",
+      "body": "The library is grouped into three sections. <strong>Our Publications</strong> are peer-reviewed studies on the GripAble sensor that underpins Able Assess - reliability, precision, inter-instrument agreement with Jamar and normative reference values. \n<strong>Papers on Grip Strength</strong> covers the wider literature establishing grip strength as a vital-sign-grade biomarker of ageing, cardiovascular disease, cancer, respiratory disease and all-cause mortality. \n<strong>Papers on Falls Prevention</strong> gathers the guideline-level evidence (World Guidelines 2022, NICE NG249 2025, Cochrane) alongside the functional-health and readmission studies that make the operational case for objective, multifactorial screening.",
       "_template": "prose"
     },
     {
@@ -57,10 +57,10 @@
           "link": "https://www.researchsquare.com/article/rs-6801648/v1"
         },
         {
-          "title": "GripAble has excellent test-retest reliability with Jamar",
+          "title": "Establishing the reliability and validity for GripAble: A handheld sensor-based dynamometry device",
           "journal": "Hand Therapy",
           "year": "2025",
-          "finding": "GripAble demonstrates excellent test-retest reliability compared to the Jamar dynamometer.",
+          "finding": "GripAble has excellent test-retest reliability with Jamar.",
           "link": "https://journals.sagepub.com/doi/10.1177/17589983251322537"
         },
         {
@@ -152,14 +152,14 @@
       "pulledStatSource": "Cochrane Review, 2023",
       "citations": [
         {
-          "title": "World Guidelines on Falls Prevention and Management in Older Adults (Montero-Odasso et al.)",
+          "title": "World guidelines for falls prevention and management for older adults: a global initiative",
           "journal": "Age and Ageing",
           "year": "2022",
           "finding": "International consensus guideline setting the 3-tier falls risk stratification approach and Grade 1A evidence for gait speed as a screening tool.",
           "link": "https://doi.org/10.1093/ageing/afac181"
         },
         {
-          "title": "NICE Guideline NG249: Falls in older people — assessment and prevention",
+          "title": "NICE Guideline NG249: Falls in older people - assessment and prevention",
           "journal": "National Institute for Health and Care Excellence",
           "year": "2025",
           "finding": "UK clinical guideline. Single screening tools identify only 40–60% of at-risk community-dwelling older adults; multifactorial interventions based on comprehensive assessment reduce fall incidence by 32–40%.",
@@ -186,7 +186,7 @@
           "finding": "Multifactorial assessment combining strength, balance and gait measures identified significantly more at-risk older adults than any single screening tool."
         },
         {
-          "title": "Functional Status and Readmissions",
+          "title": "Functional Impairment and Hospital Readmission in Medicare Seniors",
           "journal": "JAMA Internal Medicine",
           "year": "2015",
           "finding": "Functionally impaired patients face up to 42% higher readmission risk.",
@@ -236,7 +236,7 @@
     },
     {
       "heading": "Grip Strength: The Essential Biomarker for Longevity",
-      "promoBody": "Download the full clinical summary — peer-reviewed evidence linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment.",
+      "promoBody": "Download the full clinical summary - peer-reviewed evidence linking grip strength to biological age, mortality, frailty and chronic disease risk, with guidance on integrating grip testing into routine assessment.",
       "ctaText": "Download the PDF",
       "ctaLink": "/downloads/Grip-Strength-The-Essential-Biomarker-for-Longevity.pdf",
       "_template": "leadMagnetPromo"

@@ -15,6 +15,7 @@ const SLUG_MAP: Record<string, { collection: string; filename: string }> = {
   "area-agencies-on-aging": { collection: "segments", filename: "area-agencies-on-aging" },
   "pharma": { collection: "segments", filename: "pharma" },
   "about": { collection: "company", filename: "about" },
+  "meet-the-team": { collection: "company", filename: "meet-the-team" },
   "contact": { collection: "company", filename: "contact" },
   "demo": { collection: "company", filename: "demo" },
   "support": { collection: "company", filename: "support" },
