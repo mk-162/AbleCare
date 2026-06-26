@@ -1,40 +1,40 @@
 {
-  "title": "Able Assess",
   "slug": "able-assess",
   "seo": {
     "title": "Able Assess - Four Falls Risk Tests in Five Minutes | Able Care",
     "description": "Four validated falls risk assessments in five minutes - grip strength, lower-limb function and balance - captured by any staff member.",
     "ogImage": "/images/og-falls-prevention.png"
   },
-  "tags": [
-    "able-assess",
-    "falls-prevention",
-    "falls-risk-assessment",
-    "walkthrough"
-  ],
   "blocks": [
     {
-      "_template": "breadcrumb",
       "items": [
-        { "label": "Home", "href": "/" },
-        { "label": "Solutions" },
-        { "label": "Able Assess", "href": "/solutions/able-assess" }
-      ]
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Solutions"
+        },
+        {
+          "label": "Able Assess",
+          "href": "/solutions/able-assess"
+        }
+      ],
+      "_template": "breadcrumb"
     },
     {
-      "_template": "hero",
       "scheme": "blue",
       "wave": "crest",
       "eyebrow": "How Able Assess works",
       "headline": "Four falls risk tests. One five-minute screening.",
       "subtitle": "Run by any staff member. Informed by and aligned with CDC STEADI and the 2022 World Guidelines for Falls Prevention. No clinical certification required.",
+      "primaryCtaText": "Book a demo",
+      "primaryCtaLink": "/demo",
       "backgroundImage": "/images/photos/clinical/therapist-patient-tablet.jpg",
       "backgroundImageAlt": "A clinician guiding an older woman through a GripAble grip-strength test with results on a tablet beside them",
-      "primaryCtaText": "Book a demo",
-      "primaryCtaLink": "/demo"
+      "_template": "hero"
     },
     {
-      "_template": "segmentCards",
       "scheme": "grey",
       "heading": "What you get",
       "cards": [
@@ -53,10 +53,10 @@
           "body": "See risk stratification across your population, and track changes for any individual over time. Export reports for care plans, family meetings, or audits.",
           "image": "/images/decks/falls-prevention/platform-web-portal-laptop.png"
         }
-      ]
+      ],
+      "_template": "segmentCards"
     },
     {
-      "_template": "metricsBlock",
       "scheme": "light",
       "heading": "What it measures",
       "metrics": [
@@ -80,10 +80,10 @@
           "whatItMeasures": "Lower-limb strength and endurance. A direct indicator of fall likelihood and a leading marker of functional decline.",
           "image": "/images/decks/falls-prevention/test-04-chair-stand.png"
         }
-      ]
+      ],
+      "_template": "metricsBlock"
     },
     {
-      "_template": "processSteps",
       "scheme": "grey",
       "heading": "The Assessment Process",
       "steps": [
@@ -105,10 +105,10 @@
           "description": "The app stratifies the participant into low, intermediate, or high falls risk. Results sync to the Able Assess portal for trend tracking and reporting.",
           "image": "/images/decks/falls-prevention/platform-web-portal-laptop.png"
         }
-      ]
+      ],
+      "_template": "processSteps"
     },
     {
-      "_template": "segmentCards",
       "scheme": "light",
       "heading": "So what?",
       "cards": [
@@ -127,10 +127,10 @@
           "body": "View screening data over time in the Able Assess portal to understand improvement or decline at the individual and population level.",
           "image": "/images/decks/falls-prevention/platform-web-portal.jpg"
         }
-      ]
+      ],
+      "_template": "segmentCards"
     },
     {
-      "_template": "segmentRouter",
       "scheme": "grey",
       "heading": "Want to understand how it works in your setting?",
       "subheading": "Able Assess adapts to your environment. Pick your setting to see the segment-specific case.",
@@ -153,24 +153,32 @@
           "ctaText": "Explore",
           "link": "/pharma"
         }
-      ]
+      ],
+      "_template": "segmentRouter"
     },
     {
-      "_template": "richText",
       "scheme": "light",
       "heading": "See it in action",
-      "body": "<p>Three short clips, captured from a real screening. The full walkthrough on the left shows how staff run the assessment. The two results screens on the right show how Able Assess presents the outcome - clearly flagging an at-risk participant, and reassuring a not-at-risk one - the moment screening ends.</p><div style=\"margin-top: 3rem; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding: 0 1.5rem;\"><div style=\"max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; align-items: start; justify-items: center;\"><figure style=\"margin: 0; text-align: center; max-width: 300px; display: flex; flex-direction: column; align-items: center;\"><figcaption style=\"font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #1432FF; margin-bottom: 0.75rem;\">Full walkthrough</figcaption><video controls playsinline preload=\"metadata\" style=\"width: 100%; height: auto; border-radius: 16px; background: transparent;\" src=\"/videos/falls-risk-assessment-walkthrough.mp4\"></video><p style=\"margin-top: 0.75rem; font-size: 0.875rem; color: rgba(0,0,0,0.6); font-weight: 300;\">End-to-end demo, app open to participant report.</p></figure><figure style=\"margin: 0; text-align: center; max-width: 300px; display: flex; flex-direction: column; align-items: center;\"><figcaption style=\"font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D92D20; margin-bottom: 0.75rem;\">At-risk result</figcaption><video controls playsinline preload=\"metadata\" style=\"width: 100%; height: auto; border-radius: 16px; background: transparent;\" src=\"/videos/at-risk-results-screen.mp4\"></video><p style=\"margin-top: 0.75rem; font-size: 0.875rem; color: rgba(0,0,0,0.6); font-weight: 300;\">How the app flags a participant who needs follow-up.</p></figure><figure style=\"margin: 0; text-align: center; max-width: 300px; display: flex; flex-direction: column; align-items: center;\"><figcaption style=\"font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #00B27A; margin-bottom: 0.75rem;\">Not-at-risk result</figcaption><video controls playsinline preload=\"metadata\" style=\"width: 100%; height: auto; border-radius: 16px; background: transparent;\" src=\"/videos/low-risk-results-screen.mp4\"></video><p style=\"margin-top: 0.75rem; font-size: 0.875rem; color: rgba(0,0,0,0.6); font-weight: 300;\">How the app reassures a participant whose screening is clear.</p></figure></div></div>"
+      "body": "<p>Three short clips, captured from a real screening. The full walkthrough on the left shows how staff run the assessment. The two results screens on the right show how Able Assess presents the outcome - clearly flagging an at-risk participant, and reassuring a not-at-risk one - the moment screening ends.</p><div style=\"margin-top: 3rem; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); padding: 0 1.5rem;\"><div style=\"max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem; align-items: start; justify-items: center;\"><figure style=\"margin: 0; text-align: center; max-width: 300px; display: flex; flex-direction: column; align-items: center;\"><figcaption style=\"font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #1432FF; margin-bottom: 0.75rem;\">Full walkthrough</figcaption><video controls playsinline preload=\"metadata\" style=\"width: 100%; height: auto; border-radius: 16px; background: transparent;\" src=\"/videos/falls-risk-assessment-walkthrough.mp4\"></video><p style=\"margin-top: 0.75rem; font-size: 0.875rem; color: rgba(0,0,0,0.6); font-weight: 300;\">End-to-end demo, app open to participant report.</p></figure><figure style=\"margin: 0; text-align: center; max-width: 300px; display: flex; flex-direction: column; align-items: center;\"><figcaption style=\"font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D92D20; margin-bottom: 0.75rem;\">At-risk result</figcaption><video controls playsinline preload=\"metadata\" style=\"width: 100%; height: auto; border-radius: 16px; background: transparent;\" src=\"/videos/at-risk-results-screen.mp4\"></video><p style=\"margin-top: 0.75rem; font-size: 0.875rem; color: rgba(0,0,0,0.6); font-weight: 300;\">How the app flags a participant who needs follow-up.</p></figure><figure style=\"margin: 0; text-align: center; max-width: 300px; display: flex; flex-direction: column; align-items: center;\"><figcaption style=\"font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #00B27A; margin-bottom: 0.75rem;\">Not-at-risk result</figcaption><video controls playsinline preload=\"metadata\" style=\"width: 100%; height: auto; border-radius: 16px; background: transparent;\" src=\"/videos/low-risk-results-screen.mp4\"></video><p style=\"margin-top: 0.75rem; font-size: 0.875rem; color: rgba(0,0,0,0.6); font-weight: 300;\">How the app reassures a participant whose screening is clear.</p></figure></div></div>",
+      "_template": "richText"
     },
     {
-      "_template": "ctaBanner",
       "scheme": "blue",
       "wave": "ribbon",
       "heading": "See Able Assess in your workflow.",
-      "bodyText": "Book a walkthrough with a clinician who has run it in the field.",
+      "bodyText": "Book a walkthrough with the team.",
       "primaryCtaText": "Book a Demo",
       "primaryCtaLink": "/demo",
       "secondaryCtaText": "Download the Buyers Guide",
-      "secondaryCtaLink": "/resources/buyers-guide"
+      "secondaryCtaLink": "/resources/buyers-guide",
+      "_template": "ctaBanner"
     }
+  ],
+  "title": "Able Assess",
+  "tags": [
+    "able-assess",
+    "falls-prevention",
+    "falls-risk-assessment",
+    "walkthrough"
   ]
 }
