@@ -76,11 +76,16 @@ function matcher(include) {
 // tina/config.ts, means deleting its line here too — the check fails on a stale
 // entry as well as on a new one, so this cannot quietly rot.
 //
-// SEVERITY, highest first:
-//   • `.seo`  — READ BY THE SITE (page.seo?.title / .description / .ogImage in
-//     app/[slug], solutions, home-care, senior-living, …). Saving any of these
-//     pages in Tina today DELETES its SEO block: custom title, meta description
-//     and OG image, gone. Fix by declaring `seo` in tina/config.ts.
+// RESOLVED so far:
+//   • `.seo` (19 documents) — was the dangerous one: read by the site
+//     (page.seo?.title / .description / .ogImage in app/[slug], solutions,
+//     home-care, senior-living) yet undeclared, so saving any of those pages
+//     in Tina deleted its title, meta description and OG image. Now declared
+//     in tina/config.ts as an object on seoFields, plus SEO Defaults on the
+//     global collection. This check flagged the stale entries the moment the
+//     schema changed, which is the ratchet doing its job.
+//
+// SEVERITY of what remains, highest first:
 //   • `content/settings/navigation.json` header/footer — the schema declares
 //     mainNav/footerNav, so the whole document is undeclared. Nothing in src/
 //     reads it, but an editor opening Navigation in Tina sees empty fields and
@@ -91,45 +96,26 @@ function matcher(include) {
 //   • `meet-the-team.json.blocks[2].heading` — not a field on that block's
 //     template; would be dropped on save.
 const KNOWN_UNDECLARED = new Set([
-  'content/pages/compliance.json.seo',
   'content/solutions/able-assess.json.slug',
-  'content/solutions/able-assess.json.seo',
   'content/solutions/able-rehab.json.slug',
-  'content/solutions/able-rehab.json.seo',
   'content/solutions/grip-strength.json.slug',
-  'content/solutions/grip-strength.json.seo',
   'content/solutions/sensor.json.slug',
-  'content/solutions/sensor.json.seo',
   'content/segments/area-agencies-on-aging.json.slug',
-  'content/segments/area-agencies-on-aging.json.seo',
   'content/segments/home-care.json.slug',
-  'content/segments/home-care.json.seo',
   'content/segments/home-health-agencies.json.slug',
-  'content/segments/home-health-agencies.json.seo',
   'content/segments/hospital-systems.json.slug',
-  'content/segments/hospital-systems.json.seo',
   'content/segments/pharma.json.slug',
-  'content/segments/pharma.json.seo',
   'content/segments/senior-living.json.slug',
-  'content/segments/senior-living.json.seo',
   'content/segments/skilled-nursing.json.slug',
-  'content/segments/skilled-nursing.json.seo',
   'content/resources/case-studies.json.slug',
-  'content/resources/case-studies.json.seo',
   'content/resources/documents.json.slug',
-  'content/resources/documents.json.seo',
   'content/resources/research-library.json.slug',
-  'content/resources/research-library.json.seo',
   'content/company/about.json.slug',
-  'content/company/about.json.seo',
   'content/company/contact.json.slug',
   'content/company/demo.json.slug',
-  'content/company/demo.json.seo',
   'content/company/meet-the-team.json.slug',
   'content/company/meet-the-team.json.blocks[2].heading',
   'content/company/support.json.slug',
-  'content/company/support.json.seo',
-  'content/settings/global.json.seo',
   'content/settings/global.json.analytics',
   'content/settings/global.json.alertBanner',
   'content/settings/navigation.json.header',

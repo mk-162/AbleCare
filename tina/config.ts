@@ -969,6 +969,40 @@ const seoFields = [
     list: true,
     description: "Tags for cross-referencing content across the site. Use slugs from the tag taxonomy: topic (falls-prevention, grip-strength, etc.), segment (home-care, senior-living, etc.), solution (able-assess, etc.), type (guide, evidence, etc.).",
   },
+  // The page templates read `page.seo?.title || page.title` (and the same for
+  // description), so this nested object overrides the flat fields above. The
+  // social share image lives ONLY here — there is no flat equivalent.
+  //
+  // It must stay declared: 18 content files already carry it, and Tina deletes
+  // undeclared fields on save. Leaving it out silently wiped a page's title,
+  // meta description and OG image the first time anyone edited it.
+  {
+    type: "object" as const,
+    name: "seo",
+    label: "SEO Overrides",
+    description: "Optional. Anything set here wins over Page Title / Meta Description above.",
+    fields: [
+      {
+        type: "string" as const,
+        name: "title",
+        label: "SEO Title Override",
+        description: "Overrides Page Title in the browser tab, Google and og:title. Blank = use Page Title.",
+      },
+      {
+        type: "string" as const,
+        name: "description",
+        label: "SEO Description Override",
+        ui: { component: "textarea" as const },
+        description: "Overrides Meta Description. Blank = use Meta Description.",
+      },
+      {
+        type: "image" as const,
+        name: "ogImage",
+        label: "Social Share Image",
+        description: "Shown when this page is shared to LinkedIn, Slack or X. Roughly 1200x630.",
+      },
+    ] as any,
+  },
 ];
 
 // ─── Block and Page Field Groups ──────────────────────────────────────────────
@@ -1254,6 +1288,33 @@ export default defineConfig({
               { type: "string" as const, name: "linkedin", label: "LinkedIn URL" },
               { type: "string" as const, name: "twitter", label: "Twitter/X URL" },
               { type: "string" as const, name: "instagram", label: "Instagram URL" },
+            ] as any,
+          },
+          // Site-wide SEO defaults. Nothing in src/ reads these yet, but they
+          // exist in content/settings/global.json and Tina would delete them on
+          // the first save of Global Settings if they were left undeclared.
+          {
+            type: "object" as const,
+            name: "seo",
+            label: "SEO Defaults",
+            fields: [
+              {
+                type: "string" as const,
+                name: "titleSuffix",
+                label: "Title Suffix",
+                description: 'Appended to page titles, e.g. " | Able Care".',
+              },
+              {
+                type: "string" as const,
+                name: "defaultDescription",
+                label: "Default Meta Description",
+                ui: { component: "textarea" as const },
+              },
+              {
+                type: "image" as const,
+                name: "ogImage",
+                label: "Default Social Share Image",
+              },
             ] as any,
           },
         ] as any,
