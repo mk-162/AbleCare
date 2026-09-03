@@ -1,9 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 /**
  * Server-side block enrichment.
  *
  * Resolves relatedPages blocks by querying the content index and injecting
  * the results as serialisable props. Call this in page templates BEFORE
  * passing blocks to BlockRenderer.
+ *
+ * This module reads the filesystem (via the content index), so it is
+ * server-only. The pure parts live in ./normalize-blocks, which client
+ * components use for live preview.
  *
  * Usage:
  *   import { resolveBlocks } from "@/lib/resolve-blocks";
@@ -12,12 +18,7 @@
  */
 
 import { getRelatedPages } from "./content-index";
-
-function deriveTemplateFromTypename(typename: unknown): string | null {
-  if (typeof typename !== "string" || !typename) return null;
-  const stripped = typename.replace(/^.*Blocks/, "");
-  return stripped ? stripped.charAt(0).toLowerCase() + stripped.slice(1) : null;
-}
+import { blockTemplate, normalizeBlockTypenames } from "./normalize-blocks";
 
 export function resolveBlocks(
   blocks: any[],
@@ -27,20 +28,14 @@ export function resolveBlocks(
 ): any[] {
   if (!blocks) return [];
 
-  return blocks.map((block: any) => {
-    const template = block._template ?? deriveTemplateFromTypename(block.__typename);
-    if (!template) return block;
-    const enriched = {
-      ...block,
-      __typename: `${collectionPrefix}Blocks${template.charAt(0).toUpperCase() + template.slice(1)}`,
-    };
+  return normalizeBlockTypenames(blocks, collectionPrefix).map(
+    (block: any, i: number) => {
+      if (blockTemplate(blocks[i]) !== "relatedPages") return block;
 
-    if (template === "relatedPages") {
-      const tags = block.filterTags?.length ? block.filterTags : pageTags || [];
-      const limit = block.limit || 6;
-      enriched._resolvedItems = getRelatedPages(tags, pageSlug, limit);
+      const source = blocks[i];
+      const tags = source.filterTags?.length ? source.filterTags : pageTags || [];
+      const limit = source.limit || 6;
+      return { ...block, _resolvedItems: getRelatedPages(tags, pageSlug, limit) };
     }
-
-    return enriched;
-  });
+  );
 }

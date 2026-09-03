@@ -1,16 +1,15 @@
 "use client";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import MarkdownIt from "markdown-it";
 import { useMemo } from "react";
 
 interface ArticleBodyProps {
-  query: string;
-  variables: Record<string, any>;
-  data: any;
-  collectionKey: string;
+  /** The Tina document — live data when rendered under a useTina subscription. */
+  article: any;
+  /** Click-to-edit reference from tinaField(); undefined outside the editor. */
+  tinaField?: string;
 }
 
 const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
@@ -43,19 +42,14 @@ function getStringBody(body: any): string | null {
   return null;
 }
 
-// See EditorialPageClient for why an empty query is rendered without useTina.
-export function ArticleBody(props: ArticleBodyProps) {
-  if (!props.query) return <ArticleBodyView data={props.data} collectionKey={props.collectionKey} />;
-  return <ArticleBodyLive {...props} />;
-}
-
-function ArticleBodyLive({ query, variables, data: initialData, collectionKey }: ArticleBodyProps) {
-  const { data } = useTina({ query, variables, data: initialData });
-  return <ArticleBodyView data={data} collectionKey={collectionKey} />;
-}
-
-function ArticleBodyView({ data, collectionKey }: { data: any; collectionKey: string }) {
-  const article = data?.[collectionKey];
+/**
+ * Render an article body.
+ *
+ * Presentational only — the caller owns the `useTina` subscription so the whole
+ * document lives under a single form. Rendering this under its own subscription
+ * would register a second, duplicate form for the same query.
+ */
+export function ArticleBody({ article, tinaField }: ArticleBodyProps) {
   const body = article?.body;
   const stringBody = useMemo(() => getStringBody(body), [body]);
   const html = useMemo(() => (stringBody ? md.render(stringBody) : null), [stringBody]);
@@ -64,14 +58,14 @@ function ArticleBodyView({ data, collectionKey }: { data: any; collectionKey: st
 
   if (html) {
     return (
-      <div className="article-prose">
+      <div className="article-prose" data-tina-field={tinaField}>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     );
   }
 
   return (
-    <div className="article-prose">
+    <div className="article-prose" data-tina-field={tinaField}>
       <TinaMarkdown content={body} />
     </div>
   );

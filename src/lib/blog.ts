@@ -1,3 +1,5 @@
+import { slugifyCategory } from "./category-slug";
+
 export interface BlogArticle {
   slug: string;
   title: string;
@@ -16,9 +18,7 @@ export interface CategoryCount {
   count: number;
 }
 
-export function slugifyCategory(name: string): string {
-  return name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
-}
+export { slugifyCategory };
 
 export function unslugifyCategory(slug: string): string | null {
   const map: Record<string, string> = {};
@@ -48,7 +48,7 @@ export function getArticles(): BlogArticle[] {
           category: data.category || "",
           publishedDate: data.publishedDate || "",
           readTime: data.readTime || 0,
-          image: data.image || data.featuredImage || undefined,
+          image: data.image || undefined,
           featured: data.featured || false,
           author: data.author || undefined,
         };
