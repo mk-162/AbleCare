@@ -1,0 +1,216 @@
+{
+  "title": "List of Subprocessors",
+  "description": "The third-party service providers Gripable Limited engages to process personal data in connection with the delivery, operation, support and security of our services.",
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Subprocessors",
+          "href": "/sub-processors"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "eyebrow": "Data protection",
+      "headline": "List of Subprocessors for Personal Data Processing and Services",
+      "subtitle": "The third-party service providers we engage to process personal data in connection with the delivery, operation, support and security of our services.",
+      "scheme": "blue",
+      "wave": "crest",
+      "waveFill": "light"
+    },
+    {
+      "_template": "subprocessorList",
+      "scheme": "light",
+      "eyebrow": "Subprocessor list",
+      "heading": "Subprocessors",
+      "intro": "Gripable Limited engages the following third-party service providers to process personal data in connection with the delivery, operation, support, and security of our services.",
+      "effectiveDate": "2 September 2026",
+      "rows": [
+        {
+          "supplier": "Apple Distribution International Limited",
+          "type": "SaaS",
+          "description": "Apple Developer Program / App Store distribution — annual membership, code signing, TestFlight, App Store listing and payment collection.",
+          "locations": "Global"
+        },
+        {
+          "supplier": "MailMeteor SAS",
+          "type": "SaaS",
+          "description": "Mail merge and email outreach platform that sends personalised bulk email through the user's own Gmail, Google Workspace or Outlook account.",
+          "locations": "European Economic Area"
+        },
+        {
+          "supplier": "Resend",
+          "type": "Service provider",
+          "description": "Cloud email delivery service used to send transactional and marketing email from applications via API or SMTP.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Vercel Inc.",
+          "type": "SaaS",
+          "description": "Cloud application hosting and deployment platform.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Leafgrc B.V.",
+          "type": "Contractor",
+          "description": "vCISO services.",
+          "locations": "European Economic Area"
+        },
+        {
+          "supplier": "Finerva",
+          "type": "Service provider",
+          "description": "Finance services.",
+          "locations": "United Kingdom"
+        },
+        {
+          "supplier": "Fathom Video",
+          "type": "Service provider",
+          "description": "Meeting video recording and transcription.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "DPD Local UK Ltd",
+          "type": "Service provider",
+          "description": "Logistics services.",
+          "locations": "United Kingdom"
+        },
+        {
+          "supplier": "DHL Express",
+          "type": "Service provider",
+          "description": "Logistics services.",
+          "locations": "Global"
+        },
+        {
+          "supplier": "Anthropic",
+          "type": "Service provider",
+          "description": "Claude AI services (Code, Chat and Cowork).",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Calendly",
+          "type": "SaaS",
+          "description": "Meeting scheduling and appointment management.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Atlassian",
+          "type": "SaaS",
+          "description": "Project management, issue tracking, service management, and customer-support workflows.",
+          "locations": "Global"
+        },
+        {
+          "supplier": "Intuit QuickBooks",
+          "type": "SaaS",
+          "description": "Finance, accounting and bookkeeping support tools.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Zoom",
+          "type": "SaaS",
+          "description": "Video conferencing, customer meetings, training sessions, and support communications.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Slack (Salesforce)",
+          "type": "SaaS",
+          "description": "Communication, work management and productivity tools.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Xero",
+          "type": "SaaS",
+          "description": "Finance, accounting and bookkeeping support tools.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Microsoft",
+          "type": "SaaS",
+          "description": "Cloud infrastructure, identity management, email, document storage, productivity, and collaboration services.",
+          "locations": "United Kingdom"
+        },
+        {
+          "supplier": "Docusign",
+          "type": "SaaS",
+          "description": "Electronic signatures, agreement processing, and contract management.",
+          "locations": "European Economic Area"
+        },
+        {
+          "supplier": "OpenAI",
+          "type": "SaaS",
+          "description": "Artificial-intelligence processing, content generation, analysis, and related AI services.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Fivetran",
+          "type": "SaaS",
+          "description": "Data integration, data replication, transformation, and automated data-pipeline services.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Cookiebot (Usercentrics)",
+          "type": "SaaS",
+          "description": "Website cookie consent, tracking-preference management, and consent-record administration.",
+          "locations": "Global"
+        },
+        {
+          "supplier": "Docker",
+          "type": "SaaS",
+          "description": "Software development, container management, source-image storage, application build, and deployment services.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "CircleCI",
+          "type": "SaaS",
+          "description": "Continuous integration, software testing, build automation, and deployment services.",
+          "locations": "United States"
+        },
+        {
+          "supplier": "Cloudflare",
+          "type": "SaaS",
+          "description": "Content delivery, web application security, network protection, domain services, and traffic management.",
+          "locations": "Global"
+        },
+        {
+          "supplier": "Google Workspace",
+          "type": "SaaS",
+          "description": "Email, document storage, file sharing, communication, collaboration, and business productivity services.",
+          "locations": "Global"
+        },
+        {
+          "supplier": "Kaseya Limited",
+          "type": "SaaS",
+          "description": "Spanning cloud-data backup (Google Workspace and Salesforce), retention, restoration, and disaster-recovery services.",
+          "locations": "European Economic Area"
+        },
+        {
+          "supplier": "Google Cloud",
+          "type": "SaaS",
+          "description": "Cloud hosting, application infrastructure, databases, data storage, processing, logging, and related platform services.",
+          "locations": "United States, European Economic Area, europe-west3, us-west2, customer-selected region"
+        },
+        {
+          "supplier": "Salesforce",
+          "type": "SaaS",
+          "description": "Customer relationship management, account administration, sales management, and customer-support services.",
+          "locations": "United Kingdom"
+        }
+      ]
+    },
+    {
+      "_template": "prose",
+      "scheme": "grey",
+      "heading": "Subprocessor changes",
+      "body": "<p>We may update this list when we appoint a new subprocessor, replace an existing subprocessor, change the services performed by a subprocessor, or change the principal location from which personal data is processed.</p><p>Where required under our Data Processing Agreement, we will provide customers with advance notice of material changes to our subprocessors.</p><p>Customers with questions or objections concerning a subprocessor may contact us at <a href=\"mailto:dpo@gripable.co\">dpo@gripable.co</a>.</p>"
+    }
+  ],
+  "tags": [
+    "compliance",
+    "privacy"
+  ]
+}

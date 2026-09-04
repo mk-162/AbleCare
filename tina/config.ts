@@ -920,6 +920,59 @@ const pdfDocumentCardsBlock = {
   ],
 };
 
+const subprocessorListBlock = {
+  name: "subprocessorList",
+  label: "Subprocessor List (table)",
+  ui: {
+    itemProps: (item: { heading?: string; rows?: unknown[] }) => ({
+      label: item?.heading
+        ? `Subprocessors: ${item.heading}`
+        : `Subprocessor List (${item?.rows?.length ?? 0} rows)`,
+    }),
+  },
+  fields: [
+    {
+      type: "string" as const,
+      name: "scheme",
+      label: "Colour Scheme",
+      // Light schemes only: the table is dark text on a light ground, so the
+      // blue and aqua schemes would render it unreadable.
+      options: ["light", "grey"],
+      ui: { defaultValue: "light" },
+    },
+    { type: "string" as const, name: "eyebrow", label: "Eyebrow" },
+    { type: "string" as const, name: "heading", label: "Section Heading" },
+    { type: "string" as const, name: "intro", label: "Intro paragraph", ui: { component: "textarea" as const } },
+    {
+      type: "string" as const,
+      name: "effectiveDate",
+      label: "Version / effective date (e.g. '2 September 2026')",
+      description: "Shown above the table so readers can see which version they are looking at.",
+    },
+    {
+      type: "object" as const,
+      name: "rows",
+      label: "Subprocessors",
+      list: true,
+      ui: {
+        itemProps: (item: { supplier?: string }) => ({ label: item?.supplier || "Subprocessor" }),
+      },
+      fields: [
+        { type: "string" as const, name: "supplier", label: "Supplier", required: true },
+        {
+          type: "string" as const,
+          name: "type",
+          label: "Type",
+          options: ["SaaS", "Service provider", "Contractor"],
+          description: "Matches the Type column of the source document.",
+        },
+        { type: "string" as const, name: "description", label: "Description", ui: { component: "textarea" as const } },
+        { type: "string" as const, name: "locations", label: "Locations", ui: { component: "textarea" as const } },
+      ],
+    },
+  ],
+};
+
 const appDownloadCardsBlock = {
   name: "appDownloadCards",
   label: "App Download Cards",
@@ -1009,6 +1062,7 @@ const allBlocks = [
   spinningSensorBlock,
   pdfDocumentCardsBlock,
   appDownloadCardsBlock,
+  subprocessorListBlock,
 ];
 
 const blockPageFields: any[] = [

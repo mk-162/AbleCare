@@ -173,6 +173,7 @@ export function SiteFooter() {
             <Link href="/privacy" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Terms &amp; Conditions</Link>
             <Link href="/terms-of-sale" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Terms of Sale</Link>
+            <Link href="/sub-processors" className="text-ac-grey/50 hover:text-white text-sm font-light transition-colors">Subprocessors</Link>
           </div>
         </div>
       </div>

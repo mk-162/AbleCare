@@ -39,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "home-care", "home-health-agencies", "senior-living", "skilled-nursing",
     "hospital-systems", "area-agencies-on-aging", "pharma",
     "about", "contact", "demo",
-    "privacy", "terms", "cookies", "security", "compliance",
+    "privacy", "terms", "cookies", "security", "compliance", "sub-processors",
   ].map((slug) => ({
     url: `${BASE_URL}/${slug}`,
     lastModified: now,
