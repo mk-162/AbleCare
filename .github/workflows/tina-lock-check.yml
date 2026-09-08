@@ -46,6 +46,12 @@ jobs:
       - name: Verify content has no fields the Tina schema would drop on save
         run: npm run content:check
 
+      # Same lock, same reason. A rich-text field Tina cannot parse shows
+      # "Unable to parse rich-text" in the editor and disables Save for that
+      # whole document — the public page still renders, so nothing else catches it.
+      - name: Verify every rich-text field opens in the Tina editor
+        run: npm run content:richtext
+
       # Cheap here because tina:schema (above) has already written
       # tina/__generated__, which src/lib/tina-client.ts imports. Vercel's
       # preview build type-checks too, but only as a deployment failure; this

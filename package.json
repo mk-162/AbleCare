@@ -10,6 +10,7 @@
     "tina:lock": "npm run tina:schema && node scripts/check-tina-lock.mjs --write",
     "tina:lock:check": "npm run tina:schema && node scripts/check-tina-lock.mjs",
     "content:check": "node scripts/check-content-schema.mjs",
+    "content:richtext": "node scripts/check-rich-text.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
