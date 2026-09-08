@@ -9,6 +9,12 @@ name: Tina lock check
 # even though local `tinacms audit` passes. This check regenerates the schema
 # and fails if the committed lock is out of date.
 #
+# The same job also runs the content/schema drift check, which catches the
+# other way this schema can betray you: a field sitting in a content file that
+# tina/config.ts does not declare. Tina drops undeclared fields on save, so
+# such a field is deleted the first time an editor saves that document. Both
+# checks share this job because both need `npm ci` + a generated Tina schema.
+#
 # Runs on PRs (blocks merge if made a required check) and on direct pushes to
 # main/dev — the latter catches edits made through the GitHub web UI, which is
 # how the lock went stale in the first place.
@@ -34,3 +40,15 @@ jobs:
 
       - name: Regenerate Tina schema and verify committed lock is in sync
         run: npm run tina:lock:check
+
+      # Depends on the step above: it reads the committed lock as the schema,
+      # which tina:lock:check has just proven is current.
+      - name: Verify content has no fields the Tina schema would drop on save
+        run: npm run content:check
+
+      # Cheap here because tina:schema (above) has already written
+      # tina/__generated__, which src/lib/tina-client.ts imports. Vercel's
+      # preview build type-checks too, but only as a deployment failure; this
+      # surfaces it as a status check on the PR itself.
+      - name: Typecheck
+        run: npm run typecheck

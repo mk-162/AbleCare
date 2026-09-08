@@ -153,7 +153,7 @@ function buildIndex(): ContentItem[] {
           description: data.description || data.excerpt || "",
           tags: data.tags || [],
           category: data.category,
-          image: data.image || data.featuredImage,
+          image: data.image,
           publishedDate: data.publishedDate,
           readTime: data.readTime,
         });

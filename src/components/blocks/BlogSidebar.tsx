@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LeadMagnetWidget } from "./LeadMagnetWidget";
 import { getSidebarWidgets } from "@/lib/sidebar-widgets";
+import { slugifyCategory } from "@/lib/category-slug";
 
 interface CategoryCount {
   name: string;
@@ -11,10 +12,6 @@ interface CategoryCount {
 interface BlogSidebarProps {
   categories: CategoryCount[];
   activeCategory?: string;
-}
-
-function slugifyCategory(name: string): string {
-  return name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
 }
 
 export function BlogSidebar({ categories, activeCategory }: BlogSidebarProps) {
@@ -82,5 +79,4 @@ export function BlogSidebar({ categories, activeCategory }: BlogSidebarProps) {
   );
 }
 
-export { slugifyCategory };
 export type { CategoryCount };
