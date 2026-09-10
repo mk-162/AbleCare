@@ -35,6 +35,19 @@
       "wave": "ribbon"
     },
     {
+      "_template": "caseStudyCards",
+      "scheme": "light",
+      "heading": "Featured Case Studies",
+      "caseStudies": [
+        {
+          "title": "Cypress HomeCare Solutions: Redefining Aging in Place",
+          "sector": "Home Care",
+          "summary": "How a Scottsdale agency weaves Able Assess into a culture of innovation — from feeling to fact, community events to retention.",
+          "link": "/resources/case-studies/cypress-home-care"
+        }
+      ]
+    },
+    {
       "_template": "testimonialCarousel",
       "testimonials": [
         {
