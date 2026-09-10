@@ -1,0 +1,181 @@
+{
+  "draft": false,
+  "title": "Cypress HomeCare Solutions: Redefining Aging in Place",
+  "slug": "cypress-home-care",
+  "description": "How Cypress HomeCare Solutions weaves Able Assess into a culture of innovation — moving conversations about physical wellbeing from subjective feeling to objective fact.",
+  "seo": {
+    "title": "Cypress HomeCare Solutions Case Study | Able Care",
+    "description": "How an independent Scottsdale home care agency uses Able Assess for clinical differentiation, community engagement and client retention.",
+    "ogImage": "/images/og-case-studies.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Case Studies",
+          "href": "/resources/case-studies"
+        },
+        {
+          "label": "Cypress HomeCare Solutions",
+          "href": "/resources/case-studies/cypress-home-care"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "scheme": "blue",
+      "wave": "crest",
+      "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
+      "backgroundImageAlt": "Older adult completing an Able Assess screening at home",
+      "eyebrow": "Partner Spotlight · 2026",
+      "headline": "How Cypress HomeCare Solutions is redefining aging in place with tech innovation partners.",
+      "subtitle": "A family-owned Arizona agency is weaving Able Assess into a culture of innovation — moving conversations about physical wellbeing from subjective feeling to objective fact.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact"
+    },
+    {
+      "_template": "caseStudyCustomerCard",
+      "scheme": "light",
+      "eyebrow": "The partner",
+      "heading": "Innovating in home care",
+      "body": "<p>Cypress HomeCare Solutions (Cypress) is an independent, family-owned in-home supportive care agency based in Scottsdale, Arizona. Co-founded in 1994 and presently led by Managing Partner Bob Roth, a long-standing voice in home care innovation, the agency is built on a culture of innovation philosophy.</p><p>Cypress pairs highly trained caregivers with a portfolio of tech solutions — including Gracey Care, Sensi.ai, and their internally developed SmartAutomations.care — all organised around the singular goal of keeping clients safe at home. For Bob, Able Assess is a natural addition to the innovative solutions Cypress brings to the clients they serve.</p>",
+      "portraitSrc": "/images/team/bob-roth.jpg",
+      "portraitAlt": "Bob Roth, Managing Partner of Cypress HomeCare Solutions",
+      "name": "Bob Roth",
+      "role": "Managing Partner, Cypress HomeCare Solutions",
+      "logoSrc": "/images/logos/cypress-homecare-solutions.png",
+      "logoAlt": "Cypress HomeCare Solutions logo",
+      "highlightQuote": "Able Assess is one of those solutions."
+    },
+    {
+      "_template": "testimonialCarousel",
+      "scheme": "aqua",
+      "heading": "In Bob Roth's words",
+      "testimonials": [
+        {
+          "quote": "We are an agency that has been able to innovate to solve the challenges facing the home care industry and discover solutions to solve these inherent problems. Able Assess is one of those solutions.",
+          "name": "Bob Roth",
+          "role": "Managing Partner",
+          "organization": "Cypress HomeCare Solutions"
+        }
+      ]
+    },
+    {
+      "_template": "prose",
+      "scheme": "grey",
+      "eyebrow": "Clinical differentiation",
+      "heading": "A new standard of clinical differentiation",
+      "body": "<p>In a competitive landscape, Able Assess is one tool in the Cypress tool belt that allows them to stand out from the crowd. David Sax, Cypress HomeCare Solutions Manager of Client Care Innovation, remarked that Able Assess allows Cypress to offer clinical insights during their application of care by providing early identification of changes in physical condition.</p><p>Bob also noted that it helps move the conversation about physical wellbeing from subjective \"feeling\" to objective \"fact,\" with the hardware itself playing a psychological role in building trust with the client.</p><p>By holding fall prevention events and providing these data-driven insights, Cypress doesn't just claim to care — they demonstrate their commitment to client wellbeing, setting a new benchmark for what home care can achieve.</p>"
+    },
+    {
+      "_template": "prose",
+      "scheme": "light",
+      "eyebrow": "Community engagement",
+      "heading": "Driving growth through community engagement",
+      "body": "<p>Cypress utilises Able Assess as a powerful engine for customer acquisition. By hosting fall prevention events at senior living communities, they provide a high-value service that serves as a sophisticated relationship builder. These screenings allow the Cypress team to offer immediate, actionable insights to residents who may not yet realise they are at risk, instantly establishing the agency as a trusted resource with clinical insights.</p><p>The physical presence of the technology allows Cypress to identify at-risk individuals early, transforming a simple introduction into a data-backed health consultation. This proactive approach demonstrates a deep commitment to the wellbeing of the entire community, positioning Cypress as a vital partner to the senior living facilities themselves rather than just another outside provider.</p>"
+    },
+    {
+      "_template": "prose",
+      "scheme": "grey",
+      "eyebrow": "Retention and longevity",
+      "heading": "Enhancing longevity and customer retention",
+      "body": "<p>At the heart of the Cypress mission is a commitment to longevity, driven by the understanding that falls and medication adherence are the two primary reasons clients end up in urgent care. Bob's strategy is to weave Able Assess into the very fabric of the client experience, creating a clinical shield around the home.</p><p>This begins the moment a new relationship is formed; Bob's team utilises the technology at every open, establishing an objective baseline from day one — enabling them to periodically check how a customer is doing and catch decline before it leads to a crisis.</p><p>Ultimately, this data-driven oversight is about more than just metrics; it is about the fundamental goal of helping clients live the best lives they possibly can in their own environments. By preventing falls, Cypress protects the sanctity of the home and the dignity of the individual. If the clinical insights provided by Able Assess can ensure that clients are able to live with dignity in their homes — rather than in a skilled nursing facility, assisted living home or community — then the technology has fulfilled its highest purpose.</p>"
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "blue",
+      "heading": "How Cypress uses Able Assess",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Baseline at every open",
+          "description": "Every new client relationship starts with an objective baseline so the team can periodically check how the customer is doing."
+        },
+        {
+          "number": 2,
+          "title": "Catch decline early",
+          "description": "Early identification of changes in physical condition lets Cypress offer clinical insights during care and intervene before a crisis."
+        },
+        {
+          "number": 3,
+          "title": "Fall prevention in the community",
+          "description": "Fall prevention events at senior living communities turn introductions into data-backed consultations and deepen facility partnerships."
+        },
+        {
+          "number": 4,
+          "title": "Part of a wider tech stack",
+          "description": "Able Assess sits alongside Gracey Care, Sensi.ai and SmartAutomations.care in Cypress's culture of innovation."
+        }
+      ],
+      "ctaText": "See how Able Assess works",
+      "ctaLink": "/solutions/able-assess"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "scheme": "aqua",
+      "heading": "Why the sensor matters",
+      "testimonials": [
+        {
+          "quote": "Able Assess is different from other fall prevention products on the market. There's a science and physicality with the sensor that helps clients trust the readings.",
+          "name": "Bob Roth",
+          "role": "Managing Partner",
+          "organization": "Cypress HomeCare Solutions"
+        },
+        {
+          "quote": "We should be doing this at every open that we do. It establishes a baseline then we can periodically check how the customer is doing.",
+          "name": "Bob Roth",
+          "role": "Managing Partner",
+          "organization": "Cypress HomeCare Solutions"
+        }
+      ]
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "light",
+      "heading": "Proactive guardians of independence",
+      "items": [
+        {
+          "title": "Feeling to fact",
+          "body": "Conversations about physical wellbeing move from subjective feeling to objective measurement — with hardware that builds client trust."
+        },
+        {
+          "title": "Community as growth engine",
+          "body": "Fall prevention events at senior living communities establish Cypress as a clinical partner, not just another outside provider."
+        },
+        {
+          "title": "Clinical shield at home",
+          "body": "Baseline screening at every open and periodic re-checks catch decline before falls or urgent-care admissions."
+        },
+        {
+          "title": "Dignity in place",
+          "body": "Keeping clients safe at home protects independence and quality of life — the highest purpose of the partnership."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "heading": "See how Able Assess fits a culture of innovation",
+      "bodyText": "Talk with Able Care about weaving objective falls screening into your home care model — the way Cypress HomeCare Solutions has.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Explore Able Assess",
+      "secondaryCtaLink": "/solutions/able-assess"
+    }
+  ],
+  "tags": [
+    "able-assess",
+    "home-care",
+    "case-study"
+  ]
+}
