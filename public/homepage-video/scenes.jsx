@@ -321,7 +321,8 @@ function Scene3({ t }) {
 // Scene 4 — Sensor & Imperial (14.3 → 24.4s)
 // "At the heart… a precision sensor developed from 15 years of research
 //  at Imperial College London." (VO 14.5–19.3)
-// "…grip strength 10 times more accurately than legacy tools." (VO 20.1–23.2)
+// "…ten times more sensitive than legacy tools." (VO 20.1–23.2)
+// Claim corrected Sep 2026: the sensor is 10x more SENSITIVE, not more accurate.
 // ────────────────────────────────────────────────────────────────────────────
 function Scene4({ t }) {
   const start = 14.3, end = 24.4;
@@ -399,7 +400,7 @@ function Scene4({ t }) {
           <div style={{
             fontSize: 18, fontWeight: 700, letterSpacing: '0.22em',
             textTransform: 'uppercase', color: AQUA, marginBottom: 8,
-          }}>Accuracy</div>
+          }}>Sensitivity</div>
           <div style={{
             fontSize: 140, fontWeight: 700, color: WHITE,
             lineHeight: 0.9, letterSpacing: '-0.05em',
@@ -411,7 +412,7 @@ function Scene4({ t }) {
             fontSize: 28, fontWeight: 400, color: AQUA,
             marginTop: 10, letterSpacing: '-0.005em',
           }}>
-            more accurate than legacy tools
+            more sensitive than legacy tools
           </div>
         </div>
       </div>
@@ -642,8 +643,7 @@ function Scene6({ t }) {
           letterSpacing: '-0.01em',
           borderLeft: `4px solid ${BLUE}`,
         }}>
-          Delivered by <span style={{ fontWeight: 700 }}>any staff member</span> —
-          clinical or not.
+          Delivered by <span style={{ fontWeight: 700 }}>any staff member</span>.
         </div>
       </div>
     </div>
@@ -805,14 +805,16 @@ function Scene8({ t }) {
           opacity: eyeOp,
         }}>Trusted</div>
         <h2 style={{
-          fontSize: 76, fontWeight: 700,
-          lineHeight: 0.96, letterSpacing: '-0.03em',
+          fontSize: 58, fontWeight: 700,
+          lineHeight: 1.02, letterSpacing: '-0.03em',
           color: INK, margin: 0, maxWidth: 1000,
           opacity: headOp,
           transform: `translateY(${slideIn(t, start + 0.15, 0.4, 16)}px)`,
           textWrap: 'balance',
         }}>
-          Clinically aligned.<br/>Independently verified.
+          {/* Was "Clinically aligned. Independently verified." — "clinical" removed at
+              review, and none of the four US items below is independently verified. */}
+          Informed by recognized guidance.<br/>Registered and compliant.
         </h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18, marginTop: 12 }}>
