@@ -13,6 +13,12 @@ const AQUA_GRADIENT  = 'linear-gradient(145deg, #00FFD2 0%, #00d9b8 60%, #00a896
 const LIGHT_GRADIENT = 'linear-gradient(145deg, #ffffff 0%, #eef1ff 100%)';
 const DARK_GRADIENT  = 'linear-gradient(145deg, #0a0a1a 0%, #0b1fd4 100%)';
 
+// Stage-aware type scale. The same scenes render at 1080x1080 (site hero) and
+// 1920x1080 (email cut). The square stage gives the left-hand type columns far less
+// room, so the two longest headlines step down there. Sizes come from measured glyph
+// widths (render/audit-overflow.cjs in the video build folder flags any overflow).
+const isSquare = () => ((typeof window !== 'undefined' && window.__STAGE_W) || 1080) < 1400;
+
 const cl = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
 const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 const easeOutBack = (t) => {
@@ -130,7 +136,8 @@ function Scene1({ t }) {
         }}>Falls Prevention</div>
 
         <h1 style={{
-          fontSize: 120, fontWeight: 700,
+          // 78 keeps "Independent." clear of the photo panel's diagonal on the square stage.
+          fontSize: isSquare() ? 78 : 120, fontWeight: 700,
           lineHeight: 0.98, letterSpacing: '-0.035em',
           color: WHITE, margin: 0, textWrap: 'balance', maxWidth: '100%',
         }}>
@@ -314,7 +321,8 @@ function Scene3({ t }) {
 // Scene 4 — Sensor & Imperial (14.3 → 24.4s)
 // "At the heart… a precision sensor developed from 15 years of research
 //  at Imperial College London." (VO 14.5–19.3)
-// "…grip strength 10 times more accurately than legacy tools." (VO 20.1–23.2)
+// "…ten times more sensitive than legacy tools." (VO 20.1–23.2)
+// Claim corrected Sep 2026: the sensor is 10x more SENSITIVE, not more accurate.
 // ────────────────────────────────────────────────────────────────────────────
 function Scene4({ t }) {
   const start = 14.3, end = 24.4;
@@ -392,7 +400,7 @@ function Scene4({ t }) {
           <div style={{
             fontSize: 18, fontWeight: 700, letterSpacing: '0.22em',
             textTransform: 'uppercase', color: AQUA, marginBottom: 8,
-          }}>Accuracy</div>
+          }}>Sensitivity</div>
           <div style={{
             fontSize: 140, fontWeight: 700, color: WHITE,
             lineHeight: 0.9, letterSpacing: '-0.05em',
@@ -404,7 +412,7 @@ function Scene4({ t }) {
             fontSize: 28, fontWeight: 400, color: AQUA,
             marginTop: 10, letterSpacing: '-0.005em',
           }}>
-            more accurate than legacy tools
+            more sensitive than legacy tools
           </div>
         </div>
       </div>
@@ -560,7 +568,8 @@ function Scene6({ t }) {
             opacity: eyeOp, marginBottom: 22,
           }}>The Screening</div>
           <h2 style={{
-            fontSize: 62, fontWeight: 700,
+            // 46 keeps "measurements." inside the blue column on the square stage.
+            fontSize: isSquare() ? 46 : 62, fontWeight: 700,
             lineHeight: 0.98, letterSpacing: '-0.03em',
             color: WHITE, margin: 0, textWrap: 'balance',
             opacity: headOp,
@@ -634,8 +643,7 @@ function Scene6({ t }) {
           letterSpacing: '-0.01em',
           borderLeft: `4px solid ${BLUE}`,
         }}>
-          Delivered by <span style={{ fontWeight: 700 }}>any staff member</span> —
-          clinical or not.
+          Delivered by <span style={{ fontWeight: 700 }}>any staff member</span>.
         </div>
       </div>
     </div>
@@ -797,14 +805,16 @@ function Scene8({ t }) {
           opacity: eyeOp,
         }}>Trusted</div>
         <h2 style={{
-          fontSize: 76, fontWeight: 700,
-          lineHeight: 0.96, letterSpacing: '-0.03em',
+          fontSize: 58, fontWeight: 700,
+          lineHeight: 1.02, letterSpacing: '-0.03em',
           color: INK, margin: 0, maxWidth: 1000,
           opacity: headOp,
           transform: `translateY(${slideIn(t, start + 0.15, 0.4, 16)}px)`,
           textWrap: 'balance',
         }}>
-          Clinically aligned.<br/>Independently verified.
+          {/* Was "Clinically aligned. Independently verified." — "clinical" removed at
+              review, and none of the four US items below is independently verified. */}
+          Informed by recognized guidance.<br/>Registered and compliant.
         </h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18, marginTop: 12 }}>
