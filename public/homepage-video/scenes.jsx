@@ -13,6 +13,12 @@ const AQUA_GRADIENT  = 'linear-gradient(145deg, #00FFD2 0%, #00d9b8 60%, #00a896
 const LIGHT_GRADIENT = 'linear-gradient(145deg, #ffffff 0%, #eef1ff 100%)';
 const DARK_GRADIENT  = 'linear-gradient(145deg, #0a0a1a 0%, #0b1fd4 100%)';
 
+// Stage-aware type scale. The same scenes render at 1080x1080 (site hero) and
+// 1920x1080 (email cut). The square stage gives the left-hand type columns far less
+// room, so the two longest headlines step down there. Sizes come from measured glyph
+// widths (render/audit-overflow.cjs in the video build folder flags any overflow).
+const isSquare = () => ((typeof window !== 'undefined' && window.__STAGE_W) || 1080) < 1400;
+
 const cl = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
 const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 const easeOutBack = (t) => {
@@ -130,7 +136,8 @@ function Scene1({ t }) {
         }}>Falls Prevention</div>
 
         <h1 style={{
-          fontSize: 120, fontWeight: 700,
+          // 78 keeps "Independent." clear of the photo panel's diagonal on the square stage.
+          fontSize: isSquare() ? 78 : 120, fontWeight: 700,
           lineHeight: 0.98, letterSpacing: '-0.035em',
           color: WHITE, margin: 0, textWrap: 'balance', maxWidth: '100%',
         }}>
@@ -560,7 +567,8 @@ function Scene6({ t }) {
             opacity: eyeOp, marginBottom: 22,
           }}>The Screening</div>
           <h2 style={{
-            fontSize: 62, fontWeight: 700,
+            // 46 keeps "measurements." inside the blue column on the square stage.
+            fontSize: isSquare() ? 46 : 62, fontWeight: 700,
             lineHeight: 0.98, letterSpacing: '-0.03em',
             color: WHITE, margin: 0, textWrap: 'balance',
             opacity: headOp,
