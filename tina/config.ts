@@ -730,6 +730,13 @@ const partnerLogoCarouselBlock = {
       fields: [
         { type: "image" as const, name: "src", label: "Logo Image", required: true },
         { type: "string" as const, name: "alt", label: "Alt Text", required: true },
+        {
+          type: "string" as const,
+          name: "link",
+          label: "Link URL (optional)",
+          description:
+            "Where the logo goes when clicked — normally that customer's case study. Leave empty for logos with nothing to link to; those stay unclickable.",
+        },
       ],
     },
   ],

@@ -37,14 +37,8 @@
     {
       "_template": "caseStudyCards",
       "scheme": "light",
-      "heading": "Featured Case Studies",
+      "heading": "Featured Case Study",
       "caseStudies": [
-        {
-          "title": "Cypress HomeCare Solutions: Redefining Aging in Place",
-          "sector": "Home Care",
-          "summary": "How a Scottsdale agency weaves Able Assess into a culture of innovation — from feeling to fact, community events to retention.",
-          "link": "/resources/case-studies/cypress-home-care"
-        },
         {
           "title": "Right at Home Tri-County Metro: Driving Growth and Clinical Value with Data-Driven Care",
           "metric": "40% → 60%",
@@ -92,7 +86,8 @@
         },
         {
           "src": "/images/logos/right-at-home.png",
-          "alt": "Right at Home"
+          "alt": "Right at Home",
+          "link": "/resources/case-studies/right-at-home-tri-county-metro"
         },
         {
           "src": "/images/logos/caring-hands-caregivers.png",

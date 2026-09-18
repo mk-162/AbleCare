@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface PartnerLogo {
   src: string;
   alt: string;
+  /** Usually that customer's case study. Logos without one stay unclickable. */
+  link?: string;
 }
 
 interface PartnerLogoCarouselProps {
@@ -80,11 +83,8 @@ export function PartnerLogoCarousel({
         <div className={`absolute right-0 top-0 bottom-0 w-24 md:w-40 z-10 pointer-events-none bg-gradient-to-l ${scheme === "blue" ? "from-ac-blue" : scheme === "grey" ? "from-[#f0f0f0]" : "from-white"} to-transparent`} />
 
         <div className="flex animate-scroll-left">
-          {scrollLogos.map((logo, i) => (
-            <div
-              key={`${logo.alt}-${i}`}
-              className="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center h-16 md:h-20"
-            >
+          {scrollLogos.map((logo, i) => {
+            const image = (
               <Image
                 src={logo.src}
                 alt={logo.alt}
@@ -92,8 +92,31 @@ export function PartnerLogoCarousel({
                 height={60}
                 className={`h-10 md:h-14 w-auto object-contain ${scheme === "blue" ? "brightness-0 invert opacity-70" : "opacity-60 grayscale hover:grayscale-0 hover:opacity-100"} transition-all duration-300`}
               />
-            </div>
-          ))}
+            );
+            return (
+              <div
+                key={`${logo.alt}-${i}`}
+                className="flex-shrink-0 mx-6 md:mx-10 flex items-center justify-center h-16 md:h-20"
+              >
+                {logo.link ? (
+                  <Link
+                    href={logo.link}
+                    // The track is duplicated for the infinite scroll, so the
+                    // second copy of each logo is hidden from screen readers
+                    // and tab order rather than offered twice.
+                    aria-hidden={i >= actualLogos.length || undefined}
+                    tabIndex={i >= actualLogos.length ? -1 : undefined}
+                    aria-label={`${logo.alt} case study`}
+                    className="flex items-center justify-center rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ac-blue"
+                  >
+                    {image}
+                  </Link>
+                ) : (
+                  image
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
