@@ -26,6 +26,7 @@ const SLUG_MAP: Record<string, { collection: string; filename: string }> = {
   "security": { collection: "utility", filename: "security" },
   "thank-you": { collection: "utility", filename: "thank-you" },
   "compliance": { collection: "pages", filename: "compliance" },
+  "sub-processors": { collection: "pages", filename: "sub-processors" },
 };
 
 export async function generateMetadata({
