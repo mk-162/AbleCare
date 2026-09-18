@@ -145,6 +145,12 @@ function BlogArticleView({
                     src={featuredImage}
                     alt={title}
                     fill
+                    // Without this, `fill` defaults to sizes="100vw", so the
+                    // browser asks the optimiser for a 3840px-wide render of an
+                    // image that is never shown above ~512px. That is a slow,
+                    // heavy transform for no gain, and on a cold cache it can
+                    // fail outright and leave the slot empty.
+                    sizes="(min-width: 768px) 512px, 100vw"
                     className="object-cover"
                     priority
                   />
