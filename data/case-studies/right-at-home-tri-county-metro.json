@@ -1,0 +1,203 @@
+{
+  "draft": false,
+  "title": "Right at Home Tri-County Metro: Driving Growth and Clinical Value with Data-Driven Care",
+  "slug": "right-at-home-tri-county-metro",
+  "description": "How Right at Home Tri-County Metro uses Able Assess to close the \"assessment gap\" — winning more assessments, converting more inquiries into clients and becoming a clinical partner to physicians and therapists.",
+  "seo": {
+    "title": "Right at Home Tri-County Metro Case Study | Able Care",
+    "description": "How a Right at Home franchise offers a free fall-risk screening on the first call to lift assessment conversion from 40% toward 60%, and uses Able Assess data to become a clinical partner in its community.",
+    "ogImage": "/images/og-case-studies.png"
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumb",
+      "items": [
+        {
+          "label": "Home",
+          "href": "/"
+        },
+        {
+          "label": "Resources",
+          "href": "/resources"
+        },
+        {
+          "label": "Case Studies",
+          "href": "/resources/case-studies"
+        },
+        {
+          "label": "Right at Home Tri-County Metro",
+          "href": "/resources/case-studies/right-at-home-tri-county-metro"
+        }
+      ]
+    },
+    {
+      "_template": "hero",
+      "scheme": "blue",
+      "wave": "crest",
+      "backgroundImage": "/images/photos/home/woman-using-at-home.jpg",
+      "backgroundImageAlt": "Older adult completing an Able Assess screening at home",
+      "eyebrow": "Case Study · Home Care",
+      "headline": "Driving growth and clinical value with data-driven care.",
+      "subtitle": "How Right at Home Tri-County Metro uses Able Assess to close the \"assessment gap\" — winning more assessments and converting more inquiries into clients.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact"
+    },
+    {
+      "_template": "statsBar",
+      "scheme": "grey",
+      "eyebrow": "The target",
+      "heading": "From one in three to six in ten",
+      "stats": [
+        {
+          "value": "1 in 3",
+          "label": "Inquiries that reached an in-home assessment",
+          "sublabel": "Before Able Assess, despite a team exceptional at fielding calls"
+        },
+        {
+          "value": "60%",
+          "label": "Target assessment conversion rate",
+          "sublabel": "Up from 40% today, with a free fall-risk screening offered on the first call"
+        },
+        {
+          "value": "< 5 min",
+          "label": "Per screening, in the home",
+          "sublabel": "Run by non-clinical staff during the assessment visit"
+        },
+        {
+          "value": "4",
+          "label": "Functional measures tracked",
+          "sublabel": "Grip strength, sit-to-stand, gait speed and timed up-and-go"
+        }
+      ]
+    },
+    {
+      "_template": "caseStudyCustomerCard",
+      "scheme": "light",
+      "eyebrow": "The partner",
+      "heading": "Bridging compassionate care and clinical precision",
+      "body": "<p>Jeff Welsh, the owner of Right at Home Tri-County Metro, is an innovative leader who bridges the gap between compassionate care and clinical precision. By integrating technology like Able Assess, he has built his agency into a forward-thinking organization that delivers measurable results, moving beyond traditional, static care models to focus on longevity and independence.</p><p>Jeff's adoption of Able Assess is a natural extension of his mission to be a \"navigator\" for families facing the complexities of aging. As he scales these innovations across the Tri-County Metro area, he stays focused on the one outcome that truly matters: helping seniors stay safe, independent and exactly where they want to be — at home.</p>",
+      "portraitSrc": "/images/team/jeff-welsh.jpg",
+      "portraitAlt": "Jeff Welsh, Owner of Right at Home Tri-County Metro",
+      "name": "Jeff Welsh",
+      "role": "Owner, Right at Home Tri-County Metro",
+      "logoSrc": "/images/logos/right-at-home.png",
+      "logoAlt": "Right at Home logo",
+      "highlightQuote": "I give them an advantage with Able Assess."
+    },
+    {
+      "_template": "testimonialCarousel",
+      "scheme": "aqua",
+      "heading": "In Jeff Welsh's words",
+      "testimonials": [
+        {
+          "quote": "So now if a prospect is calling for answers about home care, maybe they're going to talk to three of them to decide who's going to come to the house. I give them an advantage with Able Assess. I think it's going to increase the likelihood that I will get a chance to make that assessment and change that metric. Our numbers show that if we get to that assessment, the chances of converting the caller to an actual client are actually very good.",
+          "name": "Jeff Welsh",
+          "role": "Owner",
+          "organization": "Right at Home Tri-County Metro"
+        }
+      ]
+    },
+    {
+      "_template": "prose",
+      "scheme": "grey",
+      "eyebrow": "The challenge",
+      "heading": "Bridging the assessment gap",
+      "body": "<p>One of the most pressing challenges Jeff identified within his operations was the <strong>\"assessment gap\"</strong> — the friction point between a family's initial inquiry and the actual in-home evaluation. Jeff noted that while his team is exceptional at fielding calls, only about a third of those inquiries typically transition to the next step.</p><p>To bridge this, Jeff integrated Able Assess as a cornerstone of his sales strategy, viewing the technology as a way to offer immediate, hospital-grade value before a contract is even signed. <strong>By promising a free, sophisticated fall-risk screening, Jeff believes he can push his assessment conversion rate from 40% to a target of 60%.</strong> For Jeff, this isn't just about the math; it's about providing families with objective insight that offers instant clarity during a high-stress decision-making process.</p>"
+    },
+    {
+      "_template": "prose",
+      "scheme": "light",
+      "eyebrow": "Clinical partnership",
+      "heading": "Strengthening the healthcare ecosystem",
+      "body": "<p>Beyond the initial sale, Jeff's vision extends to the entire healthcare ecosystem. He recognizes that home care should not exist in a vacuum, and he uses the data generated by Able Assess to transform his agency into a vital clinical partner for primary care physicians and skilled therapy providers.</p><p><strong>When Jeff's team identifies a decline in a client's grip strength or gait speed through the Able Assess portal, they proactively reach out to primary care physicians and physical therapists.</strong> This data-driven advocacy allows healthcare partners to \"swoop in\" with the necessary interventions, creating a reciprocal relationship built on professional trust. This approach has turned his agency into a facilitator of wider care, ensuring that his clients are safer while his professional partners view Right at Home as a sophisticated, essential ally.</p>"
+    },
+    {
+      "_template": "prose",
+      "scheme": "grey",
+      "eyebrow": "Community outreach",
+      "heading": "Redefining market differentiation",
+      "body": "<p>This commitment to differentiation is most visible in how Jeff handles community outreach. Rather than standard marketing, Jeff utilizes group screenings at independent and assisted living communities as a powerful reason for engagement. These events allow him to offer a genuine service to residents while simultaneously building a pipeline of prospective clients who now see Right at Home as an expert in fall prevention.</p><p>By focusing on the \"why\" — the simplicity, speed and immense value of the information — Jeff has moved his business beyond the traditional model of \"selling hours.\" Instead, he is selling a holistic care plan backed by trend data and objective proof, ensuring that every client under his care isn't just being watched, but is actually getting stronger.</p>"
+    },
+    {
+      "_template": "processSteps",
+      "scheme": "blue",
+      "heading": "How Right at Home Tri-County Metro uses Able Assess",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Offer a free screening on the first call",
+          "description": "When a family inquires, the team promises a free, sophisticated fall-risk screening — a concrete reason to let Right at Home into the home ahead of other agencies."
+        },
+        {
+          "number": 2,
+          "title": "Deliver objective insight at the assessment",
+          "description": "The screening gives families hospital-grade, objective information before a contract is signed, offering clarity during a high-stress decision."
+        },
+        {
+          "number": 3,
+          "title": "Act on decline in the portal",
+          "description": "When grip strength or gait speed declines, the team proactively reaches out to primary care physicians and physical therapists so partners can step in with interventions."
+        },
+        {
+          "number": 4,
+          "title": "Screen in the community",
+          "description": "Group screenings at independent and assisted living communities offer residents a genuine service and build a pipeline of prospective clients."
+        }
+      ],
+      "ctaText": "See how Able Assess works",
+      "ctaLink": "/solutions/able-assess"
+    },
+    {
+      "_template": "testimonialCarousel",
+      "scheme": "aqua",
+      "heading": "Why the referrals matter",
+      "testimonials": [
+        {
+          "quote": "Making referrals to trusted skilled therapy providers increases your value to your professional healthcare partners when you see signs of weakness and potential for falls.",
+          "name": "Jeff Welsh",
+          "role": "Owner",
+          "organization": "Right at Home Tri-County Metro"
+        }
+      ]
+    },
+    {
+      "_template": "valueProps",
+      "scheme": "light",
+      "heading": "What it means for home care operators",
+      "items": [
+        {
+          "title": "Close the assessment gap",
+          "body": "A free fall-risk screening offered on the first call gives families a reason to choose you for the in-home visit — the step where conversion is already strong."
+        },
+        {
+          "title": "Sell a care plan, not hours",
+          "body": "Trend data and objective proof turn the offer from \"selling hours\" into a holistic care plan that shows clients are getting stronger."
+        },
+        {
+          "title": "Become a clinical partner",
+          "body": "Flagging decline to physicians and therapists builds reciprocal, trust-based relationships that position your agency as an essential ally."
+        },
+        {
+          "title": "Lead with community screenings",
+          "body": "Group screenings at senior living communities deliver a genuine service to residents and establish you as the local expert in fall prevention."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "scheme": "blue",
+      "wave": "ribbon",
+      "heading": "See Able Assess in your workflow",
+      "bodyText": "Talk with Able Care about offering an objective fall-risk screening from the very first call — the way Right at Home Tri-County Metro does.",
+      "primaryCtaText": "Book a Demo",
+      "primaryCtaLink": "/contact",
+      "secondaryCtaText": "Explore Able Assess",
+      "secondaryCtaLink": "/solutions/able-assess"
+    }
+  ],
+  "tags": [
+    "able-assess",
+    "home-care",
+    "case-study"
+  ]
+}

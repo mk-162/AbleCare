@@ -140,6 +140,21 @@
       "_template": "testimonialCarousel"
     },
     {
+      "_template": "caseStudyCards",
+      "scheme": "light",
+      "heading": "Home care case study",
+      "caseStudies": [
+        {
+          "title": "Right at Home Tri-County Metro: Driving Growth and Clinical Value with Data-Driven Care",
+          "metric": "40% → 60%",
+          "metricLabel": "Assessment conversion target",
+          "sector": "Home Care",
+          "summary": "How owner Jeff Welsh offers a free fall-risk screening on the first call to close the assessment gap — and uses Able Assess data to become a clinical partner to physicians and therapists.",
+          "link": "/resources/case-studies/right-at-home-tri-county-metro"
+        }
+      ]
+    },
+    {
       "scheme": "grey",
       "heading": "Common questions from home care operators",
       "emitSchema": true,
