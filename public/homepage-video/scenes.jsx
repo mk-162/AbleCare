@@ -1,4 +1,6 @@
-// scenes.jsx — Able Care homepage video scenes, v2
+// scenes.jsx — Able Care homepage video scenes (US)
+// Every timing comes from cues.js, generated from the recording by render/retime.py.
+// To re-time for a new voiceover: python render/retime.py <audio.mp3>
 // Brand-correct logo, gradient backgrounds, larger type, earlier sync.
 
 const BLUE = '#1432FF';
@@ -84,19 +86,20 @@ const eyebrowStyle = (color = AQUA) => ({
 });
 
 // ────────────────────────────────────────────────────────────────────────────
-// Scene 1 — Warm opening (0 → 4.1s)
+// Scene 1 — Warm opening (timed by cues.js)
 // "Good care keeps people strong, steady, and independent for longer." (VO 0.0–3.4)
 // ────────────────────────────────────────────────────────────────────────────
 function Scene1({ t }) {
-  const start = 0, end = 4.1;
+  const Q = window.AbleCues.s1;
+  const start = 0, end = Q.end;
   // Scene 1 is always visible at t=0 (paused still frame) — no entry fade.
   const alpha = t <= 0 ? 1 : env(t, start, end, 0.01, 0.6);
   if (alpha <= 0) return null;
   const scale = kenBurns(t, start, end, 1.04, 1.14);
   // First phrase + eyebrow visible at t=0 so paused poster frame has content.
   const phrase1 = t <= 0 ? 1 : env(t, 0.0, end, 0.4, 0.6);
-  const phrase2 = env(t, 1.6,  end, 0.4, 0.6);  // "steady" ~1.8s
-  const phrase3 = env(t, 2.2,  end, 0.4, 0.6);  // "independent" ~2.4s
+  const phrase2 = env(t, Q.steady, end, 0.4, 0.6);
+  const phrase3 = env(t, Q.independent, end, 0.4, 0.6);
 
   return (
     <div style={{ ...sceneStyle(HERO_GRADIENT), opacity: alpha }}>
@@ -144,10 +147,10 @@ function Scene1({ t }) {
           <span style={{ display: 'block', opacity: phrase1,
             transform: `translateY(${slideIn(t, 0.0, 0.5, 20)}px)` }}>Strong.</span>
           <span style={{ display: 'block', opacity: phrase2,
-            transform: `translateY(${slideIn(t, 1.6, 0.5, 20)}px)`,
+            transform: `translateY(${slideIn(t, Q.steady, 0.5, 20)}px)`,
             color: AQUA }}>Steady.</span>
           <span style={{ display: 'block', opacity: phrase3,
-            transform: `translateY(${slideIn(t, 2.2, 0.5, 20)}px)` }}>Independent.</span>
+            transform: `translateY(${slideIn(t, Q.independent, 0.5, 20)}px)` }}>Independent.</span>
         </h1>
       </div>
     </div>
@@ -155,24 +158,25 @@ function Scene1({ t }) {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Scene 2 — The stat (3.5 → 12.0s)
+// Scene 2 — The stat (timed by cues.js)
 // "But 1 in 4 adults over 65 falls each year." (VO 3.8–6.7)
 // "And most of that risk is missed, because it is judged by eye..." (VO 7.1–10.8)
 // ────────────────────────────────────────────────────────────────────────────
 function Scene2({ t }) {
-  const start = 3.5, end = 12.0;
+  const Q = window.AbleCues.s2;
+  const start = Q.start, end = Q.end;
   const alpha = env(t, start, end, 0.5, 0.5);
   if (alpha <= 0) return null;
 
-  const numProgress = cl((t - (start + 0.2)) / 0.8);
+  const numProgress = cl((t - Q.stat) / 0.8);
   const numVal = Math.round(1 + numProgress * 3);
 
   const eyebrowOp = env(t, start + 0.0, end, 0.35, 0.5);
-  const statOp    = env(t, start + 0.2, end, 0.5, 0.5);  // "one in four" ~3.8
-  const lineOp    = env(t, start + 3.3, end, 0.5, 0.5);
-  const sub1Op    = env(t, start + 3.5, end, 0.5, 0.5);  // "most risk missed" ~7.0
-  const sub2Op    = env(t, start + 4.7, end, 0.5, 0.5);  // "because…" ~8.2
-  const statScale = 0.95 + 0.05 * easeOutBack(cl((t - (start + 0.2)) / 0.7));
+  const statOp    = env(t, Q.stat, end, 0.5, 0.5);
+  const lineOp    = env(t, Q.line, end, 0.5, 0.5);
+  const sub1Op    = env(t, Q.most, end, 0.5, 0.5);
+  const sub2Op    = env(t, Q.because, end, 0.5, 0.5);
+  const statScale = 0.95 + 0.05 * easeOutBack(cl((t - Q.stat) / 0.7));
 
   return (
     <div style={{ ...sceneStyle(HERO_GRADIENT), opacity: alpha }}>
@@ -229,12 +233,12 @@ function Scene2({ t }) {
             letterSpacing: '-0.01em',
           }}>
             <span style={{ display: 'inline-block', opacity: sub1Op,
-              transform: `translateY(${slideIn(t, start + 3.5, 0.5, 12)}px)` }}>
-              Most of that risk is missed — </span>
+              transform: `translateY(${slideIn(t, Q.most, 0.5, 12)}px)` }}>
+              Most of that risk is missed, </span>
             <span style={{ display: 'inline-block', opacity: sub2Op,
-              transform: `translateY(${slideIn(t, start + 4.7, 0.5, 12)}px)`,
+              transform: `translateY(${slideIn(t, Q.because, 0.5, 12)}px)`,
               fontWeight: 700, color: AQUA }}>
-              because screening only comes after the first fall.</span>
+              because it is judged by eye, not measured.</span>
           </div>
         </div>
       </div>
@@ -243,11 +247,12 @@ function Scene2({ t }) {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Scene 3 — Platform intro (11.4 → 14.9s)
+// Scene 3 — Platform intro (timed by cues.js)
 // "Able Care is a technology platform built to measure it." (VO 11.7–14.3)
 // ────────────────────────────────────────────────────────────────────────────
 function Scene3({ t }) {
-  const start = 11.4, end = 14.9;
+  const Q = window.AbleCues.s3;
+  const start = Q.start, end = Q.end;
   const alpha = env(t, start, end, 0.5, 0.5);
   if (alpha <= 0) return null;
 
@@ -318,23 +323,24 @@ function Scene3({ t }) {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Scene 4 — Sensor & Imperial (14.3 → 24.4s)
+// Scene 4 — Sensor & Imperial (timed by cues.js)
 // "At the heart… a precision sensor developed from 15 years of research
 //  at Imperial College London." (VO 14.5–19.3)
 // "…ten times more sensitive than legacy tools." (VO 20.1–23.2)
 // Claim corrected Sep 2026: the sensor is 10x more SENSITIVE, not more accurate.
 // ────────────────────────────────────────────────────────────────────────────
 function Scene4({ t }) {
-  const start = 14.3, end = 24.4;
+  const Q = window.AbleCues.s4;
+  const start = Q.start, end = Q.end;
   const alpha = env(t, start, end, 0.5, 0.5);
   if (alpha <= 0) return null;
 
   const scale = kenBurns(t, start, end, 1.04, 1.16);
   const eyeOp = env(t, start + 0.05, end, 0.4, 0.5);
   const h1Op = env(t, start + 0.2, end, 0.55, 0.5);
-  const stat1Op = env(t, start + 4.2, end, 0.5, 0.5);  // "Imperial" ~18.7
-  const stat2Op = env(t, start + 6.6, end, 0.5, 0.5);  // "10 times" ~21.2
-  const ten = Math.round(cl((t - (start + 6.6)) / 1.0) * 10);
+  const stat1Op = env(t, Q.imperial, end, 0.5, 0.5);
+  const stat2Op = env(t, Q.ten, end, 0.5, 0.5);
+  const ten = Math.round(cl((t - Q.ten) / 1.0) * 10);
 
   return (
     <div style={{ ...sceneStyle('#0a0a0a'), opacity: alpha }}>
@@ -380,7 +386,7 @@ function Scene4({ t }) {
       }}>
         <div style={{
           opacity: stat1Op,
-          transform: `translateY(${slideIn(t, start + 4.2, 0.5, 14)}px)`,
+          transform: `translateY(${slideIn(t, Q.imperial, 0.5, 14)}px)`,
           paddingRight: 36,
           borderRight: `1px solid rgba(255,255,255,0.28)`,
         }}>
@@ -395,7 +401,7 @@ function Scene4({ t }) {
         </div>
         <div style={{
           opacity: stat2Op,
-          transform: `translateY(${slideIn(t, start + 6.6, 0.5, 14)}px)`,
+          transform: `translateY(${slideIn(t, Q.ten, 0.5, 14)}px)`,
         }}>
           <div style={{
             fontSize: 18, fontWeight: 700, letterSpacing: '0.22em',
@@ -421,13 +427,14 @@ function Scene4({ t }) {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Scene 5 — Biomarker (23.8 → 35.0s)
+// Scene 5 — Biomarker (timed by cues.js)
 // "Grip strength is one of the most powerful biomarkers…" (VO 24.0–26.5)
 // "…biological age, frailty, muscle and bone health, and balance." (VO 26.5–30.9)
 // "A weakening grip is often the earliest warning…" (VO 31.3–34.1)
 // ────────────────────────────────────────────────────────────────────────────
 function Scene5({ t }) {
-  const start = 23.8, end = 35.0;
+  const Q = window.AbleCues.s5;
+  const start = Q.start, end = Q.end;
   const alpha = env(t, start, end, 0.5, 0.5);
   if (alpha <= 0) return null;
 
@@ -436,13 +443,13 @@ function Scene5({ t }) {
   const headOp = env(t, start + 0.2, end, 0.55, 0.5);
 
   const tags = [
-    { label: 'Biological age', start: 3.5 },  // "biological age" ~27.4
-    { label: 'Frailty',         start: 4.6 },  // "frailty" ~28.6
-    { label: 'Muscle & bone',   start: 5.4 },  // "muscle & bone" ~29.4
-    { label: 'Balance',         start: 6.6 },  // "balance" ~30.6
+    { label: 'Biological age', at: Q.biological },
+    { label: 'Frailty',         at: Q.frailty },
+    { label: 'Muscle & bone',   at: Q.muscle },
+    { label: 'Balance',         at: Q.balance },
   ];
 
-  const warnOp = env(t, start + 7.3, end, 0.5, 0.5);  // "weakening grip" ~31.3
+  const warnOp = env(t, Q.weakening, end, 0.5, 0.5);
 
   return (
     <div style={{ ...sceneStyle(LIGHT_GRADIENT), opacity: alpha }}>
@@ -485,7 +492,7 @@ function Scene5({ t }) {
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginTop: 4 }}>
           {tags.map((tag) => {
-            const tagOp = env(t, start + tag.start, end, 0.3, 0.5);
+            const tagOp = env(t, tag.at, end, 0.3, 0.5);
             return (
               <div key={tag.label} style={{
                 padding: '14px 26px',
@@ -495,7 +502,7 @@ function Scene5({ t }) {
                 fontSize: 24, fontWeight: 500, color: INK,
                 letterSpacing: '-0.005em',
                 opacity: tagOp,
-                transform: `translateY(${slideIn(t, start + tag.start, 0.4, 12)}px) scale(${0.96 + 0.04 * tagOp})`,
+                transform: `translateY(${slideIn(t, tag.at, 0.4, 12)}px) scale(${0.96 + 0.04 * tagOp})`,
               }}>{tag.label}</div>
             );
           })}
@@ -509,7 +516,7 @@ function Scene5({ t }) {
           fontSize: 28, fontWeight: 400, lineHeight: 1.3,
           letterSpacing: '-0.01em',
           opacity: warnOp,
-          transform: `translateX(${slideIn(t, start + 7.3, 0.5, -20)}px)`,
+          transform: `translateX(${slideIn(t, Q.weakening, 0.5, -20)}px)`,
           maxWidth: '100%',
           boxShadow: '0 20px 50px rgba(11,31,212,0.25)',
         }}>
@@ -522,13 +529,14 @@ function Scene5({ t }) {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Scene 6 — Four metrics, 5 min (34.4 → 46.1s)
+// Scene 6 — Four metrics, 5 min (timed by cues.js)
 // "Our software combines grip with three more validated measurements." (VO 34.7–37.1)
 // "Chair stand, gait speed, timed up and go." (VO 38.0–40.5)
 // "One screening, five minutes, delivered by any member of your staff…" (VO 41.1–45.3)
 // ────────────────────────────────────────────────────────────────────────────
 function Scene6({ t }) {
-  const start = 34.4, end = 46.1;
+  const Q = window.AbleCues.s6;
+  const start = Q.start, end = Q.end;
   const alpha = env(t, start, end, 0.5, 0.5);
   if (alpha <= 0) return null;
 
@@ -536,15 +544,15 @@ function Scene6({ t }) {
   const headOp = env(t, start + 0.2, end, 0.5, 0.5);
 
   const metrics = [
-    { label: 'Grip strength',  start: 1.0 },  // "grip" ~35.5
-    { label: 'Chair stand',    start: 3.6 },  // "chair stand" ~38.0
-    { label: 'Gait speed',     start: 4.5 },  // "gait speed" ~39.0
-    { label: 'Timed Up & Go',  start: 5.3 },  // "timed up and go" ~39.7
+    { label: 'Grip strength',  at: Q.grip },
+    { label: 'Chair stand',    at: Q.chair },
+    { label: 'Gait speed',     at: Q.gait },
+    { label: 'Timed Up & Go',  at: Q.timed },
   ];
 
-  const minOp = env(t, start + 7.3, end, 0.5, 0.5);  // "five minutes" ~41.9
-  const minScale = 0.92 + 0.08 * easeOutBack(cl((t - (start + 7.3)) / 0.7));
-  const staffOp = env(t, start + 8.2, end, 0.5, 0.5);  // "delivered by any…" ~42.8
+  const minOp = env(t, Q.five, end, 0.5, 0.5);
+  const minScale = 0.92 + 0.08 * easeOutBack(cl((t - Q.five) / 0.7));
+  const staffOp = env(t, Q.delivered, end, 0.5, 0.5);
 
   return (
     <div style={{ ...sceneStyle(WHITE), opacity: alpha }}>
@@ -581,12 +589,12 @@ function Scene6({ t }) {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
           {metrics.map((m, i) => {
-            const op = env(t, start + m.start, end, 0.3, 0.5);
+            const op = env(t, m.at, end, 0.3, 0.5);
             return (
               <div key={m.label} style={{
                 display: 'flex', alignItems: 'baseline', gap: 22,
                 opacity: op,
-                transform: `translateX(${slideIn(t, start + m.start, 0.4, -22)}px)`,
+                transform: `translateX(${slideIn(t, m.at, 0.4, -22)}px)`,
               }}>
                 <span style={{
                   fontSize: 22, fontWeight: 700, color: AQUA,
@@ -637,7 +645,7 @@ function Scene6({ t }) {
 
         <div style={{
           opacity: staffOp,
-          transform: `translateY(${slideIn(t, start + 8.2, 0.5, 16)}px)`,
+          transform: `translateY(${slideIn(t, Q.delivered, 0.5, 16)}px)`,
           fontSize: 30, fontWeight: 400, color: INK, lineHeight: 1.25,
           maxWidth: 500, paddingLeft: 24,
           letterSpacing: '-0.01em',
@@ -651,11 +659,12 @@ function Scene6({ t }) {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Scene 7 — Dashboard (45.5 → 49.9s)
+// Scene 7 — Dashboard (timed by cues.js)
 // "The results land in a simple dashboard so your team can act early." (VO 45.7–48.8)
 // ────────────────────────────────────────────────────────────────────────────
 function Scene7({ t }) {
-  const start = 45.5, end = 49.9;
+  const Q = window.AbleCues.s7;
+  const start = Q.start, end = Q.end;
   const alpha = env(t, start, end, 0.5, 0.5);
   if (alpha <= 0) return null;
 
@@ -771,12 +780,13 @@ function Scene7({ t }) {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Scene 8 — Credentials (49.3 → 55.7s)
+// Scene 8 — Credentials (timed by cues.js)
 // "Aligned to CDC STEADI and the 2022 World Guidelines." (VO 49.6–52.4)
 // "FDA registered, HIPAA compliant." (VO 52.8–55.0)
 // ────────────────────────────────────────────────────────────────────────────
 function Scene8({ t }) {
-  const start = 49.3, end = 55.7;
+  const Q = window.AbleCues.s8;
+  const start = Q.start, end = Q.end;
   const alpha = env(t, start, end, 0.5, 0.5);
   if (alpha <= 0) return null;
 
@@ -784,10 +794,10 @@ function Scene8({ t }) {
   const headOp = env(t, start + 0.15, end, 0.4, 0.4);
 
   const creds = [
-    { label: 'CDC STEADI', start: 0.6 },              // "CDC steady" ~50.0
-    { label: '2022 WORLD GUIDELINES', start: 2.0 },   // "2022 world" ~51.4
-    { label: 'FDA REGISTERED', start: 3.5 },          // "FDA registered" ~52.8
-    { label: 'HIPAA COMPLIANT', start: 4.8 },         // "HIPAA compliant" ~54.1
+    { label: 'CDC STEADI', at: Q.cdc },
+    { label: '2022 WORLD GUIDELINES', at: Q.world },
+    { label: 'FDA REGISTERED', at: Q.fda },
+    { label: 'HIPAA COMPLIANT', at: Q.hipaa },
   ];
 
   return (
@@ -819,12 +829,12 @@ function Scene8({ t }) {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 18, marginTop: 12 }}>
           {creds.map((c) => {
-            const op = env(t, start + c.start, end, 0.25, 0.4);
+            const op = env(t, c.at, end, 0.25, 0.4);
             return (
               <div key={c.label} style={{
                 display: 'flex', alignItems: 'center', gap: 22,
                 opacity: op,
-                transform: `translateX(${slideIn(t, start + c.start, 0.35, -18)}px)`,
+                transform: `translateX(${slideIn(t, c.at, 0.35, -18)}px)`,
               }}>
                 <div style={{
                   width: 46, height: 46, borderRadius: 23,
@@ -851,18 +861,19 @@ function Scene8({ t }) {
 }
 
 // ────────────────────────────────────────────────────────────────────────────
-// Scene 9 — End card (55.1 → end)
+// Scene 9 — End card (timed by cues.js)
 // "Able Care, enabling intelligent health." (VO 55.4–57.4)
 // ────────────────────────────────────────────────────────────────────────────
 function Scene9({ t, total }) {
-  const start = 55.1, end = total;
+  const Q = window.AbleCues.s9;
+  const start = Q.start, end = total;
   const alpha = env(t, start, end, 0.5, 0.0);
   if (alpha <= 0) return null;
 
   const logoOp = env(t, start + 0.1, end, 0.55, 0);
   const logoY = slideIn(t, start + 0.1, 0.6, 14);
-  const taglineOp = env(t, start + 0.7, end, 0.5, 0);
-  const lineScale = cl((t - (start + 0.5)) / 0.6);
+  const taglineOp = env(t, Q.tagline, end, 0.5, 0);
+  const lineScale = cl((t - Q.line) / 0.6);
 
   return (
     <div style={{ ...sceneStyle(HERO_GRADIENT), opacity: alpha }}>
@@ -905,7 +916,7 @@ function Scene9({ t, total }) {
           fontSize: 42, fontWeight: 400, color: WHITE,
           letterSpacing: '-0.015em',
           opacity: taglineOp,
-          transform: `translateY(${slideIn(t, start + 0.7, 0.5, 12)}px)`,
+          transform: `translateY(${slideIn(t, Q.tagline, 0.5, 12)}px)`,
           textAlign: 'center',
         }}>
           Enabling intelligent health.

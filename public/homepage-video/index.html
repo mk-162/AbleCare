@@ -69,31 +69,24 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
+<script src="cues.js"></script>
 <script type="text/babel" src="scenes.jsx"></script>
 
 <script type="text/babel">
-const STAGE_W = 1080;
-const STAGE_H = 1080;
+// Render mode (used by render/capture.cjs): ?render=1&w=1920&h=1080 sets the
+// stage size, disables autoplay/controls and exposes window.__seek(t).
+const QS = new URLSearchParams(window.location.search);
+const RENDER_MODE = QS.get('render') === '1';
+const STAGE_W = parseInt(QS.get('w'), 10) || 1080;
+const STAGE_H = parseInt(QS.get('h'), 10) || 1080;
+window.__STAGE_W = STAGE_W; window.__STAGE_H = STAGE_H;
 const AUDIO_SRC = 'assets/voiceover.mp3';
-const FALLBACK_DURATION = 57.6;
+const FALLBACK_DURATION = (window.AbleCues && window.AbleCues.duration) || 57.6;
 
 // Stylised caption segments — synced to the voiceover (assets/voiceover.mp3).
 // Times are in audio seconds; scenes share this timeline (timeOffset default 0).
-const CAPTIONS = [
-  { start: 0.2,  end: 3.6,  text: 'Strong. Steady. Independent.' },
-  { start: 3.8,  end: 6.9,  text: '1 in 4 adults over 65 falls each year.' },
-  { start: 7.0,  end: 11.4, text: 'Most risk is missed until after the first fall.' },
-  { start: 11.6, end: 14.4, text: 'Able Care — built to measure it.' },
-  { start: 14.6, end: 19.6, text: '15 years of research · Imperial College London' },
-  { start: 20.0, end: 23.7, text: '10× more sensitive than legacy tools' },
-  { start: 24.0, end: 30.9, text: 'Grip strength is a powerful biomarker.' },
-  { start: 31.1, end: 34.4, text: 'An early warning before a fall.' },
-  { start: 34.5, end: 40.6, text: 'Four validated measurements.' },
-  { start: 41.0, end: 45.4, text: 'One screening. Five minutes.' },
-  { start: 45.6, end: 49.2, text: 'Results that let your team act early.' },
-  { start: 49.5, end: 55.1, text: 'FDA · HIPAA · CDC STEADI aligned' },
-  { start: 55.4, end: 57.5, text: 'Enabling intelligent health.' },
-];
+// Generated alongside the scene cues by render/retime.py.
+const CAPTIONS = (window.AbleCues && window.AbleCues.captions) || [];
 
 // ── Editable defaults ────────────────────────────────────────────────────
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
@@ -108,6 +101,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 // discarded — the new voiceover is timed against timeOffset 0.
 const TWEAK_STORAGE_KEY = 'ac-homepage-tweaks-v2';
 const loadSavedTweaks = () => {
+  if (RENDER_MODE) return TWEAK_DEFAULTS;
   try {
     const saved = localStorage.getItem(TWEAK_STORAGE_KEY);
     if (saved) return { ...TWEAK_DEFAULTS, ...JSON.parse(saved) };
@@ -385,8 +379,16 @@ function App() {
     return () => window.removeEventListener('resize', measure);
   }, []);
 
+  // Render mode: deterministic seek hook for frame capture (no audio clock).
+  React.useEffect(() => {
+    if (!RENDER_MODE) return;
+    window.__seek = (t) => { ReactDOM.flushSync(() => setTime(t)); };
+    window.__renderReady = true;
+  }, []);
+
   // Try autoplay on mount
   React.useEffect(() => {
+    if (RENDER_MODE) return;
     const a = audioRef.current;
     if (!a) return;
     a.muted = muted;
@@ -406,7 +408,7 @@ function App() {
   // Tweaks toggle: via parent toolbar (iframe mode), auto-open standalone, or `T` key.
   React.useEffect(() => {
     const standalone = window.parent === window;
-    if (standalone) setTweaksOpen(true);
+    if (standalone && !RENDER_MODE) setTweaksOpen(true);
 
     const onMsg = (e) => {
       if (e.data?.type === '__activate_edit_mode') setTweaksOpen(true);
@@ -481,8 +483,8 @@ function App() {
         position: 'relative',
         overflow: 'hidden',
         background: '#1432FF',
-        boxShadow: '0 20px 80px rgba(0,0,0,0.6)',
-        cursor: 'pointer',
+        boxShadow: RENDER_MODE ? 'none' : '0 20px 80px rgba(0,0,0,0.6)',
+        cursor: RENDER_MODE ? 'default' : 'pointer',
       }}>
         {/* Permanent brand backdrop — sits behind every scene so a transition
             crossfade can never reveal the bare stage. (Fixes the gray flash.) */}
@@ -504,13 +506,15 @@ function App() {
         </>); })()}
 
         {/* Captions */}
-        <Caption time={time} show={tweaks.showCaptions}/>
+        <Caption time={time} show={RENDER_MODE ? QS.get('captions') === '1' : tweaks.showCaptions}/>
 
-        {/* Controls */}
-        <PlayPauseToggle isPlaying={isPlaying} onToggle={() => togglePlay()}/>
-        <MuteToggle muted={muted} onToggle={() => setMuted(m => !m)}/>
-        <PlayButton onClick={handlePlay} visible={!isPlaying}/>
-        <Progress time={time} duration={duration} onSeek={handleSeek}/>
+        {/* Controls (hidden in render mode) */}
+        {!RENDER_MODE && (<>
+          <PlayPauseToggle isPlaying={isPlaying} onToggle={() => togglePlay()}/>
+          <MuteToggle muted={muted} onToggle={() => setMuted(m => !m)}/>
+          <PlayButton onClick={handlePlay} visible={!isPlaying}/>
+          <Progress time={time} duration={duration} onSeek={handleSeek}/>
+        </>)}
       </div>
 
       <Tweaks tweaks={tweaks} setTweaks={setTweaks} visible={tweaksOpen}/>
