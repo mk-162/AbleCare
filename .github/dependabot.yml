@@ -1,0 +1,39 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/London
+    open-pull-requests-limit: 5
+    groups:
+      security:
+        applies-to: security-updates
+        patterns: ["*"]
+      # Tina gets its own group, listed before minor-and-patch so it matches
+      # first. A @tinacms/cli bump fails tina-lock-check until someone runs
+      # `npm run tina:lock` and commits the result, which Dependabot cannot
+      # do. Kept separate, that red PR doesn't hold every other update back.
+      tina:
+        patterns: ["tinacms", "@tinacms/*"]
+        update-types: [minor, patch]
+      minor-and-patch:
+        update-types: [minor, patch]
+    ignore:
+      # Framework and CMS majors are planned upgrades, not automatic PRs.
+      - dependency-name: next
+        update-types: ["version-update:semver-major"]
+      - dependency-name: react
+        update-types: ["version-update:semver-major"]
+      - dependency-name: react-dom
+        update-types: ["version-update:semver-major"]
+      - dependency-name: tinacms
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@tinacms/cli"
+        update-types: ["version-update:semver-major"]
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly

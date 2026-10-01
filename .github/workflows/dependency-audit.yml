@@ -1,0 +1,23 @@
+# Fails when a high or critical vulnerability is present in dependencies, so a
+# new advisory shows up within a day instead of piling up in the Security tab.
+name: dependency-audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Reads package-lock.json directly; no install needed. The remaining
+      # findings are moderate and inside TinaCMS with no upstream fix yet.
+      - run: npm audit --audit-level=high
