@@ -39,7 +39,9 @@ export function ArticleThumbnail({
     width: 1200,
     height: 900,
     sizes: THUMBNAIL_SIZES,
-    priority,
+    // `priority` is deprecated in Next 16; the docs recommend these instead.
+    loading: priority ? "eager" : "lazy",
+    fetchPriority: priority ? "high" : undefined,
   });
   return (
     <img
