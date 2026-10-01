@@ -22,18 +22,18 @@ updates:
       minor-and-patch:
         update-types: [minor, patch]
     ignore:
-      # Framework and CMS majors are planned upgrades, not automatic PRs.
-      - dependency-name: next
-        update-types: ["version-update:semver-major"]
-      - dependency-name: react
-        update-types: ["version-update:semver-major"]
-      - dependency-name: react-dom
-        update-types: ["version-update:semver-major"]
-      - dependency-name: tinacms
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "@tinacms/cli"
+      # Majors are planned upgrades, not weekly PRs: they need migration work
+      # and a visual check (e.g. markdown-it 15 changes how bare domains link,
+      # @types/node must follow the Node runtime). Security is still covered:
+      # Dependabot alerts are unaffected, and dependency-audit fails daily on
+      # any high or critical advisory.
+      - dependency-name: "*"
         update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: monthly
+    groups:
+      # One monthly PR for workflow actions instead of one per action.
+      actions:
+        patterns: ["*"]
