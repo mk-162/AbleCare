@@ -1,5 +1,54 @@
 import Link from "next/link";
+import { getImageProps } from "next/image";
 import type { BlogArticle } from "@/lib/blog";
+
+/**
+ * The image column is half the card. At its widest (2xl container, beside the
+ * 320px sidebar) that is about 560px; below md the card stacks to full width.
+ */
+const THUMBNAIL_SIZES = "(min-width: 768px) 560px, 100vw";
+
+/**
+ * Blog card image, resized by the Next image optimiser.
+ *
+ * Editors upload full-resolution photos through Tina (some over 5 MB), and a
+ * raw <img> made every visitor download all of them at full size. This keeps
+ * a plain <img> but gives it an optimised srcset, so the browser fetches a
+ * copy sized to the card, and lazy-loads cards below the fold.
+ *
+ * Not <Image fill>: the cards take their height from the photo's proportions,
+ * and fill would collapse them to the height of the text. width/height are
+ * dropped from the props for the same reason: they are placeholders here, and
+ * as attributes they would impose that aspect ratio instead of the photo's.
+ */
+export function ArticleThumbnail({
+  src,
+  alt,
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  /** For the first, above-the-fold card: load eagerly at high priority. */
+  priority?: boolean;
+}) {
+  const {
+    props: { width: _width, height: _height, ...img },
+  } = getImageProps({
+    src,
+    alt,
+    width: 1200,
+    height: 900,
+    sizes: THUMBNAIL_SIZES,
+    priority,
+  });
+  return (
+    <img
+      {...img}
+      alt={alt}
+      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+    />
+  );
+}
 
 /**
  * Horizontal blog card — image on the left, title + teaser on the right.
@@ -14,11 +63,7 @@ export function ArticleCard({ article }: { article: BlogArticle }) {
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 h-56 md:h-auto relative overflow-hidden">
             {article.image ? (
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+              <ArticleThumbnail src={article.image} alt={article.title} />
             ) : (
               <div className="w-full h-full min-h-[224px] bg-gradient-to-br from-ac-blue/10 to-ac-aqua/10" />
             )}

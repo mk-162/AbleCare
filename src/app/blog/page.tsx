@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { BlogSidebar } from "@/components/blocks/BlogSidebar";
-import { ArticleCard } from "@/components/blocks/ArticleCard";
+import { ArticleCard, ArticleThumbnail } from "@/components/blocks/ArticleCard";
 import { SearchBox } from "@/components/search/SearchBox";
 import { getArticles, getCategories, slugifyCategory } from "@/lib/blog";
 import { getSearchDocs } from "@/lib/search-index";
@@ -111,10 +111,10 @@ export default async function BlogIndexPage({
                     <div className="flex flex-col md:flex-row">
                       <div className="w-full md:w-1/2 h-64 md:h-auto relative overflow-hidden">
                         {featured.image ? (
-                          <img
+                          <ArticleThumbnail
                             src={featured.image}
                             alt={featured.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            priority
                           />
                         ) : (
                           <div className="w-full h-full min-h-[280px] bg-gradient-to-br from-ac-blue to-ac-aqua" />
