@@ -1,71 +1,69 @@
 import Link from "next/link";
-import { getImageProps } from "next/image";
+import Image from "next/image";
 import type { BlogArticle } from "@/lib/blog";
 
 /**
- * The image column is half the card. At its widest (2xl container, beside the
- * 320px sidebar) that is about 560px; below md the card stacks to full width.
+ * The width of the card's image column at each breakpoint, so the browser
+ * picks the smallest variant that covers it. The column is half the card;
+ * below lg the card is full width, from lg it shares the row with the 320px
+ * sidebar and a 48px gap, inside the container's 24px side padding.
  */
-const THUMBNAIL_SIZES = "(min-width: 768px) 560px, 100vw";
+const THUMBNAIL_SIZES =
+  "(min-width: 1536px) 560px, (min-width: 1280px) 432px, (min-width: 1024px) 304px, (min-width: 768px) 360px, 100vw";
 
 /**
  * Blog card image, resized by the Next image optimiser.
  *
  * Editors upload full-resolution photos through Tina (some over 5 MB), and a
- * raw <img> made every visitor download all of them at full size. This keeps
- * a plain <img> but gives it an optimised srcset, so the browser fetches a
- * copy sized to the card, and lazy-loads cards below the fold.
+ * raw <img> made every visitor download all of them at full size. This sends
+ * a copy sized to the card instead, and lazy-loads cards below the fold.
  *
- * Not <Image fill>: the cards take their height from the photo's proportions,
- * and fill would collapse them to the height of the text. width/height are
- * dropped from the props for the same reason: they are placeholders here, and
- * as attributes they would impose that aspect ratio instead of the photo's.
+ * width/height are not the photo's real size. They only reserve a 4:3 box
+ * until the image arrives, which stops cards jumping as lazy images load;
+ * once loaded, the photo's own proportions set the card height, as before.
  */
 export function ArticleThumbnail({
   src,
   alt,
-  priority = false,
+  eager = false,
 }: {
   src: string;
   alt: string;
-  /** For the first, above-the-fold card: load eagerly at high priority. */
-  priority?: boolean;
+  /** Above-the-fold card: load straight away, at high priority. */
+  eager?: boolean;
 }) {
-  const {
-    props: { width: _width, height: _height, ...img },
-  } = getImageProps({
-    src,
-    alt,
-    width: 1200,
-    height: 900,
-    sizes: THUMBNAIL_SIZES,
-    // `priority` is deprecated in Next 16; the docs recommend these instead.
-    loading: priority ? "eager" : "lazy",
-    fetchPriority: priority ? "high" : undefined,
-  });
   return (
-    <img
-      {...img}
+    <Image
+      src={src}
       alt={alt}
+      width={1200}
+      height={900}
+      sizes={THUMBNAIL_SIZES}
+      loading={eager ? "eager" : "lazy"}
+      fetchPriority={eager ? "high" : undefined}
+      // Tina stores local /images/... paths; anything else is served as-is
+      // rather than failing the optimiser's remote-host allowlist.
+      unoptimized={!src.startsWith("/")}
       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
     />
   );
 }
 
-/**
- * Horizontal blog card — image on the left, title + teaser on the right.
- * Mirrors the featured hero card on the blog index so every article card
- * shares the same two-column format. The wide image column lets rectangular
- * source images sit in a natural rectangle instead of a cropped letterbox.
- */
-export function ArticleCard({ article }: { article: BlogArticle }) {
+export function ArticleCard({
+  article,
+  eager = false,
+}: {
+  article: BlogArticle;
+  /** Pass for the first card on a page, which is likely the largest image in view. */
+  eager?: boolean;
+}) {
   return (
     <Link href={`/blog/${article.slug}`} className="block group">
       <article className="bg-white rounded-2xl overflow-hidden border border-black/5 shadow-sm hover:shadow-lg hover:border-ac-blue/20 transition-all duration-300">
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 h-56 md:h-auto relative overflow-hidden">
             {article.image ? (
-              <ArticleThumbnail src={article.image} alt={article.title} />
+              <ArticleThumbnail src={article.image} alt={article.title} eager={eager} />
             ) : (
               <div className="w-full h-full min-h-[224px] bg-gradient-to-br from-ac-blue/10 to-ac-aqua/10" />
             )}

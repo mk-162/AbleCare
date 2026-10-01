@@ -99,8 +99,8 @@ export default async function CategoryPage({
               <p className="text-ac-black/60">No articles in this category yet.</p>
             ) : (
               <div className="flex flex-col gap-8">
-                {articles.map((article) => (
-                  <ArticleCard key={article.slug} article={article} />
+                {articles.map((article, i) => (
+                  <ArticleCard key={article.slug} article={article} eager={i === 0} />
                 ))}
               </div>
             )}

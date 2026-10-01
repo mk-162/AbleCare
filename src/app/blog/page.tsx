@@ -114,7 +114,7 @@ export default async function BlogIndexPage({
                           <ArticleThumbnail
                             src={featured.image}
                             alt={featured.title}
-                            priority
+                            eager
                           />
                         ) : (
                           <div className="w-full h-full min-h-[280px] bg-gradient-to-br from-ac-blue to-ac-aqua" />
