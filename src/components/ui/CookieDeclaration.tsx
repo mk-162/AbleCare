@@ -24,5 +24,5 @@ export function CookieDeclaration() {
     };
   }, []);
 
-  return <div ref={containerRef} />;
+  return <div ref={containerRef} className="cookiebot-declaration" />;
 }
