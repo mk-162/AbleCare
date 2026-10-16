@@ -18,6 +18,18 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 20
-      # Reads package-lock.json directly; no install needed. The remaining
-      # findings are moderate and inside TinaCMS with no upstream fix yet.
-      - run: npm audit --audit-level=high
+      # Reads package-lock.json directly; no install needed. audit-ci instead
+      # of plain `npm audit` so advisories that have NO patched release can be
+      # allowlisted explicitly without muting the gate for new advisories.
+      # Allowlisted (re-check for upstream fixes when touching dependencies):
+      #   GHSA-vfj7-8cjw-p6xm  braces DoS — no patched release of braces
+      #     exists; pulled in via @tinacms/cli > chokidar@3/micromatch.
+      #   GHSA-7mx3-vvmw-hjmv  @graphql-tools/utils mergeDeep prototype
+      #     pollution — every @graphql-tools/graphql-file-loader release
+      #     depends on a vulnerable version; needs a TinaCMS upstream fix.
+      #     (Overriding utils to >=12.1 breaks @tinacms/graphql, which imports
+      #     the removed AggregateError export.)
+      # Both are build-time-only code paths (Tina CLI), not shipped to visitors.
+      - run: >-
+          npx --yes audit-ci@^7 --high
+          --allowlist GHSA-vfj7-8cjw-p6xm GHSA-7mx3-vvmw-hjmv
