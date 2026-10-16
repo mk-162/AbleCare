@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { fetchPage, fetchMarkdownPage, extractPageData } from "@/lib/tina-client";
 import { EditorialPageClient } from "@/components/blocks/EditorialPageClient";
+import { CookieDeclaration } from "@/components/ui/CookieDeclaration";
 import { notFound } from "next/navigation";
 
 export const revalidate = 60;
@@ -72,7 +73,18 @@ export default async function SlugPage({
   const fetcher = mapping.collection === "utility" ? fetchMarkdownPage : fetchPage;
   const { query, variables, data } = await fetcher(mapping.collection, mapping.filename);
 
-  return <EditorialPageClient query={query} variables={variables} data={data} />;
+  return (
+    <>
+      <EditorialPageClient query={query} variables={variables} data={data} />
+      {slug === "cookies" && (
+        <section className="pb-20 -mt-8">
+          <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+            <CookieDeclaration />
+          </div>
+        </section>
+      )}
+    </>
+  );
 }
 
 export async function generateStaticParams() {

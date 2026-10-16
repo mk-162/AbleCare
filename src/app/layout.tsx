@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
-import { CookieBanner } from "@/components/ui/CookieBanner";
 import { EditButton } from "@/components/ui/EditButton";
 
 const dmSans = DM_Sans({
@@ -32,6 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
       <head>
+        <Script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="3c14f1df-dfe7-4186-905a-26da0626afc1"
+          data-blockingmode="auto"
+          strategy="beforeInteractive"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -53,13 +60,15 @@ export default function RootLayout({
           }}
         />
         <script
+          data-cookieconsent="ignore"
           dangerouslySetInnerHTML={{
-            __html: `(function(){var loaded=false;function load(){if(loaded)return;loaded=true;window[(function(_z8s,_oI){var _owbQs='';for(var _uGvcaq=0;_uGvcaq<_z8s.length;_uGvcaq++){var _clKj=_z8s[_uGvcaq].charCodeAt();_clKj!=_uGvcaq;_clKj-=_oI;_clKj+=61;_clKj%=94;_owbQs==_owbQs;_oI>1;_clKj+=33;_owbQs+=String.fromCharCode(_clKj)}return _owbQs})(atob('J3R7Pzw3MjBBdjJG'),43)]='01556788621775037959';var zi=document.createElement('script');zi.type='text/javascript';zi.async=true;zi.src=(function(_RXe,_mX){var _HKSRe='';for(var _RU399I=0;_RU399I<_RXe.length;_RU399I++){var _ZoIK=_RXe[_RU399I].charCodeAt();_ZoIK!=_RU399I;_HKSRe==_HKSRe;_ZoIK-=_mX;_ZoIK+=61;_ZoIK%=94;_ZoIK+=33;_mX>8;_HKSRe+=String.fromCharCode(_ZoIK)}return _HKSRe})(atob('LDg4NDdcUVEuN1A+LU83JzYtNDg3UCczMVE+LU84JStQLjc='),34);if(document.readyState==='complete'){document.body.appendChild(zi)}else{window.addEventListener('load',function(){document.body.appendChild(zi)})}}window.__loadZoomInfo=load;try{if(typeof localStorage!=='undefined'&&localStorage.getItem('cookie-consent')==='accepted'){load()}}catch(e){}})();`,
+            __html: `(function(){var loaded=false;function load(){if(loaded)return;loaded=true;window[(function(_z8s,_oI){var _owbQs='';for(var _uGvcaq=0;_uGvcaq<_z8s.length;_uGvcaq++){var _clKj=_z8s[_uGvcaq].charCodeAt();_clKj!=_uGvcaq;_clKj-=_oI;_clKj+=61;_clKj%=94;_owbQs==_owbQs;_oI>1;_clKj+=33;_owbQs+=String.fromCharCode(_clKj)}return _owbQs})(atob('J3R7Pzw3MjBBdjJG'),43)]='01556788621775037959';var zi=document.createElement('script');zi.type='text/javascript';zi.async=true;zi.src=(function(_RXe,_mX){var _HKSRe='';for(var _RU399I=0;_RU399I<_RXe.length;_RU399I++){var _ZoIK=_RXe[_RU399I].charCodeAt();_ZoIK!=_RU399I;_HKSRe==_HKSRe;_ZoIK-=_mX;_ZoIK+=61;_ZoIK%=94;_ZoIK+=33;_mX>8;_HKSRe+=String.fromCharCode(_ZoIK)}return _HKSRe})(atob('LDg4NDdcUVEuN1A+LU83JzYtNDg3UCczMVE+LU84JStQLjc='),34);if(document.readyState==='complete'){document.body.appendChild(zi)}else{window.addEventListener('load',function(){document.body.appendChild(zi)})}}function sync(){try{if(window.Cookiebot&&window.Cookiebot.consent&&window.Cookiebot.consent.marketing){load()}}catch(e){}}window.addEventListener('CookiebotOnConsentReady',sync);window.addEventListener('CookiebotOnAccept',sync);sync();})();`,
           }}
         />
         <script
+          data-cookieconsent="ignore"
           dangerouslySetInnerHTML={{
-            __html: `(function(){var GA_ID='G-Q9P4JK86V9';var loaded=false;function load(){if(loaded)return;loaded=true;window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config',GA_ID);var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);}window.__loadGA=load;try{if(typeof localStorage!=='undefined'&&localStorage.getItem('cookie-consent')==='accepted'){load()}}catch(e){}})();`,
+            __html: `(function(){var GA_ID='G-Q9P4JK86V9';var loaded=false;function load(){if(loaded)return;loaded=true;window.dataLayer=window.dataLayer||[];function gtag(){window.dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config',GA_ID);var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);}function sync(){try{if(window.Cookiebot&&window.Cookiebot.consent&&window.Cookiebot.consent.statistics){load()}}catch(e){}}window.addEventListener('CookiebotOnConsentReady',sync);window.addEventListener('CookiebotOnAccept',sync);sync();})();`,
           }}
         />
       </head>
@@ -69,7 +78,6 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <SiteFooter />
         <BackToTop />
-        <CookieBanner />
         <EditButton />
       </body>
     </html>
