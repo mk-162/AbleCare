@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 22
       # Reads package-lock.json directly; no install needed. audit-ci instead
       # of plain `npm audit` so advisories that have NO patched release can be
       # allowlisted explicitly without muting the gate for new advisories.
