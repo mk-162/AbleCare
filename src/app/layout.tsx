@@ -32,18 +32,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
       <head>
-        {/* data-widget-* lifts the floating consent widget clear of the
-            BackToTop button (fixed bottom-6 left-6, 48px tall) and aligns it
-            to the same left edge. The widget script reads these attributes
-            off this tag and bakes them into its own injected stylesheet. */}
+        {/* The floating consent widget is repositioned above the BackToTop
+            button in globals.css. Don't use the documented data-widget-distance-*
+            attributes here: Cookiebot's validator rejects any attribute value
+            (parseInt(str) === str is always false), logs a console warning and
+            falls back to the admin-configured position. */}
         <Script
           id="Cookiebot"
           src="https://consent.cookiebot.com/uc.js"
           data-cbid="3c14f1df-dfe7-4186-905a-26da0626afc1"
           data-blockingmode="auto"
-          data-widget-position="bottom-left"
-          data-widget-distance-vertical="88"
-          data-widget-distance-horizontal="24"
           strategy="beforeInteractive"
         />
         <script
