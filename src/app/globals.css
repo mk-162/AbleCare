@@ -243,7 +243,17 @@ a {
   background-color: var(--color-ac-blue) !important;
 }
 
-/* Floating "change consent" widget */
+/* Floating "change consent" widget. Lifted clear of the BackToTop button
+   (fixed bottom-6 left-6, 48px tall) and aligned to its left edge. !important
+   is required: the widget injects its own stylesheet into <body> after ours.
+   That stylesheet never uses !important or inline styles, so this wins. The
+   data-widget-distance-* script attributes are NOT an alternative — Cookiebot's
+   validator rejects every attribute value (parseInt(str) === str). */
+#CookiebotWidget {
+  bottom: 88px !important;
+  left: 24px !important;
+}
+
 #CookiebotWidget .CookiebotWidget-show-consent-details,
 #CookiebotWidget .CookiebotWidget-consent-details a {
   color: var(--color-ac-blue) !important;

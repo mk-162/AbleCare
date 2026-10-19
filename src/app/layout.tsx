@@ -32,6 +32,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
       <head>
+        {/* The floating consent widget is repositioned above the BackToTop
+            button in globals.css. Don't use the documented data-widget-distance-*
+            attributes here: Cookiebot's validator rejects any attribute value
+            (parseInt(str) === str is always false), logs a console warning and
+            falls back to the admin-configured position. */}
         <Script
           id="Cookiebot"
           src="https://consent.cookiebot.com/uc.js"
