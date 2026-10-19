@@ -175,3 +175,141 @@ a {
 .animate-slide-up {
   animation: slide-up 0.4s ease-out;
 }
+
+/* ─── Cookiebot Branding ──────────────────────────────────────────────────── */
+/* Cookiebot injects its own stylesheet after ours, so brand overrides on its
+   banner (#CybotCookiebotDialog), floating widget (#CookiebotWidget) and
+   cookie declaration (cd.js, scoped under .cookiebot-declaration on the
+   /cookies page) need !important to win. */
+
+#CybotCookiebotDialog,
+#CybotCookiebotDialog *,
+#CookiebotWidget,
+#CookiebotWidget * {
+  font-family: var(--font-sans) !important;
+}
+
+#CybotCookiebotDialog {
+  border-radius: 1rem !important;
+  color: var(--color-ac-black) !important;
+}
+
+#CybotCookiebotDialog a {
+  color: var(--color-ac-blue) !important;
+}
+
+/* Tabs ("Consent" / "Details" / "About") */
+#CybotCookiebotDialog .CybotCookiebotDialogNavItemLink.CybotCookiebotDialogActive {
+  color: var(--color-ac-blue) !important;
+  border-bottom-color: var(--color-ac-blue) !important;
+}
+
+/* All banner buttons: brand pill shape */
+#CybotCookiebotDialog .CybotCookiebotDialogBodyButton {
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+}
+
+/* Primary actions: solid brand blue */
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll,
+#CybotCookiebotDialogBodyButtonAccept {
+  background-color: var(--color-ac-blue) !important;
+  border-color: var(--color-ac-blue) !important;
+  color: var(--color-ac-white) !important;
+}
+
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll:hover,
+#CybotCookiebotDialogBodyButtonAccept:hover {
+  opacity: 0.9;
+}
+
+/* Secondary actions: quiet grey outline, matching the old site banner */
+#CybotCookiebotDialogBodyButtonDecline,
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection,
+#CybotCookiebotDialogBodyLevelButtonCustomize {
+  background-color: var(--color-ac-white) !important;
+  border-color: var(--color-ac-grey) !important;
+  color: var(--color-ac-black) !important;
+}
+
+#CybotCookiebotDialogBodyButtonDecline:hover,
+#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection:hover,
+#CybotCookiebotDialogBodyLevelButtonCustomize:hover {
+  background-color: rgba(220, 220, 220, 0.5) !important;
+}
+
+/* Category on/off toggles */
+#CybotCookiebotDialog input:checked + .CybotCookiebotDialogBodyLevelButtonSlider {
+  background-color: var(--color-ac-blue) !important;
+}
+
+/* Floating "change consent" widget */
+#CookiebotWidget .CookiebotWidget-show-consent-details,
+#CookiebotWidget .CookiebotWidget-consent-details a {
+  color: var(--color-ac-blue) !important;
+}
+
+#CookiebotWidget #CookiebotWidget-btn-change {
+  background-color: var(--color-ac-blue) !important;
+  border-color: var(--color-ac-blue) !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+}
+
+/* Cookie declaration on /cookies — align with .article-prose typography */
+.cookiebot-declaration,
+.cookiebot-declaration * {
+  font-family: var(--font-sans) !important;
+}
+
+.cookiebot-declaration p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+  color: rgba(25, 25, 25, 0.8);
+}
+
+.cookiebot-declaration a {
+  color: #191919 !important;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(25, 25, 25, 0.3) !important;
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.cookiebot-declaration a:hover {
+  color: #1432FF !important;
+  text-decoration-color: #1432FF !important;
+}
+
+.cookiebot-declaration .CookieDeclarationType {
+  border: 1px solid var(--color-ac-grey) !important;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.25rem 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.cookiebot-declaration .CookieDeclarationTypeHeader {
+  font-weight: 700;
+  color: var(--color-ac-black);
+}
+
+.cookiebot-declaration .CookieDeclarationTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.cookiebot-declaration .CookieDeclarationTableHeader {
+  text-align: left;
+  font-weight: 700;
+  color: var(--color-ac-black);
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-bottom: 2px solid var(--color-ac-grey) !important;
+}
+
+.cookiebot-declaration .CookieDeclarationTableCell {
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  color: rgba(25, 25, 25, 0.8);
+  border-bottom: 1px solid rgba(220, 220, 220, 0.6) !important;
+  vertical-align: top;
+}
