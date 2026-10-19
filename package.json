@@ -2,6 +2,9 @@
   "name": "ablecare-site",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "tinacms dev -c \"next dev --port 3001\"",
     "build": "tinacms build --skip-cloud-checks && next build",
@@ -18,7 +21,7 @@
     "@radix-ui/react-navigation-menu": "^1.2.14",
     "@radix-ui/react-slot": "^1.2.4",
     "@tailwindcss/typography": "^0.5.19",
-    "@tinacms/cli": "^2.7.0",
+    "@tinacms/cli": "^4.0.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
@@ -31,7 +34,7 @@
     "react-dom": "19.2.4",
     "resend": "^6.12.2",
     "tailwind-merge": "^3.5.0",
-    "tinacms": "^3.14.2"
+    "tinacms": "^3.14.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -42,5 +45,9 @@
     "babel-plugin-react-compiler": "1.0.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "katex": "^0.19.0",
+    "postcss-selector-parser": "^7.1.6"
   }
 }

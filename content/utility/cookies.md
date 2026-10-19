@@ -3,7 +3,7 @@ title: Cookie Policy
 description: How Able Care uses cookies on our website.
 ---
 
-**Last updated: April 2026**
+**Last updated: October 2026**
 
 This Cookie Policy explains how GripAble Ltd uses cookies and similar tracking technologies on our website.
 
@@ -31,11 +31,13 @@ With your consent, we use ZoomInfo WebSights - a B2B visitor identification serv
 
 ZoomInfo collects information including your IP address, the pages you view, the time and duration of your visit, referring URLs, your browser and device characteristics, and inferred organizational affiliation. We use this information for marketing analytics, to prioritize sales outreach, and to improve the relevance of the content we provide.
 
-These cookies are loaded only after you click **Accept** on our cookie banner. If you click **Reject**, ZoomInfo is not loaded on this site. You can also opt out of ZoomInfo's processing of your information directly at [https://www.zoominfo.com/about/privacy](https://www.zoominfo.com/about/privacy) and through the data subject request form at [https://www.zoominfo.com/about/privacy/privacy-do-not-sell-form](https://www.zoominfo.com/about/privacy/privacy-do-not-sell-form).
+These cookies are loaded only if you consent to **marketing** cookies in our cookie banner. If you decline, ZoomInfo is not loaded on this site. You can also opt out of ZoomInfo's processing of your information directly at [https://www.zoominfo.com/about/privacy](https://www.zoominfo.com/about/privacy) and through the data subject request form at [https://www.zoominfo.com/about/privacy/privacy-do-not-sell-form](https://www.zoominfo.com/about/privacy/privacy-do-not-sell-form).
 
 ## Managing Cookies
 
-You can control cookies through your browser settings. Most browsers allow you to:
+We use Cookiebot, a consent management platform, to collect and store your cookie preferences. You can change or withdraw your consent at any time using the cookie declaration below.
+
+You can also control cookies through your browser settings. Most browsers allow you to:
 
 - View what cookies are stored and delete them individually
 - Block third-party cookies
@@ -47,3 +49,7 @@ Please note that blocking essential cookies may affect the functionality of our 
 ## Contact
 
 For questions about our use of cookies, contact us at privacy@able-care.co.
+
+## Cookie Declaration
+
+The declaration below is generated automatically by Cookiebot and lists every cookie and tracker in use on this site, including its provider, purpose and expiry. It also lets you review, change or withdraw your consent at any time.
