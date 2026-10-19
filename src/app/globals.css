@@ -243,7 +243,13 @@ a {
   background-color: var(--color-ac-blue) !important;
 }
 
-/* Floating "change consent" widget */
+/* Floating "change consent" widget. Lifted clear of the BackToTop button,
+   which docks at the same bottom-left corner (fixed bottom-6 left-6, 48px
+   tall) once the page is scrolled. */
+#CookiebotWidget {
+  bottom: 88px !important;
+}
+
 #CookiebotWidget .CookiebotWidget-show-consent-details,
 #CookiebotWidget .CookiebotWidget-consent-details a {
   color: var(--color-ac-blue) !important;
