@@ -243,13 +243,10 @@ a {
   background-color: var(--color-ac-blue) !important;
 }
 
-/* Floating "change consent" widget. Lifted clear of the BackToTop button,
-   which docks at the same bottom-left corner (fixed bottom-6 left-6, 48px
-   tall) once the page is scrolled. */
-#CookiebotWidget {
-  bottom: 88px !important;
-}
-
+/* Floating "change consent" widget. Positioned above the BackToTop button
+   via data-widget-* attributes on the Cookiebot script tag in layout.tsx —
+   the widget bakes those into its own stylesheet, so CSS overrides on
+   #CookiebotWidget's position don't stick. */
 #CookiebotWidget .CookiebotWidget-show-consent-details,
 #CookiebotWidget .CookiebotWidget-consent-details a {
   color: var(--color-ac-blue) !important;
