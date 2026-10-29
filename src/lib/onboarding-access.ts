@@ -1,10 +1,13 @@
 // Password gate for the onboarding dashboard demo. The gate is only active when
-// ONBOARDING_DEMO_PASSWORD is set, which happens only on the demo branch's
-// Vercel preview. Without it, the /onboarding routes are not served at all.
+// ONBOARDING_DEMO_PASSWORD is set on a non-production deployment. Without it,
+// the /onboarding routes are not served at all.
 
 export const DEMO_ACCESS_COOKIE = "ac_demo_access";
 
 export function demoPassword(): string | undefined {
+  // Never on production: the demo must not reach the live site, even if this
+  // branch is merged or the variable is also set for Production in Vercel.
+  if (process.env.VERCEL_ENV === "production") return undefined;
   return process.env.ONBOARDING_DEMO_PASSWORD?.trim() || undefined;
 }
 
