@@ -30,8 +30,8 @@ export default function DashboardHome() {
       title: "Your delivery",
       text:
         data.delivery === "delivered"
-          ? `Your ${order.kits} GripAble kits have arrived. Finish the get-ready checklist (${cards.checksDone} of ${checklist.length} done).`
-          : `${order.kits} GripAble kits are on the way with ${order.carrier}. Get ready while you wait: ${cards.checksDone} of ${checklist.length} done.`,
+          ? `Your ${order.kits} GripAble kits have arrived. Check the bags and charge your GripAbles (${cards.checksDone} of ${checklist.length} done).`
+          : `${order.kits} GripAble kits are on the way with ${order.carrier}. Get ready while you wait: ${cards.beforeDone} of ${cards.beforeTotal} done.`,
       state: cards.delivery,
       cta: data.delivery === "delivered" ? "Open checklist" : "Track your order",
     },

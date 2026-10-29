@@ -77,8 +77,7 @@ export default function TrainingPage() {
         <Panel className="h-fit">
           <h2 className="mb-2 text-lg font-bold">Share with your team</h2>
           <p className="mb-4 text-sm text-ac-black/60">
-            Send this link to every staff member who will run screenings. They don&apos;t need to log in to watch, and you
-            can see who has finished.
+            Send this link to every staff member who will run screenings. They don&apos;t need to log in to watch.
           </p>
           <div className="mb-3 truncate rounded-xl bg-ac-grey/40 px-4 py-3 font-mono text-xs">{teamLink}</div>
           <button

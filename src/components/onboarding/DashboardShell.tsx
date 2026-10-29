@@ -62,6 +62,8 @@ function DemoBar() {
 }
 
 function Header() {
+  // The Champion only has a Portal login once we've created their account.
+  const { data } = useOnboarding();
   return (
     <header className="border-b border-black/5 bg-white">
       <div className="container mx-auto flex items-center justify-between gap-4 px-4 py-4 md:px-6">
@@ -74,14 +76,16 @@ function Header() {
           </span>
         </div>
         <div className="flex items-center gap-3">
-          <a
-            href={PORTAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden items-center gap-1.5 text-sm font-semibold text-ac-black/70 hover:text-ac-blue sm:inline-flex"
-          >
-            Able Portal <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-          </a>
+          {data.setup === "ready" && (
+            <a
+              href={PORTAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden items-center gap-1.5 text-sm font-semibold text-ac-black/70 hover:text-ac-blue sm:inline-flex"
+            >
+              Able Portal <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+          )}
           <span
             className="flex h-9 w-9 items-center justify-center rounded-full bg-ac-aqua text-sm font-bold text-ac-black"
             title={customer.fullName}

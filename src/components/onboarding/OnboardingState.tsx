@@ -18,8 +18,9 @@ export interface OnboardingData {
   checkIns: number;
 }
 
-const STORAGE_KEY = "ac-onboarding-demo-v1";
+const STORAGE_KEY = "ac-onboarding-demo-v2";
 const allChecks = checklist.map((c) => c.id);
+const beforeChecks = checklist.filter((c) => c.when === "before").map((c) => c.id);
 const allModules = trainingModules.map((m) => m.slug);
 const demoChampion = { name: "Dana Whitfield", email: "dana.whitfield@maplegrovehomecare.com" };
 const demoBooking = { day: "Tue, Nov 10", time: "11:00 AM" };
@@ -28,7 +29,7 @@ const presets: Record<StageKey, Omit<OnboardingData, "tier">> = {
   ordered: { delivery: "in_transit", checked: [], setup: "todo", session: "upcoming", training: [], checkIns: 0 },
   delivered: {
     delivery: "delivered",
-    checked: ["charge", "install", "security"],
+    checked: ["install", "security", "whitelist"],
     setup: "submitted",
     champion: demoChampion,
     session: "upcoming",
@@ -130,14 +131,16 @@ export interface CardState {
 export function useCardStates() {
   const { data } = useOnboarding();
   const checksDone = data.checked.filter((id) => allChecks.includes(id)).length;
+  const beforeDone = data.checked.filter((id) => beforeChecks.includes(id)).length;
   const modulesDone = data.training.filter((s) => allModules.includes(s)).length;
+  const inTransit = data.delivery === "in_transit";
 
   const delivery: CardState =
-    data.delivery === "delivered" && checksDone === allChecks.length
+    !inTransit && checksDone === allChecks.length
       ? { status: "done", label: "Delivered and ready" }
-      : data.delivery === "delivered"
-        ? { status: "progress", label: `Delivered · ${checksDone} of ${allChecks.length} ready` }
-        : { status: "progress", label: "In transit" };
+      : !inTransit
+        ? { status: "progress", label: `Delivered · ${checksDone} of ${allChecks.length} done` }
+        : { status: "progress", label: `In transit · ${beforeDone} of ${beforeChecks.length} ready` };
 
   const setup: CardState =
     data.setup === "ready"
@@ -174,8 +177,13 @@ export function useCardStates() {
     next = { card: "setup", text: "Tell us who will lead Able Assess at your organization, so we can create their account." };
   } else if (!data.booking) {
     next = { card: "book", text: "Book your 45-minute onboarding session. Pick a time that suits your team." };
-  } else if (checksDone < allChecks.length) {
-    next = { card: "delivery", text: "Finish the get-ready checklist before your session, so we can spend the time on screening." };
+  } else if (inTransit ? beforeDone < beforeChecks.length : checksDone < allChecks.length) {
+    next = {
+      card: "delivery",
+      text: inTransit
+        ? "Get ready while your kit is on its way: install the app and ask IT to allow our login emails."
+        : "Your kit has arrived. Check the bag and charge the GripAble before your session.",
+    };
   } else if (data.session !== "done") {
     next = { card: "training", text: "Get a head start: work through the short training modules with your team." };
   } else if (data.checkIns < 2) {
@@ -186,5 +194,18 @@ export function useCardStates() {
     next = { card: "none", text: "You're all set. Your Sales Manager is your contact from here." };
   }
 
-  return { delivery, setup, book, training, after, completed, total: 5, next, checksDone, modulesDone };
+  return {
+    delivery,
+    setup,
+    book,
+    training,
+    after,
+    completed,
+    total: 5,
+    next,
+    checksDone,
+    beforeDone,
+    beforeTotal: beforeChecks.length,
+    modulesDone,
+  };
 }

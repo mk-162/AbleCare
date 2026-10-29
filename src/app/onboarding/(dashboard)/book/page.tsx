@@ -69,8 +69,10 @@ export default function BookPage() {
               {data.booking.day} at {data.booking.time} ET
             </p>
             <p className="mt-2 font-light text-ac-black/70">
-              We&apos;ve sent a calendar invite to you and the people you named. A recording of the session will appear on
-              your dashboard afterwards.
+              {data.setup === "todo"
+                ? "We've sent you a calendar invite. Anyone you name in step 2 will be invited too."
+                : "We've sent a calendar invite to you and the people you named in step 2."}{" "}
+              A recording of the session will appear on your dashboard afterwards.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <button type="button" className={primaryButton}>
@@ -83,12 +85,15 @@ export default function BookPage() {
             <div className="mt-8 rounded-xl bg-ac-grey/40 p-5">
               <h3 className="mb-2 font-bold">Before your session</h3>
               <p className="text-sm text-ac-black/70">
-                Make sure the GripAble is charged, the app is installed and your staff have been added. It&apos;s all on
-                your{" "}
+                Install the app and charge the GripAble (your{" "}
                 <Link href="/onboarding/delivery" className="font-semibold text-ac-blue underline underline-offset-2">
                   get-ready checklist
                 </Link>
-                .
+                ), and add your staff in the Able Portal once your account is ready (
+                <Link href="/onboarding/setup" className="font-semibold text-ac-blue underline underline-offset-2">
+                  step 2
+                </Link>
+                ).
               </p>
             </div>
           </Panel>

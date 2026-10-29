@@ -64,6 +64,8 @@ export const sessionSlots = [
 
 export interface ChecklistItem {
   id: string;
+  // "before": can be done while the kit is in transit. "arrival": needs the kit.
+  when: "before" | "arrival";
   title: string;
   detail: string;
   link?: { label: string; href: string };
@@ -71,33 +73,45 @@ export interface ChecklistItem {
 
 export const checklist: ChecklistItem[] = [
   {
-    id: "charge",
-    title: "Charge the GripAble",
-    detail: "A full charge takes about 1.5 hours. The light turns solid green when it's full.",
-    link: { label: "Battery FAQs", href: `${FAQ_BASE}charging-time` },
-  },
-  {
     id: "install",
+    when: "before",
     title: "Install Able Assess",
     detail: "On each phone or tablet your team will use, from the App Store or Google Play.",
     link: { label: "App Store", href: APP_STORE_URL },
   },
   {
     id: "security",
+    when: "before",
     title: "Turn on a PIN, fingerprint or face unlock",
     detail: "On each device, so staff don't need an email login code every time.",
     link: { label: "Why this matters", href: `${FAQ_BASE}mobile-security` },
   },
   {
     id: "whitelist",
+    when: "before",
     title: "Ask IT to allow our login emails",
     detail: "Whitelist the domain able-care.io and the sender noreply@able-care.io, so login codes arrive.",
     link: { label: "Text to send IT", href: `${FAQ_BASE}otp-not-received` },
   },
   {
     id: "space",
+    when: "before",
     title: "Find a chair and a walkway",
     detail: "A sturdy chair without arms, and a clear 20 ft (6 m) walkway if you have the space.",
+  },
+  {
+    id: "bag",
+    when: "arrival",
+    title: "Check everything is in the bag",
+    detail:
+      "GripAble sensor, waist bag, wrist lanyard, silicone straps, magnetic charging cable, plug, Getting Started flyer and tape measure.",
+  },
+  {
+    id: "charge",
+    when: "arrival",
+    title: "Charge the GripAble",
+    detail: "A full charge takes about 1.5 hours. The light turns solid green when it's full.",
+    link: { label: "Battery FAQs", href: `${FAQ_BASE}charging-time` },
   },
 ];
 

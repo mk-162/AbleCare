@@ -107,7 +107,7 @@ function SetupForm() {
 
       <Panel className="h-fit bg-ac-grey/30">
         <h2 className="mb-1 text-lg font-bold">Agreed in your order</h2>
-        <p className="mb-4 text-sm text-ac-black/60">We&apos;ll set these up for you. Reply in Help if anything looks wrong.</p>
+        <p className="mb-4 text-sm text-ac-black/60">We&apos;ll set these up for you. Let us know through Help if anything looks wrong.</p>
         <dl className="space-y-3 text-sm">
           {order.settings.map((s) => (
             <div key={s.label}>
@@ -172,7 +172,7 @@ export default function SetupPage() {
                 "Log in to the Able Portal with your admin email.",
                 "Add your Facilities (optional), one per branch or group.",
                 "Add each staff member as a Provider, using their work email.",
-                'Ask your staff to tap Sign in in the app, not "Create new account".',
+                'Ask your staff to install the app and tap "Sign in", not "Create new account".',
               ].map((step, i) => (
                 <li key={step} className="flex gap-3">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ac-blue text-sm font-bold text-white">
