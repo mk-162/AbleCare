@@ -115,8 +115,19 @@ export const checklist: ChecklistItem[] = [
   },
 ];
 
+export type TrainingSection = "setup" | "tests" | "care";
+
+export const trainingSections: { key: TrainingSection; title: string; description: string }[] = [
+  { key: "setup", title: "Getting set up", description: "The app, your GripAble and your first client." },
+  { key: "tests", title: "Running the tests", description: "Each test step by step, then a full Falls Screening." },
+  { key: "care", title: "Looking after your GripAble", description: "Battery, turning off and settings." },
+];
+
 export interface TrainingModule {
   slug: string;
+  section: TrainingSection;
+  // A lucide icon name, mapped to a component in VideoCard.
+  icon: string;
   title: string;
   summary: string;
   start: number;
@@ -131,6 +142,8 @@ export interface TrainingModule {
 export const trainingModules: TrainingModule[] = [
   {
     slug: "sign-in",
+    section: "setup",
+    icon: "Smartphone",
     title: "Install the app and sign in",
     summary: "Get Able Assess on your phone or tablet and sign in to your organization.",
     start: 24,
@@ -148,6 +161,8 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     slug: "connect-gripable",
+    section: "setup",
+    icon: "Bluetooth",
     title: "Connect and calibrate your GripAble",
     summary: "Pair the GripAble with your device and calibrate it before your first test.",
     start: 126,
@@ -164,6 +179,8 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     slug: "add-a-client",
+    section: "setup",
+    icon: "UserPlus",
     title: "Add a client profile",
     summary: "Create a profile so results are saved and tracked over time.",
     start: 212,
@@ -180,6 +197,8 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     slug: "grip-strength",
+    section: "tests",
+    icon: "Hand",
     title: "Grip strength test",
     summary: "How to run the grip test and get a reliable result.",
     start: 278,
@@ -196,6 +215,8 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     slug: "chair-stand",
+    section: "tests",
+    icon: "Armchair",
     title: "Chair Stand test",
     summary: "Set up and run the 30-Second Chair Stand.",
     start: 413,
@@ -209,6 +230,8 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     slug: "gait-and-tug",
+    section: "tests",
+    icon: "Footprints",
     title: "Gait Speed and Timed Up and Go",
     summary: "The two walking tests, and how to finish the TUG correctly.",
     start: 597,
@@ -222,6 +245,8 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     slug: "falls-screening",
+    section: "tests",
+    icon: "ClipboardCheck",
     title: "Run a Falls Screening",
     summary: "Put the four tests together and share the PDF report.",
     start: 795,
@@ -238,6 +263,8 @@ export const trainingModules: TrainingModule[] = [
   },
   {
     slug: "battery-and-settings",
+    section: "care",
+    icon: "BatteryCharging",
     title: "Battery, turning off and settings",
     summary: "Keep the GripAble charged and switch it off between sessions.",
     start: 993,

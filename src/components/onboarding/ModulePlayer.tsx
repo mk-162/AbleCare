@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { useOnboarding } from "./OnboardingState";
 import { FAQ_BASE, TRAINING_VIDEO_ID, formatLength, trainingModules } from "./demo-data";
 import { Eyebrow, Panel, primaryButton, secondaryButton } from "./ui";
+import { VideoCard } from "./VideoCard";
 
 export function ModulePlayer({ index }: { index: number }) {
   const router = useRouter();
@@ -15,6 +16,8 @@ export function ModulePlayer({ index }: { index: number }) {
   const prev = trainingModules[index - 1];
   const next = trainingModules[index + 1];
   const done = data.training.includes(mod.slug);
+  // The next four videos after this one, wrapping round to the start.
+  const upcoming = [...trainingModules.slice(index + 1), ...trainingModules.slice(0, index)].slice(0, 4);
   const embed = `https://www.youtube-nocookie.com/embed/${TRAINING_VIDEO_ID}?start=${mod.start}&end=${mod.end}&rel=0&modestbranding=1`;
 
   const finish = () => {
@@ -115,6 +118,17 @@ export function ModulePlayer({ index }: { index: number }) {
           </Panel>
         </div>
       </div>
+
+      <section className="mt-14">
+        <h2 className="mb-5 text-2xl font-bold">{next ? "Up next" : "More in this course"}</h2>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {upcoming.map((m) => {
+            const number = trainingModules.indexOf(m) + 1;
+            const state = data.training.includes(m.slug) ? "done" : m === next ? "next" : "todo";
+            return <VideoCard key={m.slug} module={m} number={number} state={state} />;
+          })}
+        </div>
+      </section>
     </div>
   );
 }
