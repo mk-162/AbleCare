@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { DEMO_ACCESS_COOKIE, demoAccessToken, demoPassword } from "@/lib/onboarding-access";
 
 /**
- * Proxy: maintenance kill-switch + visitor-country geo cookie.
+ * Proxy: maintenance kill-switch + onboarding demo password gate + visitor-country geo cookie.
  *
  * ── MAINTENANCE MODE ─────────────────────────────────────────────────────────
  * While active, every public request receives a self-contained HTTP 503
@@ -127,7 +128,21 @@ function isExcludedFromGeo(pathname: string): boolean {
   );
 }
 
-export function proxy(request: NextRequest) {
+// ── ONBOARDING DEMO GATE ─────────────────────────────────────────────────────
+// The onboarding dashboard demo is only served where ONBOARDING_DEMO_PASSWORD is
+// set (the demo branch's preview). There, the whole deployment sits behind the
+// password so it can be shared on a public URL; everywhere else /onboarding 404s.
+const DEMO_GATE_EXEMPT = ["/onboarding/access", "/api/onboarding-access", "/icon.svg", "/favicon.ico"];
+
+function isDemoRoute(pathname: string): boolean {
+  return pathname === "/onboarding" || pathname.startsWith("/onboarding/") || pathname === "/api/onboarding-access";
+}
+
+function isDemoGateExempt(pathname: string): boolean {
+  return DEMO_GATE_EXEMPT.includes(pathname) || pathname.startsWith("/images/");
+}
+
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (MAINTENANCE_ACTIVE) {
@@ -160,6 +175,33 @@ export function proxy(request: NextRequest) {
         "x-robots-tag": "noindex, nofollow",
       },
     });
+  }
+
+  const password = demoPassword();
+  if (!password) {
+    if (isDemoRoute(pathname)) {
+      return new NextResponse("Not found", { status: 404 });
+    }
+  } else {
+    if (pathname === "/robots.txt") {
+      return new NextResponse("User-agent: *\nDisallow: /\n", {
+        status: 200,
+        headers: { "content-type": "text/plain; charset=utf-8", "x-robots-tag": "noindex" },
+      });
+    }
+    if (!isDemoGateExempt(pathname)) {
+      const token = request.cookies.get(DEMO_ACCESS_COOKIE)?.value;
+      if (token !== (await demoAccessToken(password))) {
+        const url = request.nextUrl.clone();
+        url.pathname = "/onboarding/access";
+        url.search = "";
+        url.searchParams.set("next", `${pathname}${request.nextUrl.search}`);
+        return NextResponse.redirect(url);
+      }
+      if (pathname === "/") {
+        return NextResponse.redirect(new URL("/onboarding", request.url));
+      }
+    }
   }
 
   // ── Normal mode: visitor-country geo cookie (page responses only) ──
