@@ -4,6 +4,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { MarketingChrome } from "@/components/layout/MarketingChrome";
 import { BackToTop } from "@/components/ui/BackToTop";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { EditButton } from "@/components/ui/EditButton";
@@ -79,11 +80,15 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col font-sans bg-white text-ac-black" suppressHydrationWarning>
         <ScrollToTop />
-        <SiteHeader />
+        <MarketingChrome>
+          <SiteHeader />
+        </MarketingChrome>
         <main className="flex-grow">{children}</main>
-        <SiteFooter />
-        <BackToTop />
-        <EditButton />
+        <MarketingChrome>
+          <SiteFooter />
+          <BackToTop />
+          <EditButton />
+        </MarketingChrome>
       </body>
     </html>
   );

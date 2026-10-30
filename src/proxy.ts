@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { DEMO_ACCESS_COOKIE, demoAccessToken, demoPassword } from "@/lib/onboarding-access";
 
 /**
- * Proxy: maintenance kill-switch + visitor-country geo cookie.
+ * Proxy: maintenance kill-switch + onboarding demo password gate + visitor-country geo cookie.
  *
  * ── MAINTENANCE MODE ─────────────────────────────────────────────────────────
  * While active, every public request receives a self-contained HTTP 503
@@ -127,7 +128,18 @@ function isExcludedFromGeo(pathname: string): boolean {
   );
 }
 
-export function proxy(request: NextRequest) {
+// ── ONBOARDING DEMO GATE ─────────────────────────────────────────────────────
+// The onboarding dashboard demo is only served on preview deployments where
+// ONBOARDING_DEMO_PASSWORD is set, and only its own /onboarding pages sit behind
+// the password; the rest of the site is untouched. Everywhere else, including
+// production, /onboarding 404s.
+const DEMO_GATE_EXEMPT = ["/onboarding/access", "/api/onboarding-access"];
+
+function isDemoRoute(pathname: string): boolean {
+  return pathname === "/onboarding" || pathname.startsWith("/onboarding/") || pathname === "/api/onboarding-access";
+}
+
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (MAINTENANCE_ACTIVE) {
@@ -160,6 +172,23 @@ export function proxy(request: NextRequest) {
         "x-robots-tag": "noindex, nofollow",
       },
     });
+  }
+
+  if (isDemoRoute(pathname)) {
+    const password = demoPassword();
+    if (!password) {
+      return new NextResponse("Not found", { status: 404 });
+    }
+    if (!DEMO_GATE_EXEMPT.includes(pathname)) {
+      const token = request.cookies.get(DEMO_ACCESS_COOKIE)?.value;
+      if (token !== (await demoAccessToken(password))) {
+        const url = request.nextUrl.clone();
+        url.pathname = "/onboarding/access";
+        url.search = "";
+        url.searchParams.set("next", `${pathname}${request.nextUrl.search}`);
+        return NextResponse.redirect(url);
+      }
+    }
   }
 
   // ── Normal mode: visitor-country geo cookie (page responses only) ──
