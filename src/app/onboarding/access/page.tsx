@@ -2,8 +2,12 @@ import Image from "next/image";
 import { Lock } from "lucide-react";
 import { safeNextPath } from "@/lib/onboarding-access";
 
-export default async function DemoAccessPage(props: PageProps<"/onboarding/access">) {
-  const params = await props.searchParams;
+export default async function DemoAccessPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const params = await searchParams;
   const next = safeNextPath(typeof params.next === "string" ? params.next : undefined);
   const failed = params.error === "1";
 

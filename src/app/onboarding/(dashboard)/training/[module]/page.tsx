@@ -6,8 +6,8 @@ export function generateStaticParams() {
   return trainingModules.map((m) => ({ module: m.slug }));
 }
 
-export default async function TrainingModulePage(props: PageProps<"/onboarding/training/[module]">) {
-  const { module: slug } = await props.params;
+export default async function TrainingModulePage({ params }: { params: Promise<{ module: string }> }) {
+  const { module: slug } = await params;
   const index = trainingModules.findIndex((m) => m.slug === slug);
   if (index === -1) notFound();
   return <ModulePlayer index={index} />;
