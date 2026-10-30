@@ -129,17 +129,14 @@ function isExcludedFromGeo(pathname: string): boolean {
 }
 
 // ── ONBOARDING DEMO GATE ─────────────────────────────────────────────────────
-// The onboarding dashboard demo is only served where ONBOARDING_DEMO_PASSWORD is
-// set (the demo branch's preview). There, the whole deployment sits behind the
-// password so it can be shared on a public URL; everywhere else /onboarding 404s.
-const DEMO_GATE_EXEMPT = ["/onboarding/access", "/api/onboarding-access", "/icon.svg", "/favicon.ico"];
+// The onboarding dashboard demo is only served on preview deployments where
+// ONBOARDING_DEMO_PASSWORD is set, and only its own /onboarding pages sit behind
+// the password; the rest of the site is untouched. Everywhere else, including
+// production, /onboarding 404s.
+const DEMO_GATE_EXEMPT = ["/onboarding/access", "/api/onboarding-access"];
 
 function isDemoRoute(pathname: string): boolean {
   return pathname === "/onboarding" || pathname.startsWith("/onboarding/") || pathname === "/api/onboarding-access";
-}
-
-function isDemoGateExempt(pathname: string): boolean {
-  return DEMO_GATE_EXEMPT.includes(pathname) || pathname.startsWith("/images/");
 }
 
 export async function proxy(request: NextRequest) {
@@ -177,19 +174,12 @@ export async function proxy(request: NextRequest) {
     });
   }
 
-  const password = demoPassword();
-  if (!password) {
-    if (isDemoRoute(pathname)) {
+  if (isDemoRoute(pathname)) {
+    const password = demoPassword();
+    if (!password) {
       return new NextResponse("Not found", { status: 404 });
     }
-  } else {
-    if (pathname === "/robots.txt") {
-      return new NextResponse("User-agent: *\nDisallow: /\n", {
-        status: 200,
-        headers: { "content-type": "text/plain; charset=utf-8", "x-robots-tag": "noindex" },
-      });
-    }
-    if (!isDemoGateExempt(pathname)) {
+    if (!DEMO_GATE_EXEMPT.includes(pathname)) {
       const token = request.cookies.get(DEMO_ACCESS_COOKIE)?.value;
       if (token !== (await demoAccessToken(password))) {
         const url = request.nextUrl.clone();
@@ -197,9 +187,6 @@ export async function proxy(request: NextRequest) {
         url.search = "";
         url.searchParams.set("next", `${pathname}${request.nextUrl.search}`);
         return NextResponse.redirect(url);
-      }
-      if (pathname === "/") {
-        return NextResponse.redirect(new URL("/onboarding", request.url));
       }
     }
   }

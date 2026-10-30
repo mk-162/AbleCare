@@ -1,6 +1,6 @@
-// Password gate for the onboarding dashboard demo. The gate is only active when
-// ONBOARDING_DEMO_PASSWORD is set on a non-production deployment. Without it,
-// the /onboarding routes are not served at all.
+// Password gate for the onboarding dashboard demo's /onboarding pages. The demo
+// is only served when ONBOARDING_DEMO_PASSWORD is set on a non-production
+// deployment. Without it, the /onboarding routes are not served at all.
 
 export const DEMO_ACCESS_COOKIE = "ac_demo_access";
 
